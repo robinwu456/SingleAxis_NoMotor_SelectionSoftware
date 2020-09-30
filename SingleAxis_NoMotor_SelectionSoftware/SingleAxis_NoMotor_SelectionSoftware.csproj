@@ -48,6 +48,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomPanelControl\CornerCurveMode.cs" />
+    <Compile Include="CustomPanelControl\CustomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomPanelControl\GlassyPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomPanelControl\LinearGradientMode.cs" />
+    <Compile Include="CustomPanelControl\TransparentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomPanelControl\TransparentPanel.Designer.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +68,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomPanelControl\CustomPanel.resx" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>

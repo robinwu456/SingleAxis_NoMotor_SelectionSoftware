@@ -76,6 +76,7 @@
             this.splitContainerBase.Panel2.AutoScroll = true;
             this.splitContainerBase.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainerBase.Panel2.Controls.Add(this.binaryExplorerBar);
+            this.splitContainerBase.Panel2.Padding = new System.Windows.Forms.Padding(0, 0, 200, 0);
             this.splitContainerBase.Size = new System.Drawing.Size(1103, 635);
             this.splitContainerBase.SplitterDistance = 35;
             this.splitContainerBase.SplitterWidth = 1;
@@ -193,8 +194,9 @@
             this.panelStep3,
             this.panelStep4,
             this.panelStep5});
+            this.binaryExplorerBar.PerformAnimation = false;
             this.binaryExplorerBar.ReflectCurrentXPTheme = false;
-            this.binaryExplorerBar.Size = new System.Drawing.Size(1103, 599);
+            this.binaryExplorerBar.Size = new System.Drawing.Size(903, 599);
             this.binaryExplorerBar.TabIndex = 0;
             this.binaryExplorerBar.ThemeOrCustomColors = Binarymission.WinForms.Controls.NavigationControls.ThemeOrCustomColors.CustomColors;
             this.binaryExplorerBar.XPTheme = Binarymission.WinForms.Controls.NavigationControls.XPTheme.None;
@@ -226,7 +228,7 @@
             this.panelStep1.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep1.PanelTitleText = "    Step.1";
             this.panelStep1.ReflectCurrentXPTheme = false;
-            this.panelStep1.Size = new System.Drawing.Size(1078, 0);
+            this.panelStep1.Size = new System.Drawing.Size(856, 0);
             this.panelStep1.TabIndex = 0;
             // 
             // panelStep2
@@ -234,7 +236,6 @@
             this.panelStep2.AutoScroll = true;
             this.panelStep2.BackColor = System.Drawing.Color.White;
             this.panelStep2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelStep2.CurrentExplorerBarPanelState = Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanelState.Collapsed;
             this.panelStep2.DrawPanelTitleBackgroundImageWithTheDefaultHeight = false;
             this.panelStep2.DrawPanelTitleText = true;
             this.panelStep2.Location = new System.Drawing.Point(12, 104);
@@ -255,7 +256,7 @@
             this.panelStep2.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep2.PanelTitleText = "    Step.2";
             this.panelStep2.ReflectCurrentXPTheme = false;
-            this.panelStep2.Size = new System.Drawing.Size(1078, 0);
+            this.panelStep2.Size = new System.Drawing.Size(856, 100);
             this.panelStep2.TabIndex = 1;
             // 
             // panelStep3
@@ -263,11 +264,10 @@
             this.panelStep3.AutoScroll = true;
             this.panelStep3.BackColor = System.Drawing.Color.White;
             this.panelStep3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelStep3.CurrentExplorerBarPanelState = Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanelState.Collapsed;
             this.panelStep3.DrawPanelTitleBackgroundImageWithTheDefaultHeight = false;
             this.panelStep3.DrawPanelTitleText = true;
             this.panelStep3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelStep3.Location = new System.Drawing.Point(12, 157);
+            this.panelStep3.Location = new System.Drawing.Point(12, 257);
             this.panelStep3.Name = "panelStep3";
             this.panelStep3.OnHoverUpDownArrowColor = System.Drawing.Color.White;
             this.panelStep3.OnHoverUpDownArrowEllipseFillColor = System.Drawing.Color.White;
@@ -285,7 +285,7 @@
             this.panelStep3.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep3.PanelTitleText = "    Step3";
             this.panelStep3.ReflectCurrentXPTheme = false;
-            this.panelStep3.Size = new System.Drawing.Size(1078, 0);
+            this.panelStep3.Size = new System.Drawing.Size(856, 100);
             this.panelStep3.TabIndex = 3;
             // 
             // panelStep4
@@ -293,10 +293,9 @@
             this.panelStep4.AutoScroll = true;
             this.panelStep4.BackColor = System.Drawing.Color.White;
             this.panelStep4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelStep4.CurrentExplorerBarPanelState = Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanelState.Collapsed;
             this.panelStep4.DrawPanelTitleBackgroundImageWithTheDefaultHeight = false;
             this.panelStep4.DrawPanelTitleText = true;
-            this.panelStep4.Location = new System.Drawing.Point(12, 210);
+            this.panelStep4.Location = new System.Drawing.Point(12, 410);
             this.panelStep4.Name = "panelStep4";
             this.panelStep4.OnHoverUpDownArrowColor = System.Drawing.Color.White;
             this.panelStep4.OnHoverUpDownArrowEllipseFillColor = System.Drawing.Color.White;
@@ -314,7 +313,7 @@
             this.panelStep4.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep4.PanelTitleText = "    Step4";
             this.panelStep4.ReflectCurrentXPTheme = false;
-            this.panelStep4.Size = new System.Drawing.Size(1078, 0);
+            this.panelStep4.Size = new System.Drawing.Size(856, 100);
             this.panelStep4.TabIndex = 5;
             // 
             // panelStep5
@@ -322,10 +321,9 @@
             this.panelStep5.AutoScroll = true;
             this.panelStep5.BackColor = System.Drawing.Color.White;
             this.panelStep5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelStep5.CurrentExplorerBarPanelState = Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanelState.Collapsed;
             this.panelStep5.DrawPanelTitleBackgroundImageWithTheDefaultHeight = false;
             this.panelStep5.DrawPanelTitleText = true;
-            this.panelStep5.Location = new System.Drawing.Point(12, 263);
+            this.panelStep5.Location = new System.Drawing.Point(12, 563);
             this.panelStep5.Name = "panelStep5";
             this.panelStep5.OnHoverUpDownArrowColor = System.Drawing.Color.White;
             this.panelStep5.OnHoverUpDownArrowEllipseFillColor = System.Drawing.Color.White;
@@ -343,7 +341,7 @@
             this.panelStep5.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep5.PanelTitleText = "    Step5";
             this.panelStep5.ReflectCurrentXPTheme = false;
-            this.panelStep5.Size = new System.Drawing.Size(1078, 0);
+            this.panelStep5.Size = new System.Drawing.Size(856, 100);
             this.panelStep5.TabIndex = 7;
             // 
             // FormMain
