@@ -88,7 +88,7 @@
             this.splitContainerBase.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainerBase.Panel2.Controls.Add(this.panel1);
             this.splitContainerBase.Panel2.Controls.Add(this.binaryExplorerBar);
-            this.splitContainerBase.Panel2.Padding = new System.Windows.Forms.Padding(0, 0, 300, 0);
+            this.splitContainerBase.Panel2.Padding = new System.Windows.Forms.Padding(0, 0, 275, 0);
             this.splitContainerBase.Size = new System.Drawing.Size(1103, 635);
             this.splitContainerBase.SplitterDistance = 35;
             this.splitContainerBase.SplitterWidth = 1;
@@ -132,7 +132,7 @@
             this.panelStep5});
             this.binaryExplorerBar.PerformAnimation = false;
             this.binaryExplorerBar.ReflectCurrentXPTheme = false;
-            this.binaryExplorerBar.Size = new System.Drawing.Size(803, 599);
+            this.binaryExplorerBar.Size = new System.Drawing.Size(828, 599);
             this.binaryExplorerBar.TabIndex = 0;
             this.binaryExplorerBar.ThemeOrCustomColors = Binarymission.WinForms.Controls.NavigationControls.ThemeOrCustomColors.CustomColors;
             this.binaryExplorerBar.XPTheme = Binarymission.WinForms.Controls.NavigationControls.XPTheme.None;
@@ -140,10 +140,10 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.customPanel1);
-            this.panel1.Location = new System.Drawing.Point(765, 0);
+            this.panel1.Location = new System.Drawing.Point(809, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(20, 50, 50, 100);
-            this.panel1.Size = new System.Drawing.Size(338, 599);
+            this.panel1.Size = new System.Drawing.Size(294, 599);
             this.panel1.TabIndex = 1;
             // 
             // pictureBoxToyo
@@ -229,6 +229,7 @@
             this.panelStep1.AutoScroll = true;
             this.panelStep1.BackColor = System.Drawing.Color.White;
             this.panelStep1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelStep1.CurrentExplorerBarPanelState = Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanelState.Collapsed;
             this.panelStep1.CurrentHeight = 448;
             this.panelStep1.DrawPanelTitleBackgroundImageWithTheDefaultHeight = false;
             this.panelStep1.DrawPanelTitleText = true;
@@ -250,7 +251,7 @@
             this.panelStep1.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep1.PanelTitleText = "    Step.1";
             this.panelStep1.ReflectCurrentXPTheme = false;
-            this.panelStep1.Size = new System.Drawing.Size(700, 448);
+            this.panelStep1.Size = new System.Drawing.Size(747, 0);
             this.panelStep1.TabIndex = 0;
             // 
             // panelStep2
@@ -258,9 +259,10 @@
             this.panelStep2.AutoScroll = true;
             this.panelStep2.BackColor = System.Drawing.Color.White;
             this.panelStep2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelStep2.CurrentExplorerBarPanelState = Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanelState.Collapsed;
             this.panelStep2.DrawPanelTitleBackgroundImageWithTheDefaultHeight = false;
             this.panelStep2.DrawPanelTitleText = true;
-            this.panelStep2.Location = new System.Drawing.Point(50, 552);
+            this.panelStep2.Location = new System.Drawing.Point(50, 104);
             this.panelStep2.Name = "panelStep2";
             this.panelStep2.OnHoverUpDownArrowColor = System.Drawing.Color.White;
             this.panelStep2.OnHoverUpDownArrowEllipseFillColor = System.Drawing.Color.White;
@@ -278,7 +280,7 @@
             this.panelStep2.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep2.PanelTitleText = "    Step.2";
             this.panelStep2.ReflectCurrentXPTheme = false;
-            this.panelStep2.Size = new System.Drawing.Size(700, 100);
+            this.panelStep2.Size = new System.Drawing.Size(747, 0);
             this.panelStep2.TabIndex = 1;
             // 
             // panelStep3
@@ -286,10 +288,11 @@
             this.panelStep3.AutoScroll = true;
             this.panelStep3.BackColor = System.Drawing.Color.White;
             this.panelStep3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelStep3.CurrentExplorerBarPanelState = Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanelState.Collapsed;
             this.panelStep3.DrawPanelTitleBackgroundImageWithTheDefaultHeight = false;
             this.panelStep3.DrawPanelTitleText = true;
             this.panelStep3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelStep3.Location = new System.Drawing.Point(50, 705);
+            this.panelStep3.Location = new System.Drawing.Point(50, 157);
             this.panelStep3.Name = "panelStep3";
             this.panelStep3.OnHoverUpDownArrowColor = System.Drawing.Color.White;
             this.panelStep3.OnHoverUpDownArrowEllipseFillColor = System.Drawing.Color.White;
@@ -307,7 +310,7 @@
             this.panelStep3.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep3.PanelTitleText = "    Step3";
             this.panelStep3.ReflectCurrentXPTheme = false;
-            this.panelStep3.Size = new System.Drawing.Size(700, 100);
+            this.panelStep3.Size = new System.Drawing.Size(747, 0);
             this.panelStep3.TabIndex = 3;
             // 
             // panelStep4
@@ -315,9 +318,10 @@
             this.panelStep4.AutoScroll = true;
             this.panelStep4.BackColor = System.Drawing.Color.White;
             this.panelStep4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelStep4.CurrentExplorerBarPanelState = Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanelState.Collapsed;
             this.panelStep4.DrawPanelTitleBackgroundImageWithTheDefaultHeight = false;
             this.panelStep4.DrawPanelTitleText = true;
-            this.panelStep4.Location = new System.Drawing.Point(50, 858);
+            this.panelStep4.Location = new System.Drawing.Point(50, 210);
             this.panelStep4.Name = "panelStep4";
             this.panelStep4.OnHoverUpDownArrowColor = System.Drawing.Color.White;
             this.panelStep4.OnHoverUpDownArrowEllipseFillColor = System.Drawing.Color.White;
@@ -335,7 +339,7 @@
             this.panelStep4.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep4.PanelTitleText = "    Step4";
             this.panelStep4.ReflectCurrentXPTheme = false;
-            this.panelStep4.Size = new System.Drawing.Size(700, 100);
+            this.panelStep4.Size = new System.Drawing.Size(747, 0);
             this.panelStep4.TabIndex = 5;
             // 
             // panelStep5
@@ -343,9 +347,10 @@
             this.panelStep5.AutoScroll = true;
             this.panelStep5.BackColor = System.Drawing.Color.White;
             this.panelStep5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelStep5.CurrentExplorerBarPanelState = Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanelState.Collapsed;
             this.panelStep5.DrawPanelTitleBackgroundImageWithTheDefaultHeight = false;
             this.panelStep5.DrawPanelTitleText = true;
-            this.panelStep5.Location = new System.Drawing.Point(50, 1011);
+            this.panelStep5.Location = new System.Drawing.Point(50, 263);
             this.panelStep5.Name = "panelStep5";
             this.panelStep5.OnHoverUpDownArrowColor = System.Drawing.Color.White;
             this.panelStep5.OnHoverUpDownArrowEllipseFillColor = System.Drawing.Color.White;
@@ -363,7 +368,7 @@
             this.panelStep5.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep5.PanelTitleText = "    Step5";
             this.panelStep5.ReflectCurrentXPTheme = false;
-            this.panelStep5.Size = new System.Drawing.Size(700, 100);
+            this.panelStep5.Size = new System.Drawing.Size(747, 0);
             this.panelStep5.TabIndex = 7;
             // 
             // customPanel1
@@ -381,71 +386,86 @@
             this.customPanel1.Location = new System.Drawing.Point(20, 50);
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Padding = new System.Windows.Forms.Padding(15, 5, 15, 0);
-            this.customPanel1.Size = new System.Drawing.Size(268, 449);
+            this.customPanel1.Size = new System.Drawing.Size(224, 449);
             this.customPanel1.TabIndex = 0;
             // 
             // customPanel2
             // 
+            this.customPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.customPanel2.Curvature = 8;
             this.customPanel2.Location = new System.Drawing.Point(15, 28);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(238, 108);
+            this.customPanel2.Size = new System.Drawing.Size(194, 108);
             this.customPanel2.TabIndex = 0;
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.Font = new System.Drawing.Font("新細明體", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.Location = new System.Drawing.Point(15, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(238, 23);
+            this.label2.Size = new System.Drawing.Size(194, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "即時條件顯示";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.Location = new System.Drawing.Point(15, 136);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(238, 23);
+            this.label3.Size = new System.Drawing.Size(194, 23);
             this.label3.TabIndex = 2;
             this.label3.Text = "目前條件型號：";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // customPanel3
             // 
+            this.customPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.customPanel3.Curvature = 8;
             this.customPanel3.Location = new System.Drawing.Point(15, 232);
             this.customPanel3.Name = "customPanel3";
-            this.customPanel3.Size = new System.Drawing.Size(238, 44);
+            this.customPanel3.Size = new System.Drawing.Size(194, 44);
             this.customPanel3.TabIndex = 3;
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.Location = new System.Drawing.Point(15, 206);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(238, 23);
+            this.label4.Size = new System.Drawing.Size(194, 23);
             this.label4.TabIndex = 4;
             this.label4.Text = "訊息：";
             this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // customPanel4
             // 
+            this.customPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.customPanel4.Curvature = 8;
             this.customPanel4.Location = new System.Drawing.Point(15, 162);
             this.customPanel4.Name = "customPanel4";
-            this.customPanel4.Size = new System.Drawing.Size(238, 47);
+            this.customPanel4.Size = new System.Drawing.Size(194, 47);
             this.customPanel4.TabIndex = 5;
             // 
             // customPanel5
             // 
+            this.customPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customPanel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.customPanel5.Curvature = 8;
             this.customPanel5.Location = new System.Drawing.Point(15, 282);
             this.customPanel5.Name = "customPanel5";
-            this.customPanel5.Size = new System.Drawing.Size(238, 152);
+            this.customPanel5.Size = new System.Drawing.Size(194, 152);
             this.customPanel5.TabIndex = 6;
             // 
             // FormMain
