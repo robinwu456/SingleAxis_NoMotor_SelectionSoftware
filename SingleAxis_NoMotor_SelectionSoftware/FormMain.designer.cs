@@ -24,42 +24,46 @@
         /// </summary>
         private void InitializeComponent() {
             this.splitContainerBase = new System.Windows.Forms.SplitContainer();
-            this.binaryExplorerBar = new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBar();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBoxToyo = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmdExplorer = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.cmdNarrow = new System.Windows.Forms.PictureBox();
-            this.cmdZoom = new System.Windows.Forms.PictureBox();
             this.cmdClose = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.binaryExplorerBar = new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBar();
             this.panelStep1 = new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel();
             this.panelStep2 = new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel();
             this.panelStep3 = new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel();
             this.panelStep4 = new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel();
             this.panelStep5 = new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel();
-            this.customPanel1 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.panelSideTableSelections = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.tableSelections = new System.Windows.Forms.TableLayoutPanel();
+            this.customPanel4 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.customPanel3 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.customPanel2 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.customPanel3 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.customPanel4 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.customPanel5 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
             this.splitContainerBase.SuspendLayout();
-            this.binaryExplorerBar.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToyo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdExplorer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdNarrow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdZoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).BeginInit();
-            this.customPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.binaryExplorerBar.SuspendLayout();
+            this.panelSideTable.SuspendLayout();
+            this.panelSideTableSelections.SuspendLayout();
+            this.customPanel4.SuspendLayout();
+            this.customPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -79,7 +83,6 @@
             this.splitContainerBase.Panel1.Controls.Add(this.cmdExplorer);
             this.splitContainerBase.Panel1.Controls.Add(this.pictureBox3);
             this.splitContainerBase.Panel1.Controls.Add(this.cmdNarrow);
-            this.splitContainerBase.Panel1.Controls.Add(this.cmdZoom);
             this.splitContainerBase.Panel1.Controls.Add(this.cmdClose);
             // 
             // splitContainerBase.Panel2
@@ -93,58 +96,6 @@
             this.splitContainerBase.SplitterDistance = 35;
             this.splitContainerBase.SplitterWidth = 1;
             this.splitContainerBase.TabIndex = 0;
-            // 
-            // binaryExplorerBar
-            // 
-            this.binaryExplorerBar.AutoScroll = true;
-            this.binaryExplorerBar.BackColor = System.Drawing.Color.White;
-            this.binaryExplorerBar.BackgroundStyle = Binarymission.WinForms.Controls.NavigationControls.ControlBackgroundPaintingStyle.GradientColorStyle;
-            this.binaryExplorerBar.Controls.Add(this.panelStep1);
-            this.binaryExplorerBar.Controls.Add(this.panelStep2);
-            this.binaryExplorerBar.Controls.Add(this.panelStep3);
-            this.binaryExplorerBar.Controls.Add(this.panelStep4);
-            this.binaryExplorerBar.Controls.Add(this.panelStep5);
-            this.binaryExplorerBar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.binaryExplorerBar.DefaultPanelLeftMargin = 50;
-            this.binaryExplorerBar.DefaultPanelRightMargin = 30;
-            this.binaryExplorerBar.DefaultPanelTitleBackColor = System.Drawing.Color.RoyalBlue;
-            this.binaryExplorerBar.DefaultPanelTitleBackgroundImageTransparentColor = System.Drawing.Color.Empty;
-            this.binaryExplorerBar.DefaultPanelTitleFont = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.binaryExplorerBar.DefaultPanelTitleForeColor = System.Drawing.Color.Green;
-            this.binaryExplorerBar.DefaultPanelTitleGradientBeginColor = System.Drawing.Color.White;
-            this.binaryExplorerBar.DefaultPanelTitleGradientEndColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(210)))), ((int)(((byte)(134)))));
-            this.binaryExplorerBar.DefaultPanelTitleHoverColor = System.Drawing.Color.Empty;
-            this.binaryExplorerBar.DefaultPanelTopMargin = 10;
-            this.binaryExplorerBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.binaryExplorerBar.GradientBeginColor = System.Drawing.Color.White;
-            this.binaryExplorerBar.GradientEndColor = System.Drawing.Color.White;
-            this.binaryExplorerBar.Location = new System.Drawing.Point(0, 0);
-            this.binaryExplorerBar.Name = "binaryExplorerBar";
-            this.binaryExplorerBar.OnHoverUpDownArrowColor = System.Drawing.Color.White;
-            this.binaryExplorerBar.OnHoverUpDownArrowEllipseFillColor = System.Drawing.Color.White;
-            this.binaryExplorerBar.OnNormalUpDownArrowColor = System.Drawing.Color.White;
-            this.binaryExplorerBar.OnNormalUpDownArrowEllipseFillColor = System.Drawing.Color.White;
-            this.binaryExplorerBar.Panels.AddRange(new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel[] {
-            this.panelStep1,
-            this.panelStep2,
-            this.panelStep3,
-            this.panelStep4,
-            this.panelStep5});
-            this.binaryExplorerBar.PerformAnimation = false;
-            this.binaryExplorerBar.ReflectCurrentXPTheme = false;
-            this.binaryExplorerBar.Size = new System.Drawing.Size(828, 599);
-            this.binaryExplorerBar.TabIndex = 0;
-            this.binaryExplorerBar.ThemeOrCustomColors = Binarymission.WinForms.Controls.NavigationControls.ThemeOrCustomColors.CustomColors;
-            this.binaryExplorerBar.XPTheme = Binarymission.WinForms.Controls.NavigationControls.XPTheme.None;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.customPanel1);
-            this.panel1.Location = new System.Drawing.Point(809, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(20, 50, 50, 100);
-            this.panel1.Size = new System.Drawing.Size(294, 599);
-            this.panel1.TabIndex = 1;
             // 
             // pictureBoxToyo
             // 
@@ -171,7 +122,7 @@
             // 
             this.cmdExplorer.Dock = System.Windows.Forms.DockStyle.Right;
             this.cmdExplorer.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.Top_web2;
-            this.cmdExplorer.Location = new System.Drawing.Point(960, 0);
+            this.cmdExplorer.Location = new System.Drawing.Point(994, 0);
             this.cmdExplorer.Name = "cmdExplorer";
             this.cmdExplorer.Size = new System.Drawing.Size(19, 35);
             this.cmdExplorer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -182,7 +133,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Black;
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox3.Location = new System.Drawing.Point(979, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(1013, 0);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(7, 35);
             this.pictureBox3.TabIndex = 4;
@@ -192,25 +143,13 @@
             // 
             this.cmdNarrow.Dock = System.Windows.Forms.DockStyle.Right;
             this.cmdNarrow.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.Top_Narrow;
-            this.cmdNarrow.Location = new System.Drawing.Point(986, 0);
+            this.cmdNarrow.Location = new System.Drawing.Point(1020, 0);
             this.cmdNarrow.Name = "cmdNarrow";
             this.cmdNarrow.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.cmdNarrow.Size = new System.Drawing.Size(34, 35);
             this.cmdNarrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.cmdNarrow.TabIndex = 3;
             this.cmdNarrow.TabStop = false;
-            // 
-            // cmdZoom
-            // 
-            this.cmdZoom.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cmdZoom.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.Top_Zoom;
-            this.cmdZoom.Location = new System.Drawing.Point(1020, 0);
-            this.cmdZoom.Name = "cmdZoom";
-            this.cmdZoom.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.cmdZoom.Size = new System.Drawing.Size(34, 35);
-            this.cmdZoom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.cmdZoom.TabIndex = 2;
-            this.cmdZoom.TabStop = false;
             // 
             // cmdClose
             // 
@@ -224,12 +163,66 @@
             this.cmdClose.TabIndex = 1;
             this.cmdClose.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel1.Controls.Add(this.panelSideTable);
+            this.panel1.Location = new System.Drawing.Point(809, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(20, 50, 50, 100);
+            this.panel1.Size = new System.Drawing.Size(294, 599);
+            this.panel1.TabIndex = 1;
+            // 
+            // binaryExplorerBar
+            // 
+            this.binaryExplorerBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.binaryExplorerBar.AutoScroll = true;
+            this.binaryExplorerBar.BackColor = System.Drawing.Color.White;
+            this.binaryExplorerBar.BackgroundStyle = Binarymission.WinForms.Controls.NavigationControls.ControlBackgroundPaintingStyle.GradientColorStyle;
+            this.binaryExplorerBar.Controls.Add(this.panelStep1);
+            this.binaryExplorerBar.Controls.Add(this.panelStep2);
+            this.binaryExplorerBar.Controls.Add(this.panelStep3);
+            this.binaryExplorerBar.Controls.Add(this.panelStep4);
+            this.binaryExplorerBar.Controls.Add(this.panelStep5);
+            this.binaryExplorerBar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.binaryExplorerBar.DefaultPanelLeftMargin = 50;
+            this.binaryExplorerBar.DefaultPanelRightMargin = 30;
+            this.binaryExplorerBar.DefaultPanelTitleBackColor = System.Drawing.Color.RoyalBlue;
+            this.binaryExplorerBar.DefaultPanelTitleBackgroundImageTransparentColor = System.Drawing.Color.Empty;
+            this.binaryExplorerBar.DefaultPanelTitleFont = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.binaryExplorerBar.DefaultPanelTitleForeColor = System.Drawing.Color.Green;
+            this.binaryExplorerBar.DefaultPanelTitleGradientBeginColor = System.Drawing.Color.White;
+            this.binaryExplorerBar.DefaultPanelTitleGradientEndColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(210)))), ((int)(((byte)(134)))));
+            this.binaryExplorerBar.DefaultPanelTitleHoverColor = System.Drawing.Color.Empty;
+            this.binaryExplorerBar.DefaultPanelTopMargin = 10;
+            this.binaryExplorerBar.GradientBeginColor = System.Drawing.Color.White;
+            this.binaryExplorerBar.GradientEndColor = System.Drawing.Color.White;
+            this.binaryExplorerBar.Location = new System.Drawing.Point(0, 0);
+            this.binaryExplorerBar.Name = "binaryExplorerBar";
+            this.binaryExplorerBar.OnHoverUpDownArrowColor = System.Drawing.Color.White;
+            this.binaryExplorerBar.OnHoverUpDownArrowEllipseFillColor = System.Drawing.Color.White;
+            this.binaryExplorerBar.OnNormalUpDownArrowColor = System.Drawing.Color.White;
+            this.binaryExplorerBar.OnNormalUpDownArrowEllipseFillColor = System.Drawing.Color.White;
+            this.binaryExplorerBar.Panels.AddRange(new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel[] {
+            this.panelStep1,
+            this.panelStep2,
+            this.panelStep3,
+            this.panelStep4,
+            this.panelStep5});
+            this.binaryExplorerBar.PerformAnimation = false;
+            this.binaryExplorerBar.ReflectCurrentXPTheme = false;
+            this.binaryExplorerBar.Size = new System.Drawing.Size(830, 605);
+            this.binaryExplorerBar.TabIndex = 0;
+            this.binaryExplorerBar.ThemeOrCustomColors = Binarymission.WinForms.Controls.NavigationControls.ThemeOrCustomColors.CustomColors;
+            this.binaryExplorerBar.XPTheme = Binarymission.WinForms.Controls.NavigationControls.XPTheme.None;
+            // 
             // panelStep1
             // 
             this.panelStep1.AutoScroll = true;
             this.panelStep1.BackColor = System.Drawing.Color.White;
             this.panelStep1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelStep1.CurrentExplorerBarPanelState = Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanelState.Collapsed;
             this.panelStep1.CurrentHeight = 448;
             this.panelStep1.DrawPanelTitleBackgroundImageWithTheDefaultHeight = false;
             this.panelStep1.DrawPanelTitleText = true;
@@ -251,7 +244,7 @@
             this.panelStep1.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep1.PanelTitleText = "    Step.1";
             this.panelStep1.ReflectCurrentXPTheme = false;
-            this.panelStep1.Size = new System.Drawing.Size(747, 0);
+            this.panelStep1.Size = new System.Drawing.Size(727, 448);
             this.panelStep1.TabIndex = 0;
             // 
             // panelStep2
@@ -262,7 +255,7 @@
             this.panelStep2.CurrentExplorerBarPanelState = Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanelState.Collapsed;
             this.panelStep2.DrawPanelTitleBackgroundImageWithTheDefaultHeight = false;
             this.panelStep2.DrawPanelTitleText = true;
-            this.panelStep2.Location = new System.Drawing.Point(50, 104);
+            this.panelStep2.Location = new System.Drawing.Point(50, 552);
             this.panelStep2.Name = "panelStep2";
             this.panelStep2.OnHoverUpDownArrowColor = System.Drawing.Color.White;
             this.panelStep2.OnHoverUpDownArrowEllipseFillColor = System.Drawing.Color.White;
@@ -280,7 +273,7 @@
             this.panelStep2.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep2.PanelTitleText = "    Step.2";
             this.panelStep2.ReflectCurrentXPTheme = false;
-            this.panelStep2.Size = new System.Drawing.Size(747, 0);
+            this.panelStep2.Size = new System.Drawing.Size(727, 0);
             this.panelStep2.TabIndex = 1;
             // 
             // panelStep3
@@ -292,7 +285,7 @@
             this.panelStep3.DrawPanelTitleBackgroundImageWithTheDefaultHeight = false;
             this.panelStep3.DrawPanelTitleText = true;
             this.panelStep3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelStep3.Location = new System.Drawing.Point(50, 157);
+            this.panelStep3.Location = new System.Drawing.Point(50, 605);
             this.panelStep3.Name = "panelStep3";
             this.panelStep3.OnHoverUpDownArrowColor = System.Drawing.Color.White;
             this.panelStep3.OnHoverUpDownArrowEllipseFillColor = System.Drawing.Color.White;
@@ -310,7 +303,7 @@
             this.panelStep3.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep3.PanelTitleText = "    Step3";
             this.panelStep3.ReflectCurrentXPTheme = false;
-            this.panelStep3.Size = new System.Drawing.Size(747, 0);
+            this.panelStep3.Size = new System.Drawing.Size(727, 0);
             this.panelStep3.TabIndex = 3;
             // 
             // panelStep4
@@ -321,7 +314,7 @@
             this.panelStep4.CurrentExplorerBarPanelState = Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanelState.Collapsed;
             this.panelStep4.DrawPanelTitleBackgroundImageWithTheDefaultHeight = false;
             this.panelStep4.DrawPanelTitleText = true;
-            this.panelStep4.Location = new System.Drawing.Point(50, 210);
+            this.panelStep4.Location = new System.Drawing.Point(50, 658);
             this.panelStep4.Name = "panelStep4";
             this.panelStep4.OnHoverUpDownArrowColor = System.Drawing.Color.White;
             this.panelStep4.OnHoverUpDownArrowEllipseFillColor = System.Drawing.Color.White;
@@ -339,7 +332,7 @@
             this.panelStep4.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep4.PanelTitleText = "    Step4";
             this.panelStep4.ReflectCurrentXPTheme = false;
-            this.panelStep4.Size = new System.Drawing.Size(747, 0);
+            this.panelStep4.Size = new System.Drawing.Size(727, 0);
             this.panelStep4.TabIndex = 5;
             // 
             // panelStep5
@@ -350,7 +343,7 @@
             this.panelStep5.CurrentExplorerBarPanelState = Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanelState.Collapsed;
             this.panelStep5.DrawPanelTitleBackgroundImageWithTheDefaultHeight = false;
             this.panelStep5.DrawPanelTitleText = true;
-            this.panelStep5.Location = new System.Drawing.Point(50, 263);
+            this.panelStep5.Location = new System.Drawing.Point(50, 711);
             this.panelStep5.Name = "panelStep5";
             this.panelStep5.OnHoverUpDownArrowColor = System.Drawing.Color.White;
             this.panelStep5.OnHoverUpDownArrowEllipseFillColor = System.Drawing.Color.White;
@@ -368,31 +361,142 @@
             this.panelStep5.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep5.PanelTitleText = "    Step5";
             this.panelStep5.ReflectCurrentXPTheme = false;
-            this.panelStep5.Size = new System.Drawing.Size(747, 0);
+            this.panelStep5.Size = new System.Drawing.Size(727, 0);
             this.panelStep5.TabIndex = 7;
             // 
-            // customPanel1
+            // panelSideTable
             // 
-            this.customPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel1.Controls.Add(this.customPanel5);
-            this.customPanel1.Controls.Add(this.customPanel4);
-            this.customPanel1.Controls.Add(this.label4);
-            this.customPanel1.Controls.Add(this.customPanel3);
-            this.customPanel1.Controls.Add(this.label3);
-            this.customPanel1.Controls.Add(this.customPanel2);
-            this.customPanel1.Controls.Add(this.label2);
-            this.customPanel1.Curvature = 8;
-            this.customPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customPanel1.Location = new System.Drawing.Point(20, 50);
-            this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Padding = new System.Windows.Forms.Padding(15, 5, 15, 0);
-            this.customPanel1.Size = new System.Drawing.Size(224, 449);
-            this.customPanel1.TabIndex = 0;
+            this.panelSideTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSideTable.Controls.Add(this.panelSideTableSelections);
+            this.panelSideTable.Controls.Add(this.customPanel4);
+            this.panelSideTable.Controls.Add(this.label4);
+            this.panelSideTable.Controls.Add(this.customPanel3);
+            this.panelSideTable.Controls.Add(this.label3);
+            this.panelSideTable.Controls.Add(this.customPanel2);
+            this.panelSideTable.Controls.Add(this.label2);
+            this.panelSideTable.Curvature = 8;
+            this.panelSideTable.Location = new System.Drawing.Point(20, 50);
+            this.panelSideTable.Name = "panelSideTable";
+            this.panelSideTable.Padding = new System.Windows.Forms.Padding(15, 5, 15, 0);
+            this.panelSideTable.Size = new System.Drawing.Size(224, 474);
+            this.panelSideTable.TabIndex = 0;
+            // 
+            // panelSideTableSelections
+            // 
+            this.panelSideTableSelections.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelSideTableSelections.BorderColor = System.Drawing.Color.Silver;
+            this.panelSideTableSelections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSideTableSelections.Controls.Add(this.tableSelections);
+            this.panelSideTableSelections.Curvature = 8;
+            this.panelSideTableSelections.Location = new System.Drawing.Point(15, 282);
+            this.panelSideTableSelections.Name = "panelSideTableSelections";
+            this.panelSideTableSelections.Size = new System.Drawing.Size(194, 177);
+            this.panelSideTableSelections.TabIndex = 6;
+            // 
+            // tableSelections
+            // 
+            this.tableSelections.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableSelections.ColumnCount = 2;
+            this.tableSelections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableSelections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableSelections.Location = new System.Drawing.Point(-1, -1);
+            this.tableSelections.Name = "tableSelections";
+            this.tableSelections.RowCount = 8;
+            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSelections.Size = new System.Drawing.Size(139, 24);
+            this.tableSelections.TabIndex = 0;
+            // 
+            // customPanel4
+            // 
+            this.customPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.customPanel4.BorderColor = System.Drawing.Color.Silver;
+            this.customPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customPanel4.Controls.Add(this.label1);
+            this.customPanel4.Curvature = 8;
+            this.customPanel4.Location = new System.Drawing.Point(15, 162);
+            this.customPanel4.Name = "customPanel4";
+            this.customPanel4.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.customPanel4.Size = new System.Drawing.Size(194, 47);
+            this.customPanel4.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(10, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(174, 47);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "LGF15-RHL2-N-200-LS10-L-N-05-LD100";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Location = new System.Drawing.Point(15, 206);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(194, 23);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "訊息：";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // customPanel3
+            // 
+            this.customPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.customPanel3.BorderColor = System.Drawing.Color.Silver;
+            this.customPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customPanel3.Controls.Add(this.label5);
+            this.customPanel3.Curvature = 8;
+            this.customPanel3.Location = new System.Drawing.Point(15, 232);
+            this.customPanel3.Name = "customPanel3";
+            this.customPanel3.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.customPanel3.Size = new System.Drawing.Size(194, 44);
+            this.customPanel3.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(10, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(174, 44);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "*您所填入的荷重已經超出範圍1~200kg內，請重新填寫。";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(15, 136);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(194, 23);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "目前條件型號：";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // customPanel2
             // 
             this.customPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.customPanel2.BorderColor = System.Drawing.Color.Silver;
             this.customPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.customPanel2.Curvature = 8;
             this.customPanel2.Location = new System.Drawing.Point(15, 28);
@@ -404,69 +508,13 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Font = new System.Drawing.Font("新細明體", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.Location = new System.Drawing.Point(15, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(194, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "即時條件顯示";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.Location = new System.Drawing.Point(15, 136);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(194, 23);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "目前條件型號：";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // customPanel3
-            // 
-            this.customPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel3.Curvature = 8;
-            this.customPanel3.Location = new System.Drawing.Point(15, 232);
-            this.customPanel3.Name = "customPanel3";
-            this.customPanel3.Size = new System.Drawing.Size(194, 44);
-            this.customPanel3.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.Location = new System.Drawing.Point(15, 206);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 23);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "訊息：";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // customPanel4
-            // 
-            this.customPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel4.Curvature = 8;
-            this.customPanel4.Location = new System.Drawing.Point(15, 162);
-            this.customPanel4.Name = "customPanel4";
-            this.customPanel4.Size = new System.Drawing.Size(194, 47);
-            this.customPanel4.TabIndex = 5;
-            // 
-            // customPanel5
-            // 
-            this.customPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customPanel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel5.Curvature = 8;
-            this.customPanel5.Location = new System.Drawing.Point(15, 282);
-            this.customPanel5.Name = "customPanel5";
-            this.customPanel5.Size = new System.Drawing.Size(194, 152);
-            this.customPanel5.TabIndex = 6;
             // 
             // FormMain
             // 
@@ -484,46 +532,48 @@
             this.splitContainerBase.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).EndInit();
             this.splitContainerBase.ResumeLayout(false);
-            this.binaryExplorerBar.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToyo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdExplorer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdNarrow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdZoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).EndInit();
-            this.customPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.binaryExplorerBar.ResumeLayout(false);
+            this.panelSideTable.ResumeLayout(false);
+            this.panelSideTableSelections.ResumeLayout(false);
+            this.customPanel4.ResumeLayout(false);
+            this.customPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.SplitContainer splitContainerBase;
         private System.Windows.Forms.PictureBox pictureBoxToyo;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox cmdExplorer;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox cmdNarrow;
-        private System.Windows.Forms.PictureBox cmdZoom;
-        private System.Windows.Forms.PictureBox cmdClose;
         private Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBar binaryExplorerBar;
         private Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel panelStep1;
         private Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel panelStep2;
         private Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel panelStep3;
         private Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel panelStep4;
         private Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel panelStep5;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private CustomPanel customPanel1;
-        private CustomPanel customPanel5;
         private CustomPanel customPanel4;
         private System.Windows.Forms.Label label4;
         private CustomPanel customPanel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private CustomPanel customPanel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.SplitContainer splitContainerBase;
+        public System.Windows.Forms.PictureBox cmdExplorer;
+        public System.Windows.Forms.PictureBox cmdNarrow;
+        public System.Windows.Forms.PictureBox cmdClose;
+        public System.Windows.Forms.TableLayoutPanel tableSelections;
+        public CustomPanel panelSideTableSelections;
+        public CustomPanel panelSideTable;
     }
 }
 

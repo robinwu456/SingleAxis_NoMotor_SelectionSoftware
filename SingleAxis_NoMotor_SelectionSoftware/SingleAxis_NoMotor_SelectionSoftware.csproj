@@ -68,6 +68,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SideTable.cs" />
+    <Compile Include="Step1.cs" />
+    <Compile Include="Step2.cs" />
+    <Compile Include="Step3.cs" />
+    <Compile Include="Step4.cs" />
+    <Compile Include="Step5.cs" />
+    <Compile Include="ToyoBorder.cs" />
     <EmbeddedResource Include="CustomPanelControl\CustomPanel.resx" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
