@@ -39,20 +39,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }        
 
         private void FormMain_Load(object sender, EventArgs e) {
-            sideTable.Update();
+            sideTable.Update(null, null);
             //sideTable.UpdateMsg("*您所填入的荷重已經超出範圍1~200kg內，請重新填寫。", SideTable.MsgStatus.Alarm);
         }
 
         private void CmdConfirm_Click(object sender, EventArgs e) {
             curStep = (Step)((int)curStep + 1);
-            sideTable.Update();
+            sideTable.Update(null, null);
             binaryExplorerBar.Panels[(int)curStep].CurrentExplorerBarPanelState = BinaryExplorerBarPanelState.Expanded;
             MoveConfirmPanelToStep(curStep);
         }
 
         private void CmdReset_Click(object sender, EventArgs e) {
             curStep = Step.Step1;
-            sideTable.Update();
+            sideTable.Update(null, null);
             binaryExplorerBar.Panels.Cast<BinaryExplorerBarPanel>().ToList().ForEach(panel => panel.CurrentExplorerBarPanelState = BinaryExplorerBarPanelState.Collapsed);
             binaryExplorerBar.Panels[(int)curStep].CurrentExplorerBarPanelState = BinaryExplorerBarPanelState.Expanded;            
             MoveConfirmPanelToStep(curStep);
@@ -62,6 +62,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             BinaryExplorerBarPanel targetPanel = Controls.Find("panelStep" + ((int)step + 1), true)[0] as BinaryExplorerBarPanel;
             panelConfirmBtns.Parent.Controls.Remove(panelConfirmBtns);
             targetPanel.Controls.Add(panelConfirmBtns);
+            binaryExplorerBar.ScrollControlIntoView(panelConfirmBtns);
         }
 
         private bool binaryExplorerBar_BinaryExplorerBarPanelTitleClicked(object sender, BinaryExplorerBarPanel thePanelObject) {

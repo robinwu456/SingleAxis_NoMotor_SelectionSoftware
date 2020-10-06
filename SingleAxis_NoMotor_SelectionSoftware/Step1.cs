@@ -16,8 +16,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void InitEvents() {
             formMain.picStandardEnv.MouseDown += PicStandardEnv_MouseDown;
-            formMain.picDustFree.MouseDown += PicDustFree_MouseDown;            
-        }        
+            formMain.picDustFree.MouseDown += PicDustFree_MouseDown;
+
+            // 側邊欄更新
+            formMain.optStandardEnv.CheckedChanged += formMain.sideTable.Update;
+            formMain.optDustFreeEnv.CheckedChanged += formMain.sideTable.Update;
+            formMain.optUpsideDownUse.CheckedChanged += formMain.sideTable.Update;
+            formMain.optWallHangingUse.CheckedChanged += formMain.sideTable.Update;
+            formMain.optHorizontalUse.CheckedChanged += formMain.sideTable.Update;
+            formMain.cboModelType.SelectedValueChanged += formMain.sideTable.Update;
+        }
 
         private void PicDustFree_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e) {
             formMain.optDustFreeEnv.Checked = true;

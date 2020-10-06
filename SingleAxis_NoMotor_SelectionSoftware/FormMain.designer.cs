@@ -31,33 +31,18 @@
             this.cmdNarrow = new System.Windows.Forms.PictureBox();
             this.cmdClose = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.panelSideTableSelections = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.tableSelections = new System.Windows.Forms.TableLayoutPanel();
-            this.customPanel4 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.customPanel3 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.customPanel2 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.label2 = new System.Windows.Forms.Label();
             this.binaryExplorerBar = new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBar();
             this.panelStep1 = new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel();
             this.panelConfirmBtns = new System.Windows.Forms.TableLayoutPanel();
-            this.panelCmdReset = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.cmdReset = new System.Windows.Forms.Label();
-            this.panelCmdConfirm = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.cmdConfirm = new System.Windows.Forms.Label();
             this.cboModelType = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelSetupMode = new System.Windows.Forms.Panel();
             this.optUpsideDownUse = new System.Windows.Forms.RadioButton();
             this.optHorizontalUse = new System.Windows.Forms.RadioButton();
             this.optWallHangingUse = new System.Windows.Forms.RadioButton();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelSetupEnv = new System.Windows.Forms.Panel();
             this.picDustFree = new System.Windows.Forms.PictureBox();
             this.optDustFreeEnv = new System.Windows.Forms.RadioButton();
             this.optStandardEnv = new System.Windows.Forms.RadioButton();
@@ -70,6 +55,21 @@
             this.panelStep3 = new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel();
             this.panelStep4 = new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel();
             this.panelStep5 = new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel();
+            this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.panelSideTableSelections = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.tableSelections = new System.Windows.Forms.TableLayoutPanel();
+            this.customPanel4 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.customPanel3 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.customPanel2 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panelCmdReset = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.cmdReset = new System.Windows.Forms.Label();
+            this.panelCmdConfirm = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.cmdConfirm = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -81,20 +81,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdNarrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).BeginInit();
             this.panel1.SuspendLayout();
+            this.binaryExplorerBar.SuspendLayout();
+            this.panelStep1.SuspendLayout();
+            this.panelConfirmBtns.SuspendLayout();
+            this.panelSetupMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            this.panelSetupEnv.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picDustFree)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picStandardEnv)).BeginInit();
             this.panelSideTable.SuspendLayout();
             this.panelSideTableSelections.SuspendLayout();
             this.customPanel4.SuspendLayout();
             this.customPanel3.SuspendLayout();
-            this.binaryExplorerBar.SuspendLayout();
-            this.panelStep1.SuspendLayout();
-            this.panelConfirmBtns.SuspendLayout();
             this.panelCmdReset.SuspendLayout();
             this.panelCmdConfirm.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picDustFree)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picStandardEnv)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -198,161 +198,11 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.Controls.Add(this.panelSideTable);
-            this.panel1.Location = new System.Drawing.Point(809, 4);
+            this.panel1.Location = new System.Drawing.Point(809, 6);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(20, 50, 50, 100);
             this.panel1.Size = new System.Drawing.Size(294, 726);
             this.panel1.TabIndex = 1;
-            // 
-            // panelSideTable
-            // 
-            this.panelSideTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelSideTable.Controls.Add(this.panelSideTableSelections);
-            this.panelSideTable.Controls.Add(this.customPanel4);
-            this.panelSideTable.Controls.Add(this.label4);
-            this.panelSideTable.Controls.Add(this.customPanel3);
-            this.panelSideTable.Controls.Add(this.label3);
-            this.panelSideTable.Controls.Add(this.customPanel2);
-            this.panelSideTable.Controls.Add(this.label2);
-            this.panelSideTable.Curvature = 8;
-            this.panelSideTable.Location = new System.Drawing.Point(20, 125);
-            this.panelSideTable.Name = "panelSideTable";
-            this.panelSideTable.Padding = new System.Windows.Forms.Padding(15, 5, 15, 0);
-            this.panelSideTable.Size = new System.Drawing.Size(224, 474);
-            this.panelSideTable.TabIndex = 0;
-            // 
-            // panelSideTableSelections
-            // 
-            this.panelSideTableSelections.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelSideTableSelections.BorderColor = System.Drawing.Color.Silver;
-            this.panelSideTableSelections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelSideTableSelections.Controls.Add(this.tableSelections);
-            this.panelSideTableSelections.Curvature = 8;
-            this.panelSideTableSelections.Location = new System.Drawing.Point(15, 282);
-            this.panelSideTableSelections.Name = "panelSideTableSelections";
-            this.panelSideTableSelections.Size = new System.Drawing.Size(194, 177);
-            this.panelSideTableSelections.TabIndex = 6;
-            // 
-            // tableSelections
-            // 
-            this.tableSelections.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableSelections.ColumnCount = 2;
-            this.tableSelections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableSelections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableSelections.Location = new System.Drawing.Point(-1, -1);
-            this.tableSelections.Name = "tableSelections";
-            this.tableSelections.RowCount = 8;
-            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSelections.Size = new System.Drawing.Size(139, 24);
-            this.tableSelections.TabIndex = 0;
-            // 
-            // customPanel4
-            // 
-            this.customPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customPanel4.BorderColor = System.Drawing.Color.Silver;
-            this.customPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel4.Controls.Add(this.label1);
-            this.customPanel4.Curvature = 8;
-            this.customPanel4.Location = new System.Drawing.Point(15, 162);
-            this.customPanel4.Name = "customPanel4";
-            this.customPanel4.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.customPanel4.Size = new System.Drawing.Size(194, 47);
-            this.customPanel4.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(10, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 47);
-            this.label1.TabIndex = 0;
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(15, 206);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 23);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "訊息：";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // customPanel3
-            // 
-            this.customPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customPanel3.BorderColor = System.Drawing.Color.Silver;
-            this.customPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel3.Controls.Add(this.label5);
-            this.customPanel3.Curvature = 8;
-            this.customPanel3.Location = new System.Drawing.Point(15, 232);
-            this.customPanel3.Name = "customPanel3";
-            this.customPanel3.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.customPanel3.Size = new System.Drawing.Size(194, 44);
-            this.customPanel3.TabIndex = 3;
-            // 
-            // label5
-            // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(10, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(174, 44);
-            this.label5.TabIndex = 0;
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(15, 136);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(194, 23);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "目前條件型號：";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // customPanel2
-            // 
-            this.customPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customPanel2.BorderColor = System.Drawing.Color.Silver;
-            this.customPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel2.Curvature = 8;
-            this.customPanel2.Location = new System.Drawing.Point(15, 28);
-            this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(194, 108);
-            this.customPanel2.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(15, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 23);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "即時條件顯示";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // binaryExplorerBar
             // 
@@ -406,8 +256,8 @@
             this.panelStep1.Controls.Add(this.cboModelType);
             this.panelStep1.Controls.Add(this.label10);
             this.panelStep1.Controls.Add(this.label11);
-            this.panelStep1.Controls.Add(this.panel2);
-            this.panelStep1.Controls.Add(this.panel3);
+            this.panelStep1.Controls.Add(this.panelSetupMode);
+            this.panelStep1.Controls.Add(this.panelSetupEnv);
             this.panelStep1.Controls.Add(this.label6);
             this.panelStep1.Controls.Add(this.label7);
             this.panelStep1.Controls.Add(this.label8);
@@ -453,52 +303,6 @@
             this.panelConfirmBtns.Size = new System.Drawing.Size(749, 35);
             this.panelConfirmBtns.TabIndex = 23;
             // 
-            // panelCmdReset
-            // 
-            this.panelCmdReset.BackColor = System.Drawing.Color.Gray;
-            this.panelCmdReset.Controls.Add(this.cmdReset);
-            this.panelCmdReset.Curvature = 15;
-            this.panelCmdReset.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCmdReset.Location = new System.Drawing.Point(376, 3);
-            this.panelCmdReset.Name = "panelCmdReset";
-            this.panelCmdReset.Size = new System.Drawing.Size(118, 29);
-            this.panelCmdReset.TabIndex = 24;
-            // 
-            // cmdReset
-            // 
-            this.cmdReset.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmdReset.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.cmdReset.ForeColor = System.Drawing.Color.White;
-            this.cmdReset.Location = new System.Drawing.Point(0, 0);
-            this.cmdReset.Name = "cmdReset";
-            this.cmdReset.Size = new System.Drawing.Size(118, 29);
-            this.cmdReset.TabIndex = 0;
-            this.cmdReset.Text = "重新檢索";
-            this.cmdReset.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelCmdConfirm
-            // 
-            this.panelCmdConfirm.BackColor = System.Drawing.Color.Red;
-            this.panelCmdConfirm.Controls.Add(this.cmdConfirm);
-            this.panelCmdConfirm.Curvature = 15;
-            this.panelCmdConfirm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCmdConfirm.Location = new System.Drawing.Point(252, 3);
-            this.panelCmdConfirm.Name = "panelCmdConfirm";
-            this.panelCmdConfirm.Size = new System.Drawing.Size(118, 29);
-            this.panelCmdConfirm.TabIndex = 23;
-            // 
-            // cmdConfirm
-            // 
-            this.cmdConfirm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmdConfirm.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.cmdConfirm.ForeColor = System.Drawing.Color.White;
-            this.cmdConfirm.Location = new System.Drawing.Point(0, 0);
-            this.cmdConfirm.Name = "cmdConfirm";
-            this.cmdConfirm.Size = new System.Drawing.Size(118, 29);
-            this.cmdConfirm.TabIndex = 0;
-            this.cmdConfirm.Text = "確認條件";
-            this.cmdConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // cboModelType
             // 
             this.cboModelType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -532,16 +336,16 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "機構型態";
             // 
-            // panel2
+            // panelSetupMode
             // 
-            this.panel2.Controls.Add(this.optUpsideDownUse);
-            this.panel2.Controls.Add(this.optHorizontalUse);
-            this.panel2.Controls.Add(this.optWallHangingUse);
-            this.panel2.Controls.Add(this.pictureBox13);
-            this.panel2.Location = new System.Drawing.Point(372, 105);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(342, 271);
-            this.panel2.TabIndex = 19;
+            this.panelSetupMode.Controls.Add(this.optUpsideDownUse);
+            this.panelSetupMode.Controls.Add(this.optHorizontalUse);
+            this.panelSetupMode.Controls.Add(this.optWallHangingUse);
+            this.panelSetupMode.Controls.Add(this.pictureBox13);
+            this.panelSetupMode.Location = new System.Drawing.Point(372, 105);
+            this.panelSetupMode.Name = "panelSetupMode";
+            this.panelSetupMode.Size = new System.Drawing.Size(342, 271);
+            this.panelSetupMode.TabIndex = 19;
             // 
             // optUpsideDownUse
             // 
@@ -592,16 +396,16 @@
             this.pictureBox13.TabIndex = 8;
             this.pictureBox13.TabStop = false;
             // 
-            // panel3
+            // panelSetupEnv
             // 
-            this.panel3.Controls.Add(this.picDustFree);
-            this.panel3.Controls.Add(this.optDustFreeEnv);
-            this.panel3.Controls.Add(this.optStandardEnv);
-            this.panel3.Controls.Add(this.picStandardEnv);
-            this.panel3.Location = new System.Drawing.Point(13, 102);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(323, 140);
-            this.panel3.TabIndex = 18;
+            this.panelSetupEnv.Controls.Add(this.picDustFree);
+            this.panelSetupEnv.Controls.Add(this.optDustFreeEnv);
+            this.panelSetupEnv.Controls.Add(this.optStandardEnv);
+            this.panelSetupEnv.Controls.Add(this.picStandardEnv);
+            this.panelSetupEnv.Location = new System.Drawing.Point(13, 102);
+            this.panelSetupEnv.Name = "panelSetupEnv";
+            this.panelSetupEnv.Size = new System.Drawing.Size(323, 140);
+            this.panelSetupEnv.TabIndex = 18;
             // 
             // picDustFree
             // 
@@ -804,6 +608,202 @@
             this.panelStep5.Size = new System.Drawing.Size(749, 0);
             this.panelStep5.TabIndex = 7;
             // 
+            // panelSideTable
+            // 
+            this.panelSideTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSideTable.Controls.Add(this.panelSideTableSelections);
+            this.panelSideTable.Controls.Add(this.customPanel4);
+            this.panelSideTable.Controls.Add(this.label4);
+            this.panelSideTable.Controls.Add(this.customPanel3);
+            this.panelSideTable.Controls.Add(this.label3);
+            this.panelSideTable.Controls.Add(this.customPanel2);
+            this.panelSideTable.Controls.Add(this.label2);
+            this.panelSideTable.Curvature = 8;
+            this.panelSideTable.Location = new System.Drawing.Point(20, 125);
+            this.panelSideTable.Name = "panelSideTable";
+            this.panelSideTable.Padding = new System.Windows.Forms.Padding(15, 5, 15, 0);
+            this.panelSideTable.Size = new System.Drawing.Size(224, 474);
+            this.panelSideTable.TabIndex = 0;
+            // 
+            // panelSideTableSelections
+            // 
+            this.panelSideTableSelections.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelSideTableSelections.BorderColor = System.Drawing.Color.Silver;
+            this.panelSideTableSelections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSideTableSelections.Controls.Add(this.tableSelections);
+            this.panelSideTableSelections.Curvature = 8;
+            this.panelSideTableSelections.Location = new System.Drawing.Point(15, 282);
+            this.panelSideTableSelections.Name = "panelSideTableSelections";
+            this.panelSideTableSelections.Size = new System.Drawing.Size(194, 177);
+            this.panelSideTableSelections.TabIndex = 6;
+            // 
+            // tableSelections
+            // 
+            this.tableSelections.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableSelections.ColumnCount = 2;
+            this.tableSelections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableSelections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableSelections.Location = new System.Drawing.Point(-1, -1);
+            this.tableSelections.Name = "tableSelections";
+            this.tableSelections.RowCount = 8;
+            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSelections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSelections.Size = new System.Drawing.Size(139, 24);
+            this.tableSelections.TabIndex = 0;
+            // 
+            // customPanel4
+            // 
+            this.customPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.customPanel4.BorderColor = System.Drawing.Color.Silver;
+            this.customPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customPanel4.Controls.Add(this.label1);
+            this.customPanel4.Curvature = 8;
+            this.customPanel4.Location = new System.Drawing.Point(15, 162);
+            this.customPanel4.Name = "customPanel4";
+            this.customPanel4.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.customPanel4.Size = new System.Drawing.Size(194, 47);
+            this.customPanel4.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(10, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(174, 47);
+            this.label1.TabIndex = 0;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Location = new System.Drawing.Point(15, 206);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(194, 23);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "訊息：";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // customPanel3
+            // 
+            this.customPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.customPanel3.BorderColor = System.Drawing.Color.Silver;
+            this.customPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customPanel3.Controls.Add(this.label5);
+            this.customPanel3.Curvature = 8;
+            this.customPanel3.Location = new System.Drawing.Point(15, 232);
+            this.customPanel3.Name = "customPanel3";
+            this.customPanel3.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.customPanel3.Size = new System.Drawing.Size(194, 44);
+            this.customPanel3.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(10, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(174, 44);
+            this.label5.TabIndex = 0;
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(15, 136);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(194, 23);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "目前條件型號：";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // customPanel2
+            // 
+            this.customPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.customPanel2.BorderColor = System.Drawing.Color.Silver;
+            this.customPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customPanel2.Curvature = 8;
+            this.customPanel2.Location = new System.Drawing.Point(15, 28);
+            this.customPanel2.Name = "customPanel2";
+            this.customPanel2.Size = new System.Drawing.Size(194, 108);
+            this.customPanel2.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.Location = new System.Drawing.Point(15, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(194, 23);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "即時條件顯示";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelCmdReset
+            // 
+            this.panelCmdReset.BackColor = System.Drawing.Color.Gray;
+            this.panelCmdReset.Controls.Add(this.cmdReset);
+            this.panelCmdReset.Curvature = 15;
+            this.panelCmdReset.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCmdReset.Location = new System.Drawing.Point(376, 3);
+            this.panelCmdReset.Name = "panelCmdReset";
+            this.panelCmdReset.Size = new System.Drawing.Size(118, 29);
+            this.panelCmdReset.TabIndex = 24;
+            // 
+            // cmdReset
+            // 
+            this.cmdReset.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmdReset.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmdReset.ForeColor = System.Drawing.Color.White;
+            this.cmdReset.Location = new System.Drawing.Point(0, 0);
+            this.cmdReset.Name = "cmdReset";
+            this.cmdReset.Size = new System.Drawing.Size(118, 29);
+            this.cmdReset.TabIndex = 0;
+            this.cmdReset.Text = "重新檢索";
+            this.cmdReset.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelCmdConfirm
+            // 
+            this.panelCmdConfirm.BackColor = System.Drawing.Color.Red;
+            this.panelCmdConfirm.Controls.Add(this.cmdConfirm);
+            this.panelCmdConfirm.Curvature = 15;
+            this.panelCmdConfirm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCmdConfirm.Location = new System.Drawing.Point(252, 3);
+            this.panelCmdConfirm.Name = "panelCmdConfirm";
+            this.panelCmdConfirm.Size = new System.Drawing.Size(118, 29);
+            this.panelCmdConfirm.TabIndex = 23;
+            // 
+            // cmdConfirm
+            // 
+            this.cmdConfirm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmdConfirm.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmdConfirm.ForeColor = System.Drawing.Color.White;
+            this.cmdConfirm.Location = new System.Drawing.Point(0, 0);
+            this.cmdConfirm.Name = "cmdConfirm";
+            this.cmdConfirm.Size = new System.Drawing.Size(118, 29);
+            this.cmdConfirm.TabIndex = 0;
+            this.cmdConfirm.Text = "確認條件";
+            this.cmdConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -827,23 +827,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdNarrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panelSideTable.ResumeLayout(false);
-            this.panelSideTableSelections.ResumeLayout(false);
-            this.customPanel4.ResumeLayout(false);
-            this.customPanel3.ResumeLayout(false);
             this.binaryExplorerBar.ResumeLayout(false);
             this.panelStep1.ResumeLayout(false);
             this.panelStep1.PerformLayout();
             this.panelConfirmBtns.ResumeLayout(false);
-            this.panelCmdReset.ResumeLayout(false);
-            this.panelCmdConfirm.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelSetupMode.ResumeLayout(false);
+            this.panelSetupMode.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panelSetupEnv.ResumeLayout(false);
+            this.panelSetupEnv.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDustFree)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStandardEnv)).EndInit();
+            this.panelSideTable.ResumeLayout(false);
+            this.panelSideTableSelections.ResumeLayout(false);
+            this.customPanel4.ResumeLayout(false);
+            this.customPanel3.ResumeLayout(false);
+            this.panelCmdReset.ResumeLayout(false);
+            this.panelCmdConfirm.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -857,7 +857,6 @@
         private Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel panelStep3;
         private Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel panelStep4;
         private Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel panelStep5;
-        private System.Windows.Forms.Panel panel1;
         private CustomPanel customPanel4;
         private System.Windows.Forms.Label label4;
         private CustomPanel customPanel3;
@@ -875,12 +874,10 @@
         public CustomPanel panelSideTable;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.RadioButton optUpsideDownUse;
         public System.Windows.Forms.RadioButton optHorizontalUse;
         public System.Windows.Forms.RadioButton optWallHangingUse;
         private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.RadioButton optDustFreeEnv;
         public System.Windows.Forms.RadioButton optStandardEnv;
         private System.Windows.Forms.Label label6;
@@ -896,6 +893,9 @@
         public System.Windows.Forms.PictureBox picDustFree;
         public System.Windows.Forms.PictureBox picStandardEnv;
         public Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBar binaryExplorerBar;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel panelSetupEnv;
+        public System.Windows.Forms.Panel panelSetupMode;
     }
 }
 
