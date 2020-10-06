@@ -73,6 +73,36 @@ namespace SingleAxis_NoMotor_SelectionSoftware.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap dustFreeEnviroment {
+            get {
+                object obj = ResourceManager.GetObject("dustFreeEnviroment", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap setupMode {
+            get {
+                object obj = ResourceManager.GetObject("setupMode", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap standardEnviroment {
+            get {
+                object obj = ResourceManager.GetObject("standardEnviroment", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap title_bg01 {
             get {
                 object obj = ResourceManager.GetObject("title_bg01", resourceCulture);

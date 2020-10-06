@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="CustomPanelBtnColorSwitch.cs" />
     <Compile Include="CustomPanelControl\CornerCurveMode.cs" />
     <Compile Include="CustomPanelControl\CustomPanel.cs">
       <SubType>Component</SubType>
@@ -134,6 +136,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\title_bg01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dustFreeEnviroment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setupMode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\standardEnviroment.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -118,11 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Top_Zoom2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Top_Zoom2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="title_bg01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\title_bg01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Top_Close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Top_Close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Top_web2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Top_web2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Top_Narrow2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Top_Narrow2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,8 +145,8 @@
   <data name="Top_RE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Top_RE2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Top_web2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Top_web2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Top_Zoom2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Top_Zoom2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Top_Narrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Top_Narrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,7 +154,13 @@
   <data name="Top_Zoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Top_Zoom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="title_bg01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\title_bg01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dustFreeEnviroment" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dustFreeEnviroment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setupMode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setupMode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="standardEnviroment" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\standardEnviroment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
