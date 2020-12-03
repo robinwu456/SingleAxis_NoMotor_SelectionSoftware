@@ -35,9 +35,13 @@
     <Reference Include="Binarymission.WinForms.Controls.BinaryExplorerBar">
       <HintPath>..\..\CustomControls\UIControlSuite\ExplorerBar\Binarymission.WinForms.Controls.BinaryExplorerBar.dll</HintPath>
     </Reference>
+    <Reference Include="CustomToggle">
+      <HintPath>..\..\CustomPicControls\CustomToggle\bin\Debug\CustomToggle.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,6 +66,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomPanelControl\TransparentPanel.Designer.cs" />
+    <Compile Include="CustomTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>

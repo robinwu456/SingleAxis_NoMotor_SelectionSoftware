@@ -36,6 +36,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             customPanelBtnColorSwitch = new CustomPanelBtnColorSwitch(this);
             // Step
             step1 = new Step1(this);
+            step2 = new Step2(this);
         }        
 
         private void FormMain_Load(object sender, EventArgs e) {
