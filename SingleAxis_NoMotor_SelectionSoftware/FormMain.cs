@@ -20,21 +20,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public Step4 step4;
         public Step5 step5;
 
-        private CustomPanelBtnColorSwitch customPanelBtnColorSwitch;
-
         public FormMain() {
             InitializeComponent();
 
-            // 確認panel
-            cmdConfirm.Click += CmdConfirm_Click;
-            cmdReset.Click += CmdReset_Click;
-
+            binaryExplorerBar.Size = new Size(934, 726);
             // 標題列
             ToyoBorder toyoBorder = new ToyoBorder(this);
             // 測邊欄
             sideTable = new SideTable(this);
-            // 按鈕hover變色
-            customPanelBtnColorSwitch = new CustomPanelBtnColorSwitch(this);
             // Step
             step1 = new Step1(this);
             step2 = new Step2(this);

@@ -35,6 +35,9 @@
     <Reference Include="Binarymission.WinForms.Controls.BinaryExplorerBar">
       <HintPath>..\..\CustomControls\UIControlSuite\ExplorerBar\Binarymission.WinForms.Controls.BinaryExplorerBar.dll</HintPath>
     </Reference>
+    <Reference Include="CustomButton">
+      <HintPath>..\..\CustomPicControls\CustomButton\bin\Debug\CustomButton.dll</HintPath>
+    </Reference>
     <Reference Include="CustomToggle">
       <HintPath>..\..\CustomPicControls\CustomToggle\bin\Debug\CustomToggle.dll</HintPath>
     </Reference>
@@ -53,7 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
-    <Compile Include="CustomPanelBtnColorSwitch.cs" />
     <Compile Include="CustomPanelControl\CornerCurveMode.cs" />
     <Compile Include="CustomPanelControl\CustomPanel.cs">
       <SubType>Component</SubType>

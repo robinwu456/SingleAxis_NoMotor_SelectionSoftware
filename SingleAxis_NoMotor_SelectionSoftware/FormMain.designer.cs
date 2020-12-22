@@ -35,6 +35,8 @@
             this.binaryExplorerBar = new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBar();
             this.panelStep1 = new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel();
             this.panelConfirmBtns = new System.Windows.Forms.TableLayoutPanel();
+            this.cmdConfirm = new CustomButton.CustomButton();
+            this.cmdReset = new CustomButton.CustomButton();
             this.cboModelType = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panelSetupMode = new System.Windows.Forms.Panel();
@@ -138,10 +140,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.customPanel2 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.panelCmdReset = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.cmdReset = new System.Windows.Forms.Label();
-            this.panelCmdConfirm = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.cmdConfirm = new System.Windows.Forms.Label();
             this.customPanel9 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.label59 = new System.Windows.Forms.Label();
             this.customPanel8 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
@@ -183,8 +181,6 @@
             this.panelSideTableSelections.SuspendLayout();
             this.customPanel4.SuspendLayout();
             this.customPanel3.SuspendLayout();
-            this.panelCmdReset.SuspendLayout();
-            this.panelCmdConfirm.SuspendLayout();
             this.customPanel9.SuspendLayout();
             this.customPanel8.SuspendLayout();
             this.customPanel7.SuspendLayout();
@@ -290,12 +286,11 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.Controls.Add(this.panelSideTable);
             this.panel1.Location = new System.Drawing.Point(916, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(20, 50, 50, 100);
-            this.panel1.Size = new System.Drawing.Size(296, 746);
+            this.panel1.Size = new System.Drawing.Size(296, 726);
             this.panel1.TabIndex = 1;
             // 
             // binaryExplorerBar
@@ -336,7 +331,7 @@
             this.panelStep5});
             this.binaryExplorerBar.PerformAnimation = false;
             this.binaryExplorerBar.ReflectCurrentXPTheme = false;
-            this.binaryExplorerBar.Size = new System.Drawing.Size(934, 726);
+            this.binaryExplorerBar.Size = new System.Drawing.Size(910, 726);
             this.binaryExplorerBar.TabIndex = 0;
             this.binaryExplorerBar.ThemeOrCustomColors = Binarymission.WinForms.Controls.NavigationControls.ThemeOrCustomColors.CustomColors;
             this.binaryExplorerBar.XPTheme = Binarymission.WinForms.Controls.NavigationControls.XPTheme.None;
@@ -374,7 +369,7 @@
             this.panelStep1.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep1.PanelTitleText = "    Step.1                     環境與安裝方式";
             this.panelStep1.ReflectCurrentXPTheme = false;
-            this.panelStep1.Size = new System.Drawing.Size(853, 448);
+            this.panelStep1.Size = new System.Drawing.Size(829, 448);
             this.panelStep1.TabIndex = 0;
             // 
             // panelConfirmBtns
@@ -384,15 +379,57 @@
             this.panelConfirmBtns.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.panelConfirmBtns.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.panelConfirmBtns.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.panelConfirmBtns.Controls.Add(this.panelCmdReset, 2, 0);
-            this.panelConfirmBtns.Controls.Add(this.panelCmdConfirm, 1, 0);
+            this.panelConfirmBtns.Controls.Add(this.cmdConfirm, 1, 0);
+            this.panelConfirmBtns.Controls.Add(this.cmdReset, 2, 0);
             this.panelConfirmBtns.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelConfirmBtns.Location = new System.Drawing.Point(0, 413);
             this.panelConfirmBtns.Name = "panelConfirmBtns";
             this.panelConfirmBtns.RowCount = 1;
             this.panelConfirmBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelConfirmBtns.Size = new System.Drawing.Size(853, 35);
+            this.panelConfirmBtns.Size = new System.Drawing.Size(829, 35);
             this.panelConfirmBtns.TabIndex = 23;
+            // 
+            // cmdConfirm
+            // 
+            this.cmdConfirm.BackColor = System.Drawing.Color.Transparent;
+            this.cmdConfirm.BackColor_Hover = System.Drawing.Color.DarkRed;
+            this.cmdConfirm.BackColor_Normal = System.Drawing.Color.Red;
+            this.cmdConfirm.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdConfirm.BackColor2_Hover = System.Drawing.Color.DarkRed;
+            this.cmdConfirm.BackColor2_Normal = System.Drawing.Color.Red;
+            this.cmdConfirm.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdConfirm.ButtonEnabled = true;
+            this.cmdConfirm.ButtonText = "確認條件";
+            this.cmdConfirm.Curvature = 15;
+            this.cmdConfirm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmdConfirm.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdConfirm.Location = new System.Drawing.Point(279, 3);
+            this.cmdConfirm.Name = "cmdConfirm";
+            this.cmdConfirm.Size = new System.Drawing.Size(132, 29);
+            this.cmdConfirm.TabIndex = 26;
+            this.cmdConfirm.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
+            this.cmdConfirm.Click += new System.EventHandler(this.CmdConfirm_Click);
+            // 
+            // cmdReset
+            // 
+            this.cmdReset.BackColor = System.Drawing.Color.Transparent;
+            this.cmdReset.BackColor_Hover = System.Drawing.Color.DimGray;
+            this.cmdReset.BackColor_Normal = System.Drawing.Color.Gray;
+            this.cmdReset.BackColor_Press = System.Drawing.Color.Black;
+            this.cmdReset.BackColor2_Hover = System.Drawing.Color.DimGray;
+            this.cmdReset.BackColor2_Normal = System.Drawing.Color.Gray;
+            this.cmdReset.BackColor2_Press = System.Drawing.Color.Black;
+            this.cmdReset.ButtonEnabled = true;
+            this.cmdReset.ButtonText = "重新檢索";
+            this.cmdReset.Curvature = 15;
+            this.cmdReset.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmdReset.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdReset.Location = new System.Drawing.Point(417, 3);
+            this.cmdReset.Name = "cmdReset";
+            this.cmdReset.Size = new System.Drawing.Size(132, 29);
+            this.cmdReset.TabIndex = 25;
+            this.cmdReset.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
+            this.cmdReset.Click += new System.EventHandler(this.CmdReset_Click);
             // 
             // cboModelType
             // 
@@ -591,7 +628,7 @@
             this.panelStep2.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep2.PanelTitleText = "    Step.2                     輸入使用條件";
             this.panelStep2.ReflectCurrentXPTheme = false;
-            this.panelStep2.Size = new System.Drawing.Size(853, 0);
+            this.panelStep2.Size = new System.Drawing.Size(829, 0);
             this.panelStep2.TabIndex = 1;
             // 
             // spAdvanceOptions
@@ -1504,7 +1541,7 @@
             this.panelStep3.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep3.PanelTitleText = "    Step.3                     型號選型條件";
             this.panelStep3.ReflectCurrentXPTheme = false;
-            this.panelStep3.Size = new System.Drawing.Size(853, 0);
+            this.panelStep3.Size = new System.Drawing.Size(829, 0);
             this.panelStep3.TabIndex = 3;
             // 
             // panelStep4
@@ -1533,7 +1570,7 @@
             this.panelStep4.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep4.PanelTitleText = "    Step.4                     驅動器與電纜";
             this.panelStep4.ReflectCurrentXPTheme = false;
-            this.panelStep4.Size = new System.Drawing.Size(853, 0);
+            this.panelStep4.Size = new System.Drawing.Size(829, 0);
             this.panelStep4.TabIndex = 5;
             // 
             // panelStep5
@@ -1562,7 +1599,7 @@
             this.panelStep5.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep5.PanelTitleText = "    Step.5                     選型結果";
             this.panelStep5.ReflectCurrentXPTheme = false;
-            this.panelStep5.Size = new System.Drawing.Size(853, 0);
+            this.panelStep5.Size = new System.Drawing.Size(829, 0);
             this.panelStep5.TabIndex = 7;
             // 
             // panelSideTable
@@ -1715,52 +1752,6 @@
             this.label2.Text = "即時條件顯示";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panelCmdReset
-            // 
-            this.panelCmdReset.BackColor = System.Drawing.Color.Gray;
-            this.panelCmdReset.Controls.Add(this.cmdReset);
-            this.panelCmdReset.Curvature = 15;
-            this.panelCmdReset.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCmdReset.Location = new System.Drawing.Point(429, 3);
-            this.panelCmdReset.Name = "panelCmdReset";
-            this.panelCmdReset.Size = new System.Drawing.Size(136, 29);
-            this.panelCmdReset.TabIndex = 24;
-            // 
-            // cmdReset
-            // 
-            this.cmdReset.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmdReset.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.cmdReset.ForeColor = System.Drawing.Color.White;
-            this.cmdReset.Location = new System.Drawing.Point(0, 0);
-            this.cmdReset.Name = "cmdReset";
-            this.cmdReset.Size = new System.Drawing.Size(136, 29);
-            this.cmdReset.TabIndex = 0;
-            this.cmdReset.Text = "重新檢索";
-            this.cmdReset.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelCmdConfirm
-            // 
-            this.panelCmdConfirm.BackColor = System.Drawing.Color.Red;
-            this.panelCmdConfirm.Controls.Add(this.cmdConfirm);
-            this.panelCmdConfirm.Curvature = 15;
-            this.panelCmdConfirm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCmdConfirm.Location = new System.Drawing.Point(287, 3);
-            this.panelCmdConfirm.Name = "panelCmdConfirm";
-            this.panelCmdConfirm.Size = new System.Drawing.Size(136, 29);
-            this.panelCmdConfirm.TabIndex = 23;
-            // 
-            // cmdConfirm
-            // 
-            this.cmdConfirm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmdConfirm.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.cmdConfirm.ForeColor = System.Drawing.Color.White;
-            this.cmdConfirm.Location = new System.Drawing.Point(0, 0);
-            this.cmdConfirm.Name = "cmdConfirm";
-            this.cmdConfirm.Size = new System.Drawing.Size(136, 29);
-            this.cmdConfirm.TabIndex = 0;
-            this.cmdConfirm.Text = "確認條件";
-            this.cmdConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // customPanel9
             // 
             this.customPanel9.BackColor = System.Drawing.Color.Black;
@@ -1908,8 +1899,6 @@
             this.panelSideTableSelections.ResumeLayout(false);
             this.customPanel4.ResumeLayout(false);
             this.customPanel3.ResumeLayout(false);
-            this.panelCmdReset.ResumeLayout(false);
-            this.panelCmdConfirm.ResumeLayout(false);
             this.customPanel9.ResumeLayout(false);
             this.customPanel8.ResumeLayout(false);
             this.customPanel7.ResumeLayout(false);
@@ -1953,10 +1942,6 @@
         private System.Windows.Forms.Label label9;
         public System.Windows.Forms.ComboBox cboModelType;
         private System.Windows.Forms.TableLayoutPanel panelConfirmBtns;
-        public CustomPanel panelCmdConfirm;
-        public CustomPanel panelCmdReset;
-        public System.Windows.Forms.Label cmdConfirm;
-        public System.Windows.Forms.Label cmdReset;
         public System.Windows.Forms.PictureBox picDustFree;
         public System.Windows.Forms.PictureBox picStandardEnv;
         public Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBar binaryExplorerBar;
@@ -2045,6 +2030,8 @@
         private CustomPanel customPanel6;
         private System.Windows.Forms.Label label56;
         public System.Windows.Forms.TabControl tabControlAdvanceOptions;
+        private CustomButton.CustomButton cmdReset;
+        private CustomButton.CustomButton cmdConfirm;
     }
 }
 
