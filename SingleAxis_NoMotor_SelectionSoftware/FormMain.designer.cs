@@ -23,6 +23,7 @@
         /// 這個方法的內容。
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.splitContainerBase = new System.Windows.Forms.SplitContainer();
             this.pictureBoxToyo = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -66,6 +67,49 @@
             this.labelStrokeAlarm = new System.Windows.Forms.Label();
             this.txtStroke = new System.Windows.Forms.TextBox();
             this.txtStopTime = new System.Windows.Forms.TextBox();
+            this.tabControlAdvanceOptions = new System.Windows.Forms.TabControl();
+            this.tabMoment = new System.Windows.Forms.TabPage();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.tabMotorParams = new System.Windows.Forms.TabPage();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.tabUseFrequence = new System.Windows.Forms.TabPage();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.tabReducer = new System.Windows.Forms.TabPage();
+            this.cboSensor = new System.Windows.Forms.ComboBox();
+            this.label55 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.labelAccelSpeedAlarm = new System.Windows.Forms.Label();
@@ -83,49 +127,6 @@
             this.panelStep3 = new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel();
             this.panelStep4 = new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel();
             this.panelStep5 = new Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanel();
-            this.tabReducer = new System.Windows.Forms.TabPage();
-            this.label55 = new System.Windows.Forms.Label();
-            this.cboSensor = new System.Windows.Forms.ComboBox();
-            this.tabUseFrequence = new System.Windows.Forms.TabPage();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.tabMotorParams = new System.Windows.Forms.TabPage();
-            this.label43 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.tabMoment = new System.Windows.Forms.TabPage();
-            this.label27 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.tabControlAdvanceOptions = new System.Windows.Forms.TabControl();
             this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.panelSideTableSelections = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.tableSelections = new System.Windows.Forms.TableLayoutPanel();
@@ -173,11 +174,11 @@
             this.spAdvanceOptions.Panel1.SuspendLayout();
             this.spAdvanceOptions.Panel2.SuspendLayout();
             this.spAdvanceOptions.SuspendLayout();
-            this.tabReducer.SuspendLayout();
-            this.tabUseFrequence.SuspendLayout();
-            this.tabMotorParams.SuspendLayout();
-            this.tabMoment.SuspendLayout();
             this.tabControlAdvanceOptions.SuspendLayout();
+            this.tabMoment.SuspendLayout();
+            this.tabMotorParams.SuspendLayout();
+            this.tabUseFrequence.SuspendLayout();
+            this.tabReducer.SuspendLayout();
             this.panelSideTable.SuspendLayout();
             this.panelSideTableSelections.SuspendLayout();
             this.customPanel4.SuspendLayout();
@@ -291,10 +292,10 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.Controls.Add(this.panelSideTable);
-            this.panel1.Location = new System.Drawing.Point(916, 14);
+            this.panel1.Location = new System.Drawing.Point(916, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(20, 50, 50, 100);
-            this.panel1.Size = new System.Drawing.Size(296, 726);
+            this.panel1.Size = new System.Drawing.Size(296, 746);
             this.panel1.TabIndex = 1;
             // 
             // binaryExplorerBar
@@ -365,15 +366,15 @@
             this.panelStep1.PanelTitleBackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
             this.panelStep1.PanelTitleBackgroundImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep1.PanelTitleBackStyle = Binarymission.WinForms.Controls.NavigationControls.ControlBackgroundPaintingStyle.ImageStyle;
-            this.panelStep1.PanelTitleFont = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.panelStep1.PanelTitleForeColor = System.Drawing.Color.White;
+            this.panelStep1.PanelTitleFont = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.panelStep1.PanelTitleForeColor = System.Drawing.SystemColors.ControlDark;
             this.panelStep1.PanelTitleGradientBeginColor = System.Drawing.Color.White;
             this.panelStep1.PanelTitleGradientEndColor = System.Drawing.Color.White;
             this.panelStep1.PanelTitleHoverColor = System.Drawing.Color.Empty;
             this.panelStep1.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
-            this.panelStep1.PanelTitleText = "    Step.1";
+            this.panelStep1.PanelTitleText = "    Step.1                     環境與安裝方式";
             this.panelStep1.ReflectCurrentXPTheme = false;
-            this.panelStep1.Size = new System.Drawing.Size(831, 448);
+            this.panelStep1.Size = new System.Drawing.Size(853, 448);
             this.panelStep1.TabIndex = 0;
             // 
             // panelConfirmBtns
@@ -390,7 +391,7 @@
             this.panelConfirmBtns.Name = "panelConfirmBtns";
             this.panelConfirmBtns.RowCount = 1;
             this.panelConfirmBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelConfirmBtns.Size = new System.Drawing.Size(831, 35);
+            this.panelConfirmBtns.Size = new System.Drawing.Size(853, 35);
             this.panelConfirmBtns.TabIndex = 23;
             // 
             // cboModelType
@@ -568,6 +569,7 @@
             this.panelStep2.Controls.Add(this.labelAdvanceOption);
             this.panelStep2.Controls.Add(this.label18);
             this.panelStep2.Controls.Add(this.label19);
+            this.panelStep2.CurrentExplorerBarPanelState = Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanelState.Collapsed;
             this.panelStep2.CurrentHeight = 406;
             this.panelStep2.DrawPanelTitleBackgroundImageWithTheDefaultHeight = false;
             this.panelStep2.DrawPanelTitleText = true;
@@ -581,15 +583,15 @@
             this.panelStep2.PanelTitleBackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
             this.panelStep2.PanelTitleBackgroundImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep2.PanelTitleBackStyle = Binarymission.WinForms.Controls.NavigationControls.ControlBackgroundPaintingStyle.ImageStyle;
-            this.panelStep2.PanelTitleFont = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.panelStep2.PanelTitleForeColor = System.Drawing.Color.White;
+            this.panelStep2.PanelTitleFont = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
+            this.panelStep2.PanelTitleForeColor = System.Drawing.SystemColors.ControlDark;
             this.panelStep2.PanelTitleGradientBeginColor = System.Drawing.Color.White;
             this.panelStep2.PanelTitleGradientEndColor = System.Drawing.Color.White;
             this.panelStep2.PanelTitleHoverColor = System.Drawing.Color.Empty;
             this.panelStep2.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
-            this.panelStep2.PanelTitleText = "    Step.2";
+            this.panelStep2.PanelTitleText = "    Step.2                     輸入使用條件";
             this.panelStep2.ReflectCurrentXPTheme = false;
-            this.panelStep2.Size = new System.Drawing.Size(831, 406);
+            this.panelStep2.Size = new System.Drawing.Size(853, 0);
             this.panelStep2.TabIndex = 1;
             // 
             // spAdvanceOptions
@@ -812,6 +814,518 @@
             this.txtStopTime.Text = "單趟時間";
             this.txtStopTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // tabControlAdvanceOptions
+            // 
+            this.tabControlAdvanceOptions.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.tabControlAdvanceOptions.Controls.Add(this.tabMoment);
+            this.tabControlAdvanceOptions.Controls.Add(this.tabMotorParams);
+            this.tabControlAdvanceOptions.Controls.Add(this.tabUseFrequence);
+            this.tabControlAdvanceOptions.Controls.Add(this.tabReducer);
+            this.tabControlAdvanceOptions.Location = new System.Drawing.Point(31, 96);
+            this.tabControlAdvanceOptions.Multiline = true;
+            this.tabControlAdvanceOptions.Name = "tabControlAdvanceOptions";
+            this.tabControlAdvanceOptions.SelectedIndex = 0;
+            this.tabControlAdvanceOptions.Size = new System.Drawing.Size(449, 175);
+            this.tabControlAdvanceOptions.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabControlAdvanceOptions.TabIndex = 214;
+            // 
+            // tabMoment
+            // 
+            this.tabMoment.Controls.Add(this.label29);
+            this.tabMoment.Controls.Add(this.label26);
+            this.tabMoment.Controls.Add(this.label25);
+            this.tabMoment.Controls.Add(this.textBox1);
+            this.tabMoment.Controls.Add(this.textBox2);
+            this.tabMoment.Controls.Add(this.textBox3);
+            this.tabMoment.Controls.Add(this.label30);
+            this.tabMoment.Controls.Add(this.label24);
+            this.tabMoment.Controls.Add(this.label17);
+            this.tabMoment.Controls.Add(this.label31);
+            this.tabMoment.Controls.Add(this.label28);
+            this.tabMoment.Controls.Add(this.label27);
+            this.tabMoment.Location = new System.Drawing.Point(4, 4);
+            this.tabMoment.Name = "tabMoment";
+            this.tabMoment.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMoment.Size = new System.Drawing.Size(441, 149);
+            this.tabMoment.TabIndex = 0;
+            this.tabMoment.Text = "力舉參數";
+            this.tabMoment.UseVisualStyleBackColor = true;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label29.Location = new System.Drawing.Point(186, 62);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(49, 20);
+            this.label29.TabIndex = 217;
+            this.label29.Text = "[mm]";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label26.Location = new System.Drawing.Point(185, 113);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(49, 20);
+            this.label26.TabIndex = 213;
+            this.label26.Text = "[mm]";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label25.Location = new System.Drawing.Point(29, 12);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(65, 19);
+            this.label25.TabIndex = 206;
+            this.label25.Text = "力矩A：";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.textBox1.ForeColor = System.Drawing.Color.Silver;
+            this.textBox1.Location = new System.Drawing.Point(100, 8);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(80, 29);
+            this.textBox1.TabIndex = 207;
+            this.textBox1.Text = "0.1~3";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.textBox2.ForeColor = System.Drawing.Color.Silver;
+            this.textBox2.Location = new System.Drawing.Point(99, 110);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(80, 29);
+            this.textBox2.TabIndex = 211;
+            this.textBox2.Text = "0.1~3";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.textBox3.ForeColor = System.Drawing.Color.Silver;
+            this.textBox3.Location = new System.Drawing.Point(100, 59);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(80, 29);
+            this.textBox3.TabIndex = 215;
+            this.textBox3.Text = "0.1~3";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label30.ForeColor = System.Drawing.Color.Red;
+            this.label30.Location = new System.Drawing.Point(97, 91);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(92, 16);
+            this.label30.TabIndex = 216;
+            this.label30.Text = "請輸入有效力矩";
+            this.label30.Visible = false;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label24.ForeColor = System.Drawing.Color.Red;
+            this.label24.Location = new System.Drawing.Point(97, 40);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(92, 16);
+            this.label24.TabIndex = 208;
+            this.label24.Text = "請輸入有效力矩";
+            this.label24.Visible = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label17.Location = new System.Drawing.Point(186, 11);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(49, 20);
+            this.label17.TabIndex = 209;
+            this.label17.Text = "[mm]";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
+            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label31.Location = new System.Drawing.Point(29, 63);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(64, 19);
+            this.label31.TabIndex = 214;
+            this.label31.Text = "力矩C：";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label28.Location = new System.Drawing.Point(29, 114);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(64, 19);
+            this.label28.TabIndex = 210;
+            this.label28.Text = "力矩B：";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label27.ForeColor = System.Drawing.Color.Red;
+            this.label27.Location = new System.Drawing.Point(96, 143);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(92, 16);
+            this.label27.TabIndex = 212;
+            this.label27.Text = "請輸入有效力矩";
+            this.label27.Visible = false;
+            // 
+            // tabMotorParams
+            // 
+            this.tabMotorParams.Controls.Add(this.label35);
+            this.tabMotorParams.Controls.Add(this.label36);
+            this.tabMotorParams.Controls.Add(this.label37);
+            this.tabMotorParams.Controls.Add(this.textBox5);
+            this.tabMotorParams.Controls.Add(this.textBox6);
+            this.tabMotorParams.Controls.Add(this.textBox7);
+            this.tabMotorParams.Controls.Add(this.label38);
+            this.tabMotorParams.Controls.Add(this.label39);
+            this.tabMotorParams.Controls.Add(this.label40);
+            this.tabMotorParams.Controls.Add(this.label41);
+            this.tabMotorParams.Controls.Add(this.label42);
+            this.tabMotorParams.Controls.Add(this.label43);
+            this.tabMotorParams.Location = new System.Drawing.Point(4, 4);
+            this.tabMotorParams.Name = "tabMotorParams";
+            this.tabMotorParams.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMotorParams.Size = new System.Drawing.Size(441, 149);
+            this.tabMotorParams.TabIndex = 1;
+            this.tabMotorParams.Text = "馬達參數";
+            this.tabMotorParams.UseVisualStyleBackColor = true;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label35.Location = new System.Drawing.Point(186, 62);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(66, 20);
+            this.label35.TabIndex = 229;
+            this.label35.Text = "[kg-m²]";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label36.Location = new System.Drawing.Point(186, 113);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(47, 20);
+            this.label36.TabIndex = 225;
+            this.label36.Text = "[Nm]";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
+            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label37.Location = new System.Drawing.Point(9, 12);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(84, 19);
+            this.label37.TabIndex = 218;
+            this.label37.Text = "額定轉矩：";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.textBox5.ForeColor = System.Drawing.Color.Silver;
+            this.textBox5.Location = new System.Drawing.Point(100, 8);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(80, 29);
+            this.textBox5.TabIndex = 219;
+            this.textBox5.Text = "0.1~3";
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.textBox6.ForeColor = System.Drawing.Color.Silver;
+            this.textBox6.Location = new System.Drawing.Point(100, 110);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(80, 29);
+            this.textBox6.TabIndex = 223;
+            this.textBox6.Text = "0.1~3";
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.textBox7.ForeColor = System.Drawing.Color.Silver;
+            this.textBox7.Location = new System.Drawing.Point(100, 59);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(80, 29);
+            this.textBox7.TabIndex = 227;
+            this.textBox7.Text = "0.1~3";
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label38.ForeColor = System.Drawing.Color.Red;
+            this.label38.Location = new System.Drawing.Point(97, 91);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(116, 16);
+            this.label38.TabIndex = 228;
+            this.label38.Text = "請輸入有效轉動慣量";
+            this.label38.Visible = false;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label39.ForeColor = System.Drawing.Color.Red;
+            this.label39.Location = new System.Drawing.Point(97, 40);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(116, 16);
+            this.label39.TabIndex = 220;
+            this.label39.Text = "請輸入有效額定轉矩";
+            this.label39.Visible = false;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label40.Location = new System.Drawing.Point(186, 11);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(47, 20);
+            this.label40.TabIndex = 221;
+            this.label40.Text = "[Nm]";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
+            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label41.Location = new System.Drawing.Point(9, 63);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(84, 19);
+            this.label41.TabIndex = 226;
+            this.label41.Text = "轉動慣量：";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
+            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label42.Location = new System.Drawing.Point(10, 114);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(84, 19);
+            this.label42.TabIndex = 222;
+            this.label42.Text = "最大轉矩：";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label43.ForeColor = System.Drawing.Color.Red;
+            this.label43.Location = new System.Drawing.Point(97, 142);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(116, 16);
+            this.label43.TabIndex = 224;
+            this.label43.Text = "請輸入有效最大轉矩";
+            this.label43.Visible = false;
+            // 
+            // tabUseFrequence
+            // 
+            this.tabUseFrequence.Controls.Add(this.label44);
+            this.tabUseFrequence.Controls.Add(this.label45);
+            this.tabUseFrequence.Controls.Add(this.label46);
+            this.tabUseFrequence.Controls.Add(this.textBox8);
+            this.tabUseFrequence.Controls.Add(this.textBox10);
+            this.tabUseFrequence.Controls.Add(this.textBox9);
+            this.tabUseFrequence.Controls.Add(this.label47);
+            this.tabUseFrequence.Controls.Add(this.label49);
+            this.tabUseFrequence.Controls.Add(this.label50);
+            this.tabUseFrequence.Controls.Add(this.label52);
+            this.tabUseFrequence.Controls.Add(this.label54);
+            this.tabUseFrequence.Controls.Add(this.label53);
+            this.tabUseFrequence.Location = new System.Drawing.Point(4, 4);
+            this.tabUseFrequence.Name = "tabUseFrequence";
+            this.tabUseFrequence.Size = new System.Drawing.Size(441, 149);
+            this.tabUseFrequence.TabIndex = 2;
+            this.tabUseFrequence.Text = "使用頻率";
+            this.tabUseFrequence.UseVisualStyleBackColor = true;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label44.Location = new System.Drawing.Point(186, 113);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(74, 20);
+            this.label44.TabIndex = 229;
+            this.label44.Text = "[小時/日]";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label45.Location = new System.Drawing.Point(186, 62);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(58, 20);
+            this.label45.TabIndex = 225;
+            this.label45.Text = "[日/年]";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
+            this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label46.Location = new System.Drawing.Point(9, 12);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(84, 19);
+            this.label46.TabIndex = 218;
+            this.label46.Text = "往反次數：";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.textBox8.ForeColor = System.Drawing.Color.Silver;
+            this.textBox8.Location = new System.Drawing.Point(100, 8);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(80, 29);
+            this.textBox8.TabIndex = 219;
+            this.textBox8.Text = "0.1~3";
+            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.textBox10.ForeColor = System.Drawing.Color.Silver;
+            this.textBox10.Location = new System.Drawing.Point(100, 110);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(80, 29);
+            this.textBox10.TabIndex = 227;
+            this.textBox10.Text = "0.1~3";
+            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.textBox9.ForeColor = System.Drawing.Color.Silver;
+            this.textBox9.Location = new System.Drawing.Point(100, 59);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(80, 29);
+            this.textBox9.TabIndex = 223;
+            this.textBox9.Text = "0.1~3";
+            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label47.ForeColor = System.Drawing.Color.Red;
+            this.label47.Location = new System.Drawing.Point(97, 142);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(92, 16);
+            this.label47.TabIndex = 228;
+            this.label47.Text = "請輸入有效時間";
+            this.label47.Visible = false;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label49.ForeColor = System.Drawing.Color.Red;
+            this.label49.Location = new System.Drawing.Point(97, 40);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(92, 16);
+            this.label49.TabIndex = 220;
+            this.label49.Text = "請輸入有效次數";
+            this.label49.Visible = false;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label50.Location = new System.Drawing.Point(186, 11);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(58, 20);
+            this.label50.TabIndex = 221;
+            this.label50.Text = "[趟/分]";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
+            this.label52.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label52.Location = new System.Drawing.Point(9, 114);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(84, 19);
+            this.label52.TabIndex = 226;
+            this.label52.Text = "運轉時間：";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label54.ForeColor = System.Drawing.Color.Red;
+            this.label54.Location = new System.Drawing.Point(97, 91);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(92, 16);
+            this.label54.TabIndex = 224;
+            this.label54.Text = "請輸入有效天數";
+            this.label54.Visible = false;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
+            this.label53.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label53.Location = new System.Drawing.Point(10, 63);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(84, 19);
+            this.label53.TabIndex = 222;
+            this.label53.Text = "運轉天數：";
+            // 
+            // tabReducer
+            // 
+            this.tabReducer.Controls.Add(this.cboSensor);
+            this.tabReducer.Controls.Add(this.label55);
+            this.tabReducer.Location = new System.Drawing.Point(4, 4);
+            this.tabReducer.Name = "tabReducer";
+            this.tabReducer.Size = new System.Drawing.Size(441, 149);
+            this.tabReducer.TabIndex = 3;
+            this.tabReducer.Text = "減速比";
+            this.tabReducer.UseVisualStyleBackColor = true;
+            // 
+            // cboSensor
+            // 
+            this.cboSensor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboSensor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSensor.DropDownWidth = 180;
+            this.cboSensor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboSensor.Font = new System.Drawing.Font("微軟正黑體", 11F);
+            this.cboSensor.ForeColor = System.Drawing.Color.White;
+            this.cboSensor.FormattingEnabled = true;
+            this.cboSensor.Location = new System.Drawing.Point(100, 8);
+            this.cboSensor.Name = "cboSensor";
+            this.cboSensor.Size = new System.Drawing.Size(101, 27);
+            this.cboSensor.TabIndex = 221;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
+            this.label55.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label55.Location = new System.Drawing.Point(9, 12);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(72, 19);
+            this.label55.TabIndex = 220;
+            this.label55.Text = "Model：";
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -902,6 +1416,12 @@
             // 
             // toggleAdvanceOptions
             // 
+            this.toggleAdvanceOptions.BackImg_ToggleOff_Disabled = null;
+            this.toggleAdvanceOptions.BackImg_ToggleOff_Hover = null;
+            this.toggleAdvanceOptions.BackImg_ToggleOff_Normal = ((System.Drawing.Image)(resources.GetObject("toggleAdvanceOptions.BackImg_ToggleOff_Normal")));
+            this.toggleAdvanceOptions.BackImg_ToggleOn_Disabled = null;
+            this.toggleAdvanceOptions.BackImg_ToggleOn_Hover = null;
+            this.toggleAdvanceOptions.BackImg_ToggleOn_Normal = null;
             this.toggleAdvanceOptions.Checked = false;
             this.toggleAdvanceOptions.Location = new System.Drawing.Point(461, 33);
             this.toggleAdvanceOptions.Name = "toggleAdvanceOptions";
@@ -966,7 +1486,7 @@
             this.panelStep3.DrawPanelTitleBackgroundImageWithTheDefaultHeight = false;
             this.panelStep3.DrawPanelTitleText = true;
             this.panelStep3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelStep3.Location = new System.Drawing.Point(50, 1011);
+            this.panelStep3.Location = new System.Drawing.Point(50, 605);
             this.panelStep3.Name = "panelStep3";
             this.panelStep3.OnHoverUpDownArrowColor = System.Drawing.Color.White;
             this.panelStep3.OnHoverUpDownArrowEllipseFillColor = System.Drawing.Color.White;
@@ -976,15 +1496,15 @@
             this.panelStep3.PanelTitleBackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
             this.panelStep3.PanelTitleBackgroundImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep3.PanelTitleBackStyle = Binarymission.WinForms.Controls.NavigationControls.ControlBackgroundPaintingStyle.ImageStyle;
-            this.panelStep3.PanelTitleFont = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.panelStep3.PanelTitleForeColor = System.Drawing.Color.White;
+            this.panelStep3.PanelTitleFont = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
+            this.panelStep3.PanelTitleForeColor = System.Drawing.SystemColors.ControlDark;
             this.panelStep3.PanelTitleGradientBeginColor = System.Drawing.Color.White;
             this.panelStep3.PanelTitleGradientEndColor = System.Drawing.Color.White;
             this.panelStep3.PanelTitleHoverColor = System.Drawing.Color.Empty;
             this.panelStep3.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
-            this.panelStep3.PanelTitleText = "    Step.3";
+            this.panelStep3.PanelTitleText = "    Step.3                     型號選型條件";
             this.panelStep3.ReflectCurrentXPTheme = false;
-            this.panelStep3.Size = new System.Drawing.Size(831, 0);
+            this.panelStep3.Size = new System.Drawing.Size(853, 0);
             this.panelStep3.TabIndex = 3;
             // 
             // panelStep4
@@ -995,7 +1515,7 @@
             this.panelStep4.CurrentExplorerBarPanelState = Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanelState.Collapsed;
             this.panelStep4.DrawPanelTitleBackgroundImageWithTheDefaultHeight = false;
             this.panelStep4.DrawPanelTitleText = true;
-            this.panelStep4.Location = new System.Drawing.Point(50, 1064);
+            this.panelStep4.Location = new System.Drawing.Point(50, 658);
             this.panelStep4.Name = "panelStep4";
             this.panelStep4.OnHoverUpDownArrowColor = System.Drawing.Color.White;
             this.panelStep4.OnHoverUpDownArrowEllipseFillColor = System.Drawing.Color.White;
@@ -1005,15 +1525,15 @@
             this.panelStep4.PanelTitleBackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
             this.panelStep4.PanelTitleBackgroundImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep4.PanelTitleBackStyle = Binarymission.WinForms.Controls.NavigationControls.ControlBackgroundPaintingStyle.ImageStyle;
-            this.panelStep4.PanelTitleFont = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.panelStep4.PanelTitleForeColor = System.Drawing.Color.White;
+            this.panelStep4.PanelTitleFont = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
+            this.panelStep4.PanelTitleForeColor = System.Drawing.SystemColors.ControlDark;
             this.panelStep4.PanelTitleGradientBeginColor = System.Drawing.Color.White;
             this.panelStep4.PanelTitleGradientEndColor = System.Drawing.Color.White;
             this.panelStep4.PanelTitleHoverColor = System.Drawing.Color.Empty;
             this.panelStep4.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
-            this.panelStep4.PanelTitleText = "    Step.4";
+            this.panelStep4.PanelTitleText = "    Step.4                     驅動器與電纜";
             this.panelStep4.ReflectCurrentXPTheme = false;
-            this.panelStep4.Size = new System.Drawing.Size(831, 0);
+            this.panelStep4.Size = new System.Drawing.Size(853, 0);
             this.panelStep4.TabIndex = 5;
             // 
             // panelStep5
@@ -1024,7 +1544,7 @@
             this.panelStep5.CurrentExplorerBarPanelState = Binarymission.WinForms.Controls.NavigationControls.BinaryExplorerBarPanelState.Collapsed;
             this.panelStep5.DrawPanelTitleBackgroundImageWithTheDefaultHeight = false;
             this.panelStep5.DrawPanelTitleText = true;
-            this.panelStep5.Location = new System.Drawing.Point(50, 1117);
+            this.panelStep5.Location = new System.Drawing.Point(50, 711);
             this.panelStep5.Name = "panelStep5";
             this.panelStep5.OnHoverUpDownArrowColor = System.Drawing.Color.White;
             this.panelStep5.OnHoverUpDownArrowEllipseFillColor = System.Drawing.Color.White;
@@ -1034,528 +1554,16 @@
             this.panelStep5.PanelTitleBackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
             this.panelStep5.PanelTitleBackgroundImageTransparentColor = System.Drawing.Color.Empty;
             this.panelStep5.PanelTitleBackStyle = Binarymission.WinForms.Controls.NavigationControls.ControlBackgroundPaintingStyle.ImageStyle;
-            this.panelStep5.PanelTitleFont = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.panelStep5.PanelTitleForeColor = System.Drawing.Color.White;
+            this.panelStep5.PanelTitleFont = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
+            this.panelStep5.PanelTitleForeColor = System.Drawing.SystemColors.ControlDark;
             this.panelStep5.PanelTitleGradientBeginColor = System.Drawing.Color.White;
             this.panelStep5.PanelTitleGradientEndColor = System.Drawing.Color.White;
             this.panelStep5.PanelTitleHoverColor = System.Drawing.Color.Empty;
             this.panelStep5.PanelTitleImageTransparentColor = System.Drawing.Color.Empty;
-            this.panelStep5.PanelTitleText = "    Step.5";
+            this.panelStep5.PanelTitleText = "    Step.5                     選型結果";
             this.panelStep5.ReflectCurrentXPTheme = false;
-            this.panelStep5.Size = new System.Drawing.Size(831, 0);
+            this.panelStep5.Size = new System.Drawing.Size(853, 0);
             this.panelStep5.TabIndex = 7;
-            // 
-            // tabReducer
-            // 
-            this.tabReducer.Controls.Add(this.cboSensor);
-            this.tabReducer.Controls.Add(this.label55);
-            this.tabReducer.Location = new System.Drawing.Point(4, 4);
-            this.tabReducer.Name = "tabReducer";
-            this.tabReducer.Size = new System.Drawing.Size(441, 149);
-            this.tabReducer.TabIndex = 3;
-            this.tabReducer.Text = "減速比";
-            this.tabReducer.UseVisualStyleBackColor = true;
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
-            this.label55.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label55.Location = new System.Drawing.Point(9, 12);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(72, 19);
-            this.label55.TabIndex = 220;
-            this.label55.Text = "Model：";
-            // 
-            // cboSensor
-            // 
-            this.cboSensor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cboSensor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSensor.DropDownWidth = 180;
-            this.cboSensor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cboSensor.Font = new System.Drawing.Font("微軟正黑體", 11F);
-            this.cboSensor.ForeColor = System.Drawing.Color.White;
-            this.cboSensor.FormattingEnabled = true;
-            this.cboSensor.Location = new System.Drawing.Point(100, 8);
-            this.cboSensor.Name = "cboSensor";
-            this.cboSensor.Size = new System.Drawing.Size(101, 27);
-            this.cboSensor.TabIndex = 221;
-            // 
-            // tabUseFrequence
-            // 
-            this.tabUseFrequence.Controls.Add(this.label44);
-            this.tabUseFrequence.Controls.Add(this.label45);
-            this.tabUseFrequence.Controls.Add(this.label46);
-            this.tabUseFrequence.Controls.Add(this.textBox8);
-            this.tabUseFrequence.Controls.Add(this.textBox10);
-            this.tabUseFrequence.Controls.Add(this.textBox9);
-            this.tabUseFrequence.Controls.Add(this.label47);
-            this.tabUseFrequence.Controls.Add(this.label49);
-            this.tabUseFrequence.Controls.Add(this.label50);
-            this.tabUseFrequence.Controls.Add(this.label52);
-            this.tabUseFrequence.Controls.Add(this.label54);
-            this.tabUseFrequence.Controls.Add(this.label53);
-            this.tabUseFrequence.Location = new System.Drawing.Point(4, 4);
-            this.tabUseFrequence.Name = "tabUseFrequence";
-            this.tabUseFrequence.Size = new System.Drawing.Size(441, 149);
-            this.tabUseFrequence.TabIndex = 2;
-            this.tabUseFrequence.Text = "使用頻率";
-            this.tabUseFrequence.UseVisualStyleBackColor = true;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
-            this.label53.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label53.Location = new System.Drawing.Point(10, 63);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(84, 19);
-            this.label53.TabIndex = 222;
-            this.label53.Text = "運轉天數：";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label54.ForeColor = System.Drawing.Color.Red;
-            this.label54.Location = new System.Drawing.Point(97, 91);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(92, 16);
-            this.label54.TabIndex = 224;
-            this.label54.Text = "請輸入有效天數";
-            this.label54.Visible = false;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Font = new System.Drawing.Font("微軟正黑體", 12F);
-            this.textBox9.ForeColor = System.Drawing.Color.Silver;
-            this.textBox9.Location = new System.Drawing.Point(100, 59);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(80, 29);
-            this.textBox9.TabIndex = 223;
-            this.textBox9.Text = "0.1~3";
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Font = new System.Drawing.Font("微軟正黑體", 12F);
-            this.textBox10.ForeColor = System.Drawing.Color.Silver;
-            this.textBox10.Location = new System.Drawing.Point(100, 110);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(80, 29);
-            this.textBox10.TabIndex = 227;
-            this.textBox10.Text = "0.1~3";
-            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
-            this.label52.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label52.Location = new System.Drawing.Point(9, 114);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(84, 19);
-            this.label52.TabIndex = 226;
-            this.label52.Text = "運轉時間：";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label50.Location = new System.Drawing.Point(186, 11);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(58, 20);
-            this.label50.TabIndex = 221;
-            this.label50.Text = "[趟/分]";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label49.ForeColor = System.Drawing.Color.Red;
-            this.label49.Location = new System.Drawing.Point(97, 40);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(92, 16);
-            this.label49.TabIndex = 220;
-            this.label49.Text = "請輸入有效次數";
-            this.label49.Visible = false;
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label47.ForeColor = System.Drawing.Color.Red;
-            this.label47.Location = new System.Drawing.Point(97, 142);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(92, 16);
-            this.label47.TabIndex = 228;
-            this.label47.Text = "請輸入有效時間";
-            this.label47.Visible = false;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("微軟正黑體", 12F);
-            this.textBox8.ForeColor = System.Drawing.Color.Silver;
-            this.textBox8.Location = new System.Drawing.Point(100, 8);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(80, 29);
-            this.textBox8.TabIndex = 219;
-            this.textBox8.Text = "0.1~3";
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
-            this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label46.Location = new System.Drawing.Point(9, 12);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(84, 19);
-            this.label46.TabIndex = 218;
-            this.label46.Text = "往反次數：";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label45.Location = new System.Drawing.Point(186, 62);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(58, 20);
-            this.label45.TabIndex = 225;
-            this.label45.Text = "[日/年]";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label44.Location = new System.Drawing.Point(186, 113);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(74, 20);
-            this.label44.TabIndex = 229;
-            this.label44.Text = "[小時/日]";
-            // 
-            // tabMotorParams
-            // 
-            this.tabMotorParams.Controls.Add(this.label35);
-            this.tabMotorParams.Controls.Add(this.label36);
-            this.tabMotorParams.Controls.Add(this.label37);
-            this.tabMotorParams.Controls.Add(this.textBox5);
-            this.tabMotorParams.Controls.Add(this.textBox6);
-            this.tabMotorParams.Controls.Add(this.textBox7);
-            this.tabMotorParams.Controls.Add(this.label38);
-            this.tabMotorParams.Controls.Add(this.label39);
-            this.tabMotorParams.Controls.Add(this.label40);
-            this.tabMotorParams.Controls.Add(this.label41);
-            this.tabMotorParams.Controls.Add(this.label42);
-            this.tabMotorParams.Controls.Add(this.label43);
-            this.tabMotorParams.Location = new System.Drawing.Point(4, 4);
-            this.tabMotorParams.Name = "tabMotorParams";
-            this.tabMotorParams.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMotorParams.Size = new System.Drawing.Size(441, 149);
-            this.tabMotorParams.TabIndex = 1;
-            this.tabMotorParams.Text = "馬達參數";
-            this.tabMotorParams.UseVisualStyleBackColor = true;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label43.ForeColor = System.Drawing.Color.Red;
-            this.label43.Location = new System.Drawing.Point(97, 142);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(116, 16);
-            this.label43.TabIndex = 224;
-            this.label43.Text = "請輸入有效最大轉矩";
-            this.label43.Visible = false;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("微軟正黑體", 12F);
-            this.textBox7.ForeColor = System.Drawing.Color.Silver;
-            this.textBox7.Location = new System.Drawing.Point(100, 59);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(80, 29);
-            this.textBox7.TabIndex = 227;
-            this.textBox7.Text = "0.1~3";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
-            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label42.Location = new System.Drawing.Point(10, 114);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(84, 19);
-            this.label42.TabIndex = 222;
-            this.label42.Text = "最大轉矩：";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("微軟正黑體", 12F);
-            this.textBox6.ForeColor = System.Drawing.Color.Silver;
-            this.textBox6.Location = new System.Drawing.Point(100, 110);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(80, 29);
-            this.textBox6.TabIndex = 223;
-            this.textBox6.Text = "0.1~3";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
-            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label41.Location = new System.Drawing.Point(9, 63);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(84, 19);
-            this.label41.TabIndex = 226;
-            this.label41.Text = "轉動慣量：";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label40.Location = new System.Drawing.Point(186, 11);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(47, 20);
-            this.label40.TabIndex = 221;
-            this.label40.Text = "[Nm]";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label39.ForeColor = System.Drawing.Color.Red;
-            this.label39.Location = new System.Drawing.Point(97, 40);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(116, 16);
-            this.label39.TabIndex = 220;
-            this.label39.Text = "請輸入有效額定轉矩";
-            this.label39.Visible = false;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label38.ForeColor = System.Drawing.Color.Red;
-            this.label38.Location = new System.Drawing.Point(97, 91);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(116, 16);
-            this.label38.TabIndex = 228;
-            this.label38.Text = "請輸入有效轉動慣量";
-            this.label38.Visible = false;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("微軟正黑體", 12F);
-            this.textBox5.ForeColor = System.Drawing.Color.Silver;
-            this.textBox5.Location = new System.Drawing.Point(100, 8);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(80, 29);
-            this.textBox5.TabIndex = 219;
-            this.textBox5.Text = "0.1~3";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
-            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label37.Location = new System.Drawing.Point(9, 12);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(84, 19);
-            this.label37.TabIndex = 218;
-            this.label37.Text = "額定轉矩：";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label36.Location = new System.Drawing.Point(186, 113);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(47, 20);
-            this.label36.TabIndex = 225;
-            this.label36.Text = "[Nm]";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label35.Location = new System.Drawing.Point(186, 62);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(66, 20);
-            this.label35.TabIndex = 229;
-            this.label35.Text = "[kg-m²]";
-            // 
-            // tabMoment
-            // 
-            this.tabMoment.Controls.Add(this.label29);
-            this.tabMoment.Controls.Add(this.label26);
-            this.tabMoment.Controls.Add(this.label25);
-            this.tabMoment.Controls.Add(this.textBox1);
-            this.tabMoment.Controls.Add(this.textBox2);
-            this.tabMoment.Controls.Add(this.textBox3);
-            this.tabMoment.Controls.Add(this.label30);
-            this.tabMoment.Controls.Add(this.label24);
-            this.tabMoment.Controls.Add(this.label17);
-            this.tabMoment.Controls.Add(this.label31);
-            this.tabMoment.Controls.Add(this.label28);
-            this.tabMoment.Controls.Add(this.label27);
-            this.tabMoment.Location = new System.Drawing.Point(4, 4);
-            this.tabMoment.Name = "tabMoment";
-            this.tabMoment.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMoment.Size = new System.Drawing.Size(441, 149);
-            this.tabMoment.TabIndex = 0;
-            this.tabMoment.Text = "力舉參數";
-            this.tabMoment.UseVisualStyleBackColor = true;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label27.ForeColor = System.Drawing.Color.Red;
-            this.label27.Location = new System.Drawing.Point(96, 143);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(92, 16);
-            this.label27.TabIndex = 212;
-            this.label27.Text = "請輸入有效力矩";
-            this.label27.Visible = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("微軟正黑體", 12F);
-            this.textBox3.ForeColor = System.Drawing.Color.Silver;
-            this.textBox3.Location = new System.Drawing.Point(100, 59);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(80, 29);
-            this.textBox3.TabIndex = 215;
-            this.textBox3.Text = "0.1~3";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
-            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label28.Location = new System.Drawing.Point(29, 114);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(64, 19);
-            this.label28.TabIndex = 210;
-            this.label28.Text = "力矩B：";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("微軟正黑體", 12F);
-            this.textBox2.ForeColor = System.Drawing.Color.Silver;
-            this.textBox2.Location = new System.Drawing.Point(99, 110);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(80, 29);
-            this.textBox2.TabIndex = 211;
-            this.textBox2.Text = "0.1~3";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
-            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label31.Location = new System.Drawing.Point(29, 63);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(64, 19);
-            this.label31.TabIndex = 214;
-            this.label31.Text = "力矩C：";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label17.Location = new System.Drawing.Point(186, 11);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(49, 20);
-            this.label17.TabIndex = 209;
-            this.label17.Text = "[mm]";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label24.ForeColor = System.Drawing.Color.Red;
-            this.label24.Location = new System.Drawing.Point(97, 40);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(92, 16);
-            this.label24.TabIndex = 208;
-            this.label24.Text = "請輸入有效力矩";
-            this.label24.Visible = false;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label30.ForeColor = System.Drawing.Color.Red;
-            this.label30.Location = new System.Drawing.Point(97, 91);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(92, 16);
-            this.label30.TabIndex = 216;
-            this.label30.Text = "請輸入有效力矩";
-            this.label30.Visible = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("微軟正黑體", 12F);
-            this.textBox1.ForeColor = System.Drawing.Color.Silver;
-            this.textBox1.Location = new System.Drawing.Point(100, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(80, 29);
-            this.textBox1.TabIndex = 207;
-            this.textBox1.Text = "0.1~3";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
-            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label25.Location = new System.Drawing.Point(29, 12);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(65, 19);
-            this.label25.TabIndex = 206;
-            this.label25.Text = "力矩A：";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label26.Location = new System.Drawing.Point(185, 113);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(49, 20);
-            this.label26.TabIndex = 213;
-            this.label26.Text = "[mm]";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label29.Location = new System.Drawing.Point(186, 62);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(49, 20);
-            this.label29.TabIndex = 217;
-            this.label29.Text = "[mm]";
-            // 
-            // tabControlAdvanceOptions
-            // 
-            this.tabControlAdvanceOptions.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.tabControlAdvanceOptions.Controls.Add(this.tabMoment);
-            this.tabControlAdvanceOptions.Controls.Add(this.tabMotorParams);
-            this.tabControlAdvanceOptions.Controls.Add(this.tabUseFrequence);
-            this.tabControlAdvanceOptions.Controls.Add(this.tabReducer);
-            this.tabControlAdvanceOptions.Location = new System.Drawing.Point(31, 96);
-            this.tabControlAdvanceOptions.Multiline = true;
-            this.tabControlAdvanceOptions.Name = "tabControlAdvanceOptions";
-            this.tabControlAdvanceOptions.SelectedIndex = 0;
-            this.tabControlAdvanceOptions.Size = new System.Drawing.Size(449, 175);
-            this.tabControlAdvanceOptions.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControlAdvanceOptions.TabIndex = 214;
             // 
             // panelSideTable
             // 
@@ -1713,9 +1721,9 @@
             this.panelCmdReset.Controls.Add(this.cmdReset);
             this.panelCmdReset.Curvature = 15;
             this.panelCmdReset.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCmdReset.Location = new System.Drawing.Point(417, 3);
+            this.panelCmdReset.Location = new System.Drawing.Point(429, 3);
             this.panelCmdReset.Name = "panelCmdReset";
-            this.panelCmdReset.Size = new System.Drawing.Size(132, 29);
+            this.panelCmdReset.Size = new System.Drawing.Size(136, 29);
             this.panelCmdReset.TabIndex = 24;
             // 
             // cmdReset
@@ -1725,7 +1733,7 @@
             this.cmdReset.ForeColor = System.Drawing.Color.White;
             this.cmdReset.Location = new System.Drawing.Point(0, 0);
             this.cmdReset.Name = "cmdReset";
-            this.cmdReset.Size = new System.Drawing.Size(132, 29);
+            this.cmdReset.Size = new System.Drawing.Size(136, 29);
             this.cmdReset.TabIndex = 0;
             this.cmdReset.Text = "重新檢索";
             this.cmdReset.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1736,9 +1744,9 @@
             this.panelCmdConfirm.Controls.Add(this.cmdConfirm);
             this.panelCmdConfirm.Curvature = 15;
             this.panelCmdConfirm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCmdConfirm.Location = new System.Drawing.Point(279, 3);
+            this.panelCmdConfirm.Location = new System.Drawing.Point(287, 3);
             this.panelCmdConfirm.Name = "panelCmdConfirm";
-            this.panelCmdConfirm.Size = new System.Drawing.Size(132, 29);
+            this.panelCmdConfirm.Size = new System.Drawing.Size(136, 29);
             this.panelCmdConfirm.TabIndex = 23;
             // 
             // cmdConfirm
@@ -1748,7 +1756,7 @@
             this.cmdConfirm.ForeColor = System.Drawing.Color.White;
             this.cmdConfirm.Location = new System.Drawing.Point(0, 0);
             this.cmdConfirm.Name = "cmdConfirm";
-            this.cmdConfirm.Size = new System.Drawing.Size(132, 29);
+            this.cmdConfirm.Size = new System.Drawing.Size(136, 29);
             this.cmdConfirm.TabIndex = 0;
             this.cmdConfirm.Text = "確認條件";
             this.cmdConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1887,15 +1895,15 @@
             this.spAdvanceOptions.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spAdvanceOptions)).EndInit();
             this.spAdvanceOptions.ResumeLayout(false);
-            this.tabReducer.ResumeLayout(false);
-            this.tabReducer.PerformLayout();
-            this.tabUseFrequence.ResumeLayout(false);
-            this.tabUseFrequence.PerformLayout();
-            this.tabMotorParams.ResumeLayout(false);
-            this.tabMotorParams.PerformLayout();
+            this.tabControlAdvanceOptions.ResumeLayout(false);
             this.tabMoment.ResumeLayout(false);
             this.tabMoment.PerformLayout();
-            this.tabControlAdvanceOptions.ResumeLayout(false);
+            this.tabMotorParams.ResumeLayout(false);
+            this.tabMotorParams.PerformLayout();
+            this.tabUseFrequence.ResumeLayout(false);
+            this.tabUseFrequence.PerformLayout();
+            this.tabReducer.ResumeLayout(false);
+            this.tabReducer.PerformLayout();
             this.panelSideTable.ResumeLayout(false);
             this.panelSideTableSelections.ResumeLayout(false);
             this.customPanel4.ResumeLayout(false);

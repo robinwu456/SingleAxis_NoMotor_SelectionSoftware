@@ -7,12 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Binarymission.WinForms.Controls.NavigationControls;
+using System.Threading;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public partial class FormMain : Form {
         public SideTable sideTable;
-        private CustomPanelBtnColorSwitch customPanelBtnColorSwitch;
-
         public enum Step { Step1, Step2, Step3, Step4, Step5 }
         public Step curStep = Step.Step1;
         public Step1 step1;
@@ -20,6 +19,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public Step3 step3;
         public Step4 step4;
         public Step5 step5;
+
+        private CustomPanelBtnColorSwitch customPanelBtnColorSwitch;
 
         public FormMain() {
             InitializeComponent();
@@ -41,7 +42,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void FormMain_Load(object sender, EventArgs e) {
             sideTable.Update(null, null);
-            //sideTable.UpdateMsg("*您所填入的荷重已經超出範圍1~200kg內，請重新填寫。", SideTable.MsgStatus.Alarm);
         }
 
         private void CmdConfirm_Click(object sender, EventArgs e) {
@@ -60,6 +60,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void MoveConfirmPanelToStep(Step step) {
+            // 開啟目標step panel
             BinaryExplorerBarPanel targetPanel = Controls.Find("panelStep" + ((int)step + 1), true)[0] as BinaryExplorerBarPanel;
             panelConfirmBtns.Parent.Controls.Remove(panelConfirmBtns);
             targetPanel.Controls.Add(panelConfirmBtns);
@@ -69,7 +70,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private bool binaryExplorerBar_BinaryExplorerBarPanelTitleClicked(object sender, BinaryExplorerBarPanel thePanelObject) {
             int thePanelObjectStepIndex = Convert.ToInt32(thePanelObject.Name.Replace("panelStep", "")) - 1;
             // 目前Step以前才可以開關panel
-            return thePanelObjectStepIndex <= (int)curStep;
+            return thePanelObjectStepIndex <= (int)curStep;            
         }
     }
 }
