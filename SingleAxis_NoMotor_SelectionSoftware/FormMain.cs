@@ -20,14 +20,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public Step4 step4;
         public Step5 step5;
 
+        private ExplorerBar _explorerBar;
+
         public FormMain() {
             InitializeComponent();
 
-            binaryExplorerBar.Size = new Size(934, 726);
             // 標題列
             ToyoBorder toyoBorder = new ToyoBorder(this);
             // 一頁式頁籤
-            ExplorerBar explorerBar = new ExplorerBar(this);
+            _explorerBar = new ExplorerBar(this);
             // 測邊欄
             sideTable = new SideTable(this);
             // Step
@@ -36,30 +37,35 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }        
 
         private void FormMain_Load(object sender, EventArgs e) {
+            // 分頁收起
+            _explorerBar.explorerBarPanel.ForEach(panel => {
+                if (panel.index != 1)
+                    panel.isCollapse = true;
+            });
+            // 測邊表格更新
             sideTable.Update(null, null);
         }
 
         private void CmdConfirm_Click(object sender, EventArgs e) {
             curStep = (Step)((int)curStep + 1);
             sideTable.Update(null, null);
-            binaryExplorerBar.Panels[(int)curStep].CurrentExplorerBarPanelState = BinaryExplorerBarPanelState.Expanded;
+            _explorerBar.UpdateCurStep(curStep);
             MoveConfirmPanelToStep(curStep);
         }
 
         private void CmdReset_Click(object sender, EventArgs e) {
             curStep = Step.Step1;
             sideTable.Update(null, null);
-            binaryExplorerBar.Panels.Cast<BinaryExplorerBarPanel>().ToList().ForEach(panel => panel.CurrentExplorerBarPanelState = BinaryExplorerBarPanelState.Collapsed);
-            binaryExplorerBar.Panels[(int)curStep].CurrentExplorerBarPanelState = BinaryExplorerBarPanelState.Expanded;            
+            _explorerBar.UpdateCurStep(curStep);
             MoveConfirmPanelToStep(curStep);
         }
 
         private void MoveConfirmPanelToStep(Step step) {
             // 開啟目標step panel
-            BinaryExplorerBarPanel targetPanel = Controls.Find("panelStep" + ((int)step + 1), true)[0] as BinaryExplorerBarPanel;
+            Panel targetPanel = Controls.Find("explorerBarPanel" + ((int)step + 1) + "_content", true)[0] as Panel;
             panelConfirmBtns.Parent.Controls.Remove(panelConfirmBtns);
             targetPanel.Controls.Add(panelConfirmBtns);
-            binaryExplorerBar.ScrollControlIntoView(panelConfirmBtns);
+            explorerBar.ScrollControlIntoView(panelConfirmBtns);
         }
 
         private bool binaryExplorerBar_BinaryExplorerBarPanelTitleClicked(object sender, BinaryExplorerBarPanel thePanelObject) {

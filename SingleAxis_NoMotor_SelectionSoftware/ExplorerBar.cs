@@ -7,10 +7,10 @@ using System.Drawing;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class ExplorerBar {
-        private FormMain formMain;
+        public List<ExplorerBarPanel> explorerBarPanel = new List<ExplorerBarPanel>();
 
-        private Panel explorerBar;
-        private List<ExplorerBarPanel> explorerBarPanel = new List<ExplorerBarPanel>();
+        private FormMain formMain;
+        private Panel explorerBar;        
 
         public ExplorerBar(FormMain formMain) {
             this.formMain = formMain;
@@ -19,10 +19,21 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             SearchExplorerBarPanel();
         }
 
+        public void UpdateCurStep(FormMain.Step curStep) {
+            // 目前Step以前的都打開(包刮目前)，其他的關閉
+            for (int i = 0; i < explorerBarPanel.Count; i++) {
+                if (i > (int)curStep)
+                    explorerBarPanel.First(panel => panel.index == i + 1).isCollapse = true;
+                else
+                    explorerBarPanel.First(panel => panel.index == i + 1).isCollapse = false;
+            }
+        }
+
         private void SearchExplorerBarPanel() {
+            // 用名稱搜尋explorer bar panel
             foreach (Control control in explorerBar.Controls)
                 if (control.Name.StartsWith("explorerBarPanel") && !control.Name.Contains("_"))
-                    explorerBarPanel.Add(new ExplorerBarPanel(control as Panel));
+                    explorerBarPanel.Add(new ExplorerBarPanel(control as Panel, formMain));
         }
     }
 
@@ -33,11 +44,29 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public Panel panelTitle;
         public Panel panelConent;
         public Size unCollapseSize;
-        public bool isCollapse = false;
 
-        public ExplorerBarPanel(Panel explorerBarPanel) {
+        private bool _isCollapse = false;
+        public bool isCollapse {
+            get {
+                return _isCollapse;
+            }
+            set {
+                if (value != _isCollapse) {
+                    _isCollapse = value;
+                    OnCollapseChanged();
+                }
+            }
+        }
+
+        public delegate void CollapseChanged();
+        public CollapseChanged OnCollapseChanged;
+
+        private FormMain formMain;
+
+        public ExplorerBarPanel(Panel explorerBarPanel, FormMain formMain) {
             // panel init
             this.explorerBarPanel = explorerBarPanel;
+            this.formMain = formMain;
             this.name = explorerBarPanel.Name;
             this.index = Convert.ToInt32(explorerBarPanel.Name.Replace("explorerBarPanel", ""));
             panelTitle = explorerBarPanel.Controls.Find(this.name + "_title", true)[0] as Panel;
@@ -45,19 +74,22 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             unCollapseSize = explorerBarPanel.Size;
             // event init
             panelTitle.Click += PanelTitle_Click;
+            OnCollapseChanged += UpdateCollapse;
         }
 
         private void PanelTitle_Click(object sender, EventArgs e) {
-            isCollapse = !isCollapse;
-            UpdateCollapse();
+            if ((int)formMain.curStep >= index - 1)
+                isCollapse = !isCollapse;
         }
 
         private void UpdateCollapse() {
-            explorerBarPanel.Size = isCollapse ?
-                (index == 1 ? 
-                    new Size(explorerBarPanel.Size.Width, panelTitle.Size.Height) : 
-                    new Size(explorerBarPanel.Size.Width, panelTitle.Size.Height + 10)) :
-                new Size(explorerBarPanel.Size.Width, unCollapseSize.Height);
+            if (isCollapse) {
+                if (index == 1)
+                    explorerBarPanel.Size = new Size(explorerBarPanel.Size.Width, panelTitle.Size.Height);
+                else
+                    explorerBarPanel.Size = new Size(explorerBarPanel.Size.Width, panelTitle.Size.Height + 10);
+            } else
+                explorerBarPanel.Size = new Size(explorerBarPanel.Size.Width, unCollapseSize.Height);
         }
     }
 }

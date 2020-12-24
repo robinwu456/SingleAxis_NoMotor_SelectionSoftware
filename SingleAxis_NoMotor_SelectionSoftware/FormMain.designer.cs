@@ -23,8 +23,8 @@
         /// 這個方法的內容。
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.splitContainerBase = new System.Windows.Forms.SplitContainer();
             this.pictureBoxToyo = new System.Windows.Forms.PictureBox();
@@ -138,6 +138,15 @@
             this.picStandardEnv = new System.Windows.Forms.PictureBox();
             this.explorerBarPanel1_title = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label60 = new System.Windows.Forms.Label();
             this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.panelSideTableSelections = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.tableSelections = new System.Windows.Forms.TableLayoutPanel();
@@ -149,15 +158,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.customPanel2 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label59 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label60 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -187,13 +187,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.picDustFree)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStandardEnv)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panelSideTable.SuspendLayout();
             this.panelSideTableSelections.SuspendLayout();
             this.customPanel4.SuspendLayout();
             this.customPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -523,14 +523,14 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Location = new System.Drawing.Point(32, 444);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(346, 171);
             this.chart1.TabIndex = 241;
             this.chart1.Text = "chart1";
@@ -1317,6 +1317,7 @@
             this.cmdConfirm.Size = new System.Drawing.Size(223, 29);
             this.cmdConfirm.TabIndex = 26;
             this.cmdConfirm.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
+            this.cmdConfirm.Click += new System.EventHandler(this.CmdConfirm_Click);
             // 
             // cmdReset
             // 
@@ -1337,6 +1338,7 @@
             this.cmdReset.Size = new System.Drawing.Size(223, 29);
             this.cmdReset.TabIndex = 25;
             this.cmdReset.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
+            this.cmdReset.Click += new System.EventHandler(this.CmdReset_Click);
             // 
             // cboModelType
             // 
@@ -1523,6 +1525,118 @@
             this.panel1.Size = new System.Drawing.Size(283, 735);
             this.panel1.TabIndex = 1;
             // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(786, 397);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(248, 218);
+            this.dataGridView3.TabIndex = 245;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.DropDownWidth = 180;
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox2.Font = new System.Drawing.Font("微軟正黑體", 11F);
+            this.comboBox2.ForeColor = System.Drawing.Color.White;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(807, 71);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(187, 27);
+            this.comboBox2.TabIndex = 246;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.DropDownWidth = 180;
+            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox3.Font = new System.Drawing.Font("微軟正黑體", 11F);
+            this.comboBox3.ForeColor = System.Drawing.Color.White;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(893, 104);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(101, 27);
+            this.comboBox3.TabIndex = 248;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
+            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label34.Location = new System.Drawing.Point(803, 107);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(84, 19);
+            this.label34.TabIndex = 247;
+            this.label34.Text = "調整模式：";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label60);
+            this.panel2.Controls.Add(this.comboBox4);
+            this.panel2.Controls.Add(this.label59);
+            this.panel2.Location = new System.Drawing.Point(765, 137);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(305, 42);
+            this.panel2.TabIndex = 249;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.DropDownWidth = 180;
+            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox4.Font = new System.Drawing.Font("微軟正黑體", 11F);
+            this.comboBox4.ForeColor = System.Drawing.Color.White;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(128, 7);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(101, 27);
+            this.comboBox4.TabIndex = 250;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
+            this.label59.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label59.Location = new System.Drawing.Point(8, 10);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(114, 19);
+            this.label59.TabIndex = 249;
+            this.label59.Text = "馬達功率選擇：";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label35);
+            this.panel3.Controls.Add(this.label43);
+            this.panel3.Controls.Add(this.label42);
+            this.panel3.Controls.Add(this.label41);
+            this.panel3.Controls.Add(this.label40);
+            this.panel3.Controls.Add(this.label39);
+            this.panel3.Controls.Add(this.label38);
+            this.panel3.Controls.Add(this.textBox7);
+            this.panel3.Controls.Add(this.textBox6);
+            this.panel3.Controls.Add(this.textBox5);
+            this.panel3.Controls.Add(this.label37);
+            this.panel3.Controls.Add(this.label36);
+            this.panel3.Location = new System.Drawing.Point(765, 185);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(305, 170);
+            this.panel3.TabIndex = 250;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label60.Location = new System.Drawing.Point(234, 9);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(35, 20);
+            this.label60.TabIndex = 251;
+            this.label60.Text = "[W]";
+            // 
             // panelSideTable
             // 
             this.panelSideTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1673,118 +1787,6 @@
             this.label2.Text = "即時條件顯示";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(786, 397);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(248, 218);
-            this.dataGridView3.TabIndex = 245;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.DropDownWidth = 180;
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox2.Font = new System.Drawing.Font("微軟正黑體", 11F);
-            this.comboBox2.ForeColor = System.Drawing.Color.White;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(807, 71);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(187, 27);
-            this.comboBox2.TabIndex = 246;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.DropDownWidth = 180;
-            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox3.Font = new System.Drawing.Font("微軟正黑體", 11F);
-            this.comboBox3.ForeColor = System.Drawing.Color.White;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(893, 104);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(101, 27);
-            this.comboBox3.TabIndex = 248;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
-            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label34.Location = new System.Drawing.Point(803, 107);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(84, 19);
-            this.label34.TabIndex = 247;
-            this.label34.Text = "調整模式：";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label60);
-            this.panel2.Controls.Add(this.comboBox4);
-            this.panel2.Controls.Add(this.label59);
-            this.panel2.Location = new System.Drawing.Point(765, 137);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(305, 42);
-            this.panel2.TabIndex = 249;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.DropDownWidth = 180;
-            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox4.Font = new System.Drawing.Font("微軟正黑體", 11F);
-            this.comboBox4.ForeColor = System.Drawing.Color.White;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(128, 7);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(101, 27);
-            this.comboBox4.TabIndex = 250;
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
-            this.label59.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label59.Location = new System.Drawing.Point(8, 10);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(114, 19);
-            this.label59.TabIndex = 249;
-            this.label59.Text = "馬達功率選擇：";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.label35);
-            this.panel3.Controls.Add(this.label43);
-            this.panel3.Controls.Add(this.label42);
-            this.panel3.Controls.Add(this.label41);
-            this.panel3.Controls.Add(this.label40);
-            this.panel3.Controls.Add(this.label39);
-            this.panel3.Controls.Add(this.label38);
-            this.panel3.Controls.Add(this.textBox7);
-            this.panel3.Controls.Add(this.textBox6);
-            this.panel3.Controls.Add(this.textBox5);
-            this.panel3.Controls.Add(this.label37);
-            this.panel3.Controls.Add(this.label36);
-            this.panel3.Location = new System.Drawing.Point(765, 185);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(305, 170);
-            this.panel3.TabIndex = 250;
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label60.Location = new System.Drawing.Point(234, 9);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(35, 20);
-            this.label60.TabIndex = 251;
-            this.label60.Text = "[W]";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1830,15 +1832,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.picDustFree)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStandardEnv)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panelSideTable.ResumeLayout(false);
-            this.panelSideTableSelections.ResumeLayout(false);
-            this.customPanel4.ResumeLayout(false);
-            this.customPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panelSideTable.ResumeLayout(false);
+            this.panelSideTableSelections.ResumeLayout(false);
+            this.customPanel4.ResumeLayout(false);
+            this.customPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
