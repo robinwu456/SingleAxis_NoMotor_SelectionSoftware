@@ -23,17 +23,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void ToyoBorderControlsEvents() {
             formMain.cmdExplorer.MouseEnter += ControlMouseEnter;
             formMain.cmdNarrow.MouseEnter += ControlMouseEnter;
-            //formMain.cmdZoom.MouseEnter += ControlMouseEnter;
+            formMain.cmdZoom.MouseEnter += ControlMouseEnter;
             formMain.cmdClose.MouseEnter += ControlMouseEnter;
 
             formMain.cmdExplorer.MouseLeave += ControlMouseLeave;
             formMain.cmdNarrow.MouseLeave += ControlMouseLeave;
-            //formMain.cmdZoom.MouseLeave += ControlMouseLeave;
+            formMain.cmdZoom.MouseLeave += ControlMouseLeave;
             formMain.cmdClose.MouseLeave += ControlMouseLeave;
 
             formMain.cmdExplorer.MouseClick += ControlMouseClick;
             formMain.cmdNarrow.MouseClick += ControlMouseClick;
-            //formMain.cmdZoom.MouseClick += ControlMouseClick;
+            formMain.cmdZoom.MouseClick += ControlMouseClick;
             formMain.cmdClose.MouseClick += ControlMouseClick;
 
             formMain.splitContainerBase.Panel1.MouseDown += ControlBar_MouseDown;
@@ -47,7 +47,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             Dictionary<PictureBox, Image> cmdImg = new Dictionary<PictureBox, Image>() {
                 { formMain.cmdExplorer, Properties.Resources.Top_web3  },
                 { formMain.cmdNarrow, Properties.Resources.Top_Narrow2 },
-                //{ formMain.cmdZoom, formMain.WindowState == FormWindowState.Maximized ? Properties.Resources.Top_RE2 : Properties.Resources.Top_Zoom2 },
+                { formMain.cmdZoom, formMain.WindowState == FormWindowState.Maximized ? Properties.Resources.Top_RE2 : Properties.Resources.Top_Zoom2 },
                 { formMain.cmdClose, Properties.Resources.Top_Close2  },
             };
 
@@ -60,7 +60,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             Dictionary<PictureBox, Image> cmdImg = new Dictionary<PictureBox, Image>() {
                 { formMain.cmdExplorer, Properties.Resources.Top_web2  },
                 { formMain.cmdNarrow, Properties.Resources.Top_Narrow },
-                //{ formMain.cmdZoom, formMain.WindowState == FormWindowState.Maximized ? Properties.Resources.Top_RE : Properties.Resources.Top_Zoom },
+                { formMain.cmdZoom, formMain.WindowState == FormWindowState.Maximized ? Properties.Resources.Top_RE : Properties.Resources.Top_Zoom },
                 { formMain.cmdClose, Properties.Resources.Top_Close  },
             };
 
@@ -74,27 +74,27 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 { formMain.cmdExplorer, new Action(() => { System.Diagnostics.Process.Start(toyoWebsite); }) },
                 { formMain.cmdNarrow, new Action(() => { formMain.WindowState = FormWindowState.Minimized; }) },
                 { formMain.cmdClose, new Action(() => { formMain.Close(); }) },
-                //{ formMain.cmdZoom, new Action(() => {
-                //    if (formMain.WindowState == FormWindowState.Maximized) {
-                //        formMain.WindowState = FormWindowState.Normal;
-                //        formMain.cmdZoom.Image = Properties.Resources.Top_Zoom;
+                { formMain.cmdZoom, new Action(() => {
+                    if (formMain.WindowState == FormWindowState.Maximized) {
+                        formMain.WindowState = FormWindowState.Normal;
+                        formMain.cmdZoom.Image = Properties.Resources.Top_Zoom;
 
-                //        // button
-                //        formMain.cmdExplorer.Location = new Point(757, 7);
-                //        formMain.cmdNarrow.Location = new Point(785, 3);
-                //        formMain.cmdZoom.Location = new Point(819, 3);
-                //        formMain.cmdClose.Location = new Point(853, 3);
-                //    } else if (formMain.WindowState == FormWindowState.Normal) {
-                //        formMain.WindowState = FormWindowState.Maximized;
-                //        formMain.cmdZoom.Image = Properties.Resources.Top_RE;
+                        // button
+                        formMain.cmdExplorer.Location = new Point(757, 7);
+                        formMain.cmdNarrow.Location = new Point(785, 3);
+                        formMain.cmdZoom.Location = new Point(819, 3);
+                        formMain.cmdClose.Location = new Point(853, 3);
+                    } else if (formMain.WindowState == FormWindowState.Normal) {
+                        formMain.WindowState = FormWindowState.Maximized;
+                        formMain.cmdZoom.Image = Properties.Resources.Top_RE;
 
-                //        // button
-                //        formMain.cmdExplorer.Location = new Point(Screen.PrimaryScreen.Bounds.Width - 144, 7);
-                //        formMain.cmdNarrow.Location = new Point(Screen.PrimaryScreen.Bounds.Width - 116, 3);
-                //        formMain.cmdZoom.Location = new Point(Screen.PrimaryScreen.Bounds.Width - 82, 3);
-                //        formMain.cmdClose.Location = new Point(Screen.PrimaryScreen.Bounds.Width - 48, 3);
-                //    }
-                //}) },
+                        // button
+                        formMain.cmdExplorer.Location = new Point(Screen.PrimaryScreen.Bounds.Width - 144, 7);
+                        formMain.cmdNarrow.Location = new Point(Screen.PrimaryScreen.Bounds.Width - 116, 3);
+                        formMain.cmdZoom.Location = new Point(Screen.PrimaryScreen.Bounds.Width - 82, 3);
+                        formMain.cmdClose.Location = new Point(Screen.PrimaryScreen.Bounds.Width - 48, 3);
+                    }
+                }) },
             };
 
             cmdFunc[cmd]();

@@ -26,6 +26,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             binaryExplorerBar.Size = new Size(934, 726);
             // 標題列
             ToyoBorder toyoBorder = new ToyoBorder(this);
+            // 一頁式頁籤
+            ExplorerBar explorerBar = new ExplorerBar(this);
             // 測邊欄
             sideTable = new SideTable(this);
             // Step

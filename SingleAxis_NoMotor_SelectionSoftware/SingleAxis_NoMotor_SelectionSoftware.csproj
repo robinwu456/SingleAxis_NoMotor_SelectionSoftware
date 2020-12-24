@@ -71,6 +71,7 @@
     <Compile Include="CustomTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ExplorerBar.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>

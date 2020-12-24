@@ -12,7 +12,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             this.formMain = formMain;
             InitEvents();
 
-            formMain.tabControlAdvanceOptions.ItemSize = new Size(0, 1);
+            //formMain.tabControlAdvanceOptions.ItemSize = new Size(0, 1);
         }
 
         private void InitEvents() {
@@ -21,8 +21,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void ToggleAdvanceOptions_CheckedChanged(object sender, EventArgs e) {
-            formMain.spAdvanceOptions.Panel1Collapsed = formMain.toggleAdvanceOptions.Checked;
-            formMain.spAdvanceOptions.Panel2Collapsed = !formMain.spAdvanceOptions.Panel1Collapsed;
+            //formMain.spAdvanceOptions.Panel1Collapsed = formMain.toggleAdvanceOptions.Checked;
+            //formMain.spAdvanceOptions.Panel2Collapsed = !formMain.spAdvanceOptions.Panel1Collapsed;
         }
     }
 }
