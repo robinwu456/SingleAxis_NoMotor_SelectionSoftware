@@ -26,7 +26,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public SideTable(FormMain formMain) {
             this.formMain = formMain;
-            Init();
+            Init();            
+
+            // 移除表格，在父panel新增
+            formMain.panelSideTable.Parent.Controls.Remove(formMain.panelSideTable);
+            formMain.splitContainerBase.Panel2.Controls.Add(formMain.panelSideTable);            
+            formMain.panelSideTable.BringToFront();
         }
 
         // 選項欄生成
@@ -74,7 +79,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             int minHeight = 298;
             formMain.panelSideTable.Size = new Size(formMain.panelSideTable.Size.Width, minHeight + allLabelHeight + 8);    // +8(高度補償)
             // 高度置中
-            int middleLocation = formMain.splitContainerContent.Panel2.Size.Height / 2;
+            int middleLocation = formMain.explorerBar.Size.Height / 2;
             formMain.panelSideTable.Location = new Point(formMain.panelSideTable.Location.X, middleLocation - formMain.panelSideTable.Size.Height / 2);
         }
 

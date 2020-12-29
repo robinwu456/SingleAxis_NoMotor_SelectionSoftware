@@ -23,8 +23,8 @@
         /// 這個方法的內容。
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.splitContainerBase = new System.Windows.Forms.SplitContainer();
             this.pictureBoxToyo = new System.Windows.Forms.PictureBox();
@@ -34,8 +34,6 @@
             this.cmdNarrow = new System.Windows.Forms.PictureBox();
             this.cmdZoom = new System.Windows.Forms.PictureBox();
             this.cmdClose = new System.Windows.Forms.PictureBox();
-            this.panelContent = new System.Windows.Forms.Panel();
-            this.splitContainerContent = new System.Windows.Forms.SplitContainer();
             this.explorerBar = new System.Windows.Forms.Panel();
             this.explorerBarPanel5 = new System.Windows.Forms.Panel();
             this.explorerBarPanel5_content = new System.Windows.Forms.Panel();
@@ -169,7 +167,6 @@
             this.explorerBarPanel1_title = new System.Windows.Forms.Panel();
             this.label66 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
-            this.vScrollBarExplorerBar = new System.Windows.Forms.VScrollBar();
             this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.panelSideTableSelections = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.tableSelections = new System.Windows.Forms.TableLayoutPanel();
@@ -192,11 +189,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdNarrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdZoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).BeginInit();
-            this.panelContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerContent)).BeginInit();
-            this.splitContainerContent.Panel1.SuspendLayout();
-            this.splitContainerContent.Panel2.SuspendLayout();
-            this.splitContainerContent.SuspendLayout();
             this.explorerBar.SuspendLayout();
             this.explorerBarPanel5.SuspendLayout();
             this.explorerBarPanel5_title.SuspendLayout();
@@ -254,7 +246,8 @@
             // 
             this.splitContainerBase.Panel2.AutoScroll = true;
             this.splitContainerBase.Panel2.BackColor = System.Drawing.Color.White;
-            this.splitContainerBase.Panel2.Controls.Add(this.panelContent);
+            this.splitContainerBase.Panel2.Controls.Add(this.explorerBar);
+            this.splitContainerBase.Panel2.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.splitContainerBase.Size = new System.Drawing.Size(1690, 762);
             this.splitContainerBase.SplitterDistance = 35;
             this.splitContainerBase.SplitterWidth = 1;
@@ -338,39 +331,11 @@
             this.cmdClose.TabIndex = 1;
             this.cmdClose.TabStop = false;
             // 
-            // panelContent
-            // 
-            this.panelContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelContent.Controls.Add(this.splitContainerContent);
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(0, 0);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1690, 726);
-            this.panelContent.TabIndex = 3;
-            // 
-            // splitContainerContent
-            // 
-            this.splitContainerContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerContent.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerContent.Name = "splitContainerContent";
-            // 
-            // splitContainerContent.Panel1
-            // 
-            this.splitContainerContent.Panel1.Controls.Add(this.explorerBar);
-            this.splitContainerContent.Panel1.Padding = new System.Windows.Forms.Padding(10, 10, 0, 30);
-            // 
-            // splitContainerContent.Panel2
-            // 
-            this.splitContainerContent.Panel2.Controls.Add(this.vScrollBarExplorerBar);
-            this.splitContainerContent.Panel2.Controls.Add(this.panelSideTable);
-            this.splitContainerContent.Size = new System.Drawing.Size(1688, 724);
-            this.splitContainerContent.SplitterDistance = 1406;
-            this.splitContainerContent.TabIndex = 0;
-            // 
             // explorerBar
             // 
             this.explorerBar.AutoScroll = true;
             this.explorerBar.AutoSize = true;
+            this.explorerBar.Controls.Add(this.panelSideTable);
             this.explorerBar.Controls.Add(this.explorerBarPanel5);
             this.explorerBar.Controls.Add(this.explorerBarPanel4);
             this.explorerBar.Controls.Add(this.explorerBarPanel3);
@@ -379,7 +344,8 @@
             this.explorerBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.explorerBar.Location = new System.Drawing.Point(10, 10);
             this.explorerBar.Name = "explorerBar";
-            this.explorerBar.Size = new System.Drawing.Size(1396, 684);
+            this.explorerBar.Padding = new System.Windows.Forms.Padding(0, 0, 300, 0);
+            this.explorerBar.Size = new System.Drawing.Size(1680, 716);
             this.explorerBar.TabIndex = 2;
             // 
             // explorerBarPanel5
@@ -390,7 +356,7 @@
             this.explorerBarPanel5.Location = new System.Drawing.Point(0, 2021);
             this.explorerBarPanel5.Name = "explorerBarPanel5";
             this.explorerBarPanel5.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.explorerBarPanel5.Size = new System.Drawing.Size(1379, 237);
+            this.explorerBarPanel5.Size = new System.Drawing.Size(1363, 237);
             this.explorerBarPanel5.TabIndex = 4;
             // 
             // explorerBarPanel5_content
@@ -398,7 +364,7 @@
             this.explorerBarPanel5_content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.explorerBarPanel5_content.Location = new System.Drawing.Point(0, 54);
             this.explorerBarPanel5_content.Name = "explorerBarPanel5_content";
-            this.explorerBarPanel5_content.Size = new System.Drawing.Size(1379, 183);
+            this.explorerBarPanel5_content.Size = new System.Drawing.Size(1363, 183);
             this.explorerBarPanel5_content.TabIndex = 1;
             // 
             // explorerBarPanel5_title
@@ -410,7 +376,7 @@
             this.explorerBarPanel5_title.Dock = System.Windows.Forms.DockStyle.Top;
             this.explorerBarPanel5_title.Location = new System.Drawing.Point(0, 10);
             this.explorerBarPanel5_title.Name = "explorerBarPanel5_title";
-            this.explorerBarPanel5_title.Size = new System.Drawing.Size(1379, 44);
+            this.explorerBarPanel5_title.Size = new System.Drawing.Size(1363, 44);
             this.explorerBarPanel5_title.TabIndex = 0;
             // 
             // label70
@@ -445,7 +411,7 @@
             this.explorerBarPanel4.Location = new System.Drawing.Point(0, 1823);
             this.explorerBarPanel4.Name = "explorerBarPanel4";
             this.explorerBarPanel4.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.explorerBarPanel4.Size = new System.Drawing.Size(1379, 198);
+            this.explorerBarPanel4.Size = new System.Drawing.Size(1363, 198);
             this.explorerBarPanel4.TabIndex = 3;
             // 
             // explorerBarPanel4_content
@@ -453,7 +419,7 @@
             this.explorerBarPanel4_content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.explorerBarPanel4_content.Location = new System.Drawing.Point(0, 54);
             this.explorerBarPanel4_content.Name = "explorerBarPanel4_content";
-            this.explorerBarPanel4_content.Size = new System.Drawing.Size(1379, 144);
+            this.explorerBarPanel4_content.Size = new System.Drawing.Size(1363, 144);
             this.explorerBarPanel4_content.TabIndex = 1;
             // 
             // explorerBarPanel4_title
@@ -465,7 +431,7 @@
             this.explorerBarPanel4_title.Dock = System.Windows.Forms.DockStyle.Top;
             this.explorerBarPanel4_title.Location = new System.Drawing.Point(0, 10);
             this.explorerBarPanel4_title.Name = "explorerBarPanel4_title";
-            this.explorerBarPanel4_title.Size = new System.Drawing.Size(1379, 44);
+            this.explorerBarPanel4_title.Size = new System.Drawing.Size(1363, 44);
             this.explorerBarPanel4_title.TabIndex = 0;
             // 
             // label69
@@ -500,7 +466,7 @@
             this.explorerBarPanel3.Location = new System.Drawing.Point(0, 1606);
             this.explorerBarPanel3.Name = "explorerBarPanel3";
             this.explorerBarPanel3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.explorerBarPanel3.Size = new System.Drawing.Size(1379, 217);
+            this.explorerBarPanel3.Size = new System.Drawing.Size(1363, 217);
             this.explorerBarPanel3.TabIndex = 2;
             // 
             // explorerBarPanel3_content
@@ -508,7 +474,7 @@
             this.explorerBarPanel3_content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.explorerBarPanel3_content.Location = new System.Drawing.Point(0, 54);
             this.explorerBarPanel3_content.Name = "explorerBarPanel3_content";
-            this.explorerBarPanel3_content.Size = new System.Drawing.Size(1379, 163);
+            this.explorerBarPanel3_content.Size = new System.Drawing.Size(1363, 163);
             this.explorerBarPanel3_content.TabIndex = 1;
             // 
             // explorerBarPanel3_title
@@ -520,7 +486,7 @@
             this.explorerBarPanel3_title.Dock = System.Windows.Forms.DockStyle.Top;
             this.explorerBarPanel3_title.Location = new System.Drawing.Point(0, 10);
             this.explorerBarPanel3_title.Name = "explorerBarPanel3_title";
-            this.explorerBarPanel3_title.Size = new System.Drawing.Size(1379, 44);
+            this.explorerBarPanel3_title.Size = new System.Drawing.Size(1363, 44);
             this.explorerBarPanel3_title.TabIndex = 0;
             // 
             // label68
@@ -555,7 +521,7 @@
             this.explorerBarPanel2.Location = new System.Drawing.Point(0, 445);
             this.explorerBarPanel2.Name = "explorerBarPanel2";
             this.explorerBarPanel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.explorerBarPanel2.Size = new System.Drawing.Size(1379, 1161);
+            this.explorerBarPanel2.Size = new System.Drawing.Size(1363, 1161);
             this.explorerBarPanel2.TabIndex = 1;
             // 
             // explorerBarPanel2_content
@@ -637,7 +603,7 @@
             this.explorerBarPanel2_content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.explorerBarPanel2_content.Location = new System.Drawing.Point(0, 54);
             this.explorerBarPanel2_content.Name = "explorerBarPanel2_content";
-            this.explorerBarPanel2_content.Size = new System.Drawing.Size(1379, 1107);
+            this.explorerBarPanel2_content.Size = new System.Drawing.Size(1363, 1107);
             this.explorerBarPanel2_content.TabIndex = 1;
             // 
             // comboBox7
@@ -1043,14 +1009,14 @@
             // 
             // chart1
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
             this.chart1.Location = new System.Drawing.Point(259, 450);
             this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Name = "Series1";
-            this.chart1.Series.Add(series5);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(346, 171);
             this.chart1.TabIndex = 241;
             this.chart1.Text = "chart1";
@@ -1642,7 +1608,7 @@
             this.explorerBarPanel2_title.Dock = System.Windows.Forms.DockStyle.Top;
             this.explorerBarPanel2_title.Location = new System.Drawing.Point(0, 10);
             this.explorerBarPanel2_title.Name = "explorerBarPanel2_title";
-            this.explorerBarPanel2_title.Size = new System.Drawing.Size(1379, 44);
+            this.explorerBarPanel2_title.Size = new System.Drawing.Size(1363, 44);
             this.explorerBarPanel2_title.TabIndex = 0;
             // 
             // label67
@@ -1676,7 +1642,7 @@
             this.explorerBarPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.explorerBarPanel1.Location = new System.Drawing.Point(0, 0);
             this.explorerBarPanel1.Name = "explorerBarPanel1";
-            this.explorerBarPanel1.Size = new System.Drawing.Size(1379, 445);
+            this.explorerBarPanel1.Size = new System.Drawing.Size(1363, 445);
             this.explorerBarPanel1.TabIndex = 0;
             // 
             // explorerBarPanel1_content
@@ -1691,7 +1657,7 @@
             this.explorerBarPanel1_content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.explorerBarPanel1_content.Location = new System.Drawing.Point(0, 44);
             this.explorerBarPanel1_content.Name = "explorerBarPanel1_content";
-            this.explorerBarPanel1_content.Size = new System.Drawing.Size(1379, 401);
+            this.explorerBarPanel1_content.Size = new System.Drawing.Size(1363, 401);
             this.explorerBarPanel1_content.TabIndex = 1;
             // 
             // panelConfirmBtns
@@ -1708,7 +1674,7 @@
             this.panelConfirmBtns.Name = "panelConfirmBtns";
             this.panelConfirmBtns.RowCount = 1;
             this.panelConfirmBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelConfirmBtns.Size = new System.Drawing.Size(1379, 35);
+            this.panelConfirmBtns.Size = new System.Drawing.Size(1363, 35);
             this.panelConfirmBtns.TabIndex = 24;
             // 
             // cmdConfirm
@@ -1725,9 +1691,9 @@
             this.cmdConfirm.Curvature = 15;
             this.cmdConfirm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmdConfirm.GradientMode = CustomButton.LinearGradientMode.Horizontal;
-            this.cmdConfirm.Location = new System.Drawing.Point(462, 3);
+            this.cmdConfirm.Location = new System.Drawing.Point(457, 3);
             this.cmdConfirm.Name = "cmdConfirm";
-            this.cmdConfirm.Size = new System.Drawing.Size(223, 29);
+            this.cmdConfirm.Size = new System.Drawing.Size(221, 29);
             this.cmdConfirm.TabIndex = 26;
             this.cmdConfirm.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
             this.cmdConfirm.Click += new System.EventHandler(this.CmdConfirm_Click);
@@ -1746,9 +1712,9 @@
             this.cmdReset.Curvature = 15;
             this.cmdReset.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmdReset.GradientMode = CustomButton.LinearGradientMode.Horizontal;
-            this.cmdReset.Location = new System.Drawing.Point(691, 3);
+            this.cmdReset.Location = new System.Drawing.Point(684, 3);
             this.cmdReset.Name = "cmdReset";
-            this.cmdReset.Size = new System.Drawing.Size(223, 29);
+            this.cmdReset.Size = new System.Drawing.Size(221, 29);
             this.cmdReset.TabIndex = 25;
             this.cmdReset.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
             this.cmdReset.Click += new System.EventHandler(this.CmdReset_Click);
@@ -1926,7 +1892,7 @@
             this.explorerBarPanel1_title.Dock = System.Windows.Forms.DockStyle.Top;
             this.explorerBarPanel1_title.Location = new System.Drawing.Point(0, 0);
             this.explorerBarPanel1_title.Name = "explorerBarPanel1_title";
-            this.explorerBarPanel1_title.Size = new System.Drawing.Size(1379, 44);
+            this.explorerBarPanel1_title.Size = new System.Drawing.Size(1363, 44);
             this.explorerBarPanel1_title.TabIndex = 0;
             // 
             // label66
@@ -1953,16 +1919,6 @@
             this.label61.Text = "Step.1";
             this.label61.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // vScrollBarExplorerBar
-            // 
-            this.vScrollBarExplorerBar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBarExplorerBar.LargeChange = 1;
-            this.vScrollBarExplorerBar.Location = new System.Drawing.Point(261, 0);
-            this.vScrollBarExplorerBar.Maximum = 1767;
-            this.vScrollBarExplorerBar.Name = "vScrollBarExplorerBar";
-            this.vScrollBarExplorerBar.Size = new System.Drawing.Size(17, 724);
-            this.vScrollBarExplorerBar.TabIndex = 1;
-            // 
             // panelSideTable
             // 
             this.panelSideTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1975,7 +1931,7 @@
             this.panelSideTable.Controls.Add(this.customPanel2);
             this.panelSideTable.Controls.Add(this.label2);
             this.panelSideTable.Curvature = 8;
-            this.panelSideTable.Location = new System.Drawing.Point(25, 118);
+            this.panelSideTable.Location = new System.Drawing.Point(1421, 129);
             this.panelSideTable.Name = "panelSideTable";
             this.panelSideTable.Padding = new System.Windows.Forms.Padding(15, 5, 15, 0);
             this.panelSideTable.Size = new System.Drawing.Size(224, 474);
@@ -2129,6 +2085,7 @@
             this.splitContainerBase.Panel1.ResumeLayout(false);
             this.splitContainerBase.Panel1.PerformLayout();
             this.splitContainerBase.Panel2.ResumeLayout(false);
+            this.splitContainerBase.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).EndInit();
             this.splitContainerBase.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToyo)).EndInit();
@@ -2138,12 +2095,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdNarrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdZoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).EndInit();
-            this.panelContent.ResumeLayout(false);
-            this.splitContainerContent.Panel1.ResumeLayout(false);
-            this.splitContainerContent.Panel1.PerformLayout();
-            this.splitContainerContent.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerContent)).EndInit();
-            this.splitContainerContent.ResumeLayout(false);
             this.explorerBar.ResumeLayout(false);
             this.explorerBarPanel5.ResumeLayout(false);
             this.explorerBarPanel5_title.ResumeLayout(false);
@@ -2338,9 +2289,6 @@
         public System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.Panel panelContent;
-        public System.Windows.Forms.SplitContainer splitContainerContent;
-        public System.Windows.Forms.VScrollBar vScrollBarExplorerBar;
     }
 }
 
