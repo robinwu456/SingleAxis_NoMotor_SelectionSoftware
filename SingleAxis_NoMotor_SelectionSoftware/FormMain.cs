@@ -73,5 +73,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 目前Step以前才可以開關panel
             return thePanelObjectStepIndex <= (int)curStep;            
         }
+
+        private void FormMain_Resize(object sender, EventArgs e) {
+            sideTable.ResizeSideTable();
+        }
     }
 }

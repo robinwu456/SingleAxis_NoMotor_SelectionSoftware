@@ -61,7 +61,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             ResizeSideTable();
         }
 
-        private void ResizeSideTable() {
+        public void ResizeSideTable() {
             // set selection table size
             int hiddenBorderDistance = 1;
             int allLabelHeight = (int)formMain.tableSelections.RowStyles.Cast<RowStyle>().Sum(row => row.Height);
@@ -74,7 +74,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             int minHeight = 298;
             formMain.panelSideTable.Size = new Size(formMain.panelSideTable.Size.Width, minHeight + allLabelHeight + 8);    // +8(高度補償)
             // 高度置中
-            int middleLocation = formMain.panel1.Size.Height / 2;
+            int middleLocation = formMain.splitContainerContent.Panel2.Size.Height / 2;
             formMain.panelSideTable.Location = new Point(formMain.panelSideTable.Location.X, middleLocation - formMain.panelSideTable.Size.Height / 2);
         }
 

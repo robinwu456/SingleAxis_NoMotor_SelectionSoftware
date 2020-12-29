@@ -14,9 +14,45 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public ExplorerBar(FormMain formMain) {
             this.formMain = formMain;
-            this.explorerBar = formMain.explorerBar;
+            this.explorerBar = formMain.explorerBar;            
             // Search explorerBar panel
             SearchExplorerBarPanel();
+
+            //explorerBar.Scroll += ExplorerBar_Scroll;
+            //explorerBar.MouseWheel += ExplorerBar_MouseWheel;
+
+            //explorerBar.VerticalScroll.Visible = false;
+            formMain.vScrollBarExplorerBar.Scroll += VScrollBarExplorerBar_Scroll;
+            formMain.vScrollBarExplorerBar.MouseWheel += VScrollBarExplorerBar_MouseWheel;
+
+            //explorerBar.AutoScroll = false;
+            //explorerBar.VerticalScroll.Enabled = false;
+            //explorerBar.VerticalScroll.Visible = false;
+            explorerBar.VerticalScroll.Maximum = 0;
+            //explorerBar.AutoScroll = true;
+
+            formMain.vScrollBarExplorerBar.Scroll += (sender, e) => { explorerBar.VerticalScroll.Value = formMain.vScrollBarExplorerBar.Value; };            
+        }
+
+        private void VScrollBarExplorerBar_MouseWheel(object sender, MouseEventArgs e) {
+            Console.WriteLine(explorerBar.VerticalScroll.Value);
+            //UpdateScrollValue();
+            explorerBar.VerticalScroll.Value = 800;
+        }
+
+        private void VScrollBarExplorerBar_Scroll(object sender, ScrollEventArgs e) {
+            Console.WriteLine(e.NewValue);
+            UpdateScrollValue();
+        }
+
+        private void ExplorerBar_MouseWheel(object sender, MouseEventArgs e) {
+            //Console.WriteLine(explorerBar.VerticalScroll.Value);
+            //UpdateScrollValue();
+        }
+
+        private void ExplorerBar_Scroll(object sender, ScrollEventArgs e) {
+            //Console.WriteLine(e.NewValue);
+            //UpdateScrollValue();
         }
 
         public void UpdateCurStep(FormMain.Step curStep) {
@@ -34,6 +70,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             foreach (Control control in explorerBar.Controls)
                 if (control.Name.StartsWith("explorerBarPanel") && !control.Name.Contains("_"))
                     explorerBarPanel.Add(new ExplorerBarPanel(control as Panel, formMain));
+        }
+
+        private void UpdateScrollValue() {
+            formMain.explorerBar.VerticalScroll.Value = formMain.vScrollBarExplorerBar.Value;
         }
     }
 
@@ -72,8 +112,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             panelTitle = explorerBarPanel.Controls.Find(this.name + "_title", true)[0] as Panel;
             panelConent = explorerBarPanel.Controls.Find(this.name + "_content", true)[0] as Panel;
             unCollapseSize = explorerBarPanel.Size;
-            // event init
+            // 標提折疊事件
             panelTitle.Click += PanelTitle_Click;
+            foreach (Control control in panelTitle.Controls)
+                control.Click += PanelTitle_Click;
             OnCollapseChanged += UpdateCollapse;
         }
 
@@ -90,6 +132,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     explorerBarPanel.Size = new Size(explorerBarPanel.Size.Width, panelTitle.Size.Height + 10);
             } else
                 explorerBarPanel.Size = new Size(explorerBarPanel.Size.Width, unCollapseSize.Height);
+
+            // scrollBar 更動
+            formMain.vScrollBarExplorerBar.SmallChange = formMain.explorerBar.VerticalScroll.SmallChange;
+            formMain.vScrollBarExplorerBar.LargeChange = formMain.explorerBar.VerticalScroll.LargeChange;
+            formMain.vScrollBarExplorerBar.Minimum = formMain.explorerBar.VerticalScroll.Minimum;
+            formMain.vScrollBarExplorerBar.Minimum = formMain.explorerBar.VerticalScroll.Minimum;
+            formMain.vScrollBarExplorerBar.Maximum = formMain.explorerBar.VerticalScroll.Maximum;
+
+            Console.WriteLine(formMain.explorerBar.VerticalScroll.Maximum);
         }
     }
 }
