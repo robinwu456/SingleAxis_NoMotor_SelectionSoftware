@@ -676,7 +676,7 @@
     <value>6</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1433, 129</value>
+    <value>1419, 129</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -699,251 +699,20 @@
   <data name="&gt;&gt;panelSideTable.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="panelConfirmBtnsStep5.ColumnCount" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="cmdConfirmStep5.ButtonText" xml:space="preserve">
-    <value>確認條件</value>
-  </data>
-  <data name="cmdConfirmStep5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="cmdConfirmStep5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>457, 3</value>
-  </data>
-  <data name="cmdConfirmStep5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 29</value>
-  </data>
-  <data name="cmdConfirmStep5.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="&gt;&gt;cmdConfirmStep5.Name" xml:space="preserve">
-    <value>cmdConfirmStep5</value>
-  </data>
-  <data name="&gt;&gt;cmdConfirmStep5.Type" xml:space="preserve">
-    <value>CustomButton.CustomButton, CustomButton, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;cmdConfirmStep5.Parent" xml:space="preserve">
-    <value>panelConfirmBtnsStep5</value>
-  </data>
-  <data name="&gt;&gt;cmdConfirmStep5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cmdResetStep5.ButtonText" xml:space="preserve">
-    <value>重新檢索</value>
-  </data>
-  <data name="cmdResetStep5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="cmdResetStep5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>684, 3</value>
-  </data>
-  <data name="cmdResetStep5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 29</value>
-  </data>
-  <data name="cmdResetStep5.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="&gt;&gt;cmdResetStep5.Name" xml:space="preserve">
-    <value>cmdResetStep5</value>
-  </data>
-  <data name="&gt;&gt;cmdResetStep5.Type" xml:space="preserve">
-    <value>CustomButton.CustomButton, CustomButton, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;cmdResetStep5.Parent" xml:space="preserve">
-    <value>panelConfirmBtnsStep5</value>
-  </data>
-  <data name="&gt;&gt;cmdResetStep5.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelConfirmBtnsStep5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="panelConfirmBtnsStep5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 148</value>
-  </data>
-  <data name="panelConfirmBtnsStep5.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="panelConfirmBtnsStep5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 35</value>
-  </data>
-  <data name="panelConfirmBtnsStep5.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="&gt;&gt;panelConfirmBtnsStep5.Name" xml:space="preserve">
-    <value>panelConfirmBtnsStep5</value>
-  </data>
-  <data name="&gt;&gt;panelConfirmBtnsStep5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelConfirmBtnsStep5.Parent" xml:space="preserve">
-    <value>explorerBarPanel5_content</value>
-  </data>
-  <data name="&gt;&gt;panelConfirmBtnsStep5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panelConfirmBtnsStep5.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cmdConfirmStep5" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cmdResetStep5" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33.33333,Percent,16.66667,Percent,16.66667,Percent,33.33333" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="explorerBarPanel5_content.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="explorerBarPanel5_content.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 54</value>
-  </data>
-  <data name="explorerBarPanel5_content.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 183</value>
-  </data>
-  <data name="explorerBarPanel5_content.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;explorerBarPanel5_content.Name" xml:space="preserve">
-    <value>explorerBarPanel5_content</value>
-  </data>
-  <data name="&gt;&gt;explorerBarPanel5_content.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;explorerBarPanel5_content.Parent" xml:space="preserve">
-    <value>explorerBarPanel5</value>
-  </data>
-  <data name="&gt;&gt;explorerBarPanel5_content.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="explorerBarPanel5_title.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="label70.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 13pt, style=Bold</value>
-  </data>
-  <data name="label70.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label70.Location" type="System.Drawing.Point, System.Drawing">
-    <value>249, 7</value>
-  </data>
-  <data name="label70.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 29</value>
-  </data>
-  <data name="label70.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label70.Text" xml:space="preserve">
-    <value>選型結果</value>
-  </data>
-  <data name="label70.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;label70.Name" xml:space="preserve">
-    <value>label70</value>
-  </data>
-  <data name="&gt;&gt;label70.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label70.Parent" xml:space="preserve">
-    <value>explorerBarPanel5_title</value>
-  </data>
-  <data name="&gt;&gt;label70.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label65.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 13pt, style=Bold</value>
-  </data>
-  <data name="label65.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label65.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 7</value>
-  </data>
-  <data name="label65.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 29</value>
-  </data>
-  <data name="label65.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label65.Text" xml:space="preserve">
-    <value>Step.5</value>
-  </data>
-  <data name="label65.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;label65.Name" xml:space="preserve">
-    <value>label65</value>
-  </data>
-  <data name="&gt;&gt;label65.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label65.Parent" xml:space="preserve">
-    <value>explorerBarPanel5_title</value>
-  </data>
-  <data name="&gt;&gt;label65.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="explorerBarPanel5_title.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="explorerBarPanel5_title.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 10</value>
-  </data>
-  <data name="explorerBarPanel5_title.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 44</value>
-  </data>
-  <data name="explorerBarPanel5_title.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;explorerBarPanel5_title.Name" xml:space="preserve">
-    <value>explorerBarPanel5_title</value>
-  </data>
-  <data name="&gt;&gt;explorerBarPanel5_title.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;explorerBarPanel5_title.Parent" xml:space="preserve">
-    <value>explorerBarPanel5</value>
-  </data>
-  <data name="&gt;&gt;explorerBarPanel5_title.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="explorerBarPanel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="explorerBarPanel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 1647</value>
-  </data>
-  <data name="explorerBarPanel5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 10, 0, 0</value>
-  </data>
-  <data name="explorerBarPanel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 237</value>
-  </data>
-  <data name="explorerBarPanel5.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;explorerBarPanel5.Name" xml:space="preserve">
-    <value>explorerBarPanel5</value>
-  </data>
-  <data name="&gt;&gt;explorerBarPanel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;explorerBarPanel5.Parent" xml:space="preserve">
-    <value>explorerBar</value>
-  </data>
-  <data name="&gt;&gt;explorerBarPanel5.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="panelConfirmBtnsStep4.ColumnCount" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cmdConfirmStep4.ButtonText" xml:space="preserve">
-    <value>下一步</value>
+    <value>確認條件</value>
   </data>
   <data name="cmdConfirmStep4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="cmdConfirmStep4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>570, 3</value>
+    <value>454, 3</value>
   </data>
   <data name="cmdConfirmStep4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 29</value>
+    <value>219, 29</value>
   </data>
   <data name="cmdConfirmStep4.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -960,6 +729,33 @@
   <data name="&gt;&gt;cmdConfirmStep4.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="cmdResetStep4.ButtonText" xml:space="preserve">
+    <value>重新檢索</value>
+  </data>
+  <data name="cmdResetStep4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="cmdResetStep4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>679, 3</value>
+  </data>
+  <data name="cmdResetStep4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 29</value>
+  </data>
+  <data name="cmdResetStep4.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;cmdResetStep4.Name" xml:space="preserve">
+    <value>cmdResetStep4</value>
+  </data>
+  <data name="&gt;&gt;cmdResetStep4.Type" xml:space="preserve">
+    <value>CustomButton.CustomButton, CustomButton, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmdResetStep4.Parent" xml:space="preserve">
+    <value>panelConfirmBtnsStep4</value>
+  </data>
+  <data name="&gt;&gt;cmdResetStep4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="panelConfirmBtnsStep4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
@@ -970,10 +766,10 @@
     <value>1</value>
   </data>
   <data name="panelConfirmBtnsStep4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 35</value>
+    <value>1355, 35</value>
   </data>
   <data name="panelConfirmBtnsStep4.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>26</value>
   </data>
   <data name="&gt;&gt;panelConfirmBtnsStep4.Name" xml:space="preserve">
     <value>panelConfirmBtnsStep4</value>
@@ -988,7 +784,7 @@
     <value>0</value>
   </data>
   <data name="panelConfirmBtnsStep4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cmdConfirmStep4" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,41.66722,Percent,16.66556,Percent,41.66722,Absolute,20" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cmdConfirmStep4" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cmdResetStep4" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33.33333,Percent,16.66667,Percent,16.66667,Percent,33.33333" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="explorerBarPanel4_content.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -997,7 +793,7 @@
     <value>0, 54</value>
   </data>
   <data name="explorerBarPanel4_content.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 144</value>
+    <value>1355, 144</value>
   </data>
   <data name="explorerBarPanel4_content.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1090,7 +886,7 @@
     <value>0, 10</value>
   </data>
   <data name="explorerBarPanel4_title.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 44</value>
+    <value>1355, 44</value>
   </data>
   <data name="explorerBarPanel4_title.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1117,7 +913,7 @@
     <value>0, 10, 0, 0</value>
   </data>
   <data name="explorerBarPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 198</value>
+    <value>1355, 198</value>
   </data>
   <data name="explorerBarPanel4.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1132,7 +928,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;explorerBarPanel4.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="panelConfirmBtnsStep3.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1144,10 +940,10 @@
     <value>Fill</value>
   </data>
   <data name="cmdConfirmStep3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>570, 3</value>
+    <value>567, 3</value>
   </data>
   <data name="cmdConfirmStep3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 29</value>
+    <value>219, 29</value>
   </data>
   <data name="cmdConfirmStep3.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -1174,7 +970,7 @@
     <value>1</value>
   </data>
   <data name="panelConfirmBtnsStep3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 35</value>
+    <value>1355, 35</value>
   </data>
   <data name="panelConfirmBtnsStep3.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -1201,7 +997,7 @@
     <value>0, 54</value>
   </data>
   <data name="explorerBarPanel3_content.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 163</value>
+    <value>1355, 163</value>
   </data>
   <data name="explorerBarPanel3_content.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1294,7 +1090,7 @@
     <value>0, 10</value>
   </data>
   <data name="explorerBarPanel3_title.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 44</value>
+    <value>1355, 44</value>
   </data>
   <data name="explorerBarPanel3_title.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1321,7 +1117,7 @@
     <value>0, 10, 0, 0</value>
   </data>
   <data name="explorerBarPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 217</value>
+    <value>1355, 217</value>
   </data>
   <data name="explorerBarPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1336,7 +1132,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;explorerBarPanel3.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="panelConfirmBtnsStep2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1351,10 +1147,10 @@
     <value>Fill</value>
   </data>
   <data name="cmdConfirmStep2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>570, 3</value>
+    <value>567, 3</value>
   </data>
   <data name="cmdConfirmStep2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 29</value>
+    <value>219, 29</value>
   </data>
   <data name="cmdConfirmStep2.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -1378,7 +1174,7 @@
     <value>1</value>
   </data>
   <data name="panelConfirmBtnsStep2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 35</value>
+    <value>1355, 35</value>
   </data>
   <data name="panelConfirmBtnsStep2.TabIndex" type="System.Int32, mscorlib">
     <value>254</value>
@@ -1411,10 +1207,10 @@
     <value>Fill</value>
   </data>
   <data name="cmdCalc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>570, 3</value>
+    <value>567, 3</value>
   </data>
   <data name="cmdCalc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 29</value>
+    <value>219, 30</value>
   </data>
   <data name="cmdCalc.TabIndex" type="System.Int32, mscorlib">
     <value>251</value>
@@ -1438,7 +1234,7 @@
     <value>1</value>
   </data>
   <data name="panelCalcBtns.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 36</value>
+    <value>1355, 36</value>
   </data>
   <data name="panelCalcBtns.TabIndex" type="System.Int32, mscorlib">
     <value>253</value>
@@ -1642,7 +1438,7 @@
     <value>54, 818</value>
   </data>
   <data name="dgvRecommandList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1300, 364</value>
+    <value>1275, 364</value>
   </data>
   <data name="dgvRecommandList.TabIndex" type="System.Int32, mscorlib">
     <value>252</value>
@@ -4057,7 +3853,7 @@
     <value>0, 54</value>
   </data>
   <data name="explorerBarPanel2_content.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 733</value>
+    <value>1355, 733</value>
   </data>
   <data name="explorerBarPanel2_content.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4150,7 +3946,7 @@
     <value>0, 10</value>
   </data>
   <data name="explorerBarPanel2_title.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 44</value>
+    <value>1355, 44</value>
   </data>
   <data name="explorerBarPanel2_title.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4177,7 +3973,7 @@
     <value>0, 10, 0, 0</value>
   </data>
   <data name="explorerBarPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 787</value>
+    <value>1355, 787</value>
   </data>
   <data name="explorerBarPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4192,7 +3988,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;explorerBarPanel2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="label76.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4264,10 +4060,10 @@
     <value>Fill</value>
   </data>
   <data name="cmdConfirmStep1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>570, 3</value>
+    <value>567, 3</value>
   </data>
   <data name="cmdConfirmStep1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 29</value>
+    <value>219, 29</value>
   </data>
   <data name="cmdConfirmStep1.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -4294,7 +4090,7 @@
     <value>1</value>
   </data>
   <data name="panelConfirmBtnsStep1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 35</value>
+    <value>1355, 35</value>
   </data>
   <data name="panelConfirmBtnsStep1.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -4975,7 +4771,7 @@
     <value>0, 44</value>
   </data>
   <data name="explorerBarPanel1_content.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 401</value>
+    <value>1355, 401</value>
   </data>
   <data name="explorerBarPanel1_content.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -5068,7 +4864,7 @@
     <value>0, 0</value>
   </data>
   <data name="explorerBarPanel1_title.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 44</value>
+    <value>1355, 44</value>
   </data>
   <data name="explorerBarPanel1_title.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5092,7 +4888,7 @@
     <value>0, 0</value>
   </data>
   <data name="explorerBarPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1363, 445</value>
+    <value>1355, 445</value>
   </data>
   <data name="explorerBarPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5107,7 +4903,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;explorerBarPanel1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="explorerBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -5119,10 +4915,10 @@
     <value>0, 0, 300, 0</value>
   </data>
   <data name="explorerBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1680, 716</value>
+    <value>1672, 690</value>
   </data>
   <data name="explorerBar.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;explorerBar.Name" xml:space="preserve">
     <value>explorerBar</value>
@@ -5131,13 +4927,352 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;explorerBar.Parent" xml:space="preserve">
-    <value>splitContainerBase.Panel2</value>
+    <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;explorerBar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="splitContainerBase.Panel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 0, 0</value>
+  </data>
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1682, 700</value>
+  </data>
+  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Step1-4</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>tabMain</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel1.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="panel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="panelConfirmBtnsStep5.ColumnCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="cmdConfirmStep5.ButtonText" xml:space="preserve">
+    <value>確認條件</value>
+  </data>
+  <data name="cmdConfirmStep5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="cmdConfirmStep5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>460, 3</value>
+  </data>
+  <data name="cmdConfirmStep5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 29</value>
+  </data>
+  <data name="cmdConfirmStep5.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;cmdConfirmStep5.Name" xml:space="preserve">
+    <value>cmdConfirmStep5</value>
+  </data>
+  <data name="&gt;&gt;cmdConfirmStep5.Type" xml:space="preserve">
+    <value>CustomButton.CustomButton, CustomButton, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmdConfirmStep5.Parent" xml:space="preserve">
+    <value>panelConfirmBtnsStep5</value>
+  </data>
+  <data name="&gt;&gt;cmdConfirmStep5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cmdResetStep5.ButtonText" xml:space="preserve">
+    <value>重新檢索</value>
+  </data>
+  <data name="cmdResetStep5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="cmdResetStep5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>688, 3</value>
+  </data>
+  <data name="cmdResetStep5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 29</value>
+  </data>
+  <data name="cmdResetStep5.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;cmdResetStep5.Name" xml:space="preserve">
+    <value>cmdResetStep5</value>
+  </data>
+  <data name="&gt;&gt;cmdResetStep5.Type" xml:space="preserve">
+    <value>CustomButton.CustomButton, CustomButton, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmdResetStep5.Parent" xml:space="preserve">
+    <value>panelConfirmBtnsStep5</value>
+  </data>
+  <data name="&gt;&gt;cmdResetStep5.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelConfirmBtnsStep5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panelConfirmBtnsStep5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 562</value>
+  </data>
+  <data name="panelConfirmBtnsStep5.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="panelConfirmBtnsStep5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1372, 35</value>
+  </data>
+  <data name="panelConfirmBtnsStep5.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;panelConfirmBtnsStep5.Name" xml:space="preserve">
+    <value>panelConfirmBtnsStep5</value>
+  </data>
+  <data name="&gt;&gt;panelConfirmBtnsStep5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelConfirmBtnsStep5.Parent" xml:space="preserve">
+    <value>explorerBarPanel5_content</value>
+  </data>
+  <data name="&gt;&gt;panelConfirmBtnsStep5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panelConfirmBtnsStep5.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cmdConfirmStep5" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cmdResetStep5" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33.33333,Percent,16.66667,Percent,16.66667,Percent,33.33333" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="explorerBarPanel5_content.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="explorerBarPanel5_content.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 54</value>
+  </data>
+  <data name="explorerBarPanel5_content.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1372, 597</value>
+  </data>
+  <data name="explorerBarPanel5_content.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;explorerBarPanel5_content.Name" xml:space="preserve">
+    <value>explorerBarPanel5_content</value>
+  </data>
+  <data name="&gt;&gt;explorerBarPanel5_content.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;explorerBarPanel5_content.Parent" xml:space="preserve">
+    <value>explorerBarPanel5</value>
+  </data>
+  <data name="&gt;&gt;explorerBarPanel5_content.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="explorerBarPanel5_title.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="label70.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 13pt, style=Bold</value>
+  </data>
+  <data name="label70.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label70.Location" type="System.Drawing.Point, System.Drawing">
+    <value>249, 7</value>
+  </data>
+  <data name="label70.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 29</value>
+  </data>
+  <data name="label70.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label70.Text" xml:space="preserve">
+    <value>選型結果</value>
+  </data>
+  <data name="label70.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label70.Name" xml:space="preserve">
+    <value>label70</value>
+  </data>
+  <data name="&gt;&gt;label70.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label70.Parent" xml:space="preserve">
+    <value>explorerBarPanel5_title</value>
+  </data>
+  <data name="&gt;&gt;label70.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label65.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 13pt, style=Bold</value>
+  </data>
+  <data name="label65.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label65.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 7</value>
+  </data>
+  <data name="label65.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 29</value>
+  </data>
+  <data name="label65.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label65.Text" xml:space="preserve">
+    <value>Step.5</value>
+  </data>
+  <data name="label65.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label65.Name" xml:space="preserve">
+    <value>label65</value>
+  </data>
+  <data name="&gt;&gt;label65.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label65.Parent" xml:space="preserve">
+    <value>explorerBarPanel5_title</value>
+  </data>
+  <data name="&gt;&gt;label65.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="explorerBarPanel5_title.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="explorerBarPanel5_title.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 10</value>
+  </data>
+  <data name="explorerBarPanel5_title.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1372, 44</value>
+  </data>
+  <data name="explorerBarPanel5_title.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;explorerBarPanel5_title.Name" xml:space="preserve">
+    <value>explorerBarPanel5_title</value>
+  </data>
+  <data name="&gt;&gt;explorerBarPanel5_title.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;explorerBarPanel5_title.Parent" xml:space="preserve">
+    <value>explorerBarPanel5</value>
+  </data>
+  <data name="&gt;&gt;explorerBarPanel5_title.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="explorerBarPanel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="explorerBarPanel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="explorerBarPanel5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 10, 0, 0</value>
+  </data>
+  <data name="explorerBarPanel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1372, 651</value>
+  </data>
+  <data name="explorerBarPanel5.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;explorerBarPanel5.Name" xml:space="preserve">
+    <value>explorerBarPanel5</value>
+  </data>
+  <data name="&gt;&gt;explorerBarPanel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;explorerBarPanel5.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;explorerBarPanel5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 300, 0</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1672, 690</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 0, 0</value>
+  </data>
+  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1682, 700</value>
+  </data>
+  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Step5</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>tabMain</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tabMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1690, 726</value>
+  </data>
+  <data name="tabMain.TabIndex" type="System.Int32, mscorlib">
+    <value>263</value>
+  </data>
+  <data name="&gt;&gt;tabMain.Name" xml:space="preserve">
+    <value>tabMain</value>
+  </data>
+  <data name="&gt;&gt;tabMain.Type" xml:space="preserve">
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, SingleAxis_NoMotor_SelectionSoftware, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tabMain.Parent" xml:space="preserve">
+    <value>splitContainerBase.Panel2</value>
+  </data>
+  <data name="&gt;&gt;tabMain.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;splitContainerBase.Panel2.Name" xml:space="preserve">
     <value>splitContainerBase.Panel2</value>
@@ -5183,9 +5318,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1690, 762</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

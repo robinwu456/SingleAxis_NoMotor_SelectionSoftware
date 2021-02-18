@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
-    class CustomTabControl : TabControl {
+    public class CustomTabControl : TabControl {
 
         public bool IsBorderShow { get; set; } = true;
 

@@ -38,19 +38,25 @@
             this.cmdNarrow = new System.Windows.Forms.PictureBox();
             this.cmdZoom = new System.Windows.Forms.PictureBox();
             this.cmdClose = new System.Windows.Forms.PictureBox();
+            this.tabMain = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.explorerBar = new System.Windows.Forms.Panel();
-            this.explorerBarPanel5 = new System.Windows.Forms.Panel();
-            this.explorerBarPanel5_content = new System.Windows.Forms.Panel();
-            this.panelConfirmBtnsStep5 = new System.Windows.Forms.TableLayoutPanel();
-            this.cmdConfirmStep5 = new CustomButton.CustomButton();
-            this.cmdResetStep5 = new CustomButton.CustomButton();
-            this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
-            this.label70 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
+            this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.panelSideTableSelections = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.tableSelections = new System.Windows.Forms.TableLayoutPanel();
+            this.customPanel4 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.customPanel3 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.customPanel2 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.explorerBarPanel4 = new System.Windows.Forms.Panel();
             this.explorerBarPanel4_content = new System.Windows.Forms.Panel();
             this.panelConfirmBtnsStep4 = new System.Windows.Forms.TableLayoutPanel();
             this.cmdConfirmStep4 = new CustomButton.CustomButton();
+            this.cmdResetStep4 = new CustomButton.CustomButton();
             this.explorerBarPanel4_title = new System.Windows.Forms.Panel();
             this.label69 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
@@ -198,17 +204,16 @@
             this.explorerBarPanel1_title = new System.Windows.Forms.Panel();
             this.label66 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
-            this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.panelSideTableSelections = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.tableSelections = new System.Windows.Forms.TableLayoutPanel();
-            this.customPanel4 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.customPanel3 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.customPanel2 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.explorerBarPanel5 = new System.Windows.Forms.Panel();
+            this.explorerBarPanel5_content = new System.Windows.Forms.Panel();
+            this.panelConfirmBtnsStep5 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmdConfirmStep5 = new CustomButton.CustomButton();
+            this.cmdResetStep5 = new CustomButton.CustomButton();
+            this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -220,11 +225,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdNarrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdZoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).BeginInit();
+            this.tabMain.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.explorerBar.SuspendLayout();
-            this.explorerBarPanel5.SuspendLayout();
-            this.explorerBarPanel5_content.SuspendLayout();
-            this.panelConfirmBtnsStep5.SuspendLayout();
-            this.explorerBarPanel5_title.SuspendLayout();
+            this.panelSideTable.SuspendLayout();
+            this.panelSideTableSelections.SuspendLayout();
+            this.customPanel4.SuspendLayout();
+            this.customPanel3.SuspendLayout();
             this.explorerBarPanel4.SuspendLayout();
             this.explorerBarPanel4_content.SuspendLayout();
             this.panelConfirmBtnsStep4.SuspendLayout();
@@ -254,10 +261,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picDustFree)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStandardEnv)).BeginInit();
             this.explorerBarPanel1_title.SuspendLayout();
-            this.panelSideTable.SuspendLayout();
-            this.panelSideTableSelections.SuspendLayout();
-            this.customPanel4.SuspendLayout();
-            this.customPanel3.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.explorerBarPanel5.SuspendLayout();
+            this.explorerBarPanel5_content.SuspendLayout();
+            this.panelConfirmBtnsStep5.SuspendLayout();
+            this.explorerBarPanel5_title.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -281,8 +290,7 @@
             // splitContainerBase.Panel2
             // 
             this.splitContainerBase.Panel2.BackColor = System.Drawing.Color.White;
-            this.splitContainerBase.Panel2.Controls.Add(this.explorerBar);
-            resources.ApplyResources(this.splitContainerBase.Panel2, "splitContainerBase.Panel2");
+            this.splitContainerBase.Panel2.Controls.Add(this.tabMain);
             // 
             // pictureBoxToyo
             // 
@@ -333,90 +341,113 @@
             this.cmdClose.Name = "cmdClose";
             this.cmdClose.TabStop = false;
             // 
+            // tabMain
+            // 
+            this.tabMain.Controls.Add(this.tabPage1);
+            this.tabMain.Controls.Add(this.tabPage2);
+            resources.ApplyResources(this.tabMain, "tabMain");
+            this.tabMain.IsBorderShow = true;
+            this.tabMain.Name = "tabMain";
+            this.tabMain.SelectedIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.explorerBar);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
+            this.tabPage1.Name = "tabPage1";
+            // 
             // explorerBar
             // 
             resources.ApplyResources(this.explorerBar, "explorerBar");
             this.explorerBar.Controls.Add(this.panelSideTable);
-            this.explorerBar.Controls.Add(this.explorerBarPanel5);
             this.explorerBar.Controls.Add(this.explorerBarPanel4);
             this.explorerBar.Controls.Add(this.explorerBarPanel3);
             this.explorerBar.Controls.Add(this.explorerBarPanel2);
             this.explorerBar.Controls.Add(this.explorerBarPanel1);
             this.explorerBar.Name = "explorerBar";
             // 
-            // explorerBarPanel5
+            // panelSideTable
             // 
-            this.explorerBarPanel5.Controls.Add(this.explorerBarPanel5_content);
-            this.explorerBarPanel5.Controls.Add(this.explorerBarPanel5_title);
-            resources.ApplyResources(this.explorerBarPanel5, "explorerBarPanel5");
-            this.explorerBarPanel5.Name = "explorerBarPanel5";
+            resources.ApplyResources(this.panelSideTable, "panelSideTable");
+            this.panelSideTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSideTable.Controls.Add(this.panelSideTableSelections);
+            this.panelSideTable.Controls.Add(this.customPanel4);
+            this.panelSideTable.Controls.Add(this.label4);
+            this.panelSideTable.Controls.Add(this.customPanel3);
+            this.panelSideTable.Controls.Add(this.label3);
+            this.panelSideTable.Controls.Add(this.customPanel2);
+            this.panelSideTable.Controls.Add(this.label2);
+            this.panelSideTable.Curvature = 8;
+            this.panelSideTable.Name = "panelSideTable";
             // 
-            // explorerBarPanel5_content
+            // panelSideTableSelections
             // 
-            this.explorerBarPanel5_content.Controls.Add(this.panelConfirmBtnsStep5);
-            resources.ApplyResources(this.explorerBarPanel5_content, "explorerBarPanel5_content");
-            this.explorerBarPanel5_content.Name = "explorerBarPanel5_content";
+            resources.ApplyResources(this.panelSideTableSelections, "panelSideTableSelections");
+            this.panelSideTableSelections.BorderColor = System.Drawing.Color.Silver;
+            this.panelSideTableSelections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSideTableSelections.Controls.Add(this.tableSelections);
+            this.panelSideTableSelections.Curvature = 8;
+            this.panelSideTableSelections.Name = "panelSideTableSelections";
             // 
-            // panelConfirmBtnsStep5
+            // tableSelections
             // 
-            resources.ApplyResources(this.panelConfirmBtnsStep5, "panelConfirmBtnsStep5");
-            this.panelConfirmBtnsStep5.Controls.Add(this.cmdConfirmStep5, 1, 0);
-            this.panelConfirmBtnsStep5.Controls.Add(this.cmdResetStep5, 2, 0);
-            this.panelConfirmBtnsStep5.Name = "panelConfirmBtnsStep5";
+            resources.ApplyResources(this.tableSelections, "tableSelections");
+            this.tableSelections.Name = "tableSelections";
             // 
-            // cmdConfirmStep5
+            // customPanel4
             // 
-            this.cmdConfirmStep5.BackColor = System.Drawing.Color.Transparent;
-            this.cmdConfirmStep5.BackColor_Hover = System.Drawing.Color.DarkRed;
-            this.cmdConfirmStep5.BackColor_Normal = System.Drawing.Color.Red;
-            this.cmdConfirmStep5.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmdConfirmStep5.BackColor2_Hover = System.Drawing.Color.DarkRed;
-            this.cmdConfirmStep5.BackColor2_Normal = System.Drawing.Color.Red;
-            this.cmdConfirmStep5.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmdConfirmStep5.ButtonEnabled = true;
-            resources.ApplyResources(this.cmdConfirmStep5, "cmdConfirmStep5");
-            this.cmdConfirmStep5.Curvature = 15;
-            this.cmdConfirmStep5.GradientMode = CustomButton.LinearGradientMode.Horizontal;
-            this.cmdConfirmStep5.Name = "cmdConfirmStep5";
-            this.cmdConfirmStep5.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
+            resources.ApplyResources(this.customPanel4, "customPanel4");
+            this.customPanel4.BorderColor = System.Drawing.Color.Silver;
+            this.customPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customPanel4.Controls.Add(this.label1);
+            this.customPanel4.Curvature = 8;
+            this.customPanel4.Name = "customPanel4";
             // 
-            // cmdResetStep5
+            // label1
             // 
-            this.cmdResetStep5.BackColor = System.Drawing.Color.Transparent;
-            this.cmdResetStep5.BackColor_Hover = System.Drawing.Color.DimGray;
-            this.cmdResetStep5.BackColor_Normal = System.Drawing.Color.Gray;
-            this.cmdResetStep5.BackColor_Press = System.Drawing.Color.Black;
-            this.cmdResetStep5.BackColor2_Hover = System.Drawing.Color.DimGray;
-            this.cmdResetStep5.BackColor2_Normal = System.Drawing.Color.Gray;
-            this.cmdResetStep5.BackColor2_Press = System.Drawing.Color.Black;
-            this.cmdResetStep5.ButtonEnabled = true;
-            resources.ApplyResources(this.cmdResetStep5, "cmdResetStep5");
-            this.cmdResetStep5.Curvature = 15;
-            this.cmdResetStep5.GradientMode = CustomButton.LinearGradientMode.Horizontal;
-            this.cmdResetStep5.Name = "cmdResetStep5";
-            this.cmdResetStep5.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
-            // explorerBarPanel5_title
+            // label4
             // 
-            this.explorerBarPanel5_title.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
-            resources.ApplyResources(this.explorerBarPanel5_title, "explorerBarPanel5_title");
-            this.explorerBarPanel5_title.Controls.Add(this.label70);
-            this.explorerBarPanel5_title.Controls.Add(this.label65);
-            this.explorerBarPanel5_title.Name = "explorerBarPanel5_title";
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Name = "label4";
             // 
-            // label70
+            // customPanel3
             // 
-            this.label70.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.label70, "label70");
-            this.label70.ForeColor = System.Drawing.Color.DimGray;
-            this.label70.Name = "label70";
+            resources.ApplyResources(this.customPanel3, "customPanel3");
+            this.customPanel3.BorderColor = System.Drawing.Color.Silver;
+            this.customPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customPanel3.Controls.Add(this.label5);
+            this.customPanel3.Curvature = 8;
+            this.customPanel3.Name = "customPanel3";
             // 
-            // label65
+            // label5
             // 
-            this.label65.BackColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.label65, "label65");
-            this.label65.ForeColor = System.Drawing.Color.White;
-            this.label65.Name = "label65";
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Name = "label5";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Name = "label3";
+            // 
+            // customPanel2
+            // 
+            resources.ApplyResources(this.customPanel2, "customPanel2");
+            this.customPanel2.BorderColor = System.Drawing.Color.Silver;
+            this.customPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customPanel2.Curvature = 8;
+            this.customPanel2.Name = "customPanel2";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
             // 
             // explorerBarPanel4
             // 
@@ -435,6 +466,7 @@
             // 
             resources.ApplyResources(this.panelConfirmBtnsStep4, "panelConfirmBtnsStep4");
             this.panelConfirmBtnsStep4.Controls.Add(this.cmdConfirmStep4, 1, 0);
+            this.panelConfirmBtnsStep4.Controls.Add(this.cmdResetStep4, 2, 0);
             this.panelConfirmBtnsStep4.Name = "panelConfirmBtnsStep4";
             // 
             // cmdConfirmStep4
@@ -452,6 +484,22 @@
             this.cmdConfirmStep4.GradientMode = CustomButton.LinearGradientMode.Horizontal;
             this.cmdConfirmStep4.Name = "cmdConfirmStep4";
             this.cmdConfirmStep4.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
+            // 
+            // cmdResetStep4
+            // 
+            this.cmdResetStep4.BackColor = System.Drawing.Color.Transparent;
+            this.cmdResetStep4.BackColor_Hover = System.Drawing.Color.DimGray;
+            this.cmdResetStep4.BackColor_Normal = System.Drawing.Color.Gray;
+            this.cmdResetStep4.BackColor_Press = System.Drawing.Color.Black;
+            this.cmdResetStep4.BackColor2_Hover = System.Drawing.Color.DimGray;
+            this.cmdResetStep4.BackColor2_Normal = System.Drawing.Color.Gray;
+            this.cmdResetStep4.BackColor2_Press = System.Drawing.Color.Black;
+            this.cmdResetStep4.ButtonEnabled = true;
+            resources.ApplyResources(this.cmdResetStep4, "cmdResetStep4");
+            this.cmdResetStep4.Curvature = 15;
+            this.cmdResetStep4.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdResetStep4.Name = "cmdResetStep4";
+            this.cmdResetStep4.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
             // 
             // explorerBarPanel4_title
             // 
@@ -725,7 +773,7 @@
             // dgvRecommandColumnLock
             // 
             this.dgvRecommandColumnLock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnLock.FillWeight = 77.31933F;
+            this.dgvRecommandColumnLock.FillWeight = 56.40312F;
             resources.ApplyResources(this.dgvRecommandColumnLock, "dgvRecommandColumnLock");
             this.dgvRecommandColumnLock.Name = "dgvRecommandColumnLock";
             this.dgvRecommandColumnLock.ReadOnly = true;
@@ -734,7 +782,7 @@
             // dgvRecommandColumnModel
             // 
             this.dgvRecommandColumnModel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnModel.FillWeight = 77.31933F;
+            this.dgvRecommandColumnModel.FillWeight = 68.39409F;
             resources.ApplyResources(this.dgvRecommandColumnModel, "dgvRecommandColumnModel");
             this.dgvRecommandColumnModel.Name = "dgvRecommandColumnModel";
             this.dgvRecommandColumnModel.ReadOnly = true;
@@ -743,7 +791,7 @@
             // dgvRecommandColumnLead
             // 
             this.dgvRecommandColumnLead.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnLead.FillWeight = 77.31933F;
+            this.dgvRecommandColumnLead.FillWeight = 68.39409F;
             resources.ApplyResources(this.dgvRecommandColumnLead, "dgvRecommandColumnLead");
             this.dgvRecommandColumnLead.Name = "dgvRecommandColumnLead";
             this.dgvRecommandColumnLead.ReadOnly = true;
@@ -752,7 +800,7 @@
             // dgvRecommandColumnLoad
             // 
             this.dgvRecommandColumnLoad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnLoad.FillWeight = 77.31933F;
+            this.dgvRecommandColumnLoad.FillWeight = 68.39409F;
             resources.ApplyResources(this.dgvRecommandColumnLoad, "dgvRecommandColumnLoad");
             this.dgvRecommandColumnLoad.Name = "dgvRecommandColumnLoad";
             this.dgvRecommandColumnLoad.ReadOnly = true;
@@ -761,7 +809,7 @@
             // dgvRecommandColumnRpm
             // 
             this.dgvRecommandColumnRpm.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnRpm.FillWeight = 77.31933F;
+            this.dgvRecommandColumnRpm.FillWeight = 68.39409F;
             resources.ApplyResources(this.dgvRecommandColumnRpm, "dgvRecommandColumnRpm");
             this.dgvRecommandColumnRpm.Name = "dgvRecommandColumnRpm";
             this.dgvRecommandColumnRpm.ReadOnly = true;
@@ -770,7 +818,7 @@
             // dgvRecommandColumnVmax
             // 
             this.dgvRecommandColumnVmax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnVmax.FillWeight = 77.31933F;
+            this.dgvRecommandColumnVmax.FillWeight = 68.39409F;
             resources.ApplyResources(this.dgvRecommandColumnVmax, "dgvRecommandColumnVmax");
             this.dgvRecommandColumnVmax.Name = "dgvRecommandColumnVmax";
             this.dgvRecommandColumnVmax.ReadOnly = true;
@@ -779,7 +827,7 @@
             // dgvRecommandColumnAccelSpeed
             // 
             this.dgvRecommandColumnAccelSpeed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnAccelSpeed.FillWeight = 77.31933F;
+            this.dgvRecommandColumnAccelSpeed.FillWeight = 91.9438F;
             resources.ApplyResources(this.dgvRecommandColumnAccelSpeed, "dgvRecommandColumnAccelSpeed");
             this.dgvRecommandColumnAccelSpeed.Name = "dgvRecommandColumnAccelSpeed";
             this.dgvRecommandColumnAccelSpeed.ReadOnly = true;
@@ -788,7 +836,7 @@
             // dgvRecommandColumnStroke
             // 
             this.dgvRecommandColumnStroke.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnStroke.FillWeight = 77.31933F;
+            this.dgvRecommandColumnStroke.FillWeight = 68.39409F;
             resources.ApplyResources(this.dgvRecommandColumnStroke, "dgvRecommandColumnStroke");
             this.dgvRecommandColumnStroke.Name = "dgvRecommandColumnStroke";
             this.dgvRecommandColumnStroke.ReadOnly = true;
@@ -797,7 +845,7 @@
             // dgvRecommandColumnRunTime
             // 
             this.dgvRecommandColumnRunTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnRunTime.FillWeight = 77.31933F;
+            this.dgvRecommandColumnRunTime.FillWeight = 68.39409F;
             resources.ApplyResources(this.dgvRecommandColumnRunTime, "dgvRecommandColumnRunTime");
             this.dgvRecommandColumnRunTime.Name = "dgvRecommandColumnRunTime";
             this.dgvRecommandColumnRunTime.ReadOnly = true;
@@ -806,6 +854,7 @@
             // dgvRecommandColumnMomentA
             // 
             this.dgvRecommandColumnMomentA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnMomentA.FillWeight = 92.21493F;
             resources.ApplyResources(this.dgvRecommandColumnMomentA, "dgvRecommandColumnMomentA");
             this.dgvRecommandColumnMomentA.Name = "dgvRecommandColumnMomentA";
             this.dgvRecommandColumnMomentA.ReadOnly = true;
@@ -814,6 +863,7 @@
             // dgvRecommandColumnMomentB
             // 
             this.dgvRecommandColumnMomentB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnMomentB.FillWeight = 88.45663F;
             resources.ApplyResources(this.dgvRecommandColumnMomentB, "dgvRecommandColumnMomentB");
             this.dgvRecommandColumnMomentB.Name = "dgvRecommandColumnMomentB";
             this.dgvRecommandColumnMomentB.ReadOnly = true;
@@ -822,6 +872,7 @@
             // dgvRecommandColumnMomentC
             // 
             this.dgvRecommandColumnMomentC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnMomentC.FillWeight = 92.50709F;
             resources.ApplyResources(this.dgvRecommandColumnMomentC, "dgvRecommandColumnMomentC");
             this.dgvRecommandColumnMomentC.Name = "dgvRecommandColumnMomentC";
             this.dgvRecommandColumnMomentC.ReadOnly = true;
@@ -830,7 +881,7 @@
             // dgvRecommandColumnPower
             // 
             this.dgvRecommandColumnPower.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnPower.FillWeight = 77.31933F;
+            this.dgvRecommandColumnPower.FillWeight = 68.39409F;
             resources.ApplyResources(this.dgvRecommandColumnPower, "dgvRecommandColumnPower");
             this.dgvRecommandColumnPower.Name = "dgvRecommandColumnPower";
             this.dgvRecommandColumnPower.ReadOnly = true;
@@ -839,6 +890,7 @@
             // dgvRecommandColumnTmax
             // 
             this.dgvRecommandColumnTmax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnTmax.FillWeight = 158.5393F;
             resources.ApplyResources(this.dgvRecommandColumnTmax, "dgvRecommandColumnTmax");
             this.dgvRecommandColumnTmax.Name = "dgvRecommandColumnTmax";
             this.dgvRecommandColumnTmax.ReadOnly = true;
@@ -847,6 +899,7 @@
             // dgvRecommandColumnTrms
             // 
             this.dgvRecommandColumnTrms.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnTrms.FillWeight = 167.8455F;
             resources.ApplyResources(this.dgvRecommandColumnTrms, "dgvRecommandColumnTrms");
             this.dgvRecommandColumnTrms.Name = "dgvRecommandColumnTrms";
             this.dgvRecommandColumnTrms.ReadOnly = true;
@@ -855,7 +908,7 @@
             // dgvRecommandColumnServiceDistance
             // 
             this.dgvRecommandColumnServiceDistance.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnServiceDistance.FillWeight = 77.31933F;
+            this.dgvRecommandColumnServiceDistance.FillWeight = 64.37476F;
             resources.ApplyResources(this.dgvRecommandColumnServiceDistance, "dgvRecommandColumnServiceDistance");
             this.dgvRecommandColumnServiceDistance.Name = "dgvRecommandColumnServiceDistance";
             this.dgvRecommandColumnServiceDistance.ReadOnly = true;
@@ -864,7 +917,7 @@
             // dgvRecommandColumnServiceLife
             // 
             this.dgvRecommandColumnServiceLife.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnServiceLife.FillWeight = 77.31933F;
+            this.dgvRecommandColumnServiceLife.FillWeight = 68.39409F;
             resources.ApplyResources(this.dgvRecommandColumnServiceLife, "dgvRecommandColumnServiceLife");
             this.dgvRecommandColumnServiceLife.Name = "dgvRecommandColumnServiceLife";
             this.dgvRecommandColumnServiceLife.ReadOnly = true;
@@ -1646,87 +1699,92 @@
             this.label61.ForeColor = System.Drawing.Color.White;
             this.label61.Name = "label61";
             // 
-            // panelSideTable
+            // tabPage2
             // 
-            resources.ApplyResources(this.panelSideTable, "panelSideTable");
-            this.panelSideTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelSideTable.Controls.Add(this.panelSideTableSelections);
-            this.panelSideTable.Controls.Add(this.customPanel4);
-            this.panelSideTable.Controls.Add(this.label4);
-            this.panelSideTable.Controls.Add(this.customPanel3);
-            this.panelSideTable.Controls.Add(this.label3);
-            this.panelSideTable.Controls.Add(this.customPanel2);
-            this.panelSideTable.Controls.Add(this.label2);
-            this.panelSideTable.Curvature = 8;
-            this.panelSideTable.Name = "panelSideTable";
+            this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.Controls.Add(this.panel1);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
+            this.tabPage2.Name = "tabPage2";
             // 
-            // panelSideTableSelections
+            // panel1
             // 
-            resources.ApplyResources(this.panelSideTableSelections, "panelSideTableSelections");
-            this.panelSideTableSelections.BorderColor = System.Drawing.Color.Silver;
-            this.panelSideTableSelections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelSideTableSelections.Controls.Add(this.tableSelections);
-            this.panelSideTableSelections.Curvature = 8;
-            this.panelSideTableSelections.Name = "panelSideTableSelections";
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Controls.Add(this.explorerBarPanel5);
+            this.panel1.Name = "panel1";
             // 
-            // tableSelections
+            // explorerBarPanel5
             // 
-            resources.ApplyResources(this.tableSelections, "tableSelections");
-            this.tableSelections.Name = "tableSelections";
+            this.explorerBarPanel5.Controls.Add(this.explorerBarPanel5_content);
+            this.explorerBarPanel5.Controls.Add(this.explorerBarPanel5_title);
+            resources.ApplyResources(this.explorerBarPanel5, "explorerBarPanel5");
+            this.explorerBarPanel5.Name = "explorerBarPanel5";
             // 
-            // customPanel4
+            // explorerBarPanel5_content
             // 
-            resources.ApplyResources(this.customPanel4, "customPanel4");
-            this.customPanel4.BorderColor = System.Drawing.Color.Silver;
-            this.customPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel4.Controls.Add(this.label1);
-            this.customPanel4.Curvature = 8;
-            this.customPanel4.Name = "customPanel4";
+            this.explorerBarPanel5_content.Controls.Add(this.panelConfirmBtnsStep5);
+            resources.ApplyResources(this.explorerBarPanel5_content, "explorerBarPanel5_content");
+            this.explorerBarPanel5_content.Name = "explorerBarPanel5_content";
             // 
-            // label1
+            // panelConfirmBtnsStep5
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.panelConfirmBtnsStep5, "panelConfirmBtnsStep5");
+            this.panelConfirmBtnsStep5.Controls.Add(this.cmdConfirmStep5, 1, 0);
+            this.panelConfirmBtnsStep5.Controls.Add(this.cmdResetStep5, 2, 0);
+            this.panelConfirmBtnsStep5.Name = "panelConfirmBtnsStep5";
             // 
-            // label4
+            // cmdConfirmStep5
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Name = "label4";
+            this.cmdConfirmStep5.BackColor = System.Drawing.Color.Transparent;
+            this.cmdConfirmStep5.BackColor_Hover = System.Drawing.Color.DarkRed;
+            this.cmdConfirmStep5.BackColor_Normal = System.Drawing.Color.Red;
+            this.cmdConfirmStep5.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdConfirmStep5.BackColor2_Hover = System.Drawing.Color.DarkRed;
+            this.cmdConfirmStep5.BackColor2_Normal = System.Drawing.Color.Red;
+            this.cmdConfirmStep5.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdConfirmStep5.ButtonEnabled = true;
+            resources.ApplyResources(this.cmdConfirmStep5, "cmdConfirmStep5");
+            this.cmdConfirmStep5.Curvature = 15;
+            this.cmdConfirmStep5.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdConfirmStep5.Name = "cmdConfirmStep5";
+            this.cmdConfirmStep5.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
             // 
-            // customPanel3
+            // cmdResetStep5
             // 
-            resources.ApplyResources(this.customPanel3, "customPanel3");
-            this.customPanel3.BorderColor = System.Drawing.Color.Silver;
-            this.customPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel3.Controls.Add(this.label5);
-            this.customPanel3.Curvature = 8;
-            this.customPanel3.Name = "customPanel3";
+            this.cmdResetStep5.BackColor = System.Drawing.Color.Transparent;
+            this.cmdResetStep5.BackColor_Hover = System.Drawing.Color.DimGray;
+            this.cmdResetStep5.BackColor_Normal = System.Drawing.Color.Gray;
+            this.cmdResetStep5.BackColor_Press = System.Drawing.Color.Black;
+            this.cmdResetStep5.BackColor2_Hover = System.Drawing.Color.DimGray;
+            this.cmdResetStep5.BackColor2_Normal = System.Drawing.Color.Gray;
+            this.cmdResetStep5.BackColor2_Press = System.Drawing.Color.Black;
+            this.cmdResetStep5.ButtonEnabled = true;
+            resources.ApplyResources(this.cmdResetStep5, "cmdResetStep5");
+            this.cmdResetStep5.Curvature = 15;
+            this.cmdResetStep5.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdResetStep5.Name = "cmdResetStep5";
+            this.cmdResetStep5.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
             // 
-            // label5
+            // explorerBarPanel5_title
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Name = "label5";
+            this.explorerBarPanel5_title.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
+            resources.ApplyResources(this.explorerBarPanel5_title, "explorerBarPanel5_title");
+            this.explorerBarPanel5_title.Controls.Add(this.label70);
+            this.explorerBarPanel5_title.Controls.Add(this.label65);
+            this.explorerBarPanel5_title.Name = "explorerBarPanel5_title";
             // 
-            // label3
+            // label70
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Name = "label3";
+            this.label70.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.label70, "label70");
+            this.label70.ForeColor = System.Drawing.Color.DimGray;
+            this.label70.Name = "label70";
             // 
-            // customPanel2
+            // label65
             // 
-            resources.ApplyResources(this.customPanel2, "customPanel2");
-            this.customPanel2.BorderColor = System.Drawing.Color.Silver;
-            this.customPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel2.Curvature = 8;
-            this.customPanel2.Name = "customPanel2";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            this.label65.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.label65, "label65");
+            this.label65.ForeColor = System.Drawing.Color.White;
+            this.label65.Name = "label65";
             // 
             // FormMain
             // 
@@ -1740,7 +1798,6 @@
             this.splitContainerBase.Panel1.ResumeLayout(false);
             this.splitContainerBase.Panel1.PerformLayout();
             this.splitContainerBase.Panel2.ResumeLayout(false);
-            this.splitContainerBase.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).EndInit();
             this.splitContainerBase.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToyo)).EndInit();
@@ -1750,11 +1807,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdNarrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdZoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).EndInit();
+            this.tabMain.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.explorerBar.ResumeLayout(false);
-            this.explorerBarPanel5.ResumeLayout(false);
-            this.explorerBarPanel5_content.ResumeLayout(false);
-            this.panelConfirmBtnsStep5.ResumeLayout(false);
-            this.explorerBarPanel5_title.ResumeLayout(false);
+            this.panelSideTable.ResumeLayout(false);
+            this.panelSideTableSelections.ResumeLayout(false);
+            this.customPanel4.ResumeLayout(false);
+            this.customPanel3.ResumeLayout(false);
             this.explorerBarPanel4.ResumeLayout(false);
             this.explorerBarPanel4_content.ResumeLayout(false);
             this.panelConfirmBtnsStep4.ResumeLayout(false);
@@ -1791,10 +1851,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.picDustFree)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStandardEnv)).EndInit();
             this.explorerBarPanel1_title.ResumeLayout(false);
-            this.panelSideTable.ResumeLayout(false);
-            this.panelSideTableSelections.ResumeLayout(false);
-            this.customPanel4.ResumeLayout(false);
-            this.customPanel3.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.explorerBarPanel5.ResumeLayout(false);
+            this.explorerBarPanel5_content.ResumeLayout(false);
+            this.panelConfirmBtnsStep5.ResumeLayout(false);
+            this.explorerBarPanel5_title.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1803,150 +1866,42 @@
         private System.Windows.Forms.PictureBox pictureBoxToyo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private CustomPanel customPanel4;
-        private System.Windows.Forms.Label label4;
-        private CustomPanel customPanel3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private CustomPanel customPanel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
         public System.Windows.Forms.SplitContainer splitContainerBase;
         public System.Windows.Forms.PictureBox cmdExplorer;
         public System.Windows.Forms.PictureBox cmdNarrow;
         public System.Windows.Forms.PictureBox cmdClose;
-        public System.Windows.Forms.TableLayoutPanel tableSelections;
-        public CustomPanel panelSideTableSelections;
-        public CustomPanel panelSideTable;
-        private System.Windows.Forms.Label label11;
-        public System.Windows.Forms.RadioButton optUpsideDownUse;
-        public System.Windows.Forms.RadioButton optHorizontalUse;
-        public System.Windows.Forms.RadioButton optWallHangingUse;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        public System.Windows.Forms.RadioButton optDustFreeEnv;
-        public System.Windows.Forms.RadioButton optStandardEnv;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        public System.Windows.Forms.ComboBox cboModelType;
-        public System.Windows.Forms.PictureBox picDustFree;
-        public System.Windows.Forms.PictureBox picStandardEnv;
-        public System.Windows.Forms.Panel panelSetupEnv;
-        public System.Windows.Forms.Panel panelSetupMode;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        public System.Windows.Forms.Label labelAdvanceOption;
-        public System.Windows.Forms.Label labelStopTimeAlarm;
-        public System.Windows.Forms.Label labelStrokeAlarm;
-        public System.Windows.Forms.Label labelLoadAlarm;
-        public System.Windows.Forms.TextBox txtStopTime;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtStroke;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtLoad;
-        private System.Windows.Forms.Label label23;
-        //public CustomToggle.CustomToggle toggleAdvanceOptions;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
-        public System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.TextBox textBox2;
-        public System.Windows.Forms.TextBox textBox3;
-        public System.Windows.Forms.Label label30;
-        public System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label28;
-        public System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label37;
-        public System.Windows.Forms.TextBox textBox5;
-        public System.Windows.Forms.TextBox textBox6;
-        public System.Windows.Forms.TextBox textBox7;
-        public System.Windows.Forms.Label label38;
-        public System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label42;
-        public System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label46;
-        public System.Windows.Forms.TextBox textBox8;
-        public System.Windows.Forms.TextBox textBox10;
-        public System.Windows.Forms.TextBox textBox9;
-        public System.Windows.Forms.Label label47;
-        public System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Label label52;
-        public System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         public System.Windows.Forms.PictureBox cmdZoom;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
         public System.Windows.Forms.Panel explorerBar;
-        public System.Windows.Forms.Panel explorerBarPanel1;
-        public System.Windows.Forms.Panel explorerBarPanel1_content;
-        public System.Windows.Forms.Panel explorerBarPanel1_title;
-        public System.Windows.Forms.Panel explorerBarPanel2;
-        public System.Windows.Forms.Panel explorerBarPanel2_content;
-        public System.Windows.Forms.Panel explorerBarPanel2_title;
-        public System.Windows.Forms.Panel explorerBarPanel5;
-        public System.Windows.Forms.Panel explorerBarPanel5_content;
-        public System.Windows.Forms.Panel explorerBarPanel5_title;
+        public CustomPanel panelSideTable;
+        public CustomPanel panelSideTableSelections;
+        public System.Windows.Forms.TableLayoutPanel tableSelections;
+        private CustomPanel customPanel4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private CustomPanel customPanel3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private CustomPanel customPanel2;
+        private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Panel explorerBarPanel4;
         public System.Windows.Forms.Panel explorerBarPanel4_content;
         public System.Windows.Forms.Panel explorerBarPanel4_title;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label64;
         public System.Windows.Forms.Panel explorerBarPanel3;
         public System.Windows.Forms.Panel explorerBarPanel3_content;
+        public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep3;
+        public CustomButton.CustomButton cmdConfirmStep3;
         public System.Windows.Forms.Panel explorerBarPanel3_title;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Label label57;
-        public System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        public System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label34;
-        public System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.Panel panel2;
-        public System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.Label label69;
         private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.Label label66;
-        public System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.Label label75;
-        public System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Label label74;
-        public System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Panel panel4;
-        public System.Windows.Forms.RadioButton radioButton2;
-        public System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.Label label63;
+        public System.Windows.Forms.Panel explorerBarPanel2;
+        public System.Windows.Forms.Panel explorerBarPanel2_content;
+        public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep2;
+        public CustomButton.CustomButton cmdConfirmStep2;
+        public System.Windows.Forms.TableLayoutPanel panelCalcBtns;
         public CustomButton.CustomButton cmdCalc;
         public System.Windows.Forms.DataGridView dgvRecommandList;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dgvRecommandColumnLock;
@@ -1968,18 +1923,130 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnServiceLife;
         private System.Windows.Forms.DataGridViewImageColumn 是否推薦;
         private System.Windows.Forms.DataGridViewImageColumn 更詳細資訊;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label35;
+        public System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label40;
+        public System.Windows.Forms.Label label39;
+        public System.Windows.Forms.Label label38;
+        public System.Windows.Forms.TextBox textBox7;
+        public System.Windows.Forms.TextBox textBox6;
+        public System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label60;
+        public System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label59;
+        public System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label34;
+        public System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Label label57;
+        public System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtStroke;
+        public System.Windows.Forms.Label labelStrokeAlarm;
+        public System.Windows.Forms.TextBox txtStopTime;
+        private System.Windows.Forms.Label label29;
+        public System.Windows.Forms.Label labelLoadAlarm;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label26;
+        public System.Windows.Forms.Label labelAdvanceOption;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label20;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Label labelStopTimeAlarm;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label45;
+        public System.Windows.Forms.Label label54;
+        public System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label label49;
+        public System.Windows.Forms.Label label47;
+        public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.Label label27;
+        public System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label28;
+        public System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtLoad;
+        public System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label label31;
+        public System.Windows.Forms.Label label24;
+        public System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label17;
+        public System.Windows.Forms.Panel explorerBarPanel2_title;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label62;
+        public System.Windows.Forms.Panel explorerBarPanel1;
+        public System.Windows.Forms.Panel explorerBarPanel1_content;
+        private System.Windows.Forms.Label label76;
+        public System.Windows.Forms.ComboBox comboBox7;
+        public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep1;
         public CustomButton.CustomButton cmdConfirmStep1;
-        public CustomButton.CustomButton cmdConfirmStep2;
+        private System.Windows.Forms.Label label75;
+        public System.Windows.Forms.ComboBox cboModelType;
+        public System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label73;
+        public System.Windows.Forms.Panel panelSetupMode;
+        public System.Windows.Forms.RadioButton optUpsideDownUse;
+        public System.Windows.Forms.RadioButton optHorizontalUse;
+        public System.Windows.Forms.RadioButton optWallHangingUse;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.Panel panel4;
+        public System.Windows.Forms.RadioButton radioButton2;
+        public System.Windows.Forms.RadioButton radioButton1;
+        public System.Windows.Forms.Panel panelSetupEnv;
+        public System.Windows.Forms.PictureBox picDustFree;
+        public System.Windows.Forms.RadioButton optDustFreeEnv;
+        public System.Windows.Forms.RadioButton optStandardEnv;
+        public System.Windows.Forms.PictureBox picStandardEnv;
+        public System.Windows.Forms.Panel explorerBarPanel1_title;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label61;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel explorerBarPanel5;
+        public System.Windows.Forms.Panel explorerBarPanel5_content;
+        public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep5;
         public CustomButton.CustomButton cmdConfirmStep5;
         public CustomButton.CustomButton cmdResetStep5;
-        public CustomButton.CustomButton cmdConfirmStep4;
-        public CustomButton.CustomButton cmdConfirmStep3;
-        public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep1;
-        public System.Windows.Forms.TableLayoutPanel panelCalcBtns;
-        public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep2;
-        public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep5;
+        public System.Windows.Forms.Panel explorerBarPanel5_title;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label label65;
         public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep4;
-        public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep3;
+        public CustomButton.CustomButton cmdConfirmStep4;
+        public CustomButton.CustomButton cmdResetStep4;
+        public CustomTabControl tabMain;
     }
 }
 
