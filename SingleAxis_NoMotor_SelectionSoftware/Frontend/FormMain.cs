@@ -44,6 +44,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             });
             // 測邊表格更新
             sideTable.Update(null, null);
+
+            //// 語係測試
+            //Language.curLanguage = Language.LanguageType.English;
+            //Language.Load(this);
+            //Console.WriteLine(CustomExtensions.GetLang("MomentLimit_0"));
         }
 
         private void CmdConfirm_Click(object sender, EventArgs e) {

@@ -5,6 +5,14 @@ using System.Text;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public static class Config {
+        public static string DATABASE_FILENAME = "./PRX/";
+        public static string MODEL_INFO_FILENAME = "./PRX/ModelInfo.csv";
+        public static string MOMENT_FILENAME = "./PRX/Moment.csv";
+        public static string STROKE_RPM_MAX_3000_FILENAME = "./PRX/StrokeRPM_Max3000.csv";
+        public static string STROKE_RPM_MAX_3600_FILENAME = "./PRX/StrokeRPM_Max3600.csv";
+        public static string MOTOR_INFO_FILENAME = "./PRX/MotorInfo.csv";
+        public static string REDUCER_INFO_FILENAME = "./PRX/ReducerInfo.csv";
+
         public static string[] SETUP_ENV_TXT = { "標準", "無塵" };
         public enum SetupEnv {
             /// <summary>

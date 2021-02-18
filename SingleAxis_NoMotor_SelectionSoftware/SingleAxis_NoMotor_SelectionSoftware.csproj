@@ -41,9 +41,15 @@
     <Reference Include="CustomToggle">
       <HintPath>..\..\CustomPicControls\CustomToggle\bin\Debug\CustomToggle.dll</HintPath>
     </Reference>
+    <Reference Include="StrokeTooShortConverterLibraries">
+      <HintPath>..\..\StrokeTooShortConverterLibraries\StrokeTooShortConverterLibraries\bin\Debug\StrokeTooShortConverterLibraries.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\portable-net40+sl4+win8+wp8\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -55,40 +61,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionResult.cs" />
+    <Compile Include="Backend\Calculation.cs" />
+    <Compile Include="Backend\CalculationBase.cs" />
+    <Compile Include="Backend\CalculationModel.cs" />
+    <Compile Include="CalcMoment.cs" />
+    <Compile Include="Condition.cs" />
     <Compile Include="Config.cs" />
-    <Compile Include="CustomPanelControl\CornerCurveMode.cs" />
-    <Compile Include="CustomPanelControl\CustomPanel.cs">
+    <Compile Include="CustomExtensions.cs" />
+    <Compile Include="en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="FileUtil.cs" />
+    <Compile Include="Frontend\CustomPanelControl\CornerCurveMode.cs" />
+    <Compile Include="Frontend\CustomPanelControl\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomPanelControl\GlassyPanel.cs">
+    <Compile Include="Frontend\CustomPanelControl\GlassyPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomPanelControl\LinearGradientMode.cs" />
-    <Compile Include="CustomPanelControl\TransparentPanel.cs">
+    <Compile Include="Frontend\CustomPanelControl\LinearGradientMode.cs" />
+    <Compile Include="Frontend\CustomPanelControl\TransparentPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomPanelControl\TransparentPanel.Designer.cs" />
-    <Compile Include="CustomTabControl.cs">
+    <Compile Include="Frontend\CustomPanelControl\TransparentPanel.Designer.cs" />
+    <Compile Include="Frontend\CustomTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ExplorerBar.cs" />
-    <Compile Include="FormMain.cs">
+    <Compile Include="Frontend\ExplorerBar.cs" />
+    <Compile Include="Frontend\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.designer.cs">
+    <Compile Include="Frontend\FormMain.designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Language.cs" />
+    <Compile Include="Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SideTable.cs" />
-    <Compile Include="Step1.cs" />
-    <Compile Include="Step2.cs" />
-    <Compile Include="Step3.cs" />
-    <Compile Include="Step4.cs" />
-    <Compile Include="Step5.cs" />
-    <Compile Include="ToyoBorder.cs" />
-    <EmbeddedResource Include="CustomPanelControl\CustomPanel.resx" />
-    <EmbeddedResource Include="FormMain.resx">
+    <Compile Include="Frontend\SideTable.cs" />
+    <Compile Include="Frontend\Step1.cs" />
+    <Compile Include="Frontend\Step2.cs" />
+    <Compile Include="Frontend\Step3.cs" />
+    <Compile Include="Frontend\Step4.cs" />
+    <Compile Include="Frontend\Step5.cs" />
+    <Compile Include="Frontend\ToyoBorder.cs" />
+    <Compile Include="zh.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>zh.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\CustomPanelControl\CustomPanel.resx" />
+    <EmbeddedResource Include="Frontend\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -101,6 +131,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="zh.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>zh.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
