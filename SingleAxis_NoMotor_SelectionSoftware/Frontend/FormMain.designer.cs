@@ -24,12 +24,12 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.splitContainerBase = new System.Windows.Forms.SplitContainer();
             this.pictureBoxToyo = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -39,35 +39,54 @@
             this.cmdZoom = new System.Windows.Forms.PictureBox();
             this.cmdClose = new System.Windows.Forms.PictureBox();
             this.explorerBar = new System.Windows.Forms.Panel();
-            this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.panelSideTableSelections = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.tableSelections = new System.Windows.Forms.TableLayoutPanel();
-            this.customPanel4 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.customPanel3 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.customPanel2 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.label2 = new System.Windows.Forms.Label();
             this.explorerBarPanel5 = new System.Windows.Forms.Panel();
             this.explorerBarPanel5_content = new System.Windows.Forms.Panel();
+            this.panelConfirmBtnsStep5 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmdConfirmStep5 = new CustomButton.CustomButton();
+            this.cmdResetStep5 = new CustomButton.CustomButton();
             this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
             this.explorerBarPanel4 = new System.Windows.Forms.Panel();
             this.explorerBarPanel4_content = new System.Windows.Forms.Panel();
+            this.panelConfirmBtnsStep4 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmdConfirmStep4 = new CustomButton.CustomButton();
             this.explorerBarPanel4_title = new System.Windows.Forms.Panel();
             this.label69 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.explorerBarPanel3 = new System.Windows.Forms.Panel();
             this.explorerBarPanel3_content = new System.Windows.Forms.Panel();
+            this.panelConfirmBtnsStep3 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmdConfirmStep3 = new CustomButton.CustomButton();
             this.explorerBarPanel3_title = new System.Windows.Forms.Panel();
             this.label68 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
             this.explorerBarPanel2 = new System.Windows.Forms.Panel();
             this.explorerBarPanel2_content = new System.Windows.Forms.Panel();
+            this.panelConfirmBtnsStep2 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmdConfirmStep2 = new CustomButton.CustomButton();
+            this.panelCalcBtns = new System.Windows.Forms.TableLayoutPanel();
             this.cmdCalc = new CustomButton.CustomButton();
+            this.dgvRecommandList = new System.Windows.Forms.DataGridView();
+            this.dgvRecommandColumnLock = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dgvRecommandColumnModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRecommandColumnLead = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRecommandColumnLoad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRecommandColumnRpm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRecommandColumnVmax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRecommandColumnAccelSpeed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRecommandColumnStroke = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRecommandColumnRunTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRecommandColumnMomentA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRecommandColumnMomentB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRecommandColumnMomentC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRecommandColumnPower = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRecommandColumnTmax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRecommandColumnTrms = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRecommandColumnServiceDistance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRecommandColumnServiceLife = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.是否推薦 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.更詳細資訊 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label35 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
@@ -152,9 +171,8 @@
             this.explorerBarPanel1_content = new System.Windows.Forms.Panel();
             this.label76 = new System.Windows.Forms.Label();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.panelConfirmBtns = new System.Windows.Forms.TableLayoutPanel();
-            this.cmdConfirm = new CustomButton.CustomButton();
-            this.cmdReset = new CustomButton.CustomButton();
+            this.panelConfirmBtnsStep1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmdConfirmStep1 = new CustomButton.CustomButton();
             this.label75 = new System.Windows.Forms.Label();
             this.cboModelType = new System.Windows.Forms.ComboBox();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
@@ -180,26 +198,17 @@
             this.explorerBarPanel1_title = new System.Windows.Forms.Panel();
             this.label66 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
-            this.dgvSearchResult = new System.Windows.Forms.DataGridView();
-            this.dgvRecommandColumnLock = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dgvRecommandColumnModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnLead = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnLoad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnRpm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnVmax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnAccelSpeed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnStroke = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnRunTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnMomentA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnMomentB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnMomentC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnPower = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnTmax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnTrms = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnServiceDistance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnServiceLife = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.是否推薦 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.更詳細資訊 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.panelSideTableSelections = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.tableSelections = new System.Windows.Forms.TableLayoutPanel();
+            this.customPanel4 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.customPanel3 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.customPanel2 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -212,18 +221,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdZoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).BeginInit();
             this.explorerBar.SuspendLayout();
-            this.panelSideTable.SuspendLayout();
-            this.panelSideTableSelections.SuspendLayout();
-            this.customPanel4.SuspendLayout();
-            this.customPanel3.SuspendLayout();
             this.explorerBarPanel5.SuspendLayout();
+            this.explorerBarPanel5_content.SuspendLayout();
+            this.panelConfirmBtnsStep5.SuspendLayout();
             this.explorerBarPanel5_title.SuspendLayout();
             this.explorerBarPanel4.SuspendLayout();
+            this.explorerBarPanel4_content.SuspendLayout();
+            this.panelConfirmBtnsStep4.SuspendLayout();
             this.explorerBarPanel4_title.SuspendLayout();
             this.explorerBarPanel3.SuspendLayout();
+            this.explorerBarPanel3_content.SuspendLayout();
+            this.panelConfirmBtnsStep3.SuspendLayout();
             this.explorerBarPanel3_title.SuspendLayout();
             this.explorerBarPanel2.SuspendLayout();
             this.explorerBarPanel2_content.SuspendLayout();
+            this.panelConfirmBtnsStep2.SuspendLayout();
+            this.panelCalcBtns.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -232,7 +246,7 @@
             this.explorerBarPanel2_title.SuspendLayout();
             this.explorerBarPanel1.SuspendLayout();
             this.explorerBarPanel1_content.SuspendLayout();
-            this.panelConfirmBtns.SuspendLayout();
+            this.panelConfirmBtnsStep1.SuspendLayout();
             this.panelSetupMode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.panel4.SuspendLayout();
@@ -240,7 +254,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picDustFree)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStandardEnv)).BeginInit();
             this.explorerBarPanel1_title.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
+            this.panelSideTable.SuspendLayout();
+            this.panelSideTableSelections.SuspendLayout();
+            this.customPanel4.SuspendLayout();
+            this.customPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -263,9 +280,9 @@
             // 
             // splitContainerBase.Panel2
             // 
-            resources.ApplyResources(this.splitContainerBase.Panel2, "splitContainerBase.Panel2");
             this.splitContainerBase.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainerBase.Panel2.Controls.Add(this.explorerBar);
+            resources.ApplyResources(this.splitContainerBase.Panel2, "splitContainerBase.Panel2");
             // 
             // pictureBoxToyo
             // 
@@ -327,88 +344,6 @@
             this.explorerBar.Controls.Add(this.explorerBarPanel1);
             this.explorerBar.Name = "explorerBar";
             // 
-            // panelSideTable
-            // 
-            resources.ApplyResources(this.panelSideTable, "panelSideTable");
-            this.panelSideTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelSideTable.Controls.Add(this.panelSideTableSelections);
-            this.panelSideTable.Controls.Add(this.customPanel4);
-            this.panelSideTable.Controls.Add(this.label4);
-            this.panelSideTable.Controls.Add(this.customPanel3);
-            this.panelSideTable.Controls.Add(this.label3);
-            this.panelSideTable.Controls.Add(this.customPanel2);
-            this.panelSideTable.Controls.Add(this.label2);
-            this.panelSideTable.Curvature = 8;
-            this.panelSideTable.Name = "panelSideTable";
-            // 
-            // panelSideTableSelections
-            // 
-            resources.ApplyResources(this.panelSideTableSelections, "panelSideTableSelections");
-            this.panelSideTableSelections.BorderColor = System.Drawing.Color.Silver;
-            this.panelSideTableSelections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelSideTableSelections.Controls.Add(this.tableSelections);
-            this.panelSideTableSelections.Curvature = 8;
-            this.panelSideTableSelections.Name = "panelSideTableSelections";
-            // 
-            // tableSelections
-            // 
-            resources.ApplyResources(this.tableSelections, "tableSelections");
-            this.tableSelections.Name = "tableSelections";
-            // 
-            // customPanel4
-            // 
-            resources.ApplyResources(this.customPanel4, "customPanel4");
-            this.customPanel4.BorderColor = System.Drawing.Color.Silver;
-            this.customPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel4.Controls.Add(this.label1);
-            this.customPanel4.Curvature = 8;
-            this.customPanel4.Name = "customPanel4";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Name = "label4";
-            // 
-            // customPanel3
-            // 
-            resources.ApplyResources(this.customPanel3, "customPanel3");
-            this.customPanel3.BorderColor = System.Drawing.Color.Silver;
-            this.customPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel3.Controls.Add(this.label5);
-            this.customPanel3.Curvature = 8;
-            this.customPanel3.Name = "customPanel3";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Name = "label5";
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Name = "label3";
-            // 
-            // customPanel2
-            // 
-            resources.ApplyResources(this.customPanel2, "customPanel2");
-            this.customPanel2.BorderColor = System.Drawing.Color.Silver;
-            this.customPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel2.Curvature = 8;
-            this.customPanel2.Name = "customPanel2";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            // 
             // explorerBarPanel5
             // 
             this.explorerBarPanel5.Controls.Add(this.explorerBarPanel5_content);
@@ -418,8 +353,48 @@
             // 
             // explorerBarPanel5_content
             // 
+            this.explorerBarPanel5_content.Controls.Add(this.panelConfirmBtnsStep5);
             resources.ApplyResources(this.explorerBarPanel5_content, "explorerBarPanel5_content");
             this.explorerBarPanel5_content.Name = "explorerBarPanel5_content";
+            // 
+            // panelConfirmBtnsStep5
+            // 
+            resources.ApplyResources(this.panelConfirmBtnsStep5, "panelConfirmBtnsStep5");
+            this.panelConfirmBtnsStep5.Controls.Add(this.cmdConfirmStep5, 1, 0);
+            this.panelConfirmBtnsStep5.Controls.Add(this.cmdResetStep5, 2, 0);
+            this.panelConfirmBtnsStep5.Name = "panelConfirmBtnsStep5";
+            // 
+            // cmdConfirmStep5
+            // 
+            this.cmdConfirmStep5.BackColor = System.Drawing.Color.Transparent;
+            this.cmdConfirmStep5.BackColor_Hover = System.Drawing.Color.DarkRed;
+            this.cmdConfirmStep5.BackColor_Normal = System.Drawing.Color.Red;
+            this.cmdConfirmStep5.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdConfirmStep5.BackColor2_Hover = System.Drawing.Color.DarkRed;
+            this.cmdConfirmStep5.BackColor2_Normal = System.Drawing.Color.Red;
+            this.cmdConfirmStep5.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdConfirmStep5.ButtonEnabled = true;
+            resources.ApplyResources(this.cmdConfirmStep5, "cmdConfirmStep5");
+            this.cmdConfirmStep5.Curvature = 15;
+            this.cmdConfirmStep5.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdConfirmStep5.Name = "cmdConfirmStep5";
+            this.cmdConfirmStep5.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
+            // 
+            // cmdResetStep5
+            // 
+            this.cmdResetStep5.BackColor = System.Drawing.Color.Transparent;
+            this.cmdResetStep5.BackColor_Hover = System.Drawing.Color.DimGray;
+            this.cmdResetStep5.BackColor_Normal = System.Drawing.Color.Gray;
+            this.cmdResetStep5.BackColor_Press = System.Drawing.Color.Black;
+            this.cmdResetStep5.BackColor2_Hover = System.Drawing.Color.DimGray;
+            this.cmdResetStep5.BackColor2_Normal = System.Drawing.Color.Gray;
+            this.cmdResetStep5.BackColor2_Press = System.Drawing.Color.Black;
+            this.cmdResetStep5.ButtonEnabled = true;
+            resources.ApplyResources(this.cmdResetStep5, "cmdResetStep5");
+            this.cmdResetStep5.Curvature = 15;
+            this.cmdResetStep5.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdResetStep5.Name = "cmdResetStep5";
+            this.cmdResetStep5.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
             // 
             // explorerBarPanel5_title
             // 
@@ -452,8 +427,31 @@
             // 
             // explorerBarPanel4_content
             // 
+            this.explorerBarPanel4_content.Controls.Add(this.panelConfirmBtnsStep4);
             resources.ApplyResources(this.explorerBarPanel4_content, "explorerBarPanel4_content");
             this.explorerBarPanel4_content.Name = "explorerBarPanel4_content";
+            // 
+            // panelConfirmBtnsStep4
+            // 
+            resources.ApplyResources(this.panelConfirmBtnsStep4, "panelConfirmBtnsStep4");
+            this.panelConfirmBtnsStep4.Controls.Add(this.cmdConfirmStep4, 1, 0);
+            this.panelConfirmBtnsStep4.Name = "panelConfirmBtnsStep4";
+            // 
+            // cmdConfirmStep4
+            // 
+            this.cmdConfirmStep4.BackColor = System.Drawing.Color.Transparent;
+            this.cmdConfirmStep4.BackColor_Hover = System.Drawing.Color.DarkRed;
+            this.cmdConfirmStep4.BackColor_Normal = System.Drawing.Color.Red;
+            this.cmdConfirmStep4.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdConfirmStep4.BackColor2_Hover = System.Drawing.Color.DarkRed;
+            this.cmdConfirmStep4.BackColor2_Normal = System.Drawing.Color.Red;
+            this.cmdConfirmStep4.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdConfirmStep4.ButtonEnabled = true;
+            resources.ApplyResources(this.cmdConfirmStep4, "cmdConfirmStep4");
+            this.cmdConfirmStep4.Curvature = 15;
+            this.cmdConfirmStep4.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdConfirmStep4.Name = "cmdConfirmStep4";
+            this.cmdConfirmStep4.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
             // 
             // explorerBarPanel4_title
             // 
@@ -486,8 +484,31 @@
             // 
             // explorerBarPanel3_content
             // 
+            this.explorerBarPanel3_content.Controls.Add(this.panelConfirmBtnsStep3);
             resources.ApplyResources(this.explorerBarPanel3_content, "explorerBarPanel3_content");
             this.explorerBarPanel3_content.Name = "explorerBarPanel3_content";
+            // 
+            // panelConfirmBtnsStep3
+            // 
+            resources.ApplyResources(this.panelConfirmBtnsStep3, "panelConfirmBtnsStep3");
+            this.panelConfirmBtnsStep3.Controls.Add(this.cmdConfirmStep3, 1, 0);
+            this.panelConfirmBtnsStep3.Name = "panelConfirmBtnsStep3";
+            // 
+            // cmdConfirmStep3
+            // 
+            this.cmdConfirmStep3.BackColor = System.Drawing.Color.Transparent;
+            this.cmdConfirmStep3.BackColor_Hover = System.Drawing.Color.DarkRed;
+            this.cmdConfirmStep3.BackColor_Normal = System.Drawing.Color.Red;
+            this.cmdConfirmStep3.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdConfirmStep3.BackColor2_Hover = System.Drawing.Color.DarkRed;
+            this.cmdConfirmStep3.BackColor2_Normal = System.Drawing.Color.Red;
+            this.cmdConfirmStep3.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdConfirmStep3.ButtonEnabled = true;
+            resources.ApplyResources(this.cmdConfirmStep3, "cmdConfirmStep3");
+            this.cmdConfirmStep3.Curvature = 15;
+            this.cmdConfirmStep3.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdConfirmStep3.Name = "cmdConfirmStep3";
+            this.cmdConfirmStep3.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
             // 
             // explorerBarPanel3_title
             // 
@@ -520,9 +541,9 @@
             // 
             // explorerBarPanel2_content
             // 
-            resources.ApplyResources(this.explorerBarPanel2_content, "explorerBarPanel2_content");
-            this.explorerBarPanel2_content.Controls.Add(this.dgvSearchResult);
-            this.explorerBarPanel2_content.Controls.Add(this.cmdCalc);
+            this.explorerBarPanel2_content.Controls.Add(this.panelConfirmBtnsStep2);
+            this.explorerBarPanel2_content.Controls.Add(this.panelCalcBtns);
+            this.explorerBarPanel2_content.Controls.Add(this.dgvRecommandList);
             this.explorerBarPanel2_content.Controls.Add(this.panel3);
             this.explorerBarPanel2_content.Controls.Add(this.panel2);
             this.explorerBarPanel2_content.Controls.Add(this.comboBox3);
@@ -585,7 +606,36 @@
             this.explorerBarPanel2_content.Controls.Add(this.label24);
             this.explorerBarPanel2_content.Controls.Add(this.textBox10);
             this.explorerBarPanel2_content.Controls.Add(this.label17);
+            resources.ApplyResources(this.explorerBarPanel2_content, "explorerBarPanel2_content");
             this.explorerBarPanel2_content.Name = "explorerBarPanel2_content";
+            // 
+            // panelConfirmBtnsStep2
+            // 
+            resources.ApplyResources(this.panelConfirmBtnsStep2, "panelConfirmBtnsStep2");
+            this.panelConfirmBtnsStep2.Controls.Add(this.cmdConfirmStep2, 1, 0);
+            this.panelConfirmBtnsStep2.Name = "panelConfirmBtnsStep2";
+            // 
+            // cmdConfirmStep2
+            // 
+            this.cmdConfirmStep2.BackColor = System.Drawing.Color.Transparent;
+            this.cmdConfirmStep2.BackColor_Hover = System.Drawing.Color.DarkRed;
+            this.cmdConfirmStep2.BackColor_Normal = System.Drawing.Color.Red;
+            this.cmdConfirmStep2.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdConfirmStep2.BackColor2_Hover = System.Drawing.Color.DarkRed;
+            this.cmdConfirmStep2.BackColor2_Normal = System.Drawing.Color.Red;
+            this.cmdConfirmStep2.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdConfirmStep2.ButtonEnabled = true;
+            resources.ApplyResources(this.cmdConfirmStep2, "cmdConfirmStep2");
+            this.cmdConfirmStep2.Curvature = 15;
+            this.cmdConfirmStep2.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdConfirmStep2.Name = "cmdConfirmStep2";
+            this.cmdConfirmStep2.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
+            // 
+            // panelCalcBtns
+            // 
+            resources.ApplyResources(this.panelCalcBtns, "panelCalcBtns");
+            this.panelCalcBtns.Controls.Add(this.cmdCalc, 1, 0);
+            this.panelCalcBtns.Name = "panelCalcBtns";
             // 
             // cmdCalc
             // 
@@ -602,6 +652,240 @@
             this.cmdCalc.GradientMode = CustomButton.LinearGradientMode.Horizontal;
             this.cmdCalc.Name = "cmdCalc";
             this.cmdCalc.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
+            // 
+            // dgvRecommandList
+            // 
+            this.dgvRecommandList.AllowUserToAddRows = false;
+            this.dgvRecommandList.AllowUserToDeleteRows = false;
+            this.dgvRecommandList.AllowUserToResizeColumns = false;
+            this.dgvRecommandList.AllowUserToResizeRows = false;
+            resources.ApplyResources(this.dgvRecommandList, "dgvRecommandList");
+            this.dgvRecommandList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRecommandList.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvRecommandList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(58)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecommandList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvRecommandList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRecommandList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvRecommandColumnLock,
+            this.dgvRecommandColumnModel,
+            this.dgvRecommandColumnLead,
+            this.dgvRecommandColumnLoad,
+            this.dgvRecommandColumnRpm,
+            this.dgvRecommandColumnVmax,
+            this.dgvRecommandColumnAccelSpeed,
+            this.dgvRecommandColumnStroke,
+            this.dgvRecommandColumnRunTime,
+            this.dgvRecommandColumnMomentA,
+            this.dgvRecommandColumnMomentB,
+            this.dgvRecommandColumnMomentC,
+            this.dgvRecommandColumnPower,
+            this.dgvRecommandColumnTmax,
+            this.dgvRecommandColumnTrms,
+            this.dgvRecommandColumnServiceDistance,
+            this.dgvRecommandColumnServiceLife,
+            this.是否推薦,
+            this.更詳細資訊});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(252)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRecommandList.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvRecommandList.EnableHeadersVisualStyles = false;
+            this.dgvRecommandList.MultiSelect = false;
+            this.dgvRecommandList.Name = "dgvRecommandList";
+            this.dgvRecommandList.ReadOnly = true;
+            this.dgvRecommandList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(252)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecommandList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvRecommandList.RowHeadersVisible = false;
+            this.dgvRecommandList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.dgvRecommandList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvRecommandList.RowTemplate.Height = 24;
+            this.dgvRecommandList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            // 
+            // dgvRecommandColumnLock
+            // 
+            this.dgvRecommandColumnLock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnLock.FillWeight = 77.31933F;
+            resources.ApplyResources(this.dgvRecommandColumnLock, "dgvRecommandColumnLock");
+            this.dgvRecommandColumnLock.Name = "dgvRecommandColumnLock";
+            this.dgvRecommandColumnLock.ReadOnly = true;
+            this.dgvRecommandColumnLock.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dgvRecommandColumnModel
+            // 
+            this.dgvRecommandColumnModel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnModel.FillWeight = 77.31933F;
+            resources.ApplyResources(this.dgvRecommandColumnModel, "dgvRecommandColumnModel");
+            this.dgvRecommandColumnModel.Name = "dgvRecommandColumnModel";
+            this.dgvRecommandColumnModel.ReadOnly = true;
+            this.dgvRecommandColumnModel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvRecommandColumnLead
+            // 
+            this.dgvRecommandColumnLead.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnLead.FillWeight = 77.31933F;
+            resources.ApplyResources(this.dgvRecommandColumnLead, "dgvRecommandColumnLead");
+            this.dgvRecommandColumnLead.Name = "dgvRecommandColumnLead";
+            this.dgvRecommandColumnLead.ReadOnly = true;
+            this.dgvRecommandColumnLead.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvRecommandColumnLoad
+            // 
+            this.dgvRecommandColumnLoad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnLoad.FillWeight = 77.31933F;
+            resources.ApplyResources(this.dgvRecommandColumnLoad, "dgvRecommandColumnLoad");
+            this.dgvRecommandColumnLoad.Name = "dgvRecommandColumnLoad";
+            this.dgvRecommandColumnLoad.ReadOnly = true;
+            this.dgvRecommandColumnLoad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvRecommandColumnRpm
+            // 
+            this.dgvRecommandColumnRpm.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnRpm.FillWeight = 77.31933F;
+            resources.ApplyResources(this.dgvRecommandColumnRpm, "dgvRecommandColumnRpm");
+            this.dgvRecommandColumnRpm.Name = "dgvRecommandColumnRpm";
+            this.dgvRecommandColumnRpm.ReadOnly = true;
+            this.dgvRecommandColumnRpm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvRecommandColumnVmax
+            // 
+            this.dgvRecommandColumnVmax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnVmax.FillWeight = 77.31933F;
+            resources.ApplyResources(this.dgvRecommandColumnVmax, "dgvRecommandColumnVmax");
+            this.dgvRecommandColumnVmax.Name = "dgvRecommandColumnVmax";
+            this.dgvRecommandColumnVmax.ReadOnly = true;
+            this.dgvRecommandColumnVmax.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvRecommandColumnAccelSpeed
+            // 
+            this.dgvRecommandColumnAccelSpeed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnAccelSpeed.FillWeight = 77.31933F;
+            resources.ApplyResources(this.dgvRecommandColumnAccelSpeed, "dgvRecommandColumnAccelSpeed");
+            this.dgvRecommandColumnAccelSpeed.Name = "dgvRecommandColumnAccelSpeed";
+            this.dgvRecommandColumnAccelSpeed.ReadOnly = true;
+            this.dgvRecommandColumnAccelSpeed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvRecommandColumnStroke
+            // 
+            this.dgvRecommandColumnStroke.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnStroke.FillWeight = 77.31933F;
+            resources.ApplyResources(this.dgvRecommandColumnStroke, "dgvRecommandColumnStroke");
+            this.dgvRecommandColumnStroke.Name = "dgvRecommandColumnStroke";
+            this.dgvRecommandColumnStroke.ReadOnly = true;
+            this.dgvRecommandColumnStroke.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvRecommandColumnRunTime
+            // 
+            this.dgvRecommandColumnRunTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnRunTime.FillWeight = 77.31933F;
+            resources.ApplyResources(this.dgvRecommandColumnRunTime, "dgvRecommandColumnRunTime");
+            this.dgvRecommandColumnRunTime.Name = "dgvRecommandColumnRunTime";
+            this.dgvRecommandColumnRunTime.ReadOnly = true;
+            this.dgvRecommandColumnRunTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvRecommandColumnMomentA
+            // 
+            this.dgvRecommandColumnMomentA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.dgvRecommandColumnMomentA, "dgvRecommandColumnMomentA");
+            this.dgvRecommandColumnMomentA.Name = "dgvRecommandColumnMomentA";
+            this.dgvRecommandColumnMomentA.ReadOnly = true;
+            this.dgvRecommandColumnMomentA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvRecommandColumnMomentB
+            // 
+            this.dgvRecommandColumnMomentB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.dgvRecommandColumnMomentB, "dgvRecommandColumnMomentB");
+            this.dgvRecommandColumnMomentB.Name = "dgvRecommandColumnMomentB";
+            this.dgvRecommandColumnMomentB.ReadOnly = true;
+            this.dgvRecommandColumnMomentB.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvRecommandColumnMomentC
+            // 
+            this.dgvRecommandColumnMomentC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.dgvRecommandColumnMomentC, "dgvRecommandColumnMomentC");
+            this.dgvRecommandColumnMomentC.Name = "dgvRecommandColumnMomentC";
+            this.dgvRecommandColumnMomentC.ReadOnly = true;
+            this.dgvRecommandColumnMomentC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvRecommandColumnPower
+            // 
+            this.dgvRecommandColumnPower.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnPower.FillWeight = 77.31933F;
+            resources.ApplyResources(this.dgvRecommandColumnPower, "dgvRecommandColumnPower");
+            this.dgvRecommandColumnPower.Name = "dgvRecommandColumnPower";
+            this.dgvRecommandColumnPower.ReadOnly = true;
+            this.dgvRecommandColumnPower.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvRecommandColumnTmax
+            // 
+            this.dgvRecommandColumnTmax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.dgvRecommandColumnTmax, "dgvRecommandColumnTmax");
+            this.dgvRecommandColumnTmax.Name = "dgvRecommandColumnTmax";
+            this.dgvRecommandColumnTmax.ReadOnly = true;
+            this.dgvRecommandColumnTmax.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvRecommandColumnTrms
+            // 
+            this.dgvRecommandColumnTrms.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.dgvRecommandColumnTrms, "dgvRecommandColumnTrms");
+            this.dgvRecommandColumnTrms.Name = "dgvRecommandColumnTrms";
+            this.dgvRecommandColumnTrms.ReadOnly = true;
+            this.dgvRecommandColumnTrms.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvRecommandColumnServiceDistance
+            // 
+            this.dgvRecommandColumnServiceDistance.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnServiceDistance.FillWeight = 77.31933F;
+            resources.ApplyResources(this.dgvRecommandColumnServiceDistance, "dgvRecommandColumnServiceDistance");
+            this.dgvRecommandColumnServiceDistance.Name = "dgvRecommandColumnServiceDistance";
+            this.dgvRecommandColumnServiceDistance.ReadOnly = true;
+            this.dgvRecommandColumnServiceDistance.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvRecommandColumnServiceLife
+            // 
+            this.dgvRecommandColumnServiceLife.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnServiceLife.FillWeight = 77.31933F;
+            resources.ApplyResources(this.dgvRecommandColumnServiceLife, "dgvRecommandColumnServiceLife");
+            this.dgvRecommandColumnServiceLife.Name = "dgvRecommandColumnServiceLife";
+            this.dgvRecommandColumnServiceLife.ReadOnly = true;
+            this.dgvRecommandColumnServiceLife.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 是否推薦
+            // 
+            this.是否推薦.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.是否推薦, "是否推薦");
+            this.是否推薦.Name = "是否推薦";
+            this.是否推薦.ReadOnly = true;
+            this.是否推薦.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // 更詳細資訊
+            // 
+            this.更詳細資訊.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.更詳細資訊.FillWeight = 80F;
+            resources.ApplyResources(this.更詳細資訊, "更詳細資訊");
+            this.更詳細資訊.Name = "更詳細資訊";
+            this.更詳細資訊.ReadOnly = true;
+            this.更詳細資訊.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // panel3
             // 
@@ -1118,7 +1402,7 @@
             // 
             this.explorerBarPanel1_content.Controls.Add(this.label76);
             this.explorerBarPanel1_content.Controls.Add(this.comboBox7);
-            this.explorerBarPanel1_content.Controls.Add(this.panelConfirmBtns);
+            this.explorerBarPanel1_content.Controls.Add(this.panelConfirmBtnsStep1);
             this.explorerBarPanel1_content.Controls.Add(this.label75);
             this.explorerBarPanel1_content.Controls.Add(this.cboModelType);
             this.explorerBarPanel1_content.Controls.Add(this.comboBox6);
@@ -1150,46 +1434,27 @@
             this.comboBox7.FormattingEnabled = true;
             this.comboBox7.Name = "comboBox7";
             // 
-            // panelConfirmBtns
+            // panelConfirmBtnsStep1
             // 
-            resources.ApplyResources(this.panelConfirmBtns, "panelConfirmBtns");
-            this.panelConfirmBtns.Controls.Add(this.cmdConfirm, 1, 0);
-            this.panelConfirmBtns.Controls.Add(this.cmdReset, 2, 0);
-            this.panelConfirmBtns.Name = "panelConfirmBtns";
+            resources.ApplyResources(this.panelConfirmBtnsStep1, "panelConfirmBtnsStep1");
+            this.panelConfirmBtnsStep1.Controls.Add(this.cmdConfirmStep1, 1, 0);
+            this.panelConfirmBtnsStep1.Name = "panelConfirmBtnsStep1";
             // 
-            // cmdConfirm
+            // cmdConfirmStep1
             // 
-            this.cmdConfirm.BackColor = System.Drawing.Color.Transparent;
-            this.cmdConfirm.BackColor_Hover = System.Drawing.Color.DarkRed;
-            this.cmdConfirm.BackColor_Normal = System.Drawing.Color.Red;
-            this.cmdConfirm.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmdConfirm.BackColor2_Hover = System.Drawing.Color.DarkRed;
-            this.cmdConfirm.BackColor2_Normal = System.Drawing.Color.Red;
-            this.cmdConfirm.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmdConfirm.ButtonEnabled = true;
-            resources.ApplyResources(this.cmdConfirm, "cmdConfirm");
-            this.cmdConfirm.Curvature = 15;
-            this.cmdConfirm.GradientMode = CustomButton.LinearGradientMode.Horizontal;
-            this.cmdConfirm.Name = "cmdConfirm";
-            this.cmdConfirm.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
-            this.cmdConfirm.Click += new System.EventHandler(this.CmdConfirm_Click);
-            // 
-            // cmdReset
-            // 
-            this.cmdReset.BackColor = System.Drawing.Color.Transparent;
-            this.cmdReset.BackColor_Hover = System.Drawing.Color.DimGray;
-            this.cmdReset.BackColor_Normal = System.Drawing.Color.Gray;
-            this.cmdReset.BackColor_Press = System.Drawing.Color.Black;
-            this.cmdReset.BackColor2_Hover = System.Drawing.Color.DimGray;
-            this.cmdReset.BackColor2_Normal = System.Drawing.Color.Gray;
-            this.cmdReset.BackColor2_Press = System.Drawing.Color.Black;
-            this.cmdReset.ButtonEnabled = true;
-            resources.ApplyResources(this.cmdReset, "cmdReset");
-            this.cmdReset.Curvature = 15;
-            this.cmdReset.GradientMode = CustomButton.LinearGradientMode.Horizontal;
-            this.cmdReset.Name = "cmdReset";
-            this.cmdReset.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
-            this.cmdReset.Click += new System.EventHandler(this.CmdReset_Click);
+            this.cmdConfirmStep1.BackColor = System.Drawing.Color.Transparent;
+            this.cmdConfirmStep1.BackColor_Hover = System.Drawing.Color.DarkRed;
+            this.cmdConfirmStep1.BackColor_Normal = System.Drawing.Color.Red;
+            this.cmdConfirmStep1.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdConfirmStep1.BackColor2_Hover = System.Drawing.Color.DarkRed;
+            this.cmdConfirmStep1.BackColor2_Normal = System.Drawing.Color.Red;
+            this.cmdConfirmStep1.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdConfirmStep1.ButtonEnabled = true;
+            resources.ApplyResources(this.cmdConfirmStep1, "cmdConfirmStep1");
+            this.cmdConfirmStep1.Curvature = 15;
+            this.cmdConfirmStep1.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdConfirmStep1.Name = "cmdConfirmStep1";
+            this.cmdConfirmStep1.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
             // 
             // label75
             // 
@@ -1381,239 +1646,87 @@
             this.label61.ForeColor = System.Drawing.Color.White;
             this.label61.Name = "label61";
             // 
-            // dgvSearchResult
+            // panelSideTable
             // 
-            this.dgvSearchResult.AllowUserToAddRows = false;
-            this.dgvSearchResult.AllowUserToDeleteRows = false;
-            this.dgvSearchResult.AllowUserToResizeColumns = false;
-            this.dgvSearchResult.AllowUserToResizeRows = false;
-            resources.ApplyResources(this.dgvSearchResult, "dgvSearchResult");
-            this.dgvSearchResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvSearchResult.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvSearchResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(58)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSearchResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSearchResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvRecommandColumnLock,
-            this.dgvRecommandColumnModel,
-            this.dgvRecommandColumnLead,
-            this.dgvRecommandColumnLoad,
-            this.dgvRecommandColumnRpm,
-            this.dgvRecommandColumnVmax,
-            this.dgvRecommandColumnAccelSpeed,
-            this.dgvRecommandColumnStroke,
-            this.dgvRecommandColumnRunTime,
-            this.dgvRecommandColumnMomentA,
-            this.dgvRecommandColumnMomentB,
-            this.dgvRecommandColumnMomentC,
-            this.dgvRecommandColumnPower,
-            this.dgvRecommandColumnTmax,
-            this.dgvRecommandColumnTrms,
-            this.dgvRecommandColumnServiceDistance,
-            this.dgvRecommandColumnServiceLife,
-            this.是否推薦,
-            this.更詳細資訊});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 8F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(252)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSearchResult.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvSearchResult.EnableHeadersVisualStyles = false;
-            this.dgvSearchResult.MultiSelect = false;
-            this.dgvSearchResult.Name = "dgvSearchResult";
-            this.dgvSearchResult.ReadOnly = true;
-            this.dgvSearchResult.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(252)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSearchResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvSearchResult.RowHeadersVisible = false;
-            this.dgvSearchResult.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.dgvSearchResult.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvSearchResult.RowTemplate.Height = 24;
-            this.dgvSearchResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            resources.ApplyResources(this.panelSideTable, "panelSideTable");
+            this.panelSideTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSideTable.Controls.Add(this.panelSideTableSelections);
+            this.panelSideTable.Controls.Add(this.customPanel4);
+            this.panelSideTable.Controls.Add(this.label4);
+            this.panelSideTable.Controls.Add(this.customPanel3);
+            this.panelSideTable.Controls.Add(this.label3);
+            this.panelSideTable.Controls.Add(this.customPanel2);
+            this.panelSideTable.Controls.Add(this.label2);
+            this.panelSideTable.Curvature = 8;
+            this.panelSideTable.Name = "panelSideTable";
             // 
-            // dgvRecommandColumnLock
+            // panelSideTableSelections
             // 
-            this.dgvRecommandColumnLock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnLock.FillWeight = 77.31933F;
-            resources.ApplyResources(this.dgvRecommandColumnLock, "dgvRecommandColumnLock");
-            this.dgvRecommandColumnLock.Name = "dgvRecommandColumnLock";
-            this.dgvRecommandColumnLock.ReadOnly = true;
-            this.dgvRecommandColumnLock.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            resources.ApplyResources(this.panelSideTableSelections, "panelSideTableSelections");
+            this.panelSideTableSelections.BorderColor = System.Drawing.Color.Silver;
+            this.panelSideTableSelections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSideTableSelections.Controls.Add(this.tableSelections);
+            this.panelSideTableSelections.Curvature = 8;
+            this.panelSideTableSelections.Name = "panelSideTableSelections";
             // 
-            // dgvRecommandColumnModel
+            // tableSelections
             // 
-            this.dgvRecommandColumnModel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnModel.FillWeight = 77.31933F;
-            resources.ApplyResources(this.dgvRecommandColumnModel, "dgvRecommandColumnModel");
-            this.dgvRecommandColumnModel.Name = "dgvRecommandColumnModel";
-            this.dgvRecommandColumnModel.ReadOnly = true;
-            this.dgvRecommandColumnModel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            resources.ApplyResources(this.tableSelections, "tableSelections");
+            this.tableSelections.Name = "tableSelections";
             // 
-            // dgvRecommandColumnLead
+            // customPanel4
             // 
-            this.dgvRecommandColumnLead.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnLead.FillWeight = 77.31933F;
-            resources.ApplyResources(this.dgvRecommandColumnLead, "dgvRecommandColumnLead");
-            this.dgvRecommandColumnLead.Name = "dgvRecommandColumnLead";
-            this.dgvRecommandColumnLead.ReadOnly = true;
-            this.dgvRecommandColumnLead.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            resources.ApplyResources(this.customPanel4, "customPanel4");
+            this.customPanel4.BorderColor = System.Drawing.Color.Silver;
+            this.customPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customPanel4.Controls.Add(this.label1);
+            this.customPanel4.Curvature = 8;
+            this.customPanel4.Name = "customPanel4";
             // 
-            // dgvRecommandColumnLoad
+            // label1
             // 
-            this.dgvRecommandColumnLoad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnLoad.FillWeight = 77.31933F;
-            resources.ApplyResources(this.dgvRecommandColumnLoad, "dgvRecommandColumnLoad");
-            this.dgvRecommandColumnLoad.Name = "dgvRecommandColumnLoad";
-            this.dgvRecommandColumnLoad.ReadOnly = true;
-            this.dgvRecommandColumnLoad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
-            // dgvRecommandColumnRpm
+            // label4
             // 
-            this.dgvRecommandColumnRpm.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnRpm.FillWeight = 77.31933F;
-            resources.ApplyResources(this.dgvRecommandColumnRpm, "dgvRecommandColumnRpm");
-            this.dgvRecommandColumnRpm.Name = "dgvRecommandColumnRpm";
-            this.dgvRecommandColumnRpm.ReadOnly = true;
-            this.dgvRecommandColumnRpm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Name = "label4";
             // 
-            // dgvRecommandColumnVmax
+            // customPanel3
             // 
-            this.dgvRecommandColumnVmax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnVmax.FillWeight = 77.31933F;
-            resources.ApplyResources(this.dgvRecommandColumnVmax, "dgvRecommandColumnVmax");
-            this.dgvRecommandColumnVmax.Name = "dgvRecommandColumnVmax";
-            this.dgvRecommandColumnVmax.ReadOnly = true;
-            this.dgvRecommandColumnVmax.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            resources.ApplyResources(this.customPanel3, "customPanel3");
+            this.customPanel3.BorderColor = System.Drawing.Color.Silver;
+            this.customPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customPanel3.Controls.Add(this.label5);
+            this.customPanel3.Curvature = 8;
+            this.customPanel3.Name = "customPanel3";
             // 
-            // dgvRecommandColumnAccelSpeed
+            // label5
             // 
-            this.dgvRecommandColumnAccelSpeed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnAccelSpeed.FillWeight = 77.31933F;
-            resources.ApplyResources(this.dgvRecommandColumnAccelSpeed, "dgvRecommandColumnAccelSpeed");
-            this.dgvRecommandColumnAccelSpeed.Name = "dgvRecommandColumnAccelSpeed";
-            this.dgvRecommandColumnAccelSpeed.ReadOnly = true;
-            this.dgvRecommandColumnAccelSpeed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Name = "label5";
             // 
-            // dgvRecommandColumnStroke
+            // label3
             // 
-            this.dgvRecommandColumnStroke.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnStroke.FillWeight = 77.31933F;
-            resources.ApplyResources(this.dgvRecommandColumnStroke, "dgvRecommandColumnStroke");
-            this.dgvRecommandColumnStroke.Name = "dgvRecommandColumnStroke";
-            this.dgvRecommandColumnStroke.ReadOnly = true;
-            this.dgvRecommandColumnStroke.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Name = "label3";
             // 
-            // dgvRecommandColumnRunTime
+            // customPanel2
             // 
-            this.dgvRecommandColumnRunTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnRunTime.FillWeight = 77.31933F;
-            resources.ApplyResources(this.dgvRecommandColumnRunTime, "dgvRecommandColumnRunTime");
-            this.dgvRecommandColumnRunTime.Name = "dgvRecommandColumnRunTime";
-            this.dgvRecommandColumnRunTime.ReadOnly = true;
-            this.dgvRecommandColumnRunTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            resources.ApplyResources(this.customPanel2, "customPanel2");
+            this.customPanel2.BorderColor = System.Drawing.Color.Silver;
+            this.customPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customPanel2.Curvature = 8;
+            this.customPanel2.Name = "customPanel2";
             // 
-            // dgvRecommandColumnMomentA
+            // label2
             // 
-            this.dgvRecommandColumnMomentA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.dgvRecommandColumnMomentA, "dgvRecommandColumnMomentA");
-            this.dgvRecommandColumnMomentA.Name = "dgvRecommandColumnMomentA";
-            this.dgvRecommandColumnMomentA.ReadOnly = true;
-            this.dgvRecommandColumnMomentA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnMomentB
-            // 
-            this.dgvRecommandColumnMomentB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.dgvRecommandColumnMomentB, "dgvRecommandColumnMomentB");
-            this.dgvRecommandColumnMomentB.Name = "dgvRecommandColumnMomentB";
-            this.dgvRecommandColumnMomentB.ReadOnly = true;
-            this.dgvRecommandColumnMomentB.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnMomentC
-            // 
-            this.dgvRecommandColumnMomentC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.dgvRecommandColumnMomentC, "dgvRecommandColumnMomentC");
-            this.dgvRecommandColumnMomentC.Name = "dgvRecommandColumnMomentC";
-            this.dgvRecommandColumnMomentC.ReadOnly = true;
-            this.dgvRecommandColumnMomentC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnPower
-            // 
-            this.dgvRecommandColumnPower.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnPower.FillWeight = 77.31933F;
-            resources.ApplyResources(this.dgvRecommandColumnPower, "dgvRecommandColumnPower");
-            this.dgvRecommandColumnPower.Name = "dgvRecommandColumnPower";
-            this.dgvRecommandColumnPower.ReadOnly = true;
-            this.dgvRecommandColumnPower.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnTmax
-            // 
-            this.dgvRecommandColumnTmax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.dgvRecommandColumnTmax, "dgvRecommandColumnTmax");
-            this.dgvRecommandColumnTmax.Name = "dgvRecommandColumnTmax";
-            this.dgvRecommandColumnTmax.ReadOnly = true;
-            this.dgvRecommandColumnTmax.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnTrms
-            // 
-            this.dgvRecommandColumnTrms.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.dgvRecommandColumnTrms, "dgvRecommandColumnTrms");
-            this.dgvRecommandColumnTrms.Name = "dgvRecommandColumnTrms";
-            this.dgvRecommandColumnTrms.ReadOnly = true;
-            this.dgvRecommandColumnTrms.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnServiceDistance
-            // 
-            this.dgvRecommandColumnServiceDistance.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnServiceDistance.FillWeight = 77.31933F;
-            resources.ApplyResources(this.dgvRecommandColumnServiceDistance, "dgvRecommandColumnServiceDistance");
-            this.dgvRecommandColumnServiceDistance.Name = "dgvRecommandColumnServiceDistance";
-            this.dgvRecommandColumnServiceDistance.ReadOnly = true;
-            this.dgvRecommandColumnServiceDistance.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnServiceLife
-            // 
-            this.dgvRecommandColumnServiceLife.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnServiceLife.FillWeight = 77.31933F;
-            resources.ApplyResources(this.dgvRecommandColumnServiceLife, "dgvRecommandColumnServiceLife");
-            this.dgvRecommandColumnServiceLife.Name = "dgvRecommandColumnServiceLife";
-            this.dgvRecommandColumnServiceLife.ReadOnly = true;
-            this.dgvRecommandColumnServiceLife.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 是否推薦
-            // 
-            this.是否推薦.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.是否推薦, "是否推薦");
-            this.是否推薦.Name = "是否推薦";
-            this.是否推薦.ReadOnly = true;
-            this.是否推薦.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // 更詳細資訊
-            // 
-            this.更詳細資訊.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.更詳細資訊.FillWeight = 80F;
-            resources.ApplyResources(this.更詳細資訊, "更詳細資訊");
-            this.更詳細資訊.Name = "更詳細資訊";
-            this.更詳細資訊.ReadOnly = true;
-            this.更詳細資訊.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
             // 
             // FormMain
             // 
@@ -1638,19 +1751,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdZoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).EndInit();
             this.explorerBar.ResumeLayout(false);
-            this.panelSideTable.ResumeLayout(false);
-            this.panelSideTableSelections.ResumeLayout(false);
-            this.customPanel4.ResumeLayout(false);
-            this.customPanel3.ResumeLayout(false);
             this.explorerBarPanel5.ResumeLayout(false);
+            this.explorerBarPanel5_content.ResumeLayout(false);
+            this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.explorerBarPanel5_title.ResumeLayout(false);
             this.explorerBarPanel4.ResumeLayout(false);
+            this.explorerBarPanel4_content.ResumeLayout(false);
+            this.panelConfirmBtnsStep4.ResumeLayout(false);
             this.explorerBarPanel4_title.ResumeLayout(false);
             this.explorerBarPanel3.ResumeLayout(false);
+            this.explorerBarPanel3_content.ResumeLayout(false);
+            this.panelConfirmBtnsStep3.ResumeLayout(false);
             this.explorerBarPanel3_title.ResumeLayout(false);
             this.explorerBarPanel2.ResumeLayout(false);
             this.explorerBarPanel2_content.ResumeLayout(false);
             this.explorerBarPanel2_content.PerformLayout();
+            this.panelConfirmBtnsStep2.ResumeLayout(false);
+            this.panelCalcBtns.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1662,7 +1780,7 @@
             this.explorerBarPanel1.ResumeLayout(false);
             this.explorerBarPanel1_content.ResumeLayout(false);
             this.explorerBarPanel1_content.PerformLayout();
-            this.panelConfirmBtns.ResumeLayout(false);
+            this.panelConfirmBtnsStep1.ResumeLayout(false);
             this.panelSetupMode.ResumeLayout(false);
             this.panelSetupMode.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
@@ -1673,7 +1791,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picDustFree)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStandardEnv)).EndInit();
             this.explorerBarPanel1_title.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).EndInit();
+            this.panelSideTable.ResumeLayout(false);
+            this.panelSideTableSelections.ResumeLayout(false);
+            this.customPanel4.ResumeLayout(false);
+            this.customPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1785,9 +1906,6 @@
         public System.Windows.Forms.Panel explorerBarPanel3;
         public System.Windows.Forms.Panel explorerBarPanel3_content;
         public System.Windows.Forms.Panel explorerBarPanel3_title;
-        private System.Windows.Forms.TableLayoutPanel panelConfirmBtns;
-        private CustomButton.CustomButton cmdConfirm;
-        private CustomButton.CustomButton cmdReset;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label58;
@@ -1830,7 +1948,7 @@
         public System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label76;
         public CustomButton.CustomButton cmdCalc;
-        public System.Windows.Forms.DataGridView dgvSearchResult;
+        public System.Windows.Forms.DataGridView dgvRecommandList;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dgvRecommandColumnLock;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnModel;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnLead;
@@ -1850,6 +1968,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnServiceLife;
         private System.Windows.Forms.DataGridViewImageColumn 是否推薦;
         private System.Windows.Forms.DataGridViewImageColumn 更詳細資訊;
+        public CustomButton.CustomButton cmdConfirmStep1;
+        public CustomButton.CustomButton cmdConfirmStep2;
+        public CustomButton.CustomButton cmdConfirmStep5;
+        public CustomButton.CustomButton cmdResetStep5;
+        public CustomButton.CustomButton cmdConfirmStep4;
+        public CustomButton.CustomButton cmdConfirmStep3;
+        public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep1;
+        public System.Windows.Forms.TableLayoutPanel panelCalcBtns;
+        public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep2;
+        public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep5;
+        public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep4;
+        public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep3;
     }
 }
 

@@ -20,7 +20,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public Step4 step4;
         public Step5 step5;
 
-        private ExplorerBar _explorerBar;
+        public ExplorerBar _explorerBar;
 
         public FormMain() {
             InitializeComponent();
@@ -34,6 +34,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // Step
             step1 = new Step1(this);
             step2 = new Step2(this);
+            step3 = new Step3(this);
+            step4 = new Step4(this);
+            step5 = new Step5(this);
         }        
 
         private void FormMain_Load(object sender, EventArgs e) {
@@ -49,28 +52,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //Language.curLanguage = Language.LanguageType.English;
             //Language.Load(this);
             //Console.WriteLine(CustomExtensions.GetLang("MomentLimit_0"));
-        }
-
-        private void CmdConfirm_Click(object sender, EventArgs e) {
-            curStep = (Step)((int)curStep + 1);
-            sideTable.Update(null, null);
-            _explorerBar.UpdateCurStep(curStep);
-            MoveConfirmPanelToStep(curStep);
-        }
-
-        private void CmdReset_Click(object sender, EventArgs e) {
-            curStep = Step.Step1;
-            sideTable.Update(null, null);
-            _explorerBar.UpdateCurStep(curStep);
-            MoveConfirmPanelToStep(curStep);
-        }
-
-        private void MoveConfirmPanelToStep(Step step) {
-            // 開啟目標step panel
-            Panel targetPanel = Controls.Find("explorerBarPanel" + ((int)step + 1) + "_content", true)[0] as Panel;
-            panelConfirmBtns.Parent.Controls.Remove(panelConfirmBtns);
-            targetPanel.Controls.Add(panelConfirmBtns);
-            explorerBar.ScrollControlIntoView(panelConfirmBtns);
         }
 
         private bool binaryExplorerBar_BinaryExplorerBarPanelTitleClicked(object sender, BinaryExplorerBarPanel thePanelObject) {

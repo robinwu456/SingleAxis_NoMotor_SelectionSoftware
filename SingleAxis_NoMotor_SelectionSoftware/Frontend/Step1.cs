@@ -25,6 +25,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.optWallHangingUse.CheckedChanged += formMain.sideTable.Update;
             formMain.optHorizontalUse.CheckedChanged += formMain.sideTable.Update;
             formMain.cboModelType.SelectedValueChanged += formMain.sideTable.Update;
+
+            // 確認按鈕
+            formMain.cmdConfirmStep1.Click += CmdConfirmStep1_Click;
+        }
+
+        private void CmdConfirmStep1_Click(object sender, EventArgs e) {
+            formMain.curStep = (FormMain.Step)((int)formMain.curStep + 1);
+            formMain.sideTable.Update(null, null);
+            formMain._explorerBar.UpdateCurStep(formMain.curStep);
+            formMain.explorerBar.ScrollControlIntoView(formMain.panelCalcBtns);
         }
 
         private void PicDustFree_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e) {
