@@ -7,6 +7,9 @@ using System.Threading;
 namespace SingleAxis_NoMotor_SelectionSoftware {
     class Calculation : CalculationModel {
         private int calcCountPerThread = 10;   // 單執行緒運算的筆數
+        private Dictionary<string, object> pipeLineResult = new Dictionary<string, object>();   // 即時運算完成的Model
+        private List<Model> pipeLineAllModels = new List<Model>();  // 所有的Model
+        bool isPipeLineCalcError = false;
 
         // 計算推薦規格
         public Dictionary<string, object> GetRecommandResult(Condition condition) {
@@ -26,11 +29,27 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return calcResult;
         }
 
+        // 取得運算進度
+        public (int percent, bool isError) GetCalcPercent() {
+            int percent = 0;
+            bool isError = isPipeLineCalcError;
+
+            if (!pipeLineResult.Keys.Contains("List"))
+                percent = 0;
+            else {
+                if (pipeLineAllModels.Count == 0)
+                    isError = true;
+                percent = (int)(((float)(pipeLineResult["List"] as List<Model>).Count / (float)pipeLineAllModels.Count) * 100);
+            }
+
+            return (percent, isError);
+        }
+
         // 平行運算
         private Dictionary<string, object> PipelineCalc(List<Model> models, Condition condition) {
-            List<Model> pipeLineAllModels = models;
-            Dictionary<string, object> pipeLineResult = new Dictionary<string, object>() { { "List", new List<Model>() }, { "Alarm", false }, { "Msg", "" }, };
-            bool isPipeLineCalcError = false;
+            pipeLineAllModels = models;
+            pipeLineResult = new Dictionary<string, object>() { { "List", new List<Model>() }, { "Alarm", false }, { "Msg", "" }, };
+            isPipeLineCalcError = false;
             // 平行運算執行緒宣告
             List<Thread> threadsPipeline = new List<Thread>();
             List<List<Model>> modelsPerPipeline = new List<List<Model>>();

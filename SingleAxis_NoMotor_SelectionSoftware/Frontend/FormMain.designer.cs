@@ -710,7 +710,6 @@
             resources.ApplyResources(this.dgvRecommandList, "dgvRecommandList");
             this.dgvRecommandList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRecommandList.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvRecommandList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(58)))), ((int)(((byte)(57)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);

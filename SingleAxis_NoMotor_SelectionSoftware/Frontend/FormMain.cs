@@ -46,7 +46,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     panel.isCollapse = true;
             });
             // 測邊表格更新
-            sideTable.Update(null, null);
+            sideTable.Update(null, null);            
 
             //// 語係測試
             //Language.curLanguage = Language.LanguageType.English;

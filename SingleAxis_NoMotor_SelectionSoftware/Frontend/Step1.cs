@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Step1 {
@@ -35,6 +36,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.sideTable.Update(null, null);
             formMain._explorerBar.UpdateCurStep(formMain.curStep);
             formMain.explorerBar.ScrollControlIntoView(formMain.panelCalcBtns);
+
+            // Step2 只開起一半
+            formMain.explorerBarPanel2.Size = new Size(formMain.explorerBarPanel2.Size.Width, formMain.step2.minHeight);
         }
 
         private void PicDustFree_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e) {
