@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     class Calculation : CalculationModel {
-        private int calcCountPerThread = 10;   // 單執行緒運算的筆數
+        private int calcCountPerThread = 1000;   // 單執行緒運算的筆數
         private Dictionary<string, object> pipeLineResult = new Dictionary<string, object>();   // 即時運算完成的Model
         private List<Model> pipeLineAllModels = new List<Model>();  // 所有的Model
         bool isPipeLineCalcError = false;
@@ -124,23 +124,23 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             foreach (Model model in models) {
                 // 滑軌壽命計算            
                 model.slideTrackServiceLifeDistance = GetSlideTrackEstimatedLife(model, con);
-                //// 螺桿壽命計算
-                //model.screwServiceLifeDistance = GetScrewEstimatedLife(model, conditions);
-                //// 扭矩計算
-                //(bool is_tMax_OK, bool is_tRms_OK) confirmResult = TorqueConfirm(model, conditions);
-                //model.is_tMax_OK = confirmResult.is_tMax_OK;
-                //model.is_tRms_OK = confirmResult.is_tRms_OK;
+                // 螺桿壽命計算
+                model.screwServiceLifeDistance = GetScrewEstimatedLife(model, con);
+                // 扭矩計算
+                (bool is_tMax_OK, bool is_tRms_OK) confirmResult = TorqueConfirm(model, con);
+                model.is_tMax_OK = confirmResult.is_tMax_OK;
+                model.is_tRms_OK = confirmResult.is_tRms_OK;
 
-                ////// 線速度 m/s => mm/s
-                ////model.vMax *= 1000;
-                ////// 加速度 m/s => mm/s
-                ////model.accelSpeed *= 1000;
+                // 線速度 m/s => mm/s
+                model.vMax *= 1000;
+                // 加速度 m/s => mm/s
+                model.accelSpeed *= 1000;
 
-                //// 結果壽命取最小值
-                //model.serviceLifeDistance = Math.Min(model.slideTrackServiceLifeDistance, model.screwServiceLifeDistance);
+                // 結果壽命取最小值
+                model.serviceLifeDistance = Math.Min(model.slideTrackServiceLifeDistance, model.screwServiceLifeDistance);
 
-                //// 算壽命時間
-                //model.serviceLifeTime = GetServiceLifeTime(model, conditions);
+                // 算壽命時間
+                model.serviceLifeTime = GetServiceLifeTime(model, con);
 
                 (pipeLineResult["List"] as List<Model>).Add(model);
             }

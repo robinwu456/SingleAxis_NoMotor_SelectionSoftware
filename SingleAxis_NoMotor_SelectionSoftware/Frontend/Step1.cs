@@ -36,6 +36,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.sideTable.Update(null, null);
             formMain._explorerBar.UpdateCurStep(formMain.curStep);
             formMain.explorerBar.ScrollControlIntoView(formMain.panelCalcBtns);
+            formMain.step2.Load();
 
             // Step2 只開起一半
             formMain.explorerBarPanel2.Size = new Size(formMain.explorerBarPanel2.Size.Width, formMain.step2.minHeight);

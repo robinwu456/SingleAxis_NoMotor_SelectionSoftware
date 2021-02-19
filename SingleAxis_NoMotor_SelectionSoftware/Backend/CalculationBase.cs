@@ -11,11 +11,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         protected Converter.ModifyItem strokeTooShortModifyItem = Converter.ModifyItem.Vmax;  // 行程過短修正項目      
 
         // 資料庫
-        protected DataTable modelInfo = FileUtil.ReadCsv(Config.MODEL_INFO_FILENAME);
-        protected DataTable strokeRpm = FileUtil.ReadCsv(Config.STROKE_RPM_MAX_3000_FILENAME);
-        protected DataTable momentData = FileUtil.ReadCsv(Config.MOMENT_FILENAME);
-        protected DataTable motorInfo = FileUtil.ReadCsv(Config.MOTOR_INFO_FILENAME);
-        protected DataTable reducerInfo = FileUtil.ReadCsv(Config.REDUCER_INFO_FILENAME);        
+        public DataTable modelInfo = FileUtil.ReadCsv(Config.MODEL_INFO_FILENAME);
+        public DataTable strokeRpm = FileUtil.ReadCsv(Config.STROKE_RPM_MAX_3000_FILENAME);
+        public DataTable momentData = FileUtil.ReadCsv(Config.MOMENT_FILENAME);
+        public DataTable motorInfo = FileUtil.ReadCsv(Config.MOTOR_INFO_FILENAME);
+        public DataTable reducerInfo = FileUtil.ReadCsv(Config.REDUCER_INFO_FILENAME);        
 
         protected List<Model> GetAllModels(Condition condition) {
             List<Model> models = new List<Model>();
@@ -203,6 +203,35 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             double p4 = vMax >= 2 ? 3.5 : 1;
 
             return p1 * p2 * p3 * p4;
+        }
+
+        // 1分鐘最多可以跑多少趟
+        protected int GetMaxCountPerMinute(string model, double lead, Condition conditions) {
+            double _vMax;
+            if (conditions.reducerRatio.Keys.Contains(model))
+                _vMax = conditions.vMax > GetVmax_mms(model, lead, conditions.reducerRatio[model], conditions.stroke) ? GetVmax_ms(model, lead, conditions.reducerRatio[model], conditions.stroke) : conditions.vMax / 1000f; // 驗證最大Vmax
+            else
+                _vMax = conditions.vMax > GetVmax_mms(model, lead, 1, conditions.stroke) ? GetVmax_ms(model, lead, 1, conditions.stroke) : conditions.vMax / 1000f; // 驗證最大Vmax
+
+            double _accelSpeed = (float)conditions.accelSpeed / 1000f;
+
+            //double accelTime = _vMax / _accelSpeed;
+            double accelTime = 0;
+            if (conditions.accelSpeed != 0) {
+                conditions.accelTime = conditions.vMax / conditions.accelSpeed;
+            } else {
+                accelTime = conditions.accelTime;
+            }
+
+            double decelTime = accelTime;
+            double constantTime = ((2f * (float)conditions.stroke / 1000f / _vMax) - accelTime - decelTime) / 2f;
+            // 單趟來回需要的秒數
+            //double totalTime = (accelTime + constantTime + decelTime + conditions.stopTime) * 2f;
+            double totalTime = (accelTime + constantTime + decelTime) * 2f;
+
+            int maxCountPerMinute = (int)(60f / totalTime);
+
+            return maxCountPerMinute;
         }
     }
 }

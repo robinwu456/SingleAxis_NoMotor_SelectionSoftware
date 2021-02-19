@@ -69,6 +69,9 @@
             this.label63 = new System.Windows.Forms.Label();
             this.explorerBarPanel2 = new System.Windows.Forms.Panel();
             this.explorerBarPanel2_content = new System.Windows.Forms.Panel();
+            this.dgvReducerInfo = new System.Windows.Forms.DataGridView();
+            this.columnModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnReducerRatio = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.panelConfirmBtnsStep2 = new System.Windows.Forms.TableLayoutPanel();
             this.cmdConfirmStep2 = new CustomButton.CustomButton();
             this.panelCalcBtns = new System.Windows.Forms.TableLayoutPanel();
@@ -114,7 +117,6 @@
             this.label34 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label55 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -242,13 +244,13 @@
             this.explorerBarPanel3_title.SuspendLayout();
             this.explorerBarPanel2.SuspendLayout();
             this.explorerBarPanel2_content.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).BeginInit();
             this.panelConfirmBtnsStep2.SuspendLayout();
             this.panelCalcBtns.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.explorerBarPanel2_title.SuspendLayout();
             this.explorerBarPanel1.SuspendLayout();
@@ -589,6 +591,7 @@
             // 
             // explorerBarPanel2_content
             // 
+            this.explorerBarPanel2_content.Controls.Add(this.dgvReducerInfo);
             this.explorerBarPanel2_content.Controls.Add(this.panelConfirmBtnsStep2);
             this.explorerBarPanel2_content.Controls.Add(this.panelCalcBtns);
             this.explorerBarPanel2_content.Controls.Add(this.dgvRecommandList);
@@ -598,7 +601,6 @@
             this.explorerBarPanel2_content.Controls.Add(this.label34);
             this.explorerBarPanel2_content.Controls.Add(this.comboBox2);
             this.explorerBarPanel2_content.Controls.Add(this.dataGridView3);
-            this.explorerBarPanel2_content.Controls.Add(this.dataGridView2);
             this.explorerBarPanel2_content.Controls.Add(this.label55);
             this.explorerBarPanel2_content.Controls.Add(this.label58);
             this.explorerBarPanel2_content.Controls.Add(this.chart1);
@@ -656,6 +658,34 @@
             this.explorerBarPanel2_content.Controls.Add(this.label17);
             resources.ApplyResources(this.explorerBarPanel2_content, "explorerBarPanel2_content");
             this.explorerBarPanel2_content.Name = "explorerBarPanel2_content";
+            // 
+            // dgvReducerInfo
+            // 
+            this.dgvReducerInfo.AllowUserToAddRows = false;
+            this.dgvReducerInfo.AllowUserToDeleteRows = false;
+            this.dgvReducerInfo.AllowUserToResizeColumns = false;
+            this.dgvReducerInfo.AllowUserToResizeRows = false;
+            this.dgvReducerInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvReducerInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReducerInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnModel,
+            this.columnReducerRatio});
+            resources.ApplyResources(this.dgvReducerInfo, "dgvReducerInfo");
+            this.dgvReducerInfo.Name = "dgvReducerInfo";
+            this.dgvReducerInfo.RowHeadersVisible = false;
+            this.dgvReducerInfo.RowTemplate.Height = 24;
+            // 
+            // columnModel
+            // 
+            resources.ApplyResources(this.columnModel, "columnModel");
+            this.columnModel.Name = "columnModel";
+            this.columnModel.ReadOnly = true;
+            this.columnModel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // columnReducerRatio
+            // 
+            resources.ApplyResources(this.columnReducerRatio, "columnReducerRatio");
+            this.columnReducerRatio.Name = "columnReducerRatio";
             // 
             // panelConfirmBtnsStep2
             // 
@@ -1086,13 +1116,6 @@
             resources.ApplyResources(this.dataGridView3, "dataGridView3");
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 24;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.dataGridView2, "dataGridView2");
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
             // 
             // label55
             // 
@@ -1825,6 +1848,7 @@
             this.explorerBarPanel2.ResumeLayout(false);
             this.explorerBarPanel2_content.ResumeLayout(false);
             this.explorerBarPanel2_content.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).EndInit();
             this.panelConfirmBtnsStep2.ResumeLayout(false);
             this.panelCalcBtns.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).EndInit();
@@ -1833,7 +1857,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.explorerBarPanel2_title.ResumeLayout(false);
             this.explorerBarPanel1.ResumeLayout(false);
@@ -1924,7 +1947,6 @@
         private System.Windows.Forms.Label label34;
         public System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
@@ -2046,6 +2068,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnServiceLife;
         private System.Windows.Forms.DataGridViewImageColumn dgvRecommandColumnIsRecommand;
         private System.Windows.Forms.DataGridViewImageColumn dgvRecommandColumnDetail;
+        public System.Windows.Forms.DataGridView dgvReducerInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnModel;
+        private System.Windows.Forms.DataGridViewComboBoxColumn columnReducerRatio;
     }
 }
 

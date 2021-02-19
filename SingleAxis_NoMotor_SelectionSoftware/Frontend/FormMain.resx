@@ -1134,6 +1134,39 @@
   <data name="&gt;&gt;explorerBarPanel3.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="columnModel.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="columnModel.HeaderText" xml:space="preserve">
+    <value>型號</value>
+  </data>
+  <metadata name="columnReducerRatio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="columnReducerRatio.HeaderText" xml:space="preserve">
+    <value>減速比</value>
+  </data>
+  <data name="dgvReducerInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>786, 413</value>
+  </data>
+  <data name="dgvReducerInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 207</value>
+  </data>
+  <data name="dgvReducerInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>255</value>
+  </data>
+  <data name="&gt;&gt;dgvReducerInfo.Name" xml:space="preserve">
+    <value>dgvReducerInfo</value>
+  </data>
+  <data name="&gt;&gt;dgvReducerInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvReducerInfo.Parent" xml:space="preserve">
+    <value>explorerBarPanel2_content</value>
+  </data>
+  <data name="&gt;&gt;dgvReducerInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="panelConfirmBtnsStep2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -1189,7 +1222,7 @@
     <value>explorerBarPanel2_content</value>
   </data>
   <data name="&gt;&gt;panelConfirmBtnsStep2.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="panelConfirmBtnsStep2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cmdConfirmStep2" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,41.66722,Percent,16.66556,Percent,41.66722,Absolute,20" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
@@ -1249,7 +1282,7 @@
     <value>explorerBarPanel2_content</value>
   </data>
   <data name="&gt;&gt;panelCalcBtns.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="panelCalcBtns.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cmdCalc" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,41.66583,Percent,16.66833,Percent,41.66583" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
@@ -1471,7 +1504,7 @@
     <value>explorerBarPanel2_content</value>
   </data>
   <data name="&gt;&gt;dgvRecommandList.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label35.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1888,7 +1921,7 @@
     <value>explorerBarPanel2_content</value>
   </data>
   <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label60.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2002,7 +2035,7 @@
     <value>explorerBarPanel2_content</value>
   </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="comboBox3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -2029,7 +2062,7 @@
     <value>explorerBarPanel2_content</value>
   </data>
   <data name="&gt;&gt;comboBox3.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="label34.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2062,7 +2095,7 @@
     <value>explorerBarPanel2_content</value>
   </data>
   <data name="&gt;&gt;label34.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="comboBox2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -2089,7 +2122,7 @@
     <value>explorerBarPanel2_content</value>
   </data>
   <data name="&gt;&gt;comboBox2.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="dataGridView3.Location" type="System.Drawing.Point, System.Drawing">
     <value>393, 402</value>
@@ -2110,27 +2143,6 @@
     <value>explorerBarPanel2_content</value>
   </data>
   <data name="&gt;&gt;dataGridView3.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="dataGridView2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>786, 409</value>
-  </data>
-  <data name="dataGridView2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 211</value>
-  </data>
-  <data name="dataGridView2.TabIndex" type="System.Int32, mscorlib">
-    <value>244</value>
-  </data>
-  <data name="&gt;&gt;dataGridView2.Name" xml:space="preserve">
-    <value>dataGridView2</value>
-  </data>
-  <data name="&gt;&gt;dataGridView2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridView2.Parent" xml:space="preserve">
-    <value>explorerBarPanel2_content</value>
-  </data>
-  <data name="&gt;&gt;dataGridView2.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
   <data name="label55.AutoSize" type="System.Boolean, mscorlib">
@@ -5342,6 +5354,18 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;columnModel.Name" xml:space="preserve">
+    <value>columnModel</value>
+  </data>
+  <data name="&gt;&gt;columnModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnReducerRatio.Name" xml:space="preserve">
+    <value>columnReducerRatio</value>
+  </data>
+  <data name="&gt;&gt;columnReducerRatio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewComboBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dgvRecommandColumnLock.Name" xml:space="preserve">
     <value>dgvRecommandColumnLock</value>

@@ -5,6 +5,7 @@ using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
+using System.Data;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Step2 {
@@ -24,9 +25,24 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //formMain.tabControlAdvanceOptions.ItemSize = new Size(0, 1);
         }
 
+        public void Load() {
+            // 減速比
+            calc.reducerInfo.Rows.Cast<DataRow>().ToList().ForEach(row => {
+                DataGridViewRow newRow = new DataGridViewRow();
+                DataGridViewTextBoxCell txtCell = new DataGridViewTextBoxCell();
+                DataGridViewComboBoxCell cboCell = new DataGridViewComboBoxCell();
+                txtCell.Value = row["Model"].ToString();
+                cboCell.DataSource = row["ReducerRatio"].ToString().Split('、');
+                cboCell.Value = row["ReducerRatio"].ToString().Split('、')[0];
+                newRow.Cells.Add(txtCell);
+                newRow.Cells.Add(cboCell);
+                formMain.dgvReducerInfo.Rows.Add(newRow);
+            });
+        }
+
         public void UpdateCondition() {
             curCondition.setupMethod = Model.SetupMethod.Horizontal;
-            //curCondition.vMax = 100;
+            curCondition.vMax = 100;
             curCondition.moment_A = 100;
             curCondition.modelType = Model.ModelType.Screw;
             curCondition.stroke = 70;
@@ -38,6 +54,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             curCondition.powerSelection = Condition.PowerSelection.Standard;
             curCondition.calcCloseToStandardItem = Condition.CalcAccordingItem.None;
             curCondition.calcModel = (null, -1);
+
+            curCondition.reducerRatio.Clear();
+            formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().ForEach(row => {
+                curCondition.reducerRatio.Add(row.Cells["columnModel"].Value.ToString(), Convert.ToInt32(row.Cells["columnReducerRatio"].Value.ToString()));
+            });
         }
 
         private void InitEvents() {
