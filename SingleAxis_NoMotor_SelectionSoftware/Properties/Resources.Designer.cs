@@ -73,9 +73,59 @@ namespace SingleAxis_NoMotor_SelectionSoftware.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap detail_disable_in_condition {
+            get {
+                object obj = ResourceManager.GetObject("detail_disable_in_condition", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap detail_disable_not_in_condition {
+            get {
+                object obj = ResourceManager.GetObject("detail_disable_not_in_condition", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap detail_enable {
+            get {
+                object obj = ResourceManager.GetObject("detail_enable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap dustFreeEnviroment {
             get {
                 object obj = ResourceManager.GetObject("dustFreeEnviroment", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap inCondition {
+            get {
+                object obj = ResourceManager.GetObject("inCondition", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap notInCondition {
+            get {
+                object obj = ResourceManager.GetObject("notInCondition", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

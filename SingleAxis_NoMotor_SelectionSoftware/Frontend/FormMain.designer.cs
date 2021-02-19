@@ -91,8 +91,8 @@
             this.dgvRecommandColumnTrms = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvRecommandColumnServiceDistance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvRecommandColumnServiceLife = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.是否推薦 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.更詳細資訊 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvRecommandColumnIsRecommand = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvRecommandColumnDetail = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label35 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
@@ -738,8 +738,8 @@
             this.dgvRecommandColumnTrms,
             this.dgvRecommandColumnServiceDistance,
             this.dgvRecommandColumnServiceLife,
-            this.是否推薦,
-            this.更詳細資訊});
+            this.dgvRecommandColumnIsRecommand,
+            this.dgvRecommandColumnDetail});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 8F, System.Drawing.FontStyle.Bold);
@@ -781,7 +781,7 @@
             // 
             // dgvRecommandColumnModel
             // 
-            this.dgvRecommandColumnModel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnModel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dgvRecommandColumnModel.FillWeight = 68.39409F;
             resources.ApplyResources(this.dgvRecommandColumnModel, "dgvRecommandColumnModel");
             this.dgvRecommandColumnModel.Name = "dgvRecommandColumnModel";
@@ -808,7 +808,7 @@
             // 
             // dgvRecommandColumnRpm
             // 
-            this.dgvRecommandColumnRpm.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnRpm.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dgvRecommandColumnRpm.FillWeight = 68.39409F;
             resources.ApplyResources(this.dgvRecommandColumnRpm, "dgvRecommandColumnRpm");
             this.dgvRecommandColumnRpm.Name = "dgvRecommandColumnRpm";
@@ -835,7 +835,7 @@
             // 
             // dgvRecommandColumnStroke
             // 
-            this.dgvRecommandColumnStroke.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnStroke.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dgvRecommandColumnStroke.FillWeight = 68.39409F;
             resources.ApplyResources(this.dgvRecommandColumnStroke, "dgvRecommandColumnStroke");
             this.dgvRecommandColumnStroke.Name = "dgvRecommandColumnStroke";
@@ -844,7 +844,7 @@
             // 
             // dgvRecommandColumnRunTime
             // 
-            this.dgvRecommandColumnRunTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnRunTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dgvRecommandColumnRunTime.FillWeight = 68.39409F;
             resources.ApplyResources(this.dgvRecommandColumnRunTime, "dgvRecommandColumnRunTime");
             this.dgvRecommandColumnRunTime.Name = "dgvRecommandColumnRunTime";
@@ -907,7 +907,7 @@
             // 
             // dgvRecommandColumnServiceDistance
             // 
-            this.dgvRecommandColumnServiceDistance.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnServiceDistance.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dgvRecommandColumnServiceDistance.FillWeight = 64.37476F;
             resources.ApplyResources(this.dgvRecommandColumnServiceDistance, "dgvRecommandColumnServiceDistance");
             this.dgvRecommandColumnServiceDistance.Name = "dgvRecommandColumnServiceDistance";
@@ -916,29 +916,29 @@
             // 
             // dgvRecommandColumnServiceLife
             // 
-            this.dgvRecommandColumnServiceLife.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRecommandColumnServiceLife.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dgvRecommandColumnServiceLife.FillWeight = 68.39409F;
             resources.ApplyResources(this.dgvRecommandColumnServiceLife, "dgvRecommandColumnServiceLife");
             this.dgvRecommandColumnServiceLife.Name = "dgvRecommandColumnServiceLife";
             this.dgvRecommandColumnServiceLife.ReadOnly = true;
             this.dgvRecommandColumnServiceLife.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // 是否推薦
+            // dgvRecommandColumnIsRecommand
             // 
-            this.是否推薦.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.是否推薦, "是否推薦");
-            this.是否推薦.Name = "是否推薦";
-            this.是否推薦.ReadOnly = true;
-            this.是否推薦.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecommandColumnIsRecommand.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.dgvRecommandColumnIsRecommand, "dgvRecommandColumnIsRecommand");
+            this.dgvRecommandColumnIsRecommand.Name = "dgvRecommandColumnIsRecommand";
+            this.dgvRecommandColumnIsRecommand.ReadOnly = true;
+            this.dgvRecommandColumnIsRecommand.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // 更詳細資訊
+            // dgvRecommandColumnDetail
             // 
-            this.更詳細資訊.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.更詳細資訊.FillWeight = 80F;
-            resources.ApplyResources(this.更詳細資訊, "更詳細資訊");
-            this.更詳細資訊.Name = "更詳細資訊";
-            this.更詳細資訊.ReadOnly = true;
-            this.更詳細資訊.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRecommandColumnDetail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvRecommandColumnDetail.FillWeight = 80F;
+            resources.ApplyResources(this.dgvRecommandColumnDetail, "dgvRecommandColumnDetail");
+            this.dgvRecommandColumnDetail.Name = "dgvRecommandColumnDetail";
+            this.dgvRecommandColumnDetail.ReadOnly = true;
+            this.dgvRecommandColumnDetail.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // panel3
             // 
@@ -1904,25 +1904,6 @@
         public System.Windows.Forms.TableLayoutPanel panelCalcBtns;
         public CustomButton.CustomButton cmdCalc;
         public System.Windows.Forms.DataGridView dgvRecommandList;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dgvRecommandColumnLock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnModel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnLead;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnLoad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnRpm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnVmax;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnAccelSpeed;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnStroke;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnRunTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnMomentA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnMomentB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnMomentC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnPower;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnTmax;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnTrms;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnServiceDistance;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnServiceLife;
-        private System.Windows.Forms.DataGridViewImageColumn 是否推薦;
-        private System.Windows.Forms.DataGridViewImageColumn 更詳細資訊;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label35;
         public System.Windows.Forms.Label label43;
@@ -2047,6 +2028,25 @@
         public CustomButton.CustomButton cmdConfirmStep4;
         public CustomButton.CustomButton cmdResetStep4;
         public CustomTabControl tabMain;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dgvRecommandColumnLock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnModel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnLead;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnLoad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnRpm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnVmax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnAccelSpeed;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnStroke;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnRunTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnMomentA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnMomentB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnMomentC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnPower;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnTmax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnTrms;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnServiceDistance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnServiceLife;
+        private System.Windows.Forms.DataGridViewImageColumn dgvRecommandColumnIsRecommand;
+        private System.Windows.Forms.DataGridViewImageColumn dgvRecommandColumnDetail;
     }
 }
 

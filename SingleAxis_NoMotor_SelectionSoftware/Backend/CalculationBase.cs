@@ -17,8 +17,43 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         protected DataTable motorInfo = FileUtil.ReadCsv(Config.MOTOR_INFO_FILENAME);
         protected DataTable reducerInfo = FileUtil.ReadCsv(Config.REDUCER_INFO_FILENAME);        
 
-        protected List<Model> GetAllModels() {
-            return null;
+        protected List<Model> GetAllModels(Condition condition) {
+            List<Model> models = new List<Model>();
+            // 搜尋荷重
+            foreach (DataRow row in modelInfo.Rows) {
+                Model model = new Model();
+                model.name = row["Model"].ToString();
+                model.lead = Convert.ToDouble(row["Lead"].ToString());
+                if (condition.reducerRatio.Keys.Contains(model.name))
+                    model.lead = Convert.ToDouble((model.lead / (float)condition.reducerRatio[model.name]).ToString("#0.00"));
+                // 安裝方式
+                model.supportedSetup = new List<Model.SetupMethod>();
+                foreach (string setupIndex in row["Setup"].ToString().Split('&')) {
+                    string setupName = Enum.GetName(typeof(Model.SetupMethod), Convert.ToInt32(setupIndex));
+                    Model.SetupMethod setup = (Model.SetupMethod)Enum.Parse(typeof(Model.SetupMethod), setupName);
+                    model.supportedSetup.Add(setup);
+                }
+
+                // 力舉參數
+                Func<DataRow, bool> con;
+                if (condition.reducerRatio.Keys.Contains(model.name))
+                    con = x => x["Model"].ToString().Equals(model.name) && Convert.ToDouble(x["Lead"].ToString()).Equals((int)Math.Round(model.lead * condition.reducerRatio[model.name], 0));
+                else
+                    con = x => x["Model"].ToString().Equals(model.name) && Convert.ToDouble(x["Lead"].ToString()).Equals(model.lead);
+                model.c = modelInfo.Rows.Cast<DataRow>().Where(con).Select(x => Convert.ToDouble(x["C"].ToString())).First();
+                model.mr_C = modelInfo.Rows.Cast<DataRow>().Where(con).Select(x => Convert.ToDouble(x["MR_C"].ToString())).First();
+                model.mp_C = modelInfo.Rows.Cast<DataRow>().Where(con).Select(x => Convert.ToDouble(x["MP_C"].ToString())).First();
+                model.my_C = modelInfo.Rows.Cast<DataRow>().Where(con).Select(x => Convert.ToDouble(x["MY_C"].ToString())).First();
+                model.dynamicLoadRating = modelInfo.Rows.Cast<DataRow>().Where(con).Select(x => Convert.ToInt32(x["DynamicLoadRating"].ToString())).First();
+                model.outerDiameter = modelInfo.Rows.Cast<DataRow>().Where(con).Select(x => Convert.ToInt32(x["OuterDiameter"].ToString())).First();
+
+                // 重複定位精度
+                model.repeatability = modelInfo.Rows.Cast<DataRow>().Where(con).Select(x => Convert.ToDouble(x["Repeatability"].ToString())).First();
+                model.modelType = model.repeatability <= 0.01 ? Model.ModelType.Screw : Model.ModelType.Belt;
+
+                models.Add(model);
+            }
+            return models;
         }
 
         // 力矩值基本驗證

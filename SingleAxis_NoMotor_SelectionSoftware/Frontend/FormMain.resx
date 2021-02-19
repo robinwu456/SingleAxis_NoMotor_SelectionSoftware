@@ -676,7 +676,7 @@
     <value>6</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1419, 129</value>
+    <value>1396, 129</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -907,7 +907,7 @@
     <value>Top</value>
   </data>
   <data name="explorerBarPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 1449</value>
+    <value>0, 1962</value>
   </data>
   <data name="explorerBarPanel4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 10, 0, 0</value>
@@ -1111,7 +1111,7 @@
     <value>Top</value>
   </data>
   <data name="explorerBarPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 1232</value>
+    <value>0, 1745</value>
   </data>
   <data name="explorerBarPanel3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 10, 0, 0</value>
@@ -1275,6 +1275,9 @@
   <data name="dgvRecommandColumnModel.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
+  <data name="dgvRecommandColumnModel.Width" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
   <metadata name="dgvRecommandColumnLead.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1301,6 +1304,9 @@
   </data>
   <data name="dgvRecommandColumnRpm.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
+  </data>
+  <data name="dgvRecommandColumnRpm.Width" type="System.Int32, mscorlib">
+    <value>75</value>
   </data>
   <metadata name="dgvRecommandColumnVmax.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1329,6 +1335,9 @@
   <data name="dgvRecommandColumnStroke.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
+  <data name="dgvRecommandColumnStroke.Width" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
   <metadata name="dgvRecommandColumnRunTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1337,6 +1346,9 @@
   </data>
   <data name="dgvRecommandColumnRunTime.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
+  </data>
+  <data name="dgvRecommandColumnRunTime.Width" type="System.Int32, mscorlib">
+    <value>54</value>
   </data>
   <metadata name="dgvRecommandColumnMomentA.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1401,6 +1413,9 @@
   <data name="dgvRecommandColumnServiceDistance.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
+  <data name="dgvRecommandColumnServiceDistance.Width" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
   <metadata name="dgvRecommandColumnServiceLife.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1410,35 +1425,38 @@
   <data name="dgvRecommandColumnServiceLife.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <metadata name="是否推薦.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="dgvRecommandColumnServiceLife.Width" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <metadata name="dgvRecommandColumnIsRecommand.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="是否推薦.HeaderText" xml:space="preserve">
+  <data name="dgvRecommandColumnIsRecommand.HeaderText" xml:space="preserve">
     <value>是否推薦</value>
   </data>
-  <data name="是否推薦.MinimumWidth" type="System.Int32, mscorlib">
+  <data name="dgvRecommandColumnIsRecommand.MinimumWidth" type="System.Int32, mscorlib">
     <value>55</value>
   </data>
-  <data name="是否推薦.Width" type="System.Int32, mscorlib">
+  <data name="dgvRecommandColumnIsRecommand.Width" type="System.Int32, mscorlib">
     <value>55</value>
   </data>
-  <metadata name="更詳細資訊.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="dgvRecommandColumnDetail.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="更詳細資訊.HeaderText" xml:space="preserve">
+  <data name="dgvRecommandColumnDetail.HeaderText" xml:space="preserve">
     <value>更詳細資訊</value>
   </data>
-  <data name="更詳細資訊.MinimumWidth" type="System.Int32, mscorlib">
+  <data name="dgvRecommandColumnDetail.MinimumWidth" type="System.Int32, mscorlib">
     <value>106</value>
   </data>
-  <data name="更詳細資訊.Width" type="System.Int32, mscorlib">
-    <value>106</value>
+  <data name="dgvRecommandColumnDetail.Width" type="System.Int32, mscorlib">
+    <value>68</value>
   </data>
   <data name="dgvRecommandList.Location" type="System.Drawing.Point, System.Drawing">
     <value>54, 818</value>
   </data>
   <data name="dgvRecommandList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1275, 364</value>
+    <value>1301, 364</value>
   </data>
   <data name="dgvRecommandList.TabIndex" type="System.Int32, mscorlib">
     <value>252</value>
@@ -3853,7 +3871,7 @@
     <value>0, 54</value>
   </data>
   <data name="explorerBarPanel2_content.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 733</value>
+    <value>1355, 1246</value>
   </data>
   <data name="explorerBarPanel2_content.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3973,7 +3991,7 @@
     <value>0, 10, 0, 0</value>
   </data>
   <data name="explorerBarPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 787</value>
+    <value>1355, 1300</value>
   </data>
   <data name="explorerBarPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -5319,6 +5337,9 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1690, 762</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
@@ -5427,16 +5448,16 @@
   <data name="&gt;&gt;dgvRecommandColumnServiceLife.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;是否推薦.Name" xml:space="preserve">
-    <value>是否推薦</value>
+  <data name="&gt;&gt;dgvRecommandColumnIsRecommand.Name" xml:space="preserve">
+    <value>dgvRecommandColumnIsRecommand</value>
   </data>
-  <data name="&gt;&gt;是否推薦.Type" xml:space="preserve">
+  <data name="&gt;&gt;dgvRecommandColumnIsRecommand.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;更詳細資訊.Name" xml:space="preserve">
-    <value>更詳細資訊</value>
+  <data name="&gt;&gt;dgvRecommandColumnDetail.Name" xml:space="preserve">
+    <value>dgvRecommandColumnDetail</value>
   </data>
-  <data name="&gt;&gt;更詳細資訊.Type" xml:space="preserve">
+  <data name="&gt;&gt;dgvRecommandColumnDetail.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

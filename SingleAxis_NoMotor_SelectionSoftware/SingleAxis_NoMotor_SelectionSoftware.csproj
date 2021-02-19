@@ -97,13 +97,19 @@
     <Compile Include="Frontend\FormMain.designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\Step2\ChartInfo.cs" />
+    <Compile Include="Frontend\Step2\GearRatio.cs" />
+    <Compile Include="Frontend\Step2\Moment.cs" />
+    <Compile Include="Frontend\Step2\MotorPower.cs" />
+    <Compile Include="Frontend\Step2\Repeatability.cs" />
+    <Compile Include="Frontend\Step2\RunCondition.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Frontend\SideTable.cs" />
     <Compile Include="Frontend\Step1.cs" />
-    <Compile Include="Frontend\Step2.cs" />
+    <Compile Include="Frontend\Step2\Step2.cs" />
     <Compile Include="Frontend\Step3.cs" />
     <Compile Include="Frontend\Step4.cs" />
     <Compile Include="Frontend\Step5.cs" />
@@ -190,6 +196,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\standardEnviroment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\detail_disable_in_condition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\detail_disable_not_in_condition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\detail_enable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inCondition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notInCondition.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
