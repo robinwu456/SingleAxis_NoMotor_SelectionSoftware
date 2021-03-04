@@ -4,24 +4,56 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Model {
         public enum SetupMethod { Horizontal, WallHang, Vertical }
         public enum Moment { A, B, C }                                    // 力舉參數
+        ///// <summary>
+        ///// 傳動方式列舉
+        ///// </summary>
+        //public enum ModelType {
+        //    /// <summary>
+        //    /// 螺桿
+        //    /// </summary>
+        //    Screw,
+        //    /// <summary>
+        //    /// 皮帶
+        //    /// </summary>
+        //    Belt
+        //}
         /// <summary>
         /// 傳動方式列舉
         /// </summary>
         public enum ModelType {
             /// <summary>
-            /// 螺桿
+            /// 軌道內嵌式螺桿滑台
             /// </summary>
-            Screw,
+            BuiltIn_Linear_Motion_Guide_Ball_Screw_Actuator,
             /// <summary>
-            /// 皮帶
+            /// 軌道內嵌推桿式螺桿滑台
             /// </summary>
-            Belt
+            Rod_Type_BuiltIn_Linear_Motion_Guide_Ball_Screw_Actuator,
+            /// <summary>
+            /// 螺桿滑台
+            /// </summary>
+            Standard_Ball_Screw_Actuator,
+            /// <summary>
+            /// 推桿式螺桿滑台
+            /// </summary>
+            Rod_Type_Actuator,
+            /// <summary>
+            /// 皮帶滑台
+            /// </summary>
+            Standard_Belt_Actuator,
+            /// <summary>
+            /// 歐規皮帶滑台
+            /// </summary>
+            Europe_Type_Belt_Actuator,
         }
+        public enum UseEnvironment { Standard, DustFree }
 
         /// <summary>
         /// 型號名稱
         /// </summary>
         public string name;
+
+        public UseEnvironment useEnvironment = UseEnvironment.Standard;
 
         /// <summary>
         /// 總預估壽命(km)
@@ -40,7 +72,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <summary>
         /// 傳動方式
         /// </summary>
-        public ModelType modelType = ModelType.Screw;
+        public ModelType modelType = ModelType.Standard_Ball_Screw_Actuator;
 
         /// <summary>
         /// 滑軌預估壽命(km)

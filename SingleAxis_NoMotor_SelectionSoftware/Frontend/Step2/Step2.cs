@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Text.RegularExpressions;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
@@ -18,6 +18,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private Condition curCondition = new Condition();
         private List<Model> curRecommandList;
         private Thread threadCalc;
+        // 馬達自訂參數
+        private (double ratedTorque, double maxTorque, double rotateInertia) customMotorParams = (-1, -1, -1);
 
         public Step2(FormMain formMain) {
             this.formMain = formMain;
@@ -40,21 +42,128 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             });
         }
 
-        public void UpdateCondition() {
-            curCondition.setupMethod = Model.SetupMethod.Horizontal;
-            curCondition.vMax = 100;
-            curCondition.moment_A = 100;
-            curCondition.modelType = Model.ModelType.Screw;
-            curCondition.stroke = 70;
-            curCondition.load = 12;
-            curCondition.moveTime = 5;
-            curCondition.useFrequence = new Condition.UseFrequence() { countPerMinute = 1, hourPerDay = 8, dayPerYear = 240 };
-            curCondition.accelTime = 0.2;
-            curCondition.RepeatabilityCondition = repeatability => repeatability <= 0.01;
-            curCondition.powerSelection = Condition.PowerSelection.Standard;
-            curCondition.calcCloseToStandardItem = Condition.CalcAccordingItem.None;
-            curCondition.calcModel = (null, -1);
+        public void UpdateCondition(object sender, EventArgs e) {
+            // 使用環境
+            if (formMain.optStandardEnv.Checked)
+                curCondition.useEnvironment = Model.UseEnvironment.Standard;
+            else if (formMain.optDustFreeEnv.Checked)
+                curCondition.useEnvironment = Model.UseEnvironment.DustFree;
+            // 機構型態
+            switch (formMain.cboModelType.Text) {
+                case "軌道內嵌式螺桿滑台":
+                    curCondition.modelType = Model.ModelType.BuiltIn_Linear_Motion_Guide_Ball_Screw_Actuator;
+                    break;
+                case "軌道內嵌推桿式螺桿滑台":
+                    curCondition.modelType = Model.ModelType.Rod_Type_BuiltIn_Linear_Motion_Guide_Ball_Screw_Actuator;
+                    break;
+                case "螺桿滑台":
+                    curCondition.modelType = Model.ModelType.Standard_Ball_Screw_Actuator;
+                    break;
+                case "推桿式螺桿滑台":
+                    curCondition.modelType = Model.ModelType.Rod_Type_Actuator;
+                    break;
+                case "皮帶滑台":
+                    curCondition.modelType = Model.ModelType.Standard_Belt_Actuator;
+                    break;
+                case "歐規皮帶滑台":
+                    curCondition.modelType = Model.ModelType.Europe_Type_Belt_Actuator;
+                    break;
+            }
+            // 安裝方式
+            if (formMain.optHorizontalUse.Checked)
+                curCondition.setupMethod = Model.SetupMethod.Horizontal;
+            else if (formMain.optWallHangingUse.Checked)
+                curCondition.setupMethod = Model.SetupMethod.WallHang;
+            else if (formMain.optUpsideDownUse.Checked)
+                curCondition.setupMethod = Model.SetupMethod.Vertical;
+            // 最高速度
+            if (formMain.optMaxSpeedType_mms.Checked)
+                curCondition.vMax = Convert.ToDouble(formMain.txtMaxSpeed.Text);
+            else if (formMain.optMaxSpeedType_rpm.Checked) {
+                if (formMain.txtMaxSpeed.Text.Contains("."))
+                    formMain.txtMaxSpeed.Text = formMain.txtMaxSpeed.Text.Split('.')[0];
+                curCondition.vMax = calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text));
+            }            
+            // 力矩參數
+            curCondition.moment_A = Convert.ToInt32(formMain.txtMomentA.Text);
+            curCondition.moment_B = Convert.ToInt32(formMain.txtMomentB.Text);
+            curCondition.moment_C = Convert.ToInt32(formMain.txtMomentC.Text);
+            // 行程
+            curCondition.stroke = Convert.ToInt32(formMain.txtStroke.Text);
+            // 荷重
+            curCondition.load = Convert.ToDouble(formMain.txtLoad.Text);
+            // 運行時間
+            curCondition.moveTime = Convert.ToDouble(formMain.txtRunTime.Text);
+            // 使用頻率
+            curCondition.useFrequence = new Condition.UseFrequence() {
+                // 趟/分
+                countPerMinute = Convert.ToInt32(formMain.txtTimesPerMinute.Text),
+                // 小時/日
+                hourPerDay = Convert.ToInt32(formMain.txtHourPerDay.Text),
+                // 日/年
+                dayPerYear = Convert.ToInt32(formMain.txtDayPerYear.Text)
+            };
+            // 希望壽命
+            curCondition.expectServiceLifeTime = formMain.optExpectServiceLife.Checked ? Convert.ToInt32(formMain.txtExpectServiceLifeTime.Text) : -1;
+            // 加速時間
+            curCondition.accelTime = Convert.ToDouble(formMain.txtAccelSpeed.Text);
+            // 傳動方式
+            if (formMain.optRepeatabilityScrew.Checked)
+                curCondition.RepeatabilityCondition = repeatability => repeatability <= 0.01;
+            else if (formMain.optRepeatabilityBelt.Checked)
+                curCondition.RepeatabilityCondition = repeatability => repeatability >= 0.04;
+            // 馬達瓦數
+            if (formMain.optCalcAllModel.Checked) {
+                // 全部計算只能標準或自訂
+                if (formMain.cboPower.Text == "標準")
+                    curCondition.powerSelection = Condition.PowerSelection.Standard;
+                else if (formMain.cboPower.Text == "自訂") {
+                    if (formMain.optMotorParamsModifySimple.Checked) {
+                        curCondition.powerSelection = Condition.PowerSelection.SelectedPower;
+                        curCondition.selectedPower = Convert.ToInt32(formMain.cboMotorParamsMotorPowerSelection.Text);
+                    } else if (formMain.optMotorParamsModifyAdvance.Checked)
+                        curCondition.powerSelection = Condition.PowerSelection.Custom;
+                }
+            } else if (formMain.optCalcSelectedModel.Checked) {
+                // 單項計算可選擇該型號適用瓦數
+                if (formMain.cboPower.Text.Contains("標準")) {
+                    curCondition.powerSelection = Condition.PowerSelection.SelectedPower;
+                    curCondition.selectedPower = Convert.ToInt32(new Regex(@"\d+").Match(formMain.cboPower.Text).Value);
+                } else if (formMain.cboPower.Text == "自訂" && formMain.optMotorParamsModifySimple.Checked) {
+                    curCondition.powerSelection = Condition.PowerSelection.SelectedPower;
+                    curCondition.selectedPower = Convert.ToInt32(formMain.cboMotorParamsMotorPowerSelection.Text);
+                } else if (formMain.cboPower.Text == "自訂" && formMain.optMotorParamsModifyAdvance.Checked) {
+                    curCondition.powerSelection = Condition.PowerSelection.Custom;
+                }
+            }
+            // 馬達參數自訂
+            if (curCondition.powerSelection == Condition.PowerSelection.Custom) {
+                if (formMain.optMotorParamsModifySimple.Checked) {
+                    var p = calc.GetMotorParams(Convert.ToInt32(formMain.cboMotorParamsMotorPowerSelection.Text));
+                    curCondition.ratedTorque = p.ratedTorque;
+                    curCondition.maxTorque = p.maxTorque;
+                    curCondition.rotateInertia = p.rotateInertia;
 
+                    customMotorParams.ratedTorque = curCondition.ratedTorque;
+                    customMotorParams.maxTorque = curCondition.maxTorque;
+                    customMotorParams.rotateInertia = curCondition.rotateInertia;
+                } else {
+                    curCondition.ratedTorque = Convert.ToDouble(formMain.txtRatedTorque.Text);
+                    curCondition.maxTorque = Convert.ToDouble(formMain.txtMaxTorque.Text);
+                    curCondition.rotateInertia = Convert.ToDouble(formMain.txtRotateInertia.Text);
+
+                    customMotorParams.ratedTorque = curCondition.ratedTorque;
+                    customMotorParams.maxTorque = curCondition.maxTorque;
+                    customMotorParams.rotateInertia = curCondition.rotateInertia;
+                }
+            }
+            // 單項計算
+            if (!formMain.optCalcAllModel.Checked) {
+                (string model, double lead) calcModel = (formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
+                curCondition.calcModel = calcModel;
+            } else
+                curCondition.calcModel = (null, -1);
+            // 減速比
             curCondition.reducerRatio.Clear();
             formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().ForEach(row => {
                 curCondition.reducerRatio.Add(row.Cells["columnModel"].Value.ToString(), Convert.ToInt32(row.Cells["columnReducerRatio"].Value.ToString()));
@@ -62,6 +171,40 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void InitEvents() {
+            // 更新條件
+            formMain.optStandardEnv.CheckedChanged += UpdateCondition;
+            formMain.optDustFreeEnv.CheckedChanged += UpdateCondition;
+            formMain.cboModelType.SelectedIndexChanged += UpdateCondition;
+            formMain.optHorizontalUse.CheckedChanged += UpdateCondition;
+            formMain.optWallHangingUse.CheckedChanged += UpdateCondition;
+            formMain.optUpsideDownUse.CheckedChanged += UpdateCondition;
+            formMain.optCalcAllModel.CheckedChanged += UpdateCondition;
+            formMain.optCalcSelectedModel.CheckedChanged += UpdateCondition;
+            formMain.cboSeries.SelectedIndexChanged += UpdateCondition;
+            formMain.cboModel.SelectedIndexChanged += UpdateCondition;
+            formMain.cboLead.SelectedIndexChanged += UpdateCondition;
+            formMain.txtMomentA.TextChanged += UpdateCondition;
+            formMain.txtMomentB.TextChanged += UpdateCondition;
+            formMain.txtMomentC.TextChanged += UpdateCondition;
+            formMain.txtLoad.TextChanged += UpdateCondition;
+            formMain.txtStroke.TextChanged += UpdateCondition;
+            formMain.txtRunTime.TextChanged += UpdateCondition;
+            formMain.txtTimesPerMinute.TextChanged += UpdateCondition;
+            formMain.txtHourPerDay.TextChanged += UpdateCondition;
+            formMain.txtDayPerYear.TextChanged += UpdateCondition;
+            formMain.optNoExpectServiceLife.CheckedChanged += UpdateCondition;
+            formMain.optExpectServiceLife.CheckedChanged += UpdateCondition;
+            formMain.txtExpectServiceLifeTime.TextChanged += UpdateCondition;
+            formMain.txtMaxSpeed.TextChanged += UpdateCondition;
+            formMain.txtAccelSpeed.TextChanged += UpdateCondition;
+            formMain.cboPower.SelectedIndexChanged += UpdateCondition;
+            formMain.optMotorParamsModifySimple.CheckedChanged += UpdateCondition;
+            formMain.optMotorParamsModifyAdvance.CheckedChanged += UpdateCondition;
+            formMain.cboMotorParamsMotorPowerSelection.SelectedIndexChanged += UpdateCondition;
+            formMain.txtRatedTorque.TextChanged += UpdateCondition;
+            formMain.txtRotateInertia.TextChanged += UpdateCondition;
+            formMain.txtMaxTorque.TextChanged += UpdateCondition;
+
             // 進階選項
             //formMain.toggleAdvanceOptions.CheckedChanged += ToggleAdvanceOptions_CheckedChanged;
 
@@ -84,8 +227,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.explorerBarPanel2.Size = new Size(formMain.explorerBarPanel2.Size.Width, maxHeight);
             formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep2);
 
-            // 條件
-            UpdateCondition();
+            //// 條件
+            //UpdateCondition();
 
             threadCalc = new Thread(() => {
                 Thread.Sleep(100);

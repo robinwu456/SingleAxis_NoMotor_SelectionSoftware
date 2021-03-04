@@ -104,25 +104,21 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtRotateInertia = new System.Windows.Forms.TextBox();
+            this.txtMaxTorque = new System.Windows.Forms.TextBox();
+            this.txtRatedTorque = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label60 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cboMotorParamsMotorPowerSelection = new System.Windows.Forms.ComboBox();
             this.label59 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboPower = new System.Windows.Forms.ComboBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label55 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label57 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label56 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
@@ -134,7 +130,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.txtStroke = new System.Windows.Forms.TextBox();
             this.labelStrokeAlarm = new System.Windows.Forms.Label();
-            this.txtStopTime = new System.Windows.Forms.TextBox();
+            this.txtRunTime = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.labelLoadAlarm = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -148,29 +144,29 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMomentA = new System.Windows.Forms.TextBox();
             this.labelStopTimeAlarm = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtMomentC = new System.Windows.Forms.TextBox();
             this.label52 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtMomentB = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtDayPerYear = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.txtLoad = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtTimesPerMinute = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtHourPerDay = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.explorerBarPanel2_title = new System.Windows.Forms.Panel();
             this.label67 = new System.Windows.Forms.Label();
@@ -178,16 +174,16 @@
             this.explorerBarPanel1 = new System.Windows.Forms.Panel();
             this.explorerBarPanel1_content = new System.Windows.Forms.Panel();
             this.label76 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.cboLead = new System.Windows.Forms.ComboBox();
             this.panelConfirmBtnsStep1 = new System.Windows.Forms.TableLayoutPanel();
             this.cmdConfirmStep1 = new CustomButton.CustomButton();
             this.label75 = new System.Windows.Forms.Label();
             this.cboModelType = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.cboModel = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label74 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.cboSeries = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label73 = new System.Windows.Forms.Label();
             this.panelSetupMode = new System.Windows.Forms.Panel();
@@ -196,8 +192,8 @@
             this.optWallHangingUse = new System.Windows.Forms.RadioButton();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.optCalcSelectedModel = new System.Windows.Forms.RadioButton();
+            this.optCalcAllModel = new System.Windows.Forms.RadioButton();
             this.panelSetupEnv = new System.Windows.Forms.Panel();
             this.picDustFree = new System.Windows.Forms.PictureBox();
             this.optDustFreeEnv = new System.Windows.Forms.RadioButton();
@@ -216,6 +212,28 @@
             this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.txtExpectServiceLifeTime = new System.Windows.Forms.TextBox();
+            this.optNoExpectServiceLife = new System.Windows.Forms.RadioButton();
+            this.optExpectServiceLife = new System.Windows.Forms.RadioButton();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.txtMaxSpeed = new System.Windows.Forms.TextBox();
+            this.optMaxSpeedType_mms = new System.Windows.Forms.RadioButton();
+            this.optMaxSpeedType_rpm = new System.Windows.Forms.RadioButton();
+            this.label78 = new System.Windows.Forms.Label();
+            this.label81 = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
+            this.txtAccelSpeed = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.optMotorParamsModifyAdvance = new System.Windows.Forms.RadioButton();
+            this.optMotorParamsModifySimple = new System.Windows.Forms.RadioButton();
+            this.optRepeatabilityBelt = new System.Windows.Forms.RadioButton();
+            this.optRepeatabilityScrew = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -269,6 +287,9 @@
             this.explorerBarPanel5_content.SuspendLayout();
             this.panelConfirmBtnsStep5.SuspendLayout();
             this.explorerBarPanel5_title.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -591,22 +612,25 @@
             // 
             // explorerBarPanel2_content
             // 
+            this.explorerBarPanel2_content.Controls.Add(this.optRepeatabilityBelt);
+            this.explorerBarPanel2_content.Controls.Add(this.optRepeatabilityScrew);
+            this.explorerBarPanel2_content.Controls.Add(this.optMotorParamsModifyAdvance);
+            this.explorerBarPanel2_content.Controls.Add(this.optMotorParamsModifySimple);
+            this.explorerBarPanel2_content.Controls.Add(this.panel7);
+            this.explorerBarPanel2_content.Controls.Add(this.panel6);
+            this.explorerBarPanel2_content.Controls.Add(this.label71);
             this.explorerBarPanel2_content.Controls.Add(this.dgvReducerInfo);
             this.explorerBarPanel2_content.Controls.Add(this.panelConfirmBtnsStep2);
             this.explorerBarPanel2_content.Controls.Add(this.panelCalcBtns);
             this.explorerBarPanel2_content.Controls.Add(this.dgvRecommandList);
             this.explorerBarPanel2_content.Controls.Add(this.panel3);
             this.explorerBarPanel2_content.Controls.Add(this.panel2);
-            this.explorerBarPanel2_content.Controls.Add(this.comboBox3);
             this.explorerBarPanel2_content.Controls.Add(this.label34);
-            this.explorerBarPanel2_content.Controls.Add(this.comboBox2);
+            this.explorerBarPanel2_content.Controls.Add(this.cboPower);
             this.explorerBarPanel2_content.Controls.Add(this.dataGridView3);
             this.explorerBarPanel2_content.Controls.Add(this.label55);
             this.explorerBarPanel2_content.Controls.Add(this.label58);
             this.explorerBarPanel2_content.Controls.Add(this.chart1);
-            this.explorerBarPanel2_content.Controls.Add(this.label57);
-            this.explorerBarPanel2_content.Controls.Add(this.comboBox1);
-            this.explorerBarPanel2_content.Controls.Add(this.label56);
             this.explorerBarPanel2_content.Controls.Add(this.label48);
             this.explorerBarPanel2_content.Controls.Add(this.label51);
             this.explorerBarPanel2_content.Controls.Add(this.label32);
@@ -618,7 +642,7 @@
             this.explorerBarPanel2_content.Controls.Add(this.label19);
             this.explorerBarPanel2_content.Controls.Add(this.txtStroke);
             this.explorerBarPanel2_content.Controls.Add(this.labelStrokeAlarm);
-            this.explorerBarPanel2_content.Controls.Add(this.txtStopTime);
+            this.explorerBarPanel2_content.Controls.Add(this.txtRunTime);
             this.explorerBarPanel2_content.Controls.Add(this.label29);
             this.explorerBarPanel2_content.Controls.Add(this.labelLoadAlarm);
             this.explorerBarPanel2_content.Controls.Add(this.label10);
@@ -632,29 +656,29 @@
             this.explorerBarPanel2_content.Controls.Add(this.label25);
             this.explorerBarPanel2_content.Controls.Add(this.label22);
             this.explorerBarPanel2_content.Controls.Add(this.label20);
-            this.explorerBarPanel2_content.Controls.Add(this.textBox1);
+            this.explorerBarPanel2_content.Controls.Add(this.txtMomentA);
             this.explorerBarPanel2_content.Controls.Add(this.labelStopTimeAlarm);
             this.explorerBarPanel2_content.Controls.Add(this.label53);
             this.explorerBarPanel2_content.Controls.Add(this.label45);
             this.explorerBarPanel2_content.Controls.Add(this.label54);
-            this.explorerBarPanel2_content.Controls.Add(this.textBox2);
+            this.explorerBarPanel2_content.Controls.Add(this.txtMomentC);
             this.explorerBarPanel2_content.Controls.Add(this.label52);
             this.explorerBarPanel2_content.Controls.Add(this.label50);
             this.explorerBarPanel2_content.Controls.Add(this.label7);
             this.explorerBarPanel2_content.Controls.Add(this.label6);
             this.explorerBarPanel2_content.Controls.Add(this.label49);
             this.explorerBarPanel2_content.Controls.Add(this.label47);
-            this.explorerBarPanel2_content.Controls.Add(this.textBox3);
+            this.explorerBarPanel2_content.Controls.Add(this.txtMomentB);
             this.explorerBarPanel2_content.Controls.Add(this.label27);
-            this.explorerBarPanel2_content.Controls.Add(this.textBox9);
+            this.explorerBarPanel2_content.Controls.Add(this.txtDayPerYear);
             this.explorerBarPanel2_content.Controls.Add(this.label46);
             this.explorerBarPanel2_content.Controls.Add(this.label28);
             this.explorerBarPanel2_content.Controls.Add(this.label30);
             this.explorerBarPanel2_content.Controls.Add(this.txtLoad);
-            this.explorerBarPanel2_content.Controls.Add(this.textBox8);
+            this.explorerBarPanel2_content.Controls.Add(this.txtTimesPerMinute);
             this.explorerBarPanel2_content.Controls.Add(this.label31);
             this.explorerBarPanel2_content.Controls.Add(this.label24);
-            this.explorerBarPanel2_content.Controls.Add(this.textBox10);
+            this.explorerBarPanel2_content.Controls.Add(this.txtHourPerDay);
             this.explorerBarPanel2_content.Controls.Add(this.label17);
             resources.ApplyResources(this.explorerBarPanel2_content, "explorerBarPanel2_content");
             this.explorerBarPanel2_content.Name = "explorerBarPanel2_content";
@@ -978,9 +1002,9 @@
             this.panel3.Controls.Add(this.label40);
             this.panel3.Controls.Add(this.label39);
             this.panel3.Controls.Add(this.label38);
-            this.panel3.Controls.Add(this.textBox7);
-            this.panel3.Controls.Add(this.textBox6);
-            this.panel3.Controls.Add(this.textBox5);
+            this.panel3.Controls.Add(this.txtRotateInertia);
+            this.panel3.Controls.Add(this.txtMaxTorque);
+            this.panel3.Controls.Add(this.txtRatedTorque);
             this.panel3.Controls.Add(this.label37);
             this.panel3.Controls.Add(this.label36);
             resources.ApplyResources(this.panel3, "panel3");
@@ -1026,23 +1050,23 @@
             this.label38.ForeColor = System.Drawing.Color.Red;
             this.label38.Name = "label38";
             // 
-            // textBox7
+            // txtRotateInertia
             // 
-            resources.ApplyResources(this.textBox7, "textBox7");
-            this.textBox7.ForeColor = System.Drawing.Color.Silver;
-            this.textBox7.Name = "textBox7";
+            resources.ApplyResources(this.txtRotateInertia, "txtRotateInertia");
+            this.txtRotateInertia.ForeColor = System.Drawing.Color.Silver;
+            this.txtRotateInertia.Name = "txtRotateInertia";
             // 
-            // textBox6
+            // txtMaxTorque
             // 
-            resources.ApplyResources(this.textBox6, "textBox6");
-            this.textBox6.ForeColor = System.Drawing.Color.Silver;
-            this.textBox6.Name = "textBox6";
+            resources.ApplyResources(this.txtMaxTorque, "txtMaxTorque");
+            this.txtMaxTorque.ForeColor = System.Drawing.Color.Silver;
+            this.txtMaxTorque.Name = "txtMaxTorque";
             // 
-            // textBox5
+            // txtRatedTorque
             // 
-            resources.ApplyResources(this.textBox5, "textBox5");
-            this.textBox5.ForeColor = System.Drawing.Color.Silver;
-            this.textBox5.Name = "textBox5";
+            resources.ApplyResources(this.txtRatedTorque, "txtRatedTorque");
+            this.txtRatedTorque.ForeColor = System.Drawing.Color.Silver;
+            this.txtRatedTorque.Name = "txtRatedTorque";
             // 
             // label37
             // 
@@ -1058,7 +1082,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label60);
-            this.panel2.Controls.Add(this.comboBox4);
+            this.panel2.Controls.Add(this.cboMotorParamsMotorPowerSelection);
             this.panel2.Controls.Add(this.label59);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
@@ -1068,15 +1092,15 @@
             resources.ApplyResources(this.label60, "label60");
             this.label60.Name = "label60";
             // 
-            // comboBox4
+            // cboMotorParamsMotorPowerSelection
             // 
-            this.comboBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.DropDownWidth = 180;
-            resources.ApplyResources(this.comboBox4, "comboBox4");
-            this.comboBox4.ForeColor = System.Drawing.Color.White;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Name = "comboBox4";
+            this.cboMotorParamsMotorPowerSelection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboMotorParamsMotorPowerSelection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMotorParamsMotorPowerSelection.DropDownWidth = 180;
+            resources.ApplyResources(this.cboMotorParamsMotorPowerSelection, "cboMotorParamsMotorPowerSelection");
+            this.cboMotorParamsMotorPowerSelection.ForeColor = System.Drawing.Color.White;
+            this.cboMotorParamsMotorPowerSelection.FormattingEnabled = true;
+            this.cboMotorParamsMotorPowerSelection.Name = "cboMotorParamsMotorPowerSelection";
             // 
             // label59
             // 
@@ -1084,31 +1108,21 @@
             this.label59.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label59.Name = "label59";
             // 
-            // comboBox3
-            // 
-            this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.DropDownWidth = 180;
-            resources.ApplyResources(this.comboBox3, "comboBox3");
-            this.comboBox3.ForeColor = System.Drawing.Color.White;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Name = "comboBox3";
-            // 
             // label34
             // 
             resources.ApplyResources(this.label34, "label34");
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label34.Name = "label34";
             // 
-            // comboBox2
+            // cboPower
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.DropDownWidth = 180;
-            resources.ApplyResources(this.comboBox2, "comboBox2");
-            this.comboBox2.ForeColor = System.Drawing.Color.White;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Name = "comboBox2";
+            this.cboPower.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboPower.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPower.DropDownWidth = 180;
+            resources.ApplyResources(this.cboPower, "cboPower");
+            this.cboPower.ForeColor = System.Drawing.Color.White;
+            this.cboPower.FormattingEnabled = true;
+            this.cboPower.Name = "cboPower";
             // 
             // dataGridView3
             // 
@@ -1139,27 +1153,6 @@
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            // 
-            // label57
-            // 
-            resources.ApplyResources(this.label57, "label57");
-            this.label57.Name = "label57";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.DropDownWidth = 180;
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.ForeColor = System.Drawing.Color.White;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Name = "comboBox1";
-            // 
-            // label56
-            // 
-            resources.ApplyResources(this.label56, "label56");
-            this.label56.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label56.Name = "label56";
             // 
             // label48
             // 
@@ -1226,11 +1219,11 @@
             this.labelStrokeAlarm.ForeColor = System.Drawing.Color.Red;
             this.labelStrokeAlarm.Name = "labelStrokeAlarm";
             // 
-            // txtStopTime
+            // txtRunTime
             // 
-            resources.ApplyResources(this.txtStopTime, "txtStopTime");
-            this.txtStopTime.ForeColor = System.Drawing.Color.Silver;
-            this.txtStopTime.Name = "txtStopTime";
+            resources.ApplyResources(this.txtRunTime, "txtRunTime");
+            this.txtRunTime.ForeColor = System.Drawing.Color.Silver;
+            this.txtRunTime.Name = "txtRunTime";
             // 
             // label29
             // 
@@ -1305,11 +1298,11 @@
             resources.ApplyResources(this.label20, "label20");
             this.label20.Name = "label20";
             // 
-            // textBox1
+            // txtMomentA
             // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.ForeColor = System.Drawing.Color.Silver;
-            this.textBox1.Name = "textBox1";
+            resources.ApplyResources(this.txtMomentA, "txtMomentA");
+            this.txtMomentA.ForeColor = System.Drawing.Color.Silver;
+            this.txtMomentA.Name = "txtMomentA";
             // 
             // labelStopTimeAlarm
             // 
@@ -1334,11 +1327,11 @@
             this.label54.ForeColor = System.Drawing.Color.Red;
             this.label54.Name = "label54";
             // 
-            // textBox2
+            // txtMomentC
             // 
-            resources.ApplyResources(this.textBox2, "textBox2");
-            this.textBox2.ForeColor = System.Drawing.Color.Silver;
-            this.textBox2.Name = "textBox2";
+            resources.ApplyResources(this.txtMomentC, "txtMomentC");
+            this.txtMomentC.ForeColor = System.Drawing.Color.Silver;
+            this.txtMomentC.Name = "txtMomentC";
             // 
             // label52
             // 
@@ -1374,11 +1367,11 @@
             this.label47.ForeColor = System.Drawing.Color.Red;
             this.label47.Name = "label47";
             // 
-            // textBox3
+            // txtMomentB
             // 
-            resources.ApplyResources(this.textBox3, "textBox3");
-            this.textBox3.ForeColor = System.Drawing.Color.Silver;
-            this.textBox3.Name = "textBox3";
+            resources.ApplyResources(this.txtMomentB, "txtMomentB");
+            this.txtMomentB.ForeColor = System.Drawing.Color.Silver;
+            this.txtMomentB.Name = "txtMomentB";
             // 
             // label27
             // 
@@ -1386,11 +1379,11 @@
             this.label27.ForeColor = System.Drawing.Color.Red;
             this.label27.Name = "label27";
             // 
-            // textBox9
+            // txtDayPerYear
             // 
-            resources.ApplyResources(this.textBox9, "textBox9");
-            this.textBox9.ForeColor = System.Drawing.Color.Silver;
-            this.textBox9.Name = "textBox9";
+            resources.ApplyResources(this.txtDayPerYear, "txtDayPerYear");
+            this.txtDayPerYear.ForeColor = System.Drawing.Color.Silver;
+            this.txtDayPerYear.Name = "txtDayPerYear";
             // 
             // label46
             // 
@@ -1415,11 +1408,11 @@
             resources.ApplyResources(this.txtLoad, "txtLoad");
             this.txtLoad.Name = "txtLoad";
             // 
-            // textBox8
+            // txtTimesPerMinute
             // 
-            resources.ApplyResources(this.textBox8, "textBox8");
-            this.textBox8.ForeColor = System.Drawing.Color.Silver;
-            this.textBox8.Name = "textBox8";
+            resources.ApplyResources(this.txtTimesPerMinute, "txtTimesPerMinute");
+            this.txtTimesPerMinute.ForeColor = System.Drawing.Color.Silver;
+            this.txtTimesPerMinute.Name = "txtTimesPerMinute";
             // 
             // label31
             // 
@@ -1433,11 +1426,11 @@
             this.label24.ForeColor = System.Drawing.Color.Red;
             this.label24.Name = "label24";
             // 
-            // textBox10
+            // txtHourPerDay
             // 
-            resources.ApplyResources(this.textBox10, "textBox10");
-            this.textBox10.ForeColor = System.Drawing.Color.Silver;
-            this.textBox10.Name = "textBox10";
+            resources.ApplyResources(this.txtHourPerDay, "txtHourPerDay");
+            this.txtHourPerDay.ForeColor = System.Drawing.Color.Silver;
+            this.txtHourPerDay.Name = "txtHourPerDay";
             // 
             // label17
             // 
@@ -1476,15 +1469,15 @@
             // explorerBarPanel1_content
             // 
             this.explorerBarPanel1_content.Controls.Add(this.label76);
-            this.explorerBarPanel1_content.Controls.Add(this.comboBox7);
+            this.explorerBarPanel1_content.Controls.Add(this.cboLead);
             this.explorerBarPanel1_content.Controls.Add(this.panelConfirmBtnsStep1);
             this.explorerBarPanel1_content.Controls.Add(this.label75);
             this.explorerBarPanel1_content.Controls.Add(this.cboModelType);
-            this.explorerBarPanel1_content.Controls.Add(this.comboBox6);
+            this.explorerBarPanel1_content.Controls.Add(this.cboModel);
             this.explorerBarPanel1_content.Controls.Add(this.label9);
             this.explorerBarPanel1_content.Controls.Add(this.label74);
             this.explorerBarPanel1_content.Controls.Add(this.label11);
-            this.explorerBarPanel1_content.Controls.Add(this.comboBox5);
+            this.explorerBarPanel1_content.Controls.Add(this.cboSeries);
             this.explorerBarPanel1_content.Controls.Add(this.label8);
             this.explorerBarPanel1_content.Controls.Add(this.label73);
             this.explorerBarPanel1_content.Controls.Add(this.panelSetupMode);
@@ -1499,15 +1492,15 @@
             this.label76.ForeColor = System.Drawing.Color.Black;
             this.label76.Name = "label76";
             // 
-            // comboBox7
+            // cboLead
             // 
-            this.comboBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox7.DropDownWidth = 180;
-            resources.ApplyResources(this.comboBox7, "comboBox7");
-            this.comboBox7.ForeColor = System.Drawing.Color.White;
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Name = "comboBox7";
+            this.cboLead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboLead.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboLead.DropDownWidth = 180;
+            resources.ApplyResources(this.cboLead, "cboLead");
+            this.cboLead.ForeColor = System.Drawing.Color.White;
+            this.cboLead.FormattingEnabled = true;
+            this.cboLead.Name = "cboLead";
             // 
             // panelConfirmBtnsStep1
             // 
@@ -1547,15 +1540,15 @@
             this.cboModelType.FormattingEnabled = true;
             this.cboModelType.Name = "cboModelType";
             // 
-            // comboBox6
+            // cboModel
             // 
-            this.comboBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox6.DropDownWidth = 180;
-            resources.ApplyResources(this.comboBox6, "comboBox6");
-            this.comboBox6.ForeColor = System.Drawing.Color.White;
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Name = "comboBox6";
+            this.cboModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboModel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboModel.DropDownWidth = 180;
+            resources.ApplyResources(this.cboModel, "cboModel");
+            this.cboModel.ForeColor = System.Drawing.Color.White;
+            this.cboModel.FormattingEnabled = true;
+            this.cboModel.Name = "cboModel";
             // 
             // label9
             // 
@@ -1575,15 +1568,15 @@
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Name = "label11";
             // 
-            // comboBox5
+            // cboSeries
             // 
-            this.comboBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.DropDownWidth = 180;
-            resources.ApplyResources(this.comboBox5, "comboBox5");
-            this.comboBox5.ForeColor = System.Drawing.Color.White;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Name = "comboBox5";
+            this.cboSeries.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboSeries.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSeries.DropDownWidth = 180;
+            resources.ApplyResources(this.cboSeries, "cboSeries");
+            this.cboSeries.ForeColor = System.Drawing.Color.White;
+            this.cboSeries.FormattingEnabled = true;
+            this.cboSeries.Name = "cboSeries";
             // 
             // label8
             // 
@@ -1639,26 +1632,26 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.radioButton2);
-            this.panel4.Controls.Add(this.radioButton1);
+            this.panel4.Controls.Add(this.optCalcSelectedModel);
+            this.panel4.Controls.Add(this.optCalcAllModel);
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
             // 
-            // radioButton2
+            // optCalcSelectedModel
             // 
-            resources.ApplyResources(this.radioButton2, "radioButton2");
-            this.radioButton2.ForeColor = System.Drawing.Color.Black;
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.optCalcSelectedModel, "optCalcSelectedModel");
+            this.optCalcSelectedModel.ForeColor = System.Drawing.Color.Black;
+            this.optCalcSelectedModel.Name = "optCalcSelectedModel";
+            this.optCalcSelectedModel.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // optCalcAllModel
             // 
-            resources.ApplyResources(this.radioButton1, "radioButton1");
-            this.radioButton1.Checked = true;
-            this.radioButton1.ForeColor = System.Drawing.Color.Black;
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.TabStop = true;
-            this.radioButton1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.optCalcAllModel, "optCalcAllModel");
+            this.optCalcAllModel.Checked = true;
+            this.optCalcAllModel.ForeColor = System.Drawing.Color.Black;
+            this.optCalcAllModel.Name = "optCalcAllModel";
+            this.optCalcAllModel.TabStop = true;
+            this.optCalcAllModel.UseVisualStyleBackColor = true;
             // 
             // panelSetupEnv
             // 
@@ -1808,6 +1801,164 @@
             this.label65.ForeColor = System.Drawing.Color.White;
             this.label65.Name = "label65";
             // 
+            // label71
+            // 
+            resources.ApplyResources(this.label71, "label71");
+            this.label71.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label71.Name = "label71";
+            // 
+            // label72
+            // 
+            resources.ApplyResources(this.label72, "label72");
+            this.label72.Name = "label72";
+            // 
+            // label77
+            // 
+            resources.ApplyResources(this.label77, "label77");
+            this.label77.ForeColor = System.Drawing.Color.Red;
+            this.label77.Name = "label77";
+            // 
+            // txtExpectServiceLifeTime
+            // 
+            resources.ApplyResources(this.txtExpectServiceLifeTime, "txtExpectServiceLifeTime");
+            this.txtExpectServiceLifeTime.ForeColor = System.Drawing.Color.Silver;
+            this.txtExpectServiceLifeTime.Name = "txtExpectServiceLifeTime";
+            // 
+            // optNoExpectServiceLife
+            // 
+            resources.ApplyResources(this.optNoExpectServiceLife, "optNoExpectServiceLife");
+            this.optNoExpectServiceLife.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.optNoExpectServiceLife.Name = "optNoExpectServiceLife";
+            this.optNoExpectServiceLife.TabStop = true;
+            this.optNoExpectServiceLife.UseVisualStyleBackColor = true;
+            // 
+            // optExpectServiceLife
+            // 
+            resources.ApplyResources(this.optExpectServiceLife, "optExpectServiceLife");
+            this.optExpectServiceLife.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.optExpectServiceLife.Name = "optExpectServiceLife";
+            this.optExpectServiceLife.TabStop = true;
+            this.optExpectServiceLife.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label72);
+            this.panel5.Controls.Add(this.label77);
+            this.panel5.Controls.Add(this.txtExpectServiceLifeTime);
+            resources.ApplyResources(this.panel5, "panel5");
+            this.panel5.Name = "panel5";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panel5);
+            this.panel6.Controls.Add(this.optExpectServiceLife);
+            this.panel6.Controls.Add(this.optNoExpectServiceLife);
+            resources.ApplyResources(this.panel6, "panel6");
+            this.panel6.Name = "panel6";
+            // 
+            // label79
+            // 
+            resources.ApplyResources(this.label79, "label79");
+            this.label79.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label79.Name = "label79";
+            // 
+            // label80
+            // 
+            resources.ApplyResources(this.label80, "label80");
+            this.label80.ForeColor = System.Drawing.Color.Red;
+            this.label80.Name = "label80";
+            // 
+            // txtMaxSpeed
+            // 
+            resources.ApplyResources(this.txtMaxSpeed, "txtMaxSpeed");
+            this.txtMaxSpeed.ForeColor = System.Drawing.Color.Silver;
+            this.txtMaxSpeed.Name = "txtMaxSpeed";
+            // 
+            // optMaxSpeedType_mms
+            // 
+            resources.ApplyResources(this.optMaxSpeedType_mms, "optMaxSpeedType_mms");
+            this.optMaxSpeedType_mms.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.optMaxSpeedType_mms.Name = "optMaxSpeedType_mms";
+            this.optMaxSpeedType_mms.TabStop = true;
+            this.optMaxSpeedType_mms.UseVisualStyleBackColor = true;
+            // 
+            // optMaxSpeedType_rpm
+            // 
+            resources.ApplyResources(this.optMaxSpeedType_rpm, "optMaxSpeedType_rpm");
+            this.optMaxSpeedType_rpm.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.optMaxSpeedType_rpm.Name = "optMaxSpeedType_rpm";
+            this.optMaxSpeedType_rpm.TabStop = true;
+            this.optMaxSpeedType_rpm.UseVisualStyleBackColor = true;
+            // 
+            // label78
+            // 
+            resources.ApplyResources(this.label78, "label78");
+            this.label78.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label78.Name = "label78";
+            // 
+            // label81
+            // 
+            resources.ApplyResources(this.label81, "label81");
+            this.label81.Name = "label81";
+            // 
+            // label82
+            // 
+            resources.ApplyResources(this.label82, "label82");
+            this.label82.ForeColor = System.Drawing.Color.Red;
+            this.label82.Name = "label82";
+            // 
+            // txtAccelSpeed
+            // 
+            resources.ApplyResources(this.txtAccelSpeed, "txtAccelSpeed");
+            this.txtAccelSpeed.ForeColor = System.Drawing.Color.Silver;
+            this.txtAccelSpeed.Name = "txtAccelSpeed";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label78);
+            this.panel7.Controls.Add(this.label81);
+            this.panel7.Controls.Add(this.label82);
+            this.panel7.Controls.Add(this.txtAccelSpeed);
+            this.panel7.Controls.Add(this.optMaxSpeedType_rpm);
+            this.panel7.Controls.Add(this.optMaxSpeedType_mms);
+            this.panel7.Controls.Add(this.label79);
+            this.panel7.Controls.Add(this.label80);
+            this.panel7.Controls.Add(this.txtMaxSpeed);
+            resources.ApplyResources(this.panel7, "panel7");
+            this.panel7.Name = "panel7";
+            // 
+            // optMotorParamsModifyAdvance
+            // 
+            resources.ApplyResources(this.optMotorParamsModifyAdvance, "optMotorParamsModifyAdvance");
+            this.optMotorParamsModifyAdvance.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.optMotorParamsModifyAdvance.Name = "optMotorParamsModifyAdvance";
+            this.optMotorParamsModifyAdvance.TabStop = true;
+            this.optMotorParamsModifyAdvance.UseVisualStyleBackColor = true;
+            // 
+            // optMotorParamsModifySimple
+            // 
+            resources.ApplyResources(this.optMotorParamsModifySimple, "optMotorParamsModifySimple");
+            this.optMotorParamsModifySimple.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.optMotorParamsModifySimple.Name = "optMotorParamsModifySimple";
+            this.optMotorParamsModifySimple.TabStop = true;
+            this.optMotorParamsModifySimple.UseVisualStyleBackColor = true;
+            // 
+            // optRepeatabilityBelt
+            // 
+            resources.ApplyResources(this.optRepeatabilityBelt, "optRepeatabilityBelt");
+            this.optRepeatabilityBelt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.optRepeatabilityBelt.Name = "optRepeatabilityBelt";
+            this.optRepeatabilityBelt.TabStop = true;
+            this.optRepeatabilityBelt.UseVisualStyleBackColor = true;
+            // 
+            // optRepeatabilityScrew
+            // 
+            resources.ApplyResources(this.optRepeatabilityScrew, "optRepeatabilityScrew");
+            this.optRepeatabilityScrew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.optRepeatabilityScrew.Name = "optRepeatabilityScrew";
+            this.optRepeatabilityScrew.TabStop = true;
+            this.optRepeatabilityScrew.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -1880,6 +2031,12 @@
             this.explorerBarPanel5_content.ResumeLayout(false);
             this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.explorerBarPanel5_title.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1934,25 +2091,21 @@
         private System.Windows.Forms.Label label40;
         public System.Windows.Forms.Label label39;
         public System.Windows.Forms.Label label38;
-        public System.Windows.Forms.TextBox textBox7;
-        public System.Windows.Forms.TextBox textBox6;
-        public System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.TextBox txtRotateInertia;
+        public System.Windows.Forms.TextBox txtMaxTorque;
+        public System.Windows.Forms.TextBox txtRatedTorque;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label60;
-        public System.Windows.Forms.ComboBox comboBox4;
+        public System.Windows.Forms.ComboBox cboMotorParamsMotorPowerSelection;
         private System.Windows.Forms.Label label59;
-        public System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label34;
-        public System.Windows.Forms.ComboBox comboBox2;
+        public System.Windows.Forms.ComboBox cboPower;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Label label57;
-        public System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label32;
@@ -1962,9 +2115,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txtStroke;
         public System.Windows.Forms.Label labelStrokeAlarm;
-        public System.Windows.Forms.TextBox txtStopTime;
+        public System.Windows.Forms.TextBox txtRunTime;
         private System.Windows.Forms.Label label29;
         public System.Windows.Forms.Label labelLoadAlarm;
         private System.Windows.Forms.Label label10;
@@ -1978,29 +2130,28 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label20;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox txtMomentA;
         public System.Windows.Forms.Label labelStopTimeAlarm;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label label45;
         public System.Windows.Forms.Label label54;
-        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox txtMomentC;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.Label label49;
         public System.Windows.Forms.Label label47;
-        public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.TextBox txtMomentB;
         public System.Windows.Forms.Label label27;
-        public System.Windows.Forms.TextBox textBox9;
+        public System.Windows.Forms.TextBox txtDayPerYear;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label28;
         public System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox txtLoad;
-        public System.Windows.Forms.TextBox textBox8;
+        public System.Windows.Forms.TextBox txtTimesPerMinute;
         private System.Windows.Forms.Label label31;
         public System.Windows.Forms.Label label24;
-        public System.Windows.Forms.TextBox textBox10;
+        public System.Windows.Forms.TextBox txtHourPerDay;
         private System.Windows.Forms.Label label17;
         public System.Windows.Forms.Panel explorerBarPanel2_title;
         private System.Windows.Forms.Label label67;
@@ -2008,16 +2159,16 @@
         public System.Windows.Forms.Panel explorerBarPanel1;
         public System.Windows.Forms.Panel explorerBarPanel1_content;
         private System.Windows.Forms.Label label76;
-        public System.Windows.Forms.ComboBox comboBox7;
+        public System.Windows.Forms.ComboBox cboLead;
         public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep1;
         public CustomButton.CustomButton cmdConfirmStep1;
         private System.Windows.Forms.Label label75;
         public System.Windows.Forms.ComboBox cboModelType;
-        public System.Windows.Forms.ComboBox comboBox6;
+        public System.Windows.Forms.ComboBox cboModel;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label74;
         private System.Windows.Forms.Label label11;
-        public System.Windows.Forms.ComboBox comboBox5;
+        public System.Windows.Forms.ComboBox cboSeries;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label73;
         public System.Windows.Forms.Panel panelSetupMode;
@@ -2026,8 +2177,8 @@
         public System.Windows.Forms.RadioButton optWallHangingUse;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Panel panel4;
-        public System.Windows.Forms.RadioButton radioButton2;
-        public System.Windows.Forms.RadioButton radioButton1;
+        public System.Windows.Forms.RadioButton optCalcSelectedModel;
+        public System.Windows.Forms.RadioButton optCalcAllModel;
         public System.Windows.Forms.Panel panelSetupEnv;
         public System.Windows.Forms.PictureBox picDustFree;
         public System.Windows.Forms.RadioButton optDustFreeEnv;
@@ -2071,6 +2222,30 @@
         public System.Windows.Forms.DataGridView dgvReducerInfo;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnModel;
         private System.Windows.Forms.DataGridViewComboBoxColumn columnReducerRatio;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.Label label81;
+        public System.Windows.Forms.Label label82;
+        public System.Windows.Forms.TextBox txtAccelSpeed;
+        private System.Windows.Forms.Label label79;
+        public System.Windows.Forms.Label label80;
+        public System.Windows.Forms.TextBox txtMaxSpeed;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label72;
+        public System.Windows.Forms.Label label77;
+        public System.Windows.Forms.TextBox txtExpectServiceLifeTime;
+        private System.Windows.Forms.Label label71;
+        public System.Windows.Forms.RadioButton optMaxSpeedType_rpm;
+        public System.Windows.Forms.RadioButton optMaxSpeedType_mms;
+        public System.Windows.Forms.TextBox txtStroke;
+        public System.Windows.Forms.TextBox txtLoad;
+        public System.Windows.Forms.RadioButton optRepeatabilityBelt;
+        public System.Windows.Forms.RadioButton optRepeatabilityScrew;
+        public System.Windows.Forms.RadioButton optMotorParamsModifyAdvance;
+        public System.Windows.Forms.RadioButton optMotorParamsModifySimple;
+        public System.Windows.Forms.RadioButton optExpectServiceLife;
+        public System.Windows.Forms.RadioButton optNoExpectServiceLife;
     }
 }
 

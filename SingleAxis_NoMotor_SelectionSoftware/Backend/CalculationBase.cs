@@ -49,7 +49,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
                 // 重複定位精度
                 model.repeatability = modelInfo.Rows.Cast<DataRow>().Where(con).Select(x => Convert.ToDouble(x["Repeatability"].ToString())).First();
-                model.modelType = model.repeatability <= 0.01 ? Model.ModelType.Screw : Model.ModelType.Belt;
+                //model.modelType = model.repeatability <= 0.01 ? Model.ModelType.Screw : Model.ModelType.Belt;
 
                 models.Add(model);
             }
@@ -144,7 +144,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
         }
 
-        protected double RPM_TO_MMS(int rpm, double lead) {
+        public double RPM_TO_MMS(int rpm, double lead) {
             return (float)lead * (float)rpm / 60f;
         }
 
@@ -232,6 +232,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             int maxCountPerMinute = (int)(60f / totalTime);
 
             return maxCountPerMinute;
+        }
+
+        // 取馬達資訊
+        public (double ratedTorque, double maxTorque, double rotateInertia) GetMotorParams(int power) {
+            Func<DataRow, bool> con = row => Convert.ToInt32(row["Power"].ToString()) == power;
+            double ratedTorque = motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => Convert.ToDouble(row["RatedTorque"].ToString())).First();
+            double maxTorque = motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => Convert.ToDouble(row["MaxTorque"].ToString())).First();
+            double rotateInertia = motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => Convert.ToDouble(row["RotateInertia"].ToString())).First();
+            return (ratedTorque, maxTorque, rotateInertia);
         }
     }
 }
