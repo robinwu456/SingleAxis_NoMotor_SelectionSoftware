@@ -20,11 +20,19 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private Thread threadCalc;
         // 馬達自訂參數
         private (double ratedTorque, double maxTorque, double rotateInertia) customMotorParams = (-1, -1, -1);
+        // 顏色區分
+        Dictionary<string, Func<Model, bool>> redFontConditions = new Dictionary<string, Func<Model, bool>>() {
+            { "T_max安全係數", model => model.tMaxSafeCoefficient >= Model.tMaxStandard },
+            { "運行距離", model => model.serviceLifeDistance >= 0.3 },
+            { "運行壽命", model => model.serviceLifeTime.year >= 3 },
+            { "皮帶馬達安全係數", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < Model.beltMotorStandard },
+            { "皮帶T_max安全係數", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_beltMotor },
+            { "力矩警示", model => model.isMomentVerifySuccess },
+        };
 
         public Step2(FormMain formMain) {
             this.formMain = formMain;
             InitEvents();
-            //formMain.tabControlAdvanceOptions.ItemSize = new Size(0, 1);
         }
 
         public void Load() {
@@ -40,6 +48,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 newRow.Cells.Add(cboCell);
                 formMain.dgvReducerInfo.Rows.Add(newRow);
             });
+
+            // 預設選項
+            formMain.optRepeatabilityScrew.Checked = true;
+            formMain.optNoExpectServiceLife.Checked = true;
         }
 
         public void UpdateCondition(object sender, EventArgs e) {
@@ -49,26 +61,27 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             else if (formMain.optDustFreeEnv.Checked)
                 curCondition.useEnvironment = Model.UseEnvironment.DustFree;
             // 機構型態
-            switch (formMain.cboModelType.Text) {
-                case "軌道內嵌式螺桿滑台":
-                    curCondition.modelType = Model.ModelType.BuiltIn_Linear_Motion_Guide_Ball_Screw_Actuator;
-                    break;
-                case "軌道內嵌推桿式螺桿滑台":
-                    curCondition.modelType = Model.ModelType.Rod_Type_BuiltIn_Linear_Motion_Guide_Ball_Screw_Actuator;
-                    break;
-                case "螺桿滑台":
-                    curCondition.modelType = Model.ModelType.Standard_Ball_Screw_Actuator;
-                    break;
-                case "推桿式螺桿滑台":
-                    curCondition.modelType = Model.ModelType.Rod_Type_Actuator;
-                    break;
-                case "皮帶滑台":
-                    curCondition.modelType = Model.ModelType.Standard_Belt_Actuator;
-                    break;
-                case "歐規皮帶滑台":
-                    curCondition.modelType = Model.ModelType.Europe_Type_Belt_Actuator;
-                    break;
-            }
+            curCondition.modelType = (Model.ModelType)Enum.Parse(typeof(Model.ModelType), formMain.cboModelType.Text);
+            //switch (formMain.cboModelType.Text) {
+            //    case "軌道內嵌式螺桿滑台":
+            //        curCondition.modelType = Model.ModelType.軌道內嵌式螺桿滑台;
+            //        break;
+            //    case "軌道內嵌推桿式螺桿滑台":
+            //        curCondition.modelType = Model.ModelType.軌道內嵌推桿式螺桿滑台;
+            //        break;
+            //    case "螺桿滑台":
+            //        curCondition.modelType = Model.ModelType.螺桿滑台;
+            //        break;
+            //    case "推桿式螺桿滑台":
+            //        curCondition.modelType = Model.ModelType.推桿式螺桿滑台;
+            //        break;
+            //    case "皮帶滑台":
+            //        curCondition.modelType = Model.ModelType.皮帶滑台;
+            //        break;
+            //    case "歐規皮帶滑台":
+            //        curCondition.modelType = Model.ModelType.歐規皮帶滑台;
+            //        break;
+            //}
             // 安裝方式
             if (formMain.optHorizontalUse.Checked)
                 curCondition.setupMethod = Model.SetupMethod.Horizontal;
@@ -82,7 +95,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             else if (formMain.optMaxSpeedType_rpm.Checked) {
                 if (formMain.txtMaxSpeed.Text.Contains("."))
                     formMain.txtMaxSpeed.Text = formMain.txtMaxSpeed.Text.Split('.')[0];
-                curCondition.vMax = calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text));
+                if (calc.IsContainsReducerRatio(formMain.cboModel.Text)) {
+                    string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text).Cells["columnReducerRatio"].Value.ToString();
+                    curCondition.vMax = calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text) / Convert.ToDouble(dgvReducerRatioValue));
+                } else
+                    curCondition.vMax = calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text));
             }            
             // 力矩參數
             curCondition.moment_A = Convert.ToInt32(formMain.txtMomentA.Text);
@@ -105,8 +122,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             };
             // 希望壽命
             curCondition.expectServiceLifeTime = formMain.optExpectServiceLife.Checked ? Convert.ToInt32(formMain.txtExpectServiceLifeTime.Text) : -1;
-            // 加速時間
-            curCondition.accelTime = Convert.ToDouble(formMain.txtAccelSpeed.Text);
+            // 驗正加速時間
+            if (formMain.optRepeatabilityScrew.Checked)
+                curCondition.accelTime = 0.2;
+            else if (formMain.optRepeatabilityBelt.Checked)
+                curCondition.accelTime = 0.4;
             // 傳動方式
             if (formMain.optRepeatabilityScrew.Checked)
                 curCondition.RepeatabilityCondition = repeatability => repeatability <= 0.01;
@@ -204,6 +224,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.txtRatedTorque.TextChanged += UpdateCondition;
             formMain.txtRotateInertia.TextChanged += UpdateCondition;
             formMain.txtMaxTorque.TextChanged += UpdateCondition;
+            formMain.optRepeatabilityScrew.CheckedChanged += UpdateCondition;
 
             // 進階選項
             //formMain.toggleAdvanceOptions.CheckedChanged += ToggleAdvanceOptions_CheckedChanged;
@@ -225,7 +246,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void CmdCalc_Click(object sender, EventArgs e) {
             // 版面修正
             formMain.explorerBarPanel2.Size = new Size(formMain.explorerBarPanel2.Size.Width, maxHeight);
-            formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep2);
+            formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep2);            
 
             //// 條件
             //UpdateCondition();
@@ -264,54 +285,80 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void DisplayRecommandList() {
             formMain.Invoke(new Action(() => {
                 formMain.dgvRecommandList.Rows.Clear();
+                // 皮帶欄位顯示修正
+                formMain.dgvRecommandList.Columns["皮帶馬達安全係數"].Visible = formMain.optRepeatabilityBelt.Checked;
+                formMain.dgvRecommandList.Columns["皮帶T_max安全係數"].Visible = formMain.optRepeatabilityBelt.Checked;
             }));
 
             foreach (Model model in curRecommandList) {
-                formMain.Invoke(new Action(() => {
-                    int index = formMain.dgvRecommandList.Rows.Add();
-                    formMain.dgvRecommandList.Rows[index].Height = 35;
-                    formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnLock"].Value = false;
-                    formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnModel"].Value = model.name;
-                    formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnLead"].Value = model.lead;
-                    formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnLoad"].Value = model.load;
-                    formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnRpm"].Value = model.rpm;
-                    formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnVmax"].Value = model.vMax;
-                    formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnAccelSpeed"].Value = model.accelSpeed;
-                    formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnStroke"].Value = model.maxStroke;
-                    formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnRunTime"].Value = model.moveTime;
-                    formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnMomentA"].Value = model.moment_A;
-                    formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnMomentB"].Value = model.moment_B;
-                    formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnMomentC"].Value = model.moment_C;
-                    formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnPower"].Value = model.usePower;
-                    formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnTmax"].Value = model.tMaxSafeCoefficient;
-                    formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnTrms"].Value = model.tRmsSafeCoefficient;
-                    formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnIsRecommand"].Value = Properties.Resources.inCondition;
-                    formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnDetail"].Value = Properties.Resources.detail_disable_in_condition;
+                try {
+                    formMain.Invoke(new Action(() => {
+                        int index = formMain.dgvRecommandList.Rows.Add();
+                        formMain.dgvRecommandList.Rows[index].Height = 35;
+                        formMain.dgvRecommandList.Rows[index].Cells["鎖定"].Value = false;
+                        formMain.dgvRecommandList.Rows[index].Cells["項次"].Value = model.name;
+                        formMain.dgvRecommandList.Rows[index].Cells["導程"].Value = model.lead;
+                        formMain.dgvRecommandList.Rows[index].Cells["荷重"].Value = model.load;
+                        formMain.dgvRecommandList.Rows[index].Cells["最高轉速"].Value = model.rpm;
+                        formMain.dgvRecommandList.Rows[index].Cells["運行速度"].Value = model.vMax;
+                        formMain.dgvRecommandList.Rows[index].Cells["加速度"].Value = model.accelSpeed;
+                        formMain.dgvRecommandList.Rows[index].Cells["最大行程"].Value = model.maxStroke;
+                        formMain.dgvRecommandList.Rows[index].Cells["運行時間"].Value = model.moveTime;
+                        formMain.dgvRecommandList.Rows[index].Cells["力矩A"].Value = model.moment_A;
+                        formMain.dgvRecommandList.Rows[index].Cells["力矩B"].Value = model.moment_B;
+                        formMain.dgvRecommandList.Rows[index].Cells["力矩C"].Value = model.moment_C;
+                        formMain.dgvRecommandList.Rows[index].Cells["力矩警示"].Value = model.isMomentVerifySuccess ? "Pass" : "Fail";
+                        formMain.dgvRecommandList.Rows[index].Cells["馬達瓦數"].Value = model.usePower;
+                        formMain.dgvRecommandList.Rows[index].Cells["皮帶馬達安全係數"].Value = model.beltMotorSafeCoefficient == -1 ? "無" : model.beltMotorSafeCoefficient.ToString();
+                        formMain.dgvRecommandList.Rows[index].Cells["T_max安全係數"].Value = model.tMaxSafeCoefficient;
+                        formMain.dgvRecommandList.Rows[index].Cells["皮帶T_max安全係數"].Value = model.beltSafeCoefficient == -1 ? "無" : model.beltSafeCoefficient.ToString();
+                        formMain.dgvRecommandList.Rows[index].Cells["是否推薦"].Value = Properties.Resources.inCondition;
+                        formMain.dgvRecommandList.Rows[index].Cells["更詳細資訊"].Value = Properties.Resources.detail_disable_in_condition;
 
-                    // 運行距離
-                    if (model.slideTrackServiceLifeDistance < 0)
-                        formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnServiceDistance"].Value = "Error";
-                    else {
-                        if (model.serviceLifeDistance > 20000)
-                            formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnServiceDistance"].Value = "2萬公里以上";
-                        else
-                            formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnServiceDistance"].Value = ((float)model.serviceLifeDistance / 10000f).ToString("#0.0") + "萬公里";
-                    }
+                        // 運行距離
+                        if (model.slideTrackServiceLifeDistance < 0)
+                            formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "Error";
+                        else {
+                            if (model.serviceLifeDistance > 20000)
+                                formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "2萬公里以上";
+                            else
+                                formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = ((float)model.serviceLifeDistance / 10000f).ToString("#0.0") + "萬公里";
+                        }
 
-                    // 使用壽命時間
-                    string useTime = "";
-                    if (model.serviceLifeTime.year >= 10)
-                        useTime = "10年以上";
-                    else {
-                        if (model.serviceLifeTime.year > 0)
-                            useTime += model.serviceLifeTime.year + "年";
-                        if (model.serviceLifeTime.month > 0)
-                            useTime += model.serviceLifeTime.month + "個月";
-                        if (model.serviceLifeTime.year == 0 && model.serviceLifeTime.month == 0)
-                            useTime = "1個月以下";
+                        // 使用壽命時間
+                        string useTime = "";
+                        if (model.serviceLifeTime.year >= 10)
+                            useTime = "10年以上";
+                        else {
+                            if (model.serviceLifeTime.year > 0)
+                                useTime += model.serviceLifeTime.year + "年";
+                            if (model.serviceLifeTime.month > 0)
+                                useTime += model.serviceLifeTime.month + "個月";
+                            if (model.serviceLifeTime.year == 0 && model.serviceLifeTime.month == 0)
+                                useTime = "1個月以下";
+                        }
+                        formMain.dgvRecommandList.Rows[index].Cells["運行壽命"].Value = useTime;
+
+                        // 顏色區分
+                        foreach (var con in redFontConditions) {
+                            formMain.dgvRecommandList.Rows[index].Cells[con.Key].Style.ForeColor = con.Value(model) ? Color.Black : Color.Red;
+                            formMain.dgvRecommandList.Rows[index].Cells[con.Key].Style.SelectionForeColor = con.Value(model) ? Color.Black : Color.Red;
+                        }
+                    }));
+                } catch (Exception ex) {
+                    break;
+                }
+            }
+
+            try {
+                formMain.Invoke(new Action(() => {                    
+                    foreach (DataGridViewColumn col in formMain.dgvRecommandList.Columns) {
+                        // 欄位寬度更新
+                        col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
                     }
-                    formMain.dgvRecommandList.Rows[index].Cells["dgvRecommandColumnServiceLife"].Value = useTime;
                 }));
+            } catch (Exception ex) {
+                Console.WriteLine(ex);
             }
         }
 

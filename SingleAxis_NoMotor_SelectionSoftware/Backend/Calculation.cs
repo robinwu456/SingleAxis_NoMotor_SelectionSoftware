@@ -18,13 +18,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 首要篩選條件
             IEnumerable<Model> con;
-            con = models.Where(model => model.supportedSetup.Contains(condition.setupMethod));  // 安裝方式
-            // 重複定位精度
-            if (condition.repeatability != -1)
-                con = con.Where(model => condition.RepeatabilityCondition(model.repeatability));
+            // 安裝方式
+            con = models.Where(model => model.supportedSetup.Contains(condition.setupMethod));
+            // 重複定位精度(判斷螺桿、皮帶)
+            con = con.Where(model => condition.RepeatabilityCondition(model.repeatability));
 
             // pipeLine處理
-            Dictionary<string, object> calcResult = PipelineCalc(models, condition);
+            Dictionary<string, object> calcResult = PipelineCalc(con.ToList(), condition);
 
             return calcResult;
         }
@@ -66,7 +66,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 Thread t = new Thread(() => {
                     try {
                         // 總列表Add
-                        Dictionary<string, object> resultPerThread = CalcMethod(m, condition);
+                        Dictionary<string, object> resultPerThread = GetEstimatedLife(m, condition);
                         foreach (Model model in resultPerThread["List"] as List<Model>)
                             (pipeLineResult["List"] as List<Model>).Add(model);
                     } catch (Exception ex) {
@@ -103,8 +103,25 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     //goto reCalculate;
                 }
             }
-
+            int oldResultModelCount = resultModels.Count;
             string nullModelAlarmMsg = "";
+
+            // 篩選條件
+            Dictionary<string, Func<Model, bool>> filterMap = new Dictionary<string, Func<Model, bool>>() {
+                { "超過最大行程", model => model.maxStroke >= condition.stroke },
+                { "超過最大荷重", model => model.maxLoad == -1 || model.maxLoad != -1 && model.maxLoad >= condition.load },
+                { "線速度過大", model => model.vMax <= model.vMax_max },
+                { "行程過短，建議可增加行程，或降低線速度", model => model.constantTime >= 0 },
+                { "運行時間過短，請增加運行時間", model => model.moveTime <= condition.moveTime },
+            };
+            foreach (var filter in filterMap) {
+                oldResultModelCount = resultModels.Count;
+                resultModels = resultModels.Where(filter.Value).ToList();
+                // 篩選訊息
+                if (resultModels.Count < oldResultModelCount)
+                    nullModelAlarmMsg += filter.Key + "|";
+            }
+
             if (resultModels.Count == 0 && pipeLineResult["Msg"].ToString() == "")
                 pipeLineResult["Msg"] = nullModelAlarmMsg;
 
@@ -114,7 +131,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return pipeLineResult;
         }
 
-        private Dictionary<string, object> CalcMethod(List<Model> models, Condition con) {
+        private Dictionary<string, object> GetEstimatedLife(List<Model> models, Condition con) {
             Dictionary<string, object> pipeLineResult = new Dictionary<string, object>() {
                 { "List", new List<Model>() },
                 { "Msg", "" },

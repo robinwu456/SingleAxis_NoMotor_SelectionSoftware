@@ -69,6 +69,28 @@
             this.label63 = new System.Windows.Forms.Label();
             this.explorerBarPanel2 = new System.Windows.Forms.Panel();
             this.explorerBarPanel2_content = new System.Windows.Forms.Panel();
+            this.optRepeatabilityBelt = new System.Windows.Forms.RadioButton();
+            this.optRepeatabilityScrew = new System.Windows.Forms.RadioButton();
+            this.optMotorParamsModifyAdvance = new System.Windows.Forms.RadioButton();
+            this.optMotorParamsModifySimple = new System.Windows.Forms.RadioButton();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label78 = new System.Windows.Forms.Label();
+            this.label81 = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
+            this.txtAccelSpeed = new System.Windows.Forms.TextBox();
+            this.optMaxSpeedType_rpm = new System.Windows.Forms.RadioButton();
+            this.optMaxSpeedType_mms = new System.Windows.Forms.RadioButton();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.txtMaxSpeed = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.txtExpectServiceLifeTime = new System.Windows.Forms.TextBox();
+            this.optExpectServiceLife = new System.Windows.Forms.RadioButton();
+            this.optNoExpectServiceLife = new System.Windows.Forms.RadioButton();
+            this.label71 = new System.Windows.Forms.Label();
             this.dgvReducerInfo = new System.Windows.Forms.DataGridView();
             this.columnModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnReducerRatio = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -77,25 +99,6 @@
             this.panelCalcBtns = new System.Windows.Forms.TableLayoutPanel();
             this.cmdCalc = new CustomButton.CustomButton();
             this.dgvRecommandList = new System.Windows.Forms.DataGridView();
-            this.dgvRecommandColumnLock = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dgvRecommandColumnModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnLead = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnLoad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnRpm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnVmax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnAccelSpeed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnStroke = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnRunTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnMomentA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnMomentB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnMomentC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnPower = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnTmax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnTrms = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnServiceDistance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnServiceLife = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRecommandColumnIsRecommand = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvRecommandColumnDetail = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label35 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
@@ -212,28 +215,28 @@
             this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label77 = new System.Windows.Forms.Label();
-            this.txtExpectServiceLifeTime = new System.Windows.Forms.TextBox();
-            this.optNoExpectServiceLife = new System.Windows.Forms.RadioButton();
-            this.optExpectServiceLife = new System.Windows.Forms.RadioButton();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.txtMaxSpeed = new System.Windows.Forms.TextBox();
-            this.optMaxSpeedType_mms = new System.Windows.Forms.RadioButton();
-            this.optMaxSpeedType_rpm = new System.Windows.Forms.RadioButton();
-            this.label78 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
-            this.txtAccelSpeed = new System.Windows.Forms.TextBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.optMotorParamsModifyAdvance = new System.Windows.Forms.RadioButton();
-            this.optMotorParamsModifySimple = new System.Windows.Forms.RadioButton();
-            this.optRepeatabilityBelt = new System.Windows.Forms.RadioButton();
-            this.optRepeatabilityScrew = new System.Windows.Forms.RadioButton();
+            this.鎖定 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.項次 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.導程 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.荷重 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.最高轉速 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.運行速度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.加速度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.最大行程 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.運行時間 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.力矩A = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.力矩B = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.力矩C = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.力矩警示 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.馬達瓦數 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.皮帶馬達安全係數 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.T_max安全係數 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.皮帶T_max安全係數 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.T_Rms安全係數 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.運行距離 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.運行壽命 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.是否推薦 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.更詳細資訊 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -262,6 +265,9 @@
             this.explorerBarPanel3_title.SuspendLayout();
             this.explorerBarPanel2.SuspendLayout();
             this.explorerBarPanel2_content.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).BeginInit();
             this.panelConfirmBtnsStep2.SuspendLayout();
             this.panelCalcBtns.SuspendLayout();
@@ -287,9 +293,6 @@
             this.explorerBarPanel5_content.SuspendLayout();
             this.panelConfirmBtnsStep5.SuspendLayout();
             this.explorerBarPanel5_title.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -683,6 +686,164 @@
             resources.ApplyResources(this.explorerBarPanel2_content, "explorerBarPanel2_content");
             this.explorerBarPanel2_content.Name = "explorerBarPanel2_content";
             // 
+            // optRepeatabilityBelt
+            // 
+            resources.ApplyResources(this.optRepeatabilityBelt, "optRepeatabilityBelt");
+            this.optRepeatabilityBelt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.optRepeatabilityBelt.Name = "optRepeatabilityBelt";
+            this.optRepeatabilityBelt.TabStop = true;
+            this.optRepeatabilityBelt.UseVisualStyleBackColor = true;
+            // 
+            // optRepeatabilityScrew
+            // 
+            resources.ApplyResources(this.optRepeatabilityScrew, "optRepeatabilityScrew");
+            this.optRepeatabilityScrew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.optRepeatabilityScrew.Name = "optRepeatabilityScrew";
+            this.optRepeatabilityScrew.TabStop = true;
+            this.optRepeatabilityScrew.UseVisualStyleBackColor = true;
+            // 
+            // optMotorParamsModifyAdvance
+            // 
+            resources.ApplyResources(this.optMotorParamsModifyAdvance, "optMotorParamsModifyAdvance");
+            this.optMotorParamsModifyAdvance.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.optMotorParamsModifyAdvance.Name = "optMotorParamsModifyAdvance";
+            this.optMotorParamsModifyAdvance.TabStop = true;
+            this.optMotorParamsModifyAdvance.UseVisualStyleBackColor = true;
+            // 
+            // optMotorParamsModifySimple
+            // 
+            resources.ApplyResources(this.optMotorParamsModifySimple, "optMotorParamsModifySimple");
+            this.optMotorParamsModifySimple.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.optMotorParamsModifySimple.Name = "optMotorParamsModifySimple";
+            this.optMotorParamsModifySimple.TabStop = true;
+            this.optMotorParamsModifySimple.UseVisualStyleBackColor = true;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label78);
+            this.panel7.Controls.Add(this.label81);
+            this.panel7.Controls.Add(this.label82);
+            this.panel7.Controls.Add(this.txtAccelSpeed);
+            this.panel7.Controls.Add(this.optMaxSpeedType_rpm);
+            this.panel7.Controls.Add(this.optMaxSpeedType_mms);
+            this.panel7.Controls.Add(this.label79);
+            this.panel7.Controls.Add(this.label80);
+            this.panel7.Controls.Add(this.txtMaxSpeed);
+            resources.ApplyResources(this.panel7, "panel7");
+            this.panel7.Name = "panel7";
+            // 
+            // label78
+            // 
+            resources.ApplyResources(this.label78, "label78");
+            this.label78.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label78.Name = "label78";
+            // 
+            // label81
+            // 
+            resources.ApplyResources(this.label81, "label81");
+            this.label81.Name = "label81";
+            // 
+            // label82
+            // 
+            resources.ApplyResources(this.label82, "label82");
+            this.label82.ForeColor = System.Drawing.Color.Red;
+            this.label82.Name = "label82";
+            // 
+            // txtAccelSpeed
+            // 
+            resources.ApplyResources(this.txtAccelSpeed, "txtAccelSpeed");
+            this.txtAccelSpeed.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtAccelSpeed.Name = "txtAccelSpeed";
+            // 
+            // optMaxSpeedType_rpm
+            // 
+            resources.ApplyResources(this.optMaxSpeedType_rpm, "optMaxSpeedType_rpm");
+            this.optMaxSpeedType_rpm.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.optMaxSpeedType_rpm.Name = "optMaxSpeedType_rpm";
+            this.optMaxSpeedType_rpm.TabStop = true;
+            this.optMaxSpeedType_rpm.UseVisualStyleBackColor = true;
+            // 
+            // optMaxSpeedType_mms
+            // 
+            resources.ApplyResources(this.optMaxSpeedType_mms, "optMaxSpeedType_mms");
+            this.optMaxSpeedType_mms.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.optMaxSpeedType_mms.Name = "optMaxSpeedType_mms";
+            this.optMaxSpeedType_mms.TabStop = true;
+            this.optMaxSpeedType_mms.UseVisualStyleBackColor = true;
+            // 
+            // label79
+            // 
+            resources.ApplyResources(this.label79, "label79");
+            this.label79.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label79.Name = "label79";
+            // 
+            // label80
+            // 
+            resources.ApplyResources(this.label80, "label80");
+            this.label80.ForeColor = System.Drawing.Color.Red;
+            this.label80.Name = "label80";
+            // 
+            // txtMaxSpeed
+            // 
+            resources.ApplyResources(this.txtMaxSpeed, "txtMaxSpeed");
+            this.txtMaxSpeed.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMaxSpeed.Name = "txtMaxSpeed";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panel5);
+            this.panel6.Controls.Add(this.optExpectServiceLife);
+            this.panel6.Controls.Add(this.optNoExpectServiceLife);
+            resources.ApplyResources(this.panel6, "panel6");
+            this.panel6.Name = "panel6";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label72);
+            this.panel5.Controls.Add(this.label77);
+            this.panel5.Controls.Add(this.txtExpectServiceLifeTime);
+            resources.ApplyResources(this.panel5, "panel5");
+            this.panel5.Name = "panel5";
+            // 
+            // label72
+            // 
+            resources.ApplyResources(this.label72, "label72");
+            this.label72.Name = "label72";
+            // 
+            // label77
+            // 
+            resources.ApplyResources(this.label77, "label77");
+            this.label77.ForeColor = System.Drawing.Color.Red;
+            this.label77.Name = "label77";
+            // 
+            // txtExpectServiceLifeTime
+            // 
+            resources.ApplyResources(this.txtExpectServiceLifeTime, "txtExpectServiceLifeTime");
+            this.txtExpectServiceLifeTime.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtExpectServiceLifeTime.Name = "txtExpectServiceLifeTime";
+            // 
+            // optExpectServiceLife
+            // 
+            resources.ApplyResources(this.optExpectServiceLife, "optExpectServiceLife");
+            this.optExpectServiceLife.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.optExpectServiceLife.Name = "optExpectServiceLife";
+            this.optExpectServiceLife.TabStop = true;
+            this.optExpectServiceLife.UseVisualStyleBackColor = true;
+            // 
+            // optNoExpectServiceLife
+            // 
+            resources.ApplyResources(this.optNoExpectServiceLife, "optNoExpectServiceLife");
+            this.optNoExpectServiceLife.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.optNoExpectServiceLife.Name = "optNoExpectServiceLife";
+            this.optNoExpectServiceLife.TabStop = true;
+            this.optNoExpectServiceLife.UseVisualStyleBackColor = true;
+            // 
+            // label71
+            // 
+            resources.ApplyResources(this.label71, "label71");
+            this.label71.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label71.Name = "label71";
+            // 
             // dgvReducerInfo
             // 
             this.dgvReducerInfo.AllowUserToAddRows = false;
@@ -774,25 +935,28 @@
             this.dgvRecommandList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRecommandList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecommandList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvRecommandColumnLock,
-            this.dgvRecommandColumnModel,
-            this.dgvRecommandColumnLead,
-            this.dgvRecommandColumnLoad,
-            this.dgvRecommandColumnRpm,
-            this.dgvRecommandColumnVmax,
-            this.dgvRecommandColumnAccelSpeed,
-            this.dgvRecommandColumnStroke,
-            this.dgvRecommandColumnRunTime,
-            this.dgvRecommandColumnMomentA,
-            this.dgvRecommandColumnMomentB,
-            this.dgvRecommandColumnMomentC,
-            this.dgvRecommandColumnPower,
-            this.dgvRecommandColumnTmax,
-            this.dgvRecommandColumnTrms,
-            this.dgvRecommandColumnServiceDistance,
-            this.dgvRecommandColumnServiceLife,
-            this.dgvRecommandColumnIsRecommand,
-            this.dgvRecommandColumnDetail});
+            this.鎖定,
+            this.項次,
+            this.導程,
+            this.荷重,
+            this.最高轉速,
+            this.運行速度,
+            this.加速度,
+            this.最大行程,
+            this.運行時間,
+            this.力矩A,
+            this.力矩B,
+            this.力矩C,
+            this.力矩警示,
+            this.馬達瓦數,
+            this.皮帶馬達安全係數,
+            this.T_max安全係數,
+            this.皮帶T_max安全係數,
+            this.T_Rms安全係數,
+            this.運行距離,
+            this.運行壽命,
+            this.是否推薦,
+            this.更詳細資訊});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 8F, System.Drawing.FontStyle.Bold);
@@ -822,176 +986,6 @@
             this.dgvRecommandList.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvRecommandList.RowTemplate.Height = 24;
             this.dgvRecommandList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            // 
-            // dgvRecommandColumnLock
-            // 
-            this.dgvRecommandColumnLock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnLock.FillWeight = 56.40312F;
-            resources.ApplyResources(this.dgvRecommandColumnLock, "dgvRecommandColumnLock");
-            this.dgvRecommandColumnLock.Name = "dgvRecommandColumnLock";
-            this.dgvRecommandColumnLock.ReadOnly = true;
-            this.dgvRecommandColumnLock.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dgvRecommandColumnModel
-            // 
-            this.dgvRecommandColumnModel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dgvRecommandColumnModel.FillWeight = 68.39409F;
-            resources.ApplyResources(this.dgvRecommandColumnModel, "dgvRecommandColumnModel");
-            this.dgvRecommandColumnModel.Name = "dgvRecommandColumnModel";
-            this.dgvRecommandColumnModel.ReadOnly = true;
-            this.dgvRecommandColumnModel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnLead
-            // 
-            this.dgvRecommandColumnLead.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnLead.FillWeight = 68.39409F;
-            resources.ApplyResources(this.dgvRecommandColumnLead, "dgvRecommandColumnLead");
-            this.dgvRecommandColumnLead.Name = "dgvRecommandColumnLead";
-            this.dgvRecommandColumnLead.ReadOnly = true;
-            this.dgvRecommandColumnLead.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnLoad
-            // 
-            this.dgvRecommandColumnLoad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnLoad.FillWeight = 68.39409F;
-            resources.ApplyResources(this.dgvRecommandColumnLoad, "dgvRecommandColumnLoad");
-            this.dgvRecommandColumnLoad.Name = "dgvRecommandColumnLoad";
-            this.dgvRecommandColumnLoad.ReadOnly = true;
-            this.dgvRecommandColumnLoad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnRpm
-            // 
-            this.dgvRecommandColumnRpm.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dgvRecommandColumnRpm.FillWeight = 68.39409F;
-            resources.ApplyResources(this.dgvRecommandColumnRpm, "dgvRecommandColumnRpm");
-            this.dgvRecommandColumnRpm.Name = "dgvRecommandColumnRpm";
-            this.dgvRecommandColumnRpm.ReadOnly = true;
-            this.dgvRecommandColumnRpm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnVmax
-            // 
-            this.dgvRecommandColumnVmax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnVmax.FillWeight = 68.39409F;
-            resources.ApplyResources(this.dgvRecommandColumnVmax, "dgvRecommandColumnVmax");
-            this.dgvRecommandColumnVmax.Name = "dgvRecommandColumnVmax";
-            this.dgvRecommandColumnVmax.ReadOnly = true;
-            this.dgvRecommandColumnVmax.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnAccelSpeed
-            // 
-            this.dgvRecommandColumnAccelSpeed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnAccelSpeed.FillWeight = 91.9438F;
-            resources.ApplyResources(this.dgvRecommandColumnAccelSpeed, "dgvRecommandColumnAccelSpeed");
-            this.dgvRecommandColumnAccelSpeed.Name = "dgvRecommandColumnAccelSpeed";
-            this.dgvRecommandColumnAccelSpeed.ReadOnly = true;
-            this.dgvRecommandColumnAccelSpeed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnStroke
-            // 
-            this.dgvRecommandColumnStroke.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dgvRecommandColumnStroke.FillWeight = 68.39409F;
-            resources.ApplyResources(this.dgvRecommandColumnStroke, "dgvRecommandColumnStroke");
-            this.dgvRecommandColumnStroke.Name = "dgvRecommandColumnStroke";
-            this.dgvRecommandColumnStroke.ReadOnly = true;
-            this.dgvRecommandColumnStroke.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnRunTime
-            // 
-            this.dgvRecommandColumnRunTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dgvRecommandColumnRunTime.FillWeight = 68.39409F;
-            resources.ApplyResources(this.dgvRecommandColumnRunTime, "dgvRecommandColumnRunTime");
-            this.dgvRecommandColumnRunTime.Name = "dgvRecommandColumnRunTime";
-            this.dgvRecommandColumnRunTime.ReadOnly = true;
-            this.dgvRecommandColumnRunTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnMomentA
-            // 
-            this.dgvRecommandColumnMomentA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnMomentA.FillWeight = 92.21493F;
-            resources.ApplyResources(this.dgvRecommandColumnMomentA, "dgvRecommandColumnMomentA");
-            this.dgvRecommandColumnMomentA.Name = "dgvRecommandColumnMomentA";
-            this.dgvRecommandColumnMomentA.ReadOnly = true;
-            this.dgvRecommandColumnMomentA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnMomentB
-            // 
-            this.dgvRecommandColumnMomentB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnMomentB.FillWeight = 88.45663F;
-            resources.ApplyResources(this.dgvRecommandColumnMomentB, "dgvRecommandColumnMomentB");
-            this.dgvRecommandColumnMomentB.Name = "dgvRecommandColumnMomentB";
-            this.dgvRecommandColumnMomentB.ReadOnly = true;
-            this.dgvRecommandColumnMomentB.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnMomentC
-            // 
-            this.dgvRecommandColumnMomentC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnMomentC.FillWeight = 92.50709F;
-            resources.ApplyResources(this.dgvRecommandColumnMomentC, "dgvRecommandColumnMomentC");
-            this.dgvRecommandColumnMomentC.Name = "dgvRecommandColumnMomentC";
-            this.dgvRecommandColumnMomentC.ReadOnly = true;
-            this.dgvRecommandColumnMomentC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnPower
-            // 
-            this.dgvRecommandColumnPower.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnPower.FillWeight = 68.39409F;
-            resources.ApplyResources(this.dgvRecommandColumnPower, "dgvRecommandColumnPower");
-            this.dgvRecommandColumnPower.Name = "dgvRecommandColumnPower";
-            this.dgvRecommandColumnPower.ReadOnly = true;
-            this.dgvRecommandColumnPower.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnTmax
-            // 
-            this.dgvRecommandColumnTmax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnTmax.FillWeight = 158.5393F;
-            resources.ApplyResources(this.dgvRecommandColumnTmax, "dgvRecommandColumnTmax");
-            this.dgvRecommandColumnTmax.Name = "dgvRecommandColumnTmax";
-            this.dgvRecommandColumnTmax.ReadOnly = true;
-            this.dgvRecommandColumnTmax.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnTrms
-            // 
-            this.dgvRecommandColumnTrms.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvRecommandColumnTrms.FillWeight = 167.8455F;
-            resources.ApplyResources(this.dgvRecommandColumnTrms, "dgvRecommandColumnTrms");
-            this.dgvRecommandColumnTrms.Name = "dgvRecommandColumnTrms";
-            this.dgvRecommandColumnTrms.ReadOnly = true;
-            this.dgvRecommandColumnTrms.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnServiceDistance
-            // 
-            this.dgvRecommandColumnServiceDistance.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dgvRecommandColumnServiceDistance.FillWeight = 64.37476F;
-            resources.ApplyResources(this.dgvRecommandColumnServiceDistance, "dgvRecommandColumnServiceDistance");
-            this.dgvRecommandColumnServiceDistance.Name = "dgvRecommandColumnServiceDistance";
-            this.dgvRecommandColumnServiceDistance.ReadOnly = true;
-            this.dgvRecommandColumnServiceDistance.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnServiceLife
-            // 
-            this.dgvRecommandColumnServiceLife.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dgvRecommandColumnServiceLife.FillWeight = 68.39409F;
-            resources.ApplyResources(this.dgvRecommandColumnServiceLife, "dgvRecommandColumnServiceLife");
-            this.dgvRecommandColumnServiceLife.Name = "dgvRecommandColumnServiceLife";
-            this.dgvRecommandColumnServiceLife.ReadOnly = true;
-            this.dgvRecommandColumnServiceLife.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvRecommandColumnIsRecommand
-            // 
-            this.dgvRecommandColumnIsRecommand.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.dgvRecommandColumnIsRecommand, "dgvRecommandColumnIsRecommand");
-            this.dgvRecommandColumnIsRecommand.Name = "dgvRecommandColumnIsRecommand";
-            this.dgvRecommandColumnIsRecommand.ReadOnly = true;
-            this.dgvRecommandColumnIsRecommand.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dgvRecommandColumnDetail
-            // 
-            this.dgvRecommandColumnDetail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dgvRecommandColumnDetail.FillWeight = 80F;
-            resources.ApplyResources(this.dgvRecommandColumnDetail, "dgvRecommandColumnDetail");
-            this.dgvRecommandColumnDetail.Name = "dgvRecommandColumnDetail";
-            this.dgvRecommandColumnDetail.ReadOnly = true;
-            this.dgvRecommandColumnDetail.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // panel3
             // 
@@ -1053,19 +1047,19 @@
             // txtRotateInertia
             // 
             resources.ApplyResources(this.txtRotateInertia, "txtRotateInertia");
-            this.txtRotateInertia.ForeColor = System.Drawing.Color.Silver;
+            this.txtRotateInertia.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtRotateInertia.Name = "txtRotateInertia";
             // 
             // txtMaxTorque
             // 
             resources.ApplyResources(this.txtMaxTorque, "txtMaxTorque");
-            this.txtMaxTorque.ForeColor = System.Drawing.Color.Silver;
+            this.txtMaxTorque.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtMaxTorque.Name = "txtMaxTorque";
             // 
             // txtRatedTorque
             // 
             resources.ApplyResources(this.txtRatedTorque, "txtRatedTorque");
-            this.txtRatedTorque.ForeColor = System.Drawing.Color.Silver;
+            this.txtRatedTorque.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtRatedTorque.Name = "txtRatedTorque";
             // 
             // label37
@@ -1222,7 +1216,7 @@
             // txtRunTime
             // 
             resources.ApplyResources(this.txtRunTime, "txtRunTime");
-            this.txtRunTime.ForeColor = System.Drawing.Color.Silver;
+            this.txtRunTime.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtRunTime.Name = "txtRunTime";
             // 
             // label29
@@ -1301,7 +1295,7 @@
             // txtMomentA
             // 
             resources.ApplyResources(this.txtMomentA, "txtMomentA");
-            this.txtMomentA.ForeColor = System.Drawing.Color.Silver;
+            this.txtMomentA.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtMomentA.Name = "txtMomentA";
             // 
             // labelStopTimeAlarm
@@ -1330,7 +1324,7 @@
             // txtMomentC
             // 
             resources.ApplyResources(this.txtMomentC, "txtMomentC");
-            this.txtMomentC.ForeColor = System.Drawing.Color.Silver;
+            this.txtMomentC.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtMomentC.Name = "txtMomentC";
             // 
             // label52
@@ -1370,7 +1364,7 @@
             // txtMomentB
             // 
             resources.ApplyResources(this.txtMomentB, "txtMomentB");
-            this.txtMomentB.ForeColor = System.Drawing.Color.Silver;
+            this.txtMomentB.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtMomentB.Name = "txtMomentB";
             // 
             // label27
@@ -1382,7 +1376,7 @@
             // txtDayPerYear
             // 
             resources.ApplyResources(this.txtDayPerYear, "txtDayPerYear");
-            this.txtDayPerYear.ForeColor = System.Drawing.Color.Silver;
+            this.txtDayPerYear.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtDayPerYear.Name = "txtDayPerYear";
             // 
             // label46
@@ -1411,7 +1405,7 @@
             // txtTimesPerMinute
             // 
             resources.ApplyResources(this.txtTimesPerMinute, "txtTimesPerMinute");
-            this.txtTimesPerMinute.ForeColor = System.Drawing.Color.Silver;
+            this.txtTimesPerMinute.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtTimesPerMinute.Name = "txtTimesPerMinute";
             // 
             // label31
@@ -1429,7 +1423,7 @@
             // txtHourPerDay
             // 
             resources.ApplyResources(this.txtHourPerDay, "txtHourPerDay");
-            this.txtHourPerDay.ForeColor = System.Drawing.Color.Silver;
+            this.txtHourPerDay.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtHourPerDay.Name = "txtHourPerDay";
             // 
             // label17
@@ -1801,163 +1795,200 @@
             this.label65.ForeColor = System.Drawing.Color.White;
             this.label65.Name = "label65";
             // 
-            // label71
+            // 鎖定
             // 
-            resources.ApplyResources(this.label71, "label71");
-            this.label71.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label71.Name = "label71";
+            this.鎖定.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.鎖定.FillWeight = 56.40312F;
+            resources.ApplyResources(this.鎖定, "鎖定");
+            this.鎖定.Name = "鎖定";
+            this.鎖定.ReadOnly = true;
+            this.鎖定.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // label72
+            // 項次
             // 
-            resources.ApplyResources(this.label72, "label72");
-            this.label72.Name = "label72";
+            this.項次.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.項次.FillWeight = 68.39409F;
+            resources.ApplyResources(this.項次, "項次");
+            this.項次.Name = "項次";
+            this.項次.ReadOnly = true;
+            this.項次.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // label77
+            // 導程
             // 
-            resources.ApplyResources(this.label77, "label77");
-            this.label77.ForeColor = System.Drawing.Color.Red;
-            this.label77.Name = "label77";
+            this.導程.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.導程.FillWeight = 68.39409F;
+            resources.ApplyResources(this.導程, "導程");
+            this.導程.Name = "導程";
+            this.導程.ReadOnly = true;
+            this.導程.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // txtExpectServiceLifeTime
+            // 荷重
             // 
-            resources.ApplyResources(this.txtExpectServiceLifeTime, "txtExpectServiceLifeTime");
-            this.txtExpectServiceLifeTime.ForeColor = System.Drawing.Color.Silver;
-            this.txtExpectServiceLifeTime.Name = "txtExpectServiceLifeTime";
+            this.荷重.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.荷重.FillWeight = 68.39409F;
+            resources.ApplyResources(this.荷重, "荷重");
+            this.荷重.Name = "荷重";
+            this.荷重.ReadOnly = true;
+            this.荷重.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // optNoExpectServiceLife
+            // 最高轉速
             // 
-            resources.ApplyResources(this.optNoExpectServiceLife, "optNoExpectServiceLife");
-            this.optNoExpectServiceLife.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.optNoExpectServiceLife.Name = "optNoExpectServiceLife";
-            this.optNoExpectServiceLife.TabStop = true;
-            this.optNoExpectServiceLife.UseVisualStyleBackColor = true;
+            this.最高轉速.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.最高轉速.FillWeight = 68.39409F;
+            resources.ApplyResources(this.最高轉速, "最高轉速");
+            this.最高轉速.Name = "最高轉速";
+            this.最高轉速.ReadOnly = true;
+            this.最高轉速.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // optExpectServiceLife
+            // 運行速度
             // 
-            resources.ApplyResources(this.optExpectServiceLife, "optExpectServiceLife");
-            this.optExpectServiceLife.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.optExpectServiceLife.Name = "optExpectServiceLife";
-            this.optExpectServiceLife.TabStop = true;
-            this.optExpectServiceLife.UseVisualStyleBackColor = true;
+            this.運行速度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.運行速度.FillWeight = 68.39409F;
+            resources.ApplyResources(this.運行速度, "運行速度");
+            this.運行速度.Name = "運行速度";
+            this.運行速度.ReadOnly = true;
+            this.運行速度.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // panel5
+            // 加速度
             // 
-            this.panel5.Controls.Add(this.label72);
-            this.panel5.Controls.Add(this.label77);
-            this.panel5.Controls.Add(this.txtExpectServiceLifeTime);
-            resources.ApplyResources(this.panel5, "panel5");
-            this.panel5.Name = "panel5";
+            this.加速度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.加速度.FillWeight = 91.9438F;
+            resources.ApplyResources(this.加速度, "加速度");
+            this.加速度.Name = "加速度";
+            this.加速度.ReadOnly = true;
+            this.加速度.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // panel6
+            // 最大行程
             // 
-            this.panel6.Controls.Add(this.panel5);
-            this.panel6.Controls.Add(this.optExpectServiceLife);
-            this.panel6.Controls.Add(this.optNoExpectServiceLife);
-            resources.ApplyResources(this.panel6, "panel6");
-            this.panel6.Name = "panel6";
+            this.最大行程.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.最大行程.FillWeight = 68.39409F;
+            resources.ApplyResources(this.最大行程, "最大行程");
+            this.最大行程.Name = "最大行程";
+            this.最大行程.ReadOnly = true;
+            this.最大行程.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // label79
+            // 運行時間
             // 
-            resources.ApplyResources(this.label79, "label79");
-            this.label79.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label79.Name = "label79";
+            this.運行時間.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.運行時間.FillWeight = 68.39409F;
+            resources.ApplyResources(this.運行時間, "運行時間");
+            this.運行時間.Name = "運行時間";
+            this.運行時間.ReadOnly = true;
+            this.運行時間.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // label80
+            // 力矩A
             // 
-            resources.ApplyResources(this.label80, "label80");
-            this.label80.ForeColor = System.Drawing.Color.Red;
-            this.label80.Name = "label80";
+            this.力矩A.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.力矩A.FillWeight = 92.21493F;
+            resources.ApplyResources(this.力矩A, "力矩A");
+            this.力矩A.Name = "力矩A";
+            this.力矩A.ReadOnly = true;
+            this.力矩A.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // txtMaxSpeed
+            // 力矩B
             // 
-            resources.ApplyResources(this.txtMaxSpeed, "txtMaxSpeed");
-            this.txtMaxSpeed.ForeColor = System.Drawing.Color.Silver;
-            this.txtMaxSpeed.Name = "txtMaxSpeed";
+            this.力矩B.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.力矩B.FillWeight = 88.45663F;
+            resources.ApplyResources(this.力矩B, "力矩B");
+            this.力矩B.Name = "力矩B";
+            this.力矩B.ReadOnly = true;
+            this.力矩B.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // optMaxSpeedType_mms
+            // 力矩C
             // 
-            resources.ApplyResources(this.optMaxSpeedType_mms, "optMaxSpeedType_mms");
-            this.optMaxSpeedType_mms.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.optMaxSpeedType_mms.Name = "optMaxSpeedType_mms";
-            this.optMaxSpeedType_mms.TabStop = true;
-            this.optMaxSpeedType_mms.UseVisualStyleBackColor = true;
+            this.力矩C.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.力矩C.FillWeight = 92.50709F;
+            resources.ApplyResources(this.力矩C, "力矩C");
+            this.力矩C.Name = "力矩C";
+            this.力矩C.ReadOnly = true;
+            this.力矩C.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // optMaxSpeedType_rpm
+            // 力矩警示
             // 
-            resources.ApplyResources(this.optMaxSpeedType_rpm, "optMaxSpeedType_rpm");
-            this.optMaxSpeedType_rpm.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.optMaxSpeedType_rpm.Name = "optMaxSpeedType_rpm";
-            this.optMaxSpeedType_rpm.TabStop = true;
-            this.optMaxSpeedType_rpm.UseVisualStyleBackColor = true;
+            this.力矩警示.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.力矩警示.FillWeight = 68.39409F;
+            resources.ApplyResources(this.力矩警示, "力矩警示");
+            this.力矩警示.Name = "力矩警示";
+            this.力矩警示.ReadOnly = true;
+            this.力矩警示.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // label78
+            // 馬達瓦數
             // 
-            resources.ApplyResources(this.label78, "label78");
-            this.label78.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label78.Name = "label78";
+            this.馬達瓦數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.馬達瓦數.FillWeight = 68.39409F;
+            resources.ApplyResources(this.馬達瓦數, "馬達瓦數");
+            this.馬達瓦數.Name = "馬達瓦數";
+            this.馬達瓦數.ReadOnly = true;
+            this.馬達瓦數.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // label81
+            // 皮帶馬達安全係數
             // 
-            resources.ApplyResources(this.label81, "label81");
-            this.label81.Name = "label81";
+            this.皮帶馬達安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            resources.ApplyResources(this.皮帶馬達安全係數, "皮帶馬達安全係數");
+            this.皮帶馬達安全係數.Name = "皮帶馬達安全係數";
+            this.皮帶馬達安全係數.ReadOnly = true;
+            this.皮帶馬達安全係數.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // label82
+            // T_max安全係數
             // 
-            resources.ApplyResources(this.label82, "label82");
-            this.label82.ForeColor = System.Drawing.Color.Red;
-            this.label82.Name = "label82";
+            this.T_max安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.T_max安全係數.FillWeight = 158.5393F;
+            resources.ApplyResources(this.T_max安全係數, "T_max安全係數");
+            this.T_max安全係數.Name = "T_max安全係數";
+            this.T_max安全係數.ReadOnly = true;
+            this.T_max安全係數.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // txtAccelSpeed
+            // 皮帶T_max安全係數
             // 
-            resources.ApplyResources(this.txtAccelSpeed, "txtAccelSpeed");
-            this.txtAccelSpeed.ForeColor = System.Drawing.Color.Silver;
-            this.txtAccelSpeed.Name = "txtAccelSpeed";
+            this.皮帶T_max安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            resources.ApplyResources(this.皮帶T_max安全係數, "皮帶T_max安全係數");
+            this.皮帶T_max安全係數.Name = "皮帶T_max安全係數";
+            this.皮帶T_max安全係數.ReadOnly = true;
+            this.皮帶T_max安全係數.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // panel7
+            // T_Rms安全係數
             // 
-            this.panel7.Controls.Add(this.label78);
-            this.panel7.Controls.Add(this.label81);
-            this.panel7.Controls.Add(this.label82);
-            this.panel7.Controls.Add(this.txtAccelSpeed);
-            this.panel7.Controls.Add(this.optMaxSpeedType_rpm);
-            this.panel7.Controls.Add(this.optMaxSpeedType_mms);
-            this.panel7.Controls.Add(this.label79);
-            this.panel7.Controls.Add(this.label80);
-            this.panel7.Controls.Add(this.txtMaxSpeed);
-            resources.ApplyResources(this.panel7, "panel7");
-            this.panel7.Name = "panel7";
+            this.T_Rms安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.T_Rms安全係數.FillWeight = 167.8455F;
+            resources.ApplyResources(this.T_Rms安全係數, "T_Rms安全係數");
+            this.T_Rms安全係數.Name = "T_Rms安全係數";
+            this.T_Rms安全係數.ReadOnly = true;
+            this.T_Rms安全係數.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // optMotorParamsModifyAdvance
+            // 運行距離
             // 
-            resources.ApplyResources(this.optMotorParamsModifyAdvance, "optMotorParamsModifyAdvance");
-            this.optMotorParamsModifyAdvance.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.optMotorParamsModifyAdvance.Name = "optMotorParamsModifyAdvance";
-            this.optMotorParamsModifyAdvance.TabStop = true;
-            this.optMotorParamsModifyAdvance.UseVisualStyleBackColor = true;
+            this.運行距離.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.運行距離.FillWeight = 64.37476F;
+            resources.ApplyResources(this.運行距離, "運行距離");
+            this.運行距離.Name = "運行距離";
+            this.運行距離.ReadOnly = true;
+            this.運行距離.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // optMotorParamsModifySimple
+            // 運行壽命
             // 
-            resources.ApplyResources(this.optMotorParamsModifySimple, "optMotorParamsModifySimple");
-            this.optMotorParamsModifySimple.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.optMotorParamsModifySimple.Name = "optMotorParamsModifySimple";
-            this.optMotorParamsModifySimple.TabStop = true;
-            this.optMotorParamsModifySimple.UseVisualStyleBackColor = true;
+            this.運行壽命.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.運行壽命.FillWeight = 68.39409F;
+            resources.ApplyResources(this.運行壽命, "運行壽命");
+            this.運行壽命.Name = "運行壽命";
+            this.運行壽命.ReadOnly = true;
+            this.運行壽命.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // optRepeatabilityBelt
+            // 是否推薦
             // 
-            resources.ApplyResources(this.optRepeatabilityBelt, "optRepeatabilityBelt");
-            this.optRepeatabilityBelt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.optRepeatabilityBelt.Name = "optRepeatabilityBelt";
-            this.optRepeatabilityBelt.TabStop = true;
-            this.optRepeatabilityBelt.UseVisualStyleBackColor = true;
+            this.是否推薦.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.是否推薦, "是否推薦");
+            this.是否推薦.Name = "是否推薦";
+            this.是否推薦.ReadOnly = true;
+            this.是否推薦.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // optRepeatabilityScrew
+            // 更詳細資訊
             // 
-            resources.ApplyResources(this.optRepeatabilityScrew, "optRepeatabilityScrew");
-            this.optRepeatabilityScrew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.optRepeatabilityScrew.Name = "optRepeatabilityScrew";
-            this.optRepeatabilityScrew.TabStop = true;
-            this.optRepeatabilityScrew.UseVisualStyleBackColor = true;
+            this.更詳細資訊.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.更詳細資訊.FillWeight = 80F;
+            resources.ApplyResources(this.更詳細資訊, "更詳細資訊");
+            this.更詳細資訊.Name = "更詳細資訊";
+            this.更詳細資訊.ReadOnly = true;
+            this.更詳細資訊.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // FormMain
             // 
@@ -1999,6 +2030,12 @@
             this.explorerBarPanel2.ResumeLayout(false);
             this.explorerBarPanel2_content.ResumeLayout(false);
             this.explorerBarPanel2_content.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).EndInit();
             this.panelConfirmBtnsStep2.ResumeLayout(false);
             this.panelCalcBtns.ResumeLayout(false);
@@ -2031,12 +2068,6 @@
             this.explorerBarPanel5_content.ResumeLayout(false);
             this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.explorerBarPanel5_title.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2200,25 +2231,6 @@
         public CustomButton.CustomButton cmdConfirmStep4;
         public CustomButton.CustomButton cmdResetStep4;
         public CustomTabControl tabMain;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dgvRecommandColumnLock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnModel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnLead;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnLoad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnRpm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnVmax;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnAccelSpeed;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnStroke;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnRunTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnMomentA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnMomentB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnMomentC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnPower;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnTmax;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnTrms;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnServiceDistance;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRecommandColumnServiceLife;
-        private System.Windows.Forms.DataGridViewImageColumn dgvRecommandColumnIsRecommand;
-        private System.Windows.Forms.DataGridViewImageColumn dgvRecommandColumnDetail;
         public System.Windows.Forms.DataGridView dgvReducerInfo;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnModel;
         private System.Windows.Forms.DataGridViewComboBoxColumn columnReducerRatio;
@@ -2246,6 +2258,28 @@
         public System.Windows.Forms.RadioButton optMotorParamsModifySimple;
         public System.Windows.Forms.RadioButton optExpectServiceLife;
         public System.Windows.Forms.RadioButton optNoExpectServiceLife;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn 鎖定;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 項次;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 導程;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 荷重;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 最高轉速;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 運行速度;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 加速度;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 最大行程;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 運行時間;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 力矩A;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 力矩B;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 力矩C;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 力矩警示;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 馬達瓦數;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 皮帶馬達安全係數;
+        private System.Windows.Forms.DataGridViewTextBoxColumn T_max安全係數;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 皮帶T_max安全係數;
+        private System.Windows.Forms.DataGridViewTextBoxColumn T_Rms安全係數;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 運行距離;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 運行壽命;
+        private System.Windows.Forms.DataGridViewImageColumn 是否推薦;
+        private System.Windows.Forms.DataGridViewImageColumn 更詳細資訊;
     }
 }
 

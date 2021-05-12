@@ -65,10 +65,12 @@
     <Compile Include="Backend\Calculation.cs" />
     <Compile Include="Backend\CalculationBase.cs" />
     <Compile Include="Backend\CalculationModel.cs" />
-    <Compile Include="CalcMoment.cs" />
+    <Compile Include="CustomObjects\BeltWheel.cs" />
+    <Compile Include="CustomObjects\CalcMoment.cs" />
     <Compile Include="Condition.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="CustomExtensions.cs" />
+    <Compile Include="CustomObjects\SubBeltWheel.cs" />
     <Compile Include="en.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -110,7 +112,7 @@
     <Compile Include="Frontend\Step2\Repeatability.cs" />
     <Compile Include="Frontend\Step2\RunCondition.cs" />
     <Compile Include="Language.cs" />
-    <Compile Include="Model.cs" />
+    <Compile Include="CustomObjects\Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Frontend\SideTable.cs" />

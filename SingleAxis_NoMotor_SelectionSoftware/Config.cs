@@ -12,6 +12,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public static string STROKE_RPM_MAX_3600_FILENAME = "./PRX/StrokeRPM_Max3600.csv";
         public static string MOTOR_INFO_FILENAME = "./PRX/MotorInfo.csv";
         public static string REDUCER_INFO_FILENAME = "./PRX/ReducerInfo.csv";
+        public static string BELT_INFO_FILENAME = "./PRX/BeltInfo.csv";
 
         public static string[] SETUP_ENV_TXT = { "標準", "無塵" };
         public enum SetupEnv {

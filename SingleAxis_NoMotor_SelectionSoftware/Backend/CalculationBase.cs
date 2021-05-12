@@ -7,7 +7,7 @@ using StrokeTooShortConverterLibraries;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     class CalculationBase {
-        protected bool isCheckStrokeTooShort = false;  // 是否判斷行程過短  
+        protected bool isCheckStrokeTooShort = true;  // 是否判斷行程過短  
         protected Converter.ModifyItem strokeTooShortModifyItem = Converter.ModifyItem.Vmax;  // 行程過短修正項目      
 
         // 資料庫
@@ -15,7 +15,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public DataTable strokeRpm = FileUtil.ReadCsv(Config.STROKE_RPM_MAX_3000_FILENAME);
         public DataTable momentData = FileUtil.ReadCsv(Config.MOMENT_FILENAME);
         public DataTable motorInfo = FileUtil.ReadCsv(Config.MOTOR_INFO_FILENAME);
-        public DataTable reducerInfo = FileUtil.ReadCsv(Config.REDUCER_INFO_FILENAME);        
+        public DataTable reducerInfo = FileUtil.ReadCsv(Config.REDUCER_INFO_FILENAME);
+        public DataTable beltInfo = FileUtil.ReadCsv(Config.BELT_INFO_FILENAME);
+
+        // 套用新扭矩公式的型號
+        public string[] beltModels = { "ETB10", "ETB14M", "ETB17M", "ETB22M",
+                                        "ECB10", "ECB14", "ECB17", "ECB22", };
 
         protected List<Model> GetAllModels(Condition condition) {
             List<Model> models = new List<Model>();
@@ -49,7 +54,38 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
                 // 重複定位精度
                 model.repeatability = modelInfo.Rows.Cast<DataRow>().Where(con).Select(x => Convert.ToDouble(x["Repeatability"].ToString())).First();
+                model.modelType = (Model.ModelType)modelInfo.Rows.Cast<DataRow>().Where(con).Select(x => Convert.ToDouble(x["Type"].ToString())).First();
                 //model.modelType = model.repeatability <= 0.01 ? Model.ModelType.Screw : Model.ModelType.Belt;
+
+                // 皮帶資訊
+                if (beltModels.Any(m => model.name.StartsWith(m))) {
+                    con = con = x => x["Model"].ToString().Equals(model.name);
+                    var beltInfoRows = beltInfo.Rows.Cast<DataRow>().Where(con);
+                    // 主動輪
+                    model.mainWheel = new BeltWheel(
+                        beltInfoRows.Select(x => Convert.ToDouble(x["主動輪徑"].ToString())).First(),
+                        beltInfoRows.Select(x => Convert.ToDouble(x["主動輪寬"].ToString())).First()
+                    );
+                    // 從動輪1
+                    model.subWheel1 = new SubBeltWheel(
+                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪1輪徑"].ToString())).First(),
+                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪1輪寬"].ToString())).First()
+                    );
+                    // 從動輪2
+                    model.subWheel2 = new SubBeltWheel(
+                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪2輪徑"].ToString())).First(),
+                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪2輪寬"].ToString())).First()
+                    );
+                    // 從動輪3
+                    model.subWheel3 = new SubBeltWheel(
+                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪3輪徑"].ToString())).First(),
+                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪3輪寬"].ToString())).First()
+                    );
+                    // 負載慣量與力矩比
+                    model.loadInertiaMomentRatio = beltInfoRows.Select(x => Convert.ToDouble(x["負載慣量與力矩比"].ToString())).First();
+                    // 皮帶容許拉力
+                    model.beltAllowableTension = beltInfoRows.Select(x => Convert.ToDouble(x["皮帶容許拉力"].ToString())).First();
+                }
 
                 models.Add(model);
             }
@@ -206,12 +242,23 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         // 1分鐘最多可以跑多少趟
-        protected int GetMaxCountPerMinute(string model, double lead, Condition conditions) {
-            double _vMax;
-            if (conditions.reducerRatio.Keys.Contains(model))
-                _vMax = conditions.vMax > GetVmax_mms(model, lead, conditions.reducerRatio[model], conditions.stroke) ? GetVmax_ms(model, lead, conditions.reducerRatio[model], conditions.stroke) : conditions.vMax / 1000f; // 驗證最大Vmax
-            else
-                _vMax = conditions.vMax > GetVmax_mms(model, lead, 1, conditions.stroke) ? GetVmax_ms(model, lead, 1, conditions.stroke) : conditions.vMax / 1000f; // 驗證最大Vmax
+        protected int GetMaxCountPerMinute(Model model, Condition conditions) {
+            double _vMax = 0;
+            if (conditions.vMaxCalcMode == Condition.CalcVmax.Max) {
+                if (beltModels.Any(m => model.name.StartsWith(m))) {
+                    _vMax = GetBeltVmax(model.name, model.lead, 1, conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2);
+                } else {
+                    if (conditions.reducerRatio.Keys.Contains(model.name))
+                        _vMax = GetVmax_mms(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
+                    else
+                        _vMax = GetVmax_mms(model.name, model.lead, 1, conditions.stroke);
+                }
+            } else if (conditions.vMaxCalcMode == Condition.CalcVmax.Custom) {
+                if (conditions.reducerRatio.Keys.Contains(model.name))
+                    _vMax = conditions.vMax > GetVmax_mms(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke) ? GetVmax_ms(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke) : conditions.vMax; // 驗證最大Vmax
+                else
+                    _vMax = conditions.vMax > GetVmax_mms(model.name, model.lead, 1, conditions.stroke) ? GetVmax_ms(model.name, model.lead, 1, conditions.stroke) : conditions.vMax; // 驗證最大Vmax
+            }
 
             double _accelSpeed = (float)conditions.accelSpeed / 1000f;
 
@@ -241,6 +288,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             double maxTorque = motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => Convert.ToDouble(row["MaxTorque"].ToString())).First();
             double rotateInertia = motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => Convert.ToDouble(row["RotateInertia"].ToString())).First();
             return (ratedTorque, maxTorque, rotateInertia);
+        }
+
+        public bool IsContainsReducerRatio(string model) {
+            return reducerInfo.Rows.Cast<DataRow>().Any(row => row["Model"].ToString() == model);
+        }
+
+        // 皮帶Vmax(m/s)
+        public double GetBeltVmax(string model, double lead, int reducer, int stroke, BeltWheel mainWheel, SubBeltWheel subWheel1, SubBeltWheel subWheel2) {
+            // 依照行程取RPM
+            int rpm = GetRpmByStroke(model, lead, reducer, stroke);
+            double reducerRpmRatio = subWheel1.diameter / mainWheel.diameter;
+            double subWheelRpm = (int)(rpm / reducerRpmRatio);
+            double vMax_belt = Math.PI * subWheel2.diameter * (subWheelRpm / 60) / 1000;
+            return vMax_belt;
         }
     }
 }

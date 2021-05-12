@@ -24,27 +24,27 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             /// <summary>
             /// 軌道內嵌式螺桿滑台
             /// </summary>
-            BuiltIn_Linear_Motion_Guide_Ball_Screw_Actuator,
+            軌道內嵌式螺桿滑台,
             /// <summary>
             /// 軌道內嵌推桿式螺桿滑台
             /// </summary>
-            Rod_Type_BuiltIn_Linear_Motion_Guide_Ball_Screw_Actuator,
+            軌道內嵌推桿式螺桿滑台,
             /// <summary>
             /// 螺桿滑台
             /// </summary>
-            Standard_Ball_Screw_Actuator,
+            螺桿滑台,
             /// <summary>
             /// 推桿式螺桿滑台
             /// </summary>
-            Rod_Type_Actuator,
+            推桿式螺桿滑台,
             /// <summary>
             /// 皮帶滑台
             /// </summary>
-            Standard_Belt_Actuator,
+            皮帶滑台,
             /// <summary>
             /// 歐規皮帶滑台
             /// </summary>
-            Europe_Type_Belt_Actuator,
+            歐規皮帶滑台,
         }
         public enum UseEnvironment { Standard, DustFree }
 
@@ -72,7 +72,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <summary>
         /// 傳動方式
         /// </summary>
-        public ModelType modelType = ModelType.Standard_Ball_Screw_Actuator;
+        public ModelType modelType = ModelType.螺桿滑台;
 
         /// <summary>
         /// 滑軌預估壽命(km)
@@ -182,6 +182,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// 荷重資訊 C(mm)
         /// </summary>
         public int moment_C;
+        /// <summary>
+        /// 力矩警示驗證
+        /// </summary>
+        public bool isMomentVerifySuccess;
         #endregion
 
         /// <summary>
@@ -304,6 +308,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// T_max安全係數標準(大於等於)
         /// </summary>
         public const float tMaxStandard = 1.3f;
+        /// <summary>
+        /// 皮帶馬達T_max安全係數標準(大於等於)
+        /// </summary>
+        public const float tMaxStandard_beltMotor = 2.1f;
 
         /// <summary>
         /// T_Rms
@@ -321,6 +329,34 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// T_Rms安全係數標準(大於)
         /// </summary>
         public const float tRmsStandard = 4f;
+        /// <summary>
+        /// 皮帶T_max
+        /// </summary>
+        public double belt_tMax;
+        /// <summary>
+        /// 皮帶安全係數
+        /// </summary>
+        public double beltSafeCoefficient = -1;
+        /// <summary>
+        /// 皮帶扭矩安全係數標準
+        /// </summary>
+        public const double tMaxStandard_belt = 1.1;
+        /// <summary>
+        /// 皮帶T_Max扭矩確認
+        /// </summary>
+        public bool is_belt_tMax_OK;
+        /// <summary>
+        /// 皮帶馬達安全係數
+        /// </summary>
+        public double beltMotorSafeCoefficient = -1;
+        /// <summary>
+        /// 皮帶馬達安全係數標準
+        /// </summary>
+        public static double beltMotorStandard = -1;
+        /// <summary>
+        /// 馬達是否適用
+        /// </summary>
+        public bool isMotorOK;
 
 
         #region 馬達能力預估-轉動慣量
@@ -350,6 +386,61 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public double rotateInertia_total;
         #endregion
 
+        #region 馬達能力預估-轉動慣量 (皮帶)
+        /// <summary>
+        /// 負載移動時的等效慣性矩(對馬達)
+        /// </summary>
+        public double rotateInertia_loadMoving_motor;
+        /// <summary>
+        /// 負載移動時的等效慣性矩(相對於從動輪)
+        /// </summary>
+        public double rotateInertia_loadMoving_subWheel;
+        /// <summary>
+        /// 負載物的等效轉動慣量(ETB, ECB用)
+        /// </summary>
+        public double rotateInertia_load;
+        /// <summary>
+        /// 皮帶轉動慣量(ETB, ECB用)
+        /// </summary>
+        public double rotateInertia_belt;
+        /// <summary>
+        /// 皮帶重量(kg)
+        /// </summary>
+        public double beltLoad;
+        /// <summary>
+        /// 減速機轉速比
+        /// </summary>
+        public double reducerRpmRatio;
+        /// <summary>
+        /// 負載慣量與力矩比
+        /// </summary>
+        public double loadInertiaMomentRatio;
+        /// <summary>
+        /// 主動輪(馬達)轉速
+        /// </summary>
+        public int mainWheelRpm;
+        /// <summary>
+        /// 從動輪(減速機)轉速
+        /// </summary>
+        public int subWheelRpm;
+        /// <summary>
+        /// 主動輪
+        /// </summary>
+        public BeltWheel mainWheel;
+        /// <summary>
+        /// 從動輪1
+        /// </summary>
+        public SubBeltWheel subWheel1;
+        /// <summary>
+        /// 從動輪2
+        /// </summary>
+        public SubBeltWheel subWheel2;
+        /// <summary>
+        /// 從動輪3
+        /// </summary>
+        public SubBeltWheel subWheel3;
+        #endregion
+
         #region 各階段軸向外力
         /// <summary>
         /// 加速區 滾動摩擦
@@ -359,6 +450,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// 加速區 配件摩擦
         /// </summary>
         public double accessoriesFriction_accel = 12;
+        /// <summary>
+        /// 加速區 配件摩擦(皮帶)
+        /// </summary>
+        public double accessoriesFriction_belt_accel = 1.2f;
         /// <summary>
         /// 加速區 其他外力
         /// </summary>
@@ -377,6 +472,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// </summary>
         public double accessoriesFriction_constant = 12;
         /// <summary>
+        /// 等速區 配件摩擦(皮帶)
+        /// </summary>
+        public double accessoriesFriction_belt_constant = 1.2f;
+        /// <summary>
         /// 等速區 其他外力
         /// </summary>
         public double otherForce_constant = 0;
@@ -394,6 +493,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// </summary>
         public double accessoriesFriction_decel = 12;
         /// <summary>
+        /// 減速區 配件摩擦(皮帶)
+        /// </summary>
+        public double accessoriesFriction_belt_decel = 1.2f;
+        /// <summary>
         /// 減速區 其他外力
         /// </summary>
         public double otherForce_decel = 0;
@@ -410,6 +513,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// 停置區 配件摩擦
         /// </summary>
         public double accessoriesFriction_stop = 0;
+        /// <summary>
+        /// 停置區 配件摩擦(皮帶)
+        /// </summary>
+        public double accessoriesFriction_belt_stop = 0;
         /// <summary>
         /// 停置區 其他外力
         /// </summary>
@@ -474,5 +581,31 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public double torqueTotal_stop;
         #endregion
 
+        #region 皮帶評估
+        /// <summary>
+        /// 皮帶-加速扭矩
+        /// </summary>
+        public double beltTorque_accel;
+        /// <summary>
+        /// 皮帶-等速扭矩
+        /// </summary>
+        public double beltTorque_constant;
+        /// <summary>
+        /// 皮帶-減速扭矩
+        /// </summary>
+        public double beltTorque_decel;
+        /// <summary>
+        /// 皮帶-停置扭矩
+        /// </summary>
+        public double beltTorque_stop;
+        /// <summary>
+        /// 皮帶容許拉力
+        /// </summary>
+        public double beltAllowableTension;
+        /// <summary>
+        /// 皮帶承受力
+        /// </summary>
+        public double beltEndurance;
+        #endregion
     }
 }

@@ -676,7 +676,7 @@
     <value>6</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1380, 129</value>
+    <value>1022, 129</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -1381,10 +1381,10 @@
     <value>271</value>
   </data>
   <data name="txtAccelSpeed.Text" xml:space="preserve">
-    <value>0.1~3</value>
+    <value>500</value>
   </data>
   <data name="txtAccelSpeed.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;txtAccelSpeed.Name" xml:space="preserve">
     <value>txtAccelSpeed</value>
@@ -1546,10 +1546,10 @@
     <value>265</value>
   </data>
   <data name="txtMaxSpeed.Text" xml:space="preserve">
-    <value>0.1~3</value>
+    <value>100</value>
   </data>
   <data name="txtMaxSpeed.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;txtMaxSpeed.Name" xml:space="preserve">
     <value>txtMaxSpeed</value>
@@ -1666,10 +1666,10 @@
     <value>257</value>
   </data>
   <data name="txtExpectServiceLifeTime.Text" xml:space="preserve">
-    <value>0.1~3</value>
+    <value>10</value>
   </data>
   <data name="txtExpectServiceLifeTime.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;txtExpectServiceLifeTime.Name" xml:space="preserve">
     <value>txtExpectServiceLifeTime</value>
@@ -1739,6 +1739,9 @@
   </data>
   <data name="optNoExpectServiceLife.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optNoExpectServiceLife.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="optNoExpectServiceLife.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 11</value>
@@ -1974,199 +1977,271 @@
   <data name="dgvRecommandList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <metadata name="dgvRecommandColumnLock.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="鎖定.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnLock.HeaderText" xml:space="preserve">
+  <data name="鎖定.HeaderText" xml:space="preserve">
     <value>鎖定</value>
   </data>
-  <data name="dgvRecommandColumnLock.MinimumWidth" type="System.Int32, mscorlib">
+  <data name="鎖定.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <metadata name="dgvRecommandColumnModel.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="鎖定.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="項次.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnModel.HeaderText" xml:space="preserve">
+  <data name="項次.HeaderText" xml:space="preserve">
     <value>項次</value>
   </data>
-  <data name="dgvRecommandColumnModel.MinimumWidth" type="System.Int32, mscorlib">
+  <data name="項次.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <data name="dgvRecommandColumnModel.Width" type="System.Int32, mscorlib">
+  <data name="項次.Width" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <metadata name="dgvRecommandColumnLead.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="導程.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnLead.HeaderText" xml:space="preserve">
+  <data name="導程.HeaderText" xml:space="preserve">
     <value>導程</value>
   </data>
-  <data name="dgvRecommandColumnLead.MinimumWidth" type="System.Int32, mscorlib">
+  <data name="導程.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <metadata name="dgvRecommandColumnLoad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="導程.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="荷重.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnLoad.HeaderText" xml:space="preserve">
+  <data name="荷重.HeaderText" xml:space="preserve">
     <value>荷重</value>
   </data>
-  <data name="dgvRecommandColumnLoad.MinimumWidth" type="System.Int32, mscorlib">
+  <data name="荷重.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <metadata name="dgvRecommandColumnRpm.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="荷重.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="最高轉速.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnRpm.HeaderText" xml:space="preserve">
+  <data name="最高轉速.HeaderText" xml:space="preserve">
     <value>最高轉速</value>
   </data>
-  <data name="dgvRecommandColumnRpm.MinimumWidth" type="System.Int32, mscorlib">
+  <data name="最高轉速.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <data name="dgvRecommandColumnRpm.Width" type="System.Int32, mscorlib">
-    <value>54</value>
+  <data name="最高轉速.Width" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
-  <metadata name="dgvRecommandColumnVmax.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="運行速度.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnVmax.HeaderText" xml:space="preserve">
+  <data name="運行速度.HeaderText" xml:space="preserve">
     <value>運行速度</value>
   </data>
-  <data name="dgvRecommandColumnVmax.MinimumWidth" type="System.Int32, mscorlib">
+  <data name="運行速度.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <metadata name="dgvRecommandColumnAccelSpeed.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="運行速度.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="加速度.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnAccelSpeed.HeaderText" xml:space="preserve">
+  <data name="加速度.HeaderText" xml:space="preserve">
     <value>加速度</value>
   </data>
-  <data name="dgvRecommandColumnAccelSpeed.MinimumWidth" type="System.Int32, mscorlib">
-    <value>80</value>
+  <data name="加速度.MinimumWidth" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
-  <metadata name="dgvRecommandColumnStroke.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="加速度.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="最大行程.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnStroke.HeaderText" xml:space="preserve">
+  <data name="最大行程.HeaderText" xml:space="preserve">
     <value>最大行程</value>
   </data>
-  <data name="dgvRecommandColumnStroke.MinimumWidth" type="System.Int32, mscorlib">
+  <data name="最大行程.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <data name="dgvRecommandColumnStroke.Width" type="System.Int32, mscorlib">
-    <value>54</value>
+  <data name="最大行程.Width" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
-  <metadata name="dgvRecommandColumnRunTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="運行時間.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnRunTime.HeaderText" xml:space="preserve">
+  <data name="運行時間.HeaderText" xml:space="preserve">
     <value>運行時間</value>
   </data>
-  <data name="dgvRecommandColumnRunTime.MinimumWidth" type="System.Int32, mscorlib">
+  <data name="運行時間.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <data name="dgvRecommandColumnRunTime.Width" type="System.Int32, mscorlib">
-    <value>54</value>
+  <data name="運行時間.Width" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
-  <metadata name="dgvRecommandColumnMomentA.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="力矩A.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnMomentA.HeaderText" xml:space="preserve">
+  <data name="力矩A.HeaderText" xml:space="preserve">
     <value>力矩A</value>
   </data>
-  <data name="dgvRecommandColumnMomentA.MinimumWidth" type="System.Int32, mscorlib">
-    <value>80</value>
+  <data name="力矩A.MinimumWidth" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
-  <metadata name="dgvRecommandColumnMomentB.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="力矩A.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="力矩B.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnMomentB.HeaderText" xml:space="preserve">
+  <data name="力矩B.HeaderText" xml:space="preserve">
     <value>力矩B</value>
   </data>
-  <data name="dgvRecommandColumnMomentB.MinimumWidth" type="System.Int32, mscorlib">
-    <value>80</value>
+  <data name="力矩B.MinimumWidth" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
-  <metadata name="dgvRecommandColumnMomentC.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="力矩B.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="力矩C.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnMomentC.HeaderText" xml:space="preserve">
+  <data name="力矩C.HeaderText" xml:space="preserve">
     <value>力矩C</value>
   </data>
-  <data name="dgvRecommandColumnMomentC.MinimumWidth" type="System.Int32, mscorlib">
-    <value>80</value>
+  <data name="力矩C.MinimumWidth" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
-  <metadata name="dgvRecommandColumnPower.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="力矩C.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="力矩警示.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnPower.HeaderText" xml:space="preserve">
+  <data name="力矩警示.HeaderText" xml:space="preserve">
+    <value>力矩警示</value>
+  </data>
+  <data name="力矩警示.MinimumWidth" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="力矩警示.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="馬達瓦數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="馬達瓦數.HeaderText" xml:space="preserve">
     <value>馬達瓦數</value>
   </data>
-  <data name="dgvRecommandColumnPower.MinimumWidth" type="System.Int32, mscorlib">
+  <data name="馬達瓦數.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <metadata name="dgvRecommandColumnTmax.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="馬達瓦數.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="皮帶馬達安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnTmax.HeaderText" xml:space="preserve">
+  <data name="皮帶馬達安全係數.HeaderText" xml:space="preserve">
+    <value>皮帶馬達安全係數</value>
+  </data>
+  <data name="皮帶馬達安全係數.MinimumWidth" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="皮帶馬達安全係數.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="T_max安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="T_max安全係數.HeaderText" xml:space="preserve">
     <value>T_max安全係數</value>
   </data>
-  <data name="dgvRecommandColumnTmax.MinimumWidth" type="System.Int32, mscorlib">
-    <value>130</value>
+  <data name="T_max安全係數.MinimumWidth" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
-  <metadata name="dgvRecommandColumnTrms.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="T_max安全係數.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="皮帶T_max安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnTrms.HeaderText" xml:space="preserve">
+  <data name="皮帶T_max安全係數.HeaderText" xml:space="preserve">
+    <value>皮帶T_max安全係數</value>
+  </data>
+  <data name="皮帶T_max安全係數.MinimumWidth" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="皮帶T_max安全係數.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="T_Rms安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="T_Rms安全係數.HeaderText" xml:space="preserve">
     <value>T_Rms安全係數</value>
   </data>
-  <data name="dgvRecommandColumnTrms.MinimumWidth" type="System.Int32, mscorlib">
-    <value>130</value>
+  <data name="T_Rms安全係數.MinimumWidth" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
-  <metadata name="dgvRecommandColumnServiceDistance.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="T_Rms安全係數.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="T_Rms安全係數.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="運行距離.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnServiceDistance.HeaderText" xml:space="preserve">
+  <data name="運行距離.HeaderText" xml:space="preserve">
     <value>運行距離</value>
   </data>
-  <data name="dgvRecommandColumnServiceDistance.MinimumWidth" type="System.Int32, mscorlib">
+  <data name="運行距離.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <data name="dgvRecommandColumnServiceDistance.Width" type="System.Int32, mscorlib">
-    <value>54</value>
+  <data name="運行距離.Width" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
-  <metadata name="dgvRecommandColumnServiceLife.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="運行壽命.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnServiceLife.HeaderText" xml:space="preserve">
+  <data name="運行壽命.HeaderText" xml:space="preserve">
     <value>運行壽命</value>
   </data>
-  <data name="dgvRecommandColumnServiceLife.MinimumWidth" type="System.Int32, mscorlib">
+  <data name="運行壽命.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <data name="dgvRecommandColumnServiceLife.Width" type="System.Int32, mscorlib">
-    <value>54</value>
+  <data name="運行壽命.Width" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
-  <metadata name="dgvRecommandColumnIsRecommand.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="是否推薦.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnIsRecommand.HeaderText" xml:space="preserve">
+  <data name="是否推薦.HeaderText" xml:space="preserve">
     <value>是否推薦</value>
   </data>
-  <data name="dgvRecommandColumnIsRecommand.MinimumWidth" type="System.Int32, mscorlib">
+  <data name="是否推薦.MinimumWidth" type="System.Int32, mscorlib">
     <value>55</value>
   </data>
-  <data name="dgvRecommandColumnIsRecommand.Width" type="System.Int32, mscorlib">
+  <data name="是否推薦.Width" type="System.Int32, mscorlib">
     <value>55</value>
   </data>
-  <metadata name="dgvRecommandColumnDetail.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="更詳細資訊.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvRecommandColumnDetail.HeaderText" xml:space="preserve">
+  <data name="更詳細資訊.HeaderText" xml:space="preserve">
     <value>更詳細資訊</value>
   </data>
-  <data name="dgvRecommandColumnDetail.MinimumWidth" type="System.Int32, mscorlib">
+  <data name="更詳細資訊.MinimumWidth" type="System.Int32, mscorlib">
     <value>106</value>
   </data>
-  <data name="dgvRecommandColumnDetail.Width" type="System.Int32, mscorlib">
+  <data name="更詳細資訊.Width" type="System.Int32, mscorlib">
     <value>106</value>
   </data>
   <data name="dgvRecommandList.Location" type="System.Drawing.Point, System.Drawing">
@@ -2443,10 +2518,10 @@
     <value>227</value>
   </data>
   <data name="txtRotateInertia.Text" xml:space="preserve">
-    <value>0.1~3</value>
+    <value>0.286</value>
   </data>
   <data name="txtRotateInertia.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;txtRotateInertia.Name" xml:space="preserve">
     <value>txtRotateInertia</value>
@@ -2473,10 +2548,10 @@
     <value>223</value>
   </data>
   <data name="txtMaxTorque.Text" xml:space="preserve">
-    <value>0.1~3</value>
+    <value>0.00000061</value>
   </data>
   <data name="txtMaxTorque.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;txtMaxTorque.Name" xml:space="preserve">
     <value>txtMaxTorque</value>
@@ -2503,10 +2578,10 @@
     <value>219</value>
   </data>
   <data name="txtRatedTorque.Text" xml:space="preserve">
-    <value>0.1~3</value>
+    <value>0.095</value>
   </data>
   <data name="txtRatedTorque.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;txtRatedTorque.Name" xml:space="preserve">
     <value>txtRatedTorque</value>
@@ -3156,6 +3231,9 @@
   <data name="txtStroke.TabIndex" type="System.Int32, mscorlib">
     <value>197</value>
   </data>
+  <data name="txtStroke.Text" xml:space="preserve">
+    <value>70</value>
+  </data>
   <data name="txtStroke.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -3220,10 +3298,10 @@
     <value>156</value>
   </data>
   <data name="txtRunTime.Text" xml:space="preserve">
-    <value>單趟時間</value>
+    <value>5</value>
   </data>
   <data name="txtRunTime.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;txtRunTime.Name" xml:space="preserve">
     <value>txtRunTime</value>
@@ -3664,10 +3742,10 @@
     <value>207</value>
   </data>
   <data name="txtMomentA.Text" xml:space="preserve">
-    <value>0.1~3</value>
+    <value>100</value>
   </data>
   <data name="txtMomentA.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;txtMomentA.Name" xml:space="preserve">
     <value>txtMomentA</value>
@@ -3832,10 +3910,10 @@
     <value>211</value>
   </data>
   <data name="txtMomentC.Text" xml:space="preserve">
-    <value>0.1~3</value>
+    <value>0</value>
   </data>
   <data name="txtMomentC.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;txtMomentC.Name" xml:space="preserve">
     <value>txtMomentC</value>
@@ -4066,10 +4144,10 @@
     <value>215</value>
   </data>
   <data name="txtMomentB.Text" xml:space="preserve">
-    <value>0.1~3</value>
+    <value>0</value>
   </data>
   <data name="txtMomentB.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;txtMomentB.Name" xml:space="preserve">
     <value>txtMomentB</value>
@@ -4132,10 +4210,10 @@
     <value>223</value>
   </data>
   <data name="txtDayPerYear.Text" xml:space="preserve">
-    <value>0.1~3</value>
+    <value>240</value>
   </data>
   <data name="txtDayPerYear.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;txtDayPerYear.Name" xml:space="preserve">
     <value>txtDayPerYear</value>
@@ -4263,6 +4341,9 @@
   <data name="txtLoad.TabIndex" type="System.Int32, mscorlib">
     <value>193</value>
   </data>
+  <data name="txtLoad.Text" xml:space="preserve">
+    <value>12</value>
+  </data>
   <data name="txtLoad.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -4291,10 +4372,10 @@
     <value>219</value>
   </data>
   <data name="txtTimesPerMinute.Text" xml:space="preserve">
-    <value>0.1~3</value>
+    <value>1</value>
   </data>
   <data name="txtTimesPerMinute.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;txtTimesPerMinute.Name" xml:space="preserve">
     <value>txtTimesPerMinute</value>
@@ -4390,10 +4471,10 @@
     <value>227</value>
   </data>
   <data name="txtHourPerDay.Text" xml:space="preserve">
-    <value>0.1~3</value>
+    <value>8</value>
   </data>
   <data name="txtHourPerDay.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;txtHourPerDay.Name" xml:space="preserve">
     <value>txtHourPerDay</value>
@@ -5931,118 +6012,136 @@
   <data name="&gt;&gt;columnReducerRatio.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewComboBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnLock.Name" xml:space="preserve">
-    <value>dgvRecommandColumnLock</value>
+  <data name="&gt;&gt;鎖定.Name" xml:space="preserve">
+    <value>鎖定</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnLock.Type" xml:space="preserve">
+  <data name="&gt;&gt;鎖定.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnModel.Name" xml:space="preserve">
-    <value>dgvRecommandColumnModel</value>
+  <data name="&gt;&gt;項次.Name" xml:space="preserve">
+    <value>項次</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnModel.Type" xml:space="preserve">
+  <data name="&gt;&gt;項次.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnLead.Name" xml:space="preserve">
-    <value>dgvRecommandColumnLead</value>
+  <data name="&gt;&gt;導程.Name" xml:space="preserve">
+    <value>導程</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnLead.Type" xml:space="preserve">
+  <data name="&gt;&gt;導程.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnLoad.Name" xml:space="preserve">
-    <value>dgvRecommandColumnLoad</value>
+  <data name="&gt;&gt;荷重.Name" xml:space="preserve">
+    <value>荷重</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnLoad.Type" xml:space="preserve">
+  <data name="&gt;&gt;荷重.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnRpm.Name" xml:space="preserve">
-    <value>dgvRecommandColumnRpm</value>
+  <data name="&gt;&gt;最高轉速.Name" xml:space="preserve">
+    <value>最高轉速</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnRpm.Type" xml:space="preserve">
+  <data name="&gt;&gt;最高轉速.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnVmax.Name" xml:space="preserve">
-    <value>dgvRecommandColumnVmax</value>
+  <data name="&gt;&gt;運行速度.Name" xml:space="preserve">
+    <value>運行速度</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnVmax.Type" xml:space="preserve">
+  <data name="&gt;&gt;運行速度.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnAccelSpeed.Name" xml:space="preserve">
-    <value>dgvRecommandColumnAccelSpeed</value>
+  <data name="&gt;&gt;加速度.Name" xml:space="preserve">
+    <value>加速度</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnAccelSpeed.Type" xml:space="preserve">
+  <data name="&gt;&gt;加速度.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnStroke.Name" xml:space="preserve">
-    <value>dgvRecommandColumnStroke</value>
+  <data name="&gt;&gt;最大行程.Name" xml:space="preserve">
+    <value>最大行程</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnStroke.Type" xml:space="preserve">
+  <data name="&gt;&gt;最大行程.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnRunTime.Name" xml:space="preserve">
-    <value>dgvRecommandColumnRunTime</value>
+  <data name="&gt;&gt;運行時間.Name" xml:space="preserve">
+    <value>運行時間</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnRunTime.Type" xml:space="preserve">
+  <data name="&gt;&gt;運行時間.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnMomentA.Name" xml:space="preserve">
-    <value>dgvRecommandColumnMomentA</value>
+  <data name="&gt;&gt;力矩A.Name" xml:space="preserve">
+    <value>力矩A</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnMomentA.Type" xml:space="preserve">
+  <data name="&gt;&gt;力矩A.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnMomentB.Name" xml:space="preserve">
-    <value>dgvRecommandColumnMomentB</value>
+  <data name="&gt;&gt;力矩B.Name" xml:space="preserve">
+    <value>力矩B</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnMomentB.Type" xml:space="preserve">
+  <data name="&gt;&gt;力矩B.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnMomentC.Name" xml:space="preserve">
-    <value>dgvRecommandColumnMomentC</value>
+  <data name="&gt;&gt;力矩C.Name" xml:space="preserve">
+    <value>力矩C</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnMomentC.Type" xml:space="preserve">
+  <data name="&gt;&gt;力矩C.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnPower.Name" xml:space="preserve">
-    <value>dgvRecommandColumnPower</value>
+  <data name="&gt;&gt;力矩警示.Name" xml:space="preserve">
+    <value>力矩警示</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnPower.Type" xml:space="preserve">
+  <data name="&gt;&gt;力矩警示.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnTmax.Name" xml:space="preserve">
-    <value>dgvRecommandColumnTmax</value>
+  <data name="&gt;&gt;馬達瓦數.Name" xml:space="preserve">
+    <value>馬達瓦數</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnTmax.Type" xml:space="preserve">
+  <data name="&gt;&gt;馬達瓦數.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnTrms.Name" xml:space="preserve">
-    <value>dgvRecommandColumnTrms</value>
+  <data name="&gt;&gt;皮帶馬達安全係數.Name" xml:space="preserve">
+    <value>皮帶馬達安全係數</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnTrms.Type" xml:space="preserve">
+  <data name="&gt;&gt;皮帶馬達安全係數.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnServiceDistance.Name" xml:space="preserve">
-    <value>dgvRecommandColumnServiceDistance</value>
+  <data name="&gt;&gt;T_max安全係數.Name" xml:space="preserve">
+    <value>T_max安全係數</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnServiceDistance.Type" xml:space="preserve">
+  <data name="&gt;&gt;T_max安全係數.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnServiceLife.Name" xml:space="preserve">
-    <value>dgvRecommandColumnServiceLife</value>
+  <data name="&gt;&gt;皮帶T_max安全係數.Name" xml:space="preserve">
+    <value>皮帶T_max安全係數</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnServiceLife.Type" xml:space="preserve">
+  <data name="&gt;&gt;皮帶T_max安全係數.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnIsRecommand.Name" xml:space="preserve">
-    <value>dgvRecommandColumnIsRecommand</value>
+  <data name="&gt;&gt;T_Rms安全係數.Name" xml:space="preserve">
+    <value>T_Rms安全係數</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnIsRecommand.Type" xml:space="preserve">
+  <data name="&gt;&gt;T_Rms安全係數.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;運行距離.Name" xml:space="preserve">
+    <value>運行距離</value>
+  </data>
+  <data name="&gt;&gt;運行距離.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;運行壽命.Name" xml:space="preserve">
+    <value>運行壽命</value>
+  </data>
+  <data name="&gt;&gt;運行壽命.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;是否推薦.Name" xml:space="preserve">
+    <value>是否推薦</value>
+  </data>
+  <data name="&gt;&gt;是否推薦.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnDetail.Name" xml:space="preserve">
-    <value>dgvRecommandColumnDetail</value>
+  <data name="&gt;&gt;更詳細資訊.Name" xml:space="preserve">
+    <value>更詳細資訊</value>
   </data>
-  <data name="&gt;&gt;dgvRecommandColumnDetail.Type" xml:space="preserve">
+  <data name="&gt;&gt;更詳細資訊.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
