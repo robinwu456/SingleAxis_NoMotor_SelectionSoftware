@@ -29,6 +29,23 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
         }
 
+        // 選項值修正時，後面Step頁籤收起
+        public void ValueChanged(object sender, EventArgs e) {
+            // 取該Control所在的頁籤
+            ExplorerBarPanel GetExplorerBarOfControl(Control control) {
+                if (control.Parent.Name.StartsWith("explorerBarPanel"))
+                    return explorerBarPanel.First(p => p.name == control.Parent.Parent.Name);
+                else
+                    return GetExplorerBarOfControl(control.Parent);
+            }
+
+            ExplorerBarPanel controlsExplorerBar = GetExplorerBarOfControl(sender as Control);
+            // 收起該頁籤以後的頁籤
+            var collapsePanels = explorerBarPanel.Where(p => p.index > controlsExplorerBar.index).ToList();
+            collapsePanels.ForEach(p => p.isCollapse = true);
+            formMain.curStep = (FormMain.Step)controlsExplorerBar.index - 1;
+        }
+
         private void SearchExplorerBarPanel() {
             // 用名稱搜尋explorer bar panel
             foreach (Control control in explorerBar.Controls)

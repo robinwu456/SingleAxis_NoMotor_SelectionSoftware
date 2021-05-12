@@ -29,6 +29,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             ToyoBorder toyoBorder = new ToyoBorder(this);
             // 一頁式頁籤
             _explorerBar = new ExplorerBar(this);
+            foreach (Control c in Controls.All()) {
+                if (c is RadioButton)
+                    ((RadioButton)c).CheckedChanged += _explorerBar.ValueChanged;
+                else if (c is ComboBox)
+                    ((ComboBox)c).SelectedValueChanged += _explorerBar.ValueChanged;
+                else if (c is TextBox)
+                    ((TextBox)c).TextChanged += _explorerBar.ValueChanged;
+            }
+
             // 測邊欄
             sideTable = new SideTable(this);
             // Step

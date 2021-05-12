@@ -363,6 +363,9 @@
   <data name="explorerBar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <metadata name="panelSideTable.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="panelSideTable.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -676,7 +679,7 @@
     <value>6</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1022, 129</value>
+    <value>1403, 175</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -1987,7 +1990,7 @@
     <value>50</value>
   </data>
   <data name="鎖定.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="項次.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1999,7 +2002,7 @@
     <value>50</value>
   </data>
   <data name="項次.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="導程.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2011,7 +2014,7 @@
     <value>50</value>
   </data>
   <data name="導程.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="荷重.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2023,7 +2026,7 @@
     <value>50</value>
   </data>
   <data name="荷重.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="最高轉速.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2035,7 +2038,7 @@
     <value>50</value>
   </data>
   <data name="最高轉速.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="運行速度.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2047,7 +2050,7 @@
     <value>50</value>
   </data>
   <data name="運行速度.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="加速度.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2059,7 +2062,7 @@
     <value>50</value>
   </data>
   <data name="加速度.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="最大行程.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2071,7 +2074,7 @@
     <value>50</value>
   </data>
   <data name="最大行程.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="運行時間.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2083,7 +2086,7 @@
     <value>50</value>
   </data>
   <data name="運行時間.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="力矩A.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2095,7 +2098,7 @@
     <value>50</value>
   </data>
   <data name="力矩A.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="力矩B.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2107,7 +2110,7 @@
     <value>50</value>
   </data>
   <data name="力矩B.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="力矩C.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2119,7 +2122,7 @@
     <value>50</value>
   </data>
   <data name="力矩C.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="力矩警示.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2131,7 +2134,7 @@
     <value>50</value>
   </data>
   <data name="力矩警示.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="馬達瓦數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2143,7 +2146,7 @@
     <value>50</value>
   </data>
   <data name="馬達瓦數.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="皮帶馬達安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2155,7 +2158,7 @@
     <value>50</value>
   </data>
   <data name="皮帶馬達安全係數.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="T_max安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2167,7 +2170,7 @@
     <value>50</value>
   </data>
   <data name="T_max安全係數.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="皮帶T_max安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2179,7 +2182,7 @@
     <value>50</value>
   </data>
   <data name="皮帶T_max安全係數.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="T_Rms安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2206,7 +2209,7 @@
     <value>50</value>
   </data>
   <data name="運行距離.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="運行壽命.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2218,7 +2221,7 @@
     <value>50</value>
   </data>
   <data name="運行壽命.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="是否推薦.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2242,7 +2245,7 @@
     <value>106</value>
   </data>
   <data name="更詳細資訊.Width" type="System.Int32, mscorlib">
-    <value>106</value>
+    <value>68</value>
   </data>
   <data name="dgvRecommandList.Location" type="System.Drawing.Point, System.Drawing">
     <value>54, 818</value>
