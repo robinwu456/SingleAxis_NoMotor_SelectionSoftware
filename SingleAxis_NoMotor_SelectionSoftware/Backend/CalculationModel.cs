@@ -6,7 +6,7 @@ using StrokeTooShortConverterLibraries;
 using System.Data;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
-    class CalculationModel : CalculationBase {        
+    public class CalculationModel : CalculationBase {        
 
         // 滑軌壽命計算
         protected long GetSlideTrackEstimatedLife(Model model, Condition condition) {

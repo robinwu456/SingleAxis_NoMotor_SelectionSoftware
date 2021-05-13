@@ -10,7 +10,7 @@ using System.Data;
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Step2 {
         private FormMain formMain;
-        private Calculation calc = new Calculation();
+        public Calculation calc = new Calculation();
 
         public int minHeight = 787;
         private int maxHeight = 1300;
@@ -29,10 +29,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             { "皮帶T_max安全係數", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_beltMotor },
             { "力矩警示", model => model.isMomentVerifySuccess },
         };
+        public MotorPower motorPower;
 
         public Step2(FormMain formMain) {
             this.formMain = formMain;
             InitEvents();
+
+            // 馬達條件
+            motorPower = new MotorPower(formMain);
 
             // 減速比
             calc.reducerInfo.Rows.Cast<DataRow>().ToList().ForEach(row => {
@@ -49,23 +53,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void Load() {
-            //// 減速比
-            //calc.reducerInfo.Rows.Cast<DataRow>().ToList().ForEach(row => {
-            //    DataGridViewRow newRow = new DataGridViewRow();
-            //    DataGridViewTextBoxCell txtCell = new DataGridViewTextBoxCell();
-            //    DataGridViewComboBoxCell cboCell = new DataGridViewComboBoxCell();
-            //    txtCell.Value = row["Model"].ToString();
-            //    cboCell.DataSource = row["ReducerRatio"].ToString().Split('、');
-            //    cboCell.Value = row["ReducerRatio"].ToString().Split('、')[0];
-            //    newRow.Cells.Add(txtCell);
-            //    newRow.Cells.Add(cboCell);
-            //    formMain.dgvReducerInfo.Rows.Add(newRow);
-            //});
-
-            
+            // 馬達選項更新
+            motorPower.UpdateMotorCalcMode();
+            motorPower.Load();
         }
 
         public void UpdateCondition(object sender, EventArgs e) {
+            if (formMain.curStep != FormMain.Step.Step2)
+                return;
+
             // 使用環境
             if (formMain.optStandardEnv.Checked)
                 curCondition.useEnvironment = Model.UseEnvironment.Standard;
@@ -239,11 +235,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void CmdCalc_Click(object sender, EventArgs e) {
             // 版面修正
-            formMain.explorerBarPanel2.Size = new Size(formMain.explorerBarPanel2.Size.Width, maxHeight);
-            formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep2);            
-
-            //// 條件
-            //UpdateCondition();
+            if (formMain.optCalcAllModel.Checked) {
+                formMain.explorerBarPanel2.Size = new Size(formMain.explorerBarPanel2.Size.Width, maxHeight);
+                formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep2);
+            }
+            formMain.dgvCalcSelectedModel.Visible = formMain.optCalcSelectedModel.Checked;
 
             threadCalc = new Thread(() => {
                 Thread.Sleep(100);
@@ -257,8 +253,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 // 是否跳出Alarm
                 bool isAlarm = (bool)result["Alarm"];
 
+                if (curRecommandList.Count == 0) {
+                    MessageBox.Show("此使用條件無法計算，請嘗試調整使用條件。");
+                    return;
+                }
+
                 // 表單顯示
-                DisplayRecommandList();
+                if (formMain.optCalcAllModel.Checked)
+                    DisplayRecommandList();
+                else
+                    DisplaySelectedModel();
             });
             threadCalc.Start();
 
@@ -354,6 +358,101 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             } catch (Exception ex) {
                 Console.WriteLine(ex);
             }
+        }
+
+        private void DisplaySelectedModel() {
+            Model curModel = curRecommandList.First();
+            // 使用壽命時間
+            string useTime = "";
+            if (curModel.serviceLifeTime.year >= 10) {
+                useTime = "10年以上";
+            } else {
+                if (curModel.serviceLifeTime.year > 0)
+                    useTime += curModel.serviceLifeTime.year + "年";
+                if (curModel.serviceLifeTime.month > 0)
+                    useTime += curModel.serviceLifeTime.month + "個月";
+            }
+            // 使用壽命距離
+            string useDistance = "";
+            if (curModel.slideTrackServiceLifeDistance < 0)
+                useDistance = "Error";
+            else {
+                if (curModel.serviceLifeDistance > 20000)
+                    useDistance = "2萬公里以上";
+                else
+                    useDistance = ((float)curModel.serviceLifeDistance / 10000f).ToString("#0.0") + "萬公里";
+            }
+            Dictionary<string, string> item = new Dictionary<string, string>();
+            if (formMain.optRepeatabilityBelt.Checked && curModel.beltMotorSafeCoefficient != -1 && curModel.beltSafeCoefficient != -1)
+                item = new Dictionary<string, string>() {
+                    { "項次", curModel.name.ToString() + "-L" + curModel.lead.ToString() },
+                    { "T_max安全係數", curModel.tMaxSafeCoefficient.ToString() },
+                    { "皮帶馬達安全係數", curModel.beltMotorSafeCoefficient == -1 ? "null" : curModel.beltMotorSafeCoefficient.ToString() },
+                    { "皮帶T_max安全係數", curModel.beltSafeCoefficient == -1 ? "null" : curModel.beltSafeCoefficient.ToString() },
+                    { "力矩警示", curModel.isMomentVerifySuccess ? "Pass" : "Fail" },
+                    { "運行距離", useDistance },
+                    { "運行壽命", useTime },
+                };
+            else
+                item = new Dictionary<string, string>() {
+                    { "項次", curModel.name.ToString() + "-L" + curModel.lead.ToString() },
+                    { "T_max安全係數", curModel.tMaxSafeCoefficient.ToString() },
+                    { "力矩警示", curModel.isMomentVerifySuccess ? "Pass" : "Fail" },
+                    { "運行距離", useDistance },
+                    { "運行壽命", useTime },
+                };
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Item");
+            dt.Columns.Add("Value");
+            foreach (var i in item) {
+                DataRow dr = dt.NewRow();
+                dr["Item"] = i.Key;
+                dr["Value"] = i.Value;
+                dt.Rows.Add(dr);
+            }
+            formMain.Invoke(new Action(() => {
+                formMain.dgvCalcSelectedModel.DataSource = dt;
+
+                // 顏色區分壽命規範
+                int serviceYear = -1;
+                long serviceDistance = -1;
+                foreach (DataGridViewRow row in formMain.dgvCalcSelectedModel.Rows) {
+                    if (row.Cells["Item"].Value.ToString() == "運行距離") {
+                        serviceDistance = curModel.serviceLifeDistance;
+                        row.Cells["Value"].Style.ForeColor = serviceDistance >= 3000 ? Color.Black : Color.Red;
+                    }
+                    if (row.Cells["Item"].Value.ToString() == "運行壽命") {
+                        int.TryParse(row.Cells["Value"].Value.ToString().Split('年')[0], out serviceYear);
+                        row.Cells["Value"].Style.ForeColor = serviceYear >= 3 ? Color.Black : Color.Red;
+                    }
+                    if (row.Cells["Item"].Value.ToString() == "扭矩確認") {
+                        if (formMain.optRepeatabilityBelt.Checked)
+                            row.Cells["Value"].Style.ForeColor = curModel.is_tMax_OK && curModel.isMotorOK && curModel.is_belt_tMax_OK ? Color.Green : Color.Red;
+                        else
+                            row.Cells["Value"].Style.ForeColor = curModel.is_tMax_OK ? Color.Green : Color.Red;
+                    }
+                    if (row.Cells["Item"].Value.ToString() == "T_max安全係數")
+                        row.Cells["Value"].Style.ForeColor = curModel.tMaxSafeCoefficient >= Model.tMaxStandard ? Color.Black : Color.Red;
+                    if (row.Cells["Item"].Value.ToString() == "T_Rms安全係數")
+                        row.Cells["Value"].Style.ForeColor = curModel.tRmsSafeCoefficient > Model.tRmsStandard ? Color.Black : Color.Red;
+                    if (row.Cells["Item"].Value.ToString() == "皮帶馬達安全係數" && row.Cells["Value"].Value.ToString() != "null")
+                        row.Cells["Value"].Style.ForeColor = curModel.beltMotorSafeCoefficient < Model.beltMotorStandard ? Color.Black : Color.Red;
+                    if (row.Cells["Item"].Value.ToString() == "皮帶T_max安全係數" && row.Cells["Value"].Value.ToString() != "null")
+                        row.Cells["Value"].Style.ForeColor = curModel.beltSafeCoefficient >= Model.tMaxStandard_beltMotor ? Color.Black : Color.Red;
+                    if (row.Cells["Item"].Value.ToString() == "力矩警示") {
+                        row.Cells["Value"].Style.ForeColor = curModel.isMomentVerifySuccess ? Color.Black : Color.Red;
+                        if (!curModel.isMomentVerifySuccess)
+                            row.Cells["Value"].ToolTipText = "力矩判定異常，請洽詢Toyo業務人員";
+                    }
+                }
+
+                foreach (DataGridViewColumn col in formMain.dgvCalcSelectedModel.Columns) {
+                    // 欄位寬度更新
+                    col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+
+                formMain.dgvCalcSelectedModel.CurrentCell = null;
+            }));
         }
 
         private void ToggleAdvanceOptions_CheckedChanged(object sender, EventArgs e) {

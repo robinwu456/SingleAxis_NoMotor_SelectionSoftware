@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
-    class Calculation : CalculationModel {
+    public class Calculation : CalculationModel {
         private int calcCountPerThread = 10;   // 單執行緒運算的筆數
         private Dictionary<string, object> pipeLineResult = new Dictionary<string, object>();   // 即時運算完成的Model
         private List<Model> pipeLineAllModels = new List<Model>();  // 所有的Model
@@ -26,9 +26,25 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             con = con.Where(model => model.supportedSetup.Contains(condition.setupMethod));
             // 重複定位精度(判斷螺桿、皮帶)
             con = con.Where(model => condition.RepeatabilityCondition(model.repeatability));
+            // 機構類別
+            if (condition.systemType == Condition.SystemType.Rod)
+                con = con.Where(model => model.name.StartsWith("GTY"));
+            else
+                con = con.Where(model => !model.name.StartsWith("GTY"));
+            // 單項計算
+            if (condition.calcModel.model != null) {
+                // 單項計算減速比驗證
+                if (condition.reducerRatio.Keys.Contains(condition.calcModel.model)) {
+                    condition.calcModel.lead /= (float)condition.reducerRatio[condition.calcModel.model];
+                    condition.calcModel.lead = Convert.ToDouble(condition.calcModel.lead.ToString("#0.00"));
+                }
+                con = con.Where(model => model.name.Equals(condition.calcModel.model) && model.lead == condition.calcModel.lead);
+            }
+
+            models = con.ToList();
 
             // pipeLine處理
-            Dictionary<string, object> calcResult = PipelineCalc(con.ToList(), condition);
+            Dictionary<string, object> calcResult = PipelineCalc(models, condition);
 
             return calcResult;
         }

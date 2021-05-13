@@ -65,11 +65,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //Language.Load(this);
             //Console.WriteLine(CustomExtensions.GetLang("MomentLimit_0"));
 
-            // 預設選項
-            optRepeatabilityScrew.Checked = true;
-            optNoExpectServiceLife.Checked = true;
+            //// 預設選項
+            //optCalcAllModel.Checked = true;
+            //optRepeatabilityScrew.Checked = true;
+            //optNoExpectServiceLife.Checked = true;
 
-            curStep = Step.Step1;
+            //curStep = Step.Step1;
+            step1.Load();
         }
 
         private bool binaryExplorerBar_BinaryExplorerBarPanelTitleClicked(object sender, BinaryExplorerBarPanel thePanelObject) {

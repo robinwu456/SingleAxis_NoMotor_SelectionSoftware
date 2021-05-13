@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
-    class Condition : Model {
+    public class Condition : Model {
         // 使用頻率
         public class UseFrequence { public int countPerMinute, hourPerDay, dayPerYear; }
 

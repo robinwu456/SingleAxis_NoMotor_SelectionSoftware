@@ -6,7 +6,7 @@ using System.Data;
 using StrokeTooShortConverterLibraries;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
-    class CalculationBase {
+    public class CalculationBase {
         protected bool isCheckStrokeTooShort = true;  // 是否判斷行程過短  
         protected Converter.ModifyItem strokeTooShortModifyItem = Converter.ModifyItem.Vmax;  // 行程過短修正項目      
 
