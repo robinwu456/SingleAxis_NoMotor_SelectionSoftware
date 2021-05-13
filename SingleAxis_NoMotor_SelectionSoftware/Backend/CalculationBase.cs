@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using StrokeTooShortConverterLibraries;
+using System.Drawing;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class CalculationBase {
@@ -294,6 +295,73 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             double subWheelRpm = (int)(rpm / reducerRpmRatio);
             double vMax_belt = Math.PI * subWheel2.diameter * (subWheelRpm / 60) / 1000;
             return vMax_belt;
+        }
+
+        // 圖表點資訊
+        public List<PointF> GetChartPoints(Condition conditions) {
+            //if (isCheckStrokeTooShort)
+            //    // 行程過短驗證
+            //    conditions.vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, (int)conditions.vMax, (int)conditions.accelSpeed, (int)conditions.stroke);
+
+            //if (isCheckStrokeTooShort) {
+            //    // 行程過短驗證
+            //    if (strokeTooShortModifyItem == Converter.ModifyItem.Vmax)
+            //        conditions.vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, (int)conditions.vMax, (int)conditions.accelSpeed, (int)conditions.stroke);
+            //    else if (strokeTooShortModifyItem == Converter.ModifyItem.AccelSpeed)
+            //        conditions.accelSpeed = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, (int)conditions.vMax, (int)conditions.accelSpeed, (int)conditions.stroke);
+            //}
+
+            double accelTime = conditions.vMax / conditions.accelSpeed;
+            double decelTime = accelTime;
+            //double constantTime = ((2f * (float)conditions.stroke / conditions.vMax) - conditions.accelTime - conditions.decelTime) / 2f;
+            double constantTime = ((2f * (float)conditions.stroke / conditions.vMax) - accelTime - decelTime) / 2f;
+
+            List<PointF> points = new List<PointF>() { new PointF(0, 0) };
+            // 加速時間
+            points.Add(new PointF((float)accelTime, (float)conditions.vMax));
+            // 等速時間
+            points.Add(new PointF((float)accelTime + (float)constantTime, (float)conditions.vMax));
+            // 減速時間
+            points.Add(new PointF((float)accelTime + (float)constantTime + (float)decelTime, 0));
+            // 停等時間
+            points.Add(new PointF((float)accelTime + (float)constantTime + (float)decelTime + (float)conditions.stopTime, 0));
+
+            return points;
+        }
+        public (
+            double accelTime,
+            double constantTime,
+            double runTime,
+            double accelSpeed,
+            double maxSpeed,
+            double cycleTime
+        ) GetChartInfo(Condition conditions) {
+            //if (isCheckStrokeTooShort)
+            //    // 行程過短驗證
+            //    conditions.vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, (int)conditions.vMax, (int)conditions.accelSpeed, (int)conditions.stroke);
+
+            //if (isCheckStrokeTooShort) {
+            //    // 行程過短驗證
+            //    if (strokeTooShortModifyItem == Converter.ModifyItem.Vmax)
+            //        conditions.vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, (int)conditions.vMax, (int)conditions.accelSpeed, (int)conditions.stroke);
+            //    else if (strokeTooShortModifyItem == Converter.ModifyItem.AccelSpeed)
+            //        conditions.accelSpeed = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, (int)conditions.vMax, (int)conditions.accelSpeed, (int)conditions.stroke);
+            //}
+
+            double accelTime = conditions.vMax / conditions.accelSpeed;
+            double decelTime = accelTime;
+            double constantTime = ((2f * (float)conditions.stroke / conditions.vMax) - accelTime - decelTime) / 2f;
+
+            double runTime = accelTime + constantTime + decelTime;
+            double cycleTime = runTime * 2;
+
+            accelTime = Convert.ToDouble(accelTime.ToString("0.000"));
+            decelTime = Convert.ToDouble(decelTime.ToString("0.000"));
+            constantTime = Convert.ToDouble(constantTime.ToString("0.000"));
+            runTime = Convert.ToDouble(runTime.ToString("0.000"));
+            cycleTime = Convert.ToDouble(cycleTime.ToString("0.000"));
+
+            return (accelTime, constantTime, runTime, conditions.accelSpeed, conditions.vMax, cycleTime);
         }
     }
 }
