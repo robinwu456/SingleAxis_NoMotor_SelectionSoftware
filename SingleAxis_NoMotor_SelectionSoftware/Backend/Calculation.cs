@@ -17,9 +17,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             List<Model> models = GetAllModels(condition);
 
             // 首要篩選條件
-            IEnumerable<Model> con;
+            IEnumerable<Model> con = models;
+            // 使用環境
+            con = con.Where(model => model.useEnvironment == condition.useEnvironment);
+            // 機構型態
+            con = con.Where(model => model.modelType == condition.modelType);
             // 安裝方式
-            con = models.Where(model => model.supportedSetup.Contains(condition.setupMethod));
+            con = con.Where(model => model.supportedSetup.Contains(condition.setupMethod));
             // 重複定位精度(判斷螺桿、皮帶)
             con = con.Where(model => condition.RepeatabilityCondition(model.repeatability));
 

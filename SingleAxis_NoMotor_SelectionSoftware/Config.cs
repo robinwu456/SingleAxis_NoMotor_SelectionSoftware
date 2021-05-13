@@ -25,14 +25,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             /// </summary>
             DustFree
         }
-        public static string[] MODEL_TYPE_TXT = {
-            "軌道內嵌式螺桿滑台",
-            "軌道內嵌推桿式螺桿滑台",
-            "標準螺桿滑台",
-            "推桿式螺桿滑台",
-            "標準皮帶滑台",
-            "歐規皮帶滑台",
-        };
         public enum ModelType {
             /// <summary>
             /// 軌道內嵌式螺桿滑台

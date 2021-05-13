@@ -20,7 +20,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         // 套用新扭矩公式的型號
         public string[] beltModels = { "ETB10", "ETB14M", "ETB17M", "ETB22M",
-                                        "ECB10", "ECB14", "ECB17", "ECB22", };
+                                       "ECB10", "ECB14", "ECB17", "ECB22", };
 
         protected List<Model> GetAllModels(Condition condition) {
             List<Model> models = new List<Model>();
@@ -32,34 +32,26 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (condition.reducerRatio.Keys.Contains(model.name))
                     model.lead = Convert.ToDouble((model.lead / (float)condition.reducerRatio[model.name]).ToString("#0.00"));
                 // 安裝方式
-                model.supportedSetup = new List<Model.SetupMethod>();
-                foreach (string setupIndex in row["Setup"].ToString().Split('&')) {
-                    string setupName = Enum.GetName(typeof(Model.SetupMethod), Convert.ToInt32(setupIndex));
-                    Model.SetupMethod setup = (Model.SetupMethod)Enum.Parse(typeof(Model.SetupMethod), setupName);
-                    model.supportedSetup.Add(setup);
-                }
+                model.supportedSetup = row["Setup"].ToString().Split('&').ToList().Select(setup => (Model.SetupMethod)Convert.ToInt32(setup)).ToList();
+                // 使用環境
+                model.useEnvironment = (Model.UseEnvironment)Convert.ToInt32(row["Env"].ToString());
+                // 機構型態
+                model.modelType = (Model.ModelType)Convert.ToInt32(row["Type"].ToString());
 
                 // 力舉參數
-                Func<DataRow, bool> con;
-                if (condition.reducerRatio.Keys.Contains(model.name))
-                    con = x => x["Model"].ToString().Equals(model.name) && Convert.ToDouble(x["Lead"].ToString()).Equals((int)Math.Round(model.lead * condition.reducerRatio[model.name], 0));
-                else
-                    con = x => x["Model"].ToString().Equals(model.name) && Convert.ToDouble(x["Lead"].ToString()).Equals(model.lead);
-                model.c = modelInfo.Rows.Cast<DataRow>().Where(con).Select(x => Convert.ToDouble(x["C"].ToString())).First();
-                model.mr_C = modelInfo.Rows.Cast<DataRow>().Where(con).Select(x => Convert.ToDouble(x["MR_C"].ToString())).First();
-                model.mp_C = modelInfo.Rows.Cast<DataRow>().Where(con).Select(x => Convert.ToDouble(x["MP_C"].ToString())).First();
-                model.my_C = modelInfo.Rows.Cast<DataRow>().Where(con).Select(x => Convert.ToDouble(x["MY_C"].ToString())).First();
-                model.dynamicLoadRating = modelInfo.Rows.Cast<DataRow>().Where(con).Select(x => Convert.ToInt32(x["DynamicLoadRating"].ToString())).First();
-                model.outerDiameter = modelInfo.Rows.Cast<DataRow>().Where(con).Select(x => Convert.ToInt32(x["OuterDiameter"].ToString())).First();
+                model.c = Convert.ToDouble(row["C"].ToString());
+                model.mr_C = Convert.ToDouble(row["MR_C"].ToString());
+                model.mp_C = Convert.ToDouble(row["MP_C"].ToString());
+                model.my_C = Convert.ToDouble(row["MY_C"].ToString());
+                model.dynamicLoadRating = Convert.ToInt32(row["DynamicLoadRating"].ToString());
+                model.outerDiameter = Convert.ToInt32(row["OuterDiameter"].ToString());
 
                 // 重複定位精度
-                model.repeatability = modelInfo.Rows.Cast<DataRow>().Where(con).Select(x => Convert.ToDouble(x["Repeatability"].ToString())).First();
-                model.modelType = (Model.ModelType)modelInfo.Rows.Cast<DataRow>().Where(con).Select(x => Convert.ToDouble(x["Type"].ToString())).First();
-                //model.modelType = model.repeatability <= 0.01 ? Model.ModelType.Screw : Model.ModelType.Belt;
+                model.repeatability = Convert.ToDouble(row["Repeatability"].ToString());
 
                 // 皮帶資訊
                 if (beltModels.Any(m => model.name.StartsWith(m))) {
-                    con = con = x => x["Model"].ToString().Equals(model.name);
+                    Func<DataRow, bool> con = con = x => x["Model"].ToString().Equals(model.name);
                     var beltInfoRows = beltInfo.Rows.Cast<DataRow>().Where(con);
                     // 主動輪
                     model.mainWheel = new BeltWheel(

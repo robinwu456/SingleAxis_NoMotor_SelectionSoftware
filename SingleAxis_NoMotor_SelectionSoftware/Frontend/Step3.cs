@@ -19,10 +19,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void CmdConfirmStep3_Click(object sender, EventArgs e) {
-            formMain.curStep = (FormMain.Step)((int)formMain.curStep + 1);
-            formMain.sideTable.Update(null, null);
-            formMain._explorerBar.UpdateCurStep(formMain.curStep);
-            formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep4);
+            if (formMain.curStep == FormMain.Step.Step3) {
+                formMain.curStep = (FormMain.Step)((int)formMain.curStep + 1);
+                formMain.sideTable.Update(null, null);
+                formMain._explorerBar.UpdateCurStep(formMain.curStep);
+                formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep4);
+            }
         }
     }
 }

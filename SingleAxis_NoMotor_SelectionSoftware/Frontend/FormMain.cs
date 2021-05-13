@@ -29,6 +29,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             ToyoBorder toyoBorder = new ToyoBorder(this);
             // 一頁式頁籤
             _explorerBar = new ExplorerBar(this);
+            // 偵測頁籤自動收起事件新增
             foreach (Control c in Controls.All()) {
                 if (c is RadioButton)
                     ((RadioButton)c).CheckedChanged += _explorerBar.ValueChanged;
@@ -63,6 +64,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //Language.curLanguage = Language.LanguageType.English;
             //Language.Load(this);
             //Console.WriteLine(CustomExtensions.GetLang("MomentLimit_0"));
+
+            // 預設選項
+            optRepeatabilityScrew.Checked = true;
+            optNoExpectServiceLife.Checked = true;
+
+            curStep = Step.Step1;
         }
 
         private bool binaryExplorerBar_BinaryExplorerBarPanelTitleClicked(object sender, BinaryExplorerBarPanel thePanelObject) {

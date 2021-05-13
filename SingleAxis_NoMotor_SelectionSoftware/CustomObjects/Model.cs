@@ -21,29 +21,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// 傳動方式列舉
         /// </summary>
         public enum ModelType {
-            /// <summary>
-            /// 軌道內嵌式螺桿滑台
-            /// </summary>
             軌道內嵌式螺桿滑台,
-            /// <summary>
-            /// 軌道內嵌推桿式螺桿滑台
-            /// </summary>
             軌道內嵌推桿式螺桿滑台,
-            /// <summary>
-            /// 螺桿滑台
-            /// </summary>
-            螺桿滑台,
-            /// <summary>
-            /// 推桿式螺桿滑台
-            /// </summary>
+            標準螺桿滑台,
             推桿式螺桿滑台,
-            /// <summary>
-            /// 皮帶滑台
-            /// </summary>
-            皮帶滑台,
-            /// <summary>
-            /// 歐規皮帶滑台
-            /// </summary>
+            標準皮帶滑台,
             歐規皮帶滑台,
         }
         public enum UseEnvironment { Standard, DustFree }
@@ -70,9 +52,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// </summary>
         public double repeatability = -1;
         /// <summary>
-        /// 傳動方式
+        /// 機構型態
         /// </summary>
-        public ModelType modelType = ModelType.螺桿滑台;
+        public ModelType modelType = ModelType.標準螺桿滑台;
 
         /// <summary>
         /// 滑軌預估壽命(km)

@@ -33,9 +33,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public Step2(FormMain formMain) {
             this.formMain = formMain;
             InitEvents();
-        }
 
-        public void Load() {
             // 減速比
             calc.reducerInfo.Rows.Cast<DataRow>().ToList().ForEach(row => {
                 DataGridViewRow newRow = new DataGridViewRow();
@@ -48,10 +46,23 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 newRow.Cells.Add(cboCell);
                 formMain.dgvReducerInfo.Rows.Add(newRow);
             });
+        }
 
-            // 預設選項
-            formMain.optRepeatabilityScrew.Checked = true;
-            formMain.optNoExpectServiceLife.Checked = true;
+        public void Load() {
+            //// 減速比
+            //calc.reducerInfo.Rows.Cast<DataRow>().ToList().ForEach(row => {
+            //    DataGridViewRow newRow = new DataGridViewRow();
+            //    DataGridViewTextBoxCell txtCell = new DataGridViewTextBoxCell();
+            //    DataGridViewComboBoxCell cboCell = new DataGridViewComboBoxCell();
+            //    txtCell.Value = row["Model"].ToString();
+            //    cboCell.DataSource = row["ReducerRatio"].ToString().Split('、');
+            //    cboCell.Value = row["ReducerRatio"].ToString().Split('、')[0];
+            //    newRow.Cells.Add(txtCell);
+            //    newRow.Cells.Add(cboCell);
+            //    formMain.dgvReducerInfo.Rows.Add(newRow);
+            //});
+
+            
         }
 
         public void UpdateCondition(object sender, EventArgs e) {
@@ -62,26 +73,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 curCondition.useEnvironment = Model.UseEnvironment.DustFree;
             // 機構型態
             curCondition.modelType = (Model.ModelType)Enum.Parse(typeof(Model.ModelType), formMain.cboModelType.Text);
-            //switch (formMain.cboModelType.Text) {
-            //    case "軌道內嵌式螺桿滑台":
-            //        curCondition.modelType = Model.ModelType.軌道內嵌式螺桿滑台;
-            //        break;
-            //    case "軌道內嵌推桿式螺桿滑台":
-            //        curCondition.modelType = Model.ModelType.軌道內嵌推桿式螺桿滑台;
-            //        break;
-            //    case "螺桿滑台":
-            //        curCondition.modelType = Model.ModelType.螺桿滑台;
-            //        break;
-            //    case "推桿式螺桿滑台":
-            //        curCondition.modelType = Model.ModelType.推桿式螺桿滑台;
-            //        break;
-            //    case "皮帶滑台":
-            //        curCondition.modelType = Model.ModelType.皮帶滑台;
-            //        break;
-            //    case "歐規皮帶滑台":
-            //        curCondition.modelType = Model.ModelType.歐規皮帶滑台;
-            //        break;
-            //}
             // 安裝方式
             if (formMain.optHorizontalUse.Checked)
                 curCondition.setupMethod = Model.SetupMethod.Horizontal;
@@ -186,7 +177,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 減速比
             curCondition.reducerRatio.Clear();
             formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().ForEach(row => {
-                curCondition.reducerRatio.Add(row.Cells["columnModel"].Value.ToString(), Convert.ToInt32(row.Cells["columnReducerRatio"].Value.ToString()));
+                //curCondition.reducerRatio.Add(row.Cells["columnModel"].Value.ToString(), Convert.ToInt32(row.Cells["columnReducerRatio"].Value.ToString()));
+                curCondition.reducerRatio[row.Cells["columnModel"].Value.ToString()] = Convert.ToInt32(row.Cells["columnReducerRatio"].Value.ToString());
             });
         }
 
@@ -237,10 +229,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void CmdConfirmStep2_Click(object sender, EventArgs e) {
-            formMain.curStep = (FormMain.Step)((int)formMain.curStep + 1);
-            formMain.sideTable.Update(null, null);
-            formMain._explorerBar.UpdateCurStep(formMain.curStep);
-            formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep3);
+            if (formMain.curStep == FormMain.Step.Step2) {
+                formMain.curStep = (FormMain.Step)((int)formMain.curStep + 1);
+                formMain.sideTable.Update(null, null);
+                formMain._explorerBar.UpdateCurStep(formMain.curStep);
+                formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep3);
+            }
         }
 
         private void CmdCalc_Click(object sender, EventArgs e) {
