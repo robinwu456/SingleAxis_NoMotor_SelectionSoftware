@@ -70,6 +70,16 @@
             this.label63 = new System.Windows.Forms.Label();
             this.explorerBarPanel2 = new System.Windows.Forms.Panel();
             this.explorerBarPanel2_content = new System.Windows.Forms.Panel();
+            this.panelSelectCalcResult = new System.Windows.Forms.Panel();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.dgvCalcSelectedModel = new System.Windows.Forms.DataGridView();
+            this.panelReducer = new System.Windows.Forms.Panel();
+            this.dgvReducerInfo = new System.Windows.Forms.DataGridView();
+            this.columnModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnReducerRatio = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
             this.lbCycleTime = new System.Windows.Forms.Label();
             this.lbMaxSpeed = new System.Windows.Forms.Label();
             this.lbAccelSpeed = new System.Windows.Forms.Label();
@@ -81,8 +91,6 @@
             this.optMotorParamsModifySimple = new System.Windows.Forms.RadioButton();
             this.optMotorParamsModifyAdvance = new System.Windows.Forms.RadioButton();
             this.label34 = new System.Windows.Forms.Label();
-            this.optRepeatabilityBelt = new System.Windows.Forms.RadioButton();
-            this.optRepeatabilityScrew = new System.Windows.Forms.RadioButton();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label78 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
@@ -101,9 +109,6 @@
             this.optExpectServiceLife = new System.Windows.Forms.RadioButton();
             this.optNoExpectServiceLife = new System.Windows.Forms.RadioButton();
             this.label71 = new System.Windows.Forms.Label();
-            this.dgvReducerInfo = new System.Windows.Forms.DataGridView();
-            this.columnModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnReducerRatio = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.panelConfirmBtnsStep2 = new System.Windows.Forms.TableLayoutPanel();
             this.cmdConfirmStep2 = new CustomButton.CustomButton();
             this.panelCalcBtns = new System.Windows.Forms.TableLayoutPanel();
@@ -149,9 +154,6 @@
             this.cboMotorParamsMotorPowerSelection = new System.Windows.Forms.ComboBox();
             this.label59 = new System.Windows.Forms.Label();
             this.cboPower = new System.Windows.Forms.ComboBox();
-            this.dgvCalcSelectedModel = new System.Windows.Forms.DataGridView();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -217,7 +219,9 @@
             this.cboModelType = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.optRepeatabilityBelt = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
+            this.optRepeatabilityScrew = new System.Windows.Forms.RadioButton();
             this.panelSetupMode = new System.Windows.Forms.Panel();
             this.optUpsideDownUse = new System.Windows.Forms.RadioButton();
             this.optHorizontalUse = new System.Windows.Forms.RadioButton();
@@ -272,18 +276,20 @@
             this.explorerBarPanel3_title.SuspendLayout();
             this.explorerBarPanel2.SuspendLayout();
             this.explorerBarPanel2_content.SuspendLayout();
+            this.panelSelectCalcResult.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCalcSelectedModel)).BeginInit();
+            this.panelReducer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panelPowerModifyMode.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).BeginInit();
             this.panelConfirmBtnsStep2.SuspendLayout();
             this.panelCalcBtns.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).BeginInit();
             this.panelMotorParams.SuspendLayout();
             this.panelPowerSelection.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCalcSelectedModel)).BeginInit();
             this.explorerBarPanel2_title.SuspendLayout();
             this.explorerBarPanel1.SuspendLayout();
             this.explorerBarPanel1_content.SuspendLayout();
@@ -624,6 +630,8 @@
             // 
             // explorerBarPanel2_content
             // 
+            this.explorerBarPanel2_content.Controls.Add(this.panelSelectCalcResult);
+            this.explorerBarPanel2_content.Controls.Add(this.panelReducer);
             this.explorerBarPanel2_content.Controls.Add(this.lbCycleTime);
             this.explorerBarPanel2_content.Controls.Add(this.lbMaxSpeed);
             this.explorerBarPanel2_content.Controls.Add(this.lbAccelSpeed);
@@ -635,16 +643,12 @@
             this.explorerBarPanel2_content.Controls.Add(this.panel7);
             this.explorerBarPanel2_content.Controls.Add(this.panel6);
             this.explorerBarPanel2_content.Controls.Add(this.label71);
-            this.explorerBarPanel2_content.Controls.Add(this.dgvReducerInfo);
             this.explorerBarPanel2_content.Controls.Add(this.panelConfirmBtnsStep2);
             this.explorerBarPanel2_content.Controls.Add(this.panelCalcBtns);
             this.explorerBarPanel2_content.Controls.Add(this.dgvRecommandList);
             this.explorerBarPanel2_content.Controls.Add(this.panelMotorParams);
             this.explorerBarPanel2_content.Controls.Add(this.panelPowerSelection);
             this.explorerBarPanel2_content.Controls.Add(this.cboPower);
-            this.explorerBarPanel2_content.Controls.Add(this.dgvCalcSelectedModel);
-            this.explorerBarPanel2_content.Controls.Add(this.label55);
-            this.explorerBarPanel2_content.Controls.Add(this.label58);
             this.explorerBarPanel2_content.Controls.Add(this.label32);
             this.explorerBarPanel2_content.Controls.Add(this.label33);
             this.explorerBarPanel2_content.Controls.Add(this.label16);
@@ -694,6 +698,86 @@
             this.explorerBarPanel2_content.Controls.Add(this.label17);
             resources.ApplyResources(this.explorerBarPanel2_content, "explorerBarPanel2_content");
             this.explorerBarPanel2_content.Name = "explorerBarPanel2_content";
+            // 
+            // panelSelectCalcResult
+            // 
+            this.panelSelectCalcResult.Controls.Add(this.label48);
+            this.panelSelectCalcResult.Controls.Add(this.label51);
+            this.panelSelectCalcResult.Controls.Add(this.dgvCalcSelectedModel);
+            resources.ApplyResources(this.panelSelectCalcResult, "panelSelectCalcResult");
+            this.panelSelectCalcResult.Name = "panelSelectCalcResult";
+            // 
+            // label48
+            // 
+            resources.ApplyResources(this.label48, "label48");
+            this.label48.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label48.Name = "label48";
+            // 
+            // label51
+            // 
+            this.label51.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.label51, "label51");
+            this.label51.Name = "label51";
+            // 
+            // dgvCalcSelectedModel
+            // 
+            this.dgvCalcSelectedModel.AllowUserToAddRows = false;
+            this.dgvCalcSelectedModel.AllowUserToDeleteRows = false;
+            this.dgvCalcSelectedModel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.dgvCalcSelectedModel, "dgvCalcSelectedModel");
+            this.dgvCalcSelectedModel.Name = "dgvCalcSelectedModel";
+            this.dgvCalcSelectedModel.ReadOnly = true;
+            this.dgvCalcSelectedModel.RowHeadersVisible = false;
+            this.dgvCalcSelectedModel.RowTemplate.Height = 24;
+            this.dgvCalcSelectedModel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            // 
+            // panelReducer
+            // 
+            this.panelReducer.Controls.Add(this.dgvReducerInfo);
+            this.panelReducer.Controls.Add(this.label55);
+            this.panelReducer.Controls.Add(this.label58);
+            resources.ApplyResources(this.panelReducer, "panelReducer");
+            this.panelReducer.Name = "panelReducer";
+            // 
+            // dgvReducerInfo
+            // 
+            this.dgvReducerInfo.AllowUserToAddRows = false;
+            this.dgvReducerInfo.AllowUserToDeleteRows = false;
+            this.dgvReducerInfo.AllowUserToResizeColumns = false;
+            this.dgvReducerInfo.AllowUserToResizeRows = false;
+            this.dgvReducerInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvReducerInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReducerInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnModel,
+            this.columnReducerRatio});
+            resources.ApplyResources(this.dgvReducerInfo, "dgvReducerInfo");
+            this.dgvReducerInfo.Name = "dgvReducerInfo";
+            this.dgvReducerInfo.RowHeadersVisible = false;
+            this.dgvReducerInfo.RowTemplate.Height = 24;
+            // 
+            // columnModel
+            // 
+            resources.ApplyResources(this.columnModel, "columnModel");
+            this.columnModel.Name = "columnModel";
+            this.columnModel.ReadOnly = true;
+            this.columnModel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // columnReducerRatio
+            // 
+            resources.ApplyResources(this.columnReducerRatio, "columnReducerRatio");
+            this.columnReducerRatio.Name = "columnReducerRatio";
+            // 
+            // label55
+            // 
+            resources.ApplyResources(this.label55, "label55");
+            this.label55.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label55.Name = "label55";
+            // 
+            // label58
+            // 
+            this.label58.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.label58, "label58");
+            this.label58.Name = "label58";
             // 
             // lbCycleTime
             // 
@@ -780,22 +864,6 @@
             resources.ApplyResources(this.label34, "label34");
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label34.Name = "label34";
-            // 
-            // optRepeatabilityBelt
-            // 
-            resources.ApplyResources(this.optRepeatabilityBelt, "optRepeatabilityBelt");
-            this.optRepeatabilityBelt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.optRepeatabilityBelt.Name = "optRepeatabilityBelt";
-            this.optRepeatabilityBelt.UseVisualStyleBackColor = true;
-            // 
-            // optRepeatabilityScrew
-            // 
-            resources.ApplyResources(this.optRepeatabilityScrew, "optRepeatabilityScrew");
-            this.optRepeatabilityScrew.Checked = true;
-            this.optRepeatabilityScrew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.optRepeatabilityScrew.Name = "optRepeatabilityScrew";
-            this.optRepeatabilityScrew.TabStop = true;
-            this.optRepeatabilityScrew.UseVisualStyleBackColor = true;
             // 
             // panel7
             // 
@@ -922,34 +990,6 @@
             resources.ApplyResources(this.label71, "label71");
             this.label71.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label71.Name = "label71";
-            // 
-            // dgvReducerInfo
-            // 
-            this.dgvReducerInfo.AllowUserToAddRows = false;
-            this.dgvReducerInfo.AllowUserToDeleteRows = false;
-            this.dgvReducerInfo.AllowUserToResizeColumns = false;
-            this.dgvReducerInfo.AllowUserToResizeRows = false;
-            this.dgvReducerInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvReducerInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReducerInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columnModel,
-            this.columnReducerRatio});
-            resources.ApplyResources(this.dgvReducerInfo, "dgvReducerInfo");
-            this.dgvReducerInfo.Name = "dgvReducerInfo";
-            this.dgvReducerInfo.RowHeadersVisible = false;
-            this.dgvReducerInfo.RowTemplate.Height = 24;
-            // 
-            // columnModel
-            // 
-            resources.ApplyResources(this.columnModel, "columnModel");
-            this.columnModel.Name = "columnModel";
-            this.columnModel.ReadOnly = true;
-            this.columnModel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // columnReducerRatio
-            // 
-            resources.ApplyResources(this.columnReducerRatio, "columnReducerRatio");
-            this.columnReducerRatio.Name = "columnReducerRatio";
             // 
             // panelConfirmBtnsStep2
             // 
@@ -1386,30 +1426,6 @@
             this.cboPower.FormattingEnabled = true;
             this.cboPower.Name = "cboPower";
             // 
-            // dgvCalcSelectedModel
-            // 
-            this.dgvCalcSelectedModel.AllowUserToAddRows = false;
-            this.dgvCalcSelectedModel.AllowUserToDeleteRows = false;
-            this.dgvCalcSelectedModel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.dgvCalcSelectedModel, "dgvCalcSelectedModel");
-            this.dgvCalcSelectedModel.Name = "dgvCalcSelectedModel";
-            this.dgvCalcSelectedModel.ReadOnly = true;
-            this.dgvCalcSelectedModel.RowHeadersVisible = false;
-            this.dgvCalcSelectedModel.RowTemplate.Height = 24;
-            this.dgvCalcSelectedModel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            // 
-            // label55
-            // 
-            resources.ApplyResources(this.label55, "label55");
-            this.label55.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label55.Name = "label55";
-            // 
-            // label58
-            // 
-            this.label58.BackColor = System.Drawing.Color.LightGray;
-            resources.ApplyResources(this.label58, "label58");
-            this.label58.Name = "label58";
-            // 
             // label32
             // 
             resources.ApplyResources(this.label32, "label32");
@@ -1836,11 +1852,27 @@
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Name = "label11";
             // 
+            // optRepeatabilityBelt
+            // 
+            resources.ApplyResources(this.optRepeatabilityBelt, "optRepeatabilityBelt");
+            this.optRepeatabilityBelt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.optRepeatabilityBelt.Name = "optRepeatabilityBelt";
+            this.optRepeatabilityBelt.UseVisualStyleBackColor = true;
+            // 
             // label8
             // 
             resources.ApplyResources(this.label8, "label8");
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Name = "label8";
+            // 
+            // optRepeatabilityScrew
+            // 
+            resources.ApplyResources(this.optRepeatabilityScrew, "optRepeatabilityScrew");
+            this.optRepeatabilityScrew.Checked = true;
+            this.optRepeatabilityScrew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.optRepeatabilityScrew.Name = "optRepeatabilityScrew";
+            this.optRepeatabilityScrew.TabStop = true;
+            this.optRepeatabilityScrew.UseVisualStyleBackColor = true;
             // 
             // panelSetupMode
             // 
@@ -2093,6 +2125,12 @@
             this.explorerBarPanel2.ResumeLayout(false);
             this.explorerBarPanel2_content.ResumeLayout(false);
             this.explorerBarPanel2_content.PerformLayout();
+            this.panelSelectCalcResult.ResumeLayout(false);
+            this.panelSelectCalcResult.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCalcSelectedModel)).EndInit();
+            this.panelReducer.ResumeLayout(false);
+            this.panelReducer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panelPowerModifyMode.ResumeLayout(false);
             this.panelPowerModifyMode.PerformLayout();
@@ -2102,7 +2140,6 @@
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).EndInit();
             this.panelConfirmBtnsStep2.ResumeLayout(false);
             this.panelCalcBtns.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).EndInit();
@@ -2110,7 +2147,6 @@
             this.panelMotorParams.PerformLayout();
             this.panelPowerSelection.ResumeLayout(false);
             this.panelPowerSelection.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCalcSelectedModel)).EndInit();
             this.explorerBarPanel2_title.ResumeLayout(false);
             this.explorerBarPanel1.ResumeLayout(false);
             this.explorerBarPanel1_content.ResumeLayout(false);
@@ -2353,6 +2389,10 @@
         public System.Windows.Forms.Label lbConstantTime;
         public System.Windows.Forms.Label lbAccelTime;
         public System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        public System.Windows.Forms.Panel panelReducer;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label51;
+        public System.Windows.Forms.Panel panelSelectCalcResult;
     }
 }
 

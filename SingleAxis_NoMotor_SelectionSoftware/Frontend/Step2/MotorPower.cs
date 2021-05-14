@@ -6,6 +6,9 @@ using System.Data;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class MotorPower {
+        // 馬達自訂參數
+        public (double ratedTorque, double maxTorque, double rotateInertia) customMotorParams = (-1, -1, -1);
+
         private FormMain formMain;
         public MotorPower(FormMain formMain) {
             this.formMain = formMain;
