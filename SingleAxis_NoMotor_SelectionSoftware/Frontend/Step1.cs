@@ -12,17 +12,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public Step1(FormMain formMain) {
             this.formMain = formMain;                                   
 
-            // 機構型態
-            formMain.cboModelType.DataSource = Enum.GetNames(typeof(Model.ModelType));
-            // 選型方式-類別
-            formMain.cboSystemType.DataSource = new string[] { "移載式", "推桿式" };
-
             InitEvents();
         }
 
         private void InitEvents() {
             formMain.picStandardEnv.MouseDown += PicStandardEnv_MouseDown;
             formMain.picDustFree.MouseDown += PicDustFree_MouseDown;
+
+            // 機構型態
+            formMain.optRepeatabilityScrew.CheckedChanged += OptRepeatabilityScrew_CheckedChanged;
             formMain.cboModelType.SelectedValueChanged += CboModelType_SelectedValueChanged;
 
             // 側邊欄更新
@@ -34,18 +32,30 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.cboModelType.SelectedValueChanged += formMain.sideTable.Update;
 
             // 選型方式
-            formMain.cboSystemType.SelectedValueChanged += CboSystemType_SelectedValueChanged;
             formMain.cboSeries.SelectedValueChanged += CboSeries_SelectedValueChanged;
             formMain.cboModel.SelectedValueChanged += CboModel_SelectedValueChanged;
             formMain.optCalcAllModel.CheckedChanged += OptCalcAllModel_CheckedChanged;
 
             // 確認按鈕
             formMain.cmdConfirmStep1.Click += CmdConfirmStep1_Click;
-        }        
+        }
+
+        private void OptRepeatabilityScrew_CheckedChanged(object sender, EventArgs e) {
+            // 機構型態選項匯入
+            Model.ModelType[] dbAllModelType = formMain.step2.calc.modelInfo.Rows.Cast<DataRow>()
+                                                                                 .Select(row => (Model.ModelType)Convert.ToInt32(row["Type"].ToString()))
+                                                                                 .Distinct()
+                                                                                 .ToArray();
+            formMain.cboModelType.DataSource = null;
+            if (formMain.optRepeatabilityScrew.Checked)
+                formMain.cboModelType.DataSource = dbAllModelType.Where(type => !type.ToString().Contains("皮帶")).ToArray();
+            else
+                formMain.cboModelType.DataSource = dbAllModelType.Where(type => type.ToString().Contains("皮帶")).ToArray();
+        }
 
         public void Load() {
-            // 系列選項匯入
-            CboSystemType_SelectedValueChanged(null, null);
+            // 機構型態選項匯入
+            OptRepeatabilityScrew_CheckedChanged(null, null);
         }
 
         private void CboModel_SelectedValueChanged(object sender, EventArgs e) {
@@ -65,40 +75,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                                 .ToArray();
         }
 
-        private void CboSystemType_SelectedValueChanged(object sender, EventArgs e) {
-            if (formMain.cboSystemType.Text == "移載式") {
-                // 取系列
-                formMain.cboSeries.DataSource = formMain.step2.calc.modelInfo.Rows.Cast<DataRow>()
-                                                     .Select(row => new Regex(@"([A-Z]+).+").Match(row["Model"].ToString()).Groups[1].Value)
-                                                     .Where(model => !model.StartsWith("GTY"))
-                                                     .Distinct()
-                                                     .ToArray();
-
-                //groupBoxMoment.Visible = true;
-                //groupBox5.Size = new Size(174, 248);
-                //groupBoxRepeatability.Location = new Point(210, 274);
-
-                // 力矩指定
-                formMain.txtMomentA.Text = "100";
-                formMain.txtMomentB.Text = "0";
-                formMain.txtMomentC.Text = "0";
-            } else {
-                // 取系列
-                formMain.cboSeries.DataSource = formMain.step2.calc.modelInfo.Rows.Cast<DataRow>()
-                                                     .Select(row => new Regex(@"([A-Z]+).+").Match(row["Model"].ToString()).Groups[1].Value)
-                                                     .Where(model => model.StartsWith("GTY"))
-                                                     .Distinct()
-                                                     .ToArray();
-
-                //groupBoxMoment.Visible = false;
-                //groupBox5.Size = new Size(174, 55);
-                //groupBoxRepeatability.Location = new Point(210, 81);
-            }
-        }
-
         private void CboModelType_SelectedValueChanged(object sender, EventArgs e) {
-            //formMain.optRepeatabilityScrew.Checked = !formMain.cboModelType.Text.Contains("皮帶");
-            //formMain.optRepeatabilityBelt.Checked = formMain.cboModelType.Text.Contains("皮帶");
+            if (formMain.cboModelType.Text == "")
+                return;
+
+            // 取系列
+            Model.ModelType curType = (Model.ModelType)Enum.Parse(typeof(Model.ModelType), formMain.cboModelType.Text);            
+            formMain.cboSeries.DataSource = null;
+            formMain.cboSeries.DataSource = formMain.step2.calc.modelInfo.Rows.Cast<DataRow>()
+                                                                              .Where(row => (Model.ModelType)Convert.ToInt32(row["Type"].ToString()) == curType)
+                                                                              .Select(row => new Regex(@"([A-Z]+).+").Match(row["Model"].ToString()).Groups[1].Value)
+                                                                              .Distinct()
+                                                                              .ToArray();
         }
 
         private void CmdConfirmStep1_Click(object sender, EventArgs e) {

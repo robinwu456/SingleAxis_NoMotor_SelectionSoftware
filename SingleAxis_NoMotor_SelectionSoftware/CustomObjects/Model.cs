@@ -4,19 +4,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Model {
         public enum SetupMethod { Horizontal, WallHang, Vertical }
         public enum Moment { A, B, C }                                    // 力舉參數
-        ///// <summary>
-        ///// 傳動方式列舉
-        ///// </summary>
-        //public enum ModelType {
-        //    /// <summary>
-        //    /// 螺桿
-        //    /// </summary>
-        //    Screw,
-        //    /// <summary>
-        //    /// 皮帶
-        //    /// </summary>
-        //    Belt
-        //}
         /// <summary>
         /// 傳動方式列舉
         /// </summary>

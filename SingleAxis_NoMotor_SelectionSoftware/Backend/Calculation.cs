@@ -26,11 +26,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             con = con.Where(model => model.supportedSetup.Contains(condition.setupMethod));
             // 重複定位精度(判斷螺桿、皮帶)
             con = con.Where(model => condition.RepeatabilityCondition(model.repeatability));
-            // 機構類別
-            if (condition.systemType == Condition.SystemType.Rod)
-                con = con.Where(model => model.name.StartsWith("GTY"));
-            else
-                con = con.Where(model => !model.name.StartsWith("GTY"));
             // 單項計算
             if (condition.calcModel.model != null) {
                 // 單項計算減速比驗證

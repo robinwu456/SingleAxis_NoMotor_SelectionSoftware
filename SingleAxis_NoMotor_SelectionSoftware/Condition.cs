@@ -11,14 +11,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public enum CalcAccordingItem { None, Load, Moment, All }                    // 修正壽命的根據項目列舉
         public enum PowerSelection { Standard, SelectedPower, Custom }               // 馬達瓦數帶值
         public enum CalcVmax { Max, Custom }                                         // 線速度計算帶值
-        public enum SystemType { Rod, Other }                                        // 機構類別
 
         public SetupMethod setupMethod;                                              // 安裝方式            
         public CalcAccordingItem calcCloseToStandardItem = CalcAccordingItem.None;   // 修正壽命的根據項目
         public Moment calcUpdateMoment = Moment.A;                                   // 修正壽命的力舉項目
         public PowerSelection powerSelection = PowerSelection.Standard;              // 馬達功率帶最大或自訂            
         public CalcVmax vMaxCalcMode = CalcVmax.Max;                                 // 線速度計算時帶入的值
-        public SystemType systemType = SystemType.Other;                             // 機構類別
         public int selectedPower = -1;                                               // 馬達瓦數選擇            
         public UseFrequence useFrequence = new UseFrequence();                       // 使用頻率            
         public Dictionary<string, int> reducerRatio = new Dictionary<string, int>(); // 減速比

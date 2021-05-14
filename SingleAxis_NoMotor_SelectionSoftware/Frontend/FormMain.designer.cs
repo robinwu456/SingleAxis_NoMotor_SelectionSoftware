@@ -24,13 +24,13 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
             this.splitContainerBase = new System.Windows.Forms.SplitContainer();
             this.pictureBoxToyo = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -70,6 +70,13 @@
             this.label63 = new System.Windows.Forms.Label();
             this.explorerBarPanel2 = new System.Windows.Forms.Panel();
             this.explorerBarPanel2_content = new System.Windows.Forms.Panel();
+            this.lbCycleTime = new System.Windows.Forms.Label();
+            this.lbMaxSpeed = new System.Windows.Forms.Label();
+            this.lbAccelSpeed = new System.Windows.Forms.Label();
+            this.lbRunTime = new System.Windows.Forms.Label();
+            this.lbConstantTime = new System.Windows.Forms.Label();
+            this.lbAccelTime = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelPowerModifyMode = new System.Windows.Forms.Panel();
             this.optMotorParamsModifySimple = new System.Windows.Forms.RadioButton();
             this.optMotorParamsModifyAdvance = new System.Windows.Forms.RadioButton();
@@ -145,8 +152,6 @@
             this.dgvCalcSelectedModel = new System.Windows.Forms.DataGridView();
             this.label55 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -206,8 +211,6 @@
             this.cboModel = new System.Windows.Forms.ComboBox();
             this.cboLead = new System.Windows.Forms.ComboBox();
             this.label75 = new System.Windows.Forms.Label();
-            this.cboSystemType = new System.Windows.Forms.ComboBox();
-            this.label56 = new System.Windows.Forms.Label();
             this.label76 = new System.Windows.Forms.Label();
             this.panelConfirmBtnsStep1 = new System.Windows.Forms.TableLayoutPanel();
             this.cmdConfirmStep1 = new CustomButton.CustomButton();
@@ -241,13 +244,6 @@
             this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
-            this.lbCycleTime = new System.Windows.Forms.Label();
-            this.lbMaxSpeed = new System.Windows.Forms.Label();
-            this.lbAccelSpeed = new System.Windows.Forms.Label();
-            this.lbRunTime = new System.Windows.Forms.Label();
-            this.lbConstantTime = new System.Windows.Forms.Label();
-            this.lbAccelTime = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -276,6 +272,7 @@
             this.explorerBarPanel3_title.SuspendLayout();
             this.explorerBarPanel2.SuspendLayout();
             this.explorerBarPanel2_content.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panelPowerModifyMode.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -305,7 +302,6 @@
             this.explorerBarPanel5_content.SuspendLayout();
             this.panelConfirmBtnsStep5.SuspendLayout();
             this.explorerBarPanel5_title.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -636,8 +632,6 @@
             this.explorerBarPanel2_content.Controls.Add(this.lbAccelTime);
             this.explorerBarPanel2_content.Controls.Add(this.chart1);
             this.explorerBarPanel2_content.Controls.Add(this.panelPowerModifyMode);
-            this.explorerBarPanel2_content.Controls.Add(this.optRepeatabilityBelt);
-            this.explorerBarPanel2_content.Controls.Add(this.optRepeatabilityScrew);
             this.explorerBarPanel2_content.Controls.Add(this.panel7);
             this.explorerBarPanel2_content.Controls.Add(this.panel6);
             this.explorerBarPanel2_content.Controls.Add(this.label71);
@@ -651,8 +645,6 @@
             this.explorerBarPanel2_content.Controls.Add(this.dgvCalcSelectedModel);
             this.explorerBarPanel2_content.Controls.Add(this.label55);
             this.explorerBarPanel2_content.Controls.Add(this.label58);
-            this.explorerBarPanel2_content.Controls.Add(this.label48);
-            this.explorerBarPanel2_content.Controls.Add(this.label51);
             this.explorerBarPanel2_content.Controls.Add(this.label32);
             this.explorerBarPanel2_content.Controls.Add(this.label33);
             this.explorerBarPanel2_content.Controls.Add(this.label16);
@@ -702,6 +694,62 @@
             this.explorerBarPanel2_content.Controls.Add(this.label17);
             resources.ApplyResources(this.explorerBarPanel2_content, "explorerBarPanel2_content");
             this.explorerBarPanel2_content.Name = "explorerBarPanel2_content";
+            // 
+            // lbCycleTime
+            // 
+            resources.ApplyResources(this.lbCycleTime, "lbCycleTime");
+            this.lbCycleTime.Name = "lbCycleTime";
+            // 
+            // lbMaxSpeed
+            // 
+            resources.ApplyResources(this.lbMaxSpeed, "lbMaxSpeed");
+            this.lbMaxSpeed.Name = "lbMaxSpeed";
+            // 
+            // lbAccelSpeed
+            // 
+            resources.ApplyResources(this.lbAccelSpeed, "lbAccelSpeed");
+            this.lbAccelSpeed.Name = "lbAccelSpeed";
+            // 
+            // lbRunTime
+            // 
+            resources.ApplyResources(this.lbRunTime, "lbRunTime");
+            this.lbRunTime.Name = "lbRunTime";
+            // 
+            // lbConstantTime
+            // 
+            resources.ApplyResources(this.lbConstantTime, "lbConstantTime");
+            this.lbConstantTime.Name = "lbConstantTime";
+            // 
+            // lbAccelTime
+            // 
+            resources.ApplyResources(this.lbAccelTime, "lbAccelTime");
+            this.lbAccelTime.Name = "lbAccelTime";
+            // 
+            // chart1
+            // 
+            this.chart1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisX.Title = "Time (s)";
+            chartArea1.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea1.AxisY.IsLabelAutoFit = false;
+            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            chartArea1.AxisY.MajorGrid.Enabled = false;
+            chartArea1.AxisY.MajorTickMark.Enabled = false;
+            chartArea1.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
+            chartArea1.AxisY.Title = "V (mm/s)";
+            chartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea";
+            this.chart1.ChartAreas.Add(chartArea1);
+            resources.ApplyResources(this.chart1, "chart1");
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Name = "Series1";
+            series1.Points.Add(dataPoint1);
+            this.chart1.Series.Add(series1);
             // 
             // panelPowerModifyMode
             // 
@@ -1362,18 +1410,6 @@
             resources.ApplyResources(this.label58, "label58");
             this.label58.Name = "label58";
             // 
-            // label48
-            // 
-            resources.ApplyResources(this.label48, "label48");
-            this.label48.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label48.Name = "label48";
-            // 
-            // label51
-            // 
-            this.label51.BackColor = System.Drawing.Color.LightGray;
-            resources.ApplyResources(this.label51, "label51");
-            this.label51.Name = "label51";
-            // 
             // label32
             // 
             resources.ApplyResources(this.label32, "label32");
@@ -1677,14 +1713,14 @@
             // explorerBarPanel1_content
             // 
             this.explorerBarPanel1_content.Controls.Add(this.panelCalcMode);
-            this.explorerBarPanel1_content.Controls.Add(this.cboSystemType);
-            this.explorerBarPanel1_content.Controls.Add(this.label56);
             this.explorerBarPanel1_content.Controls.Add(this.label76);
             this.explorerBarPanel1_content.Controls.Add(this.panelConfirmBtnsStep1);
             this.explorerBarPanel1_content.Controls.Add(this.cboModelType);
             this.explorerBarPanel1_content.Controls.Add(this.label9);
             this.explorerBarPanel1_content.Controls.Add(this.label11);
+            this.explorerBarPanel1_content.Controls.Add(this.optRepeatabilityBelt);
             this.explorerBarPanel1_content.Controls.Add(this.label8);
+            this.explorerBarPanel1_content.Controls.Add(this.optRepeatabilityScrew);
             this.explorerBarPanel1_content.Controls.Add(this.panelSetupMode);
             this.explorerBarPanel1_content.Controls.Add(this.panel4);
             this.explorerBarPanel1_content.Controls.Add(this.panelSetupEnv);
@@ -1749,22 +1785,6 @@
             resources.ApplyResources(this.label75, "label75");
             this.label75.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label75.Name = "label75";
-            // 
-            // cboSystemType
-            // 
-            this.cboSystemType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cboSystemType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSystemType.DropDownWidth = 180;
-            resources.ApplyResources(this.cboSystemType, "cboSystemType");
-            this.cboSystemType.ForeColor = System.Drawing.Color.White;
-            this.cboSystemType.FormattingEnabled = true;
-            this.cboSystemType.Name = "cboSystemType";
-            // 
-            // label56
-            // 
-            resources.ApplyResources(this.label56, "label56");
-            this.label56.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label56.Name = "label56";
             // 
             // label76
             // 
@@ -2033,62 +2053,6 @@
             this.label65.ForeColor = System.Drawing.Color.White;
             this.label65.Name = "label65";
             // 
-            // lbCycleTime
-            // 
-            resources.ApplyResources(this.lbCycleTime, "lbCycleTime");
-            this.lbCycleTime.Name = "lbCycleTime";
-            // 
-            // lbMaxSpeed
-            // 
-            resources.ApplyResources(this.lbMaxSpeed, "lbMaxSpeed");
-            this.lbMaxSpeed.Name = "lbMaxSpeed";
-            // 
-            // lbAccelSpeed
-            // 
-            resources.ApplyResources(this.lbAccelSpeed, "lbAccelSpeed");
-            this.lbAccelSpeed.Name = "lbAccelSpeed";
-            // 
-            // lbRunTime
-            // 
-            resources.ApplyResources(this.lbRunTime, "lbRunTime");
-            this.lbRunTime.Name = "lbRunTime";
-            // 
-            // lbConstantTime
-            // 
-            resources.ApplyResources(this.lbConstantTime, "lbConstantTime");
-            this.lbConstantTime.Name = "lbConstantTime";
-            // 
-            // lbAccelTime
-            // 
-            resources.ApplyResources(this.lbAccelTime, "lbAccelTime");
-            this.lbAccelTime.Name = "lbAccelTime";
-            // 
-            // chart1
-            // 
-            this.chart1.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisX.IsLabelAutoFit = false;
-            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            chartArea1.AxisX.MajorGrid.Enabled = false;
-            chartArea1.AxisX.Title = "Time (s)";
-            chartArea1.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
-            chartArea1.AxisY.IsLabelAutoFit = false;
-            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            chartArea1.AxisY.MajorGrid.Enabled = false;
-            chartArea1.AxisY.MajorTickMark.Enabled = false;
-            chartArea1.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
-            chartArea1.AxisY.Title = "V (mm/s)";
-            chartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
-            chartArea1.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea";
-            this.chart1.ChartAreas.Add(chartArea1);
-            resources.ApplyResources(this.chart1, "chart1");
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Name = "Series1";
-            series1.Points.Add(dataPoint1);
-            this.chart1.Series.Add(series1);
-            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2129,6 +2093,7 @@
             this.explorerBarPanel2.ResumeLayout(false);
             this.explorerBarPanel2_content.ResumeLayout(false);
             this.explorerBarPanel2_content.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panelPowerModifyMode.ResumeLayout(false);
             this.panelPowerModifyMode.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -2170,7 +2135,6 @@
             this.explorerBarPanel5_content.ResumeLayout(false);
             this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.explorerBarPanel5_title.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2236,8 +2200,6 @@
         public System.Windows.Forms.ComboBox cboPower;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label16;
@@ -2379,8 +2341,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 運行壽命;
         private System.Windows.Forms.DataGridViewImageColumn 是否推薦;
         private System.Windows.Forms.DataGridViewImageColumn 更詳細資訊;
-        public System.Windows.Forms.ComboBox cboSystemType;
-        private System.Windows.Forms.Label label56;
         public System.Windows.Forms.Panel panelCalcMode;
         public System.Windows.Forms.Panel panelPowerSelection;
         public System.Windows.Forms.Panel panelPowerModifyMode;
