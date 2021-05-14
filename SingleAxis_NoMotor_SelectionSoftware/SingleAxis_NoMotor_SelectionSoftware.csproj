@@ -107,6 +107,7 @@
     </Compile>
     <Compile Include="Frontend\Step2\ChartInfo.cs" />
     <Compile Include="Frontend\Step2\GearRatio.cs" />
+    <Compile Include="Frontend\Step2\InputValidate.cs" />
     <Compile Include="Frontend\Step2\Moment.cs" />
     <Compile Include="Frontend\Step2\MotorPower.cs" />
     <Compile Include="Frontend\Step2\Repeatability.cs" />

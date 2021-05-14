@@ -31,17 +31,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public MotorPower motorPower;
         public ChartInfo chartInfo;
         public RunCondition runCondition;
+        public InputValidate inputValidate;
 
         public Step2(FormMain formMain) {
             this.formMain = formMain;
             InitEvents();
 
+            // 輸入驗證
+            inputValidate = new InputValidate(formMain);
             // 馬達條件
             motorPower = new MotorPower(formMain);
             // 圖表
             chartInfo = new ChartInfo(formMain);
             // 運轉條件
-            runCondition = new RunCondition(formMain);
+            runCondition = new RunCondition(formMain);            
 
             // 減速比
             calc.reducerInfo.Rows.Cast<DataRow>().ToList().ForEach(row => {
@@ -95,10 +98,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void CmdCalc_Click(object sender, EventArgs e) {
             // 版面修正
-            if (formMain.optCalcAllModel.Checked) {
-                formMain.explorerBarPanel2.Size = new Size(formMain.explorerBarPanel2.Size.Width, maxHeight);
-                formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep2);
-            }
+            //if (formMain.optCalcAllModel.Checked) {
+            //    formMain.explorerBarPanel2.Size = new Size(formMain.explorerBarPanel2.Size.Width, maxHeight);
+            //    formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep2);
+            //}
+            formMain.explorerBarPanel2.Size = new Size(formMain.explorerBarPanel2.Size.Width, maxHeight);
+            formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep2);
             formMain.panelSelectCalcResult.Visible = formMain.optCalcSelectedModel.Checked;
 
             threadCalc = new Thread(() => {
@@ -113,6 +118,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 // 是否跳出Alarm
                 bool isAlarm = (bool)result["Alarm"];
 
+                // 搜尋不到型號驗證
                 if (curRecommandList.Count == 0) {
                     MessageBox.Show("此使用條件無法計算，請嘗試調整使用條件。");
                     return;

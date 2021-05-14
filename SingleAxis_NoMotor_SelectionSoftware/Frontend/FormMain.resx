@@ -676,7 +676,7 @@
     <value>6</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1335, 101</value>
+    <value>1080, 101</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -3439,7 +3439,7 @@
     <value>微軟正黑體, 12pt</value>
   </data>
   <data name="txtStroke.Location" type="System.Drawing.Point, System.Drawing">
-    <value>586, 121</value>
+    <value>463, 122</value>
   </data>
   <data name="txtStroke.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 29</value>
@@ -3475,7 +3475,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelStrokeAlarm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>583, 153</value>
+    <value>460, 154</value>
   </data>
   <data name="labelStrokeAlarm.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 16</value>
@@ -3574,7 +3574,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelLoadAlarm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>583, 102</value>
+    <value>460, 101</value>
   </data>
   <data name="labelLoadAlarm.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 16</value>
@@ -3610,7 +3610,7 @@
     <value>NoControl</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>668, 124</value>
+    <value>545, 125</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 20</value>
@@ -3898,7 +3898,7 @@
     <value>NoControl</value>
   </data>
   <data name="label22.Location" type="System.Drawing.Point, System.Drawing">
-    <value>373, 124</value>
+    <value>373, 126</value>
   </data>
   <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 19</value>
@@ -4219,7 +4219,7 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>668, 74</value>
+    <value>545, 73</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 20</value>
@@ -4549,7 +4549,7 @@
     <value>微軟正黑體, 12pt</value>
   </data>
   <data name="txtLoad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>586, 71</value>
+    <value>463, 70</value>
   </data>
   <data name="txtLoad.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 29</value>
@@ -6299,9 +6299,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1690, 762</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

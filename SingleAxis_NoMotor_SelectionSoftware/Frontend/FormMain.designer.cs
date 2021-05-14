@@ -895,6 +895,7 @@
             resources.ApplyResources(this.label82, "label82");
             this.label82.ForeColor = System.Drawing.Color.Red;
             this.label82.Name = "label82";
+            this.label82.Tag = "txtAccelSpeed";
             // 
             // txtAccelSpeed
             // 
@@ -929,6 +930,7 @@
             resources.ApplyResources(this.label80, "label80");
             this.label80.ForeColor = System.Drawing.Color.Red;
             this.label80.Name = "label80";
+            this.label80.Tag = "txtMaxSpeed";
             // 
             // txtMaxSpeed
             // 
@@ -962,6 +964,7 @@
             resources.ApplyResources(this.label77, "label77");
             this.label77.ForeColor = System.Drawing.Color.Red;
             this.label77.Name = "label77";
+            this.label77.Tag = "txtExpectServiceLifeTime";
             // 
             // txtExpectServiceLifeTime
             // 
@@ -1328,6 +1331,7 @@
             resources.ApplyResources(this.label43, "label43");
             this.label43.ForeColor = System.Drawing.Color.Red;
             this.label43.Name = "label43";
+            this.label43.Tag = "txtMaxTorque";
             // 
             // label42
             // 
@@ -1351,12 +1355,14 @@
             resources.ApplyResources(this.label39, "label39");
             this.label39.ForeColor = System.Drawing.Color.Red;
             this.label39.Name = "label39";
+            this.label39.Tag = "txtRatedTorque";
             // 
             // label38
             // 
             resources.ApplyResources(this.label38, "label38");
             this.label38.ForeColor = System.Drawing.Color.Red;
             this.label38.Name = "label38";
+            this.label38.Tag = "txtRotateInertia";
             // 
             // txtRotateInertia
             // 
@@ -1478,6 +1484,7 @@
             resources.ApplyResources(this.labelStrokeAlarm, "labelStrokeAlarm");
             this.labelStrokeAlarm.ForeColor = System.Drawing.Color.Red;
             this.labelStrokeAlarm.Name = "labelStrokeAlarm";
+            this.labelStrokeAlarm.Tag = "txtStroke";
             // 
             // txtRunTime
             // 
@@ -1495,6 +1502,7 @@
             resources.ApplyResources(this.labelLoadAlarm, "labelLoadAlarm");
             this.labelLoadAlarm.ForeColor = System.Drawing.Color.Red;
             this.labelLoadAlarm.Name = "labelLoadAlarm";
+            this.labelLoadAlarm.Tag = "txtLoad";
             // 
             // label10
             // 
@@ -1569,6 +1577,7 @@
             resources.ApplyResources(this.labelStopTimeAlarm, "labelStopTimeAlarm");
             this.labelStopTimeAlarm.ForeColor = System.Drawing.Color.Red;
             this.labelStopTimeAlarm.Name = "labelStopTimeAlarm";
+            this.labelStopTimeAlarm.Tag = "txtRunTime";
             // 
             // label53
             // 
@@ -1586,6 +1595,7 @@
             resources.ApplyResources(this.label54, "label54");
             this.label54.ForeColor = System.Drawing.Color.Red;
             this.label54.Name = "label54";
+            this.label54.Tag = "txtDayPerYear";
             // 
             // txtMomentC
             // 
@@ -1620,12 +1630,14 @@
             resources.ApplyResources(this.label49, "label49");
             this.label49.ForeColor = System.Drawing.Color.Red;
             this.label49.Name = "label49";
+            this.label49.Tag = "txtTimesPerMinute";
             // 
             // label47
             // 
             resources.ApplyResources(this.label47, "label47");
             this.label47.ForeColor = System.Drawing.Color.Red;
             this.label47.Name = "label47";
+            this.label47.Tag = "txtHourPerDay";
             // 
             // txtMomentB
             // 
@@ -1638,6 +1650,7 @@
             resources.ApplyResources(this.label27, "label27");
             this.label27.ForeColor = System.Drawing.Color.Red;
             this.label27.Name = "label27";
+            this.label27.Tag = "txtMomentC";
             // 
             // txtDayPerYear
             // 
@@ -1662,6 +1675,7 @@
             resources.ApplyResources(this.label30, "label30");
             this.label30.ForeColor = System.Drawing.Color.Red;
             this.label30.Name = "label30";
+            this.label30.Tag = "txtMomentB";
             // 
             // txtLoad
             // 
@@ -1685,6 +1699,7 @@
             resources.ApplyResources(this.label24, "label24");
             this.label24.ForeColor = System.Drawing.Color.Red;
             this.label24.Name = "label24";
+            this.label24.Tag = "txtMomentA";
             // 
             // txtHourPerDay
             // 

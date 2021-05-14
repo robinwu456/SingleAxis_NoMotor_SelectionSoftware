@@ -50,10 +50,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.txtRotateInertia.TextChanged += UpdateCondition;
             formMain.txtMaxTorque.TextChanged += UpdateCondition;
             formMain.optRepeatabilityScrew.CheckedChanged += UpdateCondition;
-        }
+            formMain.optMaxSpeedType_mms.CheckedChanged += UpdateCondition;
+        }        
 
         public void UpdateCondition(object sender, EventArgs e) {
             if (formMain.curStep != FormMain.Step.Step2)
+                return;
+            // 全數值驗證
+            if (!formMain.step2.inputValidate.VerifyAllInputValidate())
                 return;
 
             // 使用環境

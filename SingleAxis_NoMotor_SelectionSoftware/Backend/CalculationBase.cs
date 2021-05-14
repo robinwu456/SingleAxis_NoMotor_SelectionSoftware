@@ -181,14 +181,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return (int)(mms * 60f / (float)lead);
         }
 
-        protected int GetMaxStroke(string model, double lead, int reducer) {
+        public int GetMaxStroke(string model, double lead, int reducer) {
             IEnumerable<int> strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => row["Model"].ToString() == model &&
                                                                                    Convert.ToDouble(row["Lead"].ToString()) == (int)Math.Round(lead * reducer, 0))
                                                                      .Select(row => Convert.ToInt32(row["Stroke"].ToString()));
             return strokes.Max();
         }
 
-        protected double GetMaxLoad(string model, double lead, Condition conditions) {
+        public double GetMaxLoad(string model, double lead, Condition conditions) {
             // 取最大荷重
             double maxLoad = -1;
             string data = "";
