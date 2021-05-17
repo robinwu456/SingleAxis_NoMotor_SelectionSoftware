@@ -164,6 +164,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     formMain.step2.motorPower.customMotorParams.rotateInertia = curCondition.rotateInertia;
                 }
             }
+
+            curCondition.curCheckedModel = formMain.step2.recommandList.curCheckedModel;
+
             // 單項計算
             if (!formMain.optCalcAllModel.Checked) {
                 (string model, double lead) calcModel = (formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));

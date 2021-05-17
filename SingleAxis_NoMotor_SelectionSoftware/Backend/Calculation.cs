@@ -121,6 +121,25 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             int oldResultModelCount = resultModels.Count;
             string nullModelAlarmMsg = "";
 
+            // 打勾項目記錄
+            Model checkedModel = null;            
+            if (condition.curCheckedModel.model != null) {
+                // 減速比驗證
+                Func<Model, bool> predicate;
+                if (condition.reducerRatio.Keys.Contains(condition.curCheckedModel.model))
+                    // 包含減速比時，不判斷導程
+                    predicate = model => model.name == condition.curCheckedModel.model;
+                else
+                    predicate = model => model.name == condition.curCheckedModel.model && model.lead == condition.curCheckedModel.lead;
+                // Init打勾項目
+                if (resultModels.Any(predicate))
+                    checkedModel = resultModels.First(model => model.name == condition.curCheckedModel.model && model.lead == condition.curCheckedModel.lead);
+                else {
+                    condition.curCheckedModel.model = null;
+                    condition.curCheckedModel.lead = -1;
+                }
+            }
+
             // 篩選條件
             Dictionary<string, Func<Model, bool>> filterMap = new Dictionary<string, Func<Model, bool>>() {
                 { "超過最大行程", model => model.maxStroke >= condition.stroke },
@@ -137,6 +156,19 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     nullModelAlarmMsg += filter.Key + "|";
             }
 
+            // 驗證打勾項目是否還在列表裡
+            if (checkedModel != null) {
+                // 若沒有就加在第一列
+                if (!resultModels.Contains(checkedModel))
+                    resultModels.Insert(0, checkedModel);
+                else {
+                    // 若有就移去第一列
+                    resultModels.Remove(checkedModel);
+                    resultModels.Insert(0, checkedModel);
+                }
+            }
+
+            // 查無資料則添加訊息
             if (resultModels.Count == 0 && pipeLineResult["Msg"].ToString() == "")
                 pipeLineResult["Msg"] = nullModelAlarmMsg;
 
