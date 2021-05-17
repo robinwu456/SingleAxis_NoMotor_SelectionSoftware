@@ -41,18 +41,18 @@
             this.cmdClose = new System.Windows.Forms.PictureBox();
             this.tabMain = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.explorerBar = new System.Windows.Forms.Panel();
             this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.panelSideTableSelections = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.tableSelections = new System.Windows.Forms.TableLayoutPanel();
             this.customPanel4 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbSideTableModelInfo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.customPanel3 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbSideTableMsg = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.customPanel2 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.label2 = new System.Windows.Forms.Label();
+            this.explorerBar = new System.Windows.Forms.Panel();
             this.explorerBarPanel4 = new System.Windows.Forms.Panel();
             this.explorerBarPanel4_content = new System.Windows.Forms.Panel();
             this.panelConfirmBtnsStep4 = new System.Windows.Forms.TableLayoutPanel();
@@ -70,6 +70,8 @@
             this.label63 = new System.Windows.Forms.Label();
             this.explorerBarPanel2 = new System.Windows.Forms.Panel();
             this.explorerBarPanel2_content = new System.Windows.Forms.Panel();
+            this.panelAdvanceMode = new System.Windows.Forms.Panel();
+            this.chkAdvanceMode = new CustomToggle.CustomToggle();
             this.panelSelectCalcResult = new System.Windows.Forms.Panel();
             this.label48 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
@@ -91,7 +93,7 @@
             this.optMotorParamsModifySimple = new System.Windows.Forms.RadioButton();
             this.optMotorParamsModifyAdvance = new System.Windows.Forms.RadioButton();
             this.label34 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.panelAdvanceParams = new System.Windows.Forms.Panel();
             this.label78 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
@@ -99,7 +101,7 @@
             this.optMaxSpeedType_rpm = new System.Windows.Forms.RadioButton();
             this.optMaxSpeedType_mms = new System.Windows.Forms.RadioButton();
             this.label79 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
+            this.lbMaxSpeedAlarm = new System.Windows.Forms.Label();
             this.txtMaxSpeed = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -201,9 +203,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.txtHourPerDay = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.explorerBarPanel2_title = new System.Windows.Forms.Panel();
-            this.label67 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
             this.explorerBarPanel1 = new System.Windows.Forms.Panel();
             this.explorerBarPanel1_content = new System.Windows.Forms.Panel();
             this.panelCalcMode = new System.Windows.Forms.Panel();
@@ -248,6 +247,10 @@
             this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
+            this.explorerBarPanel2_title = new System.Windows.Forms.Panel();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.lbRpm = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -261,11 +264,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).BeginInit();
             this.tabMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.explorerBar.SuspendLayout();
             this.panelSideTable.SuspendLayout();
             this.panelSideTableSelections.SuspendLayout();
             this.customPanel4.SuspendLayout();
             this.customPanel3.SuspendLayout();
+            this.explorerBar.SuspendLayout();
             this.explorerBarPanel4.SuspendLayout();
             this.explorerBarPanel4_content.SuspendLayout();
             this.panelConfirmBtnsStep4.SuspendLayout();
@@ -276,13 +279,14 @@
             this.explorerBarPanel3_title.SuspendLayout();
             this.explorerBarPanel2.SuspendLayout();
             this.explorerBarPanel2_content.SuspendLayout();
+            this.panelAdvanceMode.SuspendLayout();
             this.panelSelectCalcResult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalcSelectedModel)).BeginInit();
             this.panelReducer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panelPowerModifyMode.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.panelAdvanceParams.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelConfirmBtnsStep2.SuspendLayout();
@@ -290,7 +294,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).BeginInit();
             this.panelMotorParams.SuspendLayout();
             this.panelPowerSelection.SuspendLayout();
-            this.explorerBarPanel2_title.SuspendLayout();
             this.explorerBarPanel1.SuspendLayout();
             this.explorerBarPanel1_content.SuspendLayout();
             this.panelCalcMode.SuspendLayout();
@@ -308,6 +311,7 @@
             this.explorerBarPanel5_content.SuspendLayout();
             this.panelConfirmBtnsStep5.SuspendLayout();
             this.explorerBarPanel5_title.SuspendLayout();
+            this.explorerBarPanel2_title.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -394,19 +398,10 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.panelSideTable);
             this.tabPage1.Controls.Add(this.explorerBar);
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
-            // 
-            // explorerBar
-            // 
-            resources.ApplyResources(this.explorerBar, "explorerBar");
-            this.explorerBar.Controls.Add(this.panelSideTable);
-            this.explorerBar.Controls.Add(this.explorerBarPanel4);
-            this.explorerBar.Controls.Add(this.explorerBarPanel3);
-            this.explorerBar.Controls.Add(this.explorerBarPanel2);
-            this.explorerBar.Controls.Add(this.explorerBarPanel1);
-            this.explorerBar.Name = "explorerBar";
             // 
             // panelSideTable
             // 
@@ -424,11 +419,11 @@
             // 
             // panelSideTableSelections
             // 
-            resources.ApplyResources(this.panelSideTableSelections, "panelSideTableSelections");
             this.panelSideTableSelections.BorderColor = System.Drawing.Color.Silver;
             this.panelSideTableSelections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelSideTableSelections.Controls.Add(this.tableSelections);
             this.panelSideTableSelections.Curvature = 8;
+            resources.ApplyResources(this.panelSideTableSelections, "panelSideTableSelections");
             this.panelSideTableSelections.Name = "panelSideTableSelections";
             // 
             // tableSelections
@@ -438,17 +433,17 @@
             // 
             // customPanel4
             // 
-            resources.ApplyResources(this.customPanel4, "customPanel4");
             this.customPanel4.BorderColor = System.Drawing.Color.Silver;
             this.customPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel4.Controls.Add(this.label1);
+            this.customPanel4.Controls.Add(this.lbSideTableModelInfo);
             this.customPanel4.Curvature = 8;
+            resources.ApplyResources(this.customPanel4, "customPanel4");
             this.customPanel4.Name = "customPanel4";
             // 
-            // label1
+            // lbSideTableModelInfo
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.lbSideTableModelInfo, "lbSideTableModelInfo");
+            this.lbSideTableModelInfo.Name = "lbSideTableModelInfo";
             // 
             // label4
             // 
@@ -458,18 +453,18 @@
             // 
             // customPanel3
             // 
-            resources.ApplyResources(this.customPanel3, "customPanel3");
             this.customPanel3.BorderColor = System.Drawing.Color.Silver;
             this.customPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel3.Controls.Add(this.label5);
+            this.customPanel3.Controls.Add(this.lbSideTableMsg);
             this.customPanel3.Curvature = 8;
+            resources.ApplyResources(this.customPanel3, "customPanel3");
             this.customPanel3.Name = "customPanel3";
             // 
-            // label5
+            // lbSideTableMsg
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Name = "label5";
+            resources.ApplyResources(this.lbSideTableMsg, "lbSideTableMsg");
+            this.lbSideTableMsg.ForeColor = System.Drawing.Color.Red;
+            this.lbSideTableMsg.Name = "lbSideTableMsg";
             // 
             // label3
             // 
@@ -479,16 +474,25 @@
             // 
             // customPanel2
             // 
-            resources.ApplyResources(this.customPanel2, "customPanel2");
             this.customPanel2.BorderColor = System.Drawing.Color.Silver;
             this.customPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.customPanel2.Curvature = 8;
+            resources.ApplyResources(this.customPanel2, "customPanel2");
             this.customPanel2.Name = "customPanel2";
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
+            // 
+            // explorerBar
+            // 
+            resources.ApplyResources(this.explorerBar, "explorerBar");
+            this.explorerBar.Controls.Add(this.explorerBarPanel4);
+            this.explorerBar.Controls.Add(this.explorerBarPanel3);
+            this.explorerBar.Controls.Add(this.explorerBarPanel2);
+            this.explorerBar.Controls.Add(this.explorerBarPanel1);
+            this.explorerBar.Name = "explorerBar";
             // 
             // explorerBarPanel4
             // 
@@ -630,6 +634,7 @@
             // 
             // explorerBarPanel2_content
             // 
+            this.explorerBarPanel2_content.Controls.Add(this.panelAdvanceMode);
             this.explorerBarPanel2_content.Controls.Add(this.panelSelectCalcResult);
             this.explorerBarPanel2_content.Controls.Add(this.panelReducer);
             this.explorerBarPanel2_content.Controls.Add(this.lbCycleTime);
@@ -640,7 +645,7 @@
             this.explorerBarPanel2_content.Controls.Add(this.lbAccelTime);
             this.explorerBarPanel2_content.Controls.Add(this.chart1);
             this.explorerBarPanel2_content.Controls.Add(this.panelPowerModifyMode);
-            this.explorerBarPanel2_content.Controls.Add(this.panel7);
+            this.explorerBarPanel2_content.Controls.Add(this.panelAdvanceParams);
             this.explorerBarPanel2_content.Controls.Add(this.panel6);
             this.explorerBarPanel2_content.Controls.Add(this.label71);
             this.explorerBarPanel2_content.Controls.Add(this.panelConfirmBtnsStep2);
@@ -666,7 +671,6 @@
             this.explorerBarPanel2_content.Controls.Add(this.label18);
             this.explorerBarPanel2_content.Controls.Add(this.label15);
             this.explorerBarPanel2_content.Controls.Add(this.label26);
-            this.explorerBarPanel2_content.Controls.Add(this.labelAdvanceOption);
             this.explorerBarPanel2_content.Controls.Add(this.label23);
             this.explorerBarPanel2_content.Controls.Add(this.label21);
             this.explorerBarPanel2_content.Controls.Add(this.label25);
@@ -698,6 +702,25 @@
             this.explorerBarPanel2_content.Controls.Add(this.label17);
             resources.ApplyResources(this.explorerBarPanel2_content, "explorerBarPanel2_content");
             this.explorerBarPanel2_content.Name = "explorerBarPanel2_content";
+            // 
+            // panelAdvanceMode
+            // 
+            this.panelAdvanceMode.Controls.Add(this.chkAdvanceMode);
+            this.panelAdvanceMode.Controls.Add(this.labelAdvanceOption);
+            resources.ApplyResources(this.panelAdvanceMode, "panelAdvanceMode");
+            this.panelAdvanceMode.Name = "panelAdvanceMode";
+            // 
+            // chkAdvanceMode
+            // 
+            this.chkAdvanceMode.BackImg_ToggleOff_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_disable;
+            this.chkAdvanceMode.BackImg_ToggleOff_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_hover;
+            this.chkAdvanceMode.BackImg_ToggleOff_Normal = ((System.Drawing.Image)(resources.GetObject("chkAdvanceMode.BackImg_ToggleOff_Normal")));
+            this.chkAdvanceMode.BackImg_ToggleOn_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_disable;
+            this.chkAdvanceMode.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_hover;
+            this.chkAdvanceMode.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn;
+            this.chkAdvanceMode.Checked = false;
+            resources.ApplyResources(this.chkAdvanceMode, "chkAdvanceMode");
+            this.chkAdvanceMode.Name = "chkAdvanceMode";
             // 
             // panelSelectCalcResult
             // 
@@ -865,19 +888,20 @@
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label34.Name = "label34";
             // 
-            // panel7
+            // panelAdvanceParams
             // 
-            this.panel7.Controls.Add(this.label78);
-            this.panel7.Controls.Add(this.label81);
-            this.panel7.Controls.Add(this.label82);
-            this.panel7.Controls.Add(this.txtAccelSpeed);
-            this.panel7.Controls.Add(this.optMaxSpeedType_rpm);
-            this.panel7.Controls.Add(this.optMaxSpeedType_mms);
-            this.panel7.Controls.Add(this.label79);
-            this.panel7.Controls.Add(this.label80);
-            this.panel7.Controls.Add(this.txtMaxSpeed);
-            resources.ApplyResources(this.panel7, "panel7");
-            this.panel7.Name = "panel7";
+            this.panelAdvanceParams.Controls.Add(this.lbMaxSpeedAlarm);
+            this.panelAdvanceParams.Controls.Add(this.label78);
+            this.panelAdvanceParams.Controls.Add(this.label81);
+            this.panelAdvanceParams.Controls.Add(this.label82);
+            this.panelAdvanceParams.Controls.Add(this.txtAccelSpeed);
+            this.panelAdvanceParams.Controls.Add(this.optMaxSpeedType_rpm);
+            this.panelAdvanceParams.Controls.Add(this.optMaxSpeedType_mms);
+            this.panelAdvanceParams.Controls.Add(this.label79);
+            this.panelAdvanceParams.Controls.Add(this.txtMaxSpeed);
+            this.panelAdvanceParams.Controls.Add(this.lbRpm);
+            resources.ApplyResources(this.panelAdvanceParams, "panelAdvanceParams");
+            this.panelAdvanceParams.Name = "panelAdvanceParams";
             // 
             // label78
             // 
@@ -925,12 +949,12 @@
             this.label79.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label79.Name = "label79";
             // 
-            // label80
+            // lbMaxSpeedAlarm
             // 
-            resources.ApplyResources(this.label80, "label80");
-            this.label80.ForeColor = System.Drawing.Color.Red;
-            this.label80.Name = "label80";
-            this.label80.Tag = "txtMaxSpeed";
+            resources.ApplyResources(this.lbMaxSpeedAlarm, "lbMaxSpeedAlarm");
+            this.lbMaxSpeedAlarm.ForeColor = System.Drawing.Color.Red;
+            this.lbMaxSpeedAlarm.Name = "lbMaxSpeedAlarm";
+            this.lbMaxSpeedAlarm.Tag = "txtMaxSpeed";
             // 
             // txtMaxSpeed
             // 
@@ -1534,7 +1558,7 @@
             // labelAdvanceOption
             // 
             resources.ApplyResources(this.labelAdvanceOption, "labelAdvanceOption");
-            this.labelAdvanceOption.ForeColor = System.Drawing.Color.Silver;
+            this.labelAdvanceOption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.labelAdvanceOption.Name = "labelAdvanceOption";
             // 
             // label23
@@ -1711,28 +1735,6 @@
             // 
             resources.ApplyResources(this.label17, "label17");
             this.label17.Name = "label17";
-            // 
-            // explorerBarPanel2_title
-            // 
-            this.explorerBarPanel2_title.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
-            resources.ApplyResources(this.explorerBarPanel2_title, "explorerBarPanel2_title");
-            this.explorerBarPanel2_title.Controls.Add(this.label67);
-            this.explorerBarPanel2_title.Controls.Add(this.label62);
-            this.explorerBarPanel2_title.Name = "explorerBarPanel2_title";
-            // 
-            // label67
-            // 
-            this.label67.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.label67, "label67");
-            this.label67.ForeColor = System.Drawing.Color.DimGray;
-            this.label67.Name = "label67";
-            // 
-            // label62
-            // 
-            this.label62.BackColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.label62, "label62");
-            this.label62.ForeColor = System.Drawing.Color.White;
-            this.label62.Name = "label62";
             // 
             // explorerBarPanel1
             // 
@@ -2100,6 +2102,35 @@
             this.label65.ForeColor = System.Drawing.Color.White;
             this.label65.Name = "label65";
             // 
+            // explorerBarPanel2_title
+            // 
+            this.explorerBarPanel2_title.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
+            resources.ApplyResources(this.explorerBarPanel2_title, "explorerBarPanel2_title");
+            this.explorerBarPanel2_title.Controls.Add(this.label67);
+            this.explorerBarPanel2_title.Controls.Add(this.label62);
+            this.explorerBarPanel2_title.Name = "explorerBarPanel2_title";
+            // 
+            // label67
+            // 
+            this.label67.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.label67, "label67");
+            this.label67.ForeColor = System.Drawing.Color.DimGray;
+            this.label67.Name = "label67";
+            // 
+            // label62
+            // 
+            this.label62.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.label62, "label62");
+            this.label62.ForeColor = System.Drawing.Color.White;
+            this.label62.Name = "label62";
+            // 
+            // lbRpm
+            // 
+            resources.ApplyResources(this.lbRpm, "lbRpm");
+            this.lbRpm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.lbRpm.Name = "lbRpm";
+            this.lbRpm.Tag = "txtMaxSpeed";
+            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2124,11 +2155,11 @@
             this.tabMain.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.explorerBar.ResumeLayout(false);
             this.panelSideTable.ResumeLayout(false);
             this.panelSideTableSelections.ResumeLayout(false);
             this.customPanel4.ResumeLayout(false);
             this.customPanel3.ResumeLayout(false);
+            this.explorerBar.ResumeLayout(false);
             this.explorerBarPanel4.ResumeLayout(false);
             this.explorerBarPanel4_content.ResumeLayout(false);
             this.panelConfirmBtnsStep4.ResumeLayout(false);
@@ -2140,6 +2171,8 @@
             this.explorerBarPanel2.ResumeLayout(false);
             this.explorerBarPanel2_content.ResumeLayout(false);
             this.explorerBarPanel2_content.PerformLayout();
+            this.panelAdvanceMode.ResumeLayout(false);
+            this.panelAdvanceMode.PerformLayout();
             this.panelSelectCalcResult.ResumeLayout(false);
             this.panelSelectCalcResult.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalcSelectedModel)).EndInit();
@@ -2149,8 +2182,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panelPowerModifyMode.ResumeLayout(false);
             this.panelPowerModifyMode.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.panelAdvanceParams.ResumeLayout(false);
+            this.panelAdvanceParams.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -2162,7 +2195,6 @@
             this.panelMotorParams.PerformLayout();
             this.panelPowerSelection.ResumeLayout(false);
             this.panelPowerSelection.PerformLayout();
-            this.explorerBarPanel2_title.ResumeLayout(false);
             this.explorerBarPanel1.ResumeLayout(false);
             this.explorerBarPanel1_content.ResumeLayout(false);
             this.explorerBarPanel1_content.PerformLayout();
@@ -2186,6 +2218,7 @@
             this.explorerBarPanel5_content.ResumeLayout(false);
             this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.explorerBarPanel5_title.ResumeLayout(false);
+            this.explorerBarPanel2_title.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2206,10 +2239,8 @@
         public CustomPanel panelSideTableSelections;
         public System.Windows.Forms.TableLayoutPanel tableSelections;
         private CustomPanel customPanel4;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private CustomPanel customPanel3;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private CustomPanel customPanel2;
         private System.Windows.Forms.Label label2;
@@ -2346,13 +2377,12 @@
         public System.Windows.Forms.DataGridView dgvReducerInfo;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnModel;
         private System.Windows.Forms.DataGridViewComboBoxColumn columnReducerRatio;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.Label label81;
         public System.Windows.Forms.Label label82;
         public System.Windows.Forms.TextBox txtAccelSpeed;
         private System.Windows.Forms.Label label79;
-        public System.Windows.Forms.Label label80;
+        public System.Windows.Forms.Label lbMaxSpeedAlarm;
         public System.Windows.Forms.TextBox txtMaxSpeed;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
@@ -2408,6 +2438,12 @@
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label51;
         public System.Windows.Forms.Panel panelSelectCalcResult;
+        public CustomToggle.CustomToggle chkAdvanceMode;
+        public System.Windows.Forms.Panel panelAdvanceMode;
+        public System.Windows.Forms.Panel panelAdvanceParams;
+        public System.Windows.Forms.Label lbSideTableModelInfo;
+        public System.Windows.Forms.Label lbSideTableMsg;
+        public System.Windows.Forms.Label lbRpm;
     }
 }
 

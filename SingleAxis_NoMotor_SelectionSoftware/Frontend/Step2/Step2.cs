@@ -65,13 +65,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             motorPower.UpdateMotorCalcMode();
             motorPower.Load();
 
+            // 進階選項驗證
+            formMain.chkAdvanceMode.Checked = false;
+            formMain.panelAdvanceMode.Enabled = formMain.optCalcSelectedModel.Checked;            
+
             // 減速比顯示
             formMain.panelReducer.Visible = ((Model.ModelType)Enum.Parse(typeof(Model.ModelType), formMain.cboModelType.Text)) == Model.ModelType.歐規皮帶滑台;
         }        
 
         private void InitEvents() {
             // 進階選項
-            //formMain.toggleAdvanceOptions.CheckedChanged += ToggleAdvanceOptions_CheckedChanged;
+            formMain.chkAdvanceMode.CheckedChanged += ChkAdvanceMode_CheckedChanged;
 
             // 計算
             formMain.cmdCalc.Click += CmdCalc_Click;
@@ -82,9 +86,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.cmdConfirmStep2.Click += CmdConfirmStep2_Click;
         }
 
+        private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {
+            formMain.panelAdvanceParams.Visible = formMain.chkAdvanceMode.Checked;
+        }
+
         private void DgvRecommandList_SelectionChanged(object sender, EventArgs e) {
             // 畫圖
-            chartInfo.PaintGraph();
+            chartInfo.PaintGraph();            
         }
 
         private void CmdConfirmStep2_Click(object sender, EventArgs e) {
@@ -98,12 +106,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void CmdCalc_Click(object sender, EventArgs e) {
             // 版面修正
-            //if (formMain.optCalcAllModel.Checked) {
-            //    formMain.explorerBarPanel2.Size = new Size(formMain.explorerBarPanel2.Size.Width, maxHeight);
-            //    formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep2);
-            //}
-            formMain.explorerBarPanel2.Size = new Size(formMain.explorerBarPanel2.Size.Width, maxHeight);
-            formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep2);
+            if (formMain.optCalcAllModel.Checked) {
+                formMain.explorerBarPanel2.Size = new Size(formMain.explorerBarPanel2.Size.Width, maxHeight);
+                formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep2);
+            }
             formMain.panelSelectCalcResult.Visible = formMain.optCalcSelectedModel.Checked;
 
             threadCalc = new Thread(() => {
@@ -121,11 +127,29 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 // 搜尋不到型號驗證
                 if (curRecommandList.Count == 0) {
                     MessageBox.Show("此使用條件無法計算，請嘗試調整使用條件。");
+
+                    // 訊息顯示
+                    if (!string.IsNullOrEmpty(result["Msg"] as string)) {
+                        // 訊息斷行顯示
+                        string alarmMsg = result["Msg"] as string;
+                        string showMsg = "";
+                        alarmMsg.Split('|').ToList().ForEach(alarm => {
+                            if (string.IsNullOrEmpty(alarm))
+                                return;
+                            int index = alarmMsg.Split('|').ToList().IndexOf(alarm) + 1;
+                            showMsg += index + ". " + alarm + "\r\n";
+                        });
+                        //MessageBox.Show(showMsg, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        formMain.Invoke(new Action(() => formMain.sideTable.UpdateMsg(showMsg, SideTable.MsgStatus.Alarm)));
+                    }
+
                     return;
                 }
+                // 清空訊息
+                formMain.Invoke(new Action(formMain.sideTable.ClearMsg));
 
                 // 表單顯示
-                DisplayRecommandList();
+                DisplayRecommandList();                
             });
             threadCalc.Start();
 
@@ -220,9 +244,19 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
                         // 畫圖
                         chartInfo.PaintGraph();
-                    } else
+                    } else {
                         // 細項顯示
                         DisplaySelectedModel();
+
+                        // 驗證Vmax
+                        Model curModel = curRecommandList.First();
+                        if (formMain.optMaxSpeedType_mms.Checked) {
+                            formMain.txtMaxSpeed.Text = curModel.vMax.ToString();
+                        } else if (formMain.optMaxSpeedType_rpm.Checked) {
+                            int curRpm = calc.MMS_TO_RPM(curModel.vMax, curModel.lead);
+                            formMain.txtMaxSpeed.Text = curRpm.ToString();
+                        }
+                    }
                 }));
             } catch (Exception ex) {
                 Console.WriteLine(ex);

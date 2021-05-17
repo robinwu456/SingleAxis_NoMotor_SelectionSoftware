@@ -38,7 +38,8 @@
     <Reference Include="CustomButton">
       <HintPath>..\..\CustomPicControls\CustomButton\bin\Debug\CustomButton.dll</HintPath>
     </Reference>
-    <Reference Include="CustomToggle">
+    <Reference Include="CustomToggle, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\CustomPicControls\CustomToggle\bin\Debug\CustomToggle.dll</HintPath>
     </Reference>
     <Reference Include="StrokeTooShortConverterLibraries">
@@ -223,6 +224,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\notInCondition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggleOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggleOff_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggleOff_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggleOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggleOn_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggleOn_hover.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -86,6 +86,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 } else
                     curCondition.vMax = formMain.step2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text));
             }
+            curCondition.vMaxCalcMode = !formMain.chkAdvanceMode.Checked ? Condition.CalcVmax.Max : Condition.CalcVmax.Custom;
             // 力矩參數
             curCondition.moment_A = Convert.ToInt32(formMain.txtMomentA.Text);
             curCondition.moment_B = Convert.ToInt32(formMain.txtMomentB.Text);

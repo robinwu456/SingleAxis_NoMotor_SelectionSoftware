@@ -8,8 +8,8 @@ using System.Drawing;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class CalculationBase {
-        protected bool isCheckStrokeTooShort = true;  // 是否判斷行程過短  
-        protected Converter.ModifyItem strokeTooShortModifyItem = Converter.ModifyItem.Vmax;  // 行程過短修正項目      
+        public bool isCheckStrokeTooShort = true;  // 是否判斷行程過短  
+        public Converter.ModifyItem strokeTooShortModifyItem = Converter.ModifyItem.Vmax;  // 行程過短修正項目      
 
         // 資料庫
         public DataTable modelInfo = FileUtil.ReadCsv(Config.MODEL_INFO_FILENAME);
@@ -23,7 +23,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public string[] beltModels = { "ETB10", "ETB14M", "ETB17M", "ETB22M",
                                        "ECB10", "ECB14", "ECB17", "ECB22", };
 
-        protected List<Model> GetAllModels(Condition condition) {
+        public List<Model> GetAllModels(Condition condition) {
             List<Model> models = new List<Model>();
             // 搜尋荷重
             foreach (DataRow row in modelInfo.Rows) {
@@ -86,7 +86,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         // 力矩值基本驗證
-        protected void VerifyMomentParam(int load_A, int load_B, int load_C) {
+        public void VerifyMomentParam(int load_A, int load_B, int load_C) {
             string errorMsg = "";
 
             // 都不為0驗證
@@ -104,7 +104,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         // 取最大力矩值
-        protected int GetMaxMomentParam(string model, double lead, Model.SetupMethod setupMethod, Model.Moment moment) {
+        public int GetMaxMomentParam(string model, double lead, Model.SetupMethod setupMethod, Model.Moment moment) {
             // 減速比換算
             //double newLead = (float)lead / (float)reducerRatio;
             //newLead = Convert.ToDouble(newLead.ToString("#0.00"));
@@ -120,7 +120,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
         }
 
-        protected double GetVmax_ms(string model, double lead, int reducer, int stroke) {
+        public double GetVmax_ms(string model, double lead, int reducer, int stroke) {
             try {
                 return GetVmax_mms(model, lead, reducer, stroke) / 1000f;
             } catch (Exception ex) {
@@ -129,7 +129,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
         }
 
-        protected double GetVmax_mms(string model, double lead, int reducer, int stroke) {
+        public double GetVmax_mms(string model, double lead, int reducer, int stroke) {
             try {
                 // 依照行程取RPM
                 int rpm = GetRpmByStroke(model, lead, reducer, stroke);
@@ -142,7 +142,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         // 依照行程取RPM
-        protected int GetRpmByStroke(string model, double lead, int reducer, int stroke) {
+        public int GetRpmByStroke(string model, double lead, int reducer, int stroke) {
             // 取同型號集合
             IEnumerable<DataRow> strokeRpms = strokeRpm.Rows.Cast<DataRow>()
                                                             .Where(row => row["Model"].ToString() == model &&
@@ -161,7 +161,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         // 依照vMax取RPM
-        protected int GetRpmByMMS(double lead, double mms) {
+        public int GetRpmByMMS(double lead, double mms) {
             try {
                 // 依照限速度取RPM
                 int vMaxRpm = MMS_TO_RPM(mms, lead);
@@ -177,7 +177,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return (float)lead * (float)rpm / 60f;
         }
 
-        protected int MMS_TO_RPM(double mms, double lead) {
+        public int MMS_TO_RPM(double mms, double lead) {
             return (int)(mms * 60f / (float)lead);
         }
 
@@ -211,7 +211,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return maxLoad;
         }
 
-        protected double Get_P(double w, double mr, double mp, double my, double mr_C, double mp_C, double my_C, double c) {
+        public double Get_P(double w, double mr, double mp, double my, double mr_C, double mp_C, double my_C, double c) {
             double P = w / c +
                        Math.Abs(mr / mr_C) +
                        Math.Abs(mp / mp_C) +
@@ -219,7 +219,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return P;
         }
 
-        protected double Get_Fw(double vMax) {
+        public double Get_Fw(double vMax) {
             double p1 = vMax < 0.25 ?
                                     -1f * (((1.5 - 1f) / (0.25 - 0f) * (0.25 - vMax)) - 1.5)
                                     : 1;
@@ -235,7 +235,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         // 1分鐘最多可以跑多少趟
-        protected int GetMaxCountPerMinute(Model model, Condition conditions) {
+        public int GetMaxCountPerMinute(Model model, Condition conditions) {
             double _vMax = 0;
             if (conditions.vMaxCalcMode == Condition.CalcVmax.Max) {
                 if (beltModels.Any(m => model.name.StartsWith(m))) {

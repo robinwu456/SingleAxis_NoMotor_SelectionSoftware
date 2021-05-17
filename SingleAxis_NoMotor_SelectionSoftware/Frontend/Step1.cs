@@ -16,8 +16,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void InitEvents() {
+            // 使用環境
             formMain.picStandardEnv.MouseDown += PicStandardEnv_MouseDown;
             formMain.picDustFree.MouseDown += PicDustFree_MouseDown;
+            formMain.optStandardEnv.CheckedChanged += OptStandardEnv_CheckedChanged;
 
             // 機構型態
             formMain.optRepeatabilityScrew.CheckedChanged += OptRepeatabilityScrew_CheckedChanged;
@@ -40,9 +42,30 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.cmdConfirmStep1.Click += CmdConfirmStep1_Click;
         }
 
+        private void OptStandardEnv_CheckedChanged(object sender, EventArgs e) {
+            // 更新機構型態
+            OptRepeatabilityScrew_CheckedChanged(null, null);
+
+            // 無塵模式時，反灰皮帶機構型態
+            if (formMain.optDustFreeEnv.Checked)
+                formMain.optRepeatabilityScrew.Checked = true;
+            formMain.optRepeatabilityBelt.Enabled = !formMain.optDustFreeEnv.Checked;
+
+            // 取系列
+            Model.ModelType curType = (Model.ModelType)Enum.Parse(typeof(Model.ModelType), formMain.cboModelType.Text);
+            Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.Standard : Model.UseEnvironment.DustFree;
+            var series = formMain.step2.calc.modelInfo.Rows.Cast<DataRow>()
+                                                           .Where(row => (Model.ModelType)Convert.ToInt32(row["Type"].ToString()) == curType)
+                                                           .Where(row => (Model.UseEnvironment)Convert.ToInt32(row["Env"].ToString()) == curEnv)
+                                                           .Select(row => new Regex(@"([A-Z]+).+").Match(row["Model"].ToString()).Groups[1].Value)
+                                                           .Distinct();            
+        }
+
         private void OptRepeatabilityScrew_CheckedChanged(object sender, EventArgs e) {
             // 機構型態選項匯入
+            Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.Standard : Model.UseEnvironment.DustFree;
             Model.ModelType[] dbAllModelType = formMain.step2.calc.modelInfo.Rows.Cast<DataRow>()
+                                                                                 .Where(row => (Model.UseEnvironment)Convert.ToInt32(row["Env"].ToString()) == curEnv)
                                                                                  .Select(row => (Model.ModelType)Convert.ToInt32(row["Type"].ToString()))
                                                                                  .Distinct()
                                                                                  .ToArray();
@@ -81,9 +104,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 取系列
             Model.ModelType curType = (Model.ModelType)Enum.Parse(typeof(Model.ModelType), formMain.cboModelType.Text);            
+            Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.Standard : Model.UseEnvironment.DustFree;
             formMain.cboSeries.DataSource = null;
             formMain.cboSeries.DataSource = formMain.step2.calc.modelInfo.Rows.Cast<DataRow>()
                                                                               .Where(row => (Model.ModelType)Convert.ToInt32(row["Type"].ToString()) == curType)
+                                                                              .Where(row => (Model.UseEnvironment)Convert.ToInt32(row["Env"].ToString()) == curEnv)
                                                                               .Select(row => new Regex(@"([A-Z]+).+").Match(row["Model"].ToString()).Groups[1].Value)
                                                                               .Distinct()
                                                                               .ToArray();
