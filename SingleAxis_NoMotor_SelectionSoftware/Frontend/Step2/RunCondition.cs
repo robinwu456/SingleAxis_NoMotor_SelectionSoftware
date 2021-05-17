@@ -51,6 +51,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.txtMaxTorque.TextChanged += UpdateCondition;
             formMain.optRepeatabilityScrew.CheckedChanged += UpdateCondition;
             formMain.optMaxSpeedType_mms.CheckedChanged += UpdateCondition;
+            formMain.dgvReducerInfo.CellValueChanged += UpdateCondition;
         }        
 
         public void UpdateCondition(object sender, EventArgs e) {

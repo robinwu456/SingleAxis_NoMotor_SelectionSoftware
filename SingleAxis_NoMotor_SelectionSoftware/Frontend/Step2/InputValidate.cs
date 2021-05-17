@@ -73,7 +73,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             ValidatingLoad();
         }
 
-        public bool ValidatingLoad() {
+        public bool ValidatingLoad(bool isShowAlarm = true) {
             if (!decimal.TryParse(formMain.txtLoad.Text, out decimal keyLoad))
                 return true;
             if (!double.TryParse(formMain.cboLead.Text, out double lead))
@@ -94,7 +94,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (maxLoad == -1)
                 return true;
 
-            formMain.labelLoadAlarm.Visible = (double)keyLoad > maxLoad;
+            if (isShowAlarm)
+                formMain.labelLoadAlarm.Visible = (double)keyLoad > maxLoad;
             if ((double)keyLoad > maxLoad) {
                 formMain.txtLoad.Text = ((int)maxLoad).ToString();
                 return false;
@@ -135,7 +136,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             ValidatingStroke();
         }
-        private bool ValidatingStroke() {
+        public bool ValidatingStroke(bool isShowAlarm = true) {
             if (!decimal.TryParse(formMain.txtStroke.Text, out decimal keyStroke))
                 return true;
             if (!double.TryParse(formMain.cboLead.Text, out double lead))
@@ -150,7 +151,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             int maxStroke = formMain.step2.calc.GetMaxStroke(model, lead, reducerRatio);
             formMain.labelStrokeAlarm.Text = "最大: " + maxStroke.ToString() + "mm";
-            formMain.labelStrokeAlarm.Visible = (double)keyStroke > maxStroke;
+            if (isShowAlarm)
+                formMain.labelStrokeAlarm.Visible = (double)keyStroke > maxStroke;
             if (keyStroke > maxStroke) {
                 formMain.txtStroke.Text = maxStroke.ToString();
                 return false;

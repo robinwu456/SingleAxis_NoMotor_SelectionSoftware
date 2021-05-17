@@ -67,10 +67,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 進階選項驗證
             formMain.chkAdvanceMode.Checked = false;
-            formMain.panelAdvanceMode.Enabled = formMain.optCalcSelectedModel.Checked;            
+            formMain.panelAdvanceMode.Enabled = formMain.optCalcSelectedModel.Checked;
+            ChkAdvanceMode_CheckedChanged(null, null);
 
             // 減速比顯示
             formMain.panelReducer.Visible = ((Model.ModelType)Enum.Parse(typeof(Model.ModelType), formMain.cboModelType.Text)) == Model.ModelType.歐規皮帶滑台;
+
+            // 驗證最大荷重
+            inputValidate.ValidatingLoad(isShowAlarm: false);
+
+            // 依照機構型態修正預設行程
+            formMain.txtStroke.Text = formMain.cboModelType.Text.Contains("皮帶") ? "1000" : "70";
+
+            // 驗證最大行程
+            inputValidate.ValidatingStroke(isShowAlarm: false);
         }        
 
         private void InitEvents() {
@@ -126,7 +136,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
                 // 搜尋不到型號驗證
                 if (curRecommandList.Count == 0) {
-                    MessageBox.Show("此使用條件無法計算，請嘗試調整使用條件。");
+                    formMain.Invoke(new Action(() => MessageBox.Show("此使用條件無法計算，請嘗試調整使用條件。")));
 
                     // 訊息顯示
                     if (!string.IsNullOrEmpty(result["Msg"] as string)) {
@@ -137,7 +147,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                             if (string.IsNullOrEmpty(alarm))
                                 return;
                             int index = alarmMsg.Split('|').ToList().IndexOf(alarm) + 1;
-                            showMsg += index + ". " + alarm + "\r\n";
+                            //showMsg += index + ". " + alarm + "\r\n";
+                            showMsg += alarm + "\r\n";
                         });
                         //MessageBox.Show(showMsg, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         formMain.Invoke(new Action(() => formMain.sideTable.UpdateMsg(showMsg, SideTable.MsgStatus.Alarm)));
