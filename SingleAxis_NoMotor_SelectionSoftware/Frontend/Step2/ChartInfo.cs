@@ -14,9 +14,25 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             this.formMain = formMain;
         }
 
+        public void Refresh() {
+            // 圖表清除
+            formMain.chart.Series[0].Points.Clear();
+            formMain.chart.Series[0].Points.AddXY(0, 0);
+            formMain.chart.ChartAreas[0].AxisX.Interval = 1;
+            formMain.chart.ChartAreas[0].AxisX.Maximum = 1;
+            formMain.chart.ChartAreas[0].AxisY.Maximum = 2;
+            // 圖資訊清除
+            formMain.lbAccelTime.Text = "加/減速時間(s)：" + "0.000";
+            formMain.lbConstantTime.Text = "等速時間(s)：" + "0.000";
+            formMain.lbRunTime.Text = "運行時間(s)：" + "0.000";
+            formMain.lbAccelSpeed.Text = "加速度(mm/s²)：" + "0.000";
+            formMain.lbMaxSpeed.Text = "運行速度(mm/s)：" + "0.000";
+            formMain.lbCycleTime.Text = "往返時間(s)：" + "0.000";
+        }
+
         // 畫圖
         public void PaintGraph() {
-            formMain.chart1.Series[0].Points.Clear();
+            formMain.chart.Series[0].Points.Clear();
 
             DataGridViewRow curRow = formMain.dgvRecommandList.CurrentRow;
             if (curRow == null || curRow.Cells["運行速度"].Value == null || curRow.Cells["加速度"].Value == null)
@@ -32,7 +48,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             List<PointF> points = formMain.step2.calc.GetChartPoints(curConditions);
 
             // 畫圖
-            ChartArea chartArea = formMain.chart1.ChartAreas[0];
+            ChartArea chartArea = formMain.chart.ChartAreas[0];
             // X
             chartArea.AxisX.Minimum = points.Select(p => p.X).Min();
             chartArea.AxisX.Maximum = points.Select(p => p.X).Max();
@@ -55,7 +71,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     chartArea.AxisY.CustomLabels.Add(0, chartArea.AxisY.Maximum * 2, chartArea.AxisY.Maximum.ToString());
             }
             foreach (PointF point in points)
-                formMain.chart1.Series[0].Points.AddXY(point.X, point.Y);
+                formMain.chart.Series[0].Points.AddXY(point.X, point.Y);
 
             // 取圖資訊
             var chartInfo = formMain.step2.calc.GetChartInfo(curConditions);

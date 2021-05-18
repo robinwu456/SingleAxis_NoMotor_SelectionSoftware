@@ -71,6 +71,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             var curRow = formMain.dgvRecommandList.CurrentRow;
             if (curRow != null && curRow.Cells["項次"].Value != null && curRow.Cells["導程"].Value != null)
                 curSelectModel = (curRow.Cells["項次"].Value.ToString(), Convert.ToDouble(curRow.Cells["導程"].Value.ToString()));
+
+            // 更新目前條件型號
+            if (curRow != null && curRow.Cells["項次"].Value != null && curRow.Cells["導程"].Value != null) {
+                string curModel = formMain.dgvRecommandList.CurrentRow.Cells["項次"].Value.ToString();
+                double lead = Convert.ToDouble(formMain.dgvRecommandList.CurrentRow.Cells["導程"].Value.ToString());
+                formMain.sideTable.UpdateModelInfo(string.Format("{0}-L{1}", curModel, lead));
+            }
+        }
+
+        public void Refresh() {
+            // 型號選型結果顯示恢復隱藏
+            formMain.panelSelectCalcResult.Visible = false;
+            formMain.dgvCalcSelectedModel.DataSource = null;
+            formMain.dgvCalcSelectedModel.Rows.Clear();
         }
 
         public void DisplayRecommandList() {

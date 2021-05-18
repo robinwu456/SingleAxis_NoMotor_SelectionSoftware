@@ -88,7 +88,7 @@
             this.lbRunTime = new System.Windows.Forms.Label();
             this.lbConstantTime = new System.Windows.Forms.Label();
             this.lbAccelTime = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelPowerModifyMode = new System.Windows.Forms.Panel();
             this.optMotorParamsModifySimple = new System.Windows.Forms.RadioButton();
             this.optMotorParamsModifyAdvance = new System.Windows.Forms.RadioButton();
@@ -284,7 +284,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalcSelectedModel)).BeginInit();
             this.panelReducer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.panelPowerModifyMode.SuspendLayout();
             this.panelAdvanceParams.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -643,7 +643,7 @@
             this.explorerBarPanel2_content.Controls.Add(this.lbRunTime);
             this.explorerBarPanel2_content.Controls.Add(this.lbConstantTime);
             this.explorerBarPanel2_content.Controls.Add(this.lbAccelTime);
-            this.explorerBarPanel2_content.Controls.Add(this.chart1);
+            this.explorerBarPanel2_content.Controls.Add(this.chart);
             this.explorerBarPanel2_content.Controls.Add(this.panelPowerModifyMode);
             this.explorerBarPanel2_content.Controls.Add(this.panelAdvanceParams);
             this.explorerBarPanel2_content.Controls.Add(this.panel6);
@@ -834,7 +834,7 @@
             // 
             // chart1
             // 
-            this.chart1.BackColor = System.Drawing.Color.Transparent;
+            this.chart.BackColor = System.Drawing.Color.Transparent;
             chartArea1.AxisX.IsLabelAutoFit = false;
             chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             chartArea1.AxisX.MajorGrid.Enabled = false;
@@ -849,14 +849,14 @@
             chartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
             chartArea1.BackColor = System.Drawing.Color.Transparent;
             chartArea1.Name = "ChartArea";
-            this.chart1.ChartAreas.Add(chartArea1);
-            resources.ApplyResources(this.chart1, "chart1");
-            this.chart1.Name = "chart1";
+            this.chart.ChartAreas.Add(chartArea1);
+            resources.ApplyResources(this.chart, "chart1");
+            this.chart.Name = "chart1";
             series1.ChartArea = "ChartArea";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Name = "Series1";
             series1.Points.Add(dataPoint1);
-            this.chart1.Series.Add(series1);
+            this.chart.Series.Add(series1);
             // 
             // panelPowerModifyMode
             // 
@@ -2179,7 +2179,7 @@
             this.panelReducer.ResumeLayout(false);
             this.panelReducer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
             this.panelPowerModifyMode.ResumeLayout(false);
             this.panelPowerModifyMode.PerformLayout();
             this.panelAdvanceParams.ResumeLayout(false);
@@ -2433,7 +2433,7 @@
         public System.Windows.Forms.Label lbRunTime;
         public System.Windows.Forms.Label lbConstantTime;
         public System.Windows.Forms.Label lbAccelTime;
-        public System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        public System.Windows.Forms.DataVisualization.Charting.Chart chart;
         public System.Windows.Forms.Panel panelReducer;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label51;

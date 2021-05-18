@@ -74,6 +74,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 驗證最大行程
             inputValidate.ValidatingStroke(isShowAlarm: false);
+
+            // 重置版面
+            recommandList.Refresh();
+            chartInfo.Refresh();
         }        
 
         private void InitEvents() {
@@ -89,11 +93,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {
             formMain.panelAdvanceParams.Visible = formMain.chkAdvanceMode.Checked;
-        }
-
-        private void DgvRecommandList_SelectionChanged(object sender, EventArgs e) {
-            // 畫圖
-            chartInfo.PaintGraph();            
         }
 
         private void CmdConfirmStep2_Click(object sender, EventArgs e) {

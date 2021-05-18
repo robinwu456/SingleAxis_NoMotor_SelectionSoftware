@@ -87,6 +87,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             UpdateTableSelections();
         }
 
+        public void UpdateModelInfo(string modelString) {
+            formMain.lbSideTableModelInfo.Text = modelString;
+        }
+
         public void UpdateMsg(string msg, MsgStatus msgStatus) {
             formMain.lbSideTableMsg.Text = msg;
             formMain.lbSideTableMsg.ForeColor = msgStatus == MsgStatus.Normal ? Color.FromArgb(42, 88, 111) : Color.Red;
