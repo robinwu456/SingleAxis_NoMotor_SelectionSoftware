@@ -51,6 +51,7 @@
             this.lbSideTableMsg = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.customPanel2 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.picModelImg = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.explorerBar = new System.Windows.Forms.Panel();
             this.explorerBarPanel4 = new System.Windows.Forms.Panel();
@@ -252,7 +253,6 @@
             this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
-            this.picModelImg = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -271,6 +271,7 @@
             this.customPanel4.SuspendLayout();
             this.customPanel3.SuspendLayout();
             this.customPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).BeginInit();
             this.explorerBar.SuspendLayout();
             this.explorerBarPanel4.SuspendLayout();
             this.explorerBarPanel4_content.SuspendLayout();
@@ -315,7 +316,6 @@
             this.explorerBarPanel5_content.SuspendLayout();
             this.panelConfirmBtnsStep5.SuspendLayout();
             this.explorerBarPanel5_title.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -484,6 +484,13 @@
             this.customPanel2.Curvature = 8;
             resources.ApplyResources(this.customPanel2, "customPanel2");
             this.customPanel2.Name = "customPanel2";
+            // 
+            // picModelImg
+            // 
+            resources.ApplyResources(this.picModelImg, "picModelImg");
+            this.picModelImg.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.GTH12;
+            this.picModelImg.Name = "picModelImg";
+            this.picModelImg.TabStop = false;
             // 
             // label2
             // 
@@ -2153,12 +2160,6 @@
             this.label65.ForeColor = System.Drawing.Color.White;
             this.label65.Name = "label65";
             // 
-            // picModelImg
-            // 
-            resources.ApplyResources(this.picModelImg, "picModelImg");
-            this.picModelImg.Name = "picModelImg";
-            this.picModelImg.TabStop = false;
-            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2188,6 +2189,7 @@
             this.customPanel4.ResumeLayout(false);
             this.customPanel3.ResumeLayout(false);
             this.customPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).EndInit();
             this.explorerBar.ResumeLayout(false);
             this.explorerBarPanel4.ResumeLayout(false);
             this.explorerBarPanel4_content.ResumeLayout(false);
@@ -2248,7 +2250,6 @@
             this.explorerBarPanel5_content.ResumeLayout(false);
             this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.explorerBarPanel5_title.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).EndInit();
             this.ResumeLayout(false);
 
         }

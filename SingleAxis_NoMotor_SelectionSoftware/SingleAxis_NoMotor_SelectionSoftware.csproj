@@ -244,5 +244,41 @@
   <ItemGroup>
     <None Include="Resources\toggleOn_hover.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\CSG25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\DMG25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\DMG40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\DMH25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\DMH40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTH3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTH4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTH5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTH5S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTH8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTH8S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTH12.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

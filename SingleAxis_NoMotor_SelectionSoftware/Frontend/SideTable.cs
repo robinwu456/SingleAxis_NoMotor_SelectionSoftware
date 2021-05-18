@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Resources;
 using System.Reflection;
+using System.Globalization;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class SideTable {
@@ -99,11 +100,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void UpdateModelImg(string model) {
-            //ResourceManager Rm = new ResourceManager("SingleAxis_NoMotor_SelectionSoftware", Assembly.GetExecutingAssembly());
-            //Image img = (Image)Rm.GetObject(model);
-            //formMain.picModelImg.Image = img;
-
-            //Properties.Resources.
+            var obj = Properties.Resources.ResourceManager.GetObject(model, CultureInfo.InvariantCulture);
+            formMain.picModelImg.Image = obj as Image;
         }
 
         public void ClearMsg() {
