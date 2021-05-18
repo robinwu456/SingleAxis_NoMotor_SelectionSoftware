@@ -206,9 +206,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.txtHourPerDay = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.explorerBarPanel2_title = new System.Windows.Forms.Panel();
-            this.label67 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
             this.explorerBarPanel1 = new System.Windows.Forms.Panel();
             this.explorerBarPanel1_content = new System.Windows.Forms.Panel();
             this.panelCalcMode = new System.Windows.Forms.Panel();
@@ -253,6 +250,22 @@
             this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
+            this.explorerBarPanel2_title = new System.Windows.Forms.Panel();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.label83 = new System.Windows.Forms.Label();
+            this.txtEffectiveStroke = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelEffectiveStroke2 = new System.Windows.Forms.Panel();
+            this.optEffectiveStroke2 = new System.Windows.Forms.RadioButton();
+            this.panelEffectiveStroke1 = new System.Windows.Forms.Panel();
+            this.optEffectiveStroke1 = new System.Windows.Forms.RadioButton();
+            this.cmdEffectiveStroke = new CustomButton.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -298,7 +311,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).BeginInit();
             this.panelMotorParams.SuspendLayout();
             this.panelPowerSelection.SuspendLayout();
-            this.explorerBarPanel2_title.SuspendLayout();
             this.explorerBarPanel1.SuspendLayout();
             this.explorerBarPanel1_content.SuspendLayout();
             this.panelCalcMode.SuspendLayout();
@@ -316,6 +328,11 @@
             this.explorerBarPanel5_content.SuspendLayout();
             this.panelConfirmBtnsStep5.SuspendLayout();
             this.explorerBarPanel5_title.SuspendLayout();
+            this.explorerBarPanel2_title.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panelEffectiveStroke2.SuspendLayout();
+            this.panelEffectiveStroke1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -589,6 +606,9 @@
             // 
             // explorerBarPanel3_content
             // 
+            this.explorerBarPanel3_content.Controls.Add(this.label1);
+            this.explorerBarPanel3_content.Controls.Add(this.label5);
+            this.explorerBarPanel3_content.Controls.Add(this.panel19);
             this.explorerBarPanel3_content.Controls.Add(this.panelConfirmBtnsStep3);
             resources.ApplyResources(this.explorerBarPanel3_content, "explorerBarPanel3_content");
             this.explorerBarPanel3_content.Name = "explorerBarPanel3_content";
@@ -1772,28 +1792,6 @@
             resources.ApplyResources(this.label17, "label17");
             this.label17.Name = "label17";
             // 
-            // explorerBarPanel2_title
-            // 
-            this.explorerBarPanel2_title.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
-            resources.ApplyResources(this.explorerBarPanel2_title, "explorerBarPanel2_title");
-            this.explorerBarPanel2_title.Controls.Add(this.label67);
-            this.explorerBarPanel2_title.Controls.Add(this.label62);
-            this.explorerBarPanel2_title.Name = "explorerBarPanel2_title";
-            // 
-            // label67
-            // 
-            this.label67.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.label67, "label67");
-            this.label67.ForeColor = System.Drawing.Color.DimGray;
-            this.label67.Name = "label67";
-            // 
-            // label62
-            // 
-            this.label62.BackColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.label62, "label62");
-            this.label62.ForeColor = System.Drawing.Color.White;
-            this.label62.Name = "label62";
-            // 
             // explorerBarPanel1
             // 
             this.explorerBarPanel1.Controls.Add(this.explorerBarPanel1_content);
@@ -2160,6 +2158,124 @@
             this.label65.ForeColor = System.Drawing.Color.White;
             this.label65.Name = "label65";
             // 
+            // explorerBarPanel2_title
+            // 
+            this.explorerBarPanel2_title.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
+            resources.ApplyResources(this.explorerBarPanel2_title, "explorerBarPanel2_title");
+            this.explorerBarPanel2_title.Controls.Add(this.label67);
+            this.explorerBarPanel2_title.Controls.Add(this.label62);
+            this.explorerBarPanel2_title.Name = "explorerBarPanel2_title";
+            // 
+            // label67
+            // 
+            this.label67.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.label67, "label67");
+            this.label67.ForeColor = System.Drawing.Color.DimGray;
+            this.label67.Name = "label67";
+            // 
+            // label62
+            // 
+            this.label62.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.label62, "label62");
+            this.label62.ForeColor = System.Drawing.Color.White;
+            this.label62.Name = "label62";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.LightGray;
+            this.label1.Name = "label1";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
+            this.label5.Name = "label5";
+            // 
+            // panel19
+            // 
+            resources.ApplyResources(this.panel19, "panel19");
+            this.panel19.Controls.Add(this.cmdEffectiveStroke);
+            this.panel19.Controls.Add(this.label57);
+            this.panel19.Controls.Add(this.label80);
+            this.panel19.Controls.Add(this.label83);
+            this.panel19.Controls.Add(this.txtEffectiveStroke);
+            this.panel19.Controls.Add(this.panel3);
+            this.panel19.Name = "panel19";
+            // 
+            // label57
+            // 
+            resources.ApplyResources(this.label57, "label57");
+            this.label57.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
+            this.label57.Name = "label57";
+            // 
+            // label80
+            // 
+            resources.ApplyResources(this.label80, "label80");
+            this.label80.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
+            this.label80.Name = "label80";
+            // 
+            // label83
+            // 
+            resources.ApplyResources(this.label83, "label83");
+            this.label83.BackColor = System.Drawing.Color.LightGray;
+            this.label83.Name = "label83";
+            // 
+            // txtEffectiveStroke
+            // 
+            resources.ApplyResources(this.txtEffectiveStroke, "txtEffectiveStroke");
+            this.txtEffectiveStroke.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEffectiveStroke.Name = "txtEffectiveStroke";
+            // 
+            // panel3
+            // 
+            resources.ApplyResources(this.panel3, "panel3");
+            this.panel3.Controls.Add(this.panelEffectiveStroke2);
+            this.panel3.Controls.Add(this.panelEffectiveStroke1);
+            this.panel3.Name = "panel3";
+            // 
+            // panelEffectiveStroke2
+            // 
+            resources.ApplyResources(this.panelEffectiveStroke2, "panelEffectiveStroke2");
+            this.panelEffectiveStroke2.Controls.Add(this.optEffectiveStroke2);
+            this.panelEffectiveStroke2.Name = "panelEffectiveStroke2";
+            // 
+            // optEffectiveStroke2
+            // 
+            resources.ApplyResources(this.optEffectiveStroke2, "optEffectiveStroke2");
+            this.optEffectiveStroke2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.optEffectiveStroke2.Name = "optEffectiveStroke2";
+            this.optEffectiveStroke2.UseVisualStyleBackColor = true;
+            // 
+            // panelEffectiveStroke1
+            // 
+            resources.ApplyResources(this.panelEffectiveStroke1, "panelEffectiveStroke1");
+            this.panelEffectiveStroke1.Controls.Add(this.optEffectiveStroke1);
+            this.panelEffectiveStroke1.Name = "panelEffectiveStroke1";
+            // 
+            // optEffectiveStroke1
+            // 
+            resources.ApplyResources(this.optEffectiveStroke1, "optEffectiveStroke1");
+            this.optEffectiveStroke1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.optEffectiveStroke1.Name = "optEffectiveStroke1";
+            this.optEffectiveStroke1.UseVisualStyleBackColor = true;
+            // 
+            // cmdEffectiveStroke
+            // 
+            resources.ApplyResources(this.cmdEffectiveStroke, "cmdEffectiveStroke");
+            this.cmdEffectiveStroke.BackColor = System.Drawing.Color.Transparent;
+            this.cmdEffectiveStroke.BackColor_Hover = System.Drawing.Color.DarkRed;
+            this.cmdEffectiveStroke.BackColor_Normal = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
+            this.cmdEffectiveStroke.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdEffectiveStroke.BackColor2_Hover = System.Drawing.Color.DarkRed;
+            this.cmdEffectiveStroke.BackColor2_Normal = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
+            this.cmdEffectiveStroke.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdEffectiveStroke.ButtonEnabled = true;
+            this.cmdEffectiveStroke.Curvature = 5;
+            this.cmdEffectiveStroke.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdEffectiveStroke.Name = "cmdEffectiveStroke";
+            this.cmdEffectiveStroke.TextFont = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold);
+            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2197,6 +2313,7 @@
             this.explorerBarPanel4_title.ResumeLayout(false);
             this.explorerBarPanel3.ResumeLayout(false);
             this.explorerBarPanel3_content.ResumeLayout(false);
+            this.explorerBarPanel3_content.PerformLayout();
             this.panelConfirmBtnsStep3.ResumeLayout(false);
             this.explorerBarPanel3_title.ResumeLayout(false);
             this.explorerBarPanel2.ResumeLayout(false);
@@ -2226,7 +2343,6 @@
             this.panelMotorParams.PerformLayout();
             this.panelPowerSelection.ResumeLayout(false);
             this.panelPowerSelection.PerformLayout();
-            this.explorerBarPanel2_title.ResumeLayout(false);
             this.explorerBarPanel1.ResumeLayout(false);
             this.explorerBarPanel1_content.ResumeLayout(false);
             this.explorerBarPanel1_content.PerformLayout();
@@ -2250,6 +2366,12 @@
             this.explorerBarPanel5_content.ResumeLayout(false);
             this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.explorerBarPanel5_title.ResumeLayout(false);
+            this.explorerBarPanel2_title.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panelEffectiveStroke2.ResumeLayout(false);
+            this.panelEffectiveStroke1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2477,6 +2599,19 @@
         public System.Windows.Forms.Label lbRpm;
         public CustomButton.CustomButton cmdCalcSelectedModelConfirmStep2;
         public System.Windows.Forms.PictureBox picModelImg;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.Label label83;
+        public System.Windows.Forms.TextBox txtEffectiveStroke;
+        private System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Panel panelEffectiveStroke2;
+        public System.Windows.Forms.RadioButton optEffectiveStroke2;
+        public System.Windows.Forms.Panel panelEffectiveStroke1;
+        public System.Windows.Forms.RadioButton optEffectiveStroke1;
+        public CustomButton.CustomButton cmdEffectiveStroke;
     }
 }
 

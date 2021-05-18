@@ -103,6 +103,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.sideTable.Update(null, null);
                 formMain._explorerBar.UpdateCurStep(formMain.curStep);
                 formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep3);
+                formMain.step3.Load();
             }
         }
 
