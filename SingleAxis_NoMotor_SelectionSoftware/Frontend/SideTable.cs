@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Resources;
+using System.Reflection;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class SideTable {
@@ -96,8 +98,24 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.lbSideTableMsg.ForeColor = msgStatus == MsgStatus.Normal ? Color.FromArgb(42, 88, 111) : Color.Red;
         }
 
+        public void UpdateModelImg(string model) {
+            //ResourceManager Rm = new ResourceManager("SingleAxis_NoMotor_SelectionSoftware", Assembly.GetExecutingAssembly());
+            //Image img = (Image)Rm.GetObject(model);
+            //formMain.picModelImg.Image = img;
+
+            //Properties.Resources.
+        }
+
         public void ClearMsg() {
             formMain.lbSideTableMsg.Text = "";
+        }
+
+        public void ClearModelInfo() {
+            formMain.lbSideTableModelInfo.Text = "";
+        }
+
+        public void ClearModelImg() {
+            formMain.picModelImg.Image = null;
         }
 
         private void UpdateTableSelections() {

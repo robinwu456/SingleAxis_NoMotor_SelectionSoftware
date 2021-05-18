@@ -252,6 +252,7 @@
             this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
+            this.picModelImg = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -269,6 +270,7 @@
             this.panelSideTableSelections.SuspendLayout();
             this.customPanel4.SuspendLayout();
             this.customPanel3.SuspendLayout();
+            this.customPanel2.SuspendLayout();
             this.explorerBar.SuspendLayout();
             this.explorerBarPanel4.SuspendLayout();
             this.explorerBarPanel4_content.SuspendLayout();
@@ -313,6 +315,7 @@
             this.explorerBarPanel5_content.SuspendLayout();
             this.panelConfirmBtnsStep5.SuspendLayout();
             this.explorerBarPanel5_title.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -477,6 +480,7 @@
             // 
             this.customPanel2.BorderColor = System.Drawing.Color.Silver;
             this.customPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customPanel2.Controls.Add(this.picModelImg);
             this.customPanel2.Curvature = 8;
             resources.ApplyResources(this.customPanel2, "customPanel2");
             this.customPanel2.Name = "customPanel2";
@@ -2149,6 +2153,12 @@
             this.label65.ForeColor = System.Drawing.Color.White;
             this.label65.Name = "label65";
             // 
+            // picModelImg
+            // 
+            resources.ApplyResources(this.picModelImg, "picModelImg");
+            this.picModelImg.Name = "picModelImg";
+            this.picModelImg.TabStop = false;
+            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2177,6 +2187,7 @@
             this.panelSideTableSelections.ResumeLayout(false);
             this.customPanel4.ResumeLayout(false);
             this.customPanel3.ResumeLayout(false);
+            this.customPanel2.ResumeLayout(false);
             this.explorerBar.ResumeLayout(false);
             this.explorerBarPanel4.ResumeLayout(false);
             this.explorerBarPanel4_content.ResumeLayout(false);
@@ -2237,6 +2248,7 @@
             this.explorerBarPanel5_content.ResumeLayout(false);
             this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.explorerBarPanel5_title.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2463,6 +2475,7 @@
         public System.Windows.Forms.Label lbSideTableMsg;
         public System.Windows.Forms.Label lbRpm;
         public CustomButton.CustomButton cmdCalcSelectedModelConfirmStep2;
+        public System.Windows.Forms.PictureBox picModelImg;
     }
 }
 

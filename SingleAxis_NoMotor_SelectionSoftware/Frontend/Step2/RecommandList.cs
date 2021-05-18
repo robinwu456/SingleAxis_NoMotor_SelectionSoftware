@@ -72,6 +72,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (curRow != null && curRow.Cells["項次"].Value != null && curRow.Cells["導程"].Value != null)
                 curSelectModel = (curRow.Cells["項次"].Value.ToString(), Convert.ToDouble(curRow.Cells["導程"].Value.ToString()));
 
+            // 更新型號圖片            
+            if (curRow != null && curRow.Cells["項次"].Value != null) {
+                string curModel = formMain.dgvRecommandList.CurrentRow.Cells["項次"].Value.ToString();
+                formMain.sideTable.UpdateModelImg(curModel);
+            }
+
             // 更新目前條件型號
             if (curRow != null && curRow.Cells["項次"].Value != null && curRow.Cells["導程"].Value != null) {
                 string curModel = formMain.dgvRecommandList.CurrentRow.Cells["項次"].Value.ToString();
@@ -212,7 +218,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         formMain.dgvRecommandList.Rows[0].Cells[0].Value = true;
                         curCheckedModel = (formMain.dgvRecommandList.Rows[0].Cells["項次"].Value.ToString(), Convert.ToDouble(formMain.dgvRecommandList.Rows[0].Cells["導程"].Value.ToString()));
                     }
-                }));
+
+                    // 顯示右邊型號資訊用途
+                    DgvRecommandList_SelectionChanged(null, null);
+                }));                
             } catch (Exception ex) {
                 Console.WriteLine(ex);
             }            
@@ -298,8 +307,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     row.Cells["Value"].Style.ForeColor = curModel.beltSafeCoefficient >= Model.tMaxStandard_beltMotor ? Color.Black : Color.Red;
                 if (row.Cells["Item"].Value.ToString() == "力矩警示") {
                     row.Cells["Value"].Style.ForeColor = curModel.isMomentVerifySuccess ? Color.Black : Color.Red;
-                    if (!curModel.isMomentVerifySuccess)
-                        row.Cells["Value"].ToolTipText = "力矩判定異常，請洽詢Toyo業務人員";
+                    if (!curModel.isMomentVerifySuccess) {
+                        //row.Cells["Value"].ToolTipText = "力矩判定異常，請洽詢Toyo業務人員";
+                        formMain.sideTable.UpdateMsg("力矩判定異常，請洽詢Toyo業務人員", SideTable.MsgStatus.Alarm);
+                    }
                 }
             }
 
@@ -318,9 +329,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             bool isSuccess = curModel.isMomentVerifySuccess && curModel.tMaxSafeCoefficient >= Model.tMaxStandard && serviceYear >= 3 && serviceDistance >= 3000;
             if (formMain.optRepeatabilityBelt.Checked && curModel.beltMotorSafeCoefficient != -1 && curModel.beltSafeCoefficient != -1)
                 isSuccess = isSuccess && curModel.beltMotorSafeCoefficient < Model.beltMotorStandard && curModel.beltSafeCoefficient >= Model.tMaxStandard_beltMotor;
-            formMain.cmdCalcSelectedModelConfirmStep2.Visible = isSuccess;
-
-            DgvRecommandList_SelectionChanged(null, null);
+            formMain.cmdCalcSelectedModelConfirmStep2.Visible = isSuccess;            
         }
     }
 }

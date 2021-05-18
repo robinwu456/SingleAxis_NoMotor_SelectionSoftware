@@ -594,8 +594,38 @@
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="picModelImg.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="picModelImg.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="picModelImg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 102</value>
+  </data>
+  <data name="picModelImg.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="picModelImg.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;picModelImg.Name" xml:space="preserve">
+    <value>picModelImg</value>
+  </data>
+  <data name="&gt;&gt;picModelImg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picModelImg.Parent" xml:space="preserve">
+    <value>customPanel2</value>
+  </data>
+  <data name="&gt;&gt;picModelImg.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="customPanel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 28</value>
+  </data>
+  <data name="customPanel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="customPanel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>194, 108</value>
@@ -655,7 +685,7 @@
     <value>15, 5, 15, 0</value>
   </data>
   <data name="panelSideTable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 44</value>
+    <value>255, 522</value>
   </data>
   <data name="panelSideTable.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6396,6 +6426,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1690, 762</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
