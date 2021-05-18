@@ -78,6 +78,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 重置版面
             recommandList.Refresh();
             chartInfo.Refresh();
+            formMain.cmdCalcSelectedModelConfirmStep2.Visible = false;
         }        
 
         private void InitEvents() {
@@ -89,6 +90,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 確認按鈕
             formMain.cmdConfirmStep2.Click += CmdConfirmStep2_Click;
+            formMain.cmdCalcSelectedModelConfirmStep2.Click += CmdConfirmStep2_Click;
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {
@@ -111,6 +113,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep2);
             }
             formMain.panelSelectCalcResult.Visible = formMain.optCalcSelectedModel.Checked;
+
+            // 最後更新使用條件
+            runCondition.UpdateCondition(null, null);
 
             threadCalc = new Thread(() => {
                 Thread.Sleep(100);

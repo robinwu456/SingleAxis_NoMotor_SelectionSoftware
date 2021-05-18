@@ -165,9 +165,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         // 畫圖
                         formMain.step2.chartInfo.PaintGraph();
                     } else {
-                        // 細項顯示
-                        DisplaySelectedModel();
-
                         // 驗證Vmax
                         Model curModel = curRecommandList.First();
                         if (formMain.optMaxSpeedType_mms.Checked) {
@@ -176,6 +173,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                             int curRpm = formMain.step2.calc.MMS_TO_RPM(curModel.vMax, curModel.lead);
                             formMain.txtMaxSpeed.Text = curRpm.ToString();
                         }
+
+                        // 細項顯示
+                        DisplaySelectedModel();
                     }
 
                     // 選第一列
@@ -313,6 +313,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 畫圖
             formMain.step2.chartInfo.PaintGraph();
+
+            // 型號選行下一步顯示
+            bool isSuccess = curModel.isMomentVerifySuccess && curModel.tMaxSafeCoefficient >= Model.tMaxStandard && serviceYear >= 3 && serviceDistance >= 3000;
+            if (formMain.optRepeatabilityBelt.Checked && curModel.beltMotorSafeCoefficient != -1 && curModel.beltSafeCoefficient != -1)
+                isSuccess = isSuccess && curModel.beltMotorSafeCoefficient < Model.beltMotorStandard && curModel.beltSafeCoefficient >= Model.tMaxStandard_beltMotor;
+            formMain.cmdCalcSelectedModelConfirmStep2.Visible = isSuccess;
+
+            DgvRecommandList_SelectionChanged(null, null);
         }
     }
 }

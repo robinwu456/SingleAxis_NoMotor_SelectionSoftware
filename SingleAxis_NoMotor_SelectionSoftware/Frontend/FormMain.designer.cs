@@ -72,6 +72,7 @@
             this.explorerBarPanel2_content = new System.Windows.Forms.Panel();
             this.panelAdvanceMode = new System.Windows.Forms.Panel();
             this.chkAdvanceMode = new CustomToggle.CustomToggle();
+            this.labelAdvanceOption = new System.Windows.Forms.Label();
             this.panelSelectCalcResult = new System.Windows.Forms.Panel();
             this.label48 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
@@ -94,6 +95,7 @@
             this.optMotorParamsModifyAdvance = new System.Windows.Forms.RadioButton();
             this.label34 = new System.Windows.Forms.Label();
             this.panelAdvanceParams = new System.Windows.Forms.Panel();
+            this.lbMaxSpeedAlarm = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
@@ -101,8 +103,8 @@
             this.optMaxSpeedType_rpm = new System.Windows.Forms.RadioButton();
             this.optMaxSpeedType_mms = new System.Windows.Forms.RadioButton();
             this.label79 = new System.Windows.Forms.Label();
-            this.lbMaxSpeedAlarm = new System.Windows.Forms.Label();
             this.txtMaxSpeed = new System.Windows.Forms.TextBox();
+            this.lbRpm = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label72 = new System.Windows.Forms.Label();
@@ -115,6 +117,7 @@
             this.cmdConfirmStep2 = new CustomButton.CustomButton();
             this.panelCalcBtns = new System.Windows.Forms.TableLayoutPanel();
             this.cmdCalc = new CustomButton.CustomButton();
+            this.cmdCalcSelectedModelConfirmStep2 = new CustomButton.CustomButton();
             this.dgvRecommandList = new System.Windows.Forms.DataGridView();
             this.鎖定 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.項次 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -173,7 +176,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.labelAdvanceOption = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -203,6 +205,9 @@
             this.label24 = new System.Windows.Forms.Label();
             this.txtHourPerDay = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.explorerBarPanel2_title = new System.Windows.Forms.Panel();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
             this.explorerBarPanel1 = new System.Windows.Forms.Panel();
             this.explorerBarPanel1_content = new System.Windows.Forms.Panel();
             this.panelCalcMode = new System.Windows.Forms.Panel();
@@ -247,10 +252,6 @@
             this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
-            this.explorerBarPanel2_title = new System.Windows.Forms.Panel();
-            this.label67 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.lbRpm = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -294,6 +295,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).BeginInit();
             this.panelMotorParams.SuspendLayout();
             this.panelPowerSelection.SuspendLayout();
+            this.explorerBarPanel2_title.SuspendLayout();
             this.explorerBarPanel1.SuspendLayout();
             this.explorerBarPanel1_content.SuspendLayout();
             this.panelCalcMode.SuspendLayout();
@@ -311,7 +313,6 @@
             this.explorerBarPanel5_content.SuspendLayout();
             this.panelConfirmBtnsStep5.SuspendLayout();
             this.explorerBarPanel5_title.SuspendLayout();
-            this.explorerBarPanel2_title.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -722,6 +723,12 @@
             resources.ApplyResources(this.chkAdvanceMode, "chkAdvanceMode");
             this.chkAdvanceMode.Name = "chkAdvanceMode";
             // 
+            // labelAdvanceOption
+            // 
+            resources.ApplyResources(this.labelAdvanceOption, "labelAdvanceOption");
+            this.labelAdvanceOption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.labelAdvanceOption.Name = "labelAdvanceOption";
+            // 
             // panelSelectCalcResult
             // 
             this.panelSelectCalcResult.Controls.Add(this.label48);
@@ -832,7 +839,7 @@
             resources.ApplyResources(this.lbAccelTime, "lbAccelTime");
             this.lbAccelTime.Name = "lbAccelTime";
             // 
-            // chart1
+            // chart
             // 
             this.chart.BackColor = System.Drawing.Color.Transparent;
             chartArea1.AxisX.IsLabelAutoFit = false;
@@ -850,8 +857,8 @@
             chartArea1.BackColor = System.Drawing.Color.Transparent;
             chartArea1.Name = "ChartArea";
             this.chart.ChartAreas.Add(chartArea1);
-            resources.ApplyResources(this.chart, "chart1");
-            this.chart.Name = "chart1";
+            resources.ApplyResources(this.chart, "chart");
+            this.chart.Name = "chart";
             series1.ChartArea = "ChartArea";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Name = "Series1";
@@ -903,6 +910,13 @@
             resources.ApplyResources(this.panelAdvanceParams, "panelAdvanceParams");
             this.panelAdvanceParams.Name = "panelAdvanceParams";
             // 
+            // lbMaxSpeedAlarm
+            // 
+            resources.ApplyResources(this.lbMaxSpeedAlarm, "lbMaxSpeedAlarm");
+            this.lbMaxSpeedAlarm.ForeColor = System.Drawing.Color.Red;
+            this.lbMaxSpeedAlarm.Name = "lbMaxSpeedAlarm";
+            this.lbMaxSpeedAlarm.Tag = "txtMaxSpeed";
+            // 
             // label78
             // 
             resources.ApplyResources(this.label78, "label78");
@@ -949,18 +963,18 @@
             this.label79.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label79.Name = "label79";
             // 
-            // lbMaxSpeedAlarm
-            // 
-            resources.ApplyResources(this.lbMaxSpeedAlarm, "lbMaxSpeedAlarm");
-            this.lbMaxSpeedAlarm.ForeColor = System.Drawing.Color.Red;
-            this.lbMaxSpeedAlarm.Name = "lbMaxSpeedAlarm";
-            this.lbMaxSpeedAlarm.Tag = "txtMaxSpeed";
-            // 
             // txtMaxSpeed
             // 
             resources.ApplyResources(this.txtMaxSpeed, "txtMaxSpeed");
             this.txtMaxSpeed.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtMaxSpeed.Name = "txtMaxSpeed";
+            // 
+            // lbRpm
+            // 
+            resources.ApplyResources(this.lbRpm, "lbRpm");
+            this.lbRpm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.lbRpm.Name = "lbRpm";
+            this.lbRpm.Tag = "txtMaxSpeed";
             // 
             // panel6
             // 
@@ -1044,6 +1058,7 @@
             // 
             resources.ApplyResources(this.panelCalcBtns, "panelCalcBtns");
             this.panelCalcBtns.Controls.Add(this.cmdCalc, 1, 0);
+            this.panelCalcBtns.Controls.Add(this.cmdCalcSelectedModelConfirmStep2, 2, 0);
             this.panelCalcBtns.Name = "panelCalcBtns";
             // 
             // cmdCalc
@@ -1061,6 +1076,22 @@
             this.cmdCalc.GradientMode = CustomButton.LinearGradientMode.Horizontal;
             this.cmdCalc.Name = "cmdCalc";
             this.cmdCalc.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
+            // 
+            // cmdCalcSelectedModelConfirmStep2
+            // 
+            this.cmdCalcSelectedModelConfirmStep2.BackColor = System.Drawing.Color.Transparent;
+            this.cmdCalcSelectedModelConfirmStep2.BackColor_Hover = System.Drawing.Color.DarkRed;
+            this.cmdCalcSelectedModelConfirmStep2.BackColor_Normal = System.Drawing.Color.Red;
+            this.cmdCalcSelectedModelConfirmStep2.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdCalcSelectedModelConfirmStep2.BackColor2_Hover = System.Drawing.Color.DarkRed;
+            this.cmdCalcSelectedModelConfirmStep2.BackColor2_Normal = System.Drawing.Color.Red;
+            this.cmdCalcSelectedModelConfirmStep2.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdCalcSelectedModelConfirmStep2.ButtonEnabled = true;
+            resources.ApplyResources(this.cmdCalcSelectedModelConfirmStep2, "cmdCalcSelectedModelConfirmStep2");
+            this.cmdCalcSelectedModelConfirmStep2.Curvature = 15;
+            this.cmdCalcSelectedModelConfirmStep2.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdCalcSelectedModelConfirmStep2.Name = "cmdCalcSelectedModelConfirmStep2";
+            this.cmdCalcSelectedModelConfirmStep2.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
             // 
             // dgvRecommandList
             // 
@@ -1555,12 +1586,6 @@
             resources.ApplyResources(this.label26, "label26");
             this.label26.Name = "label26";
             // 
-            // labelAdvanceOption
-            // 
-            resources.ApplyResources(this.labelAdvanceOption, "labelAdvanceOption");
-            this.labelAdvanceOption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.labelAdvanceOption.Name = "labelAdvanceOption";
-            // 
             // label23
             // 
             resources.ApplyResources(this.label23, "label23");
@@ -1735,6 +1760,28 @@
             // 
             resources.ApplyResources(this.label17, "label17");
             this.label17.Name = "label17";
+            // 
+            // explorerBarPanel2_title
+            // 
+            this.explorerBarPanel2_title.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
+            resources.ApplyResources(this.explorerBarPanel2_title, "explorerBarPanel2_title");
+            this.explorerBarPanel2_title.Controls.Add(this.label67);
+            this.explorerBarPanel2_title.Controls.Add(this.label62);
+            this.explorerBarPanel2_title.Name = "explorerBarPanel2_title";
+            // 
+            // label67
+            // 
+            this.label67.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.label67, "label67");
+            this.label67.ForeColor = System.Drawing.Color.DimGray;
+            this.label67.Name = "label67";
+            // 
+            // label62
+            // 
+            this.label62.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.label62, "label62");
+            this.label62.ForeColor = System.Drawing.Color.White;
+            this.label62.Name = "label62";
             // 
             // explorerBarPanel1
             // 
@@ -2102,35 +2149,6 @@
             this.label65.ForeColor = System.Drawing.Color.White;
             this.label65.Name = "label65";
             // 
-            // explorerBarPanel2_title
-            // 
-            this.explorerBarPanel2_title.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
-            resources.ApplyResources(this.explorerBarPanel2_title, "explorerBarPanel2_title");
-            this.explorerBarPanel2_title.Controls.Add(this.label67);
-            this.explorerBarPanel2_title.Controls.Add(this.label62);
-            this.explorerBarPanel2_title.Name = "explorerBarPanel2_title";
-            // 
-            // label67
-            // 
-            this.label67.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.label67, "label67");
-            this.label67.ForeColor = System.Drawing.Color.DimGray;
-            this.label67.Name = "label67";
-            // 
-            // label62
-            // 
-            this.label62.BackColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.label62, "label62");
-            this.label62.ForeColor = System.Drawing.Color.White;
-            this.label62.Name = "label62";
-            // 
-            // lbRpm
-            // 
-            resources.ApplyResources(this.lbRpm, "lbRpm");
-            this.lbRpm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.lbRpm.Name = "lbRpm";
-            this.lbRpm.Tag = "txtMaxSpeed";
-            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2195,6 +2213,7 @@
             this.panelMotorParams.PerformLayout();
             this.panelPowerSelection.ResumeLayout(false);
             this.panelPowerSelection.PerformLayout();
+            this.explorerBarPanel2_title.ResumeLayout(false);
             this.explorerBarPanel1.ResumeLayout(false);
             this.explorerBarPanel1_content.ResumeLayout(false);
             this.explorerBarPanel1_content.PerformLayout();
@@ -2218,7 +2237,6 @@
             this.explorerBarPanel5_content.ResumeLayout(false);
             this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.explorerBarPanel5_title.ResumeLayout(false);
-            this.explorerBarPanel2_title.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2444,6 +2462,7 @@
         public System.Windows.Forms.Label lbSideTableModelInfo;
         public System.Windows.Forms.Label lbSideTableMsg;
         public System.Windows.Forms.Label lbRpm;
+        public CustomButton.CustomButton cmdCalcSelectedModelConfirmStep2;
     }
 }
 

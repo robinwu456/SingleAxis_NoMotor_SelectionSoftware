@@ -178,7 +178,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().ForEach(row => {
                 //curCondition.reducerRatio.Add(row.Cells["columnModel"].Value.ToString(), Convert.ToInt32(row.Cells["columnReducerRatio"].Value.ToString()));
                 curCondition.reducerRatio[row.Cells["columnModel"].Value.ToString()] = Convert.ToInt32(row.Cells["columnReducerRatio"].Value.ToString());
-            });            
+            });
+
+            // 型號選行顯示
+            formMain.cmdCalcSelectedModelConfirmStep2.Visible = false;
         }
     }
 }

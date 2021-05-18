@@ -1286,7 +1286,7 @@
     <value>2</value>
   </data>
   <data name="panelSelectCalcResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>765, 278</value>
+    <value>1064, -3</value>
   </data>
   <data name="panelSelectCalcResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>286, 262</value>
@@ -1400,7 +1400,7 @@
     <value>2</value>
   </data>
   <data name="panelReducer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1081, 0</value>
+    <value>765, 304</value>
   </data>
   <data name="panelReducer.Size" type="System.Drawing.Size, System.Drawing">
     <value>258, 250</value>
@@ -1621,28 +1621,28 @@
   <data name="&gt;&gt;lbAccelTime.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="chart1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="chart.Location" type="System.Drawing.Point, System.Drawing">
     <value>750, 62</value>
   </data>
-  <data name="chart1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="chart.Size" type="System.Drawing.Size, System.Drawing">
     <value>301, 121</value>
   </data>
-  <data name="chart1.TabIndex" type="System.Int32, mscorlib">
+  <data name="chart.TabIndex" type="System.Int32, mscorlib">
     <value>280</value>
   </data>
-  <data name="chart1.Text" xml:space="preserve">
+  <data name="chart.Text" xml:space="preserve">
     <value>chart1</value>
   </data>
-  <data name="&gt;&gt;chart1.Name" xml:space="preserve">
-    <value>chart1</value>
+  <data name="&gt;&gt;chart.Name" xml:space="preserve">
+    <value>chart</value>
   </data>
-  <data name="&gt;&gt;chart1.Type" xml:space="preserve">
+  <data name="&gt;&gt;chart.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataVisualization.Charting.Chart, System.Windows.Forms.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</value>
   </data>
-  <data name="&gt;&gt;chart1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;chart.Parent" xml:space="preserve">
     <value>explorerBarPanel2_content</value>
   </data>
-  <data name="&gt;&gt;chart1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chart.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
   <data name="optMotorParamsModifySimple.AutoSize" type="System.Boolean, mscorlib">
@@ -2452,6 +2452,33 @@
   <data name="&gt;&gt;cmdCalc.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="cmdCalcSelectedModelConfirmStep2.ButtonText" xml:space="preserve">
+    <value>下一步</value>
+  </data>
+  <data name="cmdCalcSelectedModelConfirmStep2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>792, 3</value>
+  </data>
+  <data name="cmdCalcSelectedModelConfirmStep2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 30</value>
+  </data>
+  <data name="cmdCalcSelectedModelConfirmStep2.TabIndex" type="System.Int32, mscorlib">
+    <value>252</value>
+  </data>
+  <data name="cmdCalcSelectedModelConfirmStep2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;cmdCalcSelectedModelConfirmStep2.Name" xml:space="preserve">
+    <value>cmdCalcSelectedModelConfirmStep2</value>
+  </data>
+  <data name="&gt;&gt;cmdCalcSelectedModelConfirmStep2.Type" xml:space="preserve">
+    <value>CustomButton.CustomButton, CustomButton, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmdCalcSelectedModelConfirmStep2.Parent" xml:space="preserve">
+    <value>panelCalcBtns</value>
+  </data>
+  <data name="&gt;&gt;cmdCalcSelectedModelConfirmStep2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="panelCalcBtns.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 659</value>
   </data>
@@ -2477,7 +2504,7 @@
     <value>15</value>
   </data>
   <data name="panelCalcBtns.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cmdCalc" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,41.66583,Percent,16.66833,Percent,41.66583" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cmdCalc" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cmdCalcSelectedModelConfirmStep2" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,41.66583,Percent,16.66833,Percent,41.66583" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="dgvRecommandList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
