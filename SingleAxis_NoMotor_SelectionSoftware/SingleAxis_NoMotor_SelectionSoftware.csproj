@@ -280,5 +280,14 @@
   <ItemGroup>
     <None Include="Resources\ModelPic\GTH12.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\effectiveStrokePanelBg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\effectiveStrokeBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dataResultBackground.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

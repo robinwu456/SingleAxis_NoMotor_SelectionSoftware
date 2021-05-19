@@ -83,6 +83,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap dataResultBackground {
+            get {
+                object obj = ResourceManager.GetObject("dataResultBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap detail_disable_in_condition {
             get {
                 object obj = ResourceManager.GetObject("detail_disable_in_condition", resourceCulture);
@@ -156,6 +166,26 @@ namespace SingleAxis_NoMotor_SelectionSoftware.Properties {
         internal static System.Drawing.Bitmap dustFreeEnviroment {
             get {
                 object obj = ResourceManager.GetObject("dustFreeEnviroment", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap effectiveStrokeBackground {
+            get {
+                object obj = ResourceManager.GetObject("effectiveStrokeBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap effectiveStrokePanelBg {
+            get {
+                object obj = ResourceManager.GetObject("effectiveStrokePanelBg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

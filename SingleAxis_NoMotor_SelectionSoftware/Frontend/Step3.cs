@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Windows.Forms;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Step3 {
         private FormMain formMain;
+        private int effectiveStrokeTmpIndex = 0;    // 有效行程打勾用
 
         public Step3(FormMain formMain) {
             this.formMain = formMain;
@@ -16,17 +18,44 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void InitEvents() {
             // 有效行程確認
+            formMain.optEffectiveStroke1.Click += OptEffectiveStroke_CheckedChanged;
+            formMain.optEffectiveStroke2.Click += OptEffectiveStroke_CheckedChanged;
             formMain.cmdEffectiveStroke.Click += CmdEffectiveStroke_Click;
             formMain.txtEffectiveStroke.KeyDown += TxtEffectiveStroke_KeyDown;
             formMain.txtEffectiveStroke.Leave += CmdEffectiveStroke_Click;
 
             // 確認按鈕
             formMain.cmdConfirmStep3.Click += CmdConfirmStep3_Click;
-        }        
+        }
+
+        private void OptEffectiveStroke_CheckedChanged(object sender, EventArgs e) {
+            // 只有一個選項時不計數
+            if (!formMain.panelEffectiveStroke2.Visible)
+                return;
+
+            // 判斷選擇與目前打勾一樣時，不計數
+            RadioButton curOpt = (RadioButton)sender;
+            if ((curOpt == formMain.optEffectiveStroke1 && effectiveStrokeTmpIndex % 2 == 0) ||
+                (curOpt == formMain.optEffectiveStroke2 && effectiveStrokeTmpIndex % 2 == 1))
+                return;
+
+            effectiveStrokeTmpIndex = (effectiveStrokeTmpIndex + 1) % 2;
+
+            if (effectiveStrokeTmpIndex % 2 == 1) {
+                formMain.optEffectiveStroke1.Checked = false;
+                formMain.optEffectiveStroke2.Checked = true;
+            } else if (effectiveStrokeTmpIndex % 2 == 0) {
+                formMain.optEffectiveStroke1.Checked = true;
+                formMain.optEffectiveStroke2.Checked = false;
+            }
+        }
 
         public void Load() {
             // 有效行程賦值
             formMain.txtEffectiveStroke.Text = formMain.txtStroke.Text;
+
+            // 計算有效行程
+            CmdEffectiveStroke_Click(null, null);
         }        
 
         private void CmdEffectiveStroke_Click(object sender, EventArgs e) {
@@ -58,10 +87,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 try {
                     lowerThenKeyEffectiveStroke = strokeList.Last(item => item.rpm == maxRpm && item.stroke < keyEffectiveStroke).stroke;
                 } catch (Exception) {
-                    lowerThenKeyEffectiveStroke = strokeList.First().stroke;
+                    lowerThenKeyEffectiveStroke = strokeList.First(item => item.stroke > runStroke).stroke;
                 }
                 try {
-                    higherThenKeyEffectiveStroke = strokeList.First(item => item.stroke >= keyEffectiveStroke).stroke;
+                    higherThenKeyEffectiveStroke = strokeList.First(item => item.rpm == maxRpm && item.stroke >= keyEffectiveStroke && item.stroke > runStroke).stroke;
                 } catch (Exception) {
                     higherThenKeyEffectiveStroke = maxRpmMaxStroke;
                 }
@@ -84,10 +113,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.optEffectiveStroke2.Text = strokeOptions.stroke_opt2.ToString();
             formMain.panelEffectiveStroke2.Visible = strokeOptions.stroke_opt2 != -1;
             formMain.optEffectiveStroke1.Checked = true;
+            formMain.optEffectiveStroke2.Checked = false;
         }
 
-        private void TxtEffectiveStroke_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e) {
-            if (e.KeyCode != System.Windows.Forms.Keys.Enter)
+        private void TxtEffectiveStroke_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode != Keys.Enter)
                 return;
 
             CmdEffectiveStroke_Click(null, null);
