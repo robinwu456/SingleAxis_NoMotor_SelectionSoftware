@@ -45,7 +45,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             var collapsePanels = explorerBarPanel.Where(p => p.index > controlsExplorerBar.index).ToList();
             collapsePanels.ForEach(p => p.isCollapse = true);
             formMain.curStep = (FormMain.Step)controlsExplorerBar.index - 1;
-            Console.WriteLine("修正項: {0}, 目前Step: {1}", control.Name, formMain.curStep);
+            //Console.WriteLine("修正項: {0}, 目前Step: {1}", control.Name, formMain.curStep);
 
             // 側邊欄訊息清除
             if (collapsePanels.Any(panel => panel.index == 2)) {

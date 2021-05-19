@@ -82,7 +82,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (curRow != null && curRow.Cells["項次"].Value != null && curRow.Cells["導程"].Value != null) {
                 string curModel = formMain.dgvRecommandList.CurrentRow.Cells["項次"].Value.ToString();
                 double lead = Convert.ToDouble(formMain.dgvRecommandList.CurrentRow.Cells["導程"].Value.ToString());
-                formMain.sideTable.UpdateModelInfo(string.Format("{0}-L{1}", curModel, lead));
+                //formMain.sideTable.UpdateModelInfo(string.Format("{0}-L{1}", curModel, lead));
+                formMain.sideTable.UpdateModelInfo();
             }
         }
 

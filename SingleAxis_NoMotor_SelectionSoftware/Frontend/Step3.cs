@@ -7,6 +7,19 @@ using System.Windows.Forms;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Step3 {
+        public decimal effectiveStroke {
+            get {
+                return _effectiveStroke;
+            }
+            set {
+                if (_effectiveStroke != value) {
+                    _effectiveStroke = value;
+                    UpdateCondition(null, null);                    
+                }
+            }
+        }
+        private decimal _effectiveStroke;
+
         private FormMain formMain;
         private int effectiveStrokeTmpIndex = 0;    // 有效行程打勾用
 
@@ -24,8 +37,19 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.txtEffectiveStroke.KeyDown += TxtEffectiveStroke_KeyDown;
             formMain.txtEffectiveStroke.Leave += CmdEffectiveStroke_Click;
 
+            //// 條件更新
+            //formMain.optEffectiveStroke1.CheckedChanged += UpdateCondition;
+            //formMain.optEffectiveStroke2.CheckedChanged += UpdateCondition;
+            //formMain.optEffectiveStroke1.TextChanged += UpdateCondition;
+            //formMain.optEffectiveStroke2.TextChanged += UpdateCondition;
+
             // 確認按鈕
             formMain.cmdConfirmStep3.Click += CmdConfirmStep3_Click;
+        }
+
+        private void UpdateCondition(object sender, EventArgs e) {
+            formMain.sideTable.UpdateModelInfo();
+            formMain.sideTable.UpdateTableSelections();
         }
 
         private void OptEffectiveStroke_CheckedChanged(object sender, EventArgs e) {
@@ -44,9 +68,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (effectiveStrokeTmpIndex % 2 == 1) {
                 formMain.optEffectiveStroke1.Checked = false;
                 formMain.optEffectiveStroke2.Checked = true;
+
+                // 確定有效行程
+                effectiveStroke = Convert.ToDecimal(formMain.optEffectiveStroke2.Text);
             } else if (effectiveStrokeTmpIndex % 2 == 0) {
                 formMain.optEffectiveStroke1.Checked = true;
                 formMain.optEffectiveStroke2.Checked = false;
+
+                // 確定有效行程
+                effectiveStroke = Convert.ToDecimal(formMain.optEffectiveStroke1.Text);
             }
         }
 
@@ -114,6 +144,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.panelEffectiveStroke2.Visible = strokeOptions.stroke_opt2 != -1;
             formMain.optEffectiveStroke1.Checked = true;
             formMain.optEffectiveStroke2.Checked = false;
+
+            // 確定有效行程
+            effectiveStroke = Convert.ToDecimal(formMain.optEffectiveStroke1.Text);
         }
 
         private void TxtEffectiveStroke_KeyDown(object sender, KeyEventArgs e) {

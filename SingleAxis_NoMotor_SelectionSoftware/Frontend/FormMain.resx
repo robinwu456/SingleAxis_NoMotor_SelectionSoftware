@@ -360,6 +360,9 @@
   <data name="panelSideTable.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
+  <data name="panelSideTableSelections.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
   <data name="tableSelections.CellBorderStyle" type="System.Windows.Forms.TableLayoutPanelCellBorderStyle, System.Windows.Forms">
     <value>Single</value>
   </data>
@@ -370,7 +373,7 @@
     <value>-1, -1</value>
   </data>
   <data name="tableSelections.RowCount" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>1</value>
   </data>
   <data name="tableSelections.Size" type="System.Drawing.Size, System.Drawing">
     <value>139, 24</value>
@@ -391,7 +394,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,27,Absolute,27,Absolute,27,Absolute,27" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 282</value>
@@ -682,13 +685,13 @@
     <value>6</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1382, 10</value>
+    <value>1382, 14</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
   </data>
   <data name="panelSideTable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 44</value>
+    <value>231, 495</value>
   </data>
   <data name="panelSideTable.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -919,7 +922,7 @@
     <value>Top</value>
   </data>
   <data name="explorerBarPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 2296</value>
+    <value>0, 2203</value>
   </data>
   <data name="explorerBarPanel4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 10, 0, 0</value>
@@ -941,9 +944,6 @@
   </data>
   <data name="&gt;&gt;explorerBarPanel4.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
   </data>
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -968,9 +968,6 @@
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="label5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1504,7 +1501,7 @@
     <value>Top</value>
   </data>
   <data name="explorerBarPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 1745</value>
+    <value>0, 1652</value>
   </data>
   <data name="explorerBarPanel3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 10, 0, 0</value>
@@ -2807,7 +2804,7 @@
     <value>0</value>
   </data>
   <data name="panelConfirmBtnsStep2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 1211</value>
+    <value>0, 1109</value>
   </data>
   <data name="panelConfirmBtnsStep2.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2894,7 +2891,7 @@
     <value>1</value>
   </data>
   <data name="panelCalcBtns.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 659</value>
+    <value>0, 589</value>
   </data>
   <data name="panelCalcBtns.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3188,7 +3185,7 @@
     <value>106</value>
   </data>
   <data name="dgvRecommandList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 818</value>
+    <value>54, 710</value>
   </data>
   <data name="dgvRecommandList.Size" type="System.Drawing.Size, System.Drawing">
     <value>1301, 364</value>
@@ -3860,7 +3857,7 @@
     <value>NoControl</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 797</value>
+    <value>52, 689</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>1302, 2</value>
@@ -3923,7 +3920,7 @@
     <value>NoControl</value>
   </data>
   <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 764</value>
+    <value>49, 656</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 25</value>
@@ -5255,7 +5252,7 @@
     <value>0, 54</value>
   </data>
   <data name="explorerBarPanel2_content.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 1246</value>
+    <value>1355, 1153</value>
   </data>
   <data name="explorerBarPanel2_content.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -5375,7 +5372,7 @@
     <value>0, 10, 0, 0</value>
   </data>
   <data name="explorerBarPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 1300</value>
+    <value>1355, 1207</value>
   </data>
   <data name="explorerBarPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -6810,9 +6807,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1690, 762</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

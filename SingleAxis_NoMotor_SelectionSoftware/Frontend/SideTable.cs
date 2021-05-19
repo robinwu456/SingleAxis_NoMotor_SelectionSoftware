@@ -17,12 +17,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             "使用環境",
             "安裝方式",
             "機構型態",
-            "線槽",
-            "動子",
-            "編碼器",
             "有效行程",
-            "編碼器廠牌",
-            "線纜線長",
         };
 
         private int tableLayoutDefaultRowHeight = 21;
@@ -80,7 +75,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.tableSelections.Location = new Point(0 - hiddenBorderDistance, 0 - hiddenBorderDistance);
             // set table size
             int minHeight = 298;
-            formMain.panelSideTable.Size = new Size(formMain.panelSideTable.Size.Width, minHeight + allLabelHeight + 8);    // +8(高度補償)
+            formMain.panelSideTable.Size = new Size(formMain.panelSideTable.Size.Width, minHeight + allLabelHeight + 8 + 21);    // +8(高度補償)
             // 高度置中
             int middleLocation = formMain.explorerBar.Size.Height / 2;
             formMain.panelSideTable.Location = new Point(formMain.panelSideTable.Location.X, middleLocation - formMain.panelSideTable.Size.Height / 2);
@@ -90,8 +85,19 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             UpdateTableSelections();
         }
 
-        public void UpdateModelInfo(string modelString) {
-            formMain.lbSideTableModelInfo.Text = modelString;
+        //public void UpdateModelInfo(string modelString) {
+        //    formMain.lbSideTableModelInfo.Text = modelString;
+        //}
+
+        public void UpdateModelInfo() {
+            switch (formMain.curStep) {
+                case FormMain.Step.Step2:
+                    formMain.lbSideTableModelInfo.Text = string.Format("{0}-L{1}", formMain.step2.recommandList.curSelectModel.model, formMain.step2.recommandList.curSelectModel.lead);
+                    break;
+                case FormMain.Step.Step3:
+                    formMain.lbSideTableModelInfo.Text = string.Format("{0}-L{1}-{2}", formMain.step2.recommandList.curSelectModel.model, formMain.step2.recommandList.curSelectModel.lead, formMain.step3.effectiveStroke);
+                    break;
+            }
         }
 
         public void UpdateMsg(string msg, MsgStatus msgStatus) {
@@ -116,7 +122,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.picModelImg.Image = null;
         }
 
-        private void UpdateTableSelections() {
+        public void UpdateTableSelections() {
             void UpdateValue(string key, string value) {
                 Label lbValue = formMain.panelSideTableSelections.Controls.Find("labelDataResult_" + key + "_value", true)[0] as Label;
                 // 字串斷行處理
@@ -137,6 +143,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                                                .Text);
                 UpdateValue("機構型態", formMain.cboModelType.Text);
             }
+            // step3
+            if (formMain.curStep >= FormMain.Step.Step3)
+                UpdateValue("有效行程", formMain.step3.effectiveStroke.ToString() + "mm");
+            else
+                UpdateValue("有效行程", "");
+
         }
     }
 }

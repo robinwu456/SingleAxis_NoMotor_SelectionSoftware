@@ -219,6 +219,9 @@
             this.label24 = new System.Windows.Forms.Label();
             this.txtHourPerDay = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.explorerBarPanel2_title = new System.Windows.Forms.Panel();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
             this.explorerBarPanel1 = new System.Windows.Forms.Panel();
             this.explorerBarPanel1_content = new System.Windows.Forms.Panel();
             this.panelCalcMode = new System.Windows.Forms.Panel();
@@ -263,9 +266,6 @@
             this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
-            this.explorerBarPanel2_title = new System.Windows.Forms.Panel();
-            this.label67 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -315,6 +315,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).BeginInit();
             this.panelMotorParams.SuspendLayout();
             this.panelPowerSelection.SuspendLayout();
+            this.explorerBarPanel2_title.SuspendLayout();
             this.explorerBarPanel1.SuspendLayout();
             this.explorerBarPanel1_content.SuspendLayout();
             this.panelCalcMode.SuspendLayout();
@@ -332,7 +333,6 @@
             this.explorerBarPanel5_content.SuspendLayout();
             this.panelConfirmBtnsStep5.SuspendLayout();
             this.explorerBarPanel5_title.SuspendLayout();
-            this.explorerBarPanel2_title.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -440,11 +440,11 @@
             // 
             // panelSideTableSelections
             // 
+            resources.ApplyResources(this.panelSideTableSelections, "panelSideTableSelections");
             this.panelSideTableSelections.BorderColor = System.Drawing.Color.Silver;
             this.panelSideTableSelections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelSideTableSelections.Controls.Add(this.tableSelections);
             this.panelSideTableSelections.Curvature = 8;
-            resources.ApplyResources(this.panelSideTableSelections, "panelSideTableSelections");
             this.panelSideTableSelections.Name = "panelSideTableSelections";
             // 
             // tableSelections
@@ -464,6 +464,7 @@
             // lbSideTableModelInfo
             // 
             resources.ApplyResources(this.lbSideTableModelInfo, "lbSideTableModelInfo");
+            this.lbSideTableModelInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
             this.lbSideTableModelInfo.Name = "lbSideTableModelInfo";
             // 
             // label4
@@ -615,8 +616,8 @@
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
             this.label1.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
             // label5
@@ -1893,6 +1894,28 @@
             resources.ApplyResources(this.label17, "label17");
             this.label17.Name = "label17";
             // 
+            // explorerBarPanel2_title
+            // 
+            this.explorerBarPanel2_title.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
+            resources.ApplyResources(this.explorerBarPanel2_title, "explorerBarPanel2_title");
+            this.explorerBarPanel2_title.Controls.Add(this.label67);
+            this.explorerBarPanel2_title.Controls.Add(this.label62);
+            this.explorerBarPanel2_title.Name = "explorerBarPanel2_title";
+            // 
+            // label67
+            // 
+            this.label67.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.label67, "label67");
+            this.label67.ForeColor = System.Drawing.Color.DimGray;
+            this.label67.Name = "label67";
+            // 
+            // label62
+            // 
+            this.label62.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.label62, "label62");
+            this.label62.ForeColor = System.Drawing.Color.White;
+            this.label62.Name = "label62";
+            // 
             // explorerBarPanel1
             // 
             this.explorerBarPanel1.Controls.Add(this.explorerBarPanel1_content);
@@ -2259,28 +2282,6 @@
             this.label65.ForeColor = System.Drawing.Color.White;
             this.label65.Name = "label65";
             // 
-            // explorerBarPanel2_title
-            // 
-            this.explorerBarPanel2_title.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
-            resources.ApplyResources(this.explorerBarPanel2_title, "explorerBarPanel2_title");
-            this.explorerBarPanel2_title.Controls.Add(this.label67);
-            this.explorerBarPanel2_title.Controls.Add(this.label62);
-            this.explorerBarPanel2_title.Name = "explorerBarPanel2_title";
-            // 
-            // label67
-            // 
-            this.label67.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.label67, "label67");
-            this.label67.ForeColor = System.Drawing.Color.DimGray;
-            this.label67.Name = "label67";
-            // 
-            // label62
-            // 
-            this.label62.BackColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.label62, "label62");
-            this.label62.ForeColor = System.Drawing.Color.White;
-            this.label62.Name = "label62";
-            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2353,6 +2354,7 @@
             this.panelMotorParams.PerformLayout();
             this.panelPowerSelection.ResumeLayout(false);
             this.panelPowerSelection.PerformLayout();
+            this.explorerBarPanel2_title.ResumeLayout(false);
             this.explorerBarPanel1.ResumeLayout(false);
             this.explorerBarPanel1_content.ResumeLayout(false);
             this.explorerBarPanel1_content.PerformLayout();
@@ -2376,7 +2378,6 @@
             this.explorerBarPanel5_content.ResumeLayout(false);
             this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.explorerBarPanel5_title.ResumeLayout(false);
-            this.explorerBarPanel2_title.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

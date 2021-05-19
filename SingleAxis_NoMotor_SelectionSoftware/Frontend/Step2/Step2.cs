@@ -12,8 +12,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private FormMain formMain;
         public Calculation calc = new Calculation();
 
-        public int minHeight = 787;
-        private int maxHeight = 1300;        
+        public int minHeight = 690;
+        private int maxHeight = 1200;        
         
         private Thread threadCalc;                
 
