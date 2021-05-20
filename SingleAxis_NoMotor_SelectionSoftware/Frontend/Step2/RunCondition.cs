@@ -194,7 +194,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             });
 
             // 型號選行顯示
-            formMain.cmdCalcSelectedModelConfirmStep2.Visible = false;
+            formMain.step2.SetSelectedModelConfirmBtnVisible(false);
+
         }
     }
 }

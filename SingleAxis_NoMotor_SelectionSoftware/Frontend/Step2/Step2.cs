@@ -79,8 +79,36 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 重置版面
             recommandList.Refresh();
             chartInfo.Clear();
-            formMain.cmdCalcSelectedModelConfirmStep2.Visible = false;
-        }        
+            formMain.step2.SetSelectedModelConfirmBtnVisible(false);
+        }
+
+        public void SetSelectedModelConfirmBtnVisible(bool visible) {
+            if (formMain.cmdCalcSelectedModelConfirmStep2.Visible == visible)
+                return;
+
+            formMain.panelCalcBtns.Visible = false;
+            formMain.panelCalcBtns.ColumnStyles.Clear();
+            if (visible) {
+                ColumnStyle[] styles = {
+                    new ColumnStyle(SizeType.Percent, 33.33f),
+                    new ColumnStyle(SizeType.Percent, 16.67f),
+                    new ColumnStyle(SizeType.Percent, 16.67f),
+                    new ColumnStyle(SizeType.Percent, 33.33f),
+                };
+                foreach (ColumnStyle style in styles)
+                    formMain.panelCalcBtns.ColumnStyles.Add(style);
+            } else {
+                ColumnStyle[] styles = {
+                    new ColumnStyle(SizeType.Percent, 41.67f),
+                    new ColumnStyle(SizeType.Percent, 16.67f),
+                    new ColumnStyle(SizeType.Percent, 41.67f),
+                };
+                foreach (ColumnStyle style in styles)
+                    formMain.panelCalcBtns.ColumnStyles.Add(style);
+            }
+            formMain.cmdCalcSelectedModelConfirmStep2.Visible = visible;
+            formMain.panelCalcBtns.Visible = true;
+        }
 
         private void InitEvents() {
             // 進階選項

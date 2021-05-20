@@ -350,7 +350,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             bool isSuccess = curModel.isMomentVerifySuccess && curModel.tMaxSafeCoefficient >= Model.tMaxStandard && serviceYear >= 3 && serviceDistance >= 3000;
             if (formMain.optRepeatabilityBelt.Checked && curModel.beltMotorSafeCoefficient != -1 && curModel.beltSafeCoefficient != -1)
                 isSuccess = isSuccess && curModel.beltMotorSafeCoefficient < Model.beltMotorStandard && curModel.beltSafeCoefficient >= Model.tMaxStandard_beltMotor;
-            formMain.cmdCalcSelectedModelConfirmStep2.Visible = isSuccess;            
+            formMain.step2.SetSelectedModelConfirmBtnVisible(isSuccess);
         }
 
         public void VerifySelectedModelAlarm() {

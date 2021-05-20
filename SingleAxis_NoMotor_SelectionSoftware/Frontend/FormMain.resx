@@ -427,7 +427,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,43,Absolute,43,Absolute,43,Absolute,43" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,49,Absolute,49,Absolute,49,Absolute,49" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 282</value>
@@ -718,7 +718,7 @@
     <value>6</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1100, 48</value>
+    <value>1049, 66</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -2756,7 +2756,34 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="panelCalcBtns.ColumnCount" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
+  </data>
+  <data name="cmdCalcSelectedModelConfirmStep2.ButtonText" xml:space="preserve">
+    <value>下一步</value>
+  </data>
+  <data name="cmdCalcSelectedModelConfirmStep2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="cmdCalcSelectedModelConfirmStep2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>529, 3</value>
+  </data>
+  <data name="cmdCalcSelectedModelConfirmStep2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 30</value>
+  </data>
+  <data name="cmdCalcSelectedModelConfirmStep2.TabIndex" type="System.Int32, mscorlib">
+    <value>252</value>
+  </data>
+  <data name="&gt;&gt;cmdCalcSelectedModelConfirmStep2.Name" xml:space="preserve">
+    <value>cmdCalcSelectedModelConfirmStep2</value>
+  </data>
+  <data name="&gt;&gt;cmdCalcSelectedModelConfirmStep2.Type" xml:space="preserve">
+    <value>CustomButton.CustomButton, CustomButton, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmdCalcSelectedModelConfirmStep2.Parent" xml:space="preserve">
+    <value>panelCalcBtns</value>
+  </data>
+  <data name="&gt;&gt;cmdCalcSelectedModelConfirmStep2.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="cmdCalc.ButtonText" xml:space="preserve">
     <value>計算規格</value>
@@ -2765,7 +2792,7 @@
     <value>Fill</value>
   </data>
   <data name="cmdCalc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>442, 3</value>
+    <value>354, 3</value>
   </data>
   <data name="cmdCalc.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 30</value>
@@ -2783,33 +2810,6 @@
     <value>panelCalcBtns</value>
   </data>
   <data name="&gt;&gt;cmdCalc.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cmdCalcSelectedModelConfirmStep2.ButtonText" xml:space="preserve">
-    <value>下一步</value>
-  </data>
-  <data name="cmdCalcSelectedModelConfirmStep2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>617, 3</value>
-  </data>
-  <data name="cmdCalcSelectedModelConfirmStep2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 30</value>
-  </data>
-  <data name="cmdCalcSelectedModelConfirmStep2.TabIndex" type="System.Int32, mscorlib">
-    <value>252</value>
-  </data>
-  <data name="cmdCalcSelectedModelConfirmStep2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;cmdCalcSelectedModelConfirmStep2.Name" xml:space="preserve">
-    <value>cmdCalcSelectedModelConfirmStep2</value>
-  </data>
-  <data name="&gt;&gt;cmdCalcSelectedModelConfirmStep2.Type" xml:space="preserve">
-    <value>CustomButton.CustomButton, CustomButton, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;cmdCalcSelectedModelConfirmStep2.Parent" xml:space="preserve">
-    <value>panelCalcBtns</value>
-  </data>
-  <data name="&gt;&gt;cmdCalcSelectedModelConfirmStep2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="panelCalcBtns.Location" type="System.Drawing.Point, System.Drawing">
@@ -2837,7 +2837,7 @@
     <value>14</value>
   </data>
   <data name="panelCalcBtns.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cmdCalc" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cmdCalcSelectedModelConfirmStep2" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,41.66583,Percent,16.66833,Percent,41.66583" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cmdCalcSelectedModelConfirmStep2" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="cmdCalc" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33.33235,Percent,16.66941,Percent,16.66941,Percent,33.32883" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="dgvRecommandList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
