@@ -60,7 +60,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 進階選項驗證
             formMain.chkAdvanceMode.Checked = false;
-            formMain.panelAdvanceMode.Enabled = formMain.optCalcSelectedModel.Checked;
+            //formMain.panelAdvanceMode.Enabled = formMain.optCalcSelectedModel.Checked;
+            formMain.panelAdvanceMode.Visible = formMain.optCalcSelectedModel.Checked;
             ChkAdvanceMode_CheckedChanged(null, null);
 
             // 減速比顯示
