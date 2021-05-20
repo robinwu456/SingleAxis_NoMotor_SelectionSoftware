@@ -85,10 +85,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             UpdateTableSelections();
         }
 
-        //public void UpdateModelInfo(string modelString) {
-        //    formMain.lbSideTableModelInfo.Text = modelString;
-        //}
-
         public void UpdateModelInfo() {
             switch (formMain.curStep) {
                 case FormMain.Step.Step2:

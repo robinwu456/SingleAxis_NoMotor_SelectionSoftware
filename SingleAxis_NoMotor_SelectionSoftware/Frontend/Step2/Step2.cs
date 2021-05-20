@@ -77,7 +77,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 重置版面
             recommandList.Refresh();
-            chartInfo.Refresh();
+            chartInfo.Clear();
             formMain.cmdCalcSelectedModelConfirmStep2.Visible = false;
         }        
 
@@ -95,9 +95,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {
             formMain.panelAdvanceParams.Visible = formMain.chkAdvanceMode.Checked;
+            if (!formMain.chkAdvanceMode.Checked)
+                formMain.optMaxSpeedType_mms.Checked = true;
         }
 
         private void CmdConfirmStep2_Click(object sender, EventArgs e) {
+            if (recommandList.curSelectModel.model == null)
+                return;
+
             if (formMain.curStep == FormMain.Step.Step2) {
                 formMain.curStep = (FormMain.Step)((int)formMain.curStep + 1);
                 formMain.sideTable.Update(null, null);
@@ -132,7 +137,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
                 // 搜尋不到型號驗證
                 if (recommandList.curRecommandList.Count == 0) {
-                    formMain.Invoke(new Action(() => MessageBox.Show("此使用條件無法計算，請嘗試調整使用條件。")));
+                    // 清空推薦規格
+                    formMain.Invoke(new Action(() => {
+                        formMain.dgvRecommandList.DataSource = null;
+                        formMain.dgvRecommandList.Rows.Clear();
+                        formMain.dgvCalcSelectedModel.DataSource = null;
+                        chartInfo.Clear();
+                        recommandList.curSelectModel = (null, -1);
+                        formMain.sideTable.ClearModelImg();
+                        formMain.sideTable.ClearModelInfo();
+                    }));
+
+                    formMain.Invoke(new Action(() => formMain.sideTable.UpdateMsg("此使用條件無法計算，請嘗試調整使用條件。", SideTable.MsgStatus.Alarm)));
 
                     // 訊息顯示
                     if (!string.IsNullOrEmpty(result["Msg"] as string)) {
@@ -146,7 +162,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                             //showMsg += index + ". " + alarm + "\r\n";
                             showMsg += alarm + "\r\n";
                         });
-                        //MessageBox.Show(showMsg, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         formMain.Invoke(new Action(() => formMain.sideTable.UpdateMsg(showMsg, SideTable.MsgStatus.Alarm)));
                     }
 
@@ -173,10 +188,5 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 }));
             }).Start();
         }        
-
-        private void ToggleAdvanceOptions_CheckedChanged(object sender, EventArgs e) {
-            //formMain.spAdvanceOptions.Panel1Collapsed = formMain.toggleAdvanceOptions.Checked;
-            //formMain.spAdvanceOptions.Panel2Collapsed = !formMain.spAdvanceOptions.Panel1Collapsed;
-        }
     }
 }

@@ -8,21 +8,23 @@ using System.Data;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class RecommandList {
-        public List<Model> curRecommandList;
+        public List<Model> curRecommandList;        
+        // 打勾選取型號
+        public (string model, double lead) curSelectModel;
+        public (string model, double lead) curCheckedModel;
 
         private FormMain formMain;
+        private const decimal serviceLifeDistanceAlarmStandard = 3000;  // 運行距離標準(km)
+        private const decimal serviceLifeTimeAlarmStandard = 3;         // 運行壽命標準(年)
         // 顏色區分
         private Dictionary<string, Func<Model, bool>> redFontConditions = new Dictionary<string, Func<Model, bool>>() {
             { "T_max安全係數", model => model.tMaxSafeCoefficient >= Model.tMaxStandard },
-            { "運行距離", model => model.serviceLifeDistance >= 0.3 },
-            { "運行壽命", model => model.serviceLifeTime.year >= 3 },
+            { "運行距離", model => model.serviceLifeDistance >= serviceLifeDistanceAlarmStandard },
+            { "運行壽命", model => model.serviceLifeTime.year >= serviceLifeTimeAlarmStandard },
             { "皮帶馬達安全係數", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < Model.beltMotorStandard },
             { "皮帶T_max安全係數", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_beltMotor },
             { "力矩警示", model => model.isMomentVerifySuccess },
         };
-        // 打勾選取型號
-        public (string model, double lead) curSelectModel;
-        public (string model, double lead) curCheckedModel;
 
         public RecommandList(FormMain formMain) {
             this.formMain = formMain;
@@ -82,9 +84,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (curRow != null && curRow.Cells["項次"].Value != null && curRow.Cells["導程"].Value != null) {
                 string curModel = formMain.dgvRecommandList.CurrentRow.Cells["項次"].Value.ToString();
                 double lead = Convert.ToDouble(formMain.dgvRecommandList.CurrentRow.Cells["導程"].Value.ToString());
-                //formMain.sideTable.UpdateModelInfo(string.Format("{0}-L{1}", curModel, lead));
                 formMain.sideTable.UpdateModelInfo();
             }
+
+            // 驗證選擇項目異常
+            VerifySelectedModelAlarm();
         }
 
         public void Refresh() {
@@ -286,11 +290,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             foreach (DataGridViewRow row in formMain.dgvCalcSelectedModel.Rows) {
                 if (row.Cells["Item"].Value.ToString() == "運行距離") {
                     serviceDistance = curModel.serviceLifeDistance;
-                    row.Cells["Value"].Style.ForeColor = serviceDistance >= 3000 ? Color.Black : Color.Red;
+                    row.Cells["Value"].Style.ForeColor = serviceDistance >= serviceLifeDistanceAlarmStandard ? Color.Black : Color.Red;
                 }
                 if (row.Cells["Item"].Value.ToString() == "運行壽命") {
                     int.TryParse(row.Cells["Value"].Value.ToString().Split('年')[0], out serviceYear);
-                    row.Cells["Value"].Style.ForeColor = serviceYear >= 3 ? Color.Black : Color.Red;
+                    row.Cells["Value"].Style.ForeColor = serviceYear >= serviceLifeTimeAlarmStandard ? Color.Black : Color.Red;
                 }
                 if (row.Cells["Item"].Value.ToString() == "扭矩確認") {
                     if (formMain.optRepeatabilityBelt.Checked)
@@ -308,10 +312,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     row.Cells["Value"].Style.ForeColor = curModel.beltSafeCoefficient >= Model.tMaxStandard_beltMotor ? Color.Black : Color.Red;
                 if (row.Cells["Item"].Value.ToString() == "力矩警示") {
                     row.Cells["Value"].Style.ForeColor = curModel.isMomentVerifySuccess ? Color.Black : Color.Red;
-                    if (!curModel.isMomentVerifySuccess) {
-                        //row.Cells["Value"].ToolTipText = "力矩判定異常，請洽詢Toyo業務人員";
+                    if (!curModel.isMomentVerifySuccess)
                         formMain.sideTable.UpdateMsg("力矩判定異常，請洽詢Toyo業務人員", SideTable.MsgStatus.Alarm);
-                    }
                 }
             }
 
@@ -331,6 +333,28 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (formMain.optRepeatabilityBelt.Checked && curModel.beltMotorSafeCoefficient != -1 && curModel.beltSafeCoefficient != -1)
                 isSuccess = isSuccess && curModel.beltMotorSafeCoefficient < Model.beltMotorStandard && curModel.beltSafeCoefficient >= Model.tMaxStandard_beltMotor;
             formMain.cmdCalcSelectedModelConfirmStep2.Visible = isSuccess;            
+        }
+
+        public void VerifySelectedModelAlarm() {
+            Dictionary<string, string> alarmMsg = new Dictionary<string, string>() {
+                { "力矩警示", "力矩判定異常，請洽詢Toyo業務人員" },
+                { "T_max安全係數", "扭矩安全係數過低，請調整荷重或馬達參數" },
+                { "運行距離", "運行距離過短" },
+                { "運行壽命", "運行壽命過短" },
+            };
+
+            var curRow = formMain.dgvRecommandList.CurrentRow;
+            foreach (DataGridViewCell cell in curRow.Cells) {
+                if (cell.Style.ForeColor == Color.Red) {
+                    formMain.sideTable.UpdateMsg(alarmMsg[formMain.dgvRecommandList.Columns[cell.ColumnIndex].Name], SideTable.MsgStatus.Alarm);
+                    //if (formMain.optCalcSelectedModel.Checked) {
+                    //    formMain.step2.chartInfo.Clear();
+                    //    formMain.dgvCalcSelectedModel.DataSource = null;
+                    //}
+                    return;
+                }
+            }
+            formMain.sideTable.ClearMsg();
         }
     }
 }

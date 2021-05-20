@@ -27,6 +27,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.tabMain.SelectTab(0);
             formMain.curStep = FormMain.Step.Step1;
             formMain.sideTable.Update(null, null);
+            formMain.sideTable.ClearModelImg();
+            formMain.sideTable.ClearModelInfo();
             formMain._explorerBar.UpdateCurStep(formMain.curStep);
             formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep1);
         }

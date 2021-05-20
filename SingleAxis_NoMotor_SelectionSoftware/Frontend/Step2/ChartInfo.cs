@@ -14,7 +14,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             this.formMain = formMain;
         }
 
-        public void Refresh() {
+        public void Clear() {
             // 圖表清除
             formMain.chart.Series[0].Points.Clear();
             formMain.chart.Series[0].Points.AddXY(0, 0);
