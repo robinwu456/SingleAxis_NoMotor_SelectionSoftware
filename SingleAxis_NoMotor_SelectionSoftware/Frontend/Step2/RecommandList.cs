@@ -87,6 +87,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.sideTable.UpdateModelInfo();
             }
 
+            // 驗證使用瓦數
+            if (curRow != null && curRow.Cells["馬達瓦數"].Value != null) {
+                if (formMain.cboPower.Text.Contains("標準")) {
+                    int usePower = Convert.ToInt32(curRow.Cells["馬達瓦數"].Value.ToString());
+                    formMain.cboMotorParamsMotorPowerSelection.Text = usePower.ToString();
+                }
+            }
+
             // 驗證選擇項目異常
             VerifySelectedModelAlarm();
 

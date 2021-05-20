@@ -8,6 +8,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
     public class MotorPower {
         // 馬達自訂參數
         public (double ratedTorque, double maxTorque, double rotateInertia) customMotorParams = (-1, -1, -1);
+        public int customMotorParamPower = 50;
 
         private FormMain formMain;
         public MotorPower(FormMain formMain) {
@@ -18,6 +19,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void InitEvents() {
             formMain.cboPower.SelectedValueChanged += UpdateMotorOptionsEnabled;
             formMain.optMotorParamsModifySimple.CheckedChanged += UpdateMotorOptionsEnabled;
+            formMain.cboMotorParamsMotorPowerSelection.SelectedValueChanged += CboMotorParamsMotorPowerSelection_SelectedValueChanged;
+        }
+
+        private void CboMotorParamsMotorPowerSelection_SelectedValueChanged(object sender, EventArgs e) {
+            var motorParams = formMain.step2.calc.GetMotorParams(Convert.ToInt32(formMain.cboMotorParamsMotorPowerSelection.Text));
+
+            formMain.txtRatedTorque.Text = motorParams.ratedTorque.ToString();
+            formMain.txtMaxTorque.Text = motorParams.maxTorque.ToString();
+            formMain.txtRotateInertia.Text = motorParams.rotateInertia.ToString("0." + new string('#', 339));
         }
 
         private void UpdateMotorOptionsEnabled(object sender, EventArgs e) {
