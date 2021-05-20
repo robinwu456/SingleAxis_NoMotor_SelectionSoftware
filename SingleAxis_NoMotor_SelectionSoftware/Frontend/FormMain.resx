@@ -196,7 +196,7 @@
     <value>NoControl</value>
   </data>
   <data name="cmdExplorer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1547, 0</value>
+    <value>1246, 0</value>
   </data>
   <data name="cmdExplorer.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 35</value>
@@ -226,7 +226,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1566, 0</value>
+    <value>1265, 0</value>
   </data>
   <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>7, 35</value>
@@ -253,7 +253,7 @@
     <value>NoControl</value>
   </data>
   <data name="cmdNarrow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1573, 0</value>
+    <value>1272, 0</value>
   </data>
   <data name="cmdNarrow.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 2, 0</value>
@@ -286,7 +286,7 @@
     <value>NoControl</value>
   </data>
   <data name="cmdZoom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1607, 0</value>
+    <value>1306, 0</value>
   </data>
   <data name="cmdZoom.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 2, 0</value>
@@ -319,7 +319,7 @@
     <value>NoControl</value>
   </data>
   <data name="cmdClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1641, 0</value>
+    <value>1340, 0</value>
   </data>
   <data name="cmdClose.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 3, 0</value>
@@ -356,6 +356,12 @@
   </data>
   <data name="&gt;&gt;splitContainerBase.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="explorerBar.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="explorerBar.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="panelSideTable.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -394,7 +400,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,28,Absolute,28,Absolute,28,Absolute,28" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,31,Absolute,31,Absolute,31,Absolute,31" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 282</value>
@@ -685,7 +691,7 @@
     <value>6</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1382, 14</value>
+    <value>1089, 94</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -703,16 +709,10 @@
     <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;panelSideTable.Parent" xml:space="preserve">
-    <value>tabPage1</value>
+    <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelSideTable.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="explorerBar.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="explorerBar.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="panelConfirmBtnsStep4.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
@@ -724,10 +724,10 @@
     <value>Fill</value>
   </data>
   <data name="cmdConfirmStep4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>454, 3</value>
+    <value>354, 3</value>
   </data>
   <data name="cmdConfirmStep4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 29</value>
+    <value>169, 29</value>
   </data>
   <data name="cmdConfirmStep4.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -751,10 +751,10 @@
     <value>Fill</value>
   </data>
   <data name="cmdResetStep4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>679, 3</value>
+    <value>529, 3</value>
   </data>
   <data name="cmdResetStep4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 29</value>
+    <value>169, 29</value>
   </data>
   <data name="cmdResetStep4.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -781,7 +781,7 @@
     <value>1</value>
   </data>
   <data name="panelConfirmBtnsStep4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 35</value>
+    <value>1054, 35</value>
   </data>
   <data name="panelConfirmBtnsStep4.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -808,7 +808,7 @@
     <value>0, 54</value>
   </data>
   <data name="explorerBarPanel4_content.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 144</value>
+    <value>1054, 144</value>
   </data>
   <data name="explorerBarPanel4_content.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -901,7 +901,7 @@
     <value>0, 10</value>
   </data>
   <data name="explorerBarPanel4_title.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 44</value>
+    <value>1054, 44</value>
   </data>
   <data name="explorerBarPanel4_title.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -928,7 +928,7 @@
     <value>0, 10, 0, 0</value>
   </data>
   <data name="explorerBarPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 198</value>
+    <value>1054, 198</value>
   </data>
   <data name="explorerBarPanel4.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -943,7 +943,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;explorerBarPanel4.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1330,10 +1330,10 @@
     <value>Fill</value>
   </data>
   <data name="cmdConfirmStep3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>567, 3</value>
+    <value>442, 3</value>
   </data>
   <data name="cmdConfirmStep3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 29</value>
+    <value>169, 29</value>
   </data>
   <data name="cmdConfirmStep3.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -1360,7 +1360,7 @@
     <value>1</value>
   </data>
   <data name="panelConfirmBtnsStep3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 35</value>
+    <value>1054, 35</value>
   </data>
   <data name="panelConfirmBtnsStep3.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -1387,7 +1387,7 @@
     <value>0, 54</value>
   </data>
   <data name="explorerBarPanel3_content.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 497</value>
+    <value>1054, 497</value>
   </data>
   <data name="explorerBarPanel3_content.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1480,7 +1480,7 @@
     <value>0, 10</value>
   </data>
   <data name="explorerBarPanel3_title.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 44</value>
+    <value>1054, 44</value>
   </data>
   <data name="explorerBarPanel3_title.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1507,7 +1507,7 @@
     <value>0, 10, 0, 0</value>
   </data>
   <data name="explorerBarPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 551</value>
+    <value>1054, 551</value>
   </data>
   <data name="explorerBarPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1522,7 +1522,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;explorerBarPanel3.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="chkAdvanceMode.BackImg_ToggleOff_Normal" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2783,10 +2783,10 @@
     <value>Fill</value>
   </data>
   <data name="cmdConfirmStep2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>567, 3</value>
+    <value>442, 3</value>
   </data>
   <data name="cmdConfirmStep2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 29</value>
+    <value>169, 29</value>
   </data>
   <data name="cmdConfirmStep2.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -2810,7 +2810,7 @@
     <value>1</value>
   </data>
   <data name="panelConfirmBtnsStep2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 35</value>
+    <value>1054, 35</value>
   </data>
   <data name="panelConfirmBtnsStep2.TabIndex" type="System.Int32, mscorlib">
     <value>254</value>
@@ -2843,10 +2843,10 @@
     <value>Fill</value>
   </data>
   <data name="cmdCalc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>567, 3</value>
+    <value>442, 3</value>
   </data>
   <data name="cmdCalc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 30</value>
+    <value>169, 30</value>
   </data>
   <data name="cmdCalc.TabIndex" type="System.Int32, mscorlib">
     <value>251</value>
@@ -2867,10 +2867,10 @@
     <value>下一步</value>
   </data>
   <data name="cmdCalcSelectedModelConfirmStep2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>792, 3</value>
+    <value>617, 3</value>
   </data>
   <data name="cmdCalcSelectedModelConfirmStep2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 30</value>
+    <value>143, 30</value>
   </data>
   <data name="cmdCalcSelectedModelConfirmStep2.TabIndex" type="System.Int32, mscorlib">
     <value>252</value>
@@ -2897,7 +2897,7 @@
     <value>1</value>
   </data>
   <data name="panelCalcBtns.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 36</value>
+    <value>1054, 36</value>
   </data>
   <data name="panelCalcBtns.TabIndex" type="System.Int32, mscorlib">
     <value>253</value>
@@ -3188,7 +3188,7 @@
     <value>54, 710</value>
   </data>
   <data name="dgvRecommandList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1301, 364</value>
+    <value>1000, 364</value>
   </data>
   <data name="dgvRecommandList.TabIndex" type="System.Int32, mscorlib">
     <value>252</value>
@@ -5252,7 +5252,7 @@
     <value>0, 54</value>
   </data>
   <data name="explorerBarPanel2_content.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 1153</value>
+    <value>1054, 1153</value>
   </data>
   <data name="explorerBarPanel2_content.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -5345,7 +5345,7 @@
     <value>0, 10</value>
   </data>
   <data name="explorerBarPanel2_title.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 44</value>
+    <value>1054, 44</value>
   </data>
   <data name="explorerBarPanel2_title.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5372,7 +5372,7 @@
     <value>0, 10, 0, 0</value>
   </data>
   <data name="explorerBarPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 1207</value>
+    <value>1054, 1207</value>
   </data>
   <data name="explorerBarPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -5387,7 +5387,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;explorerBarPanel2.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label73.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5636,10 +5636,10 @@
     <value>Fill</value>
   </data>
   <data name="cmdConfirmStep1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>567, 3</value>
+    <value>442, 3</value>
   </data>
   <data name="cmdConfirmStep1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 29</value>
+    <value>169, 29</value>
   </data>
   <data name="cmdConfirmStep1.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -5666,7 +5666,7 @@
     <value>1</value>
   </data>
   <data name="panelConfirmBtnsStep1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 35</value>
+    <value>1054, 35</value>
   </data>
   <data name="panelConfirmBtnsStep1.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -6260,7 +6260,7 @@
     <value>0, 44</value>
   </data>
   <data name="explorerBarPanel1_content.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 401</value>
+    <value>1054, 401</value>
   </data>
   <data name="explorerBarPanel1_content.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -6353,7 +6353,7 @@
     <value>0, 0</value>
   </data>
   <data name="explorerBarPanel1_title.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 44</value>
+    <value>1054, 44</value>
   </data>
   <data name="explorerBarPanel1_title.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6377,7 +6377,7 @@
     <value>0, 0</value>
   </data>
   <data name="explorerBarPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 445</value>
+    <value>1054, 445</value>
   </data>
   <data name="explorerBarPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6392,7 +6392,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;explorerBarPanel1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="explorerBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -6404,7 +6404,7 @@
     <value>0, 0, 300, 0</value>
   </data>
   <data name="explorerBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1672, 690</value>
+    <value>1371, 690</value>
   </data>
   <data name="explorerBar.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -6419,7 +6419,7 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;explorerBar.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -6428,7 +6428,7 @@
     <value>10, 10, 0, 0</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1682, 700</value>
+    <value>1381, 700</value>
   </data>
   <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6464,10 +6464,10 @@
     <value>Fill</value>
   </data>
   <data name="cmdConfirmStep5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>460, 3</value>
+    <value>359, 3</value>
   </data>
   <data name="cmdConfirmStep5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 29</value>
+    <value>172, 29</value>
   </data>
   <data name="cmdConfirmStep5.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -6491,10 +6491,10 @@
     <value>Fill</value>
   </data>
   <data name="cmdResetStep5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>688, 3</value>
+    <value>537, 3</value>
   </data>
   <data name="cmdResetStep5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 29</value>
+    <value>172, 29</value>
   </data>
   <data name="cmdResetStep5.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -6521,7 +6521,7 @@
     <value>1</value>
   </data>
   <data name="panelConfirmBtnsStep5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1372, 35</value>
+    <value>1071, 35</value>
   </data>
   <data name="panelConfirmBtnsStep5.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -6548,7 +6548,7 @@
     <value>0, 54</value>
   </data>
   <data name="explorerBarPanel5_content.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1372, 597</value>
+    <value>1071, 597</value>
   </data>
   <data name="explorerBarPanel5_content.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -6641,7 +6641,7 @@
     <value>0, 10</value>
   </data>
   <data name="explorerBarPanel5_title.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1372, 44</value>
+    <value>1071, 44</value>
   </data>
   <data name="explorerBarPanel5_title.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6668,7 +6668,7 @@
     <value>0, 10, 0, 0</value>
   </data>
   <data name="explorerBarPanel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1372, 651</value>
+    <value>1071, 651</value>
   </data>
   <data name="explorerBarPanel5.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -6695,7 +6695,7 @@
     <value>0, 0, 300, 0</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1672, 690</value>
+    <value>1371, 690</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -6719,7 +6719,7 @@
     <value>10, 10, 0, 0</value>
   </data>
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1682, 700</value>
+    <value>1381, 700</value>
   </data>
   <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -6746,7 +6746,7 @@
     <value>0, 0</value>
   </data>
   <data name="tabMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1690, 726</value>
+    <value>1389, 726</value>
   </data>
   <data name="tabMain.TabIndex" type="System.Int32, mscorlib">
     <value>263</value>
@@ -6776,7 +6776,7 @@
     <value>1</value>
   </data>
   <data name="splitContainerBase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1690, 762</value>
+    <value>1389, 762</value>
   </data>
   <data name="splitContainerBase.SplitterDistance" type="System.Int32, mscorlib">
     <value>35</value>
@@ -6806,7 +6806,7 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1690, 762</value>
+    <value>1389, 762</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

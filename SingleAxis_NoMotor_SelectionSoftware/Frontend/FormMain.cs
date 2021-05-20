@@ -59,7 +59,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             sideTable.Update(null, null);
             // 右側表格歸位
             panelSideTable.Size = new Size(224, 474);
-            panelSideTable.Location = new Point(1413, 129);
+            panelSideTable.Location = new Point(1120, 129);
 
             //// 語係測試
             //Language.curLanguage = Language.LanguageType.English;

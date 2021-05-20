@@ -41,6 +41,7 @@
             this.cmdClose = new System.Windows.Forms.PictureBox();
             this.tabMain = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.explorerBar = new System.Windows.Forms.Panel();
             this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.panelSideTableSelections = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.tableSelections = new System.Windows.Forms.TableLayoutPanel();
@@ -53,7 +54,6 @@
             this.customPanel2 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.picModelImg = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.explorerBar = new System.Windows.Forms.Panel();
             this.explorerBarPanel4 = new System.Windows.Forms.Panel();
             this.explorerBarPanel4_content = new System.Windows.Forms.Panel();
             this.panelConfirmBtnsStep4 = new System.Windows.Forms.TableLayoutPanel();
@@ -279,13 +279,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).BeginInit();
             this.tabMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.explorerBar.SuspendLayout();
             this.panelSideTable.SuspendLayout();
             this.panelSideTableSelections.SuspendLayout();
             this.customPanel4.SuspendLayout();
             this.customPanel3.SuspendLayout();
             this.customPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).BeginInit();
-            this.explorerBar.SuspendLayout();
             this.explorerBarPanel4.SuspendLayout();
             this.explorerBarPanel4_content.SuspendLayout();
             this.panelConfirmBtnsStep4.SuspendLayout();
@@ -419,10 +419,19 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
-            this.tabPage1.Controls.Add(this.panelSideTable);
             this.tabPage1.Controls.Add(this.explorerBar);
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
+            // 
+            // explorerBar
+            // 
+            resources.ApplyResources(this.explorerBar, "explorerBar");
+            this.explorerBar.Controls.Add(this.panelSideTable);
+            this.explorerBar.Controls.Add(this.explorerBarPanel4);
+            this.explorerBar.Controls.Add(this.explorerBarPanel3);
+            this.explorerBar.Controls.Add(this.explorerBarPanel2);
+            this.explorerBar.Controls.Add(this.explorerBarPanel1);
+            this.explorerBar.Name = "explorerBar";
             // 
             // panelSideTable
             // 
@@ -514,15 +523,6 @@
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            // 
-            // explorerBar
-            // 
-            resources.ApplyResources(this.explorerBar, "explorerBar");
-            this.explorerBar.Controls.Add(this.explorerBarPanel4);
-            this.explorerBar.Controls.Add(this.explorerBarPanel3);
-            this.explorerBar.Controls.Add(this.explorerBarPanel2);
-            this.explorerBar.Controls.Add(this.explorerBarPanel1);
-            this.explorerBar.Name = "explorerBar";
             // 
             // explorerBarPanel4
             // 
@@ -2306,13 +2306,13 @@
             this.tabMain.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.explorerBar.ResumeLayout(false);
             this.panelSideTable.ResumeLayout(false);
             this.panelSideTableSelections.ResumeLayout(false);
             this.customPanel4.ResumeLayout(false);
             this.customPanel3.ResumeLayout(false);
             this.customPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).EndInit();
-            this.explorerBar.ResumeLayout(false);
             this.explorerBarPanel4.ResumeLayout(false);
             this.explorerBarPanel4_content.ResumeLayout(false);
             this.panelConfirmBtnsStep4.ResumeLayout(false);
