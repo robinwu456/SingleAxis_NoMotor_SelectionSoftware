@@ -89,6 +89,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 驗證選擇項目異常
             VerifySelectedModelAlarm();
+
+            if (sender != null)
+                formMain._explorerBar.ValueChanged(sender, e);
         }
 
         public void Refresh() {
