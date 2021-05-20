@@ -120,7 +120,7 @@
             this.txtMaxSpeed = new System.Windows.Forms.TextBox();
             this.lbRpm = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelExpectServiceLifeTime = new System.Windows.Forms.Panel();
             this.label72 = new System.Windows.Forms.Label();
             this.label77 = new System.Windows.Forms.Label();
             this.txtExpectServiceLifeTime = new System.Windows.Forms.TextBox();
@@ -309,7 +309,7 @@
             this.panelPowerModifyMode.SuspendLayout();
             this.panelAdvanceParams.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.panelExpectServiceLifeTime.SuspendLayout();
             this.panelConfirmBtnsStep2.SuspendLayout();
             this.panelCalcBtns.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).BeginInit();
@@ -1111,19 +1111,19 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.panel5);
+            this.panel6.Controls.Add(this.panelExpectServiceLifeTime);
             this.panel6.Controls.Add(this.optExpectServiceLife);
             this.panel6.Controls.Add(this.optNoExpectServiceLife);
             resources.ApplyResources(this.panel6, "panel6");
             this.panel6.Name = "panel6";
             // 
-            // panel5
+            // panelExpectServiceLifeTime
             // 
-            this.panel5.Controls.Add(this.label72);
-            this.panel5.Controls.Add(this.label77);
-            this.panel5.Controls.Add(this.txtExpectServiceLifeTime);
-            resources.ApplyResources(this.panel5, "panel5");
-            this.panel5.Name = "panel5";
+            this.panelExpectServiceLifeTime.Controls.Add(this.label72);
+            this.panelExpectServiceLifeTime.Controls.Add(this.label77);
+            this.panelExpectServiceLifeTime.Controls.Add(this.txtExpectServiceLifeTime);
+            resources.ApplyResources(this.panelExpectServiceLifeTime, "panelExpectServiceLifeTime");
+            this.panelExpectServiceLifeTime.Name = "panelExpectServiceLifeTime";
             // 
             // label72
             // 
@@ -2345,8 +2345,8 @@
             this.panelAdvanceParams.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.panelExpectServiceLifeTime.ResumeLayout(false);
+            this.panelExpectServiceLifeTime.PerformLayout();
             this.panelConfirmBtnsStep2.ResumeLayout(false);
             this.panelCalcBtns.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).EndInit();
@@ -2544,7 +2544,6 @@
         public System.Windows.Forms.Label lbMaxSpeedAlarm;
         public System.Windows.Forms.TextBox txtMaxSpeed;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label72;
         public System.Windows.Forms.Label label77;
         public System.Windows.Forms.TextBox txtExpectServiceLifeTime;
@@ -2618,6 +2617,7 @@
         public System.Windows.Forms.Panel panelEffectiveStroke1;
         public System.Windows.Forms.RadioButton optEffectiveStroke1;
         public CustomButton.CustomButton cmdEffectiveStroke;
+        public System.Windows.Forms.Panel panelExpectServiceLifeTime;
     }
 }
 

@@ -90,6 +90,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 驗證選擇項目異常
             VerifySelectedModelAlarm();
 
+            // 項目更改分頁收起
             if (sender != null)
                 formMain._explorerBar.ValueChanged(sender, e);
         }

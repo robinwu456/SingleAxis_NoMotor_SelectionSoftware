@@ -394,7 +394,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,27,Absolute,27,Absolute,27,Absolute,27" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,28,Absolute,28,Absolute,28,Absolute,28" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 282</value>
@@ -409,7 +409,7 @@
     <value>panelSideTableSelections</value>
   </data>
   <data name="&gt;&gt;panelSideTableSelections.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;panelSideTableSelections.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -466,7 +466,7 @@
     <value>customPanel4</value>
   </data>
   <data name="&gt;&gt;customPanel4.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel4.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -556,7 +556,7 @@
     <value>customPanel3</value>
   </data>
   <data name="&gt;&gt;customPanel3.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel3.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -643,7 +643,7 @@
     <value>customPanel2</value>
   </data>
   <data name="&gt;&gt;customPanel2.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel2.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -700,7 +700,7 @@
     <value>panelSideTable</value>
   </data>
   <data name="&gt;&gt;panelSideTable.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;panelSideTable.Parent" xml:space="preserve">
     <value>tabPage1</value>
@@ -2558,7 +2558,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label72.Parent" xml:space="preserve">
-    <value>panel5</value>
+    <value>panelExpectServiceLifeTime</value>
   </data>
   <data name="&gt;&gt;label72.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -2594,7 +2594,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label77.Parent" xml:space="preserve">
-    <value>panel5</value>
+    <value>panelExpectServiceLifeTime</value>
   </data>
   <data name="&gt;&gt;label77.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -2624,33 +2624,33 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtExpectServiceLifeTime.Parent" xml:space="preserve">
-    <value>panel5</value>
+    <value>panelExpectServiceLifeTime</value>
   </data>
   <data name="&gt;&gt;txtExpectServiceLifeTime.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="panel5.Enabled" type="System.Boolean, mscorlib">
+  <data name="panelExpectServiceLifeTime.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="panelExpectServiceLifeTime.Location" type="System.Drawing.Point, System.Drawing">
     <value>78, 4</value>
   </data>
-  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="panelExpectServiceLifeTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 55</value>
   </data>
-  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
+  <data name="panelExpectServiceLifeTime.TabIndex" type="System.Int32, mscorlib">
     <value>262</value>
   </data>
-  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
-    <value>panel5</value>
+  <data name="&gt;&gt;panelExpectServiceLifeTime.Name" xml:space="preserve">
+    <value>panelExpectServiceLifeTime</value>
   </data>
-  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
+  <data name="&gt;&gt;panelExpectServiceLifeTime.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelExpectServiceLifeTime.Parent" xml:space="preserve">
     <value>panel6</value>
   </data>
-  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panelExpectServiceLifeTime.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="optExpectServiceLife.AutoSize" type="System.Boolean, mscorlib">
@@ -6755,7 +6755,7 @@
     <value>tabMain</value>
   </data>
   <data name="&gt;&gt;tabMain.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, SingleAxis_NoMotor_SelectionSoftware, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabMain.Parent" xml:space="preserve">
     <value>splitContainerBase.Panel2</value>

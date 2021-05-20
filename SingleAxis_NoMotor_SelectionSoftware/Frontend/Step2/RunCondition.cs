@@ -16,6 +16,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void InitEvents() {
+            // 希望壽命
+            formMain.optNoExpectServiceLife.CheckedChanged += ExpectServiceLife_CheckedChanged;
+            formMain.optExpectServiceLife.CheckedChanged += ExpectServiceLife_CheckedChanged;
+
             // 更新條件
             formMain.optStandardEnv.CheckedChanged += UpdateCondition;
             formMain.optDustFreeEnv.CheckedChanged += UpdateCondition;
@@ -52,7 +56,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.optRepeatabilityScrew.CheckedChanged += UpdateCondition;
             formMain.optMaxSpeedType_mms.CheckedChanged += UpdateCondition;
             formMain.dgvReducerInfo.CellValueChanged += UpdateCondition;
-        }        
+            formMain.optExpectServiceLife.CheckedChanged += UpdateCondition;
+        }
+
+        private void ExpectServiceLife_CheckedChanged(object sender, EventArgs e) {
+            formMain.panelExpectServiceLifeTime.Enabled = formMain.optExpectServiceLife.Checked;
+        }
 
         public void UpdateCondition(object sender, EventArgs e) {
             if (formMain.curStep != FormMain.Step.Step2)

@@ -147,6 +147,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 { "線速度過大", model => model.vMax <= model.vMax_max },
                 { "行程過短，建議可增加行程，或降低線速度", model => model.constantTime >= 0 },
                 { "運行時間過短，請增加運行時間", model => model.moveTime <= condition.moveTime },
+                { "未達希望壽命", model => model.serviceLifeTime.year >= condition.expectServiceLifeTime },
             };
             foreach (var filter in filterMap) {
                 oldResultModelCount = resultModels.Count;
