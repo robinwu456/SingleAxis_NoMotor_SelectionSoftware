@@ -118,7 +118,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.explorerBarPanel2.Size = new Size(formMain.explorerBarPanel2.Size.Width, maxHeight);
                 formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep2);
             }
-            formMain.panelSelectCalcResult.Visible = formMain.optCalcSelectedModel.Checked;
+            //formMain.dgvCalcSelectedModel.Visible = formMain.optCalcSelectedModel.Checked;
 
             // 最後更新使用條件
             runCondition.UpdateCondition(null, null);
@@ -144,8 +144,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         formMain.dgvCalcSelectedModel.DataSource = null;
                         chartInfo.Clear();
                         recommandList.curSelectModel = (null, -1);
+                        // 側邊欄
                         formMain.sideTable.ClearModelImg();
                         formMain.sideTable.ClearModelInfo();
+                        if (formMain.optCalcSelectedModel.Checked)
+                            formMain.sideTable.ClearSelectedModelInfo();
                     }));
 
                     formMain.Invoke(new Action(() => formMain.sideTable.UpdateMsg("此使用條件無法計算，請嘗試調整使用條件。", SideTable.MsgStatus.Alarm)));

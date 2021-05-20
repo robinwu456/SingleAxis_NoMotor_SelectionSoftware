@@ -13,18 +13,29 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public enum MsgStatus { Normal, Alarm }
 
         private FormMain formMain;
-        private List<string> selectionTableItems = new List<string>(){
+        private List<string> selectionTableItems_calcAll = new List<string>(){
             "使用環境",
             "安裝方式",
             "機構型態",
             "有效行程",
         };
+        private List<string> selectionTableItems_calcSelectModel = new List<string>(){
+            "使用環境",
+            "安裝方式",
+            "機構型態",
+            "T_max係數",
+            "力矩警示",
+            "運行距離",
+            "運行壽命",
+            "有效行程",
+        };
 
         private int tableLayoutDefaultRowHeight = 21;
+        private Color tableConditionValueForeColor = Color.FromArgb(42, 88, 111);
 
         public SideTable(FormMain formMain) {
             this.formMain = formMain;
-            Init();            
+            UpdateItem();            
 
             // 移除表格，在父panel新增
             formMain.panelSideTable.Parent.Controls.Remove(formMain.panelSideTable);
@@ -32,10 +43,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.panelSideTable.BringToFront();
         }
 
-        // 選項欄生成
-        private void Init() {
-            // init label            
+        // 選項欄生成        
+        public void UpdateItem() {
+            // 清除欄位所有原件
+            formMain.tableSelections.Controls.All().ToList().ForEach(control => formMain.tableSelections.Controls.Remove(control));
+            formMain.tableSelections.RowCount = 1;
+
+            // init label 
             formMain.tableSelections.RowStyles.Clear();
+            List<string> selectionTableItems = formMain.optCalcAllModel.Checked ? selectionTableItems_calcAll : selectionTableItems_calcSelectModel;
             formMain.tableSelections.RowCount = selectionTableItems.Count;
             selectionTableItems.ForEach(item => {
                 RowStyle row = new RowStyle(SizeType.Absolute, tableLayoutDefaultRowHeight);
@@ -54,7 +70,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 Label value = new Label();
                 value.Name = "labelDataResult_" + item + "_value";
                 value.Font = new Font("微軟正黑體", 9);
-                value.ForeColor = Color.FromArgb(42, 88, 111);
+                value.ForeColor = tableConditionValueForeColor;
                 value.AutoSize = false;
                 value.Dock = DockStyle.Fill;
                 value.TextAlign = ContentAlignment.MiddleLeft;
@@ -118,33 +134,46 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.picModelImg.Image = null;
         }
 
-        public void UpdateTableSelections() {
-            void UpdateValue(string key, string value) {
-                Label lbValue = formMain.panelSideTableSelections.Controls.Find("labelDataResult_" + key + "_value", true)[0] as Label;
-                // 字串斷行處理
-                RowStyle rowStyle = formMain.tableSelections.RowStyles[selectionTableItems.IndexOf(key)];
-                rowStyle.Height = value.Length > 7 ? tableLayoutDefaultRowHeight * 2 : tableLayoutDefaultRowHeight;
-                if (value.Length > 7)
-                    value = value.Insert(7, "\r\n");
-                lbValue.Text = value;
-                ResizeSideTable();
-            }
+        public void ClearSelectedModelInfo() {
+            formMain.sideTable.UpdateSelectedConditionValue("T_max係數", "");
+            formMain.sideTable.UpdateSelectedConditionValue("力矩警示", "");
+            formMain.sideTable.UpdateSelectedConditionValue("運行距離", "");
+            formMain.sideTable.UpdateSelectedConditionValue("運行壽命", "");
+        }
+
+        public void UpdateTableSelections() {            
             // step1
             if (formMain.curStep >= FormMain.Step.Step1) {
-                UpdateValue("使用環境", formMain.panelSetupEnv.Controls.Cast<Control>().ToList()
+                UpdateSelectedConditionValue("使用環境", formMain.panelSetupEnv.Controls.Cast<Control>().ToList()
                                                               .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
                                                               .Text);
-                UpdateValue("安裝方式", formMain.panelSetupMode.Controls.Cast<Control>().ToList()
+                UpdateSelectedConditionValue("安裝方式", formMain.panelSetupMode.Controls.Cast<Control>().ToList()
                                                                .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
                                                                .Text);
-                UpdateValue("機構型態", formMain.cboModelType.Text);
+                UpdateSelectedConditionValue("機構型態", formMain.cboModelType.Text);
             }
+            // step2
+            if (formMain.curStep < FormMain.Step.Step2)
+                if (formMain.optCalcSelectedModel.Checked)
+                    ClearSelectedModelInfo();
             // step3
             if (formMain.curStep >= FormMain.Step.Step3)
-                UpdateValue("有效行程", formMain.step3.effectiveStroke.ToString() + "mm");
+                UpdateSelectedConditionValue("有效行程", formMain.step3.effectiveStroke.ToString() + "mm");
             else
-                UpdateValue("有效行程", "");
+                UpdateSelectedConditionValue("有效行程", "");
 
+        }
+        public void UpdateSelectedConditionValue(string key, string value, bool isAlarm = false) {
+            Label lbValue = formMain.panelSideTableSelections.Controls.Find("labelDataResult_" + key + "_value", true)[0] as Label;
+            // 字串斷行處理
+            List<string> selectionTableItems = formMain.optCalcAllModel.Checked ? selectionTableItems_calcAll : selectionTableItems_calcSelectModel;
+            RowStyle rowStyle = formMain.tableSelections.RowStyles[selectionTableItems.IndexOf(key)];
+            rowStyle.Height = value.Length > 7 ? tableLayoutDefaultRowHeight * 2 : tableLayoutDefaultRowHeight;
+            if (value.Length > 7)
+                value = value.Insert(7, "\r\n");
+            lbValue.ForeColor = isAlarm ? Color.Red : tableConditionValueForeColor;
+            lbValue.Text = value;
+            ResizeSideTable();
         }
     }
 }

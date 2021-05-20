@@ -42,6 +42,7 @@
             this.tabMain = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.explorerBar = new System.Windows.Forms.Panel();
+            this.dgvCalcSelectedModel = new System.Windows.Forms.DataGridView();
             this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.panelSideTableSelections = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.tableSelections = new System.Windows.Forms.TableLayoutPanel();
@@ -87,10 +88,6 @@
             this.panelAdvanceMode = new System.Windows.Forms.Panel();
             this.chkAdvanceMode = new CustomToggle.CustomToggle();
             this.labelAdvanceOption = new System.Windows.Forms.Label();
-            this.panelSelectCalcResult = new System.Windows.Forms.Panel();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.dgvCalcSelectedModel = new System.Windows.Forms.DataGridView();
             this.panelReducer = new System.Windows.Forms.Panel();
             this.dgvReducerInfo = new System.Windows.Forms.DataGridView();
             this.columnModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -280,6 +277,7 @@
             this.tabMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.explorerBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCalcSelectedModel)).BeginInit();
             this.panelSideTable.SuspendLayout();
             this.panelSideTableSelections.SuspendLayout();
             this.customPanel4.SuspendLayout();
@@ -301,8 +299,6 @@
             this.explorerBarPanel2.SuspendLayout();
             this.explorerBarPanel2_content.SuspendLayout();
             this.panelAdvanceMode.SuspendLayout();
-            this.panelSelectCalcResult.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCalcSelectedModel)).BeginInit();
             this.panelReducer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
@@ -426,12 +422,25 @@
             // explorerBar
             // 
             resources.ApplyResources(this.explorerBar, "explorerBar");
+            this.explorerBar.Controls.Add(this.dgvCalcSelectedModel);
             this.explorerBar.Controls.Add(this.panelSideTable);
             this.explorerBar.Controls.Add(this.explorerBarPanel4);
             this.explorerBar.Controls.Add(this.explorerBarPanel3);
             this.explorerBar.Controls.Add(this.explorerBarPanel2);
             this.explorerBar.Controls.Add(this.explorerBarPanel1);
             this.explorerBar.Name = "explorerBar";
+            // 
+            // dgvCalcSelectedModel
+            // 
+            this.dgvCalcSelectedModel.AllowUserToAddRows = false;
+            this.dgvCalcSelectedModel.AllowUserToDeleteRows = false;
+            this.dgvCalcSelectedModel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.dgvCalcSelectedModel, "dgvCalcSelectedModel");
+            this.dgvCalcSelectedModel.Name = "dgvCalcSelectedModel";
+            this.dgvCalcSelectedModel.ReadOnly = true;
+            this.dgvCalcSelectedModel.RowHeadersVisible = false;
+            this.dgvCalcSelectedModel.RowTemplate.Height = 24;
+            this.dgvCalcSelectedModel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
             // panelSideTable
             // 
@@ -769,7 +778,6 @@
             // explorerBarPanel2_content
             // 
             this.explorerBarPanel2_content.Controls.Add(this.panelAdvanceMode);
-            this.explorerBarPanel2_content.Controls.Add(this.panelSelectCalcResult);
             this.explorerBarPanel2_content.Controls.Add(this.panelReducer);
             this.explorerBarPanel2_content.Controls.Add(this.lbCycleTime);
             this.explorerBarPanel2_content.Controls.Add(this.lbMaxSpeed);
@@ -861,38 +869,6 @@
             resources.ApplyResources(this.labelAdvanceOption, "labelAdvanceOption");
             this.labelAdvanceOption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.labelAdvanceOption.Name = "labelAdvanceOption";
-            // 
-            // panelSelectCalcResult
-            // 
-            this.panelSelectCalcResult.Controls.Add(this.label48);
-            this.panelSelectCalcResult.Controls.Add(this.label51);
-            this.panelSelectCalcResult.Controls.Add(this.dgvCalcSelectedModel);
-            resources.ApplyResources(this.panelSelectCalcResult, "panelSelectCalcResult");
-            this.panelSelectCalcResult.Name = "panelSelectCalcResult";
-            // 
-            // label48
-            // 
-            resources.ApplyResources(this.label48, "label48");
-            this.label48.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label48.Name = "label48";
-            // 
-            // label51
-            // 
-            this.label51.BackColor = System.Drawing.Color.LightGray;
-            resources.ApplyResources(this.label51, "label51");
-            this.label51.Name = "label51";
-            // 
-            // dgvCalcSelectedModel
-            // 
-            this.dgvCalcSelectedModel.AllowUserToAddRows = false;
-            this.dgvCalcSelectedModel.AllowUserToDeleteRows = false;
-            this.dgvCalcSelectedModel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.dgvCalcSelectedModel, "dgvCalcSelectedModel");
-            this.dgvCalcSelectedModel.Name = "dgvCalcSelectedModel";
-            this.dgvCalcSelectedModel.ReadOnly = true;
-            this.dgvCalcSelectedModel.RowHeadersVisible = false;
-            this.dgvCalcSelectedModel.RowTemplate.Height = 24;
-            this.dgvCalcSelectedModel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
             // panelReducer
             // 
@@ -2307,6 +2283,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.explorerBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCalcSelectedModel)).EndInit();
             this.panelSideTable.ResumeLayout(false);
             this.panelSideTableSelections.ResumeLayout(false);
             this.customPanel4.ResumeLayout(false);
@@ -2332,9 +2309,6 @@
             this.explorerBarPanel2_content.PerformLayout();
             this.panelAdvanceMode.ResumeLayout(false);
             this.panelAdvanceMode.PerformLayout();
-            this.panelSelectCalcResult.ResumeLayout(false);
-            this.panelSelectCalcResult.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCalcSelectedModel)).EndInit();
             this.panelReducer.ResumeLayout(false);
             this.panelReducer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).EndInit();
@@ -2593,9 +2567,6 @@
         public System.Windows.Forms.Label lbAccelTime;
         public System.Windows.Forms.DataVisualization.Charting.Chart chart;
         public System.Windows.Forms.Panel panelReducer;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label51;
-        public System.Windows.Forms.Panel panelSelectCalcResult;
         public CustomToggle.CustomToggle chkAdvanceMode;
         public System.Windows.Forms.Panel panelAdvanceMode;
         public System.Windows.Forms.Panel panelAdvanceParams;

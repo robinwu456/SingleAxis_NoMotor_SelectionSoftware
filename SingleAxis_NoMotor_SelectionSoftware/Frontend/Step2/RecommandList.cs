@@ -105,7 +105,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public void Refresh() {
             // 型號選型結果顯示恢復隱藏
-            formMain.panelSelectCalcResult.Visible = false;
+            //formMain.dgvCalcSelectedModel.Visible = false;
             formMain.dgvCalcSelectedModel.DataSource = null;
             formMain.dgvCalcSelectedModel.Rows.Clear();
         }
@@ -337,6 +337,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 型號選行取消選取
             formMain.dgvCalcSelectedModel.CurrentCell = null;
 
+            // 更新側邊欄數值
+            formMain.sideTable.UpdateSelectedConditionValue("T_max係數", curModel.tMaxSafeCoefficient.ToString(), curModel.tMaxSafeCoefficient < Model.tMaxStandard);
+            formMain.sideTable.UpdateSelectedConditionValue("力矩警示", curModel.isMomentVerifySuccess ? "Pass" : "Fail", !curModel.isMomentVerifySuccess);
+            formMain.sideTable.UpdateSelectedConditionValue("運行距離", useDistance, serviceDistance < serviceLifeDistanceAlarmStandard);
+            formMain.sideTable.UpdateSelectedConditionValue("運行壽命", useTime, serviceYear < serviceLifeTimeAlarmStandard);
+
             // 畫圖
             formMain.step2.chartInfo.PaintGraph();
 
@@ -359,10 +365,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             foreach (DataGridViewCell cell in curRow.Cells) {
                 if (cell.Style.ForeColor == Color.Red) {
                     formMain.sideTable.UpdateMsg(alarmMsg[formMain.dgvRecommandList.Columns[cell.ColumnIndex].Name], SideTable.MsgStatus.Alarm);
-                    //if (formMain.optCalcSelectedModel.Checked) {
-                    //    formMain.step2.chartInfo.Clear();
-                    //    formMain.dgvCalcSelectedModel.DataSource = null;
-                    //}
                     return;
                 }
             }

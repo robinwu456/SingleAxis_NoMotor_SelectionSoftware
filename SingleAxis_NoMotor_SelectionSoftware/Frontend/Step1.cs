@@ -137,7 +137,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void OptCalcAllModel_CheckedChanged(object sender, EventArgs e) {
-            formMain.panelCalcMode.Enabled = formMain.optCalcSelectedModel.Checked;            
+            formMain.panelCalcMode.Enabled = formMain.optCalcSelectedModel.Checked;
+            formMain.sideTable.UpdateItem();
+            formMain.sideTable.UpdateTableSelections();
         }
     }
 }
