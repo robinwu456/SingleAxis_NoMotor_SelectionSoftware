@@ -40,6 +40,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
             // 取該Control所在的頁籤
             Control control = sender as Control;
+            if (!control.Enabled)
+                return;
             ExplorerBarPanel controlsExplorerBar = GetExplorerBarOfControl(control);
             // 收起該頁籤以後的頁籤
             var collapsePanels = explorerBarPanel.Where(p => p.index > controlsExplorerBar.index).ToList();

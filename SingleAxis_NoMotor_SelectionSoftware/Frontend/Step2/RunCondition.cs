@@ -64,10 +64,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void UpdateCondition(object sender, EventArgs e) {
+            // 不是Step2時不修正條件
             if (formMain.curStep != FormMain.Step.Step2)
                 return;
             // 全數值驗證
             if (!formMain.step2.inputValidate.VerifyAllInputValidate())
+                return;
+            // 控制項為Disable時，不修正條件
+            if (sender != null && ((Control)sender).Enabled == false)
                 return;
 
             // 使用環境
