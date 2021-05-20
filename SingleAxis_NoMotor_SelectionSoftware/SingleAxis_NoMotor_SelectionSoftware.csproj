@@ -289,5 +289,101 @@
   <ItemGroup>
     <None Include="Resources\dataResultBackground.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ECB5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ECB6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ECB10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ECB14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ECB17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ECB22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ECH14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ECH17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ECH22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETB5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETB6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETB10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETB14M.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETB17M.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETH13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETH14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETH17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETH17M.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETH22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETH22M.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GCH4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GCH5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GCH8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GCH12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTY4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTY5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTY8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTY12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\MK65.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\MK85.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\MK110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETB22M.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
