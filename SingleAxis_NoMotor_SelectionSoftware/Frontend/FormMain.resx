@@ -427,13 +427,13 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,61,Absolute,61,Absolute,61,Absolute,61" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,64,Absolute,64,Absolute,64,Absolute,64" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 282</value>
+    <value>15, 313</value>
   </data>
   <data name="panelSideTableSelections.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 177</value>
+    <value>194, 178</value>
   </data>
   <data name="panelSideTableSelections.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -484,7 +484,7 @@
     <value>0</value>
   </data>
   <data name="customPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 162</value>
+    <value>15, 193</value>
   </data>
   <data name="customPanel4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 0, 10, 0</value>
@@ -514,7 +514,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 206</value>
+    <value>15, 237</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>194, 23</value>
@@ -574,7 +574,7 @@
     <value>0</value>
   </data>
   <data name="customPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 232</value>
+    <value>15, 263</value>
   </data>
   <data name="customPanel3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 0, 10, 0</value>
@@ -604,7 +604,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 136</value>
+    <value>15, 167</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>194, 23</value>
@@ -640,7 +640,7 @@
     <value>3, 3</value>
   </data>
   <data name="picModelImg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 102</value>
+    <value>188, 132</value>
   </data>
   <data name="picModelImg.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -667,7 +667,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="customPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 108</value>
+    <value>194, 138</value>
   </data>
   <data name="customPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -718,13 +718,13 @@
     <value>6</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1095, 121</value>
+    <value>1088, 121</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
   </data>
   <data name="panelSideTable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 495</value>
+    <value>231, 507</value>
   </data>
   <data name="panelSideTable.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6732,9 +6732,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1389, 762</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

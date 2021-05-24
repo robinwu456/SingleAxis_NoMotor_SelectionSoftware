@@ -90,7 +90,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             );
             formMain.tableSelections.Location = new Point(0 - hiddenBorderDistance, 0 - hiddenBorderDistance);
             // set table size
-            int minHeight = 298;
+            //int minHeight = 298;
+            int minHeight = 309;
             formMain.panelSideTable.Size = new Size(formMain.panelSideTable.Size.Width, minHeight + allLabelHeight + 8 + 21);    // +8(高度補償)
             // 高度置中
             int middleLocation = formMain.explorerBar.Size.Height / 2;

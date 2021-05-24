@@ -527,7 +527,7 @@
             // picModelImg
             // 
             resources.ApplyResources(this.picModelImg, "picModelImg");
-            this.picModelImg.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.ETB22M;
+            this.picModelImg.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.MK85;
             this.picModelImg.Name = "picModelImg";
             this.picModelImg.TabStop = false;
             // 
