@@ -427,7 +427,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,49,Absolute,49,Absolute,49,Absolute,49" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,61,Absolute,61,Absolute,61,Absolute,61" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 282</value>
@@ -718,7 +718,7 @@
     <value>6</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1049, 66</value>
+    <value>1095, 121</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -1642,6 +1642,9 @@
   <data name="&gt;&gt;panelAdvanceMode.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="dgvReducerInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
   <metadata name="columnModel.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1658,7 +1661,7 @@
     <value>21, 62</value>
   </data>
   <data name="dgvReducerInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 176</value>
+    <value>246, 98</value>
   </data>
   <data name="dgvReducerInfo.TabIndex" type="System.Int32, mscorlib">
     <value>255</value>
@@ -1715,7 +1718,7 @@
     <value>19, 47</value>
   </data>
   <data name="label58.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 2</value>
+    <value>250, 2</value>
   </data>
   <data name="label58.TabIndex" type="System.Int32, mscorlib">
     <value>243</value>
@@ -1733,10 +1736,10 @@
     <value>2</value>
   </data>
   <data name="panelReducer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>765, 304</value>
+    <value>765, 264</value>
   </data>
   <data name="panelReducer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>258, 250</value>
+    <value>286, 172</value>
   </data>
   <data name="panelReducer.TabIndex" type="System.Int32, mscorlib">
     <value>287</value>
@@ -6729,6 +6732,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1389, 762</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

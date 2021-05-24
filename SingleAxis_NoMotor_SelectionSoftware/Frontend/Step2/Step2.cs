@@ -41,15 +41,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 減速比
             calc.reducerInfo.Rows.Cast<DataRow>().ToList().ForEach(row => {
-                DataGridViewRow newRow = new DataGridViewRow();
-                DataGridViewTextBoxCell txtCell = new DataGridViewTextBoxCell();
-                DataGridViewComboBoxCell cboCell = new DataGridViewComboBoxCell();
-                txtCell.Value = row["Model"].ToString();
-                cboCell.DataSource = row["ReducerRatio"].ToString().Split('、');
-                cboCell.Value = row["ReducerRatio"].ToString().Split('、')[0];
-                newRow.Cells.Add(txtCell);
-                newRow.Cells.Add(cboCell);
-                formMain.dgvReducerInfo.Rows.Add(newRow);
+                DataGridViewRow dgvRow = (DataGridViewRow)formMain.dgvReducerInfo.RowTemplate.Clone();
+                formMain.dgvReducerInfo.Rows.Add(dgvRow);
+                dgvRow = formMain.dgvReducerInfo.Rows[calc.reducerInfo.Rows.Cast<DataRow>().ToList().IndexOf(row)];
+                dgvRow.Cells["columnModel"].Value = row["Model"].ToString();
+                (dgvRow.Cells["columnReducerRatio"] as DataGridViewComboBoxCell).DataSource = row["ReducerRatio"].ToString().Split('、');
+                dgvRow.Cells["columnReducerRatio"].Value = row["ReducerRatio"].ToString().Split('、')[0];
             });
         }
 
