@@ -68,19 +68,6 @@
             this.label64 = new System.Windows.Forms.Label();
             this.explorerBarPanel3 = new System.Windows.Forms.Panel();
             this.explorerBarPanel3_content = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.cmdEffectiveStroke = new CustomButton.CustomButton();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.label83 = new System.Windows.Forms.Label();
-            this.txtEffectiveStroke = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panelEffectiveStroke2 = new System.Windows.Forms.Panel();
-            this.optEffectiveStroke2 = new System.Windows.Forms.RadioButton();
-            this.panelEffectiveStroke1 = new System.Windows.Forms.Panel();
-            this.optEffectiveStroke1 = new System.Windows.Forms.RadioButton();
             this.panelConfirmBtnsStep3 = new System.Windows.Forms.TableLayoutPanel();
             this.cmdConfirmStep3 = new CustomButton.CustomButton();
             this.explorerBarPanel3_title = new System.Windows.Forms.Panel();
@@ -88,15 +75,30 @@
             this.label63 = new System.Windows.Forms.Label();
             this.explorerBarPanel2 = new System.Windows.Forms.Panel();
             this.explorerBarPanel2_content = new System.Windows.Forms.Panel();
-            this.panelAdvanceMode = new System.Windows.Forms.Panel();
-            this.chkAdvanceMode = new CustomToggle.CustomToggle();
-            this.labelAdvanceOption = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelEffectiveStroke = new System.Windows.Forms.Panel();
+            this.label48 = new System.Windows.Forms.Label();
+            this.cmdEffectiveStroke = new CustomButton.CustomButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelEffectiveStroke2 = new System.Windows.Forms.Panel();
+            this.optEffectiveStroke2 = new System.Windows.Forms.RadioButton();
+            this.panelEffectiveStroke1 = new System.Windows.Forms.Panel();
+            this.optEffectiveStroke1 = new System.Windows.Forms.RadioButton();
+            this.txtEffectiveStroke = new System.Windows.Forms.TextBox();
+            this.label83 = new System.Windows.Forms.Label();
             this.panelReducer = new System.Windows.Forms.Panel();
             this.dgvReducerInfo = new System.Windows.Forms.DataGridView();
             this.columnModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnReducerRatio = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.label55 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
+            this.panelAdvanceMode = new System.Windows.Forms.Panel();
+            this.chkAdvanceMode = new CustomToggle.CustomToggle();
+            this.labelAdvanceOption = new System.Windows.Forms.Label();
             this.lbCycleTime = new System.Windows.Forms.Label();
             this.lbMaxSpeed = new System.Windows.Forms.Label();
             this.lbAccelSpeed = new System.Windows.Forms.Label();
@@ -293,17 +295,18 @@
             this.explorerBarPanel4_title.SuspendLayout();
             this.explorerBarPanel3.SuspendLayout();
             this.explorerBarPanel3_content.SuspendLayout();
-            this.panel19.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panelEffectiveStroke2.SuspendLayout();
-            this.panelEffectiveStroke1.SuspendLayout();
             this.panelConfirmBtnsStep3.SuspendLayout();
             this.explorerBarPanel3_title.SuspendLayout();
             this.explorerBarPanel2.SuspendLayout();
             this.explorerBarPanel2_content.SuspendLayout();
-            this.panelAdvanceMode.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panelEffectiveStroke.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panelEffectiveStroke2.SuspendLayout();
+            this.panelEffectiveStroke1.SuspendLayout();
             this.panelReducer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).BeginInit();
+            this.panelAdvanceMode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.panelPowerModifyMode.SuspendLayout();
             this.panelAdvanceParams.SuspendLayout();
@@ -619,113 +622,9 @@
             // 
             // explorerBarPanel3_content
             // 
-            this.explorerBarPanel3_content.Controls.Add(this.label1);
-            this.explorerBarPanel3_content.Controls.Add(this.label5);
-            this.explorerBarPanel3_content.Controls.Add(this.panel19);
             this.explorerBarPanel3_content.Controls.Add(this.panelConfirmBtnsStep3);
             resources.ApplyResources(this.explorerBarPanel3_content, "explorerBarPanel3_content");
             this.explorerBarPanel3_content.Name = "explorerBarPanel3_content";
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.LightGray;
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
-            this.label5.Name = "label5";
-            // 
-            // panel19
-            // 
-            this.panel19.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.dataResultBackground;
-            resources.ApplyResources(this.panel19, "panel19");
-            this.panel19.Controls.Add(this.cmdEffectiveStroke);
-            this.panel19.Controls.Add(this.label57);
-            this.panel19.Controls.Add(this.label80);
-            this.panel19.Controls.Add(this.label83);
-            this.panel19.Controls.Add(this.txtEffectiveStroke);
-            this.panel19.Controls.Add(this.panel3);
-            this.panel19.Name = "panel19";
-            // 
-            // cmdEffectiveStroke
-            // 
-            resources.ApplyResources(this.cmdEffectiveStroke, "cmdEffectiveStroke");
-            this.cmdEffectiveStroke.BackColor = System.Drawing.Color.Transparent;
-            this.cmdEffectiveStroke.BackColor_Hover = System.Drawing.Color.DarkRed;
-            this.cmdEffectiveStroke.BackColor_Normal = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
-            this.cmdEffectiveStroke.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmdEffectiveStroke.BackColor2_Hover = System.Drawing.Color.DarkRed;
-            this.cmdEffectiveStroke.BackColor2_Normal = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
-            this.cmdEffectiveStroke.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmdEffectiveStroke.ButtonEnabled = true;
-            this.cmdEffectiveStroke.Curvature = 5;
-            this.cmdEffectiveStroke.GradientMode = CustomButton.LinearGradientMode.Horizontal;
-            this.cmdEffectiveStroke.Name = "cmdEffectiveStroke";
-            this.cmdEffectiveStroke.TextFont = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold);
-            // 
-            // label57
-            // 
-            resources.ApplyResources(this.label57, "label57");
-            this.label57.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
-            this.label57.Name = "label57";
-            // 
-            // label80
-            // 
-            resources.ApplyResources(this.label80, "label80");
-            this.label80.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
-            this.label80.Name = "label80";
-            // 
-            // label83
-            // 
-            resources.ApplyResources(this.label83, "label83");
-            this.label83.BackColor = System.Drawing.Color.LightGray;
-            this.label83.Name = "label83";
-            // 
-            // txtEffectiveStroke
-            // 
-            resources.ApplyResources(this.txtEffectiveStroke, "txtEffectiveStroke");
-            this.txtEffectiveStroke.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEffectiveStroke.Name = "txtEffectiveStroke";
-            // 
-            // panel3
-            // 
-            resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.Controls.Add(this.panelEffectiveStroke2);
-            this.panel3.Controls.Add(this.panelEffectiveStroke1);
-            this.panel3.Name = "panel3";
-            // 
-            // panelEffectiveStroke2
-            // 
-            resources.ApplyResources(this.panelEffectiveStroke2, "panelEffectiveStroke2");
-            this.panelEffectiveStroke2.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.effectiveStrokeBackground;
-            this.panelEffectiveStroke2.Controls.Add(this.optEffectiveStroke2);
-            this.panelEffectiveStroke2.Name = "panelEffectiveStroke2";
-            // 
-            // optEffectiveStroke2
-            // 
-            resources.ApplyResources(this.optEffectiveStroke2, "optEffectiveStroke2");
-            this.optEffectiveStroke2.BackColor = System.Drawing.Color.Transparent;
-            this.optEffectiveStroke2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.optEffectiveStroke2.Name = "optEffectiveStroke2";
-            this.optEffectiveStroke2.UseVisualStyleBackColor = false;
-            // 
-            // panelEffectiveStroke1
-            // 
-            resources.ApplyResources(this.panelEffectiveStroke1, "panelEffectiveStroke1");
-            this.panelEffectiveStroke1.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.effectiveStrokeBackground;
-            this.panelEffectiveStroke1.Controls.Add(this.optEffectiveStroke1);
-            this.panelEffectiveStroke1.Name = "panelEffectiveStroke1";
-            // 
-            // optEffectiveStroke1
-            // 
-            resources.ApplyResources(this.optEffectiveStroke1, "optEffectiveStroke1");
-            this.optEffectiveStroke1.BackColor = System.Drawing.Color.Transparent;
-            this.optEffectiveStroke1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.optEffectiveStroke1.Name = "optEffectiveStroke1";
-            this.optEffectiveStroke1.UseVisualStyleBackColor = false;
             // 
             // panelConfirmBtnsStep3
             // 
@@ -780,8 +679,8 @@
             // 
             // explorerBarPanel2_content
             // 
+            this.explorerBarPanel2_content.Controls.Add(this.panel5);
             this.explorerBarPanel2_content.Controls.Add(this.panelAdvanceMode);
-            this.explorerBarPanel2_content.Controls.Add(this.panelReducer);
             this.explorerBarPanel2_content.Controls.Add(this.lbCycleTime);
             this.explorerBarPanel2_content.Controls.Add(this.lbMaxSpeed);
             this.explorerBarPanel2_content.Controls.Add(this.lbAccelSpeed);
@@ -848,30 +747,122 @@
             resources.ApplyResources(this.explorerBarPanel2_content, "explorerBarPanel2_content");
             this.explorerBarPanel2_content.Name = "explorerBarPanel2_content";
             // 
-            // panelAdvanceMode
+            // panel5
             // 
-            this.panelAdvanceMode.Controls.Add(this.chkAdvanceMode);
-            this.panelAdvanceMode.Controls.Add(this.labelAdvanceOption);
-            resources.ApplyResources(this.panelAdvanceMode, "panelAdvanceMode");
-            this.panelAdvanceMode.Name = "panelAdvanceMode";
+            this.panel5.Controls.Add(this.panelEffectiveStroke);
+            this.panel5.Controls.Add(this.panelReducer);
+            resources.ApplyResources(this.panel5, "panel5");
+            this.panel5.Name = "panel5";
             // 
-            // chkAdvanceMode
+            // panelEffectiveStroke
             // 
-            this.chkAdvanceMode.BackImg_ToggleOff_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_disable;
-            this.chkAdvanceMode.BackImg_ToggleOff_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_hover;
-            this.chkAdvanceMode.BackImg_ToggleOff_Normal = ((System.Drawing.Image)(resources.GetObject("chkAdvanceMode.BackImg_ToggleOff_Normal")));
-            this.chkAdvanceMode.BackImg_ToggleOn_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_disable;
-            this.chkAdvanceMode.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_hover;
-            this.chkAdvanceMode.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn;
-            this.chkAdvanceMode.Checked = false;
-            resources.ApplyResources(this.chkAdvanceMode, "chkAdvanceMode");
-            this.chkAdvanceMode.Name = "chkAdvanceMode";
+            this.panelEffectiveStroke.Controls.Add(this.label48);
+            this.panelEffectiveStroke.Controls.Add(this.cmdEffectiveStroke);
+            this.panelEffectiveStroke.Controls.Add(this.label1);
+            this.panelEffectiveStroke.Controls.Add(this.label57);
+            this.panelEffectiveStroke.Controls.Add(this.label80);
+            this.panelEffectiveStroke.Controls.Add(this.label5);
+            this.panelEffectiveStroke.Controls.Add(this.panel3);
+            this.panelEffectiveStroke.Controls.Add(this.txtEffectiveStroke);
+            this.panelEffectiveStroke.Controls.Add(this.label83);
+            resources.ApplyResources(this.panelEffectiveStroke, "panelEffectiveStroke");
+            this.panelEffectiveStroke.Name = "panelEffectiveStroke";
             // 
-            // labelAdvanceOption
+            // label48
             // 
-            resources.ApplyResources(this.labelAdvanceOption, "labelAdvanceOption");
-            this.labelAdvanceOption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.labelAdvanceOption.Name = "labelAdvanceOption";
+            resources.ApplyResources(this.label48, "label48");
+            this.label48.ForeColor = System.Drawing.Color.Red;
+            this.label48.Name = "label48";
+            this.label48.Tag = "txtEffectiveStroke";
+            // 
+            // cmdEffectiveStroke
+            // 
+            this.cmdEffectiveStroke.BackColor = System.Drawing.Color.Transparent;
+            this.cmdEffectiveStroke.BackColor_Hover = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(151)))), ((int)(((byte)(193)))));
+            this.cmdEffectiveStroke.BackColor_Normal = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
+            this.cmdEffectiveStroke.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.cmdEffectiveStroke.BackColor2_Hover = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(151)))), ((int)(((byte)(193)))));
+            this.cmdEffectiveStroke.BackColor2_Normal = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
+            this.cmdEffectiveStroke.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.cmdEffectiveStroke.ButtonEnabled = true;
+            resources.ApplyResources(this.cmdEffectiveStroke, "cmdEffectiveStroke");
+            this.cmdEffectiveStroke.Curvature = 5;
+            this.cmdEffectiveStroke.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdEffectiveStroke.Name = "cmdEffectiveStroke";
+            this.cmdEffectiveStroke.TextFont = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // label57
+            // 
+            resources.ApplyResources(this.label57, "label57");
+            this.label57.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
+            this.label57.Name = "label57";
+            // 
+            // label80
+            // 
+            resources.ApplyResources(this.label80, "label80");
+            this.label80.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
+            this.label80.Name = "label80";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label5.Name = "label5";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panelEffectiveStroke2);
+            this.panel3.Controls.Add(this.panelEffectiveStroke1);
+            resources.ApplyResources(this.panel3, "panel3");
+            this.panel3.Name = "panel3";
+            // 
+            // panelEffectiveStroke2
+            // 
+            resources.ApplyResources(this.panelEffectiveStroke2, "panelEffectiveStroke2");
+            this.panelEffectiveStroke2.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.effectiveStrokeBackground;
+            this.panelEffectiveStroke2.Controls.Add(this.optEffectiveStroke2);
+            this.panelEffectiveStroke2.Name = "panelEffectiveStroke2";
+            // 
+            // optEffectiveStroke2
+            // 
+            resources.ApplyResources(this.optEffectiveStroke2, "optEffectiveStroke2");
+            this.optEffectiveStroke2.BackColor = System.Drawing.Color.Transparent;
+            this.optEffectiveStroke2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.optEffectiveStroke2.Name = "optEffectiveStroke2";
+            this.optEffectiveStroke2.UseVisualStyleBackColor = false;
+            // 
+            // panelEffectiveStroke1
+            // 
+            resources.ApplyResources(this.panelEffectiveStroke1, "panelEffectiveStroke1");
+            this.panelEffectiveStroke1.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.effectiveStrokeBackground;
+            this.panelEffectiveStroke1.Controls.Add(this.optEffectiveStroke1);
+            this.panelEffectiveStroke1.Name = "panelEffectiveStroke1";
+            // 
+            // optEffectiveStroke1
+            // 
+            resources.ApplyResources(this.optEffectiveStroke1, "optEffectiveStroke1");
+            this.optEffectiveStroke1.BackColor = System.Drawing.Color.Transparent;
+            this.optEffectiveStroke1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.optEffectiveStroke1.Name = "optEffectiveStroke1";
+            this.optEffectiveStroke1.UseVisualStyleBackColor = false;
+            // 
+            // txtEffectiveStroke
+            // 
+            this.txtEffectiveStroke.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txtEffectiveStroke, "txtEffectiveStroke");
+            this.txtEffectiveStroke.Name = "txtEffectiveStroke";
+            // 
+            // label83
+            // 
+            this.label83.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.label83, "label83");
+            this.label83.Name = "label83";
             // 
             // panelReducer
             // 
@@ -946,6 +937,31 @@
             this.label58.BackColor = System.Drawing.Color.LightGray;
             resources.ApplyResources(this.label58, "label58");
             this.label58.Name = "label58";
+            // 
+            // panelAdvanceMode
+            // 
+            this.panelAdvanceMode.Controls.Add(this.chkAdvanceMode);
+            this.panelAdvanceMode.Controls.Add(this.labelAdvanceOption);
+            resources.ApplyResources(this.panelAdvanceMode, "panelAdvanceMode");
+            this.panelAdvanceMode.Name = "panelAdvanceMode";
+            // 
+            // chkAdvanceMode
+            // 
+            this.chkAdvanceMode.BackImg_ToggleOff_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_disable;
+            this.chkAdvanceMode.BackImg_ToggleOff_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_hover;
+            this.chkAdvanceMode.BackImg_ToggleOff_Normal = ((System.Drawing.Image)(resources.GetObject("chkAdvanceMode.BackImg_ToggleOff_Normal")));
+            this.chkAdvanceMode.BackImg_ToggleOn_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_disable;
+            this.chkAdvanceMode.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_hover;
+            this.chkAdvanceMode.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn;
+            this.chkAdvanceMode.Checked = false;
+            resources.ApplyResources(this.chkAdvanceMode, "chkAdvanceMode");
+            this.chkAdvanceMode.Name = "chkAdvanceMode";
+            // 
+            // labelAdvanceOption
+            // 
+            resources.ApplyResources(this.labelAdvanceOption, "labelAdvanceOption");
+            this.labelAdvanceOption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.labelAdvanceOption.Name = "labelAdvanceOption";
             // 
             // lbCycleTime
             // 
@@ -2325,22 +2341,22 @@
             this.explorerBarPanel4_title.ResumeLayout(false);
             this.explorerBarPanel3.ResumeLayout(false);
             this.explorerBarPanel3_content.ResumeLayout(false);
-            this.explorerBarPanel3_content.PerformLayout();
-            this.panel19.ResumeLayout(false);
-            this.panel19.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panelEffectiveStroke2.ResumeLayout(false);
-            this.panelEffectiveStroke1.ResumeLayout(false);
             this.panelConfirmBtnsStep3.ResumeLayout(false);
             this.explorerBarPanel3_title.ResumeLayout(false);
             this.explorerBarPanel2.ResumeLayout(false);
             this.explorerBarPanel2_content.ResumeLayout(false);
             this.explorerBarPanel2_content.PerformLayout();
-            this.panelAdvanceMode.ResumeLayout(false);
-            this.panelAdvanceMode.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panelEffectiveStroke.ResumeLayout(false);
+            this.panelEffectiveStroke.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panelEffectiveStroke2.ResumeLayout(false);
+            this.panelEffectiveStroke1.ResumeLayout(false);
             this.panelReducer.ResumeLayout(false);
             this.panelReducer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).EndInit();
+            this.panelAdvanceMode.ResumeLayout(false);
+            this.panelAdvanceMode.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
             this.panelPowerModifyMode.ResumeLayout(false);
             this.panelPowerModifyMode.PerformLayout();
@@ -2604,8 +2620,6 @@
         public System.Windows.Forms.PictureBox picModelImg;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label80;
         private System.Windows.Forms.Label label83;
         public System.Windows.Forms.TextBox txtEffectiveStroke;
@@ -2618,6 +2632,10 @@
         public System.Windows.Forms.Panel panelExpectServiceLifeTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnModel;
         private System.Windows.Forms.DataGridViewComboBoxColumn columnReducerRatio;
+        public System.Windows.Forms.Label label48;
+        public System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Panel panel5;
+        public System.Windows.Forms.Panel panelEffectiveStroke;
     }
 }
 

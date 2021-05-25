@@ -12,8 +12,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private FormMain formMain;
         public Calculation calc = new Calculation();
 
-        public int minHeight = 690;
-        private int maxHeight = 1200;        
+        public int minHeight = 800;
+        private int maxHeight = 1333;        
         
         private Thread threadCalc;                
 
@@ -23,6 +23,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public RunCondition runCondition;
         public InputValidate inputValidate;
         public RecommandList recommandList;
+        public EffectiveStroke effectiveStroke;
 
         public Step2(FormMain formMain) {
             this.formMain = formMain;
@@ -38,6 +39,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             runCondition = new RunCondition(formMain);
             // 推薦規格列表
             recommandList = new RecommandList(formMain);
+            // 有效行程
+            effectiveStroke = new EffectiveStroke(formMain);
 
             // 減速比
             calc.reducerInfo.Rows.Cast<DataRow>().ToList().ForEach(row => {
@@ -77,6 +80,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             recommandList.Refresh();
             chartInfo.Clear();
             formMain.step2.SetSelectedModelConfirmBtnVisible(false);
+
+            // 有效行程顯示
+            effectiveStroke.IsShowEffectiveStroke(false);
         }
 
         public void SetSelectedModelConfirmBtnVisible(bool visible) {
@@ -134,7 +140,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.sideTable.Update(null, null);
                 formMain._explorerBar.UpdateCurStep(formMain.curStep);
                 formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep3);
-                formMain.step3.Load();
             }
         }
 
@@ -194,6 +199,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         formMain.Invoke(new Action(() => formMain.sideTable.UpdateMsg(showMsg, SideTable.MsgStatus.Alarm)));
                     }
 
+                    // 有效行程顯示
+                    formMain.step2.effectiveStroke.IsShowEffectiveStroke(false);
+
                     return;
                 }
                 // 清空訊息
@@ -201,6 +209,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
                 // 表單顯示
                 recommandList.DisplayRecommandList();
+
+                // 有效行程顯示、賦值
+                formMain.Invoke(new Action(() => {
+                    effectiveStroke.IsShowEffectiveStroke(true);
+                }));
             });
             threadCalc.Start();
 

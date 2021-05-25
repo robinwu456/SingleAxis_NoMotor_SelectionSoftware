@@ -427,7 +427,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,64,Absolute,64,Absolute,64,Absolute,64" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,97,Absolute,97,Absolute,97,Absolute,97" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 313</value>
@@ -718,7 +718,7 @@
     <value>6</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1088, 121</value>
+    <value>777, 85</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -949,7 +949,7 @@
     <value>Top</value>
   </data>
   <data name="explorerBarPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 2203</value>
+    <value>0, 2329</value>
   </data>
   <data name="explorerBarPanel4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 10, 0, 0</value>
@@ -970,381 +970,6 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;explorerBarPanel4.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 79</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 2</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>172</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>explorerBarPanel3_content</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 15pt, style=Bold</value>
-  </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>69, 39</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 25</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>171</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>有效行程</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>explorerBarPanel3_content</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel19.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="cmdEffectiveStroke.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="cmdEffectiveStroke.ButtonText" xml:space="preserve">
-    <value>輸入</value>
-  </data>
-  <data name="cmdEffectiveStroke.Location" type="System.Drawing.Point, System.Drawing">
-    <value>158, 107</value>
-  </data>
-  <data name="cmdEffectiveStroke.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
-  </data>
-  <data name="cmdEffectiveStroke.TabIndex" type="System.Int32, mscorlib">
-    <value>174</value>
-  </data>
-  <data name="&gt;&gt;cmdEffectiveStroke.Name" xml:space="preserve">
-    <value>cmdEffectiveStroke</value>
-  </data>
-  <data name="&gt;&gt;cmdEffectiveStroke.Type" xml:space="preserve">
-    <value>CustomButton.CustomButton, CustomButton, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;cmdEffectiveStroke.Parent" xml:space="preserve">
-    <value>panel19</value>
-  </data>
-  <data name="&gt;&gt;cmdEffectiveStroke.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label57.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="label57.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label57.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="label57.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label57.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 79</value>
-  </data>
-  <data name="label57.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 19</value>
-  </data>
-  <data name="label57.TabIndex" type="System.Int32, mscorlib">
-    <value>170</value>
-  </data>
-  <data name="label57.Text" xml:space="preserve">
-    <value>有效行程</value>
-  </data>
-  <data name="&gt;&gt;label57.Name" xml:space="preserve">
-    <value>label57</value>
-  </data>
-  <data name="&gt;&gt;label57.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label57.Parent" xml:space="preserve">
-    <value>panel19</value>
-  </data>
-  <data name="&gt;&gt;label57.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label80.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="label80.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label80.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt</value>
-  </data>
-  <data name="label80.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label80.Location" type="System.Drawing.Point, System.Drawing">
-    <value>191, 79</value>
-  </data>
-  <data name="label80.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 19</value>
-  </data>
-  <data name="label80.TabIndex" type="System.Int32, mscorlib">
-    <value>169</value>
-  </data>
-  <data name="label80.Text" xml:space="preserve">
-    <value>mm</value>
-  </data>
-  <data name="&gt;&gt;label80.Name" xml:space="preserve">
-    <value>label80</value>
-  </data>
-  <data name="&gt;&gt;label80.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label80.Parent" xml:space="preserve">
-    <value>panel19</value>
-  </data>
-  <data name="&gt;&gt;label80.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label83.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="label83.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label83.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 101</value>
-  </data>
-  <data name="label83.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 2</value>
-  </data>
-  <data name="label83.TabIndex" type="System.Int32, mscorlib">
-    <value>168</value>
-  </data>
-  <data name="&gt;&gt;label83.Name" xml:space="preserve">
-    <value>label83</value>
-  </data>
-  <data name="&gt;&gt;label83.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label83.Parent" xml:space="preserve">
-    <value>panel19</value>
-  </data>
-  <data name="&gt;&gt;label83.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="txtEffectiveStroke.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="txtEffectiveStroke.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="txtEffectiveStroke.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 78</value>
-  </data>
-  <data name="txtEffectiveStroke.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 20</value>
-  </data>
-  <data name="txtEffectiveStroke.TabIndex" type="System.Int32, mscorlib">
-    <value>162</value>
-  </data>
-  <data name="txtEffectiveStroke.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;txtEffectiveStroke.Name" xml:space="preserve">
-    <value>txtEffectiveStroke</value>
-  </data>
-  <data name="&gt;&gt;txtEffectiveStroke.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtEffectiveStroke.Parent" xml:space="preserve">
-    <value>panel19</value>
-  </data>
-  <data name="&gt;&gt;txtEffectiveStroke.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="panel3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="panelEffectiveStroke2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="optEffectiveStroke2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="optEffectiveStroke2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt</value>
-  </data>
-  <data name="optEffectiveStroke2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optEffectiveStroke2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 3</value>
-  </data>
-  <data name="optEffectiveStroke2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 39</value>
-  </data>
-  <data name="optEffectiveStroke2.TabIndex" type="System.Int32, mscorlib">
-    <value>159</value>
-  </data>
-  <data name="optEffectiveStroke2.Text" xml:space="preserve">
-    <value>5678 mm</value>
-  </data>
-  <data name="&gt;&gt;optEffectiveStroke2.Name" xml:space="preserve">
-    <value>optEffectiveStroke2</value>
-  </data>
-  <data name="&gt;&gt;optEffectiveStroke2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optEffectiveStroke2.Parent" xml:space="preserve">
-    <value>panelEffectiveStroke2</value>
-  </data>
-  <data name="&gt;&gt;optEffectiveStroke2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panelEffectiveStroke2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 47</value>
-  </data>
-  <data name="panelEffectiveStroke2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 50</value>
-  </data>
-  <data name="panelEffectiveStroke2.TabIndex" type="System.Int32, mscorlib">
-    <value>162</value>
-  </data>
-  <data name="&gt;&gt;panelEffectiveStroke2.Name" xml:space="preserve">
-    <value>panelEffectiveStroke2</value>
-  </data>
-  <data name="&gt;&gt;panelEffectiveStroke2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelEffectiveStroke2.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;panelEffectiveStroke2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panelEffectiveStroke1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="optEffectiveStroke1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="optEffectiveStroke1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt</value>
-  </data>
-  <data name="optEffectiveStroke1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optEffectiveStroke1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 3</value>
-  </data>
-  <data name="optEffectiveStroke1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 38</value>
-  </data>
-  <data name="optEffectiveStroke1.TabIndex" type="System.Int32, mscorlib">
-    <value>158</value>
-  </data>
-  <data name="optEffectiveStroke1.Text" xml:space="preserve">
-    <value>1234 mm</value>
-  </data>
-  <data name="&gt;&gt;optEffectiveStroke1.Name" xml:space="preserve">
-    <value>optEffectiveStroke1</value>
-  </data>
-  <data name="&gt;&gt;optEffectiveStroke1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optEffectiveStroke1.Parent" xml:space="preserve">
-    <value>panelEffectiveStroke1</value>
-  </data>
-  <data name="&gt;&gt;optEffectiveStroke1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panelEffectiveStroke1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 0</value>
-  </data>
-  <data name="panelEffectiveStroke1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 52</value>
-  </data>
-  <data name="panelEffectiveStroke1.TabIndex" type="System.Int32, mscorlib">
-    <value>161</value>
-  </data>
-  <data name="&gt;&gt;panelEffectiveStroke1.Name" xml:space="preserve">
-    <value>panelEffectiveStroke1</value>
-  </data>
-  <data name="&gt;&gt;panelEffectiveStroke1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelEffectiveStroke1.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;panelEffectiveStroke1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 136</value>
-  </data>
-  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 98</value>
-  </data>
-  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
-    <value>160</value>
-  </data>
-  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
-    <value>panel19</value>
-  </data>
-  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="panel19.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 23</value>
-  </data>
-  <data name="panel19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 246</value>
-  </data>
-  <data name="panel19.TabIndex" type="System.Int32, mscorlib">
-    <value>173</value>
-  </data>
-  <data name="&gt;&gt;panel19.Name" xml:space="preserve">
-    <value>panel19</value>
-  </data>
-  <data name="&gt;&gt;panel19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel19.Parent" xml:space="preserve">
-    <value>explorerBarPanel3_content</value>
-  </data>
-  <data name="&gt;&gt;panel19.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="panelConfirmBtnsStep3.ColumnCount" type="System.Int32, mscorlib">
@@ -1402,7 +1027,7 @@
     <value>explorerBarPanel3_content</value>
   </data>
   <data name="&gt;&gt;panelConfirmBtnsStep3.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="panelConfirmBtnsStep3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cmdConfirmStep3" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,41.66722,Percent,16.66556,Percent,41.66722,Absolute,20" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
@@ -1528,7 +1153,7 @@
     <value>Top</value>
   </data>
   <data name="explorerBarPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 1652</value>
+    <value>0, 1778</value>
   </data>
   <data name="explorerBarPanel3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 10, 0, 0</value>
@@ -1551,95 +1176,403 @@
   <data name="&gt;&gt;explorerBarPanel3.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="chkAdvanceMode.BackImg_ToggleOff_Normal" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACIAAAAUCAYAAADoZO9yAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAJwSURBVEhL1ZbJalpxFMYdAgmlLS1d2GERXOvGARyCihMiRiWIiDjPEWdpl1llYdNo99GSPkvT
-        RchThKbZp/UFTs8X/FMl15peaWkPfBvlnu93z6SK/yGUM6lY6jWFHCLf/aNerz+tVqu9crn8qVQq3RQK
-        BcrlcpTJZCiVSlEymaREIkHxeJxisRjt7e1RNBqlcDhMoVCIgsEgBQIB8vv9Nx6P58zpdL7W6/UaTr3B
-        AtTKUO7v73sY5LJWq1GlUiEGoTVAyOv1ktvtJob5Yjabg+yxyUKVllbnFqLRaBCDEEBarRYNh0Majye3
-        Ojp6R1wlWSAul4scDgcZjcZd9tpiScOgHWx8KUD6/T5NJh/o9PTjggBUrdZkg+zs7FxptdpttkRl7rap
-        3W73UQGA9Ho9SQghfJfP5+WCkMlkOmDLRyzMzEIoGeRMgIxG7yUB5jUYvJUNYrFYztnzGQstWmiPqtPp
-        fBMgv6qG0MnJWDaI1Wr9zp7YogfwBoAI9d8EsdlsU/Z8wXoIbwCIUHNrPv9szUjSfF6DwWCd1lywpySI
-        igHeCJBut7tyWHM5+cNqMBgO2VOyNcpIJKJpNptXAMH6LtscfIZDJ3d97Xb7tUaj0bOn5LAiNrLZbFCA
-        4KAxGB0fLx40XNp1DppOp0uy13OW5PoiUKJNPuG7DPH1D5z46xnEK9YTeM087wRKhMHZ4vJtp9PpAwY4
-        LxaLU7kgPp9vypW44HU9nLUDlQDE8hM/CwEDWpQOfcRQvWThTeQIzyIHciHnyh+9+UDJ0D+QY7KxZkjy
-        +DeFZ/AsciDXvf8GzAeIITyIN1hHyCHy/cuhUPwAlpD8XG4UxA0AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="chkAdvanceMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 10</value>
-  </data>
-  <data name="chkAdvanceMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 20</value>
-  </data>
-  <data name="chkAdvanceMode.TabIndex" type="System.Int32, mscorlib">
-    <value>291</value>
-  </data>
-  <data name="&gt;&gt;chkAdvanceMode.Name" xml:space="preserve">
-    <value>chkAdvanceMode</value>
-  </data>
-  <data name="&gt;&gt;chkAdvanceMode.Type" xml:space="preserve">
-    <value>CustomToggle.CustomToggle, CustomToggle, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;chkAdvanceMode.Parent" xml:space="preserve">
-    <value>panelAdvanceMode</value>
-  </data>
-  <data name="&gt;&gt;chkAdvanceMode.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="labelAdvanceOption.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label48.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="labelAdvanceOption.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 12pt, style=Bold</value>
+  <data name="label48.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 9pt</value>
   </data>
-  <data name="labelAdvanceOption.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label48.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="labelAdvanceOption.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 9</value>
+  <data name="label48.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 103</value>
   </data>
-  <data name="labelAdvanceOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 21</value>
+  <data name="label48.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 16</value>
   </data>
-  <data name="labelAdvanceOption.TabIndex" type="System.Int32, mscorlib">
-    <value>187</value>
+  <data name="label48.TabIndex" type="System.Int32, mscorlib">
+    <value>293</value>
   </data>
-  <data name="labelAdvanceOption.Text" xml:space="preserve">
-    <value>進階選項</value>
+  <data name="label48.Text" xml:space="preserve">
+    <value>請輸入有效數值</value>
   </data>
-  <data name="&gt;&gt;labelAdvanceOption.Name" xml:space="preserve">
-    <value>labelAdvanceOption</value>
+  <data name="label48.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;labelAdvanceOption.Type" xml:space="preserve">
+  <data name="&gt;&gt;label48.Name" xml:space="preserve">
+    <value>label48</value>
+  </data>
+  <data name="&gt;&gt;label48.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelAdvanceOption.Parent" xml:space="preserve">
-    <value>panelAdvanceMode</value>
+  <data name="&gt;&gt;label48.Parent" xml:space="preserve">
+    <value>panelEffectiveStroke</value>
   </data>
-  <data name="&gt;&gt;labelAdvanceOption.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label48.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cmdEffectiveStroke.ButtonText" xml:space="preserve">
+    <value>輸入</value>
+  </data>
+  <data name="cmdEffectiveStroke.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 99</value>
+  </data>
+  <data name="cmdEffectiveStroke.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 24</value>
+  </data>
+  <data name="cmdEffectiveStroke.TabIndex" type="System.Int32, mscorlib">
+    <value>174</value>
+  </data>
+  <data name="&gt;&gt;cmdEffectiveStroke.Name" xml:space="preserve">
+    <value>cmdEffectiveStroke</value>
+  </data>
+  <data name="&gt;&gt;cmdEffectiveStroke.Type" xml:space="preserve">
+    <value>CustomButton.CustomButton, CustomButton, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmdEffectiveStroke.Parent" xml:space="preserve">
+    <value>panelEffectiveStroke</value>
+  </data>
+  <data name="&gt;&gt;cmdEffectiveStroke.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="panelAdvanceMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>599, 8</value>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="panelAdvanceMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 36</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 51</value>
   </data>
-  <data name="panelAdvanceMode.TabIndex" type="System.Int32, mscorlib">
-    <value>292</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 2</value>
   </data>
-  <data name="&gt;&gt;panelAdvanceMode.Name" xml:space="preserve">
-    <value>panelAdvanceMode</value>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>172</value>
   </data>
-  <data name="&gt;&gt;panelAdvanceMode.Type" xml:space="preserve">
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>panelEffectiveStroke</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label57.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label57.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="label57.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label57.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 71</value>
+  </data>
+  <data name="label57.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 19</value>
+  </data>
+  <data name="label57.TabIndex" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
+  <data name="label57.Text" xml:space="preserve">
+    <value>有效行程</value>
+  </data>
+  <data name="&gt;&gt;label57.Name" xml:space="preserve">
+    <value>label57</value>
+  </data>
+  <data name="&gt;&gt;label57.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label57.Parent" xml:space="preserve">
+    <value>panelEffectiveStroke</value>
+  </data>
+  <data name="&gt;&gt;label57.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label80.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label80.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt</value>
+  </data>
+  <data name="label80.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label80.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 71</value>
+  </data>
+  <data name="label80.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 19</value>
+  </data>
+  <data name="label80.TabIndex" type="System.Int32, mscorlib">
+    <value>169</value>
+  </data>
+  <data name="label80.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="&gt;&gt;label80.Name" xml:space="preserve">
+    <value>label80</value>
+  </data>
+  <data name="&gt;&gt;label80.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label80.Parent" xml:space="preserve">
+    <value>panelEffectiveStroke</value>
+  </data>
+  <data name="&gt;&gt;label80.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 15pt, style=Bold</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 18</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 25</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>171</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>有效行程</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>panelEffectiveStroke</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="panelEffectiveStroke2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="optEffectiveStroke2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="optEffectiveStroke2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt</value>
+  </data>
+  <data name="optEffectiveStroke2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optEffectiveStroke2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 3</value>
+  </data>
+  <data name="optEffectiveStroke2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 39</value>
+  </data>
+  <data name="optEffectiveStroke2.TabIndex" type="System.Int32, mscorlib">
+    <value>159</value>
+  </data>
+  <data name="optEffectiveStroke2.Text" xml:space="preserve">
+    <value>5678 mm</value>
+  </data>
+  <data name="&gt;&gt;optEffectiveStroke2.Name" xml:space="preserve">
+    <value>optEffectiveStroke2</value>
+  </data>
+  <data name="&gt;&gt;optEffectiveStroke2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optEffectiveStroke2.Parent" xml:space="preserve">
+    <value>panelEffectiveStroke2</value>
+  </data>
+  <data name="&gt;&gt;optEffectiveStroke2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panelEffectiveStroke2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 47</value>
+  </data>
+  <data name="panelEffectiveStroke2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 50</value>
+  </data>
+  <data name="panelEffectiveStroke2.TabIndex" type="System.Int32, mscorlib">
+    <value>162</value>
+  </data>
+  <data name="&gt;&gt;panelEffectiveStroke2.Name" xml:space="preserve">
+    <value>panelEffectiveStroke2</value>
+  </data>
+  <data name="&gt;&gt;panelEffectiveStroke2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelAdvanceMode.Parent" xml:space="preserve">
-    <value>explorerBarPanel2_content</value>
+  <data name="&gt;&gt;panelEffectiveStroke2.Parent" xml:space="preserve">
+    <value>panel3</value>
   </data>
-  <data name="&gt;&gt;panelAdvanceMode.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panelEffectiveStroke2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panelEffectiveStroke1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="optEffectiveStroke1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="optEffectiveStroke1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt</value>
+  </data>
+  <data name="optEffectiveStroke1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optEffectiveStroke1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 3</value>
+  </data>
+  <data name="optEffectiveStroke1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 38</value>
+  </data>
+  <data name="optEffectiveStroke1.TabIndex" type="System.Int32, mscorlib">
+    <value>158</value>
+  </data>
+  <data name="optEffectiveStroke1.Text" xml:space="preserve">
+    <value>1234 mm</value>
+  </data>
+  <data name="&gt;&gt;optEffectiveStroke1.Name" xml:space="preserve">
+    <value>optEffectiveStroke1</value>
+  </data>
+  <data name="&gt;&gt;optEffectiveStroke1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optEffectiveStroke1.Parent" xml:space="preserve">
+    <value>panelEffectiveStroke1</value>
+  </data>
+  <data name="&gt;&gt;optEffectiveStroke1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panelEffectiveStroke1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 0</value>
+  </data>
+  <data name="panelEffectiveStroke1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 52</value>
+  </data>
+  <data name="panelEffectiveStroke1.TabIndex" type="System.Int32, mscorlib">
+    <value>161</value>
+  </data>
+  <data name="&gt;&gt;panelEffectiveStroke1.Name" xml:space="preserve">
+    <value>panelEffectiveStroke1</value>
+  </data>
+  <data name="&gt;&gt;panelEffectiveStroke1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelEffectiveStroke1.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;panelEffectiveStroke1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 128</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 98</value>
+  </data>
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>160</value>
+  </data>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+    <value>panelEffectiveStroke</value>
+  </data>
+  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtEffectiveStroke.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="txtEffectiveStroke.Location" type="System.Drawing.Point, System.Drawing">
+    <value>99, 70</value>
+  </data>
+  <data name="txtEffectiveStroke.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 20</value>
+  </data>
+  <data name="txtEffectiveStroke.TabIndex" type="System.Int32, mscorlib">
+    <value>162</value>
+  </data>
+  <data name="txtEffectiveStroke.Text" xml:space="preserve">
+    <value>70</value>
+  </data>
+  <data name="txtEffectiveStroke.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txtEffectiveStroke.Name" xml:space="preserve">
+    <value>txtEffectiveStroke</value>
+  </data>
+  <data name="&gt;&gt;txtEffectiveStroke.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtEffectiveStroke.Parent" xml:space="preserve">
+    <value>panelEffectiveStroke</value>
+  </data>
+  <data name="&gt;&gt;txtEffectiveStroke.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label83.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label83.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 93</value>
+  </data>
+  <data name="label83.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 2</value>
+  </data>
+  <data name="label83.TabIndex" type="System.Int32, mscorlib">
+    <value>168</value>
+  </data>
+  <data name="&gt;&gt;label83.Name" xml:space="preserve">
+    <value>label83</value>
+  </data>
+  <data name="&gt;&gt;label83.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label83.Parent" xml:space="preserve">
+    <value>panelEffectiveStroke</value>
+  </data>
+  <data name="&gt;&gt;label83.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="panelEffectiveStroke.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelEffectiveStroke.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 172</value>
+  </data>
+  <data name="panelEffectiveStroke.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 230</value>
+  </data>
+  <data name="panelEffectiveStroke.TabIndex" type="System.Int32, mscorlib">
+    <value>294</value>
+  </data>
+  <data name="panelEffectiveStroke.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;panelEffectiveStroke.Name" xml:space="preserve">
+    <value>panelEffectiveStroke</value>
+  </data>
+  <data name="&gt;&gt;panelEffectiveStroke.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelEffectiveStroke.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;panelEffectiveStroke.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="dgvReducerInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -1735,11 +1668,14 @@
   <data name="&gt;&gt;label58.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="panelReducer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
   <data name="panelReducer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>765, 264</value>
+    <value>0, 0</value>
   </data>
   <data name="panelReducer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 172</value>
+    <value>288, 172</value>
   </data>
   <data name="panelReducer.TabIndex" type="System.Int32, mscorlib">
     <value>287</value>
@@ -1754,9 +1690,121 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panelReducer.Parent" xml:space="preserve">
-    <value>explorerBarPanel2_content</value>
+    <value>panel5</value>
   </data>
   <data name="&gt;&gt;panelReducer.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>763, 276</value>
+  </data>
+  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 402</value>
+  </data>
+  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
+    <value>293</value>
+  </data>
+  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
+    <value>explorerBarPanel2_content</value>
+  </data>
+  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkAdvanceMode.BackImg_ToggleOff_Normal" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACIAAAAUCAYAAADoZO9yAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAJwSURBVEhL1ZbJalpxFMYdAgmlLS1d2GERXOvGARyCihMiRiWIiDjPEWdpl1llYdNo99GSPkvT
+        RchThKbZp/UFTs8X/FMl15peaWkPfBvlnu93z6SK/yGUM6lY6jWFHCLf/aNerz+tVqu9crn8qVQq3RQK
+        BcrlcpTJZCiVSlEymaREIkHxeJxisRjt7e1RNBqlcDhMoVCIgsEgBQIB8vv9Nx6P58zpdL7W6/UaTr3B
+        AtTKUO7v73sY5LJWq1GlUiEGoTVAyOv1ktvtJob5Yjabg+yxyUKVllbnFqLRaBCDEEBarRYNh0Majye3
+        Ojp6R1wlWSAul4scDgcZjcZd9tpiScOgHWx8KUD6/T5NJh/o9PTjggBUrdZkg+zs7FxptdpttkRl7rap
+        3W73UQGA9Ho9SQghfJfP5+WCkMlkOmDLRyzMzEIoGeRMgIxG7yUB5jUYvJUNYrFYztnzGQstWmiPqtPp
+        fBMgv6qG0MnJWDaI1Wr9zp7YogfwBoAI9d8EsdlsU/Z8wXoIbwCIUHNrPv9szUjSfF6DwWCd1lywpySI
+        igHeCJBut7tyWHM5+cNqMBgO2VOyNcpIJKJpNptXAMH6LtscfIZDJ3d97Xb7tUaj0bOn5LAiNrLZbFCA
+        4KAxGB0fLx40XNp1DppOp0uy13OW5PoiUKJNPuG7DPH1D5z46xnEK9YTeM087wRKhMHZ4vJtp9PpAwY4
+        LxaLU7kgPp9vypW44HU9nLUDlQDE8hM/CwEDWpQOfcRQvWThTeQIzyIHciHnyh+9+UDJ0D+QY7KxZkjy
+        +DeFZ/AsciDXvf8GzAeIITyIN1hHyCHy/cuhUPwAlpD8XG4UxA0AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="chkAdvanceMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 10</value>
+  </data>
+  <data name="chkAdvanceMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 20</value>
+  </data>
+  <data name="chkAdvanceMode.TabIndex" type="System.Int32, mscorlib">
+    <value>291</value>
+  </data>
+  <data name="&gt;&gt;chkAdvanceMode.Name" xml:space="preserve">
+    <value>chkAdvanceMode</value>
+  </data>
+  <data name="&gt;&gt;chkAdvanceMode.Type" xml:space="preserve">
+    <value>CustomToggle.CustomToggle, CustomToggle, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;chkAdvanceMode.Parent" xml:space="preserve">
+    <value>panelAdvanceMode</value>
+  </data>
+  <data name="&gt;&gt;chkAdvanceMode.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labelAdvanceOption.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelAdvanceOption.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 12pt, style=Bold</value>
+  </data>
+  <data name="labelAdvanceOption.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelAdvanceOption.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 9</value>
+  </data>
+  <data name="labelAdvanceOption.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 21</value>
+  </data>
+  <data name="labelAdvanceOption.TabIndex" type="System.Int32, mscorlib">
+    <value>187</value>
+  </data>
+  <data name="labelAdvanceOption.Text" xml:space="preserve">
+    <value>進階選項</value>
+  </data>
+  <data name="&gt;&gt;labelAdvanceOption.Name" xml:space="preserve">
+    <value>labelAdvanceOption</value>
+  </data>
+  <data name="&gt;&gt;labelAdvanceOption.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelAdvanceOption.Parent" xml:space="preserve">
+    <value>panelAdvanceMode</value>
+  </data>
+  <data name="&gt;&gt;labelAdvanceOption.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelAdvanceMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>599, 8</value>
+  </data>
+  <data name="panelAdvanceMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 36</value>
+  </data>
+  <data name="panelAdvanceMode.TabIndex" type="System.Int32, mscorlib">
+    <value>292</value>
+  </data>
+  <data name="&gt;&gt;panelAdvanceMode.Name" xml:space="preserve">
+    <value>panelAdvanceMode</value>
+  </data>
+  <data name="&gt;&gt;panelAdvanceMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelAdvanceMode.Parent" xml:space="preserve">
+    <value>explorerBarPanel2_content</value>
+  </data>
+  <data name="&gt;&gt;panelAdvanceMode.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="lbCycleTime.AutoSize" type="System.Boolean, mscorlib">
@@ -2729,7 +2777,7 @@
     <value>0</value>
   </data>
   <data name="panelConfirmBtnsStep2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 1109</value>
+    <value>0, 1232</value>
   </data>
   <data name="panelConfirmBtnsStep2.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2816,7 +2864,7 @@
     <value>1</value>
   </data>
   <data name="panelCalcBtns.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 589</value>
+    <value>0, 712</value>
   </data>
   <data name="panelCalcBtns.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3110,7 +3158,7 @@
     <value>106</value>
   </data>
   <data name="dgvRecommandList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 710</value>
+    <value>54, 833</value>
   </data>
   <data name="dgvRecommandList.Size" type="System.Drawing.Size, System.Drawing">
     <value>1000, 364</value>
@@ -3782,7 +3830,7 @@
     <value>NoControl</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 689</value>
+    <value>52, 812</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>1302, 2</value>
@@ -3845,7 +3893,7 @@
     <value>NoControl</value>
   </data>
   <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 656</value>
+    <value>49, 775</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 25</value>
@@ -5177,7 +5225,7 @@
     <value>0, 54</value>
   </data>
   <data name="explorerBarPanel2_content.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1054, 1153</value>
+    <value>1054, 1279</value>
   </data>
   <data name="explorerBarPanel2_content.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -5297,7 +5345,7 @@
     <value>0, 10, 0, 0</value>
   </data>
   <data name="explorerBarPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1054, 1207</value>
+    <value>1054, 1333</value>
   </data>
   <data name="explorerBarPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

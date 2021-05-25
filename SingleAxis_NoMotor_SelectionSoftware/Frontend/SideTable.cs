@@ -108,7 +108,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     formMain.lbSideTableModelInfo.Text = string.Format("{0}-L{1}", formMain.step2.recommandList.curSelectModel.model, formMain.step2.recommandList.curSelectModel.lead);
                     break;
                 case FormMain.Step.Step3:
-                    formMain.lbSideTableModelInfo.Text = string.Format("{0}-L{1}-{2}", formMain.step2.recommandList.curSelectModel.model, formMain.step2.recommandList.curSelectModel.lead, formMain.step3.effectiveStroke);
+                    formMain.lbSideTableModelInfo.Text = string.Format("{0}-L{1}-{2}", formMain.step2.recommandList.curSelectModel.model, formMain.step2.recommandList.curSelectModel.lead, formMain.step2.effectiveStroke.effectiveStroke);
                     break;
             }
         }
@@ -140,6 +140,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.sideTable.UpdateSelectedConditionValue("力矩警示", "");
             formMain.sideTable.UpdateSelectedConditionValue("運行距離", "");
             formMain.sideTable.UpdateSelectedConditionValue("運行壽命", "");
+            formMain.sideTable.UpdateSelectedConditionValue("有效行程", "");
         }
 
         public void UpdateTableSelections() {            
@@ -157,11 +158,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (formMain.curStep < FormMain.Step.Step2)
                 if (formMain.optCalcSelectedModel.Checked)
                     ClearSelectedModelInfo();
-            // step3
-            if (formMain.curStep >= FormMain.Step.Step3)
-                UpdateSelectedConditionValue("有效行程", formMain.step3.effectiveStroke.ToString() + "mm");
-            else
-                UpdateSelectedConditionValue("有效行程", "");
+            //// step3
+            //if (formMain.curStep >= FormMain.Step.Step3)
+            //    UpdateSelectedConditionValue("有效行程", formMain.step2.effectiveStroke.effectiveStroke.ToString() + "mm");
+            //else
+            //    UpdateSelectedConditionValue("有效行程", "");
 
         }
         public void UpdateSelectedConditionValue(string key, string value, bool isAlarm = false) {

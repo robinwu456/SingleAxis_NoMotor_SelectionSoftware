@@ -73,6 +73,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 控制項為Disable時，不修正條件
             if (sender != null && ((Control)sender).Enabled == false)
                 return;
+            // 推薦規格選項變更不影響條件
+            if (sender is DataGridView)
+                return;
 
             // 使用環境
             if (formMain.optStandardEnv.Checked)
@@ -196,6 +199,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 型號選行顯示
             formMain.step2.SetSelectedModelConfirmBtnVisible(false);
 
+            // 有效行程
+            formMain.step2.effectiveStroke.IsShowEffectiveStroke(false);
         }
     }
 }

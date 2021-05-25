@@ -56,12 +56,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
                 // 有打勾則記錄當前打勾項目，沒有責清除選取項目
                 if ((bool)cell.Value)
-                    curCheckedModel = (formMain.dgvRecommandList.Rows[e.RowIndex].Cells["項次"].Value.ToString(), Convert.ToDouble(formMain.dgvRecommandList.Rows[e.RowIndex].Cells["導程"].Value.ToString()));
+                    curCheckedModel = (formMain.dgvRecommandList.Rows[e.RowIndex].Cells["項次"].Value.ToString(), Convert.ToDouble(formMain.dgvRecommandList.Rows[e.RowIndex].Cells["導程"].Value.ToString()));                    
                 else
                     curCheckedModel = (null, -1);
 
                 // 更新運轉條件
-                formMain.step2.runCondition.UpdateCondition(null, null);
+                formMain.step2.runCondition.UpdateCondition(sender, e);
             }
         }
 
@@ -101,6 +101,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 項目更改分頁收起
             if (sender != null)
                 formMain._explorerBar.ValueChanged(sender, e);
+
+            // 有效行程選項更新
+            if (curSelectModel.model != null)
+                formMain.step2.effectiveStroke.CmdEffectiveStroke_Click(null, null);
         }
 
         public void Refresh() {
