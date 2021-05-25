@@ -100,10 +100,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             panelTitle = explorerBarPanel.Controls.Find(this.name + "_title", true)[0] as Panel;
             panelConent = explorerBarPanel.Controls.Find(this.name + "_content", true)[0] as Panel;
             unCollapseSize = explorerBarPanel.Size;
-            // 標提折疊事件
-            panelTitle.Click += PanelTitle_Click;
-            foreach (Control control in panelTitle.Controls)
-                control.Click += PanelTitle_Click;
+
+            //// 點擊標提折疊事件
+            //panelTitle.Click += PanelTitle_Click;
+            //foreach (Control control in panelTitle.Controls)
+            //    control.Click += PanelTitle_Click;
+
             OnCollapseChanged += UpdateCollapse;
         }
 

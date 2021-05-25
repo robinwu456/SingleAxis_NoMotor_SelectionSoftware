@@ -30,15 +30,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void IsShowEffectiveStroke(bool isShow) {
-            if (isShow) {
-                formMain.panelEffectiveStroke.Visible = true;
-                formMain.txtEffectiveStroke.Text = formMain.txtStroke.Text;
-                CmdEffectiveStroke_Click(null, null);
-                formMain.sideTable.UpdateSelectedConditionValue("有效行程", formMain.step2.effectiveStroke.effectiveStroke.ToString() + "mm");
-            } else {
-                formMain.panelEffectiveStroke.Visible = false;
-                formMain.sideTable.UpdateSelectedConditionValue("有效行程", "");
-            }
+            formMain.Invoke(new Action(() => {
+                if (isShow) {
+                    formMain.panelEffectiveStroke.Visible = true;
+                    formMain.txtEffectiveStroke.Text = formMain.txtStroke.Text;
+                    CmdEffectiveStroke_Click(null, null);
+                    formMain.sideTable.UpdateSelectedConditionValue("有效行程", formMain.step2.effectiveStroke.effectiveStroke.ToString() + "mm");
+                } else {
+                    formMain.panelEffectiveStroke.Visible = false;
+                    formMain.sideTable.UpdateSelectedConditionValue("有效行程", "");
+                }
+            }));
         }
 
         private void InitEvents() {
@@ -85,6 +87,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.sideTable.UpdateSelectedConditionValue("有效行程", formMain.step2.effectiveStroke.effectiveStroke.ToString() + "mm");
         }
         public void CmdEffectiveStroke_Click(object sender, EventArgs e) {
+            if (!formMain.step2.inputValidate.VerifyAllInputValidate())
+                return;
+
             // 依照型號導程搜尋所有行程
             var strokeList = formMain.step2.calc.strokeRpm.Rows.Cast<DataRow>()
                                                                .Where(row => row["Model"].ToString() == formMain.step2.recommandList.curSelectModel.model)

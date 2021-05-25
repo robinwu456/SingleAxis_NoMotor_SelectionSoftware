@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Resources;
 using System.Reflection;
 using System.Globalization;
+using System.Threading;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class SideTable {
@@ -90,7 +91,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             );
             formMain.tableSelections.Location = new Point(0 - hiddenBorderDistance, 0 - hiddenBorderDistance);
             // set table size
-            //int minHeight = 298;
             int minHeight = 309;
             formMain.panelSideTable.Size = new Size(formMain.panelSideTable.Size.Width, minHeight + allLabelHeight + 8 + 21);    // +8(高度補償)
             // 高度置中
@@ -158,12 +158,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (formMain.curStep < FormMain.Step.Step2)
                 if (formMain.optCalcSelectedModel.Checked)
                     ClearSelectedModelInfo();
-            //// step3
-            //if (formMain.curStep >= FormMain.Step.Step3)
-            //    UpdateSelectedConditionValue("有效行程", formMain.step2.effectiveStroke.effectiveStroke.ToString() + "mm");
-            //else
-            //    UpdateSelectedConditionValue("有效行程", "");
-
         }
         public void UpdateSelectedConditionValue(string key, string value, bool isAlarm = false) {
             Label lbValue = formMain.panelSideTableSelections.Controls.Find("labelDataResult_" + key + "_value", true)[0] as Label;

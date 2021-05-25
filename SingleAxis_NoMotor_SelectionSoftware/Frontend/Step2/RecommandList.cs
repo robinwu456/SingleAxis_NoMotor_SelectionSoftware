@@ -37,6 +37,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void DgvRecommandList_CellClick(object sender, DataGridViewCellEventArgs e) {
+            if (e.RowIndex == -1)
+                return;
+
             if (e.ColumnIndex >= 0) {
                 // 取消所有打勾，除了當前選的
                 foreach (DataGridViewRow row in formMain.dgvRecommandList.Rows)
