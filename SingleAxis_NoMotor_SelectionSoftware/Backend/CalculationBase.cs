@@ -174,7 +174,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public double RPM_TO_MMS(int rpm, double lead) {
-            return (float)lead * (float)rpm / 60f;
+            return (double)lead * (double)rpm / 60f;
         }
 
         public int MMS_TO_RPM(double mms, double lead) {
@@ -359,6 +359,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             decelTime = Convert.ToDouble(decelTime.ToString("0.000"));
             constantTime = Convert.ToDouble(constantTime.ToString("0.000"));
             runTime = Convert.ToDouble(runTime.ToString("0.000"));
+            conditions.vMax = Convert.ToDouble(conditions.vMax.ToString("0.000"));
             cycleTime = Convert.ToDouble(cycleTime.ToString("0.000"));
 
             return (accelTime, constantTime, runTime, conditions.accelSpeed, conditions.vMax, cycleTime);

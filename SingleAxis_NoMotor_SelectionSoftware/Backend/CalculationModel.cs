@@ -97,7 +97,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 小數點位數修正
             model.accelSpeed = model.vMax / model.accelTime;
             model.accelSpeed = Convert.ToDouble(model.accelSpeed.ToString("#0.000"));
-            model.vMax = Convert.ToDouble(model.vMax.ToString("#0.000"));
+            //model.vMax = Convert.ToDouble(model.vMax.ToString("#0.000"));
 
             model.decelTime = model.accelTime;
             model.constantTime = ((2f * (float)model.stroke / 1000f / model.vMax) - model.accelTime - model.decelTime) / 2f;
@@ -212,7 +212,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 小數點位數修正
             model.accelSpeed = model.vMax / model.accelTime;
             model.accelSpeed = Convert.ToDouble(model.accelSpeed.ToString("#0.000"));
-            model.vMax = Convert.ToDouble(model.vMax.ToString("#0.000"));
+            //model.vMax = Convert.ToDouble(model.vMax.ToString("#0.000"));
 
             //model.accelTime = model.vMax / model.accelSpeed;            
             model.decelTime = model.accelTime;

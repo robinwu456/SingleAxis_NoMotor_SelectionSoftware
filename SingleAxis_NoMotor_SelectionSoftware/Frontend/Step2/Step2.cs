@@ -211,9 +211,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 recommandList.DisplayRecommandList();
 
                 // 有效行程顯示、賦值
-                formMain.Invoke(new Action(() => {
-                    effectiveStroke.IsShowEffectiveStroke(true);
-                }));
+                formMain.Invoke(new Action(() => effectiveStroke.IsShowEffectiveStroke(true)));
             });
             threadCalc.Start();
 

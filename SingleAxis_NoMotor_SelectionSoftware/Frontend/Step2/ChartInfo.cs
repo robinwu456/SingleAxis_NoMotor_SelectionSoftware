@@ -51,11 +51,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             ChartArea chartArea = formMain.chart.ChartAreas[0];
             // X
             chartArea.AxisX.Minimum = points.Select(p => p.X).Min();
-            chartArea.AxisX.Maximum = points.Select(p => p.X).Max();
+            chartArea.AxisX.Maximum = Convert.ToDouble(points.Select(p => p.X).Max().ToString("#0.000"));
             chartArea.AxisX.Interval = Convert.ToDouble((chartArea.AxisX.Maximum / 10).ToString("#0.00"));
             // Y
             chartArea.AxisY.Minimum = points.Select(p => p.Y).Min();
-            chartArea.AxisY.Maximum = points.Select(p => p.Y).Max();
+            chartArea.AxisY.Maximum = Convert.ToDouble(points.Select(p => p.Y).Max().ToString("#0.000"));
             //chartArea.AxisY.Interval = 100;
             // Y刻度調整
             chartArea.AxisY.CustomLabels.Clear();
@@ -71,7 +71,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     chartArea.AxisY.CustomLabels.Add(0, chartArea.AxisY.Maximum * 2, chartArea.AxisY.Maximum.ToString());
             }
             foreach (PointF point in points)
-                formMain.chart.Series[0].Points.AddXY(point.X, point.Y);
+                formMain.chart.Series[0].Points.AddXY(Convert.ToDouble(point.X.ToString("#0.000")), Convert.ToDouble(point.Y.ToString("#0.000")));
 
             // 取圖資訊
             var chartInfo = formMain.step2.calc.GetChartInfo(curConditions);

@@ -130,6 +130,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 curCondition.accelTime = 0.2;
             else if (formMain.optRepeatabilityBelt.Checked)
                 curCondition.accelTime = 0.4;
+            // 加速度
+            if (formMain.chkAdvanceMode.Checked)
+                curCondition.accelSpeed = Convert.ToDouble(formMain.txtAccelSpeed.Text);
+            else
+                curCondition.accelSpeed = 0;
             // 傳動方式
             if (formMain.optRepeatabilityScrew.Checked)
                 curCondition.RepeatabilityCondition = repeatability => repeatability <= 0.01;

@@ -466,7 +466,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,100,Absolute,100,Absolute,100,Absolute,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,104,Absolute,104,Absolute,104,Absolute,104" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 313</value>
@@ -757,7 +757,7 @@
     <value>6</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1061, 67</value>
+    <value>993, 67</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -3148,6 +3148,9 @@
   <data name="T_Rms安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="T_Rms安全係數.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
   <metadata name="運行距離.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -3192,6 +3195,9 @@
   </data>
   <data name="更詳細資訊.MinimumWidth" type="System.Int32, mscorlib">
     <value>106</value>
+  </data>
+  <data name="更詳細資訊.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="更詳細資訊.Width" type="System.Int32, mscorlib">
     <value>106</value>
