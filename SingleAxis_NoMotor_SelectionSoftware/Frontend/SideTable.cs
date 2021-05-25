@@ -86,7 +86,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             int hiddenBorderDistance = 1;
             int allLabelHeight = (int)formMain.tableSelections.RowStyles.Cast<RowStyle>().Sum(row => row.Height);
             formMain.tableSelections.Size = new Size(
-                formMain.panelSideTableSelections.Size.Width + hiddenBorderDistance * 2, // +左右邊框影藏
+                formMain.panelSideTableSelections.Size.Width + hiddenBorderDistance * 2, // +左右邊框隱藏
                 allLabelHeight + hiddenBorderDistance * 2 + 1 + 8   // +上(+1)下(+2)邊框隱藏 +8(高度補償)
             );
             formMain.tableSelections.Location = new Point(0 - hiddenBorderDistance, 0 - hiddenBorderDistance);
@@ -164,12 +164,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 字串斷行處理
             List<string> selectionTableItems = formMain.optCalcAllModel.Checked ? selectionTableItems_calcAll : selectionTableItems_calcSelectModel;
             RowStyle rowStyle = formMain.tableSelections.RowStyles[selectionTableItems.IndexOf(key)];
+            float oldRowHeight = rowStyle.Height;
             rowStyle.Height = value.Length > 7 ? tableLayoutDefaultRowHeight * 2 : tableLayoutDefaultRowHeight;
             if (value.Length > 7)
                 value = value.Insert(7, "\r\n");
             lbValue.ForeColor = isAlarm ? Color.Red : tableConditionValueForeColor;
             lbValue.Text = value;
-            ResizeSideTable();
+            if (oldRowHeight != rowStyle.Height)
+                ResizeSideTable();
         }
     }
 }

@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainerBase = new System.Windows.Forms.SplitContainer();
+            this.lbTitle = new System.Windows.Forms.Label();
             this.pictureBoxToyo = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmdExplorer = new System.Windows.Forms.PictureBox();
@@ -268,7 +269,6 @@
             this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
-            this.lbTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -361,6 +361,13 @@
             // 
             this.splitContainerBase.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainerBase.Panel2.Controls.Add(this.tabMain);
+            // 
+            // lbTitle
+            // 
+            this.lbTitle.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lbTitle, "lbTitle");
+            this.lbTitle.ForeColor = System.Drawing.Color.Silver;
+            this.lbTitle.Name = "lbTitle";
             // 
             // pictureBoxToyo
             // 
@@ -2304,13 +2311,6 @@
             resources.ApplyResources(this.label65, "label65");
             this.label65.ForeColor = System.Drawing.Color.White;
             this.label65.Name = "label65";
-            // 
-            // lbTitle
-            // 
-            this.lbTitle.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.lbTitle, "lbTitle");
-            this.lbTitle.ForeColor = System.Drawing.Color.Silver;
-            this.lbTitle.Name = "lbTitle";
             // 
             // FormMain
             // 
