@@ -153,6 +153,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.panelEffectiveStroke2.Visible = strokeOptions.stroke_opt2 != -1;
             formMain.optEffectiveStroke1.Checked = true;
             formMain.optEffectiveStroke2.Checked = false;
+            OptEffectiveStroke_CheckedChanged(formMain.optEffectiveStroke1, null);
 
             // 確定有效行程
             effectiveStroke = Convert.ToDecimal(formMain.optEffectiveStroke1.Text);
