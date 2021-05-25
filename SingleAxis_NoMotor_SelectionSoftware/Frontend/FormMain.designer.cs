@@ -268,6 +268,7 @@
             this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
+            this.lbTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -347,6 +348,7 @@
             // splitContainerBase.Panel1
             // 
             this.splitContainerBase.Panel1.BackColor = System.Drawing.Color.Black;
+            this.splitContainerBase.Panel1.Controls.Add(this.lbTitle);
             this.splitContainerBase.Panel1.Controls.Add(this.pictureBoxToyo);
             this.splitContainerBase.Panel1.Controls.Add(this.pictureBox1);
             this.splitContainerBase.Panel1.Controls.Add(this.cmdExplorer);
@@ -2303,6 +2305,13 @@
             this.label65.ForeColor = System.Drawing.Color.White;
             this.label65.Name = "label65";
             // 
+            // lbTitle
+            // 
+            this.lbTitle.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lbTitle, "lbTitle");
+            this.lbTitle.ForeColor = System.Drawing.Color.Silver;
+            this.lbTitle.Name = "lbTitle";
+            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2636,6 +2645,7 @@
         public System.Windows.Forms.Label label57;
         private System.Windows.Forms.Panel panel5;
         public System.Windows.Forms.Panel panelEffectiveStroke;
+        public System.Windows.Forms.Label lbTitle;
     }
 }
 

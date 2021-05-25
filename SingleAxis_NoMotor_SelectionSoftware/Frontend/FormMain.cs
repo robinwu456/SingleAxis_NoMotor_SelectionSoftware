@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Binarymission.WinForms.Controls.NavigationControls;
 using System.Threading;
+using System.Diagnostics;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public partial class FormMain : Form {
@@ -21,6 +22,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public Step5 step5;
 
         public ExplorerBar _explorerBar;
+
+        private string version;
 
         public FormMain() {
             InitializeComponent();
@@ -50,6 +53,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }        
 
         private void FormMain_Load(object sender, EventArgs e) {
+            // 取得當前版本
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
+            version = fvi.FileVersion;
+            lbTitle.Text += " v" + version;
+
             // 分頁收起
             _explorerBar.explorerBarPanel.ForEach(panel => {
                 if (panel.index != 1)
@@ -61,17 +70,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             panelSideTable.Size = new Size(224, 474);
             panelSideTable.Location = new Point(1120, 129);
 
-            //// 語係測試
-            //Language.curLanguage = Language.LanguageType.English;
-            //Language.Load(this);
-            //Console.WriteLine(CustomExtensions.GetLang("MomentLimit_0"));
-
-            //// 預設選項
-            //optCalcAllModel.Checked = true;
-            //optRepeatabilityScrew.Checked = true;
-            //optNoExpectServiceLife.Checked = true;
-
-            //curStep = Step.Step1;
             step1.Load();
         }
 
