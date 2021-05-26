@@ -113,7 +113,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (curSelectModel.model != null) {
                 if (formMain.optCalcAllModel.Checked) {
                     try {
-                        bool isAnyConditionFail = redFontConditions.Any(con => !con.Value(curRecommandList.First(model => model.name == curSelectModel.model)));
+                        bool isAnyConditionFail = redFontConditions.Any(con => !con.Value(curRecommandList.First(model => model.name == curSelectModel.model && model.lead == curSelectModel.lead)));
                         formMain.cmdConfirmStep2.Visible = !isAnyConditionFail;
                     } catch (Exception ex) {
                         Console.WriteLine(ex);

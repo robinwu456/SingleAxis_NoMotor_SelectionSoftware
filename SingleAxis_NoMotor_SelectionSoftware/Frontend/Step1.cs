@@ -25,6 +25,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.optRepeatabilityScrew.CheckedChanged += OptRepeatabilityScrew_CheckedChanged;
             formMain.cboModelType.SelectedValueChanged += CboModelType_SelectedValueChanged;
 
+            // 安裝方式
+            formMain.optUpsideDownUse.CheckedChanged += OptSetup_CheckedChanged;
+            formMain.optWallHangingUse.CheckedChanged += OptSetup_CheckedChanged;
+            formMain.optHorizontalUse.CheckedChanged += OptSetup_CheckedChanged;
+
             // 側邊欄更新
             formMain.optStandardEnv.CheckedChanged += formMain.sideTable.Update;
             formMain.optDustFreeEnv.CheckedChanged += formMain.sideTable.Update;
@@ -42,6 +47,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.cmdConfirmStep1.Click += CmdConfirmStep1_Click;
         }
 
+        private void OptSetup_CheckedChanged(object sender, EventArgs e) {
+            // 更新機構型態
+            OptRepeatabilityScrew_CheckedChanged(null, null);
+        }
+
         private void OptStandardEnv_CheckedChanged(object sender, EventArgs e) {
             // 更新機構型態
             OptRepeatabilityScrew_CheckedChanged(null, null);
@@ -54,22 +64,34 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 取系列
             Model.ModelType curType = (Model.ModelType)Enum.Parse(typeof(Model.ModelType), formMain.cboModelType.Text);
             Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.Standard : Model.UseEnvironment.DustFree;
+            Model.SetupMethod curSetup = Model.SetupMethod.Horizontal;
+            if (formMain.optHorizontalUse.Checked)
+                curSetup = Model.SetupMethod.Horizontal;
+            else if (formMain.optWallHangingUse.Checked)
+                curSetup = Model.SetupMethod.WallHang;
+            else if (formMain.optUpsideDownUse.Checked)
+                curSetup = Model.SetupMethod.Vertical;
             var series = formMain.step2.calc.modelInfo.Rows.Cast<DataRow>()
                                                            .Where(row => (Model.ModelType)Convert.ToInt32(row["Type"].ToString()) == curType)
                                                            .Where(row => (Model.UseEnvironment)Convert.ToInt32(row["Env"].ToString()) == curEnv)
+                                                           .Where(row => row["Setup"].ToString().Split('&').Contains(((int)curSetup).ToString()))
                                                            .Select(row => new Regex(@"([A-Z]+).+").Match(row["Model"].ToString()).Groups[1].Value)
                                                            .Distinct();            
         }
 
         private void OptRepeatabilityScrew_CheckedChanged(object sender, EventArgs e) {
-            ////// 側邊欄位更新
-            //formMain.sideTable.UpdateItem();
-            //formMain.sideTable.UpdateTableSelections();
-
             // 機構型態選項匯入
             Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.Standard : Model.UseEnvironment.DustFree;
+            Model.SetupMethod curSetup = Model.SetupMethod.Horizontal;
+            if (formMain.optHorizontalUse.Checked)
+                curSetup = Model.SetupMethod.Horizontal;
+            else if (formMain.optWallHangingUse.Checked)
+                curSetup = Model.SetupMethod.WallHang;
+            else if (formMain.optUpsideDownUse.Checked)
+                curSetup = Model.SetupMethod.Vertical;
             Model.ModelType[] dbAllModelType = formMain.step2.calc.modelInfo.Rows.Cast<DataRow>()
                                                                                  .Where(row => (Model.UseEnvironment)Convert.ToInt32(row["Env"].ToString()) == curEnv)
+                                                                                 .Where(row => row["Setup"].ToString().Split('&').Contains(((int)curSetup).ToString()))
                                                                                  .Select(row => (Model.ModelType)Convert.ToInt32(row["Type"].ToString()))
                                                                                  .Distinct()
                                                                                  .ToArray();
@@ -113,10 +135,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 取系列
             Model.ModelType curType = (Model.ModelType)Enum.Parse(typeof(Model.ModelType), formMain.cboModelType.Text);            
             Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.Standard : Model.UseEnvironment.DustFree;
+            Model.SetupMethod curSetup = Model.SetupMethod.Horizontal;
+            if (formMain.optHorizontalUse.Checked)
+                curSetup = Model.SetupMethod.Horizontal;
+            else if (formMain.optWallHangingUse.Checked)
+                curSetup = Model.SetupMethod.WallHang;
+            else if (formMain.optUpsideDownUse.Checked)
+                curSetup = Model.SetupMethod.Vertical;
             formMain.cboSeries.DataSource = null;
             formMain.cboSeries.DataSource = formMain.step2.calc.modelInfo.Rows.Cast<DataRow>()
                                                                               .Where(row => (Model.ModelType)Convert.ToInt32(row["Type"].ToString()) == curType)
                                                                               .Where(row => (Model.UseEnvironment)Convert.ToInt32(row["Env"].ToString()) == curEnv)
+                                                                              .Where(row => row["Setup"].ToString().Split('&').Contains(((int)curSetup).ToString()))
                                                                               .Select(row => new Regex(@"([A-Z]+).+").Match(row["Model"].ToString()).Groups[1].Value)
                                                                               .Distinct()
                                                                               .ToArray();
