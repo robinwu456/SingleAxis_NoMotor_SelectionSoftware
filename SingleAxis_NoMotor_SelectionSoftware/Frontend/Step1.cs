@@ -62,7 +62,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void OptRepeatabilityScrew_CheckedChanged(object sender, EventArgs e) {
-            //// 側邊欄位更新
+            ////// 側邊欄位更新
             //formMain.sideTable.UpdateItem();
             //formMain.sideTable.UpdateTableSelections();
 

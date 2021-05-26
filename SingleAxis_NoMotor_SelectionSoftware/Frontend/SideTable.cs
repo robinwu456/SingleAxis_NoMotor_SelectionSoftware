@@ -59,14 +59,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.panelSideTable.BringToFront();
         }
 
-        // 選項欄生成        
+        // 選項欄生成
         public void UpdateItem() {
-            // 清除欄位所有原件
-            formMain.tableSelections.Controls.All().ToList().ForEach(control => formMain.tableSelections.Controls.Remove(control));
-            formMain.tableSelections.RowCount = 1;
-
-            // init label 
-            formMain.tableSelections.RowStyles.Clear();
+            // Get items
             List<string> selectionTableItems = new List<string>();
             if (formMain.optCalcAllModel.Checked)
                 selectionTableItems = selectionTableItems_calcAll;
@@ -81,37 +76,75 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 }
             }
 
-            formMain.tableSelections.RowCount = selectionTableItems.Count;
-            selectionTableItems.ForEach(item => {
-                RowStyle row = new RowStyle(SizeType.Absolute, tableLayoutDefaultRowHeight);
-                formMain.tableSelections.RowStyles.Add(row);
+            if (formMain.tableSelections.RowCount == 1) {
+                // init table
+                formMain.panelSideTable.Visible = false;
+                formMain.tableSelections.RowCount = selectionTableItems.Count;
+                formMain.tableSelections.RowStyles.Clear();
+                selectionTableItems.ForEach(item => {
+                    RowStyle row = new RowStyle(SizeType.Absolute, tableLayoutDefaultRowHeight);
+                    formMain.tableSelections.RowStyles.Add(row);
 
-                Label title = new Label();
-                title.Name = "labelDataResult_" + item;
-                title.Font = new Font("微軟正黑體", 9);
-                title.ForeColor = Color.FromArgb(0, 0, 0);
-                title.AutoSize = false;
-                title.Dock = DockStyle.Fill;
-                title.TextAlign = ContentAlignment.MiddleLeft;
-                title.Text = item;
-                formMain.tableSelections.Controls.Add(title, 0, selectionTableItems.IndexOf(item));
+                    Label title = new Label();
+                    title.Name = "labelDataResult_" + item;
+                    title.Font = new Font("微軟正黑體", 9);
+                    title.ForeColor = Color.FromArgb(0, 0, 0);
+                    title.AutoSize = false;
+                    title.Dock = DockStyle.Fill;
+                    title.TextAlign = ContentAlignment.MiddleLeft;
+                    title.Text = item;
+                    formMain.tableSelections.Controls.Add(title, 0, selectionTableItems.IndexOf(item));
 
-                Label value = new Label();
-                value.Name = "labelDataResult_" + item + "_value";
-                value.Font = new Font("微軟正黑體", 9);
-                value.ForeColor = tableConditionValueForeColor;
-                value.AutoSize = false;
-                value.Dock = DockStyle.Fill;
-                value.TextAlign = ContentAlignment.MiddleLeft;
-                value.Text = "";
-                formMain.tableSelections.Controls.Add(value, 1, selectionTableItems.IndexOf(item));
-            });
-            ResizeSideTable();
+                    Label value = new Label();
+                    value.Name = "labelDataResult_" + item + "_value";
+                    value.Font = new Font("微軟正黑體", 9);
+                    value.ForeColor = tableConditionValueForeColor;
+                    value.AutoSize = false;
+                    value.Dock = DockStyle.Fill;
+                    value.TextAlign = ContentAlignment.MiddleLeft;
+                    value.Text = "";
+                    formMain.tableSelections.Controls.Add(value, 1, selectionTableItems.IndexOf(item));
+                });
+                ResizeSideTable();
+                formMain.panelSideTable.Visible = true;
+            } else {
+                if (selectionTableItems.Count != formMain.tableSelections.RowCount) {
+                    // resize table
+                    formMain.panelSideTable.Visible = false;
+                    formMain.tableSelections.Controls.All().ToList().ForEach(control => formMain.tableSelections.Controls.Remove(control));
+                    formMain.tableSelections.RowCount = selectionTableItems.Count;
+                    formMain.tableSelections.RowStyles.Clear();
+                    selectionTableItems.ForEach(item => {
+                        RowStyle row = new RowStyle(SizeType.Absolute, tableLayoutDefaultRowHeight);
+                        formMain.tableSelections.RowStyles.Add(row);
+
+                        Label title = new Label();
+                        title.Name = "labelDataResult_" + item;
+                        title.Font = new Font("微軟正黑體", 9);
+                        title.ForeColor = Color.FromArgb(0, 0, 0);
+                        title.AutoSize = false;
+                        title.Dock = DockStyle.Fill;
+                        title.TextAlign = ContentAlignment.MiddleLeft;
+                        title.Text = item;
+                        formMain.tableSelections.Controls.Add(title, 0, selectionTableItems.IndexOf(item));
+
+                        Label value = new Label();
+                        value.Name = "labelDataResult_" + item + "_value";
+                        value.Font = new Font("微軟正黑體", 9);
+                        value.ForeColor = tableConditionValueForeColor;
+                        value.AutoSize = false;
+                        value.Dock = DockStyle.Fill;
+                        value.TextAlign = ContentAlignment.MiddleLeft;
+                        value.Text = "";
+                        formMain.tableSelections.Controls.Add(value, 1, selectionTableItems.IndexOf(item));
+                    });
+                    ResizeSideTable();
+                    formMain.panelSideTable.Visible = true;
+                }
+            }
         }
 
         public void ResizeSideTable() {
-            //formMain.panelSideTable.Visible = false;
-
             // set selection table size
             int hiddenBorderDistance = 1;
             int allLabelHeight = (int)formMain.tableSelections.RowStyles.Cast<RowStyle>().Sum(row => row.Height);
