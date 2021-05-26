@@ -160,7 +160,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         formMain.dgvRecommandList.Rows[index].Cells["皮帶馬達安全係數"].Value = model.beltMotorSafeCoefficient == -1 ? "無" : model.beltMotorSafeCoefficient.ToString();
                         formMain.dgvRecommandList.Rows[index].Cells["T_max安全係數"].Value = model.tMaxSafeCoefficient;
                         formMain.dgvRecommandList.Rows[index].Cells["皮帶T_max安全係數"].Value = model.beltSafeCoefficient == -1 ? "無" : model.beltSafeCoefficient.ToString();
-                        formMain.dgvRecommandList.Rows[index].Cells["是否推薦"].Value = Properties.Resources.inCondition;
+                        formMain.dgvRecommandList.Rows[index].Cells["是否推薦"].Value = redFontConditions.Any(con => con.Value(model) == false) ? Properties.Resources.notInCondition : Properties.Resources.inCondition;
                         formMain.dgvRecommandList.Rows[index].Cells["更詳細資訊"].Value = Properties.Resources.detail_disable_in_condition;
 
                         // 運行距離
@@ -365,8 +365,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.sideTable.UpdateSelectedConditionValue("運行距離", useDistance, !redFontConditions["運行距離"](curModel));
             formMain.sideTable.UpdateSelectedConditionValue("運行壽命", useTime, !redFontConditions["運行壽命"](curModel));
             if (formMain.optRepeatabilityBelt.Checked) {
-                formMain.sideTable.UpdateSelectedConditionValue("皮帶T_max安全係數", useTime, !redFontConditions["皮帶T_max安全係數"](curModel));
-                formMain.sideTable.UpdateSelectedConditionValue("皮帶馬達安全係數", useTime, !redFontConditions["皮帶馬達安全係數"](curModel));
+                formMain.sideTable.UpdateSelectedConditionValue("皮帶T_max安全係數", curModel.beltSafeCoefficient.ToString(), !redFontConditions["皮帶T_max安全係數"](curModel));
+                formMain.sideTable.UpdateSelectedConditionValue("皮帶馬達安全係數", curModel.beltMotorSafeCoefficient.ToString(), !redFontConditions["皮帶馬達安全係數"](curModel));
             }
 
             // 畫圖
