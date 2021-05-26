@@ -158,6 +158,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (formMain.curStep < FormMain.Step.Step2)
                 if (formMain.optCalcSelectedModel.Checked)
                     ClearSelectedModelInfo();
+            // step5
+            formMain.panelSideTableIcon.Visible = formMain.curStep == FormMain.Step.Step5;
         }
         public void UpdateSelectedConditionValue(string key, string value, bool isAlarm = false) {
             Label lbValue = formMain.panelSideTableSelections.Controls.Find("labelDataResult_" + key + "_value", true)[0] as Label;

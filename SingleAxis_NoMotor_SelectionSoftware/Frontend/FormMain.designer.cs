@@ -48,6 +48,8 @@
             this.explorerBar = new System.Windows.Forms.Panel();
             this.dgvCalcSelectedModel = new System.Windows.Forms.DataGridView();
             this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.panelSideTableIcon = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelSideTableSelections = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.tableSelections = new System.Windows.Forms.TableLayoutPanel();
             this.customPanel4 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
@@ -269,6 +271,8 @@
             this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -285,6 +289,8 @@
             this.explorerBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalcSelectedModel)).BeginInit();
             this.panelSideTable.SuspendLayout();
+            this.panelSideTableIcon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelSideTableSelections.SuspendLayout();
             this.customPanel4.SuspendLayout();
             this.customPanel3.SuspendLayout();
@@ -336,6 +342,8 @@
             this.explorerBarPanel5_content.SuspendLayout();
             this.panelConfirmBtnsStep5.SuspendLayout();
             this.explorerBarPanel5_title.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -461,6 +469,7 @@
             // 
             resources.ApplyResources(this.panelSideTable, "panelSideTable");
             this.panelSideTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSideTable.Controls.Add(this.panelSideTableIcon);
             this.panelSideTable.Controls.Add(this.panelSideTableSelections);
             this.panelSideTable.Controls.Add(this.customPanel4);
             this.panelSideTable.Controls.Add(this.label4);
@@ -470,6 +479,21 @@
             this.panelSideTable.Controls.Add(this.label2);
             this.panelSideTable.Curvature = 8;
             this.panelSideTable.Name = "panelSideTable";
+            // 
+            // panelSideTableIcon
+            // 
+            this.panelSideTableIcon.Controls.Add(this.pictureBox5);
+            this.panelSideTableIcon.Controls.Add(this.pictureBox4);
+            this.panelSideTableIcon.Controls.Add(this.pictureBox2);
+            resources.ApplyResources(this.panelSideTableIcon, "panelSideTableIcon");
+            this.panelSideTableIcon.Name = "panelSideTableIcon";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.pdf;
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
             // 
             // panelSideTableSelections
             // 
@@ -2312,6 +2336,20 @@
             this.label65.ForeColor = System.Drawing.Color.White;
             this.label65.Name = "label65";
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.order;
+            resources.ApplyResources(this.pictureBox4, "pictureBox4");
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources._2D_3D;
+            resources.ApplyResources(this.pictureBox5, "pictureBox5");
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.TabStop = false;
+            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2339,6 +2377,9 @@
             this.explorerBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalcSelectedModel)).EndInit();
             this.panelSideTable.ResumeLayout(false);
+            this.panelSideTableIcon.ResumeLayout(false);
+            this.panelSideTableIcon.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelSideTableSelections.ResumeLayout(false);
             this.customPanel4.ResumeLayout(false);
             this.customPanel3.ResumeLayout(false);
@@ -2406,6 +2447,8 @@
             this.explorerBarPanel5_content.ResumeLayout(false);
             this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.explorerBarPanel5_title.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2646,6 +2689,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 運行壽命;
         private System.Windows.Forms.DataGridViewImageColumn 是否推薦;
         private System.Windows.Forms.DataGridViewImageColumn 更詳細資訊;
+        public System.Windows.Forms.Panel panelSideTableIcon;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
 

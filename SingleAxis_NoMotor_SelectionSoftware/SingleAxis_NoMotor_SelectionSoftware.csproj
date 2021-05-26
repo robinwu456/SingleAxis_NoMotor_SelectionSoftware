@@ -391,6 +391,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_0113_256_256_01_1CC_icon.ico" />
+    <None Include="Resources\pdf.png" />
+    <None Include="Resources\order.png" />
+    <None Include="Resources\2D_3D.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
