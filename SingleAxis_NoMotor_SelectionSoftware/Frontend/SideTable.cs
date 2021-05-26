@@ -67,14 +67,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // init label 
             formMain.tableSelections.RowStyles.Clear();
-            List<string> selectionTableItems;
+            List<string> selectionTableItems = new List<string>();
             if (formMain.optCalcAllModel.Checked)
                 selectionTableItems = selectionTableItems_calcAll;
             else {
                 if (formMain.optRepeatabilityScrew.Checked)
                     selectionTableItems = selectionTableItems_calcSelectModel_screw;
-                else
-                    selectionTableItems = selectionTableItems_calcSelectModel_belt;
+                else if (formMain.optRepeatabilityBelt.Checked) {
+                    if (formMain.step2.calc.beltModels.Contains(formMain.cboModel.Text))
+                        selectionTableItems = selectionTableItems_calcSelectModel_belt;
+                    else
+                        selectionTableItems = selectionTableItems_calcSelectModel_screw;
+                }
             }
 
             formMain.tableSelections.RowCount = selectionTableItems.Count;
@@ -106,6 +110,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void ResizeSideTable() {
+            //formMain.panelSideTable.Visible = false;
+
             // set selection table size
             int hiddenBorderDistance = 1;
             int allLabelHeight = (int)formMain.tableSelections.RowStyles.Cast<RowStyle>().Sum(row => row.Height);
@@ -169,7 +175,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.sideTable.UpdateSelectedConditionValue("運行距離", "");
             formMain.sideTable.UpdateSelectedConditionValue("運行壽命", "");
             formMain.sideTable.UpdateSelectedConditionValue("有效行程", "");
-            if (formMain.optRepeatabilityBelt.Checked) {
+            if (formMain.optRepeatabilityBelt.Checked && formMain.step2.calc.beltModels.Contains(formMain.cboModel.Text)) {
                 formMain.sideTable.UpdateSelectedConditionValue("皮帶T_max安全係數", "");
                 formMain.sideTable.UpdateSelectedConditionValue("皮帶馬達安全係數", "");
             }
@@ -199,14 +205,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public void UpdateSelectedConditionValue(string key, string value, bool isAlarm = false) {
             Label lbValue = formMain.panelSideTableSelections.Controls.Find("labelDataResult_" + key + "_value", true)[0] as Label;
             // 字串斷行處理
-            List<string> selectionTableItems;
+            List<string> selectionTableItems = new List<string>();
             if (formMain.optCalcAllModel.Checked)
                 selectionTableItems = selectionTableItems_calcAll;
             else {
                 if (formMain.optRepeatabilityScrew.Checked)
                     selectionTableItems = selectionTableItems_calcSelectModel_screw;
-                else
-                    selectionTableItems = selectionTableItems_calcSelectModel_belt;
+                else if (formMain.optRepeatabilityBelt.Checked) {
+                    if (formMain.step2.calc.beltModels.Contains(formMain.cboModel.Text))
+                        selectionTableItems = selectionTableItems_calcSelectModel_belt;
+                    else
+                        selectionTableItems = selectionTableItems_calcSelectModel_screw;
+                }
             }
             RowStyle rowStyle = formMain.tableSelections.RowStyles[selectionTableItems.IndexOf(key)];
             float oldRowHeight = rowStyle.Height;

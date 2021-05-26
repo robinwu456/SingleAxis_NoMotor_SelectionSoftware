@@ -62,9 +62,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void OptRepeatabilityScrew_CheckedChanged(object sender, EventArgs e) {
-            // 側邊欄位更新
-            formMain.sideTable.UpdateItem();
-            formMain.sideTable.UpdateTableSelections();
+            //// 側邊欄位更新
+            //formMain.sideTable.UpdateItem();
+            //formMain.sideTable.UpdateTableSelections();
 
             // 機構型態選項匯入
             Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.Standard : Model.UseEnvironment.DustFree;
@@ -86,6 +86,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void CboModel_SelectedValueChanged(object sender, EventArgs e) {
+            // 側邊欄位更新
+            formMain.sideTable.UpdateItem();
+            formMain.sideTable.UpdateTableSelections();
+
             formMain.cboLead.DataSource = null;
             formMain.cboLead.DataSource = formMain.step2.calc.modelInfo.Rows.Cast<DataRow>()
                                                .Where(row => row["Model"].ToString().Equals(formMain.cboModel.Text))
