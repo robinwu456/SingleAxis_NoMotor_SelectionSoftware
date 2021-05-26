@@ -108,13 +108,22 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 有效行程選項更新
             if (curSelectModel.model != null)
                 formMain.step2.effectiveStroke.CmdEffectiveStroke_Click(null, null);
+
+            // 全部選型驗證選擇型號是否有項目Fail
+            if (curSelectModel.model != null) {
+                if (formMain.optCalcAllModel.Checked) {
+                    bool isAnyConditionFail = redFontConditions.Any(con => !con.Value(curRecommandList.First(model => model.name == curSelectModel.model)));
+                    formMain.cmdConfirmStep2.Visible = !isAnyConditionFail;
+                }
+            }
         }
 
         public void Refresh() {
             // 型號選型結果顯示恢復隱藏
-            //formMain.dgvCalcSelectedModel.Visible = false;
             formMain.dgvCalcSelectedModel.DataSource = null;
             formMain.dgvCalcSelectedModel.Rows.Clear();
+            curSelectModel = (null, -1);
+            curCheckedModel = (null, -1);
         }
 
         public void DisplayRecommandList() {

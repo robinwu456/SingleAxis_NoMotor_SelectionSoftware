@@ -159,9 +159,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 UpdateSelectedConditionValue("機構型態", formMain.cboModelType.Text);
             }
             // step2
-            if (formMain.curStep < FormMain.Step.Step2)
+            if (formMain.curStep < FormMain.Step.Step2) {
                 if (formMain.optCalcSelectedModel.Checked)
                     ClearSelectedModelInfo();
+                else
+                    formMain.sideTable.UpdateSelectedConditionValue("有效行程", "");
+            }
             // step5
             formMain.panelSideTableIcon.Visible = formMain.curStep == FormMain.Step.Step5;
         }

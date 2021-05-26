@@ -61,6 +61,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.sideTable.ClearModelImg();
                 formMain.sideTable.ClearModelInfo();
                 formMain.sideTable.ClearMsg();
+                formMain.step2.recommandList.Refresh();
             }
         }
 
