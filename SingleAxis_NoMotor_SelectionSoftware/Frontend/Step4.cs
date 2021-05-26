@@ -31,7 +31,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.curStep = (FormMain.Step)((int)formMain.curStep + 1);
                 formMain.sideTable.Update(null, null);
                 formMain._explorerBar.UpdateCurStep(formMain.curStep);
-                //formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep5);
                 formMain.tabMain.SelectTab(1);
             }
         }

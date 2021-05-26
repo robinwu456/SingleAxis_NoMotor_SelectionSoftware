@@ -466,7 +466,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,104,Absolute,104,Absolute,104,Absolute,104" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,124,Absolute,124,Absolute,124,Absolute,124" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 313</value>
@@ -757,7 +757,7 @@
     <value>6</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>993, 67</value>
+    <value>1083, 67</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -3147,9 +3147,6 @@
   </data>
   <data name="T_Rms安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="T_Rms安全係數.Width" type="System.Int32, mscorlib">
-    <value>50</value>
   </data>
   <metadata name="運行距離.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -6422,7 +6419,7 @@
     <value>0, 0, 300, 0</value>
   </data>
   <data name="explorerBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1371, 690</value>
+    <value>1371, 680</value>
   </data>
   <data name="explorerBar.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -6443,7 +6440,7 @@
     <value>4, 22</value>
   </data>
   <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 0, 0</value>
+    <value>10, 10, 0, 10</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1381, 700</value>
@@ -6713,7 +6710,7 @@
     <value>0, 0, 300, 0</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1371, 690</value>
+    <value>1371, 985</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -6737,7 +6734,7 @@
     <value>10, 10, 0, 0</value>
   </data>
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1381, 700</value>
+    <value>1381, 995</value>
   </data>
   <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -10244,6 +10241,9 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

@@ -83,6 +83,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 有效行程顯示
             effectiveStroke.IsShowEffectiveStroke(false);
+
+            // 驗證Step3 enabled
+            if (!formMain.enabledStep3) {
+                formMain.cmdCalcSelectedModelConfirmStep2.ButtonText = "確認條件";
+                formMain.cmdConfirmStep2.ButtonText = "確認條件";
+            }
         }
 
         public void SetSelectedModelConfirmBtnVisible(bool visible) {
@@ -136,10 +142,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 return;
 
             if (formMain.curStep == FormMain.Step.Step2) {
-                formMain.curStep = (FormMain.Step)((int)formMain.curStep + 1);
-                formMain.sideTable.Update(null, null);
-                formMain._explorerBar.UpdateCurStep(formMain.curStep);
-                formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep3);
+                if (formMain.enabledStep3) {
+                    formMain.curStep = (FormMain.Step)((int)formMain.curStep + 1);
+                    formMain.sideTable.Update(null, null);
+                    formMain._explorerBar.UpdateCurStep(formMain.curStep);
+                    formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep3);
+                } else {
+                    formMain.curStep = FormMain.Step.Step5;
+                    formMain.sideTable.Update(null, null);
+                    formMain._explorerBar.UpdateCurStep(formMain.curStep);
+                    formMain.tabMain.SelectTab(1);
+                }
             }
         }
 

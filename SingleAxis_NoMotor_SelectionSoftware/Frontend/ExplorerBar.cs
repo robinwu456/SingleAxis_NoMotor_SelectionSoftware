@@ -8,15 +8,22 @@ using System.Drawing;
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class ExplorerBar {
         public List<ExplorerBarPanel> explorerBarPanel = new List<ExplorerBarPanel>();
+        public static bool isClickTitleCollapse = false;    // 點擊標提列是否可以折疊
 
         private FormMain formMain;
-        private Panel explorerBar;        
+        private Panel explorerBar;
 
         public ExplorerBar(FormMain formMain) {
             this.formMain = formMain;
             this.explorerBar = formMain.explorerBar;            
             // Search explorerBar panel
-            SearchExplorerBarPanel();     
+            SearchExplorerBarPanel();
+
+            // 驗證Step3, 4 enabled
+            if (!formMain.enabledStep3)
+                explorerBarPanel.First(panel => panel.index == (int)FormMain.Step.Step3 + 1).explorerBarPanel.Visible = false;
+            if (!formMain.enabledStep4)
+                explorerBarPanel.First(panel => panel.index == (int)FormMain.Step.Step4 + 1).explorerBarPanel.Visible = false;
         }
 
         public void UpdateCurStep(FormMain.Step curStep) {
@@ -101,17 +108,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             panelConent = explorerBarPanel.Controls.Find(this.name + "_content", true)[0] as Panel;
             unCollapseSize = explorerBarPanel.Size;
 
-            //// 點擊標提折疊事件
-            //panelTitle.Click += PanelTitle_Click;
-            //foreach (Control control in panelTitle.Controls)
-            //    control.Click += PanelTitle_Click;
+            // 點擊標提折疊事件
+            panelTitle.Click += PanelTitle_Click;
+            foreach (Control control in panelTitle.Controls)
+                control.Click += PanelTitle_Click;
 
             OnCollapseChanged += UpdateCollapse;
         }
 
         private void PanelTitle_Click(object sender, EventArgs e) {
-            if ((int)formMain.curStep >= index - 1)
-                isCollapse = !isCollapse;
+            if (ExplorerBar.isClickTitleCollapse)
+                if ((int)formMain.curStep >= index - 1)
+                    isCollapse = !isCollapse;
         }
 
         private void UpdateCollapse() {

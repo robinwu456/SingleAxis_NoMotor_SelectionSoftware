@@ -9,9 +9,11 @@ using System.Windows.Forms;
 using Binarymission.WinForms.Controls.NavigationControls;
 using System.Threading;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public partial class FormMain : Form {
+        public ExplorerBar _explorerBar;
         public SideTable sideTable;
         public enum Step { Step1, Step2, Step3, Step4, Step5 }
         public Step curStep = Step.Step1;
@@ -19,9 +21,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public Step2 step2;
         public Step3 step3;
         public Step4 step4;
-        public Step5 step5;
+        public Step5 step5;        
 
-        public ExplorerBar _explorerBar;
+        // Step3, 4 enabled
+        public bool enabledStep3 = false;
+        public bool enabledStep4 = false;
 
         private string version;
 
@@ -54,7 +58,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void FormMain_Load(object sender, EventArgs e) {
             // 取得當前版本
-            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            Assembly assembly = Assembly.GetExecutingAssembly();
             FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
             version = fvi.FileVersion;
             lbTitle.Text += " v" + version;
@@ -71,12 +75,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             panelSideTable.Location = new Point(1120, 129);
 
             step1.Load();
-        }
-
-        private bool binaryExplorerBar_BinaryExplorerBarPanelTitleClicked(object sender, BinaryExplorerBarPanel thePanelObject) {
-            int thePanelObjectStepIndex = Convert.ToInt32(thePanelObject.Name.Replace("panelStep", "")) - 1;
-            // 目前Step以前才可以開關panel
-            return thePanelObjectStepIndex <= (int)curStep;            
         }
 
         private void FormMain_Resize(object sender, EventArgs e) {
