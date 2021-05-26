@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Globalization;
+using System.Drawing;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Step5 {
@@ -11,6 +13,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             this.formMain = formMain;
 
             InitEvents();
+        }
+
+        public void Load() {
+            // 結果型號
+            formMain.lbResult.Text = string.Format("{0} - L{1} - {2}", 
+                formMain.step2.recommandList.curSelectModel.model, 
+                formMain.step2.recommandList.curSelectModel.lead, 
+                formMain.step2.effectiveStroke.effectiveStroke);
+
+            // 結果圖片
+            var img = Properties.Resources.ResourceManager.GetObject(formMain.step2.recommandList.curSelectModel.model, CultureInfo.InvariantCulture);
+            formMain.picBoxResultImg.Image = img as Image;
         }
 
         private void InitEvents() {

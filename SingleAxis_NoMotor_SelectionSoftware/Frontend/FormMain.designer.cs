@@ -267,6 +267,10 @@
             this.explorerBar_step5 = new System.Windows.Forms.Panel();
             this.explorerBarPanel5 = new System.Windows.Forms.Panel();
             this.explorerBarPanel5_content = new System.Windows.Forms.Panel();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.lbResult = new System.Windows.Forms.Label();
+            this.picBoxResultImg = new System.Windows.Forms.PictureBox();
             this.panelConfirmBtnsStep5 = new System.Windows.Forms.TableLayoutPanel();
             this.cmdConfirmStep5 = new CustomButton.CustomButton();
             this.cmdResetStep5 = new CustomButton.CustomButton();
@@ -342,6 +346,7 @@
             this.explorerBar_step5.SuspendLayout();
             this.explorerBarPanel5.SuspendLayout();
             this.explorerBarPanel5_content.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).BeginInit();
             this.panelConfirmBtnsStep5.SuspendLayout();
             this.explorerBarPanel5_title.SuspendLayout();
             this.SuspendLayout();
@@ -2285,9 +2290,37 @@
             // 
             // explorerBarPanel5_content
             // 
+            this.explorerBarPanel5_content.Controls.Add(this.label51);
+            this.explorerBarPanel5_content.Controls.Add(this.label56);
+            this.explorerBarPanel5_content.Controls.Add(this.lbResult);
+            this.explorerBarPanel5_content.Controls.Add(this.picBoxResultImg);
             this.explorerBarPanel5_content.Controls.Add(this.panelConfirmBtnsStep5);
             resources.ApplyResources(this.explorerBarPanel5_content, "explorerBarPanel5_content");
             this.explorerBarPanel5_content.Name = "explorerBarPanel5_content";
+            // 
+            // label51
+            // 
+            resources.ApplyResources(this.label51, "label51");
+            this.label51.ForeColor = System.Drawing.Color.Red;
+            this.label51.Name = "label51";
+            // 
+            // label56
+            // 
+            this.label56.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.label56, "label56");
+            this.label56.Name = "label56";
+            // 
+            // lbResult
+            // 
+            resources.ApplyResources(this.lbResult, "lbResult");
+            this.lbResult.ForeColor = System.Drawing.Color.Red;
+            this.lbResult.Name = "lbResult";
+            // 
+            // picBoxResultImg
+            // 
+            resources.ApplyResources(this.picBoxResultImg, "picBoxResultImg");
+            this.picBoxResultImg.Name = "picBoxResultImg";
+            this.picBoxResultImg.TabStop = false;
             // 
             // panelConfirmBtnsStep5
             // 
@@ -2447,6 +2480,8 @@
             this.explorerBar_step5.ResumeLayout(false);
             this.explorerBarPanel5.ResumeLayout(false);
             this.explorerBarPanel5_content.ResumeLayout(false);
+            this.explorerBarPanel5_content.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).EndInit();
             this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.explorerBarPanel5_title.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -2693,6 +2728,10 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label56;
+        public System.Windows.Forms.Label lbResult;
+        public System.Windows.Forms.PictureBox picBoxResultImg;
     }
 }
 

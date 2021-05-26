@@ -171,6 +171,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     formMain.sideTable.Update(null, null);
                     formMain._explorerBar.UpdateCurStep(formMain.curStep);
                     formMain.tabMain.SelectTab(1);
+                    formMain.step5.Load();
                 }
             }
         }
