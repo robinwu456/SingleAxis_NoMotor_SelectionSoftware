@@ -49,6 +49,8 @@
             this.dgvCalcSelectedModel = new System.Windows.Forms.DataGridView();
             this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.panelSideTableIcon = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelSideTableSelections = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.tableSelections = new System.Windows.Forms.TableLayoutPanel();
@@ -78,6 +80,7 @@
             this.label63 = new System.Windows.Forms.Label();
             this.explorerBarPanel2 = new System.Windows.Forms.Panel();
             this.explorerBarPanel2_content = new System.Windows.Forms.Panel();
+            this.lbAccelSpeed = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panelEffectiveStroke = new System.Windows.Forms.Panel();
             this.label48 = new System.Windows.Forms.Label();
@@ -104,7 +107,6 @@
             this.labelAdvanceOption = new System.Windows.Forms.Label();
             this.lbCycleTime = new System.Windows.Forms.Label();
             this.lbMaxSpeed = new System.Windows.Forms.Label();
-            this.lbAccelSpeed = new System.Windows.Forms.Label();
             this.lbRunTime = new System.Windows.Forms.Label();
             this.lbConstantTime = new System.Windows.Forms.Label();
             this.lbAccelTime = new System.Windows.Forms.Label();
@@ -262,7 +264,7 @@
             this.label66 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.explorerBar_step5 = new System.Windows.Forms.Panel();
             this.explorerBarPanel5 = new System.Windows.Forms.Panel();
             this.explorerBarPanel5_content = new System.Windows.Forms.Panel();
             this.panelConfirmBtnsStep5 = new System.Windows.Forms.TableLayoutPanel();
@@ -271,8 +273,6 @@
             this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -290,6 +290,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalcSelectedModel)).BeginInit();
             this.panelSideTable.SuspendLayout();
             this.panelSideTableIcon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelSideTableSelections.SuspendLayout();
             this.customPanel4.SuspendLayout();
@@ -337,13 +339,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picStandardEnv)).BeginInit();
             this.explorerBarPanel1_title.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.explorerBar_step5.SuspendLayout();
             this.explorerBarPanel5.SuspendLayout();
             this.explorerBarPanel5_content.SuspendLayout();
             this.panelConfirmBtnsStep5.SuspendLayout();
             this.explorerBarPanel5_title.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -487,6 +487,20 @@
             this.panelSideTableIcon.Controls.Add(this.pictureBox2);
             resources.ApplyResources(this.panelSideTableIcon, "panelSideTableIcon");
             this.panelSideTableIcon.Name = "panelSideTableIcon";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources._2D_3D;
+            resources.ApplyResources(this.pictureBox5, "pictureBox5");
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.order;
+            resources.ApplyResources(this.pictureBox4, "pictureBox4");
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -712,11 +726,11 @@
             // 
             // explorerBarPanel2_content
             // 
+            this.explorerBarPanel2_content.Controls.Add(this.lbAccelSpeed);
             this.explorerBarPanel2_content.Controls.Add(this.panel5);
             this.explorerBarPanel2_content.Controls.Add(this.panelAdvanceMode);
             this.explorerBarPanel2_content.Controls.Add(this.lbCycleTime);
             this.explorerBarPanel2_content.Controls.Add(this.lbMaxSpeed);
-            this.explorerBarPanel2_content.Controls.Add(this.lbAccelSpeed);
             this.explorerBarPanel2_content.Controls.Add(this.lbRunTime);
             this.explorerBarPanel2_content.Controls.Add(this.lbConstantTime);
             this.explorerBarPanel2_content.Controls.Add(this.lbAccelTime);
@@ -779,6 +793,11 @@
             this.explorerBarPanel2_content.Controls.Add(this.label17);
             resources.ApplyResources(this.explorerBarPanel2_content, "explorerBarPanel2_content");
             this.explorerBarPanel2_content.Name = "explorerBarPanel2_content";
+            // 
+            // lbAccelSpeed
+            // 
+            resources.ApplyResources(this.lbAccelSpeed, "lbAccelSpeed");
+            this.lbAccelSpeed.Name = "lbAccelSpeed";
             // 
             // panel5
             // 
@@ -1005,11 +1024,6 @@
             // 
             resources.ApplyResources(this.lbMaxSpeed, "lbMaxSpeed");
             this.lbMaxSpeed.Name = "lbMaxSpeed";
-            // 
-            // lbAccelSpeed
-            // 
-            resources.ApplyResources(this.lbAccelSpeed, "lbAccelSpeed");
-            this.lbAccelSpeed.Name = "lbAccelSpeed";
             // 
             // lbRunTime
             // 
@@ -2252,15 +2266,15 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
-            this.tabPage2.Controls.Add(this.panel1);
+            this.tabPage2.Controls.Add(this.explorerBar_step5);
             resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             // 
-            // panel1
+            // explorerBar_step5
             // 
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Controls.Add(this.explorerBarPanel5);
-            this.panel1.Name = "panel1";
+            resources.ApplyResources(this.explorerBar_step5, "explorerBar_step5");
+            this.explorerBar_step5.Controls.Add(this.explorerBarPanel5);
+            this.explorerBar_step5.Name = "explorerBar_step5";
             // 
             // explorerBarPanel5
             // 
@@ -2336,20 +2350,6 @@
             this.label65.ForeColor = System.Drawing.Color.White;
             this.label65.Name = "label65";
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.order;
-            resources.ApplyResources(this.pictureBox4, "pictureBox4");
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources._2D_3D;
-            resources.ApplyResources(this.pictureBox5, "pictureBox5");
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.TabStop = false;
-            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2379,6 +2379,8 @@
             this.panelSideTable.ResumeLayout(false);
             this.panelSideTableIcon.ResumeLayout(false);
             this.panelSideTableIcon.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelSideTableSelections.ResumeLayout(false);
             this.customPanel4.ResumeLayout(false);
@@ -2442,13 +2444,11 @@
             this.explorerBarPanel1_title.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.explorerBar_step5.ResumeLayout(false);
             this.explorerBarPanel5.ResumeLayout(false);
             this.explorerBarPanel5_content.ResumeLayout(false);
             this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.explorerBarPanel5_title.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2591,7 +2591,7 @@
         public System.Windows.Forms.Panel explorerBarPanel1_title;
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Label label61;
-        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel explorerBar_step5;
         public System.Windows.Forms.Panel explorerBarPanel5;
         public System.Windows.Forms.Panel explorerBarPanel5_content;
         public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep5;

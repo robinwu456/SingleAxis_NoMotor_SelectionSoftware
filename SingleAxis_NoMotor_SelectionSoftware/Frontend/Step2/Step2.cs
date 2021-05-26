@@ -132,9 +132,28 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {
+            formMain.panelAdvanceParams.Enabled = formMain.chkAdvanceMode.Checked;
             formMain.panelAdvanceParams.Visible = formMain.chkAdvanceMode.Checked;
             if (!formMain.chkAdvanceMode.Checked)
                 formMain.optMaxSpeedType_mms.Checked = true;
+            
+            if (formMain.chkAdvanceMode.Checked) {
+                // 切進接選項自動換算最大加速度(加速時間=0.2/0.4)
+                string model = formMain.cboModel.Text;
+                double lead = Convert.ToDouble(formMain.cboLead.Text);
+                int reducerRatio = 1;
+                if (formMain.step2.calc.IsContainsReducerRatio(model)) {
+                    string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
+                    reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
+                    lead /= reducerRatio;
+                }
+                int maxAccelSpeed = formMain.step2.calc.GetMaxAccelSpeed(model, lead, reducerRatio, Convert.ToInt32(formMain.txtStroke.Text));
+                formMain.txtAccelSpeed.Text = maxAccelSpeed.ToString();
+
+                // 切進接選項Vmax自動帶100mm/s
+                formMain.txtMaxSpeed.Text = "100";
+            }
+
         }
 
         private void CmdConfirmStep2_Click(object sender, EventArgs e) {

@@ -131,6 +131,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             else if (formMain.optRepeatabilityBelt.Checked)
                 curCondition.accelTime = 0.4;
             // 加速度
+            formMain.step2.inputValidate.TxtAccelSpeed_Validating(null, null);
             if (formMain.chkAdvanceMode.Checked)
                 curCondition.accelSpeed = Convert.ToDouble(formMain.txtAccelSpeed.Text);
             else

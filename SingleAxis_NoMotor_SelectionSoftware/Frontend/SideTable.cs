@@ -94,7 +94,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             int minHeight = 309;
             formMain.panelSideTable.Size = new Size(formMain.panelSideTable.Size.Width, minHeight + allLabelHeight + 8 + 21);    // +8(高度補償)
             // 高度置中
-            int middleLocation = formMain.explorerBar.Size.Height / 2;
+            int middleLocation;
+            if (formMain.curStep == FormMain.Step.Step5)
+                middleLocation = formMain.explorerBar_step5.Size.Height / 2;
+            else
+                middleLocation = formMain.explorerBar.Size.Height / 2;
             formMain.panelSideTable.Location = new Point(formMain.panelSideTable.Location.X, middleLocation - formMain.panelSideTable.Size.Height / 2);
         }
 

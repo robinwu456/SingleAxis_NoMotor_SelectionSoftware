@@ -198,11 +198,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         // 驗證Vmax
                         Model curModel = curRecommandList.First();
                         if (formMain.optMaxSpeedType_mms.Checked) {
-                            formMain.txtMaxSpeed.Text = curModel.vMax.ToString();
+                            formMain.txtMaxSpeed.Text = Convert.ToDouble(curModel.vMax.ToString("#0.000")).ToString();
                         } else if (formMain.optMaxSpeedType_rpm.Checked) {
                             int curRpm = formMain.step2.calc.MMS_TO_RPM(curModel.vMax, curModel.lead);
                             formMain.txtMaxSpeed.Text = curRpm.ToString();
                         }
+                        // 驗證加速度
+                        formMain.txtAccelSpeed.Text = curModel.accelSpeed.ToString();
 
                         // 細項顯示
                         DisplaySelectedModel();

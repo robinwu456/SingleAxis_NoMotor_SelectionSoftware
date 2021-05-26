@@ -364,5 +364,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             return (accelTime, constantTime, runTime, conditions.accelSpeed, conditions.vMax, cycleTime);
         }
+
+        public int GetMaxAccelSpeed(string model, double lead, int reducer, int stroke) {
+            int rpm = GetRpmByStroke(model, lead, reducer, stroke);
+            double vMax = (lead * (double)rpm) / 60f;
+            double repeatability = Convert.ToDouble(modelInfo.Rows.Cast<DataRow>().First(row => row["Model"].ToString() == model)["Repeatability"].ToString());
+            double minAccelTime = repeatability <= 0.01 ? 0.2 : 0.4;
+            int maxAccelSpeed = (int)(vMax / minAccelTime);
+            return maxAccelSpeed;
+        }
     }
 }

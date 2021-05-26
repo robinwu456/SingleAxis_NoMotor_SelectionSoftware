@@ -37,7 +37,28 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.txtMaxSpeed.KeyDown += TxtMaxSpeed_KeyDown;
             formMain.txtMaxSpeed.TextChanged += TxtMaxSpeed_TextChanged;
             formMain.optMaxSpeedType_mms.CheckedChanged += OptMaxSpeedType_mms_CheckedChanged;
-        }        
+
+            // 加速度驗證
+            formMain.txtAccelSpeed.Validating += TxtAccelSpeed_Validating;
+        }
+
+        public void TxtAccelSpeed_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
+            int curAccelSpeed = Convert.ToInt32(formMain.txtAccelSpeed.Text);
+            if (formMain.optCalcSelectedModel.Checked) {
+                string model = formMain.cboModel.Text;
+                double lead = Convert.ToDouble(formMain.cboLead.Text);
+                int reducerRatio = 1;
+                if (formMain.step2.calc.IsContainsReducerRatio(model)) {
+                    string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
+                    reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
+                    lead /= reducerRatio;
+                }
+
+                int maxAccelSpeed = formMain.step2.calc.GetMaxAccelSpeed(model, lead, reducerRatio, Convert.ToInt32(formMain.txtStroke.Text));
+                if (curAccelSpeed > maxAccelSpeed)
+                    formMain.txtAccelSpeed.Text = maxAccelSpeed.ToString();
+            }
+        }
 
         private void InputCondition_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
             TextBox txt = sender as TextBox;

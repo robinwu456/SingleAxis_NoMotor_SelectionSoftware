@@ -51,7 +51,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             ChartArea chartArea = formMain.chart.ChartAreas[0];
             // X
             chartArea.AxisX.Minimum = points.Select(p => p.X).Min();
-            chartArea.AxisX.Maximum = Convert.ToDouble(points.Select(p => p.X).Max().ToString("#0.000"));
+            chartArea.AxisX.Maximum = Convert.ToDouble(points.Select(p => p.X).Max().ToString("#0.00"));
             chartArea.AxisX.Interval = Convert.ToDouble((chartArea.AxisX.Maximum / 10).ToString("#0.00"));
             // Y
             chartArea.AxisY.Minimum = points.Select(p => p.Y).Min();
