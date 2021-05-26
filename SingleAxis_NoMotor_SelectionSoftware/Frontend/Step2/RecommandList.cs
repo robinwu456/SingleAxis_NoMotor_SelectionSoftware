@@ -112,8 +112,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 全部選型驗證選擇型號是否有項目Fail
             if (curSelectModel.model != null) {
                 if (formMain.optCalcAllModel.Checked) {
-                    bool isAnyConditionFail = redFontConditions.Any(con => !con.Value(curRecommandList.First(model => model.name == curSelectModel.model)));
-                    formMain.cmdConfirmStep2.Visible = !isAnyConditionFail;
+                    try {
+                        bool isAnyConditionFail = redFontConditions.Any(con => !con.Value(curRecommandList.First(model => model.name == curSelectModel.model)));
+                        formMain.cmdConfirmStep2.Visible = !isAnyConditionFail;
+                    } catch (Exception ex) {
+                        Console.WriteLine(ex);
+                    }
                 }
             }
         }
@@ -356,10 +360,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.dgvCalcSelectedModel.CurrentCell = null;
 
             // 更新側邊欄數值
-            formMain.sideTable.UpdateSelectedConditionValue("T_max係數", curModel.tMaxSafeCoefficient.ToString(), curModel.tMaxSafeCoefficient < Model.tMaxStandard);
-            formMain.sideTable.UpdateSelectedConditionValue("力矩警示", curModel.isMomentVerifySuccess ? "Pass" : "Fail", !curModel.isMomentVerifySuccess);
-            formMain.sideTable.UpdateSelectedConditionValue("運行距離", useDistance, serviceDistance < serviceLifeDistanceAlarmStandard);
-            formMain.sideTable.UpdateSelectedConditionValue("運行壽命", useTime, serviceYear < serviceLifeTimeAlarmStandard);
+            formMain.sideTable.UpdateSelectedConditionValue("T_max係數", curModel.tMaxSafeCoefficient.ToString(), !redFontConditions["T_max安全係數"](curModel));
+            formMain.sideTable.UpdateSelectedConditionValue("力矩警示", curModel.isMomentVerifySuccess ? "Pass" : "Fail", !redFontConditions["力矩警示"](curModel));
+            formMain.sideTable.UpdateSelectedConditionValue("運行距離", useDistance, !redFontConditions["運行距離"](curModel));
+            formMain.sideTable.UpdateSelectedConditionValue("運行壽命", useTime, !redFontConditions["運行壽命"](curModel));
+            if (formMain.optRepeatabilityBelt.Checked) {
+                formMain.sideTable.UpdateSelectedConditionValue("皮帶T_max安全係數", useTime, !redFontConditions["皮帶T_max安全係數"](curModel));
+                formMain.sideTable.UpdateSelectedConditionValue("皮帶馬達安全係數", useTime, !redFontConditions["皮帶馬達安全係數"](curModel));
+            }
 
             // 畫圖
             formMain.step2.chartInfo.PaintGraph();
@@ -377,6 +385,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 { "T_max安全係數", "扭矩安全係數過低，請調整荷重或馬達參數" },
                 { "運行距離", "運行距離過短" },
                 { "運行壽命", "運行壽命過短" },
+                { "皮帶馬達安全係數", "皮帶馬達安全係數過低，請調整荷重或馬達參數" },
+                { "皮帶T_max安全係數", "皮帶扭矩安全係數過低，請調整荷重或馬達參數" },
             };
 
             var curRow = formMain.dgvRecommandList.CurrentRow;

@@ -62,6 +62,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void OptRepeatabilityScrew_CheckedChanged(object sender, EventArgs e) {
+            // 側邊欄位更新
+            formMain.sideTable.UpdateItem();
+            formMain.sideTable.UpdateTableSelections();
+
             // 機構型態選項匯入
             Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.Standard : Model.UseEnvironment.DustFree;
             Model.ModelType[] dbAllModelType = formMain.step2.calc.modelInfo.Rows.Cast<DataRow>()
@@ -73,7 +77,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (formMain.optRepeatabilityScrew.Checked)
                 formMain.cboModelType.DataSource = dbAllModelType.Where(type => !type.ToString().Contains("皮帶")).ToArray();
             else
-                formMain.cboModelType.DataSource = dbAllModelType.Where(type => type.ToString().Contains("皮帶")).ToArray();
+                formMain.cboModelType.DataSource = dbAllModelType.Where(type => type.ToString().Contains("皮帶")).ToArray();            
         }
 
         public void Load() {

@@ -14,17 +14,32 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public enum MsgStatus { Normal, Alarm }
 
         private FormMain formMain;
+        // 側邊欄訊息 - 全部選型
         private List<string> selectionTableItems_calcAll = new List<string>(){
             "使用環境",
             "安裝方式",
             "機構型態",
             "有效行程",
         };
-        private List<string> selectionTableItems_calcSelectModel = new List<string>(){
+        // 側邊欄訊息 - 型號選型、螺桿型
+        private List<string> selectionTableItems_calcSelectModel_screw = new List<string>(){
             "使用環境",
             "安裝方式",
             "機構型態",
             "T_max係數",
+            "力矩警示",
+            "運行距離",
+            "運行壽命",
+            "有效行程",
+        };
+        // 側邊欄訊息 - 型號選型、皮帶型
+        private List<string> selectionTableItems_calcSelectModel_belt = new List<string>(){
+            "使用環境",
+            "安裝方式",
+            "機構型態",
+            "T_max係數",
+            "皮帶T_max安全係數",
+            "皮帶馬達安全係數",
             "力矩警示",
             "運行距離",
             "運行壽命",
@@ -52,7 +67,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // init label 
             formMain.tableSelections.RowStyles.Clear();
-            List<string> selectionTableItems = formMain.optCalcAllModel.Checked ? selectionTableItems_calcAll : selectionTableItems_calcSelectModel;
+            List<string> selectionTableItems;
+            if (formMain.optCalcAllModel.Checked)
+                selectionTableItems = selectionTableItems_calcAll;
+            else {
+                if (formMain.optRepeatabilityScrew.Checked)
+                    selectionTableItems = selectionTableItems_calcSelectModel_screw;
+                else
+                    selectionTableItems = selectionTableItems_calcSelectModel_belt;
+            }
+
             formMain.tableSelections.RowCount = selectionTableItems.Count;
             selectionTableItems.ForEach(item => {
                 RowStyle row = new RowStyle(SizeType.Absolute, tableLayoutDefaultRowHeight);
@@ -145,6 +169,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.sideTable.UpdateSelectedConditionValue("運行距離", "");
             formMain.sideTable.UpdateSelectedConditionValue("運行壽命", "");
             formMain.sideTable.UpdateSelectedConditionValue("有效行程", "");
+            if (formMain.optRepeatabilityBelt.Checked) {
+                formMain.sideTable.UpdateSelectedConditionValue("皮帶T_max安全係數", "");
+                formMain.sideTable.UpdateSelectedConditionValue("皮帶馬達安全係數", "");
+            }
         }
 
         public void UpdateTableSelections() {            
@@ -171,7 +199,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public void UpdateSelectedConditionValue(string key, string value, bool isAlarm = false) {
             Label lbValue = formMain.panelSideTableSelections.Controls.Find("labelDataResult_" + key + "_value", true)[0] as Label;
             // 字串斷行處理
-            List<string> selectionTableItems = formMain.optCalcAllModel.Checked ? selectionTableItems_calcAll : selectionTableItems_calcSelectModel;
+            List<string> selectionTableItems;
+            if (formMain.optCalcAllModel.Checked)
+                selectionTableItems = selectionTableItems_calcAll;
+            else {
+                if (formMain.optRepeatabilityScrew.Checked)
+                    selectionTableItems = selectionTableItems_calcSelectModel_screw;
+                else
+                    selectionTableItems = selectionTableItems_calcSelectModel_belt;
+            }
             RowStyle rowStyle = formMain.tableSelections.RowStyles[selectionTableItems.IndexOf(key)];
             float oldRowHeight = rowStyle.Height;
             rowStyle.Height = value.Length > 7 ? tableLayoutDefaultRowHeight * 2 : tableLayoutDefaultRowHeight;
