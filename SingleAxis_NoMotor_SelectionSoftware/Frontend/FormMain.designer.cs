@@ -2306,8 +2306,8 @@
             // 
             // label56
             // 
-            this.label56.BackColor = System.Drawing.Color.LightGray;
             resources.ApplyResources(this.label56, "label56");
+            this.label56.BackColor = System.Drawing.Color.LightGray;
             this.label56.Name = "label56";
             // 
             // lbResult
