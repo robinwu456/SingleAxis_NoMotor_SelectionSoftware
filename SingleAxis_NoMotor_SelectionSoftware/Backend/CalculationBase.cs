@@ -13,7 +13,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         // 資料庫
         public DataTable modelInfo = FileUtil.ReadCsv(Config.MODEL_INFO_FILENAME);
-        public DataTable strokeRpm = FileUtil.ReadCsv(Config.STROKE_RPM_MAX_3600_FILENAME);
+        public DataTable strokeRpm = FileUtil.ReadCsv(Config.STROKE_RPM_FILENAME);
         public DataTable momentData = FileUtil.ReadCsv(Config.MOMENT_FILENAME);
         public DataTable motorInfo = FileUtil.ReadCsv(Config.MOTOR_INFO_FILENAME);
         public DataTable reducerInfo = FileUtil.ReadCsv(Config.REDUCER_INFO_FILENAME);
