@@ -31,13 +31,30 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon_0113_256_256_01_1CC_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Binarymission.WinForms.Controls.BinaryExplorerBar">
       <HintPath>..\..\CustomControls\UIControlSuite\ExplorerBar\Binarymission.WinForms.Controls.BinaryExplorerBar.dll</HintPath>
     </Reference>
+    <Reference Include="CustomButton">
+      <HintPath>..\..\CustomPicControls\CustomButton\bin\Debug\CustomButton.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomToggle, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CustomPicControls\CustomToggle\bin\Debug\CustomToggle.dll</HintPath>
+    </Reference>
+    <Reference Include="StrokeTooShortConverterLibraries">
+      <HintPath>..\..\StrokeTooShortConverterLibraries\StrokeTooShortConverterLibraries\bin\Debug\StrokeTooShortConverterLibraries.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\portable-net40+sl4+win8+wp8\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,29 +65,85 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomPanelControl\CornerCurveMode.cs" />
-    <Compile Include="CustomPanelControl\CustomPanel.cs">
+    <Compile Include="ActionResult.cs" />
+    <Compile Include="Backend\Calculation.cs" />
+    <Compile Include="Backend\CalculationBase.cs" />
+    <Compile Include="Backend\CalculationModel.cs" />
+    <Compile Include="CustomObjects\BeltWheel.cs" />
+    <Compile Include="CustomObjects\CalcMoment.cs" />
+    <Compile Include="Condition.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="CustomExtensions.cs" />
+    <Compile Include="CustomObjects\SubBeltWheel.cs" />
+    <Compile Include="en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="FileUtil.cs" />
+    <Compile Include="Frontend\CustomPanelControl\CornerCurveMode.cs" />
+    <Compile Include="Frontend\CustomPanelControl\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomPanelControl\GlassyPanel.cs">
+    <Compile Include="Frontend\CustomPanelControl\GlassyPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomPanelControl\LinearGradientMode.cs" />
-    <Compile Include="CustomPanelControl\TransparentPanel.cs">
+    <Compile Include="Frontend\CustomPanelControl\LinearGradientMode.cs" />
+    <Compile Include="Frontend\CustomPanelControl\TransparentPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomPanelControl\TransparentPanel.Designer.cs" />
-    <Compile Include="FormMain.cs">
+    <Compile Include="Frontend\CustomPanelControl\TransparentPanel.Designer.cs" />
+    <Compile Include="Frontend\CustomTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Frontend\ExplorerBar.cs" />
+    <Compile Include="Frontend\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.designer.cs">
+    <Compile Include="Frontend\FormMain.designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\FormWaiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\FormWaiting.designer.cs">
+      <DependentUpon>FormWaiting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\Step2\ChartInfo.cs" />
+    <Compile Include="Frontend\Step2\EffectiveStroke.cs" />
+    <Compile Include="Frontend\Step2\GearRatio.cs" />
+    <Compile Include="Frontend\Step2\InputValidate.cs" />
+    <Compile Include="Frontend\Step2\Moment.cs" />
+    <Compile Include="Frontend\Step2\MotorPower.cs" />
+    <Compile Include="Frontend\Step2\RecommandList.cs" />
+    <Compile Include="Frontend\Step2\Repeatability.cs" />
+    <Compile Include="Frontend\Step2\RunCondition.cs" />
+    <Compile Include="Language.cs" />
+    <Compile Include="CustomObjects\Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CustomPanelControl\CustomPanel.resx" />
-    <EmbeddedResource Include="FormMain.resx">
+    <Compile Include="Frontend\SideTable.cs" />
+    <Compile Include="Frontend\Step1.cs" />
+    <Compile Include="Frontend\Step2\Step2.cs" />
+    <Compile Include="Frontend\Step3.cs" />
+    <Compile Include="Frontend\Step4.cs" />
+    <Compile Include="Frontend\Step5.cs" />
+    <Compile Include="Frontend\ToyoBorder.cs" />
+    <Compile Include="zh.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>zh.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\CustomPanelControl\CustomPanel.resx" />
+    <EmbeddedResource Include="Frontend\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\FormWaiting.resx">
+      <DependentUpon>FormWaiting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -82,6 +155,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="zh.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>zh.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -127,6 +205,195 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\title_bg01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dustFreeEnviroment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setupMode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\standardEnviroment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\detail_disable_in_condition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\detail_disable_not_in_condition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\detail_enable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inCondition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notInCondition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggleOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggleOff_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggleOff_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggleOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggleOn_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggleOn_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\CSG25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\DMG25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\DMG40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\DMH25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\DMH40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTH3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTH4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTH5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTH5S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTH8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTH8S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTH12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\effectiveStrokePanelBg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\effectiveStrokeBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dataResultBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ECB5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ECB6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ECB10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ECB14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ECB17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ECB22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ECH14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ECH17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ECH22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETB5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETB6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETB10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETB14M.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETB17M.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETH13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETH14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETH17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETH17M.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETH22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETH22M.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GCH4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GCH5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GCH8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GCH12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTY4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTY5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTY8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\GTY12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\MK65.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\MK85.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\MK110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModelPic\ETB22M.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon_0113_256_256_01_1CC_icon.ico" />
+    <None Include="Resources\pdf.png" />
+    <None Include="Resources\order.png" />
+    <None Include="Resources\2D_3D.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
