@@ -39,6 +39,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 } else {
                     formMain.panelEffectiveStroke.Visible = false;
                     formMain.sideTable.UpdateSelectedConditionValue("有效行程", "");
+                    formMain.step2.recommandList.curSelectModel = (null, -1);
                 }
             }));
         }

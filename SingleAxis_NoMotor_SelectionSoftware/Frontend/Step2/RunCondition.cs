@@ -207,6 +207,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 有效行程
             formMain.step2.effectiveStroke.IsShowEffectiveStroke(false);
+
+            formMain.cmdConfirmStep2.Visible = false;
         }
     }
 }

@@ -109,12 +109,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (curSelectModel.model != null)
                 formMain.step2.effectiveStroke.CmdEffectiveStroke_Click(null, null);
 
-            // 全部選型驗證選擇型號是否有項目Fail
+            // 全部選型驗證選擇型號是否有項目Fail，有則不顯示下一步
             if (curSelectModel.model != null) {
                 if (formMain.optCalcAllModel.Checked) {
                     try {
-                        bool isAnyConditionFail = redFontConditions.Any(con => !con.Value(curRecommandList.First(model => model.name == curSelectModel.model && model.lead == curSelectModel.lead)));
-                        formMain.cmdConfirmStep2.Visible = !isAnyConditionFail;
+                        bool isAllConditionSuccess = redFontConditions.All(con => con.Value(curRecommandList.First(model => model.name == curSelectModel.model && model.lead == curSelectModel.lead)));
+                        formMain.cmdConfirmStep2.Visible = isAllConditionSuccess;
                     } catch (Exception ex) {
                         Console.WriteLine(ex);
                     }
