@@ -25,6 +25,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             { "皮帶T_max安全係數", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_beltMotor },
             { "力矩警示", model => model.isMomentVerifySuccess },
         };
+        // 錯誤訊息
+        private Dictionary<string, string> alarmMsg = new Dictionary<string, string>() {
+            { "力矩警示", "力矩判定異常，請洽詢Toyo業務人員" },
+            { "T_max安全係數", "扭矩安全係數過低，請調整荷重或馬達條件" },
+            { "運行距離", "運行距離過短" },
+            { "運行壽命", "運行壽命過短" },
+            { "皮帶馬達安全係數", "皮帶馬達安全係數過低，請調整荷重或馬達條件" },
+            { "皮帶T_max安全係數", "皮帶扭矩安全係數過低，請調整荷重或馬達條件" },
+        };
 
         public RecommandList(FormMain formMain) {
             this.formMain = formMain;
@@ -380,15 +389,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void VerifySelectedModelAlarm() {
-            Dictionary<string, string> alarmMsg = new Dictionary<string, string>() {
-                { "力矩警示", "力矩判定異常，請洽詢Toyo業務人員" },
-                { "T_max安全係數", "扭矩安全係數過低，請調整荷重或馬達參數" },
-                { "運行距離", "運行距離過短" },
-                { "運行壽命", "運行壽命過短" },
-                { "皮帶馬達安全係數", "皮帶馬達安全係數過低，請調整荷重或馬達參數" },
-                { "皮帶T_max安全係數", "皮帶扭矩安全係數過低，請調整荷重或馬達參數" },
-            };
-
             var curRow = formMain.dgvRecommandList.CurrentRow;
             foreach (DataGridViewCell cell in curRow.Cells) {
                 if (cell.Style.ForeColor == Color.Red) {
