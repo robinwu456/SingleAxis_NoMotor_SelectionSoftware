@@ -26,7 +26,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             "使用環境",
             "安裝方式",
             "機構型態",
-            "T_max係數",
+            "T_max安全係數",
             "力矩警示",
             "運行距離",
             "運行壽命",
@@ -37,7 +37,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             "使用環境",
             "安裝方式",
             "機構型態",
-            "T_max係數",
+            "T_max安全係數",
             "皮帶T_max安全係數",
             "皮帶馬達安全係數",
             "力矩警示",
@@ -203,7 +203,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void ClearSelectedModelInfo() {
-            formMain.sideTable.UpdateSelectedConditionValue("T_max係數", "");
+            formMain.sideTable.UpdateSelectedConditionValue("T_max安全係數", "");
             formMain.sideTable.UpdateSelectedConditionValue("力矩警示", "");
             formMain.sideTable.UpdateSelectedConditionValue("運行距離", "");
             formMain.sideTable.UpdateSelectedConditionValue("運行壽命", "");
@@ -236,6 +236,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.panelSideTableIcon.Visible = formMain.curStep == FormMain.Step.Step5;
         }
         public void UpdateSelectedConditionValue(string key, string value, bool isAlarm = false) {
+            Label lbKey = formMain.panelSideTableSelections.Controls.Find("labelDataResult_" + key, true)[0] as Label;
             Label lbValue = formMain.panelSideTableSelections.Controls.Find("labelDataResult_" + key + "_value", true)[0] as Label;
             // 字串斷行處理
             List<string> selectionTableItems = new List<string>();
@@ -253,11 +254,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
             RowStyle rowStyle = formMain.tableSelections.RowStyles[selectionTableItems.IndexOf(key)];
             float oldRowHeight = rowStyle.Height;
-            rowStyle.Height = value.Length > 7 ? tableLayoutDefaultRowHeight * 2 : tableLayoutDefaultRowHeight;
-            if (value.Length > 7)
-                value = value.Insert(7, "\r\n");
+            rowStyle.Height = key.Length > 7 || value.Length > 7 ? tableLayoutDefaultRowHeight * 2 : tableLayoutDefaultRowHeight;            
+            // 數值驗證
             lbValue.ForeColor = isAlarm ? Color.Red : tableConditionValueForeColor;
             lbValue.Text = value;
+
             if (oldRowHeight != rowStyle.Height)
                 ResizeSideTable();
         }
