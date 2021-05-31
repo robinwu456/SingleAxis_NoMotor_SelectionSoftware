@@ -129,6 +129,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     }
                 }
             }
+
+            // Log所有參數
+            if (curSelectModel.model != null) {
+                try {
+                    FileUtil.LogModelInfo(curRecommandList.First(model => model.name == curSelectModel.model && model.lead == curSelectModel.lead));
+                } catch (Exception ex) {
+                    Console.WriteLine("log error: " + ex);
+                }
+            }
         }
 
         public void Refresh() {
