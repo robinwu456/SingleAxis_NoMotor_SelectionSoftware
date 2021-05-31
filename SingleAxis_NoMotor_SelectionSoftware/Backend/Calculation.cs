@@ -202,8 +202,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 // 加速度 m/s => mm/s
                 model.accelSpeed *= 1000;
 
-                // 結果壽命取最小值
-                model.serviceLifeDistance = Math.Min(model.slideTrackServiceLifeDistance, model.screwServiceLifeDistance);
+                // 結果壽命
+                if (model.modelType.ToString().Contains("皮帶"))
+                    // 皮帶型
+                    model.serviceLifeDistance = model.slideTrackServiceLifeDistance;
+                else
+                    // 螺桿型滑軌、螺桿壽命取最小值
+                    model.serviceLifeDistance = Math.Min(model.slideTrackServiceLifeDistance, model.screwServiceLifeDistance);
 
                 // 算壽命時間
                 model.serviceLifeTime = GetServiceLifeTime(model, con);

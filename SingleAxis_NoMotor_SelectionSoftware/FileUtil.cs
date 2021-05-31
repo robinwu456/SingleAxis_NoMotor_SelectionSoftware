@@ -188,8 +188,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 ( "  Mp", model.mp_d ),
                 ( "  My", model.my_d ),
                 ( "  P_d", model.p_d ),
-                ( "平均負載Pm", model.pm ),
-                ( "負荷係數Fw", model.fw ),
+                ( "平均負載Pm", model.pmSlide ),
+                ( "負荷係數Fw", model.fwSlide ),
                 ( "預估壽命L(km)", model.slideTrackServiceLifeDistance ),
                 ( "各階段軸向外力", "" ),
                 ( "  加速區外力(N)", " " ),
@@ -278,8 +278,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 ( "    其他外力", model.otherForce_decel ),
                 ( "    等效負載", model.equivalentLoad_decel ),
                 ( "  壽命統計", " " ),
-                ( "    平均負載", model.pm ),
-                ( "    負荷係數", model.fw ),
+                ( "    平均負載", model.pmScrew ),
+                ( "    負荷係數", model.fwScrew ),
                 ( "    預估壽命(km)", model.screwServiceLifeDistance ),
             };
             var beltInfo = new List<(string key, object value)>();
@@ -337,8 +337,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     ( "  加速扭矩", model.beltTorque_accel ),
                     ( "  等速扭矩", model.beltTorque_constant ),
                     ( "  減速扭矩", model.beltTorque_decel ),
-                    ( "皮帶評估-Tmax最大扭矩評估", "" ),
                     ( "  停置扭矩", model.beltTorque_stop ),
+                    ( "皮帶評估-Tmax最大扭矩評估", "" ),                    
                     ( "  T_max", model.belt_tMax ),
                     ( "  皮帶承受力", model.beltEndurance ),
                     ( "  安全係數", model.beltSafeCoefficient ),
@@ -346,32 +346,51 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 };
             }
             if (model.mainWheel == null) {
-                // 螺桿型
-                if (!model.modelType.ToString().Contains("皮帶"))
+                ///
+                /// 螺桿型
+                ///
+
+                // 螺桿資訊
+                if (!model.modelType.ToString().Contains("皮帶"))                    
                     result.InsertRange(result.IndexOf(result.First(r => r.key == "Velocity")), screwInfo);
+                // 馬達能力預估
                 result.InsertRange(result.IndexOf(result.First(r => r.key == "各階段軸向外力")), motorInfoScrew);
+                // 各階段馬達負擔扭矩
                 result.InsertRange(result.IndexOf(result.First(r => r.key == "  等速區扭矩")), motorTorqueInfoScrew);
+                // T_Rms扭矩確認
                 result.AddRange(tRmsInfo);
+                // 螺桿壽命預估
                 if (!model.modelType.ToString().Contains("皮帶"))
                     result.AddRange(screwLifeInfo);
             } else {
-                // 皮帶型
+                ///
+                /// 皮帶型
+                ///
+
+                // 皮帶輪資訊
                 result.InsertRange(result.IndexOf(result.First(r => r.key == "Velocity")), beltInfo);
+                // 馬達能力預估
                 result.InsertRange(result.IndexOf(result.First(r => r.key == "各階段軸向外力")), motorInfoBelt);
-                result.InsertRange(result.IndexOf(result.First(r => r.key == "  等速區扭矩")), motorTorqueInfoBelt);                
+                // 各階段馬達負擔扭矩
+                result.InsertRange(result.IndexOf(result.First(r => r.key == "  等速區扭矩")), motorTorqueInfoBelt);
+                // 皮帶能力預估
                 result.AddRange(beltTorqueInfo);
             }
 
             // 匯出總資訊
             string printInfo = "";
             foreach (var info in result) {
+                // 一階
                 if (info.value.ToString() == "")
                     printInfo += "\r\n" + info.key + "\r\n";
+                // 二階
+                else if (info.value.ToString() == " ")
+                    printInfo += info.key + "\r\n";
+                // 數值
                 else
                     printInfo += info.key + "：" + info.value + "\r\n";
             }
-
-            FileWrite("./MODEL.LOG", printInfo);
+            FileWrite(Config.LOG_FILENAME, printInfo);
         }
     }
 }

@@ -127,14 +127,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             model.constantDistance = model.vMax * model.constantTime * 1000;
             model.decelDistance = model.accelDistance;
 
-            model.pm = Math.Pow((Math.Pow(model.p_a, 3) * model.accelDistance +
+            model.pmSlide = Math.Pow((Math.Pow(model.p_a, 3) * model.accelDistance +
                                        Math.Pow(model.p_c, 3) * model.constantDistance +
                                        Math.Pow(model.p_d, 3) * model.decelDistance) /
                                        (float)model.stroke, (float)1 / (float)3) * model.c;
 
-            model.fw = Get_Fw(model.vMax);
+            model.fwSlide = Get_Fw(model.vMax);
 
-            model.slideTrackServiceLifeDistance = (long)Math.Round(Math.Pow(model.c / (model.pm * model.fw), 3) * 10000, 0);
+            model.slideTrackServiceLifeDistance = (long)Math.Round(Math.Pow(model.c / (model.pmSlide * model.fwSlide), 3) * 10000, 0);
 
             // 力矩警示驗證
             VerifyMomentAlarm(model, condition.setupMethod);
@@ -244,8 +244,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (conditions.setupMethod == Model.SetupMethod.Vertical)
                 model.otherForce_stop = model.load * 9.8;
 
-            model.fw = 1.2;
-            model.pm = Math.Pow((Math.Pow(model.equivalentLoad_accel, 3) * (model.rpm / 2) * model.accelTime +
+            model.fwScrew = 1.2;
+            model.pmScrew = Math.Pow((Math.Pow(model.equivalentLoad_accel, 3) * (model.rpm / 2) * model.accelTime +
                                  Math.Pow(model.equivalentLoad_constant, 3) * model.rpm * model.constantTime +
                                  Math.Pow(model.equivalentLoad_decel, 3) * (model.rpm / 2) * model.decelTime) /
                                  (model.rpm / 2 * model.accelTime +
@@ -253,7 +253,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                  model.rpm / 2 * model.accelTime),
                        (float)1 / (float)3);
 
-            model.screwServiceLifeDistance = (long)(Math.Pow(model.dynamicLoadRating / (model.pm * model.fw), 3) * 1000000 * ((float)model.lead / (1000f * 1000f)));
+            model.screwServiceLifeDistance = (long)(Math.Pow(model.dynamicLoadRating / (model.pmScrew * model.fwScrew), 3) * 1000000 * ((float)model.lead / (1000f * 1000f)));
 
             return model.screwServiceLifeDistance;
         }
