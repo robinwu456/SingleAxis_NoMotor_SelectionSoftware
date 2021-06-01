@@ -54,13 +54,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void Load() {
+            // Alarm清除
+            formMain.Controls.All().Where(control => control.Name.EndsWith("Alarm")).ToList()
+                                   .ForEach(control => control.Visible = false);
+
             // 馬達選項更新
             motorPower.UpdateMotorCalcMode();
             motorPower.Load();
 
             // 進階選項驗證
             formMain.chkAdvanceMode.Checked = false;
-            //formMain.panelAdvanceMode.Enabled = formMain.optCalcSelectedModel.Checked;
             formMain.panelAdvanceMode.Visible = formMain.optCalcSelectedModel.Checked;
             ChkAdvanceMode_CheckedChanged(null, null);
 
