@@ -148,7 +148,7 @@
     <value>5, 0, 0, 0</value>
   </data>
   <data name="lbTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>402, 35</value>
+    <value>249, 35</value>
   </data>
   <data name="lbTitle.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -568,7 +568,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,181,Absolute,181,Absolute,181,Absolute,181" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,184,Absolute,184,Absolute,184,Absolute,184" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 313</value>
@@ -583,7 +583,7 @@
     <value>panelSideTableSelections</value>
   </data>
   <data name="&gt;&gt;panelSideTableSelections.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.4, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;panelSideTableSelections.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -640,7 +640,7 @@
     <value>customPanel4</value>
   </data>
   <data name="&gt;&gt;customPanel4.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.4, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel4.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -730,7 +730,7 @@
     <value>customPanel3</value>
   </data>
   <data name="&gt;&gt;customPanel3.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.4, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel3.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -817,7 +817,7 @@
     <value>customPanel2</value>
   </data>
   <data name="&gt;&gt;customPanel2.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.4, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel2.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -859,7 +859,7 @@
     <value>7</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1049, 110</value>
+    <value>998, 110</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -874,7 +874,7 @@
     <value>panelSideTable</value>
   </data>
   <data name="&gt;&gt;panelSideTable.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.4, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;panelSideTable.Parent" xml:space="preserve">
     <value>explorerBar</value>
@@ -1350,40 +1350,40 @@
   <data name="&gt;&gt;lbAccelSpeed.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label48.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lbEffectiveStrokeAlarm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label48.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lbEffectiveStrokeAlarm.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 9pt</value>
   </data>
-  <data name="label48.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lbEffectiveStrokeAlarm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label48.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lbEffectiveStrokeAlarm.Location" type="System.Drawing.Point, System.Drawing">
     <value>29, 103</value>
   </data>
-  <data name="label48.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lbEffectiveStrokeAlarm.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 16</value>
   </data>
-  <data name="label48.TabIndex" type="System.Int32, mscorlib">
+  <data name="lbEffectiveStrokeAlarm.TabIndex" type="System.Int32, mscorlib">
     <value>293</value>
   </data>
-  <data name="label48.Text" xml:space="preserve">
+  <data name="lbEffectiveStrokeAlarm.Text" xml:space="preserve">
     <value>請輸入有效數值</value>
   </data>
-  <data name="label48.Visible" type="System.Boolean, mscorlib">
+  <data name="lbEffectiveStrokeAlarm.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;label48.Name" xml:space="preserve">
-    <value>label48</value>
+  <data name="&gt;&gt;lbEffectiveStrokeAlarm.Name" xml:space="preserve">
+    <value>lbEffectiveStrokeAlarm</value>
   </data>
-  <data name="&gt;&gt;label48.Type" xml:space="preserve">
+  <data name="&gt;&gt;lbEffectiveStrokeAlarm.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label48.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lbEffectiveStrokeAlarm.Parent" xml:space="preserve">
     <value>panelEffectiveStroke</value>
   </data>
-  <data name="&gt;&gt;label48.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lbEffectiveStrokeAlarm.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="cmdEffectiveStroke.ButtonText" xml:space="preserve">
@@ -1396,7 +1396,7 @@
     <value>72, 24</value>
   </data>
   <data name="cmdEffectiveStroke.TabIndex" type="System.Int32, mscorlib">
-    <value>174</value>
+    <value>244</value>
   </data>
   <data name="&gt;&gt;cmdEffectiveStroke.Name" xml:space="preserve">
     <value>cmdEffectiveStroke</value>
@@ -1552,7 +1552,7 @@
     <value>169, 39</value>
   </data>
   <data name="optEffectiveStroke2.TabIndex" type="System.Int32, mscorlib">
-    <value>159</value>
+    <value>246</value>
   </data>
   <data name="optEffectiveStroke2.Text" xml:space="preserve">
     <value>5678 mm</value>
@@ -1609,7 +1609,7 @@
     <value>169, 38</value>
   </data>
   <data name="optEffectiveStroke1.TabIndex" type="System.Int32, mscorlib">
-    <value>158</value>
+    <value>245</value>
   </data>
   <data name="optEffectiveStroke1.Text" xml:space="preserve">
     <value>1234 mm</value>
@@ -1678,7 +1678,7 @@
     <value>98, 20</value>
   </data>
   <data name="txtEffectiveStroke.TabIndex" type="System.Int32, mscorlib">
-    <value>162</value>
+    <value>243</value>
   </data>
   <data name="txtEffectiveStroke.Text" xml:space="preserve">
     <value>70</value>
@@ -2186,7 +2186,7 @@
     <value>57, 23</value>
   </data>
   <data name="optMotorParamsModifySimple.TabIndex" type="System.Int32, mscorlib">
-    <value>275</value>
+    <value>248</value>
   </data>
   <data name="optMotorParamsModifySimple.Text" xml:space="preserve">
     <value>簡易</value>
@@ -2219,7 +2219,7 @@
     <value>57, 23</value>
   </data>
   <data name="optMotorParamsModifyAdvance.TabIndex" type="System.Int32, mscorlib">
-    <value>276</value>
+    <value>249</value>
   </data>
   <data name="optMotorParamsModifyAdvance.Text" xml:space="preserve">
     <value>進階</value>
@@ -2438,7 +2438,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtAccelSpeed.TabIndex" type="System.Int32, mscorlib">
-    <value>271</value>
+    <value>242</value>
   </data>
   <data name="txtAccelSpeed.Text" xml:space="preserve">
     <value>500</value>
@@ -2474,7 +2474,7 @@
     <value>70, 23</value>
   </data>
   <data name="optMaxSpeedType_rpm.TabIndex" type="System.Int32, mscorlib">
-    <value>269</value>
+    <value>241</value>
   </data>
   <data name="optMaxSpeedType_rpm.Text" xml:space="preserve">
     <value>[RPM]</value>
@@ -2507,7 +2507,7 @@
     <value>78, 23</value>
   </data>
   <data name="optMaxSpeedType_mms.TabIndex" type="System.Int32, mscorlib">
-    <value>268</value>
+    <value>240</value>
   </data>
   <data name="optMaxSpeedType_mms.Text" xml:space="preserve">
     <value>[mm/s]</value>
@@ -2567,7 +2567,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtMaxSpeed.TabIndex" type="System.Int32, mscorlib">
-    <value>265</value>
+    <value>239</value>
   </data>
   <data name="txtMaxSpeed.Text" xml:space="preserve">
     <value>100</value>
@@ -2677,40 +2677,40 @@
   <data name="&gt;&gt;label72.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label77.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lbExpectServiceLifeAlarm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label77.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lbExpectServiceLifeAlarm.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 9pt</value>
   </data>
-  <data name="label77.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lbExpectServiceLifeAlarm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label77.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lbExpectServiceLifeAlarm.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 36</value>
   </data>
-  <data name="label77.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lbExpectServiceLifeAlarm.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 16</value>
   </data>
-  <data name="label77.TabIndex" type="System.Int32, mscorlib">
+  <data name="lbExpectServiceLifeAlarm.TabIndex" type="System.Int32, mscorlib">
     <value>258</value>
   </data>
-  <data name="label77.Text" xml:space="preserve">
+  <data name="lbExpectServiceLifeAlarm.Text" xml:space="preserve">
     <value>請輸入有效天數</value>
   </data>
-  <data name="label77.Visible" type="System.Boolean, mscorlib">
+  <data name="lbExpectServiceLifeAlarm.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;label77.Name" xml:space="preserve">
-    <value>label77</value>
+  <data name="&gt;&gt;lbExpectServiceLifeAlarm.Name" xml:space="preserve">
+    <value>lbExpectServiceLifeAlarm</value>
   </data>
-  <data name="&gt;&gt;label77.Type" xml:space="preserve">
+  <data name="&gt;&gt;lbExpectServiceLifeAlarm.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label77.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lbExpectServiceLifeAlarm.Parent" xml:space="preserve">
     <value>panelExpectServiceLifeTime</value>
   </data>
-  <data name="&gt;&gt;label77.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lbExpectServiceLifeAlarm.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="txtExpectServiceLifeTime.Font" type="System.Drawing.Font, System.Drawing">
@@ -2723,7 +2723,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtExpectServiceLifeTime.TabIndex" type="System.Int32, mscorlib">
-    <value>257</value>
+    <value>238</value>
   </data>
   <data name="txtExpectServiceLifeTime.Text" xml:space="preserve">
     <value>10</value>
@@ -2783,7 +2783,7 @@
     <value>14, 13</value>
   </data>
   <data name="optExpectServiceLife.TabIndex" type="System.Int32, mscorlib">
-    <value>261</value>
+    <value>237</value>
   </data>
   <data name="&gt;&gt;optExpectServiceLife.Name" xml:space="preserve">
     <value>optExpectServiceLife</value>
@@ -2813,7 +2813,7 @@
     <value>42, 23</value>
   </data>
   <data name="optNoExpectServiceLife.TabIndex" type="System.Int32, mscorlib">
-    <value>260</value>
+    <value>236</value>
   </data>
   <data name="optNoExpectServiceLife.Text" xml:space="preserve">
     <value>無</value>
@@ -3298,9 +3298,6 @@
   <data name="更詳細資訊.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="更詳細資訊.Width" type="System.Int32, mscorlib">
-    <value>106</value>
-  </data>
   <data name="dgvRecommandList.Location" type="System.Drawing.Point, System.Drawing">
     <value>54, 833</value>
   </data>
@@ -3572,7 +3569,7 @@
     <value>101, 29</value>
   </data>
   <data name="txtRotateInertia.TabIndex" type="System.Int32, mscorlib">
-    <value>227</value>
+    <value>252</value>
   </data>
   <data name="txtRotateInertia.Text" xml:space="preserve">
     <value>0.48</value>
@@ -3602,7 +3599,7 @@
     <value>101, 29</value>
   </data>
   <data name="txtMaxTorque.TabIndex" type="System.Int32, mscorlib">
-    <value>223</value>
+    <value>253</value>
   </data>
   <data name="txtMaxTorque.Text" xml:space="preserve">
     <value>0.0000021</value>
@@ -3632,7 +3629,7 @@
     <value>101, 29</value>
   </data>
   <data name="txtRatedTorque.TabIndex" type="System.Int32, mscorlib">
-    <value>219</value>
+    <value>251</value>
   </data>
   <data name="txtRatedTorque.Text" xml:space="preserve">
     <value>0.16</value>
@@ -3875,7 +3872,7 @@
     <value>187, 27</value>
   </data>
   <data name="cboPower.TabIndex" type="System.Int32, mscorlib">
-    <value>246</value>
+    <value>247</value>
   </data>
   <data name="&gt;&gt;cboPower.Name" xml:space="preserve">
     <value>cboPower</value>
@@ -4103,7 +4100,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtStroke.TabIndex" type="System.Int32, mscorlib">
-    <value>197</value>
+    <value>231</value>
   </data>
   <data name="txtStroke.Text" xml:space="preserve">
     <value>70</value>
@@ -4169,7 +4166,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtRunTime.TabIndex" type="System.Int32, mscorlib">
-    <value>156</value>
+    <value>232</value>
   </data>
   <data name="txtRunTime.Text" xml:space="preserve">
     <value>5</value>
@@ -4702,40 +4699,40 @@
   <data name="&gt;&gt;label45.ZOrder" xml:space="preserve">
     <value>44</value>
   </data>
-  <data name="label54.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lbDaysPerYearAlarm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label54.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lbDaysPerYearAlarm.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 9pt</value>
   </data>
-  <data name="label54.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lbDaysPerYearAlarm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label54.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lbDaysPerYearAlarm.Location" type="System.Drawing.Point, System.Drawing">
     <value>460, 363</value>
   </data>
-  <data name="label54.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lbDaysPerYearAlarm.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 16</value>
   </data>
-  <data name="label54.TabIndex" type="System.Int32, mscorlib">
+  <data name="lbDaysPerYearAlarm.TabIndex" type="System.Int32, mscorlib">
     <value>224</value>
   </data>
-  <data name="label54.Text" xml:space="preserve">
+  <data name="lbDaysPerYearAlarm.Text" xml:space="preserve">
     <value>請輸入有效天數</value>
   </data>
-  <data name="label54.Visible" type="System.Boolean, mscorlib">
+  <data name="lbDaysPerYearAlarm.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;label54.Name" xml:space="preserve">
-    <value>label54</value>
+  <data name="&gt;&gt;lbDaysPerYearAlarm.Name" xml:space="preserve">
+    <value>lbDaysPerYearAlarm</value>
   </data>
-  <data name="&gt;&gt;label54.Type" xml:space="preserve">
+  <data name="&gt;&gt;lbDaysPerYearAlarm.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label54.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lbDaysPerYearAlarm.Parent" xml:space="preserve">
     <value>explorerBarPanel2_content</value>
   </data>
-  <data name="&gt;&gt;label54.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lbDaysPerYearAlarm.ZOrder" xml:space="preserve">
     <value>45</value>
   </data>
   <data name="txtMomentC.Font" type="System.Drawing.Font, System.Drawing">
@@ -4748,7 +4745,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtMomentC.TabIndex" type="System.Int32, mscorlib">
-    <value>211</value>
+    <value>209</value>
   </data>
   <data name="txtMomentC.Text" xml:space="preserve">
     <value>0</value>
@@ -4900,76 +4897,76 @@
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>50</value>
   </data>
-  <data name="label49.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lbTimesPerMinuteAlarm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label49.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lbTimesPerMinuteAlarm.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 9pt</value>
   </data>
-  <data name="label49.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lbTimesPerMinuteAlarm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label49.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lbTimesPerMinuteAlarm.Location" type="System.Drawing.Point, System.Drawing">
     <value>460, 261</value>
   </data>
-  <data name="label49.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lbTimesPerMinuteAlarm.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 16</value>
   </data>
-  <data name="label49.TabIndex" type="System.Int32, mscorlib">
+  <data name="lbTimesPerMinuteAlarm.TabIndex" type="System.Int32, mscorlib">
     <value>220</value>
   </data>
-  <data name="label49.Text" xml:space="preserve">
+  <data name="lbTimesPerMinuteAlarm.Text" xml:space="preserve">
     <value>請輸入有效次數</value>
   </data>
-  <data name="label49.Visible" type="System.Boolean, mscorlib">
+  <data name="lbTimesPerMinuteAlarm.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;label49.Name" xml:space="preserve">
-    <value>label49</value>
+  <data name="&gt;&gt;lbTimesPerMinuteAlarm.Name" xml:space="preserve">
+    <value>lbTimesPerMinuteAlarm</value>
   </data>
-  <data name="&gt;&gt;label49.Type" xml:space="preserve">
+  <data name="&gt;&gt;lbTimesPerMinuteAlarm.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label49.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lbTimesPerMinuteAlarm.Parent" xml:space="preserve">
     <value>explorerBarPanel2_content</value>
   </data>
-  <data name="&gt;&gt;label49.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lbTimesPerMinuteAlarm.ZOrder" xml:space="preserve">
     <value>51</value>
   </data>
-  <data name="label47.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lbHoursPerDayAlarm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label47.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lbHoursPerDayAlarm.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 9pt</value>
   </data>
-  <data name="label47.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lbHoursPerDayAlarm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label47.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lbHoursPerDayAlarm.Location" type="System.Drawing.Point, System.Drawing">
     <value>460, 312</value>
   </data>
-  <data name="label47.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lbHoursPerDayAlarm.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 16</value>
   </data>
-  <data name="label47.TabIndex" type="System.Int32, mscorlib">
+  <data name="lbHoursPerDayAlarm.TabIndex" type="System.Int32, mscorlib">
     <value>228</value>
   </data>
-  <data name="label47.Text" xml:space="preserve">
+  <data name="lbHoursPerDayAlarm.Text" xml:space="preserve">
     <value>請輸入有效時間</value>
   </data>
-  <data name="label47.Visible" type="System.Boolean, mscorlib">
+  <data name="lbHoursPerDayAlarm.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;label47.Name" xml:space="preserve">
-    <value>label47</value>
+  <data name="&gt;&gt;lbHoursPerDayAlarm.Name" xml:space="preserve">
+    <value>lbHoursPerDayAlarm</value>
   </data>
-  <data name="&gt;&gt;label47.Type" xml:space="preserve">
+  <data name="&gt;&gt;lbHoursPerDayAlarm.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label47.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lbHoursPerDayAlarm.Parent" xml:space="preserve">
     <value>explorerBarPanel2_content</value>
   </data>
-  <data name="&gt;&gt;label47.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lbHoursPerDayAlarm.ZOrder" xml:space="preserve">
     <value>52</value>
   </data>
   <data name="txtMomentB.Font" type="System.Drawing.Font, System.Drawing">
@@ -4982,7 +4979,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtMomentB.TabIndex" type="System.Int32, mscorlib">
-    <value>215</value>
+    <value>208</value>
   </data>
   <data name="txtMomentB.Text" xml:space="preserve">
     <value>0</value>
@@ -5048,7 +5045,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtDayPerYear.TabIndex" type="System.Int32, mscorlib">
-    <value>223</value>
+    <value>235</value>
   </data>
   <data name="txtDayPerYear.Text" xml:space="preserve">
     <value>240</value>
@@ -5180,7 +5177,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtLoad.TabIndex" type="System.Int32, mscorlib">
-    <value>193</value>
+    <value>230</value>
   </data>
   <data name="txtLoad.Text" xml:space="preserve">
     <value>12</value>
@@ -5210,7 +5207,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtTimesPerMinute.TabIndex" type="System.Int32, mscorlib">
-    <value>219</value>
+    <value>233</value>
   </data>
   <data name="txtTimesPerMinute.Text" xml:space="preserve">
     <value>1</value>
@@ -5309,7 +5306,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtHourPerDay.TabIndex" type="System.Int32, mscorlib">
-    <value>227</value>
+    <value>234</value>
   </data>
   <data name="txtHourPerDay.Text" xml:space="preserve">
     <value>8</value>
@@ -7001,7 +6998,7 @@
     <value>tabMain</value>
   </data>
   <data name="&gt;&gt;tabMain.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.4, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabMain.Parent" xml:space="preserve">
     <value>splitContainerBase.Panel2</value>

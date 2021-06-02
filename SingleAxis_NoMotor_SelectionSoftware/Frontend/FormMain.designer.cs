@@ -83,7 +83,7 @@
             this.lbAccelSpeed = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panelEffectiveStroke = new System.Windows.Forms.Panel();
-            this.label48 = new System.Windows.Forms.Label();
+            this.lbEffectiveStrokeAlarm = new System.Windows.Forms.Label();
             this.cmdEffectiveStroke = new CustomButton.CustomButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
@@ -129,7 +129,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelExpectServiceLifeTime = new System.Windows.Forms.Panel();
             this.label72 = new System.Windows.Forms.Label();
-            this.label77 = new System.Windows.Forms.Label();
+            this.lbExpectServiceLifeAlarm = new System.Windows.Forms.Label();
             this.txtExpectServiceLifeTime = new System.Windows.Forms.TextBox();
             this.optExpectServiceLife = new System.Windows.Forms.RadioButton();
             this.optNoExpectServiceLife = new System.Windows.Forms.RadioButton();
@@ -206,14 +206,14 @@
             this.labelStopTimeAlarm = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
+            this.lbDaysPerYearAlarm = new System.Windows.Forms.Label();
             this.txtMomentC = new System.Windows.Forms.TextBox();
             this.label52 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
+            this.lbTimesPerMinuteAlarm = new System.Windows.Forms.Label();
+            this.lbHoursPerDayAlarm = new System.Windows.Forms.Label();
             this.txtMomentB = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.txtDayPerYear = new System.Windows.Forms.TextBox();
@@ -776,14 +776,14 @@
             this.explorerBarPanel2_content.Controls.Add(this.labelStopTimeAlarm);
             this.explorerBarPanel2_content.Controls.Add(this.label53);
             this.explorerBarPanel2_content.Controls.Add(this.label45);
-            this.explorerBarPanel2_content.Controls.Add(this.label54);
+            this.explorerBarPanel2_content.Controls.Add(this.lbDaysPerYearAlarm);
             this.explorerBarPanel2_content.Controls.Add(this.txtMomentC);
             this.explorerBarPanel2_content.Controls.Add(this.label52);
             this.explorerBarPanel2_content.Controls.Add(this.label50);
             this.explorerBarPanel2_content.Controls.Add(this.label7);
             this.explorerBarPanel2_content.Controls.Add(this.label6);
-            this.explorerBarPanel2_content.Controls.Add(this.label49);
-            this.explorerBarPanel2_content.Controls.Add(this.label47);
+            this.explorerBarPanel2_content.Controls.Add(this.lbTimesPerMinuteAlarm);
+            this.explorerBarPanel2_content.Controls.Add(this.lbHoursPerDayAlarm);
             this.explorerBarPanel2_content.Controls.Add(this.txtMomentB);
             this.explorerBarPanel2_content.Controls.Add(this.label27);
             this.explorerBarPanel2_content.Controls.Add(this.txtDayPerYear);
@@ -813,7 +813,7 @@
             // 
             // panelEffectiveStroke
             // 
-            this.panelEffectiveStroke.Controls.Add(this.label48);
+            this.panelEffectiveStroke.Controls.Add(this.lbEffectiveStrokeAlarm);
             this.panelEffectiveStroke.Controls.Add(this.cmdEffectiveStroke);
             this.panelEffectiveStroke.Controls.Add(this.label1);
             this.panelEffectiveStroke.Controls.Add(this.label57);
@@ -825,12 +825,12 @@
             resources.ApplyResources(this.panelEffectiveStroke, "panelEffectiveStroke");
             this.panelEffectiveStroke.Name = "panelEffectiveStroke";
             // 
-            // label48
+            // lbEffectiveStrokeAlarm
             // 
-            resources.ApplyResources(this.label48, "label48");
-            this.label48.ForeColor = System.Drawing.Color.Red;
-            this.label48.Name = "label48";
-            this.label48.Tag = "txtEffectiveStroke";
+            resources.ApplyResources(this.lbEffectiveStrokeAlarm, "lbEffectiveStrokeAlarm");
+            this.lbEffectiveStrokeAlarm.ForeColor = System.Drawing.Color.Red;
+            this.lbEffectiveStrokeAlarm.Name = "lbEffectiveStrokeAlarm";
+            this.lbEffectiveStrokeAlarm.Tag = "txtEffectiveStroke";
             // 
             // cmdEffectiveStroke
             // 
@@ -1193,7 +1193,7 @@
             // panelExpectServiceLifeTime
             // 
             this.panelExpectServiceLifeTime.Controls.Add(this.label72);
-            this.panelExpectServiceLifeTime.Controls.Add(this.label77);
+            this.panelExpectServiceLifeTime.Controls.Add(this.lbExpectServiceLifeAlarm);
             this.panelExpectServiceLifeTime.Controls.Add(this.txtExpectServiceLifeTime);
             resources.ApplyResources(this.panelExpectServiceLifeTime, "panelExpectServiceLifeTime");
             this.panelExpectServiceLifeTime.Name = "panelExpectServiceLifeTime";
@@ -1203,12 +1203,12 @@
             resources.ApplyResources(this.label72, "label72");
             this.label72.Name = "label72";
             // 
-            // label77
+            // lbExpectServiceLifeAlarm
             // 
-            resources.ApplyResources(this.label77, "label77");
-            this.label77.ForeColor = System.Drawing.Color.Red;
-            this.label77.Name = "label77";
-            this.label77.Tag = "txtExpectServiceLifeTime";
+            resources.ApplyResources(this.lbExpectServiceLifeAlarm, "lbExpectServiceLifeAlarm");
+            this.lbExpectServiceLifeAlarm.ForeColor = System.Drawing.Color.Red;
+            this.lbExpectServiceLifeAlarm.Name = "lbExpectServiceLifeAlarm";
+            this.lbExpectServiceLifeAlarm.Tag = "txtExpectServiceLifeTime";
             // 
             // txtExpectServiceLifeTime
             // 
@@ -1845,12 +1845,12 @@
             resources.ApplyResources(this.label45, "label45");
             this.label45.Name = "label45";
             // 
-            // label54
+            // lbDaysPerYearAlarm
             // 
-            resources.ApplyResources(this.label54, "label54");
-            this.label54.ForeColor = System.Drawing.Color.Red;
-            this.label54.Name = "label54";
-            this.label54.Tag = "txtDayPerYear";
+            resources.ApplyResources(this.lbDaysPerYearAlarm, "lbDaysPerYearAlarm");
+            this.lbDaysPerYearAlarm.ForeColor = System.Drawing.Color.Red;
+            this.lbDaysPerYearAlarm.Name = "lbDaysPerYearAlarm";
+            this.lbDaysPerYearAlarm.Tag = "txtDayPerYear";
             // 
             // txtMomentC
             // 
@@ -1880,19 +1880,19 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label6.Name = "label6";
             // 
-            // label49
+            // lbTimesPerMinuteAlarm
             // 
-            resources.ApplyResources(this.label49, "label49");
-            this.label49.ForeColor = System.Drawing.Color.Red;
-            this.label49.Name = "label49";
-            this.label49.Tag = "txtTimesPerMinute";
+            resources.ApplyResources(this.lbTimesPerMinuteAlarm, "lbTimesPerMinuteAlarm");
+            this.lbTimesPerMinuteAlarm.ForeColor = System.Drawing.Color.Red;
+            this.lbTimesPerMinuteAlarm.Name = "lbTimesPerMinuteAlarm";
+            this.lbTimesPerMinuteAlarm.Tag = "txtTimesPerMinute";
             // 
-            // label47
+            // lbHoursPerDayAlarm
             // 
-            resources.ApplyResources(this.label47, "label47");
-            this.label47.ForeColor = System.Drawing.Color.Red;
-            this.label47.Name = "label47";
-            this.label47.Tag = "txtHourPerDay";
+            resources.ApplyResources(this.lbHoursPerDayAlarm, "lbHoursPerDayAlarm");
+            this.lbHoursPerDayAlarm.ForeColor = System.Drawing.Color.Red;
+            this.lbHoursPerDayAlarm.Name = "lbHoursPerDayAlarm";
+            this.lbHoursPerDayAlarm.Tag = "txtHourPerDay";
             // 
             // txtMomentB
             // 
@@ -2573,14 +2573,14 @@
         public System.Windows.Forms.Label labelStopTimeAlarm;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label label45;
-        public System.Windows.Forms.Label label54;
+        public System.Windows.Forms.Label lbDaysPerYearAlarm;
         public System.Windows.Forms.TextBox txtMomentC;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.Label label49;
-        public System.Windows.Forms.Label label47;
+        public System.Windows.Forms.Label lbTimesPerMinuteAlarm;
+        public System.Windows.Forms.Label lbHoursPerDayAlarm;
         public System.Windows.Forms.TextBox txtMomentB;
         public System.Windows.Forms.Label label27;
         public System.Windows.Forms.TextBox txtDayPerYear;
@@ -2649,7 +2649,7 @@
         public System.Windows.Forms.TextBox txtMaxSpeed;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label72;
-        public System.Windows.Forms.Label label77;
+        public System.Windows.Forms.Label lbExpectServiceLifeAlarm;
         public System.Windows.Forms.TextBox txtExpectServiceLifeTime;
         private System.Windows.Forms.Label label71;
         public System.Windows.Forms.RadioButton optMaxSpeedType_rpm;
@@ -2697,7 +2697,7 @@
         public System.Windows.Forms.Panel panelExpectServiceLifeTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnModel;
         private System.Windows.Forms.DataGridViewComboBoxColumn columnReducerRatio;
-        public System.Windows.Forms.Label label48;
+        public System.Windows.Forms.Label lbEffectiveStrokeAlarm;
         public System.Windows.Forms.Label label57;
         private System.Windows.Forms.Panel panel5;
         public System.Windows.Forms.Panel panelEffectiveStroke;

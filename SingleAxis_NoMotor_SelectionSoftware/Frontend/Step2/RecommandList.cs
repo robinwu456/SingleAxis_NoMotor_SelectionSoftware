@@ -129,6 +129,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     }
                 }
             }
+
+            // Log所有參數
+            if (curSelectModel.model != null) {
+                try {
+                    FileUtil.LogModelInfo(curRecommandList.First(model => model.name == curSelectModel.model && model.lead == curSelectModel.lead));
+                } catch (Exception ex) {
+                    Console.WriteLine("log error: " + ex);
+                }
+            }
         }
 
         public void Refresh() {
@@ -369,7 +378,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.dgvCalcSelectedModel.CurrentCell = null;
 
             // 更新側邊欄數值
-            formMain.sideTable.UpdateSelectedConditionValue("T_max係數", curModel.tMaxSafeCoefficient.ToString(), !redFontConditions["T_max安全係數"](curModel));
+            formMain.sideTable.UpdateSelectedConditionValue("T_max安全係數", curModel.tMaxSafeCoefficient.ToString(), !redFontConditions["T_max安全係數"](curModel));
             formMain.sideTable.UpdateSelectedConditionValue("力矩警示", curModel.isMomentVerifySuccess ? "Pass" : "Fail", !redFontConditions["力矩警示"](curModel));
             formMain.sideTable.UpdateSelectedConditionValue("運行距離", useDistance, !redFontConditions["運行距離"](curModel));
             formMain.sideTable.UpdateSelectedConditionValue("運行壽命", useTime, !redFontConditions["運行壽命"](curModel));

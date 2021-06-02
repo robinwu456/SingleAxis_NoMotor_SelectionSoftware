@@ -40,6 +40,60 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 加速度驗證
             formMain.txtAccelSpeed.Validating += TxtAccelSpeed_Validating;
+
+            // 使用頻率驗證
+            formMain.txtHourPerDay.Validating += UseFrequence_Validating;
+            formMain.txtDayPerYear.Validating += UseFrequence_Validating;
+            formMain.txtHourPerDay.KeyDown += UseFrequence_KeyDown;
+            formMain.txtDayPerYear.KeyDown += UseFrequence_KeyDown;
+        }
+
+        private void UseFrequence_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
+            TextBox txtUseFrequence = sender as TextBox;
+            if (!decimal.TryParse(txtUseFrequence.Text, out decimal value))
+                return;
+
+            switch (txtUseFrequence.Name) {
+                case "txtHourPerDay":
+                    if (value > 24) {
+                        formMain.lbHoursPerDayAlarm.Text = "一天不可超過24小時";
+                        formMain.lbHoursPerDayAlarm.Visible = true;
+                        e.Cancel = true;
+                    } else
+                        formMain.lbHoursPerDayAlarm.Visible = false;
+                    break;
+                case "txtDayPerYear":
+                    if (value > 365) {
+                        formMain.lbDaysPerYearAlarm.Text = "一年不可超過365天";
+                        formMain.lbDaysPerYearAlarm.Visible = true;
+                        e.Cancel = true;
+                    } else
+                        formMain.lbDaysPerYearAlarm.Visible = false;
+                    break;
+            }
+        }
+
+        private void UseFrequence_KeyDown(object sender, KeyEventArgs e) {
+            TextBox txtUseFrequence = sender as TextBox;
+            if (!decimal.TryParse(txtUseFrequence.Text, out decimal value))
+                return;
+
+            switch (txtUseFrequence.Name) {
+                case "txtHourPerDay":
+                    if (value > 24) {
+                        formMain.lbHoursPerDayAlarm.Text = "一天不可超過24小時";
+                        formMain.lbHoursPerDayAlarm.Visible = true;
+                    } else
+                        formMain.lbHoursPerDayAlarm.Visible = false;
+                    break;
+                case "txtDayPerYear":
+                    if (value > 365) {
+                        formMain.lbDaysPerYearAlarm.Text = "一年不可超過365天";
+                        formMain.lbDaysPerYearAlarm.Visible = true;
+                    } else
+                        formMain.lbDaysPerYearAlarm.Visible = false;
+                    break;
+            }
         }
 
         public void TxtAccelSpeed_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
@@ -62,6 +116,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void InputCondition_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
             TextBox txt = sender as TextBox;
+            // Alarm顯示修正
+            if (txt == formMain.txtHourPerDay)
+                formMain.lbHoursPerDayAlarm.Text = "請輸入有效時間";
+            if (txt == formMain.txtDayPerYear)
+                formMain.lbDaysPerYearAlarm.Text = "請輸入有效天數";
+
             // 有效數值驗證
             Control lbAlarm = formMain.explorerBarPanel2_content.Controls.All().First(c => c.Tag == txt.Name);
             lbAlarm.Visible = !decimal.TryParse(txt.Text, out decimal value);
@@ -70,6 +130,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
         private void InputCondition_KeyDown(object sender, KeyEventArgs e) {
             TextBox txt = sender as TextBox;
+            // Alarm顯示修正
+            if (txt == formMain.txtHourPerDay)
+                formMain.lbHoursPerDayAlarm.Text = "請輸入有效時間";
+            if (txt == formMain.txtDayPerYear)
+                formMain.lbDaysPerYearAlarm.Text = "請輸入有效天數";
+
             // 有效數值驗證
             Control lbAlarm = formMain.explorerBarPanel2_content.Controls.All().First(c => c.Tag == txt.Name);
             lbAlarm.Visible = !decimal.TryParse(txt.Text, out decimal value);

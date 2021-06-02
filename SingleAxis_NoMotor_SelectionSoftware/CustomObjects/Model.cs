@@ -50,11 +50,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <summary>
         /// 平均負載
         /// </summary>
-        public double pm;
+        public double pmSlide;
         /// <summary>
         /// 負荷係數
         /// </summary>
-        public double fw;
+        public double fwSlide;
         /// <summary>
         /// 壽命是否在規範內
         /// </summary>
@@ -258,6 +258,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// 減速區 等效負載
         /// </summary>
         public double equivalentLoad_decel;
+
+        /// <summary>
+        /// 平均負載
+        /// </summary>
+        public double pmScrew;
+        /// <summary>
+        /// 負荷係數
+        /// </summary>
+        public double fwScrew;
         #endregion
 
         // -------------------------------------------扭矩計算---------------------------------------
@@ -372,6 +381,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// 皮帶轉動慣量(ETB, ECB用)
         /// </summary>
         public double rotateInertia_belt;
+        /// <summary>
+        /// 皮帶寬
+        /// </summary>
+        public double beltWidth;
+        /// <summary>
+        /// 皮帶長度
+        /// </summary>
+        public double beltLength;
+        /// <summary>
+        /// 皮帶單位密度(g/mm寬*m長)
+        /// </summary>
+        public double beltUnitDensity = 4;
         /// <summary>
         /// 皮帶重量(kg)
         /// </summary>
