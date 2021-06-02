@@ -76,6 +76,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     );
                     // 負載慣量與力矩比
                     model.loadInertiaMomentRatio = beltInfoRows.Select(x => Convert.ToDouble(x["負載慣量與力矩比"].ToString())).First();
+                    // 皮帶寬
+                    model.beltWidth = beltInfoRows.Select(x => Convert.ToDouble(x["皮帶寬"].ToString())).First();
+                    // 皮帶長度
+                    model.beltLength = beltInfoRows.Select(x => Convert.ToDouble(x["皮帶長度"].ToString())).First();
                     // 皮帶容許拉力
                     model.beltAllowableTension = beltInfoRows.Select(x => Convert.ToDouble(x["皮帶容許拉力"].ToString())).First();
                 }

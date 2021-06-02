@@ -295,7 +295,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 // 馬達能力預估
                 MotorConfirm_ETB(model);
                 // 馬達最大扭矩確認
-                MotorTorqueConfirm_ETB(model);
+                MotorTorqueConfirm_ETB(model, conditions);
                 // 皮帶最大扭矩確認
                 BeltTorqueConfirm_ETB(model);
             } else {
@@ -358,6 +358,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             model.mainWheelRpm = model.rpm;
             model.reducerRpmRatio = model.subWheel1.diameter / model.mainWheel.diameter;
             model.subWheelRpm = (int)(model.rpm / model.reducerRpmRatio);
+            model.beltLoad = model.beltUnitDensity / 1000 * model.beltWidth * model.beltLength / 1000;
 
             // 轉動慣量
             model.rotateInertia_motor = model.rotateInertia * Math.Pow(1000, 2);
@@ -370,8 +371,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             Model.beltMotorStandard = Math.Round(model.loadInertiaMomentRatio * 2, 2);
             model.isMotorOK = model.beltMotorSafeCoefficient < Model.beltMotorStandard;
         }
+
         // 馬達最大扭矩確認 ETB, ECB扭矩公式
-        private void MotorTorqueConfirm_ETB(Model model) {
+        private void MotorTorqueConfirm_ETB(Model model, Condition conditions) {
             // 軸向外力
             model.otherForce_accel = model.load * model.accelSpeed;
             model.otherForce_constant = 0;
@@ -386,17 +388,26 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             model.rotateInertia_loadMoving_subWheel = model.load * Math.Pow(model.vMax, 2) / Math.Pow(model.subWheelRpm * 2 * Math.PI / 60, 2);
             model.rotateInertia_loadMoving_motor = model.rotateInertia_loadMoving_subWheel / Math.Pow(model.reducerRpmRatio, 2);
             model.inertialTorque_accel = ((model.mainWheelRpm - 0) * 2 * Math.PI / 60) * model.rotateInertia_loadMoving_motor / model.accelTime;
-            model.forceTorque_accel = (model.forceTotal_accel * ((model.mainWheel.diameter / 2) / 1000)) / Math.Pow(model.reducerRpmRatio, 2);
+            if (conditions.setupMethod == Model.SetupMethod.Horizontal)
+                model.forceTorque_accel = (model.forceTotal_accel * ((model.mainWheel.diameter / 2) / 1000)) / Math.Pow(model.reducerRpmRatio, 2);
+            else if (conditions.setupMethod == Model.SetupMethod.WallHang)
+                model.forceTorque_accel = (model.forceTotal_accel * ((model.subWheel2.diameter / 2) / 1000)) / Math.Pow(model.reducerRpmRatio, 2);
             model.torqueTotal_accel = model.inertialTorque_accel + model.forceTorque_accel;
 
             // 等速區扭矩
             model.inertialTorque_constant = 0;
-            model.forceTorque_constant = (model.forceTotal_constant * ((model.mainWheel.diameter / 2) / 1000)) / Math.Pow(model.reducerRpmRatio, 2);
+            if (conditions.setupMethod == Model.SetupMethod.Horizontal)
+                model.forceTorque_constant = (model.forceTotal_constant * ((model.mainWheel.diameter / 2) / 1000)) / Math.Pow(model.reducerRpmRatio, 2);
+            else if (conditions.setupMethod == Model.SetupMethod.WallHang)
+                model.forceTorque_constant = (model.forceTotal_constant * ((model.subWheel2.diameter / 2) / 1000)) / Math.Pow(model.reducerRpmRatio, 2);
             model.torqueTotal_constant = model.inertialTorque_constant + model.forceTorque_constant;
 
             // 減速區扭矩
             model.inertialTorque_decel = (-1 * (model.mainWheelRpm - 0) * 2 * Math.PI / 60) * model.rotateInertia_loadMoving_motor / model.accelTime;
-            model.forceTorque_decel = (model.forceTotal_decel * ((model.mainWheel.diameter / 2) / 1000)) / Math.Pow(model.reducerRpmRatio, 2);
+            if (conditions.setupMethod == Model.SetupMethod.Horizontal)
+                model.forceTorque_decel = (model.forceTotal_decel * ((model.mainWheel.diameter / 2) / 1000)) / Math.Pow(model.reducerRpmRatio, 2);
+            else if (conditions.setupMethod == Model.SetupMethod.WallHang)
+                model.forceTorque_decel = (model.forceTotal_decel * ((model.subWheel2.diameter / 2) / 1000)) / Math.Pow(model.reducerRpmRatio, 2);
             model.torqueTotal_decel = model.inertialTorque_decel + model.forceTorque_decel;
 
             // 停置區扭矩

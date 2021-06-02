@@ -382,6 +382,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// </summary>
         public double rotateInertia_belt;
         /// <summary>
+        /// 皮帶寬
+        /// </summary>
+        public double beltWidth;
+        /// <summary>
+        /// 皮帶長度
+        /// </summary>
+        public double beltLength;
+        /// <summary>
+        /// 皮帶單位密度(g/mm寬*m長)
+        /// </summary>
+        public double beltUnitDensity = 4;
+        /// <summary>
         /// 皮帶重量(kg)
         /// </summary>
         public double beltLoad;

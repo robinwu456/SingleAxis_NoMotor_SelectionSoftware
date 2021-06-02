@@ -568,7 +568,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,183,Absolute,183,Absolute,183,Absolute,183" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,184,Absolute,184,Absolute,184,Absolute,184" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 313</value>
@@ -859,7 +859,7 @@
     <value>7</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1015, 110</value>
+    <value>998, 110</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -1396,7 +1396,7 @@
     <value>72, 24</value>
   </data>
   <data name="cmdEffectiveStroke.TabIndex" type="System.Int32, mscorlib">
-    <value>174</value>
+    <value>244</value>
   </data>
   <data name="&gt;&gt;cmdEffectiveStroke.Name" xml:space="preserve">
     <value>cmdEffectiveStroke</value>
@@ -1552,7 +1552,7 @@
     <value>169, 39</value>
   </data>
   <data name="optEffectiveStroke2.TabIndex" type="System.Int32, mscorlib">
-    <value>159</value>
+    <value>246</value>
   </data>
   <data name="optEffectiveStroke2.Text" xml:space="preserve">
     <value>5678 mm</value>
@@ -1609,7 +1609,7 @@
     <value>169, 38</value>
   </data>
   <data name="optEffectiveStroke1.TabIndex" type="System.Int32, mscorlib">
-    <value>158</value>
+    <value>245</value>
   </data>
   <data name="optEffectiveStroke1.Text" xml:space="preserve">
     <value>1234 mm</value>
@@ -1678,7 +1678,7 @@
     <value>98, 20</value>
   </data>
   <data name="txtEffectiveStroke.TabIndex" type="System.Int32, mscorlib">
-    <value>162</value>
+    <value>243</value>
   </data>
   <data name="txtEffectiveStroke.Text" xml:space="preserve">
     <value>70</value>
@@ -2186,7 +2186,7 @@
     <value>57, 23</value>
   </data>
   <data name="optMotorParamsModifySimple.TabIndex" type="System.Int32, mscorlib">
-    <value>275</value>
+    <value>248</value>
   </data>
   <data name="optMotorParamsModifySimple.Text" xml:space="preserve">
     <value>簡易</value>
@@ -2219,7 +2219,7 @@
     <value>57, 23</value>
   </data>
   <data name="optMotorParamsModifyAdvance.TabIndex" type="System.Int32, mscorlib">
-    <value>276</value>
+    <value>249</value>
   </data>
   <data name="optMotorParamsModifyAdvance.Text" xml:space="preserve">
     <value>進階</value>
@@ -2438,7 +2438,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtAccelSpeed.TabIndex" type="System.Int32, mscorlib">
-    <value>271</value>
+    <value>242</value>
   </data>
   <data name="txtAccelSpeed.Text" xml:space="preserve">
     <value>500</value>
@@ -2474,7 +2474,7 @@
     <value>70, 23</value>
   </data>
   <data name="optMaxSpeedType_rpm.TabIndex" type="System.Int32, mscorlib">
-    <value>269</value>
+    <value>241</value>
   </data>
   <data name="optMaxSpeedType_rpm.Text" xml:space="preserve">
     <value>[RPM]</value>
@@ -2507,7 +2507,7 @@
     <value>78, 23</value>
   </data>
   <data name="optMaxSpeedType_mms.TabIndex" type="System.Int32, mscorlib">
-    <value>268</value>
+    <value>240</value>
   </data>
   <data name="optMaxSpeedType_mms.Text" xml:space="preserve">
     <value>[mm/s]</value>
@@ -2567,7 +2567,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtMaxSpeed.TabIndex" type="System.Int32, mscorlib">
-    <value>265</value>
+    <value>239</value>
   </data>
   <data name="txtMaxSpeed.Text" xml:space="preserve">
     <value>100</value>
@@ -2723,7 +2723,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtExpectServiceLifeTime.TabIndex" type="System.Int32, mscorlib">
-    <value>257</value>
+    <value>238</value>
   </data>
   <data name="txtExpectServiceLifeTime.Text" xml:space="preserve">
     <value>10</value>
@@ -2783,7 +2783,7 @@
     <value>14, 13</value>
   </data>
   <data name="optExpectServiceLife.TabIndex" type="System.Int32, mscorlib">
-    <value>261</value>
+    <value>237</value>
   </data>
   <data name="&gt;&gt;optExpectServiceLife.Name" xml:space="preserve">
     <value>optExpectServiceLife</value>
@@ -2813,7 +2813,7 @@
     <value>42, 23</value>
   </data>
   <data name="optNoExpectServiceLife.TabIndex" type="System.Int32, mscorlib">
-    <value>260</value>
+    <value>236</value>
   </data>
   <data name="optNoExpectServiceLife.Text" xml:space="preserve">
     <value>無</value>
@@ -3569,7 +3569,7 @@
     <value>101, 29</value>
   </data>
   <data name="txtRotateInertia.TabIndex" type="System.Int32, mscorlib">
-    <value>227</value>
+    <value>252</value>
   </data>
   <data name="txtRotateInertia.Text" xml:space="preserve">
     <value>0.48</value>
@@ -3599,7 +3599,7 @@
     <value>101, 29</value>
   </data>
   <data name="txtMaxTorque.TabIndex" type="System.Int32, mscorlib">
-    <value>223</value>
+    <value>253</value>
   </data>
   <data name="txtMaxTorque.Text" xml:space="preserve">
     <value>0.0000021</value>
@@ -3629,7 +3629,7 @@
     <value>101, 29</value>
   </data>
   <data name="txtRatedTorque.TabIndex" type="System.Int32, mscorlib">
-    <value>219</value>
+    <value>251</value>
   </data>
   <data name="txtRatedTorque.Text" xml:space="preserve">
     <value>0.16</value>
@@ -3872,7 +3872,7 @@
     <value>187, 27</value>
   </data>
   <data name="cboPower.TabIndex" type="System.Int32, mscorlib">
-    <value>246</value>
+    <value>247</value>
   </data>
   <data name="&gt;&gt;cboPower.Name" xml:space="preserve">
     <value>cboPower</value>
@@ -4100,7 +4100,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtStroke.TabIndex" type="System.Int32, mscorlib">
-    <value>197</value>
+    <value>231</value>
   </data>
   <data name="txtStroke.Text" xml:space="preserve">
     <value>70</value>
@@ -4166,7 +4166,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtRunTime.TabIndex" type="System.Int32, mscorlib">
-    <value>156</value>
+    <value>232</value>
   </data>
   <data name="txtRunTime.Text" xml:space="preserve">
     <value>5</value>
@@ -4745,7 +4745,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtMomentC.TabIndex" type="System.Int32, mscorlib">
-    <value>211</value>
+    <value>209</value>
   </data>
   <data name="txtMomentC.Text" xml:space="preserve">
     <value>0</value>
@@ -4979,7 +4979,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtMomentB.TabIndex" type="System.Int32, mscorlib">
-    <value>215</value>
+    <value>208</value>
   </data>
   <data name="txtMomentB.Text" xml:space="preserve">
     <value>0</value>
@@ -5045,7 +5045,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtDayPerYear.TabIndex" type="System.Int32, mscorlib">
-    <value>223</value>
+    <value>235</value>
   </data>
   <data name="txtDayPerYear.Text" xml:space="preserve">
     <value>240</value>
@@ -5177,7 +5177,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtLoad.TabIndex" type="System.Int32, mscorlib">
-    <value>193</value>
+    <value>230</value>
   </data>
   <data name="txtLoad.Text" xml:space="preserve">
     <value>12</value>
@@ -5207,7 +5207,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtTimesPerMinute.TabIndex" type="System.Int32, mscorlib">
-    <value>219</value>
+    <value>233</value>
   </data>
   <data name="txtTimesPerMinute.Text" xml:space="preserve">
     <value>1</value>
@@ -5306,7 +5306,7 @@
     <value>80, 29</value>
   </data>
   <data name="txtHourPerDay.TabIndex" type="System.Int32, mscorlib">
-    <value>227</value>
+    <value>234</value>
   </data>
   <data name="txtHourPerDay.Text" xml:space="preserve">
     <value>8</value>
