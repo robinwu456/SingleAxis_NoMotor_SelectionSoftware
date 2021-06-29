@@ -92,8 +92,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 測邊表格更新
             sideTable.Update(null, null);
             // 右側表格歸位
-            //panelSideTable.Size = sideTable.tableSize;
-            //panelSideTable.Location = sideTable.tablePosition;
+            panelSideTable.Size = sideTable.tableSize;
+            panelSideTable.Location = sideTable.tablePosition;
             sideTable.ResizeSideTable();
 
             //step1.Load();

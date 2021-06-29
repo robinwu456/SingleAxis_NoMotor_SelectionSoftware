@@ -9,24 +9,33 @@ using System.Data;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Page2 {
-        private FormMain formMain;
-        public Calculation calc = new Calculation();
-
+        public enum ModelSelectionMode { ConditionSelection, ModelSelection }
         public int minHeight = 800;
-        private int maxHeight = 1333;        
-        
-        private Thread threadCalc;                
-
+        public int maxHeight = 1333;
+        public Dictionary<RadioButton, Model.ModelType> modelTypeOptMap = new Dictionary<RadioButton, Model.ModelType>();
+        public Model.ModelType curSelectModelType = Model.ModelType.標準螺桿滑台;        
+        public ModelSelectionMode modelSelectionMode = ModelSelectionMode.ConditionSelection;
+        public Calculation calc = new Calculation();
         // Step2各項目
         public MotorPower motorPower;
         public ChartInfo chartInfo;
         public RunCondition runCondition;
         public InputValidate inputValidate;
         public RecommandList recommandList;
-        public EffectiveStroke effectiveStroke;
+        public EffectiveStroke effectiveStroke;        
 
-        public Dictionary<RadioButton, Model.ModelType> modelTypeOptMap = new Dictionary<RadioButton, Model.ModelType>();
-        public Model.ModelType curSelectModelType = Model.ModelType.標準螺桿滑台;
+        private FormMain formMain;
+        private Thread threadCalc;
+        private string[] titles = { 
+            "SelectionMode",    // 選型方式
+            "UseEnv",           // 使用環境
+            "ModelType",        // 傳動方式
+            "ModelSelection",   // 型號選擇
+            "Setup",            // 安裝方式
+            "Moment",           // 力矩長度
+            //"Calc",             // 計算
+            "Chart",            // 圖表
+        };
 
         public Page2(FormMain formMain) {
             this.formMain = formMain;
@@ -71,6 +80,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void Load() {
+            // 版面更新
+            UpdateLayout(null, null);
+
             // Alarm清除
             formMain.Controls.All().Where(control => control.Name.EndsWith("Alarm")).ToList()
                                    .ForEach(control => control.Visible = false);
@@ -145,6 +157,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         //}
 
         private void InitEvents() {
+            // 選行方式
+            formMain.optCalcAllModel.CheckedChanged += UpdateLayout;
+
             // 進階選項
             formMain.chkAdvanceMode.CheckedChanged += ChkAdvanceMode_CheckedChanged;
 
@@ -157,6 +172,28 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 當前機構型態更新
             modelTypeOptMap.Keys.ToList().ForEach(opt => opt.CheckedChanged += ModelType_CheckedChanged);
+        }
+
+        private void UpdateLayout(object sender, EventArgs e) {
+            // 更新當前page2選行條件
+            modelSelectionMode = formMain.optCalcAllModel.Checked ? ModelSelectionMode.ConditionSelection : ModelSelectionMode.ModelSelection;
+
+            // 部分panel隱藏處理
+            formMain.panelSelectionMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;     // 選型方式
+            formMain.panelUseEnv.Visible = formMain.page2.modelSelectionMode != ModelSelectionMode.ModelSelection;                  // 使用環境
+            formMain.panelModelType.Visible = formMain.page2.modelSelectionMode != ModelSelectionMode.ModelSelection;               // 傳動方式
+            formMain.panelModelSelection.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;    // 型號選擇
+            formMain.panelCalcResult.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.MotionSelection || formMain.page2.modelSelectionMode == ModelSelectionMode.ConditionSelection; // 推薦規格
+
+            // 項目索引修正
+            int titleIndex = 0;
+            titles.ToList().ForEach(title => {
+                Label lbTite = formMain.explorerBar.Controls.Find("lbTitle" + title, true)[0] as Label;
+                Panel panelSelection = formMain.explorerBar.Controls.Find("panel" + title, true)[0] as Panel;
+                if (panelSelection.Visible)
+                    titleIndex++;
+                lbTite.Text = Regex.Replace(lbTite.Text, @"\d+", titleIndex.ToString());
+            });
         }
 
         private void ModelType_CheckedChanged(object sender, EventArgs e) {
@@ -211,7 +248,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void CmdCalc_Click(object sender, EventArgs e) {
             // 版面修正
             if (formMain.optCalcAllModel.Checked) {
-                formMain.explorerBarPanel2.Size = new Size(formMain.explorerBarPanel2.Size.Width, maxHeight);
+                formMain.panelUseEnv.Size = new Size(formMain.panelUseEnv.Size.Width, maxHeight);
                 formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep2);
             }
             //formMain.dgvCalcSelectedModel.Visible = formMain.optCalcSelectedModel.Checked;

@@ -17,7 +17,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void InitEvents() {
             // 數值有效驗證
-            foreach (Control control in formMain.panel1.Controls.All()) {
+            foreach (Control control in formMain.panelCalc.Controls.All()) {
                 if (control is TextBox) {
                     TextBox txt = control as TextBox;
                     txt.Validating += InputCondition_Validating;
@@ -123,7 +123,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.lbDaysPerYearAlarm.Text = "請輸入有效天數";
 
             // 有效數值驗證
-            Control lbAlarm = formMain.panel1.Controls.All().First(c => c.Tag == txt.Name);
+            Control lbAlarm = formMain.panelCalc.Controls.All().First(c => c.Tag == txt.Name);
             lbAlarm.Visible = !decimal.TryParse(txt.Text, out decimal value);
             if (!decimal.TryParse(txt.Text, out value))
                 e.Cancel = true;
@@ -137,7 +137,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.lbDaysPerYearAlarm.Text = "請輸入有效天數";
 
             // 有效數值驗證
-            Control lbAlarm = formMain.panel1.Controls.All().First(c => c.Tag == txt.Name);
+            Control lbAlarm = formMain.panelCalc.Controls.All().First(c => c.Tag == txt.Name);
             lbAlarm.Visible = !decimal.TryParse(txt.Text, out decimal value);
         }
 
@@ -192,7 +192,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public bool VerifyAllInputValidate() {
             // 數值有效驗證
-            foreach (Control control in formMain.panel1.Controls.All()) {
+            foreach (Control control in formMain.panelCalc.Controls.All()) {
                 if (control is TextBox) {
                     TextBox txt = control as TextBox;
                     if (!decimal.TryParse(txt.Text, out decimal value))

@@ -229,7 +229,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public void UpdateTableSelections() {            
             // step1
             if (formMain.curStep >= FormMain.Step.Step1) {
-                UpdateSelectedConditionValue("使用環境", formMain.explorerBarPanel2.Controls.Cast<Control>().ToList()
+                UpdateSelectedConditionValue("使用環境", formMain.panelUseEnv.Controls.Cast<Control>().ToList()
                                                               .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
                                                               .Text);
                 UpdateSelectedConditionValue("安裝方式", formMain.panelSetupMode.Controls.Cast<Control>().ToList()
