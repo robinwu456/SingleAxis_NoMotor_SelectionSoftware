@@ -17,7 +17,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void InitEvents() {
             // 數值有效驗證
-            foreach (Control control in formMain.explorerBarPanel2_content.Controls.All()) {
+            foreach (Control control in formMain.panel1.Controls.All()) {
                 if (control is TextBox) {
                     TextBox txt = control as TextBox;
                     txt.Validating += InputCondition_Validating;
@@ -102,13 +102,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 string model = formMain.cboModel.Text;
                 double lead = Convert.ToDouble(formMain.cboLead.Text);
                 int reducerRatio = 1;
-                if (formMain.step2.calc.IsContainsReducerRatio(model)) {
+                if (formMain.page2.calc.IsContainsReducerRatio(model)) {
                     string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
                     reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
                     lead /= reducerRatio;
                 }
 
-                int maxAccelSpeed = formMain.step2.calc.GetMaxAccelSpeed(model, lead, reducerRatio, Convert.ToInt32(formMain.txtStroke.Text));
+                int maxAccelSpeed = formMain.page2.calc.GetMaxAccelSpeed(model, lead, reducerRatio, Convert.ToInt32(formMain.txtStroke.Text));
                 if (curAccelSpeed > maxAccelSpeed)
                     formMain.txtAccelSpeed.Text = maxAccelSpeed.ToString();
             }
@@ -123,7 +123,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.lbDaysPerYearAlarm.Text = "請輸入有效天數";
 
             // 有效數值驗證
-            Control lbAlarm = formMain.explorerBarPanel2_content.Controls.All().First(c => c.Tag == txt.Name);
+            Control lbAlarm = formMain.panel1.Controls.All().First(c => c.Tag == txt.Name);
             lbAlarm.Visible = !decimal.TryParse(txt.Text, out decimal value);
             if (!decimal.TryParse(txt.Text, out value))
                 e.Cancel = true;
@@ -137,7 +137,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.lbDaysPerYearAlarm.Text = "請輸入有效天數";
 
             // 有效數值驗證
-            Control lbAlarm = formMain.explorerBarPanel2_content.Controls.All().First(c => c.Tag == txt.Name);
+            Control lbAlarm = formMain.panel1.Controls.All().First(c => c.Tag == txt.Name);
             lbAlarm.Visible = !decimal.TryParse(txt.Text, out decimal value);
         }
 
@@ -176,7 +176,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             string model = formMain.cboModel.Text;
 
-            double maxLoad = formMain.step2.calc.GetMaxLoad(model, lead, con);
+            double maxLoad = formMain.page2.calc.GetMaxLoad(model, lead, con);
             formMain.labelLoadAlarm.Text = "最大: " + maxLoad.ToString() + "kg";
             if (maxLoad == -1)
                 return true;
@@ -192,7 +192,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public bool VerifyAllInputValidate() {
             // 數值有效驗證
-            foreach (Control control in formMain.explorerBarPanel2_content.Controls.All()) {
+            foreach (Control control in formMain.panel1.Controls.All()) {
                 if (control is TextBox) {
                     TextBox txt = control as TextBox;
                     if (!decimal.TryParse(txt.Text, out decimal value))
@@ -236,7 +236,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //    reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
             //}
 
-            int maxStroke = formMain.step2.calc.GetMaxStroke(model, lead, reducerRatio);
+            int maxStroke = formMain.page2.calc.GetMaxStroke(model, lead, reducerRatio);
             formMain.labelStrokeAlarm.Text = "最大: " + maxStroke.ToString() + "mm";
             if (isShowAlarm)
                 formMain.labelStrokeAlarm.Visible = (double)keyStroke > maxStroke;
@@ -277,23 +277,23 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
                 string model = formMain.cboModel.Text;
                 int reducerRatio = 1;
-                if (formMain.step2.calc.IsContainsReducerRatio(model)) {
+                if (formMain.page2.calc.IsContainsReducerRatio(model)) {
                     string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
                     reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
                     lead /= reducerRatio;
                 }
 
                 if (formMain.optMaxSpeedType_mms.Checked) {
-                    double resultVmax = formMain.step2.calc.GetVmax_mms(model, lead, reducerRatio, (int)stroke);
+                    double resultVmax = formMain.page2.calc.GetVmax_mms(model, lead, reducerRatio, (int)stroke);
                     // vMax key過大修正
                     if (Convert.ToDouble(formMain.txtMaxSpeed.Text) > resultVmax)
                         formMain.txtMaxSpeed.Text = resultVmax.ToString();
 
                     // RPM 顯示                
-                    formMain.lbRpm.Text = "RPM: " + formMain.step2.calc.GetRpmByMMS(lead, Convert.ToDouble(formMain.txtMaxSpeed.Text)).ToString();
+                    formMain.lbRpm.Text = "RPM: " + formMain.page2.calc.GetRpmByMMS(lead, Convert.ToDouble(formMain.txtMaxSpeed.Text)).ToString();
                 } else if (formMain.optMaxSpeedType_rpm.Checked) {
-                    double resultVmax = formMain.step2.calc.GetVmax_mms(model, lead, reducerRatio, (int)stroke);
-                    int resultRpm = formMain.step2.calc.MMS_TO_RPM(resultVmax, lead);
+                    double resultVmax = formMain.page2.calc.GetVmax_mms(model, lead, reducerRatio, (int)stroke);
+                    int resultRpm = formMain.page2.calc.MMS_TO_RPM(resultVmax, lead);
                     // vMax key過大修正
                     if (Convert.ToDouble(formMain.txtMaxSpeed.Text) > resultRpm)
                         formMain.txtMaxSpeed.Text = resultRpm.ToString();
@@ -302,8 +302,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     //lbRpm.Text = "RPM: " + calc.GetRpmByMMS(lead, Convert.ToDouble(txtMaxSpeed.Text)).ToString();
                     if (formMain.txtMaxSpeed.Text.Contains("."))
                         formMain.txtMaxSpeed.Text = formMain.txtMaxSpeed.Text.Split('.')[0];
-                    double _mms = formMain.step2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), lead);
-                    formMain.lbRpm.Text = "RPM: " + formMain.step2.calc.GetRpmByMMS(lead, _mms).ToString();
+                    double _mms = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), lead);
+                    formMain.lbRpm.Text = "RPM: " + formMain.page2.calc.GetRpmByMMS(lead, _mms).ToString();
                 }
             }));
         }

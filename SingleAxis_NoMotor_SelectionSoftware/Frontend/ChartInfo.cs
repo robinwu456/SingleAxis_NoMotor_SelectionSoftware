@@ -45,7 +45,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //curConditions.accelSpeed = Convert.ToInt32(txtAccelSpeed.Text);
             curConditions.accelSpeed = Convert.ToDouble(curRow.Cells["加速度"].Value.ToString());
             //curConditions.stopTime = Convert.ToDouble(txtStopTime.Text);
-            List<PointF> points = formMain.step2.calc.GetChartPoints(curConditions);
+            List<PointF> points = formMain.page2.calc.GetChartPoints(curConditions);
 
             // 畫圖
             ChartArea chartArea = formMain.chart.ChartAreas[0];
@@ -74,7 +74,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.chart.Series[0].Points.AddXY(Convert.ToDouble(point.X.ToString("#0.000")), Convert.ToDouble(point.Y.ToString("#0.000")));
 
             // 取圖資訊
-            var chartInfo = formMain.step2.calc.GetChartInfo(curConditions);
+            var chartInfo = formMain.page2.calc.GetChartInfo(curConditions);
             formMain.lbAccelTime.Text = "加/減速時間(s)：" + chartInfo.accelTime;
             formMain.lbConstantTime.Text = "等速時間(s)：" + chartInfo.constantTime;
             formMain.lbRunTime.Text = "運行時間(s)：" + chartInfo.runTime;

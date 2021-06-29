@@ -23,7 +23,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void CboMotorParamsMotorPowerSelection_SelectedValueChanged(object sender, EventArgs e) {
-            var motorParams = formMain.step2.calc.GetMotorParams(Convert.ToInt32(formMain.cboMotorParamsMotorPowerSelection.Text));
+            var motorParams = formMain.page2.calc.GetMotorParams(Convert.ToInt32(formMain.cboMotorParamsMotorPowerSelection.Text));
 
             formMain.txtRatedTorque.Text = motorParams.ratedTorque.ToString();
             formMain.txtMaxTorque.Text = motorParams.maxTorque.ToString();
@@ -38,7 +38,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public void Load() {
             // 馬達參數功率選擇
-            formMain.cboMotorParamsMotorPowerSelection.DataSource = formMain.step2.calc.motorInfo.Rows.Cast<DataRow>().Select(row => row["Power"]).ToArray();
+            formMain.cboMotorParamsMotorPowerSelection.DataSource = formMain.page2.calc.motorInfo.Rows.Cast<DataRow>().Select(row => row["Power"]).ToArray();
         }
 
         public void UpdateMotorCalcMode() {
@@ -48,7 +48,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.cboPower.DataSource = new string[] { "標準", "自訂" };
             } else {
                 formMain.cboPower.Items.Clear();
-                formMain.step2.calc.modelInfo.Rows.Cast<DataRow>().First(row => row["Model"].ToString() == formMain.cboModel.Text && Convert.ToInt32(row["Lead"].ToString()) == Convert.ToInt32(formMain.cboLead.Text))
+                formMain.page2.calc.modelInfo.Rows.Cast<DataRow>().First(row => row["Model"].ToString() == formMain.cboModel.Text && Convert.ToInt32(row["Lead"].ToString()) == Convert.ToInt32(formMain.cboLead.Text))
                                                        ["Power"].ToString().Split('&').ToList()
                                                        .ForEach(power => formMain.cboPower.Items.Add("標準-" + power + "W"));
                 formMain.cboPower.Items.Add("自訂");

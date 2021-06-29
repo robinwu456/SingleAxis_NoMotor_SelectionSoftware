@@ -6,10 +6,10 @@ using System.Globalization;
 using System.Drawing;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
-    public class Step5 {
+    public class Page3 {
         private FormMain formMain;
 
-        public Step5(FormMain formMain) {
+        public Page3(FormMain formMain) {
             this.formMain = formMain;
 
             InitEvents();
@@ -18,12 +18,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public void Load() {
             // 結果型號
             formMain.lbResult.Text = string.Format("{0} - L{1} - {2}", 
-                formMain.step2.recommandList.curSelectModel.model, 
-                formMain.step2.recommandList.curSelectModel.lead, 
-                formMain.step2.effectiveStroke.effectiveStroke);
+                formMain.page2.recommandList.curSelectModel.model, 
+                formMain.page2.recommandList.curSelectModel.lead, 
+                formMain.page2.effectiveStroke.effectiveStroke);
 
             // 結果圖片
-            var img = Properties.Resources.ResourceManager.GetObject(formMain.step2.recommandList.curSelectModel.model, CultureInfo.InvariantCulture);
+            var img = Properties.Resources.ResourceManager.GetObject(formMain.page2.recommandList.curSelectModel.model, CultureInfo.InvariantCulture);
             formMain.picBoxResultImg.Image = img as Image;
         }
 
@@ -43,9 +43,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.sideTable.Update(null, null);
             formMain.sideTable.ClearModelImg();
             formMain.sideTable.ClearModelInfo();
-            formMain.step2.recommandList.Refresh();
-            formMain._explorerBar.UpdateCurStep(formMain.curStep);
-            formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep1);
+            formMain.page2.recommandList.Refresh();
+            //formMain._explorerBar.UpdateCurStep(formMain.curStep);
+            //formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep1);
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading;
 using System.Data;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
-    public class Step2 {
+    public class Page2 {
         private FormMain formMain;
         public Calculation calc = new Calculation();
 
@@ -25,9 +25,26 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public RecommandList recommandList;
         public EffectiveStroke effectiveStroke;
 
-        public Step2(FormMain formMain) {
+        public Dictionary<RadioButton, Model.ModelType> modelTypeOptMap = new Dictionary<RadioButton, Model.ModelType>();
+        public Model.ModelType curSelectModelType = Model.ModelType.標準螺桿滑台;
+
+        public Page2(FormMain formMain) {
             this.formMain = formMain;
             InitEvents();
+
+            // 機構類型opt統整
+            modelTypeOptMap = new Dictionary<RadioButton, Model.ModelType>() {
+                { formMain.optStandardScrewActuator, Model.ModelType.標準螺桿滑台 },
+                { formMain.optBuildInScrewActuator, Model.ModelType.軌道內嵌式螺桿滑台 },
+                { formMain.optBuildInRodTypeScrewActuator, Model.ModelType.軌道內嵌推桿式螺桿滑台 },
+                { formMain.optNoTrackRodTypeActuator, Model.ModelType.無軌道推桿滑台 },
+                { formMain.optBuildOutRodTypeActuator, Model.ModelType.軌道外掛推桿滑台 },
+                { formMain.optSupportTrackRodTypeActuator, Model.ModelType.輔助軌道推桿滑台 },
+                { formMain.optStandardBeltActuator, Model.ModelType.標準皮帶滑台 },
+                { formMain.optEuropeBeltActuator, Model.ModelType.歐規皮帶滑台 },
+                { formMain.optBuildInBeltActuator, Model.ModelType.軌道內嵌皮帶滑台 },
+                { formMain.optBuildInSupportTrackActuator, Model.ModelType.軌道內嵌皮帶滑台 },
+            };
 
             // 輸入驗證
             inputValidate = new InputValidate(formMain);
@@ -68,13 +85,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             ChkAdvanceMode_CheckedChanged(null, null);
 
             // 減速比顯示
-            formMain.panelReducer.Visible = ((Model.ModelType)Enum.Parse(typeof(Model.ModelType), formMain.cboModelType.Text)) == Model.ModelType.歐規皮帶滑台;
+            //formMain.panelReducer.Visible = ((Model.ModelType)Enum.Parse(typeof(Model.ModelType), formMain.cboModelType.Text)) == Model.ModelType.歐規皮帶滑台;
+            formMain.panelReducer.Visible = formMain.optEuropeBeltActuator.Checked;
 
             // 驗證最大荷重
             inputValidate.ValidatingLoad(isShowAlarm: false);
 
             // 依照機構型態修正預設行程
-            formMain.txtStroke.Text = formMain.cboModelType.Text.Contains("皮帶") ? "1000" : "70";
+            //formMain.txtStroke.Text = formMain.cboModelType.Text.Contains("皮帶") ? "1000" : "70";
+            formMain.txtStroke.Text = formMain.optStandardBeltActuator.Checked || formMain.optEuropeBeltActuator.Checked || formMain.optBuildInBeltActuator.Checked ? "1000" : "70";
 
             // 驗證最大行程
             inputValidate.ValidatingStroke(isShowAlarm: false);
@@ -82,45 +101,48 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 重置版面
             recommandList.Refresh();
             chartInfo.Clear();
-            formMain.step2.SetSelectedModelConfirmBtnVisible(false);
+            //formMain.step2.SetSelectedModelConfirmBtnVisible(false);
 
             // 有效行程顯示
             effectiveStroke.IsShowEffectiveStroke(false);
 
-            // 驗證Step3 enabled
-            if (!formMain.enabledStep3) {
-                formMain.cmdCalcSelectedModelConfirmStep2.ButtonText = "確認條件";
-                formMain.cmdConfirmStep2.ButtonText = "確認條件";
-            }
+            //// 驗證Step3 enabled
+            //if (!formMain.enabledStep3) {
+            //    //formMain.cmdCalcSelectedModelConfirmStep2.ButtonText = "確認條件";
+            //    formMain.cmdConfirmStep2.ButtonText = "確認條件";
+            //}
+
+            // 側邊欄位置重整
+            formMain.sideTable.RePosition();
         }
 
-        public void SetSelectedModelConfirmBtnVisible(bool visible) {
-            if (formMain.cmdCalcSelectedModelConfirmStep2.Visible == visible)
-                return;
+        //public void SetSelectedModelConfirmBtnVisible(bool visible) {
+        //    if (formMain.cmdCalcSelectedModelConfirmStep2.Visible == visible)
+        //        return;
 
-            formMain.panelCalcBtns.Visible = false;
-            formMain.panelCalcBtns.ColumnStyles.Clear();
-            if (visible) {
-                ColumnStyle[] styles = {
-                    new ColumnStyle(SizeType.Percent, 33.33f),
-                    new ColumnStyle(SizeType.Percent, 16.67f),
-                    new ColumnStyle(SizeType.Percent, 16.67f),
-                    new ColumnStyle(SizeType.Percent, 33.33f),
-                };
-                foreach (ColumnStyle style in styles)
-                    formMain.panelCalcBtns.ColumnStyles.Add(style);
-            } else {
-                ColumnStyle[] styles = {
-                    new ColumnStyle(SizeType.Percent, 41.67f),
-                    new ColumnStyle(SizeType.Percent, 16.67f),
-                    new ColumnStyle(SizeType.Percent, 41.67f),
-                };
-                foreach (ColumnStyle style in styles)
-                    formMain.panelCalcBtns.ColumnStyles.Add(style);
-            }
-            formMain.cmdCalcSelectedModelConfirmStep2.Visible = visible;
-            formMain.panelCalcBtns.Visible = true;
-        }
+        //    formMain.panelCalcBtns.Visible = false;
+        //    formMain.panelCalcBtns.ColumnStyles.Clear();
+        //    if (visible) {
+        //        ColumnStyle[] styles = {
+        //            new ColumnStyle(SizeType.Percent, 33.33f),
+        //            new ColumnStyle(SizeType.Percent, 16.67f),
+        //            new ColumnStyle(SizeType.Percent, 16.67f),
+        //            new ColumnStyle(SizeType.Percent, 33.33f),
+        //        };
+        //        foreach (ColumnStyle style in styles)
+        //            formMain.panelCalcBtns.ColumnStyles.Add(style);
+        //    } else {
+        //        ColumnStyle[] styles = {
+        //            new ColumnStyle(SizeType.Percent, 41.67f),
+        //            new ColumnStyle(SizeType.Percent, 16.67f),
+        //            new ColumnStyle(SizeType.Percent, 41.67f),
+        //        };
+        //        foreach (ColumnStyle style in styles)
+        //            formMain.panelCalcBtns.ColumnStyles.Add(style);
+        //    }
+        //    formMain.cmdCalcSelectedModelConfirmStep2.Visible = visible;
+        //    formMain.panelCalcBtns.Visible = true;
+        //}
 
         private void InitEvents() {
             // 進階選項
@@ -131,7 +153,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 確認按鈕
             formMain.cmdConfirmStep2.Click += CmdConfirmStep2_Click;
-            formMain.cmdCalcSelectedModelConfirmStep2.Click += CmdConfirmStep2_Click;
+            //formMain.cmdCalcSelectedModelConfirmStep2.Click += CmdConfirmStep2_Click;
+
+            // 當前機構型態更新
+            modelTypeOptMap.Keys.ToList().ForEach(opt => opt.CheckedChanged += ModelType_CheckedChanged);
+        }
+
+        private void ModelType_CheckedChanged(object sender, EventArgs e) {
+            curSelectModelType = modelTypeOptMap.First(pair => pair.Key.Checked).Value;
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {
@@ -145,12 +174,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 string model = formMain.cboModel.Text;
                 double lead = Convert.ToDouble(formMain.cboLead.Text);
                 int reducerRatio = 1;
-                if (formMain.step2.calc.IsContainsReducerRatio(model)) {
+                if (formMain.page2.calc.IsContainsReducerRatio(model)) {
                     string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
                     reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
                     lead /= reducerRatio;
                 }
-                int maxAccelSpeed = formMain.step2.calc.GetMaxAccelSpeed(model, lead, reducerRatio, Convert.ToInt32(formMain.txtStroke.Text));
+                int maxAccelSpeed = formMain.page2.calc.GetMaxAccelSpeed(model, lead, reducerRatio, Convert.ToInt32(formMain.txtStroke.Text));
                 formMain.txtAccelSpeed.Text = maxAccelSpeed.ToString();
 
                 // 切進接選項Vmax自動帶100mm/s
@@ -163,20 +192,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (recommandList.curSelectModel.model == null)
                 return;
 
-            if (formMain.curStep == FormMain.Step.Step2) {
-                if (formMain.enabledStep3) {
-                    formMain.curStep = (FormMain.Step)((int)formMain.curStep + 1);
-                    formMain.sideTable.Update(null, null);
-                    formMain._explorerBar.UpdateCurStep(formMain.curStep);
-                    formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep3);
-                } else {
-                    formMain.curStep = FormMain.Step.Step5;
-                    formMain.sideTable.Update(null, null);
-                    formMain._explorerBar.UpdateCurStep(formMain.curStep);
-                    formMain.tabMain.SelectTab(1);
-                    formMain.step5.Load();
-                }
-            }
+            //if (formMain.curStep == FormMain.Step.Step2) {
+            //    if (formMain.enabledStep3) {
+            //        formMain.curStep = (FormMain.Step)((int)formMain.curStep + 1);
+            //        formMain.sideTable.Update(null, null);
+            //        formMain._explorerBar.UpdateCurStep(formMain.curStep);
+            //        //formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep3);
+            //    } else {
+            //        formMain.curStep = FormMain.Step.Step5;
+            //        formMain.sideTable.Update(null, null);
+            //        formMain._explorerBar.UpdateCurStep(formMain.curStep);
+            //        formMain.tabMain.SelectTab(1);
+            //        formMain.page3.Load();
+            //    }
+            //}
         }
 
         private void CmdCalc_Click(object sender, EventArgs e) {
@@ -208,7 +237,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     formMain.Invoke(new Action(() => {
                         formMain.dgvRecommandList.DataSource = null;
                         formMain.dgvRecommandList.Rows.Clear();
-                        formMain.dgvCalcSelectedModel.DataSource = null;
                         chartInfo.Clear();
                         recommandList.curSelectModel = (null, -1);
                         // 側邊欄
@@ -236,7 +264,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     }
 
                     // 有效行程顯示
-                    formMain.step2.effectiveStroke.IsShowEffectiveStroke(false);
+                    formMain.page2.effectiveStroke.IsShowEffectiveStroke(false);
 
                     return;
                 }

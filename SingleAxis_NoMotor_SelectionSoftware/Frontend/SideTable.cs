@@ -12,6 +12,8 @@ using System.Threading;
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class SideTable {
         public enum MsgStatus { Normal, Alarm }
+        public Size tableSize = new Size(224, 474);
+        public Point tablePosition = new Point(1000, 129);
 
         private FormMain formMain;
         // 側邊欄訊息 - 全部選型
@@ -52,10 +54,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public SideTable(FormMain formMain) {
             this.formMain = formMain;
             UpdateItem();            
+        }
 
+        public void RePosition() {
             // 移除表格，在父panel新增
             formMain.panelSideTable.Parent.Controls.Remove(formMain.panelSideTable);
-            formMain.splitContainerBase.Panel2.Controls.Add(formMain.panelSideTable);            
+            formMain.splitContainerBase.Panel2.Controls.Add(formMain.panelSideTable);
             formMain.panelSideTable.BringToFront();
         }
 
@@ -66,14 +70,22 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (formMain.optCalcAllModel.Checked)
                 selectionTableItems = selectionTableItems_calcAll;
             else {
-                if (formMain.optRepeatabilityScrew.Checked)
-                    selectionTableItems = selectionTableItems_calcSelectModel_screw;
-                else if (formMain.optRepeatabilityBelt.Checked) {
-                    if (formMain.step2.calc.beltModels.Contains(formMain.cboModel.Text))
+                //if (formMain.optRepeatabilityScrew.Checked)
+                //    selectionTableItems = selectionTableItems_calcSelectModel_screw;
+                //else if (formMain.optRepeatabilityBelt.Checked) {
+                //    if (formMain.step2.calc.beltModels.Contains(formMain.cboModel.Text))
+                //        selectionTableItems = selectionTableItems_calcSelectModel_belt;
+                //    else
+                //        selectionTableItems = selectionTableItems_calcSelectModel_screw;
+                //}
+
+                if (formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType()) {
+                    if (formMain.page2.calc.beltModels.Contains(formMain.cboModel.Text))
                         selectionTableItems = selectionTableItems_calcSelectModel_belt;
                     else
                         selectionTableItems = selectionTableItems_calcSelectModel_screw;
-                }
+                } else
+                    selectionTableItems = selectionTableItems_calcSelectModel_screw;
             }
 
             if (formMain.tableSelections.RowCount == 1) {
@@ -172,10 +184,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public void UpdateModelInfo() {
             switch (formMain.curStep) {
                 case FormMain.Step.Step2:
-                    formMain.lbSideTableModelInfo.Text = string.Format("{0}-L{1}", formMain.step2.recommandList.curSelectModel.model, formMain.step2.recommandList.curSelectModel.lead);
+                    formMain.lbSideTableModelInfo.Text = string.Format("{0}-L{1}", formMain.page2.recommandList.curSelectModel.model, formMain.page2.recommandList.curSelectModel.lead);
                     break;
                 case FormMain.Step.Step3:
-                    formMain.lbSideTableModelInfo.Text = string.Format("{0}-L{1}-{2}", formMain.step2.recommandList.curSelectModel.model, formMain.step2.recommandList.curSelectModel.lead, formMain.step2.effectiveStroke.effectiveStroke);
+                    formMain.lbSideTableModelInfo.Text = string.Format("{0}-L{1}-{2}", formMain.page2.recommandList.curSelectModel.model, formMain.page2.recommandList.curSelectModel.lead, formMain.page2.effectiveStroke.effectiveStroke);
                     break;
             }
         }
@@ -208,7 +220,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.sideTable.UpdateSelectedConditionValue("運行距離", "");
             formMain.sideTable.UpdateSelectedConditionValue("運行壽命", "");
             formMain.sideTable.UpdateSelectedConditionValue("有效行程", "");
-            if (formMain.optRepeatabilityBelt.Checked && formMain.step2.calc.beltModels.Contains(formMain.cboModel.Text)) {
+            if (formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType() && formMain.page2.calc.beltModels.Contains(formMain.cboModel.Text)) {
                 formMain.sideTable.UpdateSelectedConditionValue("皮帶T_max安全係數", "");
                 formMain.sideTable.UpdateSelectedConditionValue("皮帶馬達安全係數", "");
             }
@@ -217,13 +229,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public void UpdateTableSelections() {            
             // step1
             if (formMain.curStep >= FormMain.Step.Step1) {
-                UpdateSelectedConditionValue("使用環境", formMain.panelSetupEnv.Controls.Cast<Control>().ToList()
+                UpdateSelectedConditionValue("使用環境", formMain.explorerBarPanel2.Controls.Cast<Control>().ToList()
                                                               .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
                                                               .Text);
                 UpdateSelectedConditionValue("安裝方式", formMain.panelSetupMode.Controls.Cast<Control>().ToList()
                                                                .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
                                                                .Text);
-                UpdateSelectedConditionValue("機構型態", formMain.cboModelType.Text);
+                UpdateSelectedConditionValue("機構型態", formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.ToString());
             }
             // step2
             if (formMain.curStep < FormMain.Step.Step2) {
@@ -243,14 +255,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (formMain.optCalcAllModel.Checked)
                 selectionTableItems = selectionTableItems_calcAll;
             else {
-                if (formMain.optRepeatabilityScrew.Checked)
-                    selectionTableItems = selectionTableItems_calcSelectModel_screw;
-                else if (formMain.optRepeatabilityBelt.Checked) {
-                    if (formMain.step2.calc.beltModels.Contains(formMain.cboModel.Text))
+                if (formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType()) {
+                    if (formMain.page2.calc.beltModels.Contains(formMain.cboModel.Text))
                         selectionTableItems = selectionTableItems_calcSelectModel_belt;
                     else
                         selectionTableItems = selectionTableItems_calcSelectModel_screw;
-                }
+                } else
+                    selectionTableItems = selectionTableItems_calcSelectModel_screw;
             }
             RowStyle rowStyle = formMain.tableSelections.RowStyles[selectionTableItems.IndexOf(key)];
             float oldRowHeight = rowStyle.Height;

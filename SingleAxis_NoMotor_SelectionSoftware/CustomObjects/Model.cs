@@ -11,9 +11,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             軌道內嵌式螺桿滑台,
             軌道內嵌推桿式螺桿滑台,
             標準螺桿滑台,
-            推桿式螺桿滑台,
-            標準皮帶滑台,
+            //推桿式螺桿滑台,
+            標準皮帶滑台 = 4,
             歐規皮帶滑台,
+            無軌道推桿滑台,
+            軌道外掛推桿滑台,
+            輔助軌道推桿滑台,
+            軌道內嵌皮帶滑台,
+            軌道內嵌輔助導軌滑台
         }
         public enum UseEnvironment { Standard, DustFree }
 

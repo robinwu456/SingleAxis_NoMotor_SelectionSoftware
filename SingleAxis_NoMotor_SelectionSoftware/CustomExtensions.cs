@@ -23,5 +23,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             ResourceManager rm = new ResourceManager("SingleAxis_NoMotor_SelectionSoftware." + CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, Assembly.GetExecutingAssembly());
             return rm.GetString(key);
         }
+
+        public static bool IsBeltType(this Model.ModelType modelType) {
+            Model.ModelType[] beltType = {
+                Model.ModelType.標準皮帶滑台,
+                Model.ModelType.歐規皮帶滑台,
+                Model.ModelType.軌道內嵌皮帶滑台,
+                Model.ModelType.軌道內嵌皮帶滑台
+            };
+
+            return beltType.Contains(modelType);
+        }
     }
 }
