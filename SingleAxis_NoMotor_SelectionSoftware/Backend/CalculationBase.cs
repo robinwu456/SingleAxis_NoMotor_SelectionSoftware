@@ -377,5 +377,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             int maxAccelSpeed = (int)(vMax / minAccelTime);
             return maxAccelSpeed;
         }
+
+        public Model.ModelType[] GetNotNullModelType() {
+            Model.ModelType[] allModelTypes = modelInfo.Rows.Cast<DataRow>().Select(row => (Model.ModelType)Convert.ToInt32(row["Type"].ToString())).Distinct().ToArray();
+            return allModelTypes;
+        }
     }
 }

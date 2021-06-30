@@ -61,6 +61,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.panelSideTable.Parent.Controls.Remove(formMain.panelSideTable);
             formMain.splitContainerBase.Panel2.Controls.Add(formMain.panelSideTable);
             formMain.panelSideTable.BringToFront();
+            formMain.panelSideTable.Visible = true;
         }
 
         // 選項欄生成

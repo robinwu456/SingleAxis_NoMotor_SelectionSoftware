@@ -8,8 +8,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// 傳動方式列舉
         /// </summary>
         public enum ModelType {
-            軌道內嵌式螺桿滑台,
-            軌道內嵌推桿式螺桿滑台,
+            軌道內嵌螺桿滑台,
+            軌道內嵌推桿滑台,
             標準螺桿滑台,
             //推桿式螺桿滑台,
             標準皮帶滑台 = 4,

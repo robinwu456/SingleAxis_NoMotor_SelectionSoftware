@@ -64,9 +64,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void UpdateCondition(object sender, EventArgs e) {
-            // 不是Step2時不修正條件
-            if (formMain.curStep != FormMain.Step.Step2)
+            //// 不是Step2時不修正條件
+            //if (formMain.curStep != FormMain.Step.Step2)
+            //    return;
+            if (formMain.page2 == null)
                 return;
+
             // 全數值驗證
             if (!formMain.page2.inputValidate.VerifyAllInputValidate())
                 return;

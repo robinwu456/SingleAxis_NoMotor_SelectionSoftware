@@ -45,15 +45,21 @@
             this.cmdClose = new System.Windows.Forms.PictureBox();
             this.tabMain = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label48 = new System.Windows.Forms.Label();
-            this.cmdMotionSelection = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label47 = new System.Windows.Forms.Label();
             this.cmdModelSelection = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label48 = new System.Windows.Forms.Label();
+            this.cmdMotionSelection = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.explorerBar = new System.Windows.Forms.Panel();
-            this.panelCalcResult = new System.Windows.Forms.Panel();
+            this.panelNextPage = new System.Windows.Forms.Panel();
             this.panelConfirmBtnsStep2 = new System.Windows.Forms.TableLayoutPanel();
             this.cmdConfirmStep2 = new CustomButton.CustomButton();
+            this.lbPrePage = new System.Windows.Forms.Label();
+            this.panelCalcResult = new System.Windows.Forms.Panel();
             this.dgvRecommandList = new System.Windows.Forms.DataGridView();
             this.鎖定 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.項次 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,15 +86,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panelChart = new System.Windows.Forms.Panel();
-            this.lbTitleChart = new System.Windows.Forms.Label();
-            this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.lbAccelSpeed = new System.Windows.Forms.Label();
-            this.lbAccelTime = new System.Windows.Forms.Label();
-            this.lbCycleTime = new System.Windows.Forms.Label();
-            this.lbConstantTime = new System.Windows.Forms.Label();
-            this.lbMaxSpeed = new System.Windows.Forms.Label();
-            this.lbRunTime = new System.Windows.Forms.Label();
-            this.panelCalc = new System.Windows.Forms.Panel();
             this.panelEffectiveStroke = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label83 = new System.Windows.Forms.Label();
@@ -103,6 +100,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label80 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
+            this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lbAccelSpeed = new System.Windows.Forms.Label();
+            this.lbAccelTime = new System.Windows.Forms.Label();
+            this.lbCycleTime = new System.Windows.Forms.Label();
+            this.lbConstantTime = new System.Windows.Forms.Label();
+            this.lbMaxSpeed = new System.Windows.Forms.Label();
+            this.lbRunTime = new System.Windows.Forms.Label();
+            this.panelCalc = new System.Windows.Forms.Panel();
+            this.lbTitleCalc = new System.Windows.Forms.Label();
             this.cmdCalc = new CustomButton.CustomButton();
             this.panelReducer = new System.Windows.Forms.Panel();
             this.label55 = new System.Windows.Forms.Label();
@@ -166,11 +172,8 @@
             this.txtLoad = new System.Windows.Forms.TextBox();
             this.cboPower = new System.Windows.Forms.ComboBox();
             this.label46 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.txtStroke = new System.Windows.Forms.TextBox();
             this.labelStopTimeAlarm = new System.Windows.Forms.Label();
@@ -181,23 +184,28 @@
             this.labelLoadAlarm = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.panelSideTableIcon = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panelSideTableSelections = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.tableSelections = new System.Windows.Forms.TableLayoutPanel();
-            this.customPanel4 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.lbSideTableModelInfo = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.customPanel3 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.lbSideTableMsg = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.customPanel2 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
-            this.picModelImg = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panelMoment = new System.Windows.Forms.Panel();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.lbTitleMoment = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtMomentB = new System.Windows.Forms.TextBox();
+            this.txtMomentC = new System.Windows.Forms.TextBox();
+            this.txtMomentA = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.panelSetup = new System.Windows.Forms.Panel();
+            this.panelSetupMode = new System.Windows.Forms.Panel();
+            this.optUpsideDownUse = new System.Windows.Forms.RadioButton();
+            this.optHorizontalUse = new System.Windows.Forms.RadioButton();
+            this.optWallHangingUse = new System.Windows.Forms.RadioButton();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.lbTitleSetup = new System.Windows.Forms.Label();
             this.panelModelSelection = new System.Windows.Forms.Panel();
             this.lbTitleModelSelection = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
@@ -242,6 +250,22 @@
             this.optCalcAllModel = new System.Windows.Forms.RadioButton();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.panelSideTableIcon = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panelSideTableSelections = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.tableSelections = new System.Windows.Forms.TableLayoutPanel();
+            this.customPanel4 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.lbSideTableModelInfo = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.customPanel3 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.lbSideTableMsg = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.customPanel2 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.picModelImg = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.explorerBar_step5 = new System.Windows.Forms.Panel();
             this.explorerBarPanel5 = new System.Windows.Forms.Panel();
@@ -256,28 +280,7 @@
             this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
-            this.panelMoment = new System.Windows.Forms.Panel();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.lbTitleMoment = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.txtMomentB = new System.Windows.Forms.TextBox();
-            this.txtMomentC = new System.Windows.Forms.TextBox();
-            this.txtMomentA = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.lbTitleSetup = new System.Windows.Forms.Label();
-            this.panelSetup = new System.Windows.Forms.Panel();
-            this.panelSetupMode = new System.Windows.Forms.Panel();
-            this.optUpsideDownUse = new System.Windows.Forms.RadioButton();
-            this.optHorizontalUse = new System.Windows.Forms.RadioButton();
-            this.optWallHangingUse = new System.Windows.Forms.RadioButton();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.panelBase = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -291,20 +294,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).BeginInit();
             this.tabMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdMotionSelection)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdModelSelection)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdMotionSelection)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.explorerBar.SuspendLayout();
-            this.panelCalcResult.SuspendLayout();
+            this.panelNextPage.SuspendLayout();
             this.panelConfirmBtnsStep2.SuspendLayout();
+            this.panelCalcResult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).BeginInit();
             this.panelChart.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
-            this.panelCalc.SuspendLayout();
             this.panelEffectiveStroke.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelEffectiveStroke2.SuspendLayout();
             this.panelEffectiveStroke1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
+            this.panelCalc.SuspendLayout();
             this.panelReducer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).BeginInit();
             this.panelAdvanceParams.SuspendLayout();
@@ -314,16 +322,11 @@
             this.panelPowerModifyMode.SuspendLayout();
             this.panelMotorParams.SuspendLayout();
             this.panelPowerSelection.SuspendLayout();
-            this.panelSideTable.SuspendLayout();
-            this.panelSideTableIcon.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panelSideTableSelections.SuspendLayout();
-            this.customPanel4.SuspendLayout();
-            this.customPanel3.SuspendLayout();
-            this.customPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).BeginInit();
+            this.panelMoment.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            this.panelSetup.SuspendLayout();
+            this.panelSetupMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.panelModelSelection.SuspendLayout();
             this.panelModelType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
@@ -342,6 +345,16 @@
             this.panelSelectionMode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.panelSideTable.SuspendLayout();
+            this.panelSideTableIcon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelSideTableSelections.SuspendLayout();
+            this.customPanel4.SuspendLayout();
+            this.customPanel3.SuspendLayout();
+            this.customPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.explorerBar_step5.SuspendLayout();
             this.explorerBarPanel5.SuspendLayout();
@@ -349,11 +362,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).BeginInit();
             this.panelConfirmBtnsStep5.SuspendLayout();
             this.explorerBarPanel5_title.SuspendLayout();
-            this.panelMoment.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            this.panelSetup.SuspendLayout();
-            this.panelSetupMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            this.panelBase.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -448,25 +457,30 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label48);
-            this.tabPage1.Controls.Add(this.cmdMotionSelection);
-            this.tabPage1.Controls.Add(this.label47);
-            this.tabPage1.Controls.Add(this.cmdModelSelection);
+            this.tabPage1.Controls.Add(this.tableLayoutPanel2);
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // label48
+            // tableLayoutPanel2
             // 
-            resources.ApplyResources(this.label48, "label48");
-            this.label48.Name = "label48";
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 0, 1);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
-            // cmdMotionSelection
+            // tableLayoutPanel1
             // 
-            this.cmdMotionSelection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.cmdMotionSelection, "cmdMotionSelection");
-            this.cmdMotionSelection.Name = "cmdMotionSelection";
-            this.cmdMotionSelection.TabStop = false;
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 2, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label47);
+            this.panel1.Controls.Add(this.cmdModelSelection);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
             // 
             // label47
             // 
@@ -477,8 +491,29 @@
             // 
             this.cmdModelSelection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.cmdModelSelection, "cmdModelSelection");
+            this.cmdModelSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.型號選型;
             this.cmdModelSelection.Name = "cmdModelSelection";
             this.cmdModelSelection.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label48);
+            this.panel2.Controls.Add(this.cmdMotionSelection);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
+            // 
+            // label48
+            // 
+            resources.ApplyResources(this.label48, "label48");
+            this.label48.Name = "label48";
+            // 
+            // cmdMotionSelection
+            // 
+            this.cmdMotionSelection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.cmdMotionSelection, "cmdMotionSelection");
+            this.cmdMotionSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.動作選型;
+            this.cmdMotionSelection.Name = "cmdMotionSelection";
+            this.cmdMotionSelection.TabStop = false;
             // 
             // tabPage2
             // 
@@ -490,6 +525,8 @@
             // explorerBar
             // 
             resources.ApplyResources(this.explorerBar, "explorerBar");
+            this.explorerBar.Controls.Add(this.panelNextPage);
+            this.explorerBar.Controls.Add(this.lbPrePage);
             this.explorerBar.Controls.Add(this.panelCalcResult);
             this.explorerBar.Controls.Add(this.panelChart);
             this.explorerBar.Controls.Add(this.panelCalc);
@@ -502,14 +539,11 @@
             this.explorerBar.Controls.Add(this.panelSideTable);
             this.explorerBar.Name = "explorerBar";
             // 
-            // panelCalcResult
+            // panelNextPage
             // 
-            this.panelCalcResult.Controls.Add(this.panelConfirmBtnsStep2);
-            this.panelCalcResult.Controls.Add(this.dgvRecommandList);
-            this.panelCalcResult.Controls.Add(this.label12);
-            this.panelCalcResult.Controls.Add(this.label13);
-            resources.ApplyResources(this.panelCalcResult, "panelCalcResult");
-            this.panelCalcResult.Name = "panelCalcResult";
+            this.panelNextPage.Controls.Add(this.panelConfirmBtnsStep2);
+            resources.ApplyResources(this.panelNextPage, "panelNextPage");
+            this.panelNextPage.Name = "panelNextPage";
             // 
             // panelConfirmBtnsStep2
             // 
@@ -532,6 +566,21 @@
             this.cmdConfirmStep2.GradientMode = CustomButton.LinearGradientMode.Horizontal;
             this.cmdConfirmStep2.Name = "cmdConfirmStep2";
             this.cmdConfirmStep2.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
+            // 
+            // lbPrePage
+            // 
+            resources.ApplyResources(this.lbPrePage, "lbPrePage");
+            this.lbPrePage.BackColor = System.Drawing.Color.White;
+            this.lbPrePage.ForeColor = System.Drawing.Color.Red;
+            this.lbPrePage.Name = "lbPrePage";
+            // 
+            // panelCalcResult
+            // 
+            this.panelCalcResult.Controls.Add(this.dgvRecommandList);
+            this.panelCalcResult.Controls.Add(this.label12);
+            this.panelCalcResult.Controls.Add(this.label13);
+            resources.ApplyResources(this.panelCalcResult, "panelCalcResult");
+            this.panelCalcResult.Name = "panelCalcResult";
             // 
             // dgvRecommandList
             // 
@@ -813,7 +862,7 @@
             // 
             // panelChart
             // 
-            this.panelChart.Controls.Add(this.lbTitleChart);
+            this.panelChart.Controls.Add(this.panelEffectiveStroke);
             this.panelChart.Controls.Add(this.chart);
             this.panelChart.Controls.Add(this.lbAccelSpeed);
             this.panelChart.Controls.Add(this.lbAccelTime);
@@ -823,113 +872,6 @@
             this.panelChart.Controls.Add(this.lbRunTime);
             resources.ApplyResources(this.panelChart, "panelChart");
             this.panelChart.Name = "panelChart";
-            // 
-            // lbTitleChart
-            // 
-            resources.ApplyResources(this.lbTitleChart, "lbTitleChart");
-            this.lbTitleChart.BackColor = System.Drawing.Color.White;
-            this.lbTitleChart.ForeColor = System.Drawing.Color.DimGray;
-            this.lbTitleChart.Name = "lbTitleChart";
-            // 
-            // chart
-            // 
-            this.chart.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisX.IsLabelAutoFit = false;
-            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            chartArea1.AxisX.MajorGrid.Enabled = false;
-            chartArea1.AxisX.Title = "Time (s)";
-            chartArea1.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
-            chartArea1.AxisY.IsLabelAutoFit = false;
-            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            chartArea1.AxisY.MajorGrid.Enabled = false;
-            chartArea1.AxisY.MajorTickMark.Enabled = false;
-            chartArea1.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
-            chartArea1.AxisY.Title = "V (mm/s)";
-            chartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
-            chartArea1.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea";
-            this.chart.ChartAreas.Add(chartArea1);
-            resources.ApplyResources(this.chart, "chart");
-            this.chart.Name = "chart";
-            series1.ChartArea = "ChartArea";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Name = "Series1";
-            series1.Points.Add(dataPoint1);
-            this.chart.Series.Add(series1);
-            // 
-            // lbAccelSpeed
-            // 
-            resources.ApplyResources(this.lbAccelSpeed, "lbAccelSpeed");
-            this.lbAccelSpeed.Name = "lbAccelSpeed";
-            // 
-            // lbAccelTime
-            // 
-            resources.ApplyResources(this.lbAccelTime, "lbAccelTime");
-            this.lbAccelTime.Name = "lbAccelTime";
-            // 
-            // lbCycleTime
-            // 
-            resources.ApplyResources(this.lbCycleTime, "lbCycleTime");
-            this.lbCycleTime.Name = "lbCycleTime";
-            // 
-            // lbConstantTime
-            // 
-            resources.ApplyResources(this.lbConstantTime, "lbConstantTime");
-            this.lbConstantTime.Name = "lbConstantTime";
-            // 
-            // lbMaxSpeed
-            // 
-            resources.ApplyResources(this.lbMaxSpeed, "lbMaxSpeed");
-            this.lbMaxSpeed.Name = "lbMaxSpeed";
-            // 
-            // lbRunTime
-            // 
-            resources.ApplyResources(this.lbRunTime, "lbRunTime");
-            this.lbRunTime.Name = "lbRunTime";
-            // 
-            // panelCalc
-            // 
-            this.panelCalc.Controls.Add(this.panelEffectiveStroke);
-            this.panelCalc.Controls.Add(this.cmdCalc);
-            this.panelCalc.Controls.Add(this.panelReducer);
-            this.panelCalc.Controls.Add(this.panelAdvanceParams);
-            this.panelCalc.Controls.Add(this.panel6);
-            this.panelCalc.Controls.Add(this.panelAdvanceMode);
-            this.panelCalc.Controls.Add(this.label71);
-            this.panelCalc.Controls.Add(this.label44);
-            this.panelCalc.Controls.Add(this.panelPowerModifyMode);
-            this.panelCalc.Controls.Add(this.label53);
-            this.panelCalc.Controls.Add(this.label45);
-            this.panelCalc.Controls.Add(this.lbDaysPerYearAlarm);
-            this.panelCalc.Controls.Add(this.label52);
-            this.panelCalc.Controls.Add(this.lbTimesPerMinuteAlarm);
-            this.panelCalc.Controls.Add(this.panelMotorParams);
-            this.panelCalc.Controls.Add(this.lbHoursPerDayAlarm);
-            this.panelCalc.Controls.Add(this.txtTimesPerMinute);
-            this.panelCalc.Controls.Add(this.txtDayPerYear);
-            this.panelCalc.Controls.Add(this.panelPowerSelection);
-            this.panelCalc.Controls.Add(this.txtHourPerDay);
-            this.panelCalc.Controls.Add(this.txtLoad);
-            this.panelCalc.Controls.Add(this.cboPower);
-            this.panelCalc.Controls.Add(this.label46);
-            this.panelCalc.Controls.Add(this.label32);
-            this.panelCalc.Controls.Add(this.label6);
-            this.panelCalc.Controls.Add(this.label33);
-            this.panelCalc.Controls.Add(this.label7);
-            this.panelCalc.Controls.Add(this.label19);
-            this.panelCalc.Controls.Add(this.label50);
-            this.panelCalc.Controls.Add(this.txtStroke);
-            this.panelCalc.Controls.Add(this.labelStopTimeAlarm);
-            this.panelCalc.Controls.Add(this.labelStrokeAlarm);
-            this.panelCalc.Controls.Add(this.label22);
-            this.panelCalc.Controls.Add(this.txtRunTime);
-            this.panelCalc.Controls.Add(this.label23);
-            this.panelCalc.Controls.Add(this.labelLoadAlarm);
-            this.panelCalc.Controls.Add(this.label15);
-            this.panelCalc.Controls.Add(this.label10);
-            this.panelCalc.Controls.Add(this.label18);
-            resources.ApplyResources(this.panelCalc, "panelCalc");
-            this.panelCalc.Name = "panelCalc";
             // 
             // panelEffectiveStroke
             // 
@@ -1040,6 +982,109 @@
             resources.ApplyResources(this.label57, "label57");
             this.label57.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
             this.label57.Name = "label57";
+            // 
+            // chart
+            // 
+            this.chart.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisX.Title = "Time (s)";
+            chartArea1.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea1.AxisY.IsLabelAutoFit = false;
+            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            chartArea1.AxisY.MajorGrid.Enabled = false;
+            chartArea1.AxisY.MajorTickMark.Enabled = false;
+            chartArea1.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
+            chartArea1.AxisY.Title = "V (mm/s)";
+            chartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea";
+            this.chart.ChartAreas.Add(chartArea1);
+            resources.ApplyResources(this.chart, "chart");
+            this.chart.Name = "chart";
+            series1.ChartArea = "ChartArea";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Name = "Series1";
+            series1.Points.Add(dataPoint1);
+            this.chart.Series.Add(series1);
+            // 
+            // lbAccelSpeed
+            // 
+            resources.ApplyResources(this.lbAccelSpeed, "lbAccelSpeed");
+            this.lbAccelSpeed.Name = "lbAccelSpeed";
+            // 
+            // lbAccelTime
+            // 
+            resources.ApplyResources(this.lbAccelTime, "lbAccelTime");
+            this.lbAccelTime.Name = "lbAccelTime";
+            // 
+            // lbCycleTime
+            // 
+            resources.ApplyResources(this.lbCycleTime, "lbCycleTime");
+            this.lbCycleTime.Name = "lbCycleTime";
+            // 
+            // lbConstantTime
+            // 
+            resources.ApplyResources(this.lbConstantTime, "lbConstantTime");
+            this.lbConstantTime.Name = "lbConstantTime";
+            // 
+            // lbMaxSpeed
+            // 
+            resources.ApplyResources(this.lbMaxSpeed, "lbMaxSpeed");
+            this.lbMaxSpeed.Name = "lbMaxSpeed";
+            // 
+            // lbRunTime
+            // 
+            resources.ApplyResources(this.lbRunTime, "lbRunTime");
+            this.lbRunTime.Name = "lbRunTime";
+            // 
+            // panelCalc
+            // 
+            this.panelCalc.Controls.Add(this.lbTitleCalc);
+            this.panelCalc.Controls.Add(this.cmdCalc);
+            this.panelCalc.Controls.Add(this.panelReducer);
+            this.panelCalc.Controls.Add(this.panelAdvanceParams);
+            this.panelCalc.Controls.Add(this.panel6);
+            this.panelCalc.Controls.Add(this.panelAdvanceMode);
+            this.panelCalc.Controls.Add(this.label71);
+            this.panelCalc.Controls.Add(this.label44);
+            this.panelCalc.Controls.Add(this.panelPowerModifyMode);
+            this.panelCalc.Controls.Add(this.label53);
+            this.panelCalc.Controls.Add(this.label45);
+            this.panelCalc.Controls.Add(this.lbDaysPerYearAlarm);
+            this.panelCalc.Controls.Add(this.label52);
+            this.panelCalc.Controls.Add(this.lbTimesPerMinuteAlarm);
+            this.panelCalc.Controls.Add(this.panelMotorParams);
+            this.panelCalc.Controls.Add(this.lbHoursPerDayAlarm);
+            this.panelCalc.Controls.Add(this.txtTimesPerMinute);
+            this.panelCalc.Controls.Add(this.txtDayPerYear);
+            this.panelCalc.Controls.Add(this.panelPowerSelection);
+            this.panelCalc.Controls.Add(this.txtHourPerDay);
+            this.panelCalc.Controls.Add(this.txtLoad);
+            this.panelCalc.Controls.Add(this.cboPower);
+            this.panelCalc.Controls.Add(this.label46);
+            this.panelCalc.Controls.Add(this.label6);
+            this.panelCalc.Controls.Add(this.label7);
+            this.panelCalc.Controls.Add(this.label50);
+            this.panelCalc.Controls.Add(this.txtStroke);
+            this.panelCalc.Controls.Add(this.labelStopTimeAlarm);
+            this.panelCalc.Controls.Add(this.labelStrokeAlarm);
+            this.panelCalc.Controls.Add(this.label22);
+            this.panelCalc.Controls.Add(this.txtRunTime);
+            this.panelCalc.Controls.Add(this.label23);
+            this.panelCalc.Controls.Add(this.labelLoadAlarm);
+            this.panelCalc.Controls.Add(this.label15);
+            this.panelCalc.Controls.Add(this.label10);
+            resources.ApplyResources(this.panelCalc, "panelCalc");
+            this.panelCalc.Name = "panelCalc";
+            // 
+            // lbTitleCalc
+            // 
+            resources.ApplyResources(this.lbTitleCalc, "lbTitleCalc");
+            this.lbTitleCalc.BackColor = System.Drawing.Color.White;
+            this.lbTitleCalc.ForeColor = System.Drawing.Color.DimGray;
+            this.lbTitleCalc.Name = "lbTitleCalc";
             // 
             // cmdCalc
             // 
@@ -1523,34 +1568,16 @@
             this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label46.Name = "label46";
             // 
-            // label32
-            // 
-            resources.ApplyResources(this.label32, "label32");
-            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label32.Name = "label32";
-            // 
             // label6
             // 
             resources.ApplyResources(this.label6, "label6");
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label6.Name = "label6";
             // 
-            // label33
-            // 
-            this.label33.BackColor = System.Drawing.Color.LightGray;
-            resources.ApplyResources(this.label33, "label33");
-            this.label33.Name = "label33";
-            // 
             // label7
             // 
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            // 
-            // label19
-            // 
-            resources.ApplyResources(this.label19, "label19");
-            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label19.Name = "label19";
             // 
             // label50
             // 
@@ -1611,132 +1638,165 @@
             resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
             // 
-            // label18
+            // panelMoment
             // 
-            this.label18.BackColor = System.Drawing.Color.LightGray;
-            resources.ApplyResources(this.label18, "label18");
-            this.label18.Name = "label18";
+            this.panelMoment.Controls.Add(this.pictureBox19);
+            this.panelMoment.Controls.Add(this.lbTitleMoment);
+            this.panelMoment.Controls.Add(this.label17);
+            this.panelMoment.Controls.Add(this.label24);
+            this.panelMoment.Controls.Add(this.label31);
+            this.panelMoment.Controls.Add(this.label30);
+            this.panelMoment.Controls.Add(this.label28);
+            this.panelMoment.Controls.Add(this.label27);
+            this.panelMoment.Controls.Add(this.txtMomentB);
+            this.panelMoment.Controls.Add(this.txtMomentC);
+            this.panelMoment.Controls.Add(this.txtMomentA);
+            this.panelMoment.Controls.Add(this.label25);
+            this.panelMoment.Controls.Add(this.label26);
+            this.panelMoment.Controls.Add(this.label29);
+            resources.ApplyResources(this.panelMoment, "panelMoment");
+            this.panelMoment.Name = "panelMoment";
             // 
-            // panelSideTable
+            // pictureBox19
             // 
-            resources.ApplyResources(this.panelSideTable, "panelSideTable");
-            this.panelSideTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelSideTable.Controls.Add(this.panelSideTableIcon);
-            this.panelSideTable.Controls.Add(this.panelSideTableSelections);
-            this.panelSideTable.Controls.Add(this.customPanel4);
-            this.panelSideTable.Controls.Add(this.label4);
-            this.panelSideTable.Controls.Add(this.customPanel3);
-            this.panelSideTable.Controls.Add(this.label3);
-            this.panelSideTable.Controls.Add(this.customPanel2);
-            this.panelSideTable.Controls.Add(this.label2);
-            this.panelSideTable.Curvature = 8;
-            this.panelSideTable.Name = "panelSideTable";
+            this.pictureBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox19.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.moment;
+            resources.ApplyResources(this.pictureBox19, "pictureBox19");
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.TabStop = false;
             // 
-            // panelSideTableIcon
+            // lbTitleMoment
             // 
-            this.panelSideTableIcon.Controls.Add(this.pictureBox5);
-            this.panelSideTableIcon.Controls.Add(this.pictureBox4);
-            this.panelSideTableIcon.Controls.Add(this.pictureBox2);
-            resources.ApplyResources(this.panelSideTableIcon, "panelSideTableIcon");
-            this.panelSideTableIcon.Name = "panelSideTableIcon";
+            resources.ApplyResources(this.lbTitleMoment, "lbTitleMoment");
+            this.lbTitleMoment.BackColor = System.Drawing.Color.White;
+            this.lbTitleMoment.ForeColor = System.Drawing.Color.DimGray;
+            this.lbTitleMoment.Name = "lbTitleMoment";
             // 
-            // pictureBox5
+            // label17
             // 
-            this.pictureBox5.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources._2D_3D;
-            resources.ApplyResources(this.pictureBox5, "pictureBox5");
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.TabStop = false;
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
             // 
-            // pictureBox4
+            // label24
             // 
-            this.pictureBox4.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.order;
-            resources.ApplyResources(this.pictureBox4, "pictureBox4");
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.TabStop = false;
+            resources.ApplyResources(this.label24, "label24");
+            this.label24.ForeColor = System.Drawing.Color.Red;
+            this.label24.Name = "label24";
+            this.label24.Tag = "txtMomentA";
             // 
-            // pictureBox2
+            // label31
             // 
-            this.pictureBox2.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.pdf;
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
+            resources.ApplyResources(this.label31, "label31");
+            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label31.Name = "label31";
             // 
-            // panelSideTableSelections
+            // label30
             // 
-            resources.ApplyResources(this.panelSideTableSelections, "panelSideTableSelections");
-            this.panelSideTableSelections.BorderColor = System.Drawing.Color.Silver;
-            this.panelSideTableSelections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelSideTableSelections.Controls.Add(this.tableSelections);
-            this.panelSideTableSelections.Curvature = 8;
-            this.panelSideTableSelections.Name = "panelSideTableSelections";
+            resources.ApplyResources(this.label30, "label30");
+            this.label30.ForeColor = System.Drawing.Color.Red;
+            this.label30.Name = "label30";
+            this.label30.Tag = "txtMomentB";
             // 
-            // tableSelections
+            // label28
             // 
-            resources.ApplyResources(this.tableSelections, "tableSelections");
-            this.tableSelections.Name = "tableSelections";
+            resources.ApplyResources(this.label28, "label28");
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label28.Name = "label28";
             // 
-            // customPanel4
+            // label27
             // 
-            this.customPanel4.BorderColor = System.Drawing.Color.Silver;
-            this.customPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel4.Controls.Add(this.lbSideTableModelInfo);
-            this.customPanel4.Curvature = 8;
-            resources.ApplyResources(this.customPanel4, "customPanel4");
-            this.customPanel4.Name = "customPanel4";
+            resources.ApplyResources(this.label27, "label27");
+            this.label27.ForeColor = System.Drawing.Color.Red;
+            this.label27.Name = "label27";
+            this.label27.Tag = "txtMomentC";
             // 
-            // lbSideTableModelInfo
+            // txtMomentB
             // 
-            resources.ApplyResources(this.lbSideTableModelInfo, "lbSideTableModelInfo");
-            this.lbSideTableModelInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
-            this.lbSideTableModelInfo.Name = "lbSideTableModelInfo";
+            resources.ApplyResources(this.txtMomentB, "txtMomentB");
+            this.txtMomentB.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMomentB.Name = "txtMomentB";
             // 
-            // label4
+            // txtMomentC
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.txtMomentC, "txtMomentC");
+            this.txtMomentC.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMomentC.Name = "txtMomentC";
             // 
-            // customPanel3
+            // txtMomentA
             // 
-            this.customPanel3.BorderColor = System.Drawing.Color.Silver;
-            this.customPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel3.Controls.Add(this.lbSideTableMsg);
-            this.customPanel3.Curvature = 8;
-            resources.ApplyResources(this.customPanel3, "customPanel3");
-            this.customPanel3.Name = "customPanel3";
+            resources.ApplyResources(this.txtMomentA, "txtMomentA");
+            this.txtMomentA.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMomentA.Name = "txtMomentA";
             // 
-            // lbSideTableMsg
+            // label25
             // 
-            resources.ApplyResources(this.lbSideTableMsg, "lbSideTableMsg");
-            this.lbSideTableMsg.ForeColor = System.Drawing.Color.Red;
-            this.lbSideTableMsg.Name = "lbSideTableMsg";
+            resources.ApplyResources(this.label25, "label25");
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label25.Name = "label25";
             // 
-            // label3
+            // label26
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Name = "label3";
+            resources.ApplyResources(this.label26, "label26");
+            this.label26.Name = "label26";
             // 
-            // customPanel2
+            // label29
             // 
-            this.customPanel2.BorderColor = System.Drawing.Color.Silver;
-            this.customPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel2.Controls.Add(this.picModelImg);
-            this.customPanel2.Curvature = 8;
-            resources.ApplyResources(this.customPanel2, "customPanel2");
-            this.customPanel2.Name = "customPanel2";
+            resources.ApplyResources(this.label29, "label29");
+            this.label29.Name = "label29";
             // 
-            // picModelImg
+            // panelSetup
             // 
-            resources.ApplyResources(this.picModelImg, "picModelImg");
-            this.picModelImg.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.MK85;
-            this.picModelImg.Name = "picModelImg";
-            this.picModelImg.TabStop = false;
+            this.panelSetup.Controls.Add(this.panelSetupMode);
+            this.panelSetup.Controls.Add(this.lbTitleSetup);
+            resources.ApplyResources(this.panelSetup, "panelSetup");
+            this.panelSetup.Name = "panelSetup";
             // 
-            // label2
+            // panelSetupMode
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            this.panelSetupMode.Controls.Add(this.optUpsideDownUse);
+            this.panelSetupMode.Controls.Add(this.optHorizontalUse);
+            this.panelSetupMode.Controls.Add(this.optWallHangingUse);
+            this.panelSetupMode.Controls.Add(this.pictureBox13);
+            resources.ApplyResources(this.panelSetupMode, "panelSetupMode");
+            this.panelSetupMode.Name = "panelSetupMode";
+            // 
+            // optUpsideDownUse
+            // 
+            resources.ApplyResources(this.optUpsideDownUse, "optUpsideDownUse");
+            this.optUpsideDownUse.BackColor = System.Drawing.Color.Transparent;
+            this.optUpsideDownUse.ForeColor = System.Drawing.Color.Black;
+            this.optUpsideDownUse.Name = "optUpsideDownUse";
+            this.optUpsideDownUse.UseVisualStyleBackColor = false;
+            // 
+            // optHorizontalUse
+            // 
+            resources.ApplyResources(this.optHorizontalUse, "optHorizontalUse");
+            this.optHorizontalUse.Checked = true;
+            this.optHorizontalUse.ForeColor = System.Drawing.Color.Black;
+            this.optHorizontalUse.Name = "optHorizontalUse";
+            this.optHorizontalUse.TabStop = true;
+            this.optHorizontalUse.UseVisualStyleBackColor = true;
+            // 
+            // optWallHangingUse
+            // 
+            resources.ApplyResources(this.optWallHangingUse, "optWallHangingUse");
+            this.optWallHangingUse.ForeColor = System.Drawing.Color.Black;
+            this.optWallHangingUse.Name = "optWallHangingUse";
+            this.optWallHangingUse.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.setupMode;
+            resources.ApplyResources(this.pictureBox13, "pictureBox13");
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.TabStop = false;
+            // 
+            // lbTitleSetup
+            // 
+            resources.ApplyResources(this.lbTitleSetup, "lbTitleSetup");
+            this.lbTitleSetup.BackColor = System.Drawing.Color.White;
+            this.lbTitleSetup.ForeColor = System.Drawing.Color.DimGray;
+            this.lbTitleSetup.Name = "lbTitleSetup";
             // 
             // panelModelSelection
             // 
@@ -1862,6 +1922,7 @@
             // pictureBox18
             // 
             this.pictureBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox18.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.GTYD;
             resources.ApplyResources(this.pictureBox18, "pictureBox18");
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.TabStop = false;
@@ -1876,6 +1937,7 @@
             // pictureBox17
             // 
             this.pictureBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox17.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.Y65L;
             resources.ApplyResources(this.pictureBox17, "pictureBox17");
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.TabStop = false;
@@ -1904,6 +1966,7 @@
             // pictureBox15
             // 
             this.pictureBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox15.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.M系列;
             resources.ApplyResources(this.pictureBox15, "pictureBox15");
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.TabStop = false;
@@ -1918,6 +1981,7 @@
             // pictureBox14
             // 
             this.pictureBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox14.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.螺桿滑台;
             resources.ApplyResources(this.pictureBox14, "pictureBox14");
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.TabStop = false;
@@ -1932,6 +1996,7 @@
             // pictureBox12
             // 
             this.pictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox12.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.Y65D;
             resources.ApplyResources(this.pictureBox12, "pictureBox12");
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.TabStop = false;
@@ -1946,6 +2011,7 @@
             // pictureBox11
             // 
             this.pictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox11.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.Y65;
             resources.ApplyResources(this.pictureBox11, "pictureBox11");
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.TabStop = false;
@@ -1960,6 +2026,7 @@
             // pictureBox10
             // 
             this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox10.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.推桿式;
             resources.ApplyResources(this.pictureBox10, "pictureBox10");
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.TabStop = false;
@@ -1967,13 +2034,16 @@
             // optBuildInScrewActuator
             // 
             resources.ApplyResources(this.optBuildInScrewActuator, "optBuildInScrewActuator");
+            this.optBuildInScrewActuator.Checked = true;
             this.optBuildInScrewActuator.ForeColor = System.Drawing.Color.Black;
             this.optBuildInScrewActuator.Name = "optBuildInScrewActuator";
+            this.optBuildInScrewActuator.TabStop = true;
             this.optBuildInScrewActuator.UseVisualStyleBackColor = true;
             // 
             // pictureBox9
             // 
             this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox9.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.一般環境;
             resources.ApplyResources(this.pictureBox9, "pictureBox9");
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.TabStop = false;
@@ -1981,15 +2051,14 @@
             // optStandardScrewActuator
             // 
             resources.ApplyResources(this.optStandardScrewActuator, "optStandardScrewActuator");
-            this.optStandardScrewActuator.Checked = true;
             this.optStandardScrewActuator.ForeColor = System.Drawing.Color.Black;
             this.optStandardScrewActuator.Name = "optStandardScrewActuator";
-            this.optStandardScrewActuator.TabStop = true;
             this.optStandardScrewActuator.UseVisualStyleBackColor = true;
             // 
             // pictureBox8
             // 
             this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox8.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.皮帶滑台;
             resources.ApplyResources(this.pictureBox8, "pictureBox8");
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.TabStop = false;
@@ -2087,6 +2156,127 @@
             this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.TabStop = false;
+            // 
+            // panelSideTable
+            // 
+            resources.ApplyResources(this.panelSideTable, "panelSideTable");
+            this.panelSideTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSideTable.Controls.Add(this.panelSideTableIcon);
+            this.panelSideTable.Controls.Add(this.panelSideTableSelections);
+            this.panelSideTable.Controls.Add(this.customPanel4);
+            this.panelSideTable.Controls.Add(this.label4);
+            this.panelSideTable.Controls.Add(this.customPanel3);
+            this.panelSideTable.Controls.Add(this.label3);
+            this.panelSideTable.Controls.Add(this.customPanel2);
+            this.panelSideTable.Controls.Add(this.label2);
+            this.panelSideTable.Curvature = 8;
+            this.panelSideTable.Name = "panelSideTable";
+            // 
+            // panelSideTableIcon
+            // 
+            this.panelSideTableIcon.Controls.Add(this.pictureBox5);
+            this.panelSideTableIcon.Controls.Add(this.pictureBox4);
+            this.panelSideTableIcon.Controls.Add(this.pictureBox2);
+            resources.ApplyResources(this.panelSideTableIcon, "panelSideTableIcon");
+            this.panelSideTableIcon.Name = "panelSideTableIcon";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources._2D_3D;
+            resources.ApplyResources(this.pictureBox5, "pictureBox5");
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.order;
+            resources.ApplyResources(this.pictureBox4, "pictureBox4");
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.pdf;
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
+            // 
+            // panelSideTableSelections
+            // 
+            resources.ApplyResources(this.panelSideTableSelections, "panelSideTableSelections");
+            this.panelSideTableSelections.BorderColor = System.Drawing.Color.Silver;
+            this.panelSideTableSelections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSideTableSelections.Controls.Add(this.tableSelections);
+            this.panelSideTableSelections.Curvature = 8;
+            this.panelSideTableSelections.Name = "panelSideTableSelections";
+            // 
+            // tableSelections
+            // 
+            resources.ApplyResources(this.tableSelections, "tableSelections");
+            this.tableSelections.Name = "tableSelections";
+            // 
+            // customPanel4
+            // 
+            this.customPanel4.BorderColor = System.Drawing.Color.Silver;
+            this.customPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customPanel4.Controls.Add(this.lbSideTableModelInfo);
+            this.customPanel4.Curvature = 8;
+            resources.ApplyResources(this.customPanel4, "customPanel4");
+            this.customPanel4.Name = "customPanel4";
+            // 
+            // lbSideTableModelInfo
+            // 
+            resources.ApplyResources(this.lbSideTableModelInfo, "lbSideTableModelInfo");
+            this.lbSideTableModelInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
+            this.lbSideTableModelInfo.Name = "lbSideTableModelInfo";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Name = "label4";
+            // 
+            // customPanel3
+            // 
+            this.customPanel3.BorderColor = System.Drawing.Color.Silver;
+            this.customPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customPanel3.Controls.Add(this.lbSideTableMsg);
+            this.customPanel3.Curvature = 8;
+            resources.ApplyResources(this.customPanel3, "customPanel3");
+            this.customPanel3.Name = "customPanel3";
+            // 
+            // lbSideTableMsg
+            // 
+            resources.ApplyResources(this.lbSideTableMsg, "lbSideTableMsg");
+            this.lbSideTableMsg.ForeColor = System.Drawing.Color.Red;
+            this.lbSideTableMsg.Name = "lbSideTableMsg";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Name = "label3";
+            // 
+            // customPanel2
+            // 
+            this.customPanel2.BorderColor = System.Drawing.Color.Silver;
+            this.customPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customPanel2.Controls.Add(this.picModelImg);
+            this.customPanel2.Curvature = 8;
+            resources.ApplyResources(this.customPanel2, "customPanel2");
+            this.customPanel2.Name = "customPanel2";
+            // 
+            // picModelImg
+            // 
+            resources.ApplyResources(this.picModelImg, "picModelImg");
+            this.picModelImg.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.MK85;
+            this.picModelImg.Name = "picModelImg";
+            this.picModelImg.TabStop = false;
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
             // 
             // tabPage3
             // 
@@ -2203,170 +2393,18 @@
             this.label65.ForeColor = System.Drawing.Color.White;
             this.label65.Name = "label65";
             // 
-            // panelMoment
+            // panelBase
             // 
-            this.panelMoment.Controls.Add(this.pictureBox19);
-            this.panelMoment.Controls.Add(this.lbTitleMoment);
-            this.panelMoment.Controls.Add(this.label17);
-            this.panelMoment.Controls.Add(this.label24);
-            this.panelMoment.Controls.Add(this.label31);
-            this.panelMoment.Controls.Add(this.label30);
-            this.panelMoment.Controls.Add(this.label28);
-            this.panelMoment.Controls.Add(this.label27);
-            this.panelMoment.Controls.Add(this.txtMomentB);
-            this.panelMoment.Controls.Add(this.txtMomentC);
-            this.panelMoment.Controls.Add(this.txtMomentA);
-            this.panelMoment.Controls.Add(this.label25);
-            this.panelMoment.Controls.Add(this.label26);
-            this.panelMoment.Controls.Add(this.label29);
-            resources.ApplyResources(this.panelMoment, "panelMoment");
-            this.panelMoment.Name = "panelMoment";
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.pictureBox19, "pictureBox19");
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.TabStop = false;
-            // 
-            // lbTitleMoment
-            // 
-            resources.ApplyResources(this.lbTitleMoment, "lbTitleMoment");
-            this.lbTitleMoment.BackColor = System.Drawing.Color.White;
-            this.lbTitleMoment.ForeColor = System.Drawing.Color.DimGray;
-            this.lbTitleMoment.Name = "lbTitleMoment";
-            // 
-            // label17
-            // 
-            resources.ApplyResources(this.label17, "label17");
-            this.label17.Name = "label17";
-            // 
-            // label24
-            // 
-            resources.ApplyResources(this.label24, "label24");
-            this.label24.ForeColor = System.Drawing.Color.Red;
-            this.label24.Name = "label24";
-            this.label24.Tag = "txtMomentA";
-            // 
-            // label31
-            // 
-            resources.ApplyResources(this.label31, "label31");
-            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label31.Name = "label31";
-            // 
-            // label30
-            // 
-            resources.ApplyResources(this.label30, "label30");
-            this.label30.ForeColor = System.Drawing.Color.Red;
-            this.label30.Name = "label30";
-            this.label30.Tag = "txtMomentB";
-            // 
-            // label28
-            // 
-            resources.ApplyResources(this.label28, "label28");
-            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label28.Name = "label28";
-            // 
-            // label27
-            // 
-            resources.ApplyResources(this.label27, "label27");
-            this.label27.ForeColor = System.Drawing.Color.Red;
-            this.label27.Name = "label27";
-            this.label27.Tag = "txtMomentC";
-            // 
-            // txtMomentB
-            // 
-            resources.ApplyResources(this.txtMomentB, "txtMomentB");
-            this.txtMomentB.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtMomentB.Name = "txtMomentB";
-            // 
-            // txtMomentC
-            // 
-            resources.ApplyResources(this.txtMomentC, "txtMomentC");
-            this.txtMomentC.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtMomentC.Name = "txtMomentC";
-            // 
-            // txtMomentA
-            // 
-            resources.ApplyResources(this.txtMomentA, "txtMomentA");
-            this.txtMomentA.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtMomentA.Name = "txtMomentA";
-            // 
-            // label25
-            // 
-            resources.ApplyResources(this.label25, "label25");
-            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label25.Name = "label25";
-            // 
-            // label26
-            // 
-            resources.ApplyResources(this.label26, "label26");
-            this.label26.Name = "label26";
-            // 
-            // label29
-            // 
-            resources.ApplyResources(this.label29, "label29");
-            this.label29.Name = "label29";
-            // 
-            // lbTitleSetup
-            // 
-            resources.ApplyResources(this.lbTitleSetup, "lbTitleSetup");
-            this.lbTitleSetup.BackColor = System.Drawing.Color.White;
-            this.lbTitleSetup.ForeColor = System.Drawing.Color.DimGray;
-            this.lbTitleSetup.Name = "lbTitleSetup";
-            // 
-            // panelSetup
-            // 
-            this.panelSetup.Controls.Add(this.panelSetupMode);
-            this.panelSetup.Controls.Add(this.lbTitleSetup);
-            resources.ApplyResources(this.panelSetup, "panelSetup");
-            this.panelSetup.Name = "panelSetup";
-            // 
-            // panelSetupMode
-            // 
-            this.panelSetupMode.Controls.Add(this.optUpsideDownUse);
-            this.panelSetupMode.Controls.Add(this.optHorizontalUse);
-            this.panelSetupMode.Controls.Add(this.optWallHangingUse);
-            this.panelSetupMode.Controls.Add(this.pictureBox13);
-            resources.ApplyResources(this.panelSetupMode, "panelSetupMode");
-            this.panelSetupMode.Name = "panelSetupMode";
-            // 
-            // optUpsideDownUse
-            // 
-            resources.ApplyResources(this.optUpsideDownUse, "optUpsideDownUse");
-            this.optUpsideDownUse.BackColor = System.Drawing.Color.Transparent;
-            this.optUpsideDownUse.ForeColor = System.Drawing.Color.Black;
-            this.optUpsideDownUse.Name = "optUpsideDownUse";
-            this.optUpsideDownUse.UseVisualStyleBackColor = false;
-            // 
-            // optHorizontalUse
-            // 
-            resources.ApplyResources(this.optHorizontalUse, "optHorizontalUse");
-            this.optHorizontalUse.Checked = true;
-            this.optHorizontalUse.ForeColor = System.Drawing.Color.Black;
-            this.optHorizontalUse.Name = "optHorizontalUse";
-            this.optHorizontalUse.TabStop = true;
-            this.optHorizontalUse.UseVisualStyleBackColor = true;
-            // 
-            // optWallHangingUse
-            // 
-            resources.ApplyResources(this.optWallHangingUse, "optWallHangingUse");
-            this.optWallHangingUse.ForeColor = System.Drawing.Color.Black;
-            this.optWallHangingUse.Name = "optWallHangingUse";
-            this.optWallHangingUse.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.setupMode;
-            resources.ApplyResources(this.pictureBox13, "pictureBox13");
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.TabStop = false;
+            this.panelBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBase.Controls.Add(this.splitContainerBase);
+            resources.ApplyResources(this.panelBase, "panelBase");
+            this.panelBase.Name = "panelBase";
             // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.splitContainerBase);
+            this.Controls.Add(this.panelBase);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMain";
             this.Load += new System.EventHandler(this.FormMain_Load);
@@ -2385,26 +2423,31 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).EndInit();
             this.tabMain.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdMotionSelection)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmdModelSelection)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmdMotionSelection)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.explorerBar.ResumeLayout(false);
+            this.explorerBar.PerformLayout();
+            this.panelNextPage.ResumeLayout(false);
+            this.panelConfirmBtnsStep2.ResumeLayout(false);
             this.panelCalcResult.ResumeLayout(false);
             this.panelCalcResult.PerformLayout();
-            this.panelConfirmBtnsStep2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).EndInit();
             this.panelChart.ResumeLayout(false);
             this.panelChart.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
-            this.panelCalc.ResumeLayout(false);
-            this.panelCalc.PerformLayout();
             this.panelEffectiveStroke.ResumeLayout(false);
             this.panelEffectiveStroke.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panelEffectiveStroke2.ResumeLayout(false);
             this.panelEffectiveStroke1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
+            this.panelCalc.ResumeLayout(false);
+            this.panelCalc.PerformLayout();
             this.panelReducer.ResumeLayout(false);
             this.panelReducer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).EndInit();
@@ -2422,17 +2465,14 @@
             this.panelMotorParams.PerformLayout();
             this.panelPowerSelection.ResumeLayout(false);
             this.panelPowerSelection.PerformLayout();
-            this.panelSideTable.ResumeLayout(false);
-            this.panelSideTableIcon.ResumeLayout(false);
-            this.panelSideTableIcon.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panelSideTableSelections.ResumeLayout(false);
-            this.customPanel4.ResumeLayout(false);
-            this.customPanel3.ResumeLayout(false);
-            this.customPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).EndInit();
+            this.panelMoment.ResumeLayout(false);
+            this.panelMoment.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            this.panelSetup.ResumeLayout(false);
+            this.panelSetup.PerformLayout();
+            this.panelSetupMode.ResumeLayout(false);
+            this.panelSetupMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.panelModelSelection.ResumeLayout(false);
             this.panelModelSelection.PerformLayout();
             this.panelModelType.ResumeLayout(false);
@@ -2455,6 +2495,17 @@
             this.panelSelectionMode.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.panelSideTable.ResumeLayout(false);
+            this.panelSideTableIcon.ResumeLayout(false);
+            this.panelSideTableIcon.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelSideTableSelections.ResumeLayout(false);
+            this.customPanel4.ResumeLayout(false);
+            this.customPanel3.ResumeLayout(false);
+            this.customPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.explorerBar_step5.ResumeLayout(false);
@@ -2464,14 +2515,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).EndInit();
             this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.explorerBarPanel5_title.ResumeLayout(false);
-            this.panelMoment.ResumeLayout(false);
-            this.panelMoment.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            this.panelSetup.ResumeLayout(false);
-            this.panelSetup.PerformLayout();
-            this.panelSetupMode.ResumeLayout(false);
-            this.panelSetupMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            this.panelBase.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2524,8 +2568,6 @@
         public System.Windows.Forms.Label lbResult;
         public System.Windows.Forms.PictureBox picBoxResultImg;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label47;
         public System.Windows.Forms.Panel panelCalc;
         public System.Windows.Forms.Label lbAccelSpeed;
         public System.Windows.Forms.Label lbCycleTime;
@@ -2578,16 +2620,12 @@
         public System.Windows.Forms.ComboBox cboMotorParamsMotorPowerSelection;
         private System.Windows.Forms.Label label59;
         public System.Windows.Forms.ComboBox cboPower;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label19;
         public System.Windows.Forms.TextBox txtStroke;
         public System.Windows.Forms.Label labelStrokeAlarm;
         public System.Windows.Forms.TextBox txtRunTime;
         public System.Windows.Forms.Label labelLoadAlarm;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
@@ -2720,7 +2758,16 @@
         public System.Windows.Forms.RadioButton optWallHangingUse;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Label lbTitleSetup;
-        private System.Windows.Forms.Label lbTitleChart;
+        public System.Windows.Forms.Label lbPrePage;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        public System.Windows.Forms.Panel panelNextPage;
+        private System.Windows.Forms.Label lbTitleCalc;
+        private System.Windows.Forms.Panel panelBase;
     }
 }
 

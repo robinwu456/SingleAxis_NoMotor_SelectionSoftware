@@ -96,7 +96,6 @@
     <Compile Include="Frontend\CustomTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Frontend\ExplorerBar.cs" />
     <Compile Include="Frontend\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +112,7 @@
     <Compile Include="Frontend\EffectiveStroke.cs" />
     <Compile Include="Frontend\GearRatio.cs" />
     <Compile Include="Frontend\InputValidate.cs" />
+    <Compile Include="Frontend\ModelSelection.cs" />
     <Compile Include="Frontend\Moment.cs" />
     <Compile Include="Frontend\MotorPower.cs" />
     <Compile Include="Frontend\RecommandList.cs" />
@@ -388,6 +388,34 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_0113_256_256_01_1CC_icon.ico" />
+    <None Include="Resources\皮帶滑台.png" />
+    <None Include="Resources\GTYD1.png" />
+    <None Include="Resources\Y65L.png" />
+    <None Include="Resources\Y65D.png" />
+    <None Include="Resources\Y65.png" />
+    <None Include="Resources\螺桿滑台.png" />
+    <None Include="Resources\螢幕擷取畫面 2021-06-26 000419.png" />
+    <None Include="Resources\螢幕擷取畫面 2021-06-25 232457.png" />
+    <None Include="Resources\螢幕擷取畫面 2021-06-25 230653.png" />
+    <None Include="Resources\螢幕擷取畫面 2021-06-25 230600.png" />
+    <None Include="Resources\螢幕擷取畫面 2021-06-25 225632.png" />
+    <None Include="Resources\螢幕擷取畫面 2021-06-25 225614.png" />
+    <None Include="Resources\螢幕擷取畫面 2021-06-25 225553.png" />
+    <None Include="Resources\螢幕擷取畫面 2021-06-25 225533.png" />
+    <None Include="Resources\標準皮帶.png" />
+    <None Include="Resources\推桿式.png" />
+    <None Include="Resources\拉霸.png" />
+    <None Include="Resources\安裝方式.png" />
+    <None Include="Resources\一般環境1.png" />
+    <None Include="Resources\M系列.png" />
+    <None Include="Resources\GTYD2.png" />
+    <None Include="Resources\GTYD.png" />
+    <None Include="Resources\G2.png" />
+    <None Include="Resources\一般環境.png" />
+    <None Include="Resources\moment.jpg" />
+    <None Include="Resources\選型軟體.png" />
+    <None Include="Resources\動作選型.png" />
+    <None Include="Resources\型號選型.png" />
     <None Include="Resources\pdf.png" />
     <None Include="Resources\order.png" />
     <None Include="Resources\2D_3D.png" />
