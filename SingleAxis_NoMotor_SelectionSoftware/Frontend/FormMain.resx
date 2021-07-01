@@ -588,6 +588,27 @@
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>930, 3</value>
+  </data>
+  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 100</value>
+  </data>
+  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panel4.Name" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;panel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -616,7 +637,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="panel1" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="panel2" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Absolute,300,Absolute,300,Percent,50" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="panel1" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="panel2" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="panel4" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Absolute,300,Absolute,300,Percent,50" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1014,6 +1035,9 @@
   <data name="T_Rms安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="T_Rms安全係數.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
   <metadata name="運行距離.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1061,6 +1085,9 @@
   </data>
   <data name="更詳細資訊.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="更詳細資訊.Width" type="System.Int32, mscorlib">
+    <value>106</value>
   </data>
   <data name="dgvRecommandList.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 67</value>
@@ -1806,6 +1833,135 @@
   <data name="&gt;&gt;panelChart.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="customTextBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 12pt</value>
+  </data>
+  <data name="customTextBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>805, 167</value>
+  </data>
+  <data name="customTextBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>7, 6, 7, 6</value>
+  </data>
+  <data name="customTextBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 29</value>
+  </data>
+  <data name="customTextBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>372</value>
+  </data>
+  <data name="&gt;&gt;customTextBox1.Name" xml:space="preserve">
+    <value>customTextBox1</value>
+  </data>
+  <data name="&gt;&gt;customTextBox1.Type" xml:space="preserve">
+    <value>CustomTextbox.CustomTextBox, CustomTextBox, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;customTextBox1.Parent" xml:space="preserve">
+    <value>panelCalc</value>
+  </data>
+  <data name="&gt;&gt;customTextBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="scrollBarPanelLoad.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="scrollBarThumbLoad.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="scrollBarThumbLoad.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 7</value>
+  </data>
+  <data name="scrollBarThumbLoad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 14</value>
+  </data>
+  <data name="scrollBarThumbLoad.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="scrollBarThumbLoad.TabIndex" type="System.Int32, mscorlib">
+    <value>371</value>
+  </data>
+  <data name="&gt;&gt;scrollBarThumbLoad.Name" xml:space="preserve">
+    <value>scrollBarThumbLoad</value>
+  </data>
+  <data name="&gt;&gt;scrollBarThumbLoad.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scrollBarThumbLoad.Parent" xml:space="preserve">
+    <value>scrollBarPanelLoad</value>
+  </data>
+  <data name="&gt;&gt;scrollBarThumbLoad.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="scrollBarPanelLoad.Location" type="System.Drawing.Point, System.Drawing">
+    <value>805, 116</value>
+  </data>
+  <data name="scrollBarPanelLoad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 29</value>
+  </data>
+  <data name="scrollBarPanelLoad.TabIndex" type="System.Int32, mscorlib">
+    <value>371</value>
+  </data>
+  <data name="&gt;&gt;scrollBarPanelLoad.Name" xml:space="preserve">
+    <value>scrollBarPanelLoad</value>
+  </data>
+  <data name="&gt;&gt;scrollBarPanelLoad.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scrollBarPanelLoad.Parent" xml:space="preserve">
+    <value>panelCalc</value>
+  </data>
+  <data name="&gt;&gt;scrollBarPanelLoad.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="scrollBarPanelStroke.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="scrollBarThumbStroke.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="scrollBarThumbStroke.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 7</value>
+  </data>
+  <data name="scrollBarThumbStroke.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 14</value>
+  </data>
+  <data name="scrollBarThumbStroke.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="scrollBarThumbStroke.TabIndex" type="System.Int32, mscorlib">
+    <value>371</value>
+  </data>
+  <data name="&gt;&gt;scrollBarThumbStroke.Name" xml:space="preserve">
+    <value>scrollBarThumbStroke</value>
+  </data>
+  <data name="&gt;&gt;scrollBarThumbStroke.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scrollBarThumbStroke.Parent" xml:space="preserve">
+    <value>scrollBarPanelStroke</value>
+  </data>
+  <data name="&gt;&gt;scrollBarThumbStroke.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="scrollBarPanelStroke.Location" type="System.Drawing.Point, System.Drawing">
+    <value>805, 64</value>
+  </data>
+  <data name="scrollBarPanelStroke.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 29</value>
+  </data>
+  <data name="scrollBarPanelStroke.TabIndex" type="System.Int32, mscorlib">
+    <value>370</value>
+  </data>
+  <data name="&gt;&gt;scrollBarPanelStroke.Name" xml:space="preserve">
+    <value>scrollBarPanelStroke</value>
+  </data>
+  <data name="&gt;&gt;scrollBarPanelStroke.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scrollBarPanelStroke.Parent" xml:space="preserve">
+    <value>panelCalc</value>
+  </data>
+  <data name="&gt;&gt;scrollBarPanelStroke.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="lbTitleCalc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1840,7 +1996,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;lbTitleCalc.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="cmdCalc.ButtonText" xml:space="preserve">
     <value>計算規格</value>
@@ -1864,7 +2020,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;cmdCalc.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="label55.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1978,7 +2134,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;panelReducer.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="lbMaxSpeedAlarm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2332,7 +2488,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;panelAdvanceParams.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="label72.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2539,7 +2695,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;panel6.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="chkAdvanceMode.BackImg_ToggleOff_Normal" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2630,7 +2786,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;panelAdvanceMode.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="label71.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2663,7 +2819,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;label71.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="label44.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2696,7 +2852,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;label44.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="optMotorParamsModifySimple.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2816,7 +2972,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;panelPowerModifyMode.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="label53.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2849,7 +3005,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;label53.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="label45.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2882,7 +3038,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;label45.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="lbDaysPerYearAlarm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2918,7 +3074,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;lbDaysPerYearAlarm.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>14</value>
   </data>
   <data name="label52.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2951,7 +3107,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;label52.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>15</value>
   </data>
   <data name="lbTimesPerMinuteAlarm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2987,7 +3143,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;lbTimesPerMinuteAlarm.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>16</value>
   </data>
   <data name="label35.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3404,7 +3560,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;panelMotorParams.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>17</value>
   </data>
   <data name="lbHoursPerDayAlarm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3440,7 +3596,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;lbHoursPerDayAlarm.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>18</value>
   </data>
   <data name="txtTimesPerMinute.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 12pt</value>
@@ -3470,7 +3626,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;txtTimesPerMinute.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>19</value>
   </data>
   <data name="txtDayPerYear.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 12pt</value>
@@ -3500,7 +3656,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;txtDayPerYear.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>20</value>
   </data>
   <data name="label60.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -3623,7 +3779,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;panelPowerSelection.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>21</value>
   </data>
   <data name="txtHourPerDay.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 12pt</value>
@@ -3653,7 +3809,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;txtHourPerDay.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>22</value>
   </data>
   <data name="txtLoad.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 12pt</value>
@@ -3683,7 +3839,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;txtLoad.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>23</value>
   </data>
   <data name="cboPower.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -3710,7 +3866,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;cboPower.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>24</value>
   </data>
   <data name="label46.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3743,7 +3899,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;label46.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>25</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3776,7 +3932,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>26</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3809,7 +3965,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>27</value>
   </data>
   <data name="label50.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3842,7 +3998,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;label50.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>28</value>
   </data>
   <data name="txtStroke.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 12pt</value>
@@ -3872,7 +4028,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;txtStroke.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>29</value>
   </data>
   <data name="labelStopTimeAlarm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3908,7 +4064,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;labelStopTimeAlarm.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>30</value>
   </data>
   <data name="labelStrokeAlarm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3944,7 +4100,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;labelStrokeAlarm.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>31</value>
   </data>
   <data name="label22.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3977,7 +4133,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;label22.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>32</value>
   </data>
   <data name="txtRunTime.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 12pt</value>
@@ -4007,7 +4163,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;txtRunTime.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>33</value>
   </data>
   <data name="label23.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4040,7 +4196,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;label23.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>34</value>
   </data>
   <data name="labelLoadAlarm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4076,7 +4232,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;labelLoadAlarm.ZOrder" xml:space="preserve">
-    <value>32</value>
+    <value>35</value>
   </data>
   <data name="label15.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4109,7 +4265,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>33</value>
+    <value>36</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4142,7 +4298,7 @@
     <value>panelCalc</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>34</value>
+    <value>37</value>
   </data>
   <data name="panelCalc.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -6332,7 +6488,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,246,Absolute,246,Absolute,246,Absolute,246" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,254,Absolute,254,Absolute,254,Absolute,254" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 313</value>
@@ -6623,7 +6779,7 @@
     <value>7</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>967, 103</value>
+    <value>882, 2380</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -6719,7 +6875,7 @@
     <value>NoControl</value>
   </data>
   <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-212, -749</value>
+    <value>-260, -881</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 16</value>
@@ -6749,7 +6905,7 @@
     <value>NoControl</value>
   </data>
   <data name="label56.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-211, -1052</value>
+    <value>-259, -1184</value>
   </data>
   <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 2</value>
@@ -6782,7 +6938,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-218, -1089</value>
+    <value>-266, -1221</value>
   </data>
   <data name="lbResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 31</value>
@@ -6812,7 +6968,7 @@
     <value>NoControl</value>
   </data>
   <data name="picBoxResultImg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-212, -1032</value>
+    <value>-260, -1164</value>
   </data>
   <data name="picBoxResultImg.Size" type="System.Drawing.Size, System.Drawing">
     <value>452, 276</value>

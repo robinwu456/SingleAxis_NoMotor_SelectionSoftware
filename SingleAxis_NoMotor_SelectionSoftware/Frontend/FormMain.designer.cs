@@ -43,6 +43,7 @@
             this.cmdNarrow = new System.Windows.Forms.PictureBox();
             this.cmdZoom = new System.Windows.Forms.PictureBox();
             this.cmdClose = new System.Windows.Forms.PictureBox();
+            this.panelBase = new System.Windows.Forms.Panel();
             this.tabMain = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -53,6 +54,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label48 = new System.Windows.Forms.Label();
             this.cmdMotionSelection = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.explorerBar = new System.Windows.Forms.Panel();
             this.panelNextPage = new System.Windows.Forms.Panel();
@@ -108,6 +110,10 @@
             this.lbMaxSpeed = new System.Windows.Forms.Label();
             this.lbRunTime = new System.Windows.Forms.Label();
             this.panelCalc = new System.Windows.Forms.Panel();
+            this.scrollBarPanelLoad = new System.Windows.Forms.Panel();
+            this.scrollBarThumbLoad = new System.Windows.Forms.PictureBox();
+            this.scrollBarPanelStroke = new System.Windows.Forms.Panel();
+            this.scrollBarThumbStroke = new System.Windows.Forms.PictureBox();
             this.lbTitleCalc = new System.Windows.Forms.Label();
             this.cmdCalc = new CustomButton.CustomButton();
             this.panelReducer = new System.Windows.Forms.Panel();
@@ -280,7 +286,7 @@
             this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
-            this.panelBase = new System.Windows.Forms.Panel();
+            this.customTextBox1 = new CustomTextbox.CustomTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -292,6 +298,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdNarrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdZoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).BeginInit();
+            this.panelBase.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -313,6 +320,10 @@
             this.panelEffectiveStroke1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.panelCalc.SuspendLayout();
+            this.scrollBarPanelLoad.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbLoad)).BeginInit();
+            this.scrollBarPanelStroke.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbStroke)).BeginInit();
             this.panelReducer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).BeginInit();
             this.panelAdvanceParams.SuspendLayout();
@@ -362,7 +373,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).BeginInit();
             this.panelConfirmBtnsStep5.SuspendLayout();
             this.explorerBarPanel5_title.SuspendLayout();
-            this.panelBase.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -445,6 +455,13 @@
             this.cmdClose.Name = "cmdClose";
             this.cmdClose.TabStop = false;
             // 
+            // panelBase
+            // 
+            this.panelBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBase.Controls.Add(this.splitContainerBase);
+            resources.ApplyResources(this.panelBase, "panelBase");
+            this.panelBase.Name = "panelBase";
+            // 
             // tabMain
             // 
             this.tabMain.Controls.Add(this.tabPage1);
@@ -473,6 +490,7 @@
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel4, 3, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // panel1
@@ -514,6 +532,11 @@
             this.cmdMotionSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.動作選型;
             this.cmdMotionSelection.Name = "cmdMotionSelection";
             this.cmdMotionSelection.TabStop = false;
+            // 
+            // panel4
+            // 
+            resources.ApplyResources(this.panel4, "panel4");
+            this.panel4.Name = "panel4";
             // 
             // tabPage2
             // 
@@ -1041,6 +1064,9 @@
             // 
             // panelCalc
             // 
+            this.panelCalc.Controls.Add(this.customTextBox1);
+            this.panelCalc.Controls.Add(this.scrollBarPanelLoad);
+            this.panelCalc.Controls.Add(this.scrollBarPanelStroke);
             this.panelCalc.Controls.Add(this.lbTitleCalc);
             this.panelCalc.Controls.Add(this.cmdCalc);
             this.panelCalc.Controls.Add(this.panelReducer);
@@ -1078,6 +1104,34 @@
             this.panelCalc.Controls.Add(this.label10);
             resources.ApplyResources(this.panelCalc, "panelCalc");
             this.panelCalc.Name = "panelCalc";
+            // 
+            // scrollBarPanelLoad
+            // 
+            this.scrollBarPanelLoad.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.scrollBar;
+            resources.ApplyResources(this.scrollBarPanelLoad, "scrollBarPanelLoad");
+            this.scrollBarPanelLoad.Controls.Add(this.scrollBarThumbLoad);
+            this.scrollBarPanelLoad.Name = "scrollBarPanelLoad";
+            // 
+            // scrollBarThumbLoad
+            // 
+            this.scrollBarThumbLoad.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.scrollBarThumb;
+            resources.ApplyResources(this.scrollBarThumbLoad, "scrollBarThumbLoad");
+            this.scrollBarThumbLoad.Name = "scrollBarThumbLoad";
+            this.scrollBarThumbLoad.TabStop = false;
+            // 
+            // scrollBarPanelStroke
+            // 
+            this.scrollBarPanelStroke.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.scrollBar;
+            resources.ApplyResources(this.scrollBarPanelStroke, "scrollBarPanelStroke");
+            this.scrollBarPanelStroke.Controls.Add(this.scrollBarThumbStroke);
+            this.scrollBarPanelStroke.Name = "scrollBarPanelStroke";
+            // 
+            // scrollBarThumbStroke
+            // 
+            this.scrollBarThumbStroke.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.scrollBarThumb;
+            resources.ApplyResources(this.scrollBarThumbStroke, "scrollBarThumbStroke");
+            this.scrollBarThumbStroke.Name = "scrollBarThumbStroke";
+            this.scrollBarThumbStroke.TabStop = false;
             // 
             // lbTitleCalc
             // 
@@ -2393,12 +2447,13 @@
             this.label65.ForeColor = System.Drawing.Color.White;
             this.label65.Name = "label65";
             // 
-            // panelBase
+            // customTextBox1
             // 
-            this.panelBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelBase.Controls.Add(this.splitContainerBase);
-            resources.ApplyResources(this.panelBase, "panelBase");
-            this.panelBase.Name = "panelBase";
+            resources.ApplyResources(this.customTextBox1, "customTextBox1");
+            this.customTextBox1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.customTextBox1.Name = "customTextBox1";
+            this.customTextBox1.PlaceHolder = "運行的距離...";
+            this.customTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FormMain
             // 
@@ -2421,6 +2476,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdNarrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdZoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).EndInit();
+            this.panelBase.ResumeLayout(false);
             this.tabMain.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -2448,6 +2504,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
             this.panelCalc.ResumeLayout(false);
             this.panelCalc.PerformLayout();
+            this.scrollBarPanelLoad.ResumeLayout(false);
+            this.scrollBarPanelLoad.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbLoad)).EndInit();
+            this.scrollBarPanelStroke.ResumeLayout(false);
+            this.scrollBarPanelStroke.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbStroke)).EndInit();
             this.panelReducer.ResumeLayout(false);
             this.panelReducer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).EndInit();
@@ -2515,7 +2577,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).EndInit();
             this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.explorerBarPanel5_title.ResumeLayout(false);
-            this.panelBase.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2768,6 +2829,12 @@
         public System.Windows.Forms.Panel panelNextPage;
         private System.Windows.Forms.Label lbTitleCalc;
         private System.Windows.Forms.Panel panelBase;
+        public System.Windows.Forms.Panel scrollBarPanelStroke;
+        public System.Windows.Forms.PictureBox scrollBarThumbStroke;
+        public System.Windows.Forms.Panel scrollBarPanelLoad;
+        public System.Windows.Forms.PictureBox scrollBarThumbLoad;
+        private System.Windows.Forms.Panel panel4;
+        private CustomTextbox.CustomTextBox customTextBox1;
     }
 }
 

@@ -139,6 +139,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 一開始就顯示側邊資訊
             formMain.sideTable.Update(null, null);
+
+            // scrollbars
+            runCondition.scrollBarStroke.Initialize();
+            runCondition.scrollBarLoad.Initialize();
         }
 
         //public void SetSelectedModelConfirmBtnVisible(bool visible) {

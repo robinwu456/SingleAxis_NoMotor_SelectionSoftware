@@ -41,6 +41,9 @@
     <Reference Include="CustomButton">
       <HintPath>..\..\CustomPicControls\CustomButton\bin\Debug\CustomButton.dll</HintPath>
     </Reference>
+    <Reference Include="CustomTextBox">
+      <HintPath>..\..\CustomPicControls\CustomTextbox\bin\Debug\CustomTextBox.dll</HintPath>
+    </Reference>
     <Reference Include="CustomToggle, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\CustomPicControls\CustomToggle\bin\Debug\CustomToggle.dll</HintPath>
@@ -75,6 +78,7 @@
     <Compile Include="Config.cs" />
     <Compile Include="CustomExtensions.cs" />
     <Compile Include="CustomObjects\SubBeltWheel.cs" />
+    <Compile Include="CustomScrollBar.cs" />
     <Compile Include="en.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -388,6 +392,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_0113_256_256_01_1CC_icon.ico" />
+    <None Include="Resources\scrollBarThumb_hover.png" />
+    <None Include="Resources\scrollBarThumb.png" />
+    <None Include="Resources\scrollBar.png" />
     <None Include="Resources\皮帶滑台.png" />
     <None Include="Resources\GTYD1.png" />
     <None Include="Resources\Y65L.png" />

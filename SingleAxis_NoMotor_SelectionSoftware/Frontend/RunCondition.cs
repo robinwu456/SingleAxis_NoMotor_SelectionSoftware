@@ -7,6 +7,8 @@ using System.Windows.Forms;
 namespace SingleAxis_NoMotor_SelectionSoftware {    
     public class RunCondition {
         public Condition curCondition = new Condition();
+        public CustomScrollBar scrollBarStroke;
+        public CustomScrollBar scrollBarLoad;
 
         private FormMain formMain;
 
@@ -57,6 +59,19 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.optMaxSpeedType_mms.CheckedChanged += UpdateCondition;
             formMain.dgvReducerInfo.CellValueChanged += UpdateCondition;
             formMain.optExpectServiceLife.CheckedChanged += UpdateCondition;
+
+            // Custom scrollBar init
+            scrollBarStroke = new CustomScrollBar(formMain, formMain.scrollBarPanelStroke, formMain.scrollBarThumbStroke, null, null);
+            scrollBarStroke.Name = "scrollBarStroke";
+            scrollBarStroke.minValue = 50;
+            scrollBarStroke.maxValue = 6000;
+            scrollBarStroke.bindingTextBox = formMain.txtStroke;
+
+            scrollBarLoad = new CustomScrollBar(formMain, formMain.scrollBarPanelLoad, formMain.scrollBarThumbLoad, null, null);
+            scrollBarLoad.Name = "scrollBarStroke";
+            scrollBarLoad.minValue = 0;
+            scrollBarLoad.maxValue = 500;
+            scrollBarLoad.bindingTextBox = formMain.txtLoad;
         }
 
         private void ExpectServiceLife_CheckedChanged(object sender, EventArgs e) {
