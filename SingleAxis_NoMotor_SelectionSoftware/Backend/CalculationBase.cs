@@ -147,6 +147,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         // 依照行程取RPM
         public int GetRpmByStroke(string model, double lead, int reducer, int stroke) {
+            if (model == "")
+                return -1;
+
             // 取同型號集合
             IEnumerable<DataRow> strokeRpms = strokeRpm.Rows.Cast<DataRow>()
                                                             .Where(row => row["Model"].ToString() == model &&
@@ -370,6 +373,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public int GetMaxAccelSpeed(string model, double lead, int reducer, int stroke) {
+            if (model == "")
+                return -1;
+
             int rpm = GetRpmByStroke(model, lead, reducer, stroke);
             double vMax = (lead * (double)rpm) / 60f;
             double repeatability = Convert.ToDouble(modelInfo.Rows.Cast<DataRow>().First(row => row["Model"].ToString() == model)["Repeatability"].ToString());

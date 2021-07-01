@@ -39,7 +39,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void CmdResetStep5_Click(object sender, EventArgs e) {
             formMain.tabMain.SelectTab(0);
-            formMain.curStep = FormMain.Step.Step1;
+            //formMain.curStep = FormMain.Step.Step1;
             formMain.sideTable.Update(null, null);
             formMain.sideTable.ClearModelImg();
             formMain.sideTable.ClearModelInfo();

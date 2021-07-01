@@ -6043,76 +6043,76 @@
   <data name="&gt;&gt;lbTitleSelectionMode.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="optCalcSelectedModel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="optModelSelection.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="optCalcSelectedModel.AutoSize" type="System.Boolean, mscorlib">
+  <data name="optModelSelection.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="optCalcSelectedModel.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="optModelSelection.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 11pt, style=Bold</value>
   </data>
-  <data name="optCalcSelectedModel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="optModelSelection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="optCalcSelectedModel.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="optModelSelection.Location" type="System.Drawing.Point, System.Drawing">
     <value>577, 37</value>
   </data>
-  <data name="optCalcSelectedModel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="optModelSelection.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 23</value>
   </data>
-  <data name="optCalcSelectedModel.TabIndex" type="System.Int32, mscorlib">
+  <data name="optModelSelection.TabIndex" type="System.Int32, mscorlib">
     <value>271</value>
   </data>
-  <data name="optCalcSelectedModel.Text" xml:space="preserve">
+  <data name="optModelSelection.Text" xml:space="preserve">
     <value>型號選型</value>
   </data>
-  <data name="&gt;&gt;optCalcSelectedModel.Name" xml:space="preserve">
-    <value>optCalcSelectedModel</value>
+  <data name="&gt;&gt;optModelSelection.Name" xml:space="preserve">
+    <value>optModelSelection</value>
   </data>
-  <data name="&gt;&gt;optCalcSelectedModel.Type" xml:space="preserve">
+  <data name="&gt;&gt;optModelSelection.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;optCalcSelectedModel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;optModelSelection.Parent" xml:space="preserve">
     <value>panelSelectionMode</value>
   </data>
-  <data name="&gt;&gt;optCalcSelectedModel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;optModelSelection.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="optCalcAllModel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="optConditionSelection.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="optCalcAllModel.AutoSize" type="System.Boolean, mscorlib">
+  <data name="optConditionSelection.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="optCalcAllModel.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="optConditionSelection.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 11pt, style=Bold</value>
   </data>
-  <data name="optCalcAllModel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="optConditionSelection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="optCalcAllModel.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="optConditionSelection.Location" type="System.Drawing.Point, System.Drawing">
     <value>231, 36</value>
   </data>
-  <data name="optCalcAllModel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="optConditionSelection.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 23</value>
   </data>
-  <data name="optCalcAllModel.TabIndex" type="System.Int32, mscorlib">
+  <data name="optConditionSelection.TabIndex" type="System.Int32, mscorlib">
     <value>270</value>
   </data>
-  <data name="optCalcAllModel.Text" xml:space="preserve">
+  <data name="optConditionSelection.Text" xml:space="preserve">
     <value>條件選型</value>
   </data>
-  <data name="&gt;&gt;optCalcAllModel.Name" xml:space="preserve">
-    <value>optCalcAllModel</value>
+  <data name="&gt;&gt;optConditionSelection.Name" xml:space="preserve">
+    <value>optConditionSelection</value>
   </data>
-  <data name="&gt;&gt;optCalcAllModel.Type" xml:space="preserve">
+  <data name="&gt;&gt;optConditionSelection.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;optCalcAllModel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;optConditionSelection.Parent" xml:space="preserve">
     <value>panelSelectionMode</value>
   </data>
-  <data name="&gt;&gt;optCalcAllModel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;optConditionSelection.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="pictureBox6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -6332,7 +6332,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,245,Absolute,245,Absolute,245,Absolute,245" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,246,Absolute,246,Absolute,246,Absolute,246" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 313</value>
@@ -6623,7 +6623,7 @@
     <value>7</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>933, 100</value>
+    <value>967, 103</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>

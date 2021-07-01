@@ -44,9 +44,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public void UpdateMotorCalcMode() {
             formMain.cboPower.DataSource = null;
 
-            if (formMain.optCalcAllModel.Checked) {
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.MotionSelection) {
                 formMain.cboPower.DataSource = new string[] { "標準", "自訂" };
             } else {
+                if (string.IsNullOrEmpty(formMain.cboModel.Text) || string.IsNullOrEmpty(formMain.cboLead.Text))
+                    return;
+
                 formMain.cboPower.Items.Clear();
                 formMain.page2.calc.modelInfo.Rows.Cast<DataRow>().First(row => row["Model"].ToString() == formMain.cboModel.Text && Convert.ToInt32(row["Lead"].ToString()) == Convert.ToInt32(formMain.cboLead.Text))
                                                        ["Power"].ToString().Split('&').ToList()

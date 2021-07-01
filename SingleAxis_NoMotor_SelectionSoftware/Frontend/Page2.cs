@@ -13,7 +13,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public int minHeight = 800;
         public int maxHeight = 1333;
         public Dictionary<RadioButton, Model.ModelType> modelTypeOptMap = new Dictionary<RadioButton, Model.ModelType>();
-        public Model.ModelType curSelectModelType = Model.ModelType.標準螺桿滑台;        
+        public Model.ModelType curSelectModelType = Model.ModelType.標準螺桿滑台;
         public ModelSelectionMode modelSelectionMode = ModelSelectionMode.ConditionSelection;
         public Calculation calc = new Calculation();
         // Step2各項目
@@ -91,6 +91,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.Controls.All().Where(control => control.Name.EndsWith("Alarm")).ToList()
                                    .ForEach(control => control.Visible = false);
 
+            // 更新型號選擇
+            formMain.sideTable.UpdateItem();
+            ModelType_CheckedChanged(null, null);
+            modelSelection.UpdateSelections(null, null);
+
+            // 偵測傳動方式有無
+            DetectModelTypeData();
+
             // 馬達選項更新
             motorPower.UpdateMotorCalcMode();
             motorPower.Load();
@@ -129,11 +137,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 側邊欄位置重整
             formMain.sideTable.RePosition();
 
-            // 更新型號選擇
-            modelSelection.UpdateSelections(null, null);
-
-            // 偵測傳動方式有無
-            DetectModelTypeData();
+            // 一開始就顯示側邊資訊
+            formMain.sideTable.Update(null, null);
         }
 
         //public void SetSelectedModelConfirmBtnVisible(bool visible) {
@@ -166,7 +171,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void InitEvents() {
             // 選行方式
-            formMain.optCalcAllModel.CheckedChanged += UpdateLayout;
+            formMain.optConditionSelection.CheckedChanged += UpdateLayout;
+
+            // 使用環境
+            formMain.optStandardEnv.CheckedChanged += formMain.sideTable.Update;
+
+            // 當前機構型態更新
+            modelTypeOptMap.Keys.ToList().ForEach(opt => opt.CheckedChanged += ModelType_CheckedChanged);
 
             // 進階選項
             formMain.chkAdvanceMode.CheckedChanged += ChkAdvanceMode_CheckedChanged;
@@ -176,10 +187,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 確認按鈕
             formMain.cmdConfirmStep2.Click += CmdConfirmStep2_Click;
-            //formMain.cmdCalcSelectedModelConfirmStep2.Click += CmdConfirmStep2_Click;
-
-            // 當前機構型態更新
-            modelTypeOptMap.Keys.ToList().ForEach(opt => opt.CheckedChanged += ModelType_CheckedChanged);
+            //formMain.cmdCalcSelectedModelConfirmStep2.Click += CmdConfirmStep2_Click;            
 
             formMain.lbPrePage.Click += PrePage_Click;
         }
@@ -193,7 +201,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void UpdateLayout(object sender, EventArgs e) {
             // 更新當前page2選行條件
-            modelSelectionMode = formMain.optCalcAllModel.Checked ? ModelSelectionMode.ConditionSelection : ModelSelectionMode.ModelSelection;
+            modelSelectionMode = formMain.optConditionSelection.Checked ? ModelSelectionMode.ConditionSelection : ModelSelectionMode.ModelSelection;
 
             // 部分panel隱藏處理
             formMain.panelSelectionMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;     // 選型方式
@@ -215,6 +223,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void ModelType_CheckedChanged(object sender, EventArgs e) {
             curSelectModelType = modelTypeOptMap.First(pair => pair.Key.Checked).Value;
+            formMain.sideTable.Update(null, null);
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {
@@ -296,7 +305,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         // 側邊欄
                         formMain.sideTable.ClearModelImg();
                         formMain.sideTable.ClearModelInfo();
-                        if (formMain.optCalcSelectedModel.Checked)
+                        if (formMain.optModelSelection.Checked)
                             formMain.sideTable.ClearSelectedModelInfo();
                     }));
 

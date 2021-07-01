@@ -246,8 +246,8 @@
             this.lbTitleUseEnv = new System.Windows.Forms.Label();
             this.panelSelectionMode = new System.Windows.Forms.Panel();
             this.lbTitleSelectionMode = new System.Windows.Forms.Label();
-            this.optCalcSelectedModel = new System.Windows.Forms.RadioButton();
-            this.optCalcAllModel = new System.Windows.Forms.RadioButton();
+            this.optModelSelection = new System.Windows.Forms.RadioButton();
+            this.optConditionSelection = new System.Windows.Forms.RadioButton();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
@@ -2113,8 +2113,8 @@
             // panelSelectionMode
             // 
             this.panelSelectionMode.Controls.Add(this.lbTitleSelectionMode);
-            this.panelSelectionMode.Controls.Add(this.optCalcSelectedModel);
-            this.panelSelectionMode.Controls.Add(this.optCalcAllModel);
+            this.panelSelectionMode.Controls.Add(this.optModelSelection);
+            this.panelSelectionMode.Controls.Add(this.optConditionSelection);
             this.panelSelectionMode.Controls.Add(this.pictureBox6);
             this.panelSelectionMode.Controls.Add(this.pictureBox7);
             resources.ApplyResources(this.panelSelectionMode, "panelSelectionMode");
@@ -2127,21 +2127,21 @@
             this.lbTitleSelectionMode.ForeColor = System.Drawing.Color.DimGray;
             this.lbTitleSelectionMode.Name = "lbTitleSelectionMode";
             // 
-            // optCalcSelectedModel
+            // optModelSelection
             // 
-            resources.ApplyResources(this.optCalcSelectedModel, "optCalcSelectedModel");
-            this.optCalcSelectedModel.ForeColor = System.Drawing.Color.Black;
-            this.optCalcSelectedModel.Name = "optCalcSelectedModel";
-            this.optCalcSelectedModel.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.optModelSelection, "optModelSelection");
+            this.optModelSelection.ForeColor = System.Drawing.Color.Black;
+            this.optModelSelection.Name = "optModelSelection";
+            this.optModelSelection.UseVisualStyleBackColor = true;
             // 
-            // optCalcAllModel
+            // optConditionSelection
             // 
-            resources.ApplyResources(this.optCalcAllModel, "optCalcAllModel");
-            this.optCalcAllModel.Checked = true;
-            this.optCalcAllModel.ForeColor = System.Drawing.Color.Black;
-            this.optCalcAllModel.Name = "optCalcAllModel";
-            this.optCalcAllModel.TabStop = true;
-            this.optCalcAllModel.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.optConditionSelection, "optConditionSelection");
+            this.optConditionSelection.Checked = true;
+            this.optConditionSelection.ForeColor = System.Drawing.Color.Black;
+            this.optConditionSelection.Name = "optConditionSelection";
+            this.optConditionSelection.TabStop = true;
+            this.optConditionSelection.UseVisualStyleBackColor = true;
             // 
             // pictureBox6
             // 
@@ -2673,8 +2673,8 @@
         public System.Windows.Forms.PictureBox picStandardEnv;
         private System.Windows.Forms.Label lbTitleUseEnv;
         private System.Windows.Forms.Label lbTitleSelectionMode;
-        public System.Windows.Forms.RadioButton optCalcSelectedModel;
-        public System.Windows.Forms.RadioButton optCalcAllModel;
+        public System.Windows.Forms.RadioButton optModelSelection;
+        public System.Windows.Forms.RadioButton optConditionSelection;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label lbTitleModelType;

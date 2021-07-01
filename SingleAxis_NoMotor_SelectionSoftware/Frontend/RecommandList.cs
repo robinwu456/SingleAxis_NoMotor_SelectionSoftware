@@ -120,7 +120,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 全部選型驗證選擇型號是否有項目Fail，有則不顯示下一步
             if (curSelectModel.model != null) {
-                if (formMain.optCalcAllModel.Checked) {
+                if (formMain.optConditionSelection.Checked) {
                     try {
                         bool isAllConditionSuccess = redFontConditions.All(con => con.Value(curRecommandList.First(model => model.name == curSelectModel.model && model.lead == curSelectModel.lead)));
                         formMain.cmdConfirmStep2.Visible = isAllConditionSuccess;
@@ -216,7 +216,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             try {
                 formMain.Invoke(new Action(() => {
-                    if (formMain.optCalcAllModel.Checked) {
+                    if (formMain.optConditionSelection.Checked) {
                         // 欄位寬度更新
                         foreach (DataGridViewColumn col in formMain.dgvRecommandList.Columns)
                             col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;

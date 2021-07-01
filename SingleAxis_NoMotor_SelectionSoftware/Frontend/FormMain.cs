@@ -15,33 +15,33 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
     public partial class FormMain : Form {
         //public ExplorerBar _explorerBar;
         public SideTable sideTable;
-        public enum Step { 
-            /// <summary>
-            /// 條件選擇、型號選擇
-            /// </summary>
-            Step1,
-            /// <summary>
-            /// 使用環境
-            /// </summary>
-            Step2, 
-            /// <summary>
-            /// 傳動方式
-            /// </summary>
-            Step3, 
-            /// <summary>
-            /// 型號選擇
-            /// </summary>
-            Step4, 
-            /// <summary>
-            /// 安裝方式
-            /// </summary>
-            Step5, 
-            /// <summary>
-            /// 推薦規格
-            /// </summary>
-            Step6 
-        }
-        public Step curStep = Step.Step1;
+        //public enum Step { 
+        //    /// <summary>
+        //    /// 條件選擇、型號選擇
+        //    /// </summary>
+        //    Step1,
+        //    /// <summary>
+        //    /// 使用環境
+        //    /// </summary>
+        //    Step2, 
+        //    /// <summary>
+        //    /// 傳動方式
+        //    /// </summary>
+        //    Step3, 
+        //    /// <summary>
+        //    /// 型號選擇
+        //    /// </summary>
+        //    Step4, 
+        //    /// <summary>
+        //    /// 安裝方式
+        //    /// </summary>
+        //    Step5, 
+        //    /// <summary>
+        //    /// 推薦規格
+        //    /// </summary>
+        //    Step6 
+        //}
+        //public Step curStep = Step.Step1;
         public Page1 page1;
         public Page2 page2;
         public Page3 page3;        

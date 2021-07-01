@@ -35,10 +35,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     formMain.panelEffectiveStroke.Visible = true;
                     formMain.txtEffectiveStroke.Text = formMain.txtStroke.Text;
                     CmdEffectiveStroke_Click(null, null);
-                    formMain.sideTable.UpdateSelectedConditionValue("有效行程", formMain.page2.effectiveStroke.effectiveStroke.ToString() + "mm");
+                    //formMain.sideTable.UpdateSelectedConditionValue("有效行程", formMain.page2.effectiveStroke.effectiveStroke.ToString() + "mm");
                 } else {
                     formMain.panelEffectiveStroke.Visible = false;
-                    formMain.sideTable.UpdateSelectedConditionValue("有效行程", "");
+                    //formMain.sideTable.UpdateSelectedConditionValue("有效行程", "");
                     formMain.page2.recommandList.curSelectModel = (null, -1);
                 }
             }));
@@ -54,7 +54,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
         private void UpdateCondition(object sender, EventArgs e) {
             formMain.sideTable.UpdateModelInfo();
-            formMain.sideTable.UpdateTableSelections();
+            //formMain.sideTable.UpdateTableSelections();
         }
 
         private void OptEffectiveStroke_CheckedChanged(object sender, EventArgs e) {
