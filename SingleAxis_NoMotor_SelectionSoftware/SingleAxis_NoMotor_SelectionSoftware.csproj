@@ -41,9 +41,6 @@
     <Reference Include="CustomButton">
       <HintPath>..\..\CustomPicControls\CustomButton\bin\Debug\CustomButton.dll</HintPath>
     </Reference>
-    <Reference Include="CustomTextBox">
-      <HintPath>..\..\CustomPicControls\CustomTextbox\bin\Debug\CustomTextBox.dll</HintPath>
-    </Reference>
     <Reference Include="CustomToggle, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\CustomPicControls\CustomToggle\bin\Debug\CustomToggle.dll</HintPath>

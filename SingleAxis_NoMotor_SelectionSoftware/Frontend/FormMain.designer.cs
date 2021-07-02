@@ -54,7 +54,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label48 = new System.Windows.Forms.Label();
             this.cmdMotionSelection = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.explorerBar = new System.Windows.Forms.Panel();
             this.panelNextPage = new System.Windows.Forms.Panel();
@@ -185,7 +184,6 @@
             this.labelStopTimeAlarm = new System.Windows.Forms.Label();
             this.labelStrokeAlarm = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.txtRunTime = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.labelLoadAlarm = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -286,7 +284,7 @@
             this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
-            this.customTextBox1 = new CustomTextbox.CustomTextBox();
+            this.txtRunTime = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -490,7 +488,6 @@
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel4, 3, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // panel1
@@ -532,11 +529,6 @@
             this.cmdMotionSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.動作選型;
             this.cmdMotionSelection.Name = "cmdMotionSelection";
             this.cmdMotionSelection.TabStop = false;
-            // 
-            // panel4
-            // 
-            resources.ApplyResources(this.panel4, "panel4");
-            this.panel4.Name = "panel4";
             // 
             // tabPage2
             // 
@@ -1064,7 +1056,6 @@
             // 
             // panelCalc
             // 
-            this.panelCalc.Controls.Add(this.customTextBox1);
             this.panelCalc.Controls.Add(this.scrollBarPanelLoad);
             this.panelCalc.Controls.Add(this.scrollBarPanelStroke);
             this.panelCalc.Controls.Add(this.lbTitleCalc);
@@ -1663,12 +1654,6 @@
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label22.Name = "label22";
             // 
-            // txtRunTime
-            // 
-            resources.ApplyResources(this.txtRunTime, "txtRunTime");
-            this.txtRunTime.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtRunTime.Name = "txtRunTime";
-            // 
             // label23
             // 
             resources.ApplyResources(this.label23, "label23");
@@ -2225,6 +2210,7 @@
             this.panelSideTable.Controls.Add(this.label2);
             this.panelSideTable.Curvature = 8;
             this.panelSideTable.Name = "panelSideTable";
+            this.panelSideTable.Tag = "967, 100";
             // 
             // panelSideTableIcon
             // 
@@ -2447,13 +2433,11 @@
             this.label65.ForeColor = System.Drawing.Color.White;
             this.label65.Name = "label65";
             // 
-            // customTextBox1
+            // txtRunTime
             // 
-            resources.ApplyResources(this.customTextBox1, "customTextBox1");
-            this.customTextBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.customTextBox1.Name = "customTextBox1";
-            this.customTextBox1.PlaceHolder = "運行的距離...";
-            this.customTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            resources.ApplyResources(this.txtRunTime, "txtRunTime");
+            this.txtRunTime.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtRunTime.Name = "txtRunTime";
             // 
             // FormMain
             // 
@@ -2683,7 +2667,6 @@
         public System.Windows.Forms.ComboBox cboPower;
         public System.Windows.Forms.TextBox txtStroke;
         public System.Windows.Forms.Label labelStrokeAlarm;
-        public System.Windows.Forms.TextBox txtRunTime;
         public System.Windows.Forms.Label labelLoadAlarm;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label44;
@@ -2833,8 +2816,7 @@
         public System.Windows.Forms.PictureBox scrollBarThumbStroke;
         public System.Windows.Forms.Panel scrollBarPanelLoad;
         public System.Windows.Forms.PictureBox scrollBarThumbLoad;
-        private System.Windows.Forms.Panel panel4;
-        private CustomTextbox.CustomTextBox customTextBox1;
+        public System.Windows.Forms.TextBox txtRunTime;
     }
 }
 

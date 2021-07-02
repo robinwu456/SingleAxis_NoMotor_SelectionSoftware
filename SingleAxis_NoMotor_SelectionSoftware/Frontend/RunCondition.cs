@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {    
     public class RunCondition {
@@ -11,6 +12,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public CustomScrollBar scrollBarLoad;
 
         private FormMain formMain;
+
+        #region txt placeHolder
+        private const int EM_SETCUEBANNER = 0x1501;
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam, [MarshalAs(UnmanagedType.LPWStr)] string lParam);
+        #endregion
 
         public RunCondition(FormMain formMain) {
             this.formMain = formMain;
@@ -72,6 +79,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             scrollBarLoad.minValue = 0;
             scrollBarLoad.maxValue = 500;
             scrollBarLoad.bindingTextBox = formMain.txtLoad;
+
+            // txt placeHolder init
+            SendMessage(formMain.txtRatedTorque.Handle, EM_SETCUEBANNER, 0, "額定轉矩");
+            SendMessage(formMain.txtRotateInertia.Handle, EM_SETCUEBANNER, 0, "轉動慣量");
+            SendMessage(formMain.txtMaxTorque.Handle, EM_SETCUEBANNER, 0, "最大轉矩");
+            SendMessage(formMain.txtStroke.Handle, EM_SETCUEBANNER, 0, "移動行程");
+            SendMessage(formMain.txtLoad.Handle, EM_SETCUEBANNER, 0, "荷重");
+            SendMessage(formMain.txtRunTime.Handle, EM_SETCUEBANNER, 0, "運行時間");
+            SendMessage(formMain.txtTimesPerMinute.Handle, EM_SETCUEBANNER, 0, "往返次數");
+            SendMessage(formMain.txtHourPerDay.Handle, EM_SETCUEBANNER, 0, "運轉次數");
+            SendMessage(formMain.txtDayPerYear.Handle, EM_SETCUEBANNER, 0, "運轉天數");
+            SendMessage(formMain.txtExpectServiceLifeTime.Handle, EM_SETCUEBANNER, 0, "希望壽命");
+            SendMessage(formMain.txtMaxSpeed.Handle, EM_SETCUEBANNER, 0, "運行速度");
+            SendMessage(formMain.txtAccelSpeed.Handle, EM_SETCUEBANNER, 0, "加速度");
         }
 
         private void ExpectServiceLife_CheckedChanged(object sender, EventArgs e) {

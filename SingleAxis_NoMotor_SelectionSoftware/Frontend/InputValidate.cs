@@ -125,8 +125,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 有效數值驗證
             Control lbAlarm = formMain.panelCalc.Controls.All().First(c => c.Tag == txt.Name);
             lbAlarm.Visible = !decimal.TryParse(txt.Text, out decimal value);
-            if (!decimal.TryParse(txt.Text, out value))
-                e.Cancel = true;
+            //if (!decimal.TryParse(txt.Text, out value))
+            //    e.Cancel = true;
         }
         private void InputCondition_KeyDown(object sender, KeyEventArgs e) {
             TextBox txt = sender as TextBox;
