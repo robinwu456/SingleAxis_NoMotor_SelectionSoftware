@@ -43,17 +43,16 @@
             this.cmdNarrow = new System.Windows.Forms.PictureBox();
             this.cmdZoom = new System.Windows.Forms.PictureBox();
             this.cmdClose = new System.Windows.Forms.PictureBox();
-            this.panelBase = new System.Windows.Forms.Panel();
             this.tabMain = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label47 = new System.Windows.Forms.Label();
-            this.cmdModelSelection = new System.Windows.Forms.PictureBox();
+            this.cmdShapeSelection = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label48 = new System.Windows.Forms.Label();
-            this.cmdMotionSelection = new System.Windows.Forms.PictureBox();
+            this.cmdModelSelection = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.explorerBar = new System.Windows.Forms.Panel();
             this.panelNextPage = new System.Windows.Forms.Panel();
@@ -184,6 +183,7 @@
             this.labelStopTimeAlarm = new System.Windows.Forms.Label();
             this.labelStrokeAlarm = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.txtRunTime = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.labelLoadAlarm = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -213,9 +213,6 @@
             this.panelModelSelection = new System.Windows.Forms.Panel();
             this.lbTitleModelSelection = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.cboSeries = new System.Windows.Forms.ComboBox();
             this.label74 = new System.Windows.Forms.Label();
             this.label75 = new System.Windows.Forms.Label();
             this.cboModel = new System.Windows.Forms.ComboBox();
@@ -248,12 +245,6 @@
             this.optStandardEnv = new System.Windows.Forms.RadioButton();
             this.picStandardEnv = new System.Windows.Forms.PictureBox();
             this.lbTitleUseEnv = new System.Windows.Forms.Label();
-            this.panelSelectionMode = new System.Windows.Forms.Panel();
-            this.lbTitleSelectionMode = new System.Windows.Forms.Label();
-            this.optModelSelection = new System.Windows.Forms.RadioButton();
-            this.optConditionSelection = new System.Windows.Forms.RadioButton();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.panelSideTableIcon = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -284,7 +275,10 @@
             this.explorerBarPanel5_title = new System.Windows.Forms.Panel();
             this.label70 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
-            this.txtRunTime = new System.Windows.Forms.TextBox();
+            this.panelBase = new System.Windows.Forms.Panel();
+            this.cboSeries = new System.Windows.Forms.ComboBox();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
@@ -296,15 +290,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdNarrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdZoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).BeginInit();
-            this.panelBase.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdModelSelection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdShapeSelection)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdMotionSelection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdModelSelection)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.explorerBar.SuspendLayout();
             this.panelNextPage.SuspendLayout();
@@ -351,9 +344,6 @@
             this.panelUseEnv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDustFree)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStandardEnv)).BeginInit();
-            this.panelSelectionMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panelSideTable.SuspendLayout();
             this.panelSideTableIcon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -371,6 +361,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).BeginInit();
             this.panelConfirmBtnsStep5.SuspendLayout();
             this.explorerBarPanel5_title.SuspendLayout();
+            this.panelBase.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerBase
@@ -453,13 +444,6 @@
             this.cmdClose.Name = "cmdClose";
             this.cmdClose.TabStop = false;
             // 
-            // panelBase
-            // 
-            this.panelBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelBase.Controls.Add(this.splitContainerBase);
-            resources.ApplyResources(this.panelBase, "panelBase");
-            this.panelBase.Name = "panelBase";
-            // 
             // tabMain
             // 
             this.tabMain.Controls.Add(this.tabPage1);
@@ -493,7 +477,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label47);
-            this.panel1.Controls.Add(this.cmdModelSelection);
+            this.panel1.Controls.Add(this.cmdShapeSelection);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
@@ -504,16 +488,16 @@
             // 
             // cmdModelSelection
             // 
-            this.cmdModelSelection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.cmdModelSelection, "cmdModelSelection");
-            this.cmdModelSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.型號選型;
-            this.cmdModelSelection.Name = "cmdModelSelection";
-            this.cmdModelSelection.TabStop = false;
+            this.cmdShapeSelection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.cmdShapeSelection, "cmdModelSelection");
+            this.cmdShapeSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.型號選型;
+            this.cmdShapeSelection.Name = "cmdModelSelection";
+            this.cmdShapeSelection.TabStop = false;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label48);
-            this.panel2.Controls.Add(this.cmdMotionSelection);
+            this.panel2.Controls.Add(this.cmdModelSelection);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
@@ -524,11 +508,11 @@
             // 
             // cmdMotionSelection
             // 
-            this.cmdMotionSelection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.cmdMotionSelection, "cmdMotionSelection");
-            this.cmdMotionSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.動作選型;
-            this.cmdMotionSelection.Name = "cmdMotionSelection";
-            this.cmdMotionSelection.TabStop = false;
+            this.cmdModelSelection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.cmdModelSelection, "cmdMotionSelection");
+            this.cmdModelSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.動作選型;
+            this.cmdModelSelection.Name = "cmdMotionSelection";
+            this.cmdModelSelection.TabStop = false;
             // 
             // tabPage2
             // 
@@ -550,7 +534,6 @@
             this.explorerBar.Controls.Add(this.panelModelSelection);
             this.explorerBar.Controls.Add(this.panelModelType);
             this.explorerBar.Controls.Add(this.panelUseEnv);
-            this.explorerBar.Controls.Add(this.panelSelectionMode);
             this.explorerBar.Controls.Add(this.panelSideTable);
             this.explorerBar.Name = "explorerBar";
             // 
@@ -1654,6 +1637,12 @@
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label22.Name = "label22";
             // 
+            // txtRunTime
+            // 
+            resources.ApplyResources(this.txtRunTime, "txtRunTime");
+            this.txtRunTime.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtRunTime.Name = "txtRunTime";
+            // 
             // label23
             // 
             resources.ApplyResources(this.label23, "label23");
@@ -1863,28 +1852,6 @@
             resources.ApplyResources(this.label61, "label61");
             this.label61.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label61.Name = "label61";
-            // 
-            // label54
-            // 
-            resources.ApplyResources(this.label54, "label54");
-            this.label54.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label54.Name = "label54";
-            // 
-            // label73
-            // 
-            resources.ApplyResources(this.label73, "label73");
-            this.label73.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label73.Name = "label73";
-            // 
-            // cboSeries
-            // 
-            this.cboSeries.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cboSeries.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSeries.DropDownWidth = 180;
-            resources.ApplyResources(this.cboSeries, "cboSeries");
-            this.cboSeries.ForeColor = System.Drawing.Color.White;
-            this.cboSeries.FormattingEnabled = true;
-            this.cboSeries.Name = "cboSeries";
             // 
             // label74
             // 
@@ -2149,53 +2116,6 @@
             this.lbTitleUseEnv.ForeColor = System.Drawing.Color.DimGray;
             this.lbTitleUseEnv.Name = "lbTitleUseEnv";
             // 
-            // panelSelectionMode
-            // 
-            this.panelSelectionMode.Controls.Add(this.lbTitleSelectionMode);
-            this.panelSelectionMode.Controls.Add(this.optModelSelection);
-            this.panelSelectionMode.Controls.Add(this.optConditionSelection);
-            this.panelSelectionMode.Controls.Add(this.pictureBox6);
-            this.panelSelectionMode.Controls.Add(this.pictureBox7);
-            resources.ApplyResources(this.panelSelectionMode, "panelSelectionMode");
-            this.panelSelectionMode.Name = "panelSelectionMode";
-            // 
-            // lbTitleSelectionMode
-            // 
-            resources.ApplyResources(this.lbTitleSelectionMode, "lbTitleSelectionMode");
-            this.lbTitleSelectionMode.BackColor = System.Drawing.Color.White;
-            this.lbTitleSelectionMode.ForeColor = System.Drawing.Color.DimGray;
-            this.lbTitleSelectionMode.Name = "lbTitleSelectionMode";
-            // 
-            // optModelSelection
-            // 
-            resources.ApplyResources(this.optModelSelection, "optModelSelection");
-            this.optModelSelection.ForeColor = System.Drawing.Color.Black;
-            this.optModelSelection.Name = "optModelSelection";
-            this.optModelSelection.UseVisualStyleBackColor = true;
-            // 
-            // optConditionSelection
-            // 
-            resources.ApplyResources(this.optConditionSelection, "optConditionSelection");
-            this.optConditionSelection.Checked = true;
-            this.optConditionSelection.ForeColor = System.Drawing.Color.Black;
-            this.optConditionSelection.Name = "optConditionSelection";
-            this.optConditionSelection.TabStop = true;
-            this.optConditionSelection.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox6
-            // 
-            resources.ApplyResources(this.pictureBox6, "pictureBox6");
-            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            resources.ApplyResources(this.pictureBox7, "pictureBox7");
-            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.TabStop = false;
-            // 
             // panelSideTable
             // 
             resources.ApplyResources(this.panelSideTable, "panelSideTable");
@@ -2433,11 +2353,34 @@
             this.label65.ForeColor = System.Drawing.Color.White;
             this.label65.Name = "label65";
             // 
-            // txtRunTime
+            // panelBase
             // 
-            resources.ApplyResources(this.txtRunTime, "txtRunTime");
-            this.txtRunTime.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtRunTime.Name = "txtRunTime";
+            this.panelBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBase.Controls.Add(this.splitContainerBase);
+            resources.ApplyResources(this.panelBase, "panelBase");
+            this.panelBase.Name = "panelBase";
+            // 
+            // cboSeries
+            // 
+            this.cboSeries.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboSeries.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSeries.DropDownWidth = 180;
+            resources.ApplyResources(this.cboSeries, "cboSeries");
+            this.cboSeries.ForeColor = System.Drawing.Color.White;
+            this.cboSeries.FormattingEnabled = true;
+            this.cboSeries.Name = "cboSeries";
+            // 
+            // label73
+            // 
+            resources.ApplyResources(this.label73, "label73");
+            this.label73.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label73.Name = "label73";
+            // 
+            // label54
+            // 
+            resources.ApplyResources(this.label54, "label54");
+            this.label54.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label54.Name = "label54";
             // 
             // FormMain
             // 
@@ -2460,15 +2403,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdNarrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdZoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).EndInit();
-            this.panelBase.ResumeLayout(false);
             this.tabMain.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cmdModelSelection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdShapeSelection)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cmdMotionSelection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdModelSelection)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.explorerBar.ResumeLayout(false);
@@ -2537,10 +2479,6 @@
             this.panelUseEnv.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDustFree)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStandardEnv)).EndInit();
-            this.panelSelectionMode.ResumeLayout(false);
-            this.panelSelectionMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panelSideTable.ResumeLayout(false);
             this.panelSideTableIcon.ResumeLayout(false);
             this.panelSideTableIcon.PerformLayout();
@@ -2561,6 +2499,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).EndInit();
             this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.explorerBarPanel5_title.ResumeLayout(false);
+            this.panelBase.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2589,7 +2528,6 @@
         public System.Windows.Forms.Panel panelModelSelection;
         public System.Windows.Forms.Panel panelModelType;
         public System.Windows.Forms.Panel panelUseEnv;
-        public System.Windows.Forms.Panel panelSelectionMode;
         public System.Windows.Forms.Panel explorerBar_step5;
         public System.Windows.Forms.Panel explorerBarPanel5;
         public System.Windows.Forms.Panel explorerBarPanel5_content;
@@ -2709,18 +2647,13 @@
         public System.Windows.Forms.Panel panelEffectiveStroke;
         public System.Windows.Forms.Panel panelReducer;
         public CustomButton.CustomButton cmdCalc;
-        public System.Windows.Forms.PictureBox cmdMotionSelection;
         public System.Windows.Forms.PictureBox cmdModelSelection;
+        public System.Windows.Forms.PictureBox cmdShapeSelection;
         public System.Windows.Forms.PictureBox picDustFree;
         public System.Windows.Forms.RadioButton optDustFreeEnv;
         public System.Windows.Forms.RadioButton optStandardEnv;
         public System.Windows.Forms.PictureBox picStandardEnv;
         private System.Windows.Forms.Label lbTitleUseEnv;
-        private System.Windows.Forms.Label lbTitleSelectionMode;
-        public System.Windows.Forms.RadioButton optModelSelection;
-        public System.Windows.Forms.RadioButton optConditionSelection;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label lbTitleModelType;
         public System.Windows.Forms.RadioButton optBuildInSupportTrackActuator;
         private System.Windows.Forms.PictureBox pictureBox18;
@@ -2744,9 +2677,6 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label lbTitleModelSelection;
         private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label73;
-        public System.Windows.Forms.ComboBox cboSeries;
         private System.Windows.Forms.Label label74;
         private System.Windows.Forms.Label label75;
         public System.Windows.Forms.ComboBox cboModel;
@@ -2817,6 +2747,9 @@
         public System.Windows.Forms.Panel scrollBarPanelLoad;
         public System.Windows.Forms.PictureBox scrollBarThumbLoad;
         public System.Windows.Forms.TextBox txtRunTime;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label73;
+        public System.Windows.Forms.ComboBox cboSeries;
     }
 }
 

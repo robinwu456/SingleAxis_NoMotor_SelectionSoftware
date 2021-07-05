@@ -111,10 +111,8 @@
     </Compile>
     <Compile Include="Frontend\ChartInfo.cs" />
     <Compile Include="Frontend\EffectiveStroke.cs" />
-    <Compile Include="Frontend\GearRatio.cs" />
     <Compile Include="Frontend\InputValidate.cs" />
     <Compile Include="Frontend\ModelSelection.cs" />
-    <Compile Include="Frontend\Moment.cs" />
     <Compile Include="Frontend\MotorPower.cs" />
     <Compile Include="Frontend\RecommandList.cs" />
     <Compile Include="Frontend\RunCondition.cs" />

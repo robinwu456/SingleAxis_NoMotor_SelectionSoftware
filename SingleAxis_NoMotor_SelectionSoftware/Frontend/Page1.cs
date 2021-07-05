@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Page1 {
-        public enum ModelSelectionMode {  ModelSelection, MotionSelection }
+        public enum ModelSelectionMode {  ModelSelection, ShapeSelection }
         public ModelSelectionMode modelSelectionMode = ModelSelectionMode.ModelSelection;
 
         private FormMain formMain;
@@ -20,18 +20,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }        
 
         private void InitEvents() {
-            formMain.cmdModelSelection.Click += CmdModelSelection_Click;
-            formMain.cmdMotionSelection.Click += CmdModelSelection_Click;
+            formMain.cmdShapeSelection.Click += CmdSelectionMode_Click;
+            formMain.cmdModelSelection.Click += CmdSelectionMode_Click;
         }
 
-        private void CmdModelSelection_Click(object sender, EventArgs e) {
+        private void CmdSelectionMode_Click(object sender, EventArgs e) {
             PictureBox btn = sender as PictureBox;
 
             // 選行方式
             if (btn == formMain.cmdModelSelection)
                 modelSelectionMode = ModelSelectionMode.ModelSelection;
-            else if (btn == formMain.cmdMotionSelection)
-                modelSelectionMode = ModelSelectionMode.MotionSelection;
+            else if (btn == formMain.cmdShapeSelection)
+                modelSelectionMode = ModelSelectionMode.ShapeSelection;
 
             formMain.tabMain.SelectTab("tabPage2");
             formMain.page2.Load();

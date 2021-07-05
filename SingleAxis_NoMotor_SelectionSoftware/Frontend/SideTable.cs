@@ -54,7 +54,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // Get items
             List<string> selectionTableItems = new List<string>();
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.MotionSelection)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
                 selectionTableItems = selectionTableItems_calcAll;
             else
                 selectionTableItems = selectionTableItems_calcSelectModel;
@@ -234,7 +234,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             Label lbValue = formMain.panelSideTableSelections.Controls.Find("labelDataResult_" + key + "_value", true)[0] as Label;
             // 字串斷行處理
             List<string> selectionTableItems = new List<string>();
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.MotionSelection)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
                 selectionTableItems = selectionTableItems_calcAll;
             else {
                 //if (formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType()) {

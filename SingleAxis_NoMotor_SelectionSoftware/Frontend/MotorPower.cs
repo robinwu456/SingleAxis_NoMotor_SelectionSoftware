@@ -44,7 +44,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public void UpdateMotorCalcMode() {
             formMain.cboPower.DataSource = null;
 
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.MotionSelection) {
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
                 formMain.cboPower.DataSource = new string[] { "標準", "自訂" };
             } else {
                 if (string.IsNullOrEmpty(formMain.cboModel.Text) || string.IsNullOrEmpty(formMain.cboLead.Text))

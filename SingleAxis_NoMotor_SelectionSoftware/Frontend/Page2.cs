@@ -9,12 +9,10 @@ using System.Data;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Page2 {
-        public enum ModelSelectionMode { ConditionSelection, ModelSelection }
         public int minHeight = 800;
         public int maxHeight = 1333;
         public Dictionary<RadioButton, Model.ModelType> modelTypeOptMap = new Dictionary<RadioButton, Model.ModelType>();
         public Model.ModelType curSelectModelType = Model.ModelType.標準螺桿滑台;
-        public ModelSelectionMode modelSelectionMode = ModelSelectionMode.ConditionSelection;
         public Calculation calc = new Calculation();
         // Step2各項目
         public MotorPower motorPower;
@@ -28,7 +26,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private FormMain formMain;
         private Thread threadCalc;
         private string[] titles = { 
-            "SelectionMode",    // 選型方式
+            //"SelectionMode",    // 選型方式
             "UseEnv",           // 使用環境
             "ModelType",        // 傳動方式
             "ModelSelection",   // 型號選擇
@@ -174,9 +172,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         //}
 
         private void InitEvents() {
-            // 選行方式
-            formMain.optConditionSelection.CheckedChanged += UpdateLayout;
-
             // 使用環境
             formMain.optStandardEnv.CheckedChanged += formMain.sideTable.Update;
 
@@ -204,15 +199,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void UpdateLayout(object sender, EventArgs e) {
-            // 更新當前page2選行條件
-            modelSelectionMode = formMain.optConditionSelection.Checked ? ModelSelectionMode.ConditionSelection : ModelSelectionMode.ModelSelection;
-
             // 部分panel隱藏處理
-            formMain.panelSelectionMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;     // 選型方式
-            formMain.panelUseEnv.Visible = formMain.page2.modelSelectionMode != ModelSelectionMode.ModelSelection;                  // 使用環境
-            formMain.panelModelType.Visible = formMain.page2.modelSelectionMode != ModelSelectionMode.ModelSelection;               // 傳動方式
-            formMain.panelModelSelection.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;    // 型號選擇
-            formMain.panelCalcResult.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.MotionSelection;       // 推薦規格
+            formMain.panelUseEnv.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;          // 使用環境
+            formMain.panelModelType.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;       // 傳動方式
+            formMain.panelModelSelection.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;  // 型號選擇
+            formMain.panelCalcResult.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;      // 推薦規格
 
             // 項目索引修正
             int titleIndex = 0;
@@ -309,8 +300,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         // 側邊欄
                         formMain.sideTable.ClearModelImg();
                         formMain.sideTable.ClearModelInfo();
-                        if (formMain.optModelSelection.Checked)
-                            formMain.sideTable.ClearSelectedModelInfo();
+                        //if (formMain.optModelSelection.Checked)
+                        //    formMain.sideTable.ClearSelectedModelInfo();
                     }));
 
                     formMain.Invoke(new Action(() => formMain.sideTable.UpdateMsg("此使用條件無法計算，請嘗試調整使用條件。", SideTable.MsgStatus.Alarm)));

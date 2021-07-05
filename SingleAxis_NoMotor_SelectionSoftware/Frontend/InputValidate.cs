@@ -98,7 +98,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public void TxtAccelSpeed_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
             int curAccelSpeed = Convert.ToInt32(formMain.txtAccelSpeed.Text);
-            if (formMain.optModelSelection.Checked) {
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
                 string model = formMain.cboModel.Text;
                 double lead = Convert.ToDouble(formMain.cboLead.Text);
                 int reducerRatio = 1;
@@ -142,7 +142,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void TxtLoad_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
-            if (formMain.optConditionSelection.Checked)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
                 return;
 
             // 最大荷重驗證
@@ -153,7 +153,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (e.KeyCode != Keys.Enter)
                 return;
 
-            if (formMain.optConditionSelection.Checked)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
                 return;
 
             // 最大荷重驗證
@@ -206,7 +206,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (e.KeyCode != Keys.Enter)
                 return;
 
-            if (formMain.optConditionSelection.Checked)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
                 return;
 
             ValidatingStroke();
@@ -218,7 +218,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (keyStroke < 50)
                 formMain.txtStroke.Text = "50";
 
-            if (formMain.optConditionSelection.Checked)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
                 return;
 
             ValidatingStroke();

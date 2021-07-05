@@ -36,8 +36,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.optHorizontalUse.CheckedChanged += UpdateCondition;
             formMain.optWallHangingUse.CheckedChanged += UpdateCondition;
             formMain.optUpsideDownUse.CheckedChanged += UpdateCondition;
-            formMain.optConditionSelection.CheckedChanged += UpdateCondition;
-            formMain.optModelSelection.CheckedChanged += UpdateCondition;
+            //formMain.optConditionSelection.CheckedChanged += UpdateCondition;
+            //formMain.optModelSelection.CheckedChanged += UpdateCondition;
             formMain.cboSeries.SelectedIndexChanged += UpdateCondition;
             formMain.cboModel.SelectedIndexChanged += UpdateCondition;
             formMain.cboLead.SelectedIndexChanged += UpdateCondition;
@@ -182,7 +182,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             else
                 curCondition.RepeatabilityCondition = repeatability => repeatability <= 0.01;
             // 馬達瓦數
-            if (formMain.optConditionSelection.Checked) {
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
                 // 全部計算只能標準或自訂
                 if (formMain.cboPower.Text == "標準")
                     curCondition.powerSelection = Condition.PowerSelection.Standard;
@@ -193,7 +193,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     } else if (formMain.optMotorParamsModifyAdvance.Checked)
                         curCondition.powerSelection = Condition.PowerSelection.Custom;
                 }
-            } else if (formMain.optModelSelection.Checked) {
+            } else if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
                 // 單項計算可選擇該型號適用瓦數
                 if (formMain.cboPower.Text.Contains("標準")) {
                     curCondition.powerSelection = Condition.PowerSelection.SelectedPower;
@@ -230,7 +230,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             curCondition.curCheckedModel = formMain.page2.recommandList.curCheckedModel;
 
             // 單項計算
-            if (!formMain.optConditionSelection.Checked) {
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
                 (string model, double lead) calcModel = (formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
                 curCondition.calcModel = calcModel;
             } else
