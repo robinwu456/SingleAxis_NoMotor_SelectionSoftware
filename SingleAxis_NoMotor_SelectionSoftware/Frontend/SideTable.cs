@@ -16,7 +16,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public Point tablePosition = new Point(1000, 129);
 
         private FormMain formMain;
-        // 側邊欄訊息 - 動作選型
+        // 側邊欄訊息 - 形狀選型
         private List<string> selectionTableItems_calcAll = new List<string>(){
             "使用環境",
             "安裝方式",
@@ -24,9 +24,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         };
         // 側邊欄訊息 - 型號選型
         private List<string> selectionTableItems_calcSelectModel = new List<string>(){
-            "使用環境",
+            //"使用環境",
             "安裝方式",
-            "機構型態",
+            //"機構型態",
             "運行距離",
             "運行壽命",
         };
@@ -59,72 +59,104 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             else
                 selectionTableItems = selectionTableItems_calcSelectModel;
 
-            if (formMain.tableSelections.RowCount == 1) {
-                // init table
-                formMain.panelSideTable.Visible = false;
-                formMain.tableSelections.RowCount = selectionTableItems.Count;
-                formMain.tableSelections.RowStyles.Clear();
-                selectionTableItems.ForEach(item => {
-                    RowStyle row = new RowStyle(SizeType.Absolute, tableLayoutDefaultRowHeight);
-                    formMain.tableSelections.RowStyles.Add(row);
+            //if (formMain.tableSelections.RowCount == 1) {
+            //    // init table
+            //    formMain.panelSideTable.Visible = false;
+            //    formMain.tableSelections.RowCount = selectionTableItems.Count;
+            //    formMain.tableSelections.RowStyles.Clear();
+            //    selectionTableItems.ForEach(item => {
+            //        RowStyle row = new RowStyle(SizeType.Absolute, tableLayoutDefaultRowHeight);
+            //        formMain.tableSelections.RowStyles.Add(row);
 
-                    Label title = new Label();
-                    title.Name = "labelDataResult_" + item;
-                    title.Font = new Font("微軟正黑體", 9);
-                    title.ForeColor = Color.FromArgb(0, 0, 0);
-                    title.AutoSize = false;
-                    title.Dock = DockStyle.Fill;
-                    title.TextAlign = ContentAlignment.MiddleLeft;
-                    title.Text = item;
-                    formMain.tableSelections.Controls.Add(title, 0, selectionTableItems.IndexOf(item));
+            //        Label title = new Label();
+            //        title.Name = "labelDataResult_" + item;
+            //        title.Font = new Font("微軟正黑體", 9);
+            //        title.ForeColor = Color.FromArgb(0, 0, 0);
+            //        title.AutoSize = false;
+            //        title.Dock = DockStyle.Fill;
+            //        title.TextAlign = ContentAlignment.MiddleLeft;
+            //        title.Text = item;
+            //        formMain.tableSelections.Controls.Add(title, 0, selectionTableItems.IndexOf(item));
 
-                    Label value = new Label();
-                    value.Name = "labelDataResult_" + item + "_value";
-                    value.Font = new Font("微軟正黑體", 9);
-                    value.ForeColor = tableConditionValueForeColor;
-                    value.AutoSize = false;
-                    value.Dock = DockStyle.Fill;
-                    value.TextAlign = ContentAlignment.MiddleLeft;
-                    value.Text = "";
-                    formMain.tableSelections.Controls.Add(value, 1, selectionTableItems.IndexOf(item));
-                });
-                ResizeSideTable();
-                formMain.panelSideTable.Visible = true;
-            } else {
-                if (selectionTableItems.Count != formMain.tableSelections.RowCount) {
-                    // resize table
-                    formMain.panelSideTable.Visible = false;
-                    formMain.tableSelections.Controls.All().ToList().ForEach(control => formMain.tableSelections.Controls.Remove(control));
-                    formMain.tableSelections.RowCount = selectionTableItems.Count;
-                    formMain.tableSelections.RowStyles.Clear();
-                    selectionTableItems.ForEach(item => {
-                        RowStyle row = new RowStyle(SizeType.Absolute, tableLayoutDefaultRowHeight);
-                        formMain.tableSelections.RowStyles.Add(row);
+            //        Label value = new Label();
+            //        value.Name = "labelDataResult_" + item + "_value";
+            //        value.Font = new Font("微軟正黑體", 9);
+            //        value.ForeColor = tableConditionValueForeColor;
+            //        value.AutoSize = false;
+            //        value.Dock = DockStyle.Fill;
+            //        value.TextAlign = ContentAlignment.MiddleLeft;
+            //        value.Text = "";
+            //        formMain.tableSelections.Controls.Add(value, 1, selectionTableItems.IndexOf(item));
+            //    });
+            //    ResizeSideTable();
+            //    formMain.panelSideTable.Visible = true;
+            //} else {
+            //    if (selectionTableItems.Count != formMain.tableSelections.RowCount) {
+            //        // resize table
+            //        formMain.panelSideTable.Visible = false;
+            //        formMain.tableSelections.Controls.All().ToList().ForEach(control => formMain.tableSelections.Controls.Remove(control));
+            //        formMain.tableSelections.RowCount = selectionTableItems.Count;
+            //        formMain.tableSelections.RowStyles.Clear();
+            //        selectionTableItems.ForEach(item => {
+            //            RowStyle row = new RowStyle(SizeType.Absolute, tableLayoutDefaultRowHeight);
+            //            formMain.tableSelections.RowStyles.Add(row);
 
-                        Label title = new Label();
-                        title.Name = "labelDataResult_" + item;
-                        title.Font = new Font("微軟正黑體", 9);
-                        title.ForeColor = Color.FromArgb(0, 0, 0);
-                        title.AutoSize = false;
-                        title.Dock = DockStyle.Fill;
-                        title.TextAlign = ContentAlignment.MiddleLeft;
-                        title.Text = item;
-                        formMain.tableSelections.Controls.Add(title, 0, selectionTableItems.IndexOf(item));
+            //            Label title = new Label();
+            //            title.Name = "labelDataResult_" + item;
+            //            title.Font = new Font("微軟正黑體", 9);
+            //            title.ForeColor = Color.FromArgb(0, 0, 0);
+            //            title.AutoSize = false;
+            //            title.Dock = DockStyle.Fill;
+            //            title.TextAlign = ContentAlignment.MiddleLeft;
+            //            title.Text = item;
+            //            formMain.tableSelections.Controls.Add(title, 0, selectionTableItems.IndexOf(item));
 
-                        Label value = new Label();
-                        value.Name = "labelDataResult_" + item + "_value";
-                        value.Font = new Font("微軟正黑體", 9);
-                        value.ForeColor = tableConditionValueForeColor;
-                        value.AutoSize = false;
-                        value.Dock = DockStyle.Fill;
-                        value.TextAlign = ContentAlignment.MiddleLeft;
-                        value.Text = "";
-                        formMain.tableSelections.Controls.Add(value, 1, selectionTableItems.IndexOf(item));
-                    });
-                    ResizeSideTable();
-                    formMain.panelSideTable.Visible = true;
-                }
-            }
+            //            Label value = new Label();
+            //            value.Name = "labelDataResult_" + item + "_value";
+            //            value.Font = new Font("微軟正黑體", 9);
+            //            value.ForeColor = tableConditionValueForeColor;
+            //            value.AutoSize = false;
+            //            value.Dock = DockStyle.Fill;
+            //            value.TextAlign = ContentAlignment.MiddleLeft;
+            //            value.Text = "";
+            //            formMain.tableSelections.Controls.Add(value, 1, selectionTableItems.IndexOf(item));
+            //        });
+            //        ResizeSideTable();
+            //        formMain.panelSideTable.Visible = true;
+            //    }
+            //}
+
+            // resize table
+            formMain.panelSideTable.Visible = false;
+            formMain.tableSelections.Controls.All().ToList().ForEach(control => formMain.tableSelections.Controls.Remove(control));
+            formMain.tableSelections.RowCount = selectionTableItems.Count;
+            formMain.tableSelections.RowStyles.Clear();
+            selectionTableItems.ForEach(item => {
+                RowStyle row = new RowStyle(SizeType.Absolute, tableLayoutDefaultRowHeight);
+                formMain.tableSelections.RowStyles.Add(row);
+
+                Label title = new Label();
+                title.Name = "labelDataResult_" + item;
+                title.Font = new Font("微軟正黑體", 9);
+                title.ForeColor = Color.FromArgb(0, 0, 0);
+                title.AutoSize = false;
+                title.Dock = DockStyle.Fill;
+                title.TextAlign = ContentAlignment.MiddleLeft;
+                title.Text = item;
+                formMain.tableSelections.Controls.Add(title, 0, selectionTableItems.IndexOf(item));
+
+                Label value = new Label();
+                value.Name = "labelDataResult_" + item + "_value";
+                value.Font = new Font("微軟正黑體", 9);
+                value.ForeColor = tableConditionValueForeColor;
+                value.AutoSize = false;
+                value.Dock = DockStyle.Fill;
+                value.TextAlign = ContentAlignment.MiddleLeft;
+                value.Text = "";
+                formMain.tableSelections.Controls.Add(value, 1, selectionTableItems.IndexOf(item));
+            });
+            ResizeSideTable();
+            formMain.panelSideTable.Visible = true;
         }
 
         public void ResizeSideTable() {
@@ -141,26 +173,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.panelSideTable.Size = new Size(formMain.panelSideTable.Size.Width, minHeight + allLabelHeight + 8 + 21);    // +8(高度補償)
             // 高度置中
             int middleLocation;
-            //if (formMain.curStep == FormMain.Step.Step5)
-            //    middleLocation = formMain.explorerBar_step5.Size.Height / 2;
-            //else
+            if (formMain.tabMain.SelectedTab.Name == "tabResult")
+                middleLocation = formMain.explorerBar_step5.Size.Height / 2;
+            else
                 middleLocation = formMain.explorerBar.Size.Height / 2;
             formMain.panelSideTable.Location = new Point(formMain.panelSideTable.Location.X, middleLocation - formMain.panelSideTable.Size.Height / 2);
         }
 
         public void Update(object sender, EventArgs e) {
             UpdateTableSelections();
-        }
-
-        public void UpdateModelInfo() {
-            //switch (formMain.curStep) {
-            //    case FormMain.Step.Step2:
-            //        formMain.lbSideTableModelInfo.Text = string.Format("{0}-L{1}", formMain.page2.recommandList.curSelectModel.model, formMain.page2.recommandList.curSelectModel.lead);
-            //        break;
-            //    case FormMain.Step.Step3:
-            //        formMain.lbSideTableModelInfo.Text = string.Format("{0}-L{1}-{2}", formMain.page2.recommandList.curSelectModel.model, formMain.page2.recommandList.curSelectModel.lead, formMain.page2.effectiveStroke.effectiveStroke);
-            //        break;
-            //}
         }
 
         public void UpdateMsg(string msg, MsgStatus msgStatus) {
@@ -198,33 +219,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void UpdateTableSelections() {
-            //// step1
-            //if (formMain.curStep >= FormMain.Step.Step1) {
-            //    UpdateSelectedConditionValue("使用環境", formMain.panelUseEnv.Controls.Cast<Control>().ToList()
-            //                                                  .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
-            //                                                  .Text);
-            //    UpdateSelectedConditionValue("安裝方式", formMain.panelSetupMode.Controls.Cast<Control>().ToList()
-            //                                                   .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
-            //                                                   .Text);
-            //    UpdateSelectedConditionValue("機構型態", formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.ToString());
-            //}
-            //// step2
-            //if (formMain.curStep < FormMain.Step.Step2) {
-            //    if (formMain.optModelSelection.Checked)
-            //        ClearSelectedModelInfo();
-            //    else
-            //        formMain.sideTable.UpdateSelectedConditionValue("有效行程", "");
-            //}
-            //// step5
-            //formMain.panelSideTableIcon.Visible = formMain.curStep == FormMain.Step.Step5;
-
-            UpdateSelectedConditionValue("使用環境", formMain.panelUseEnv.Controls.Cast<Control>().ToList()
-                                                              .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
-                                                              .Text);
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+                UpdateSelectedConditionValue("使用環境", formMain.panelUseEnv.Controls.Cast<Control>().ToList()
+                                                                  .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
+                                                                  .Text);
             UpdateSelectedConditionValue("安裝方式", formMain.panelSetupMode.Controls.Cast<Control>().ToList()
                                                            .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
                                                            .Text);
-            UpdateSelectedConditionValue("機構型態", formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.ToString());
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+                UpdateSelectedConditionValue("機構型態", formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.ToString());
 
             formMain.panelSideTableIcon.Visible = formMain.tabMain.SelectedIndex == formMain.tabMain.TabPages.Count - 1;
         }
@@ -236,17 +239,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             List<string> selectionTableItems = new List<string>();
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
                 selectionTableItems = selectionTableItems_calcAll;
-            else {
-                //if (formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType()) {
-                //    //if (formMain.page2.calc.beltModels.Contains(formMain.cboModel.Text))
-                //    //    selectionTableItems = selectionTableItems_calcSelectModel_belt;
-                //    //else
-                //    //    selectionTableItems = selectionTableItems_calcSelectModel_screw;
-                //} else
-                //    selectionTableItems = selectionTableItems_calcSelectModel_screw;
-
+            else
                 selectionTableItems = selectionTableItems_calcSelectModel;
-            }
             RowStyle rowStyle = formMain.tableSelections.RowStyles[selectionTableItems.IndexOf(key)];
             float oldRowHeight = rowStyle.Height;
             rowStyle.Height = key.Length > 7 || value.Length > 7 ? tableLayoutDefaultRowHeight * 2 : tableLayoutDefaultRowHeight;

@@ -26,10 +26,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public static bool IsBeltType(this Model.ModelType modelType) {
             Model.ModelType[] beltType = {
-                Model.ModelType.標準皮帶滑台,
-                Model.ModelType.歐規皮帶滑台,
-                Model.ModelType.軌道內嵌皮帶滑台,
-                Model.ModelType.軌道內嵌皮帶滑台
+                Model.ModelType.皮帶系列,
+                Model.ModelType.歐規皮帶系列,
+                Model.ModelType.軌道內崁皮帶系列,
+                Model.ModelType.軌道內崁皮帶系列
             };
 
             return beltType.Contains(modelType);

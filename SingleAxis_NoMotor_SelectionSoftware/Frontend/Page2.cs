@@ -12,7 +12,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public int minHeight = 800;
         public int maxHeight = 1333;
         public Dictionary<RadioButton, Model.ModelType> modelTypeOptMap = new Dictionary<RadioButton, Model.ModelType>();
-        public Model.ModelType curSelectModelType = Model.ModelType.標準螺桿滑台;
+        public Model.ModelType curSelectModelType = Model.ModelType.螺桿系列;
         public Calculation calc = new Calculation();
         // Step2各項目
         public MotorPower motorPower;
@@ -41,16 +41,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 機構類型opt統整
             modelTypeOptMap = new Dictionary<RadioButton, Model.ModelType>() {
-                { formMain.optStandardScrewActuator, Model.ModelType.標準螺桿滑台 },
-                { formMain.optBuildInScrewActuator, Model.ModelType.軌道內嵌螺桿滑台 },
-                { formMain.optBuildInRodTypeScrewActuator, Model.ModelType.軌道內嵌推桿滑台 },
-                { formMain.optNoTrackRodTypeActuator, Model.ModelType.無軌道推桿滑台 },
-                { formMain.optBuildOutRodTypeActuator, Model.ModelType.軌道外掛推桿滑台 },
-                { formMain.optSupportTrackRodTypeActuator, Model.ModelType.輔助軌道推桿滑台 },
-                { formMain.optStandardBeltActuator, Model.ModelType.標準皮帶滑台 },
-                { formMain.optEuropeBeltActuator, Model.ModelType.歐規皮帶滑台 },
-                { formMain.optBuildInBeltActuator, Model.ModelType.軌道內嵌皮帶滑台 },
-                { formMain.optBuildInSupportTrackActuator, Model.ModelType.軌道內嵌皮帶滑台 },
+                { formMain.optStandardScrewActuator, Model.ModelType.螺桿系列 },
+                { formMain.optBuildInScrewActuator, Model.ModelType.軌道內崁螺桿系列 },
+                { formMain.optBuildInRodTypeScrewActuator, Model.ModelType.軌道內崁推桿滑台 },
+                { formMain.optNoTrackRodTypeActuator, Model.ModelType.推桿系列 },
+                { formMain.optBuildOutRodTypeActuator, Model.ModelType.軌道外掛推桿系列 },
+                { formMain.optSupportTrackRodTypeActuator, Model.ModelType.輔助導桿推桿系列 },
+                { formMain.optStandardBeltActuator, Model.ModelType.皮帶系列 },
+                { formMain.optEuropeBeltActuator, Model.ModelType.歐規皮帶系列 },
+                { formMain.optBuildInBeltActuator, Model.ModelType.軌道內崁皮帶系列 },
+                { formMain.optBuildInSupportTrackActuator, Model.ModelType.軌道內崁皮帶系列 },
             };
 
             InitEvents();            
@@ -91,8 +91,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 更新型號選擇
             formMain.sideTable.UpdateItem();
-            ModelType_CheckedChanged(null, null);
-            modelSelection.UpdateSelections(null, null);
 
             // 偵測傳動方式有無
             DetectModelTypeData();
@@ -100,11 +98,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 馬達選項更新
             motorPower.UpdateMotorCalcMode();
             motorPower.Load();
-
-            //// 進階選項驗證
-            //formMain.chkAdvanceMode.Checked = false;
-            //formMain.panelAdvanceMode.Visible = formMain.optCalcSelectedModel.Checked;
-            //ChkAdvanceMode_CheckedChanged(null, null);
 
             // 減速比顯示
             formMain.panelReducer.Visible = formMain.optEuropeBeltActuator.Checked;
@@ -121,16 +114,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 重置版面
             recommandList.Refresh();
             chartInfo.Clear();
-            //formMain.step2.SetSelectedModelConfirmBtnVisible(false);
 
             // 有效行程顯示
             effectiveStroke.IsShowEffectiveStroke(false);
-
-            //// 驗證Step3 enabled
-            //if (!formMain.enabledStep3) {
-            //    //formMain.cmdCalcSelectedModelConfirmStep2.ButtonText = "確認條件";
-            //    formMain.cmdConfirmStep2.ButtonText = "確認條件";
-            //}
 
             // 側邊欄位置重整
             formMain.sideTable.RePosition();
@@ -143,37 +129,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             runCondition.scrollBarLoad.Initialize();
         }
 
-        //public void SetSelectedModelConfirmBtnVisible(bool visible) {
-        //    if (formMain.cmdCalcSelectedModelConfirmStep2.Visible == visible)
-        //        return;
-
-        //    formMain.panelCalcBtns.Visible = false;
-        //    formMain.panelCalcBtns.ColumnStyles.Clear();
-        //    if (visible) {
-        //        ColumnStyle[] styles = {
-        //            new ColumnStyle(SizeType.Percent, 33.33f),
-        //            new ColumnStyle(SizeType.Percent, 16.67f),
-        //            new ColumnStyle(SizeType.Percent, 16.67f),
-        //            new ColumnStyle(SizeType.Percent, 33.33f),
-        //        };
-        //        foreach (ColumnStyle style in styles)
-        //            formMain.panelCalcBtns.ColumnStyles.Add(style);
-        //    } else {
-        //        ColumnStyle[] styles = {
-        //            new ColumnStyle(SizeType.Percent, 41.67f),
-        //            new ColumnStyle(SizeType.Percent, 16.67f),
-        //            new ColumnStyle(SizeType.Percent, 41.67f),
-        //        };
-        //        foreach (ColumnStyle style in styles)
-        //            formMain.panelCalcBtns.ColumnStyles.Add(style);
-        //    }
-        //    formMain.cmdCalcSelectedModelConfirmStep2.Visible = visible;
-        //    formMain.panelCalcBtns.Visible = true;
-        //}
-
         private void InitEvents() {
             // 使用環境
             formMain.optStandardEnv.CheckedChanged += formMain.sideTable.Update;
+            formMain.optStandardEnv.CheckedChanged += DetectedUseEnvModelType;
 
             // 當前機構型態更新
             modelTypeOptMap.Keys.ToList().ForEach(opt => opt.CheckedChanged += ModelType_CheckedChanged);
@@ -186,13 +145,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 確認按鈕
             formMain.cmdConfirmStep2.Click += CmdConfirmStep2_Click;
-            //formMain.cmdCalcSelectedModelConfirmStep2.Click += CmdConfirmStep2_Click;            
 
+            // 上一頁
             formMain.lbPrePage.Click += PrePage_Click;
-        }
+        }        
 
         private void PrePage_Click(object sender, EventArgs e) {
-            formMain.tabMain.SelectTab("tabPage1");
+            formMain.tabMain.SelectTab("tabStart");
 
             // 側邊欄移除
             formMain.panelSideTable.Visible = false;
@@ -249,31 +208,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void CmdConfirmStep2_Click(object sender, EventArgs e) {
             if (recommandList.curSelectModel.model == null)
                 return;
-
-            //if (formMain.curStep == FormMain.Step.Step2) {
-            //    if (formMain.enabledStep3) {
-            //        formMain.curStep = (FormMain.Step)((int)formMain.curStep + 1);
-            //        formMain.sideTable.Update(null, null);
-            //        formMain._explorerBar.UpdateCurStep(formMain.curStep);
-            //        //formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep3);
-            //    } else {
-            //        formMain.curStep = FormMain.Step.Step5;
-            //        formMain.sideTable.Update(null, null);
-            //        formMain._explorerBar.UpdateCurStep(formMain.curStep);
-            //        formMain.tabMain.SelectTab(1);
-            //        formMain.page3.Load();
-            //    }
-            //}
         }
 
         private void CmdCalc_Click(object sender, EventArgs e) {
-            //// 版面修正
-            //if (formMain.optCalcAllModel.Checked) {
-            //    formMain.panelUseEnv.Size = new Size(formMain.panelUseEnv.Size.Width, maxHeight);
-            //    formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep2);
-            //}
-            //formMain.dgvCalcSelectedModel.Visible = formMain.optCalcSelectedModel.Checked;
-
             // 最後更新使用條件
             runCondition.UpdateCondition(null, null);
 
@@ -300,8 +237,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         // 側邊欄
                         formMain.sideTable.ClearModelImg();
                         formMain.sideTable.ClearModelInfo();
-                        //if (formMain.optModelSelection.Checked)
-                        //    formMain.sideTable.ClearSelectedModelInfo();
+                        formMain.sideTable.ClearSelectedModelInfo();
                     }));
 
                     formMain.Invoke(new Action(() => formMain.sideTable.UpdateMsg("此使用條件無法計算，請嘗試調整使用條件。", SideTable.MsgStatus.Alarm)));
@@ -315,7 +251,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                             if (string.IsNullOrEmpty(alarm))
                                 return;
                             int index = alarmMsg.Split('|').ToList().IndexOf(alarm) + 1;
-                            //showMsg += index + ". " + alarm + "\r\n";
                             showMsg += alarm + "\r\n";
                         });
                         formMain.Invoke(new Action(() => formMain.sideTable.UpdateMsg(showMsg, SideTable.MsgStatus.Alarm)));
@@ -357,7 +292,32 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             modelTypeOptMap.ToList().ForEach(pair => {
                 bool isDataNotNull = notNullModelTypes.Contains(pair.Value);
                 pair.Key.Enabled = isDataNotNull;
+
+                // 圖片處理
+                if (!isDataNotNull) {
+                    PictureBox picModelType = formMain.panelModelType.Controls.Find(pair.Key.Name.Replace("opt", "pic"), true)[0] as PictureBox;
+                    picModelType.Image = Properties.Resources.ComingSoon;
+                }
             });
+        }
+
+        private void DetectedUseEnvModelType(object sender, EventArgs e) {
+            Model.UseEnvironment useEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.Standard : Model.UseEnvironment.DustFree;
+            Model.ModelType[] dustfreeModelTypes = calc.GetDustfreeModelType();
+            modelTypeOptMap.ToList().ForEach(pair => {
+                if (useEnv == Model.UseEnvironment.DustFree)
+                    pair.Key.Visible = dustfreeModelTypes.Contains(pair.Value);
+                else
+                    pair.Key.Visible = true;
+
+                // 圖片處理
+                PictureBox picModelType = formMain.panelModelType.Controls.Find(pair.Key.Name.Replace("opt", "pic"), true)[0] as PictureBox;
+                picModelType.Visible = pair.Key.Visible;
+            });
+
+            // 目前選的沒有無塵，就自動選擇第一個
+            if (useEnv == Model.UseEnvironment.DustFree && !dustfreeModelTypes.Contains(curSelectModelType))
+                formMain.optBuildInScrewActuator.Checked = true;
         }
     }
 }

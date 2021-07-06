@@ -387,6 +387,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_0113_256_256_01_1CC_icon.ico" />
+    <None Include="Resources\ComingSoon.jpg" />
     <None Include="Resources\scrollBarThumb_hover.png" />
     <None Include="Resources\scrollBarThumb.png" />
     <None Include="Resources\scrollBar.png" />

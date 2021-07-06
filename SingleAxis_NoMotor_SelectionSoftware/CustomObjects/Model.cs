@@ -8,19 +8,31 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// 傳動方式列舉
         /// </summary>
         public enum ModelType {
-            軌道內嵌螺桿滑台,
-            軌道內嵌推桿滑台,
-            標準螺桿滑台,
-            //推桿式螺桿滑台,
-            標準皮帶滑台 = 4,
-            歐規皮帶滑台,
-            無軌道推桿滑台,
-            軌道外掛推桿滑台,
-            輔助軌道推桿滑台,
-            軌道內嵌皮帶滑台,
-            軌道內嵌輔助導軌滑台
+            軌道內崁螺桿系列,
+            軌道內崁推桿滑台,
+            螺桿系列,
+            皮帶系列,
+            歐規皮帶系列,
+            推桿系列,
+            軌道外掛推桿系列,
+            輔助導桿推桿系列,
+            軌道內崁皮帶系列,
+            軌道內崁輔助導軌系列
         }
-        public enum UseEnvironment { Standard, DustFree }
+
+        /// <summary>
+        /// 使用環境
+        /// </summary>
+        public enum UseEnvironment { 
+            /// <summary>
+            /// 標準
+            /// </summary>
+            Standard, 
+            /// <summary>
+            /// 無塵
+            /// </summary>
+            DustFree 
+        }
 
         /// <summary>
         /// 型號名稱
@@ -46,7 +58,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <summary>
         /// 機構型態
         /// </summary>
-        public ModelType modelType = ModelType.標準螺桿滑台;
+        public ModelType modelType = ModelType.螺桿系列;
 
         /// <summary>
         /// 滑軌預估壽命(km)

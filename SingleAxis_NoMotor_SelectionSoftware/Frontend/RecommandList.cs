@@ -96,7 +96,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (curRow != null && curRow.Cells["項次"].Value != null && curRow.Cells["導程"].Value != null) {
                 string curModel = formMain.dgvRecommandList.CurrentRow.Cells["項次"].Value.ToString();
                 double lead = Convert.ToDouble(formMain.dgvRecommandList.CurrentRow.Cells["導程"].Value.ToString());
-                formMain.sideTable.UpdateModelInfo();
             }
 
             // 驗證使用瓦數
@@ -109,10 +108,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 驗證選擇項目異常
             VerifySelectedModelAlarm();
-
-            //// 項目更改分頁收起
-            //if (sender != null)
-            //    formMain._explorerBar.ValueChanged(sender, e);
 
             // 有效行程選項更新
             if (curSelectModel.model != null)

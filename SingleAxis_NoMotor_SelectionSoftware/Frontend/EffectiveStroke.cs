@@ -8,18 +8,7 @@ using System.Windows.Forms;
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class EffectiveStroke {
         // 確定有效行程
-        public decimal effectiveStroke {
-            get {
-                return _effectiveStroke;
-            }
-            set {
-                if (_effectiveStroke != value) {
-                    _effectiveStroke = value;
-                    UpdateCondition(null, null);
-                }
-            }
-        }
-        private decimal _effectiveStroke;
+        public decimal effectiveStroke;
 
         private FormMain formMain;
         private int effectiveStrokeTmpIndex = 0;    // 有效行程打勾用
@@ -51,10 +40,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.cmdEffectiveStroke.Click += CmdEffectiveStroke_Click;
             formMain.txtEffectiveStroke.KeyDown += TxtEffectiveStroke_KeyDown;
             formMain.txtEffectiveStroke.Leave += CmdEffectiveStroke_Click;
-        }
-        private void UpdateCondition(object sender, EventArgs e) {
-            formMain.sideTable.UpdateModelInfo();
-            //formMain.sideTable.UpdateTableSelections();
         }
 
         private void OptEffectiveStroke_CheckedChanged(object sender, EventArgs e) {

@@ -8,7 +8,16 @@ using System.Windows.Forms;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Page1 {
-        public enum ModelSelectionMode {  ModelSelection, ShapeSelection }
+        public enum ModelSelectionMode {  
+            /// <summary>
+            /// 型號選型
+            /// </summary>
+            ModelSelection, 
+            /// <summary>
+            /// 形狀選型
+            /// </summary>
+            ShapeSelection 
+        }
         public ModelSelectionMode modelSelectionMode = ModelSelectionMode.ModelSelection;
 
         private FormMain formMain;
@@ -33,7 +42,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             else if (btn == formMain.cmdShapeSelection)
                 modelSelectionMode = ModelSelectionMode.ShapeSelection;
 
-            formMain.tabMain.SelectTab("tabPage2");
+            formMain.tabMain.SelectTab("tabContent");
             formMain.page2.Load();
         }
     }
