@@ -18,7 +18,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public DataTable motorInfo = FileUtil.ReadCsv(Config.MOTOR_INFO_FILENAME);
         public DataTable reducerInfo = FileUtil.ReadCsv(Config.REDUCER_INFO_FILENAME);
         public DataTable beltInfo = FileUtil.ReadCsv(Config.BELT_INFO_FILENAME);
-        public DataTable dustfreeModelTypeInfo = FileUtil.ReadCsv(Config.DUSTFREE_MODEL_TYPE_INFO_FILENAME);
+        public DataTable modelTypeInfo = FileUtil.ReadCsv(Config.MODEL_TYPE_INFO_FILENAME);
 
         // 套用新扭矩公式的型號
         public string[] beltModels = { "ETB10", "ETB14M", "ETB17M", "ETB22M",
@@ -391,10 +391,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public Model.ModelType[] GetDustfreeModelType() {
-            Model.ModelType[] allModelTypes = dustfreeModelTypeInfo.Rows.Cast<DataRow>()
+            Model.ModelType[] allModelTypes = modelTypeInfo.Rows.Cast<DataRow>().Where(row => row["是否有無塵"].ToString() == "有")
                                                                             .Select(row => (Model.ModelType)Convert.ToInt32(row["Type"].ToString()))
                                                                             .ToArray();
             return allModelTypes;
+        }
+
+        public string GetModelTypeComment(Model.ModelType modelType) {
+            return modelTypeInfo.Rows.Cast<DataRow>().First(row => Convert.ToInt32(row["Type"].ToString()) == (int)modelType)["敘述"].ToString();
         }
     }
 }

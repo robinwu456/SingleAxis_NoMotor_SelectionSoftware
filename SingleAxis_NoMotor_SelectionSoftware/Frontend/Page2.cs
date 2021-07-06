@@ -91,6 +91,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 更新型號選擇
             formMain.sideTable.UpdateItem();
+            formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
 
             // 偵測傳動方式有無
             DetectModelTypeData();
@@ -178,6 +179,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void ModelType_CheckedChanged(object sender, EventArgs e) {
             curSelectModelType = modelTypeOptMap.First(pair => pair.Key.Checked).Value;
             formMain.sideTable.Update(null, null);
+            formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {

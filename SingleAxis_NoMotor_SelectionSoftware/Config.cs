@@ -12,7 +12,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public static string MOTOR_INFO_FILENAME = "./PRX/MotorInfo.csv";
         public static string REDUCER_INFO_FILENAME = "./PRX/ReducerInfo.csv";
         public static string BELT_INFO_FILENAME = "./PRX/BeltInfo.csv";
-        public static string DUSTFREE_MODEL_TYPE_INFO_FILENAME = "./PRX/DustfreeModelType.csv";
+        public static string MODEL_TYPE_INFO_FILENAME = "./PRX/ModelTypeInfo.csv";
         public static string LOG_FILENAME = "./Model.log";
     }
 }
