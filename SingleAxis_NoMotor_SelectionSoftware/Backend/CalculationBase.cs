@@ -400,5 +400,21 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public string GetModelTypeComment(Model.ModelType modelType) {
             return modelTypeInfo.Rows.Cast<DataRow>().First(row => Convert.ToInt32(row["Type"].ToString()) == (int)modelType)["敘述"].ToString();
         }
+
+        public Model.SetupMethod[] GetSupportMethod(Model.ModelType modelType) {
+            var setups = modelInfo.Rows.Cast<DataRow>().Where(row => Convert.ToInt32(row["Type"].ToString()) == (int)modelType)
+                                                       .Select(row => row["Setup"].ToString().Split('&'))
+                                                       .Distinct();
+            List<Model.SetupMethod> supportSetups = new List<Model.SetupMethod>();
+            setups.ToList().ForEach(setup => {
+                setup.ToList().ForEach(s => {
+                    Model.SetupMethod _s = (Model.SetupMethod)Convert.ToInt32(s);
+                    if (!supportSetups.Contains(_s))
+                        supportSetups.Add(_s);
+                });
+            });
+
+            return supportSetups.ToArray();
+        }
     }
 }

@@ -35,7 +35,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //formMain.cboModelType.SelectedIndexChanged += UpdateCondition;
             formMain.optHorizontalUse.CheckedChanged += UpdateCondition;
             formMain.optWallHangingUse.CheckedChanged += UpdateCondition;
-            formMain.optUpsideDownUse.CheckedChanged += UpdateCondition;
+            formMain.optVerticalUse.CheckedChanged += UpdateCondition;
             //formMain.optConditionSelection.CheckedChanged += UpdateCondition;
             //formMain.optModelSelection.CheckedChanged += UpdateCondition;
             formMain.cboSeries.SelectedIndexChanged += UpdateCondition;
@@ -129,7 +129,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 curCondition.setupMethod = Model.SetupMethod.Horizontal;
             else if (formMain.optWallHangingUse.Checked)
                 curCondition.setupMethod = Model.SetupMethod.WallHang;
-            else if (formMain.optUpsideDownUse.Checked)
+            else if (formMain.optVerticalUse.Checked)
                 curCondition.setupMethod = Model.SetupMethod.Vertical;
             // 最高速度
             if (formMain.optMaxSpeedType_mms.Checked)

@@ -12,6 +12,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public int minHeight = 800;
         public int maxHeight = 1333;
         public Dictionary<RadioButton, Model.ModelType> modelTypeOptMap = new Dictionary<RadioButton, Model.ModelType>();
+        public Dictionary<RadioButton, Model.SetupMethod> setupMethodOptMap = new Dictionary<RadioButton, Model.SetupMethod>();
         public Model.ModelType curSelectModelType = Model.ModelType.螺桿系列;
         public Calculation calc = new Calculation();
         // Step2各項目
@@ -51,6 +52,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 { formMain.optEuropeBeltActuator, Model.ModelType.歐規皮帶系列 },
                 { formMain.optBuildInBeltActuator, Model.ModelType.軌道內崁皮帶系列 },
                 { formMain.optBuildInSupportTrackActuator, Model.ModelType.軌道內崁皮帶系列 },
+            };
+
+            // 安裝方式opt統整
+            setupMethodOptMap = new Dictionary<RadioButton, Model.SetupMethod>() {
+                { formMain.optHorizontalUse, Model.SetupMethod.Horizontal },
+                { formMain.optWallHangingUse, Model.SetupMethod.WallHang },
+                { formMain.optVerticalUse, Model.SetupMethod.Vertical },
             };
 
             InitEvents();            
@@ -178,8 +186,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void ModelType_CheckedChanged(object sender, EventArgs e) {
             curSelectModelType = modelTypeOptMap.First(pair => pair.Key.Checked).Value;
+            // 更新顯示傳動方式
             formMain.sideTable.Update(null, null);
+            // 更新顯示傳動方式敘述
             formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
+            // 驗證安裝方式選項
+            Model.SetupMethod[] modelTypeSupportSetupMethod = calc.GetSupportMethod(curSelectModelType);
+            setupMethodOptMap.ToList().ForEach(pair => pair.Key.Enabled = modelTypeSupportSetupMethod.Contains(pair.Value));
+            if (setupMethodOptMap.ToList().Any(pair => pair.Key.Checked && !pair.Key.Enabled))
+                setupMethodOptMap.ToList().First(pair => pair.Key.Enabled).Key.Checked = true;
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {

@@ -171,7 +171,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 con.setupMethod = Model.SetupMethod.Horizontal;
             else if (formMain.optWallHangingUse.Checked)
                 con.setupMethod = Model.SetupMethod.WallHang;
-            else if (formMain.optUpsideDownUse.Checked)
+            else if (formMain.optVerticalUse.Checked)
                 con.setupMethod = Model.SetupMethod.Vertical;
 
             string model = formMain.cboModel.Text;

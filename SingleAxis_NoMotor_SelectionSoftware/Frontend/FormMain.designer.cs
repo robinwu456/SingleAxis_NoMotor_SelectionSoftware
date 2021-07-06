@@ -206,7 +206,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.panelSetup = new System.Windows.Forms.Panel();
             this.panelSetupMode = new System.Windows.Forms.Panel();
-            this.optUpsideDownUse = new System.Windows.Forms.RadioButton();
+            this.optVerticalUse = new System.Windows.Forms.RadioButton();
             this.optHorizontalUse = new System.Windows.Forms.RadioButton();
             this.optWallHangingUse = new System.Windows.Forms.RadioButton();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
@@ -1788,7 +1788,7 @@
             // 
             // panelSetupMode
             // 
-            this.panelSetupMode.Controls.Add(this.optUpsideDownUse);
+            this.panelSetupMode.Controls.Add(this.optVerticalUse);
             this.panelSetupMode.Controls.Add(this.optHorizontalUse);
             this.panelSetupMode.Controls.Add(this.optWallHangingUse);
             this.panelSetupMode.Controls.Add(this.pictureBox13);
@@ -1797,11 +1797,11 @@
             // 
             // optUpsideDownUse
             // 
-            resources.ApplyResources(this.optUpsideDownUse, "optUpsideDownUse");
-            this.optUpsideDownUse.BackColor = System.Drawing.Color.Transparent;
-            this.optUpsideDownUse.ForeColor = System.Drawing.Color.Black;
-            this.optUpsideDownUse.Name = "optUpsideDownUse";
-            this.optUpsideDownUse.UseVisualStyleBackColor = false;
+            resources.ApplyResources(this.optVerticalUse, "optUpsideDownUse");
+            this.optVerticalUse.BackColor = System.Drawing.Color.Transparent;
+            this.optVerticalUse.ForeColor = System.Drawing.Color.Black;
+            this.optVerticalUse.Name = "optUpsideDownUse";
+            this.optVerticalUse.UseVisualStyleBackColor = false;
             // 
             // optHorizontalUse
             // 
@@ -2727,7 +2727,7 @@
         private System.Windows.Forms.Label label29;
         public System.Windows.Forms.Panel panelSetup;
         public System.Windows.Forms.Panel panelSetupMode;
-        public System.Windows.Forms.RadioButton optUpsideDownUse;
+        public System.Windows.Forms.RadioButton optVerticalUse;
         public System.Windows.Forms.RadioButton optHorizontalUse;
         public System.Windows.Forms.RadioButton optWallHangingUse;
         private System.Windows.Forms.PictureBox pictureBox13;
