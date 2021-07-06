@@ -146,6 +146,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 當前機構型態更新
             modelTypeOptMap.Keys.ToList().ForEach(opt => opt.CheckedChanged += ModelType_CheckedChanged);
 
+            // 安裝方式
+            setupMethodOptMap.Keys.ToList().ForEach(opt => opt.CheckedChanged += UseEnv_CheckedChanged);
+
             // 進階選項
             formMain.chkAdvanceMode.CheckedChanged += ChkAdvanceMode_CheckedChanged;
 
@@ -157,7 +160,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 上一頁
             formMain.lbPrePage.Click += PrePage_Click;
-        }        
+        }
+
+        private void UseEnv_CheckedChanged(object sender, EventArgs e) {
+            formMain.sideTable.Update(null, null);
+        }
 
         private void PrePage_Click(object sender, EventArgs e) {
             formMain.tabMain.SelectTab("tabStart");
