@@ -150,15 +150,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void ClearSelectedModelInfo() {
-            formMain.sideTable.UpdateSelectedConditionValue("T_max安全係數", "");
-            formMain.sideTable.UpdateSelectedConditionValue("力矩警示", "");
             formMain.sideTable.UpdateSelectedConditionValue("運行距離", "");
             formMain.sideTable.UpdateSelectedConditionValue("運行壽命", "");
-            formMain.sideTable.UpdateSelectedConditionValue("有效行程", "");
-            if (formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType() && formMain.page2.calc.beltModels.Contains(formMain.cboModel.Text)) {
-                formMain.sideTable.UpdateSelectedConditionValue("皮帶T_max安全係數", "");
-                formMain.sideTable.UpdateSelectedConditionValue("皮帶馬達安全係數", "");
-            }
         }
 
         public void UpdateTableSelections() {

@@ -181,23 +181,31 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                             formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "Error";
                         else {
                             if (model.serviceLifeDistance > 10000)
-                                formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "1萬公里以上";
+                                //formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "1萬公里以上";
+                                formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "10000以上";
                             else
                                 //formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = ((float)model.serviceLifeDistance / 10000f).ToString("#0.0") + "萬公里";
-                                formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = (float)model.serviceLifeDistance + "公里";
+                                formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = (float)model.serviceLifeDistance;
                         }
 
                         // 使用壽命時間
                         string useTime = "";
                         if (model.serviceLifeTime.year >= 10)
-                            useTime = "10年以上";
+                            //useTime = "10年以上";
+                            useTime = "10以上";
                         else {
+                            //if (model.serviceLifeTime.year > 0)
+                            //    //useTime += model.serviceLifeTime.year + "年";
+                            //    useTime += model.serviceLifeTime.year;
+                            ////if (model.serviceLifeTime.month > 0)
+                            ////    useTime += model.serviceLifeTime.month + "個月";
+                            //if (model.serviceLifeTime.year == 0 && model.serviceLifeTime.month == 0)
+                            //    useTime = "1個月以下";
+
                             if (model.serviceLifeTime.year > 0)
-                                useTime += model.serviceLifeTime.year + "年";
-                            //if (model.serviceLifeTime.month > 0)
-                            //    useTime += model.serviceLifeTime.month + "個月";
-                            if (model.serviceLifeTime.year == 0 && model.serviceLifeTime.month == 0)
-                                useTime = "1個月以下";
+                                useTime += model.serviceLifeTime.year;
+                            else
+                                useTime = "1以下";
                         }
                         formMain.dgvRecommandList.Rows[index].Cells["運行壽命"].Value = useTime;
 
@@ -215,9 +223,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             try {
                 formMain.Invoke(new Action(() => {
                     if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
+                        //// 欄位寬度更新
+                        //foreach (DataGridViewColumn col in formMain.dgvRecommandList.Columns)
+                        //    col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
                         // 欄位寬度更新
                         foreach (DataGridViewColumn col in formMain.dgvRecommandList.Columns)
-                            col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+                            if (col.Name == "項次")
+                                col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
 
                         // 畫圖
                         formMain.page2.chartInfo.PaintGraph();

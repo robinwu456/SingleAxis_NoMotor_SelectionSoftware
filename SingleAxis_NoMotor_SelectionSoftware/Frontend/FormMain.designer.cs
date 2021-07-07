@@ -2201,6 +2201,7 @@
             // 
             this.鎖定.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
             this.鎖定.FillWeight = 56.40312F;
+            this.鎖定.Frozen = true;
             resources.ApplyResources(this.鎖定, "鎖定");
             this.鎖定.Name = "鎖定";
             this.鎖定.ReadOnly = true;
@@ -2208,8 +2209,9 @@
             // 
             // 項次
             // 
-            this.項次.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.項次.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.項次.FillWeight = 68.39409F;
+            this.項次.Frozen = true;
             resources.ApplyResources(this.項次, "項次");
             this.項次.Name = "項次";
             this.項次.ReadOnly = true;
@@ -2217,7 +2219,7 @@
             // 
             // 重複定位精度
             // 
-            this.重複定位精度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.重複定位精度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.重複定位精度, "重複定位精度");
             this.重複定位精度.Name = "重複定位精度";
             this.重複定位精度.ReadOnly = true;
@@ -2225,8 +2227,7 @@
             // 
             // 導程
             // 
-            this.導程.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.導程.FillWeight = 68.39409F;
+            this.導程.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.導程, "導程");
             this.導程.Name = "導程";
             this.導程.ReadOnly = true;
@@ -2234,8 +2235,7 @@
             // 
             // 荷重
             // 
-            this.荷重.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.荷重.FillWeight = 68.39409F;
+            this.荷重.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.荷重, "荷重");
             this.荷重.Name = "荷重";
             this.荷重.ReadOnly = true;
@@ -2243,8 +2243,7 @@
             // 
             // 最高轉速
             // 
-            this.最高轉速.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.最高轉速.FillWeight = 68.39409F;
+            this.最高轉速.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.最高轉速, "最高轉速");
             this.最高轉速.Name = "最高轉速";
             this.最高轉速.ReadOnly = true;
@@ -2252,8 +2251,7 @@
             // 
             // 運行速度
             // 
-            this.運行速度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.運行速度.FillWeight = 68.39409F;
+            this.運行速度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.運行速度, "運行速度");
             this.運行速度.Name = "運行速度";
             this.運行速度.ReadOnly = true;
@@ -2261,8 +2259,7 @@
             // 
             // 加速度
             // 
-            this.加速度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.加速度.FillWeight = 91.9438F;
+            this.加速度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.加速度, "加速度");
             this.加速度.Name = "加速度";
             this.加速度.ReadOnly = true;
@@ -2270,8 +2267,7 @@
             // 
             // 最大行程
             // 
-            this.最大行程.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.最大行程.FillWeight = 68.39409F;
+            this.最大行程.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.最大行程, "最大行程");
             this.最大行程.Name = "最大行程";
             this.最大行程.ReadOnly = true;
@@ -2279,8 +2275,7 @@
             // 
             // 運行時間
             // 
-            this.運行時間.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.運行時間.FillWeight = 68.39409F;
+            this.運行時間.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.運行時間, "運行時間");
             this.運行時間.Name = "運行時間";
             this.運行時間.ReadOnly = true;
@@ -2288,8 +2283,7 @@
             // 
             // 力矩A
             // 
-            this.力矩A.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.力矩A.FillWeight = 92.21493F;
+            this.力矩A.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.力矩A, "力矩A");
             this.力矩A.Name = "力矩A";
             this.力矩A.ReadOnly = true;
@@ -2297,8 +2291,7 @@
             // 
             // 力矩B
             // 
-            this.力矩B.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.力矩B.FillWeight = 88.45663F;
+            this.力矩B.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.力矩B, "力矩B");
             this.力矩B.Name = "力矩B";
             this.力矩B.ReadOnly = true;
@@ -2306,8 +2299,7 @@
             // 
             // 力矩C
             // 
-            this.力矩C.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.力矩C.FillWeight = 92.50709F;
+            this.力矩C.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.力矩C, "力矩C");
             this.力矩C.Name = "力矩C";
             this.力矩C.ReadOnly = true;
@@ -2324,8 +2316,7 @@
             // 
             // 馬達瓦數
             // 
-            this.馬達瓦數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.馬達瓦數.FillWeight = 68.39409F;
+            this.馬達瓦數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.馬達瓦數, "馬達瓦數");
             this.馬達瓦數.Name = "馬達瓦數";
             this.馬達瓦數.ReadOnly = true;
@@ -2367,8 +2358,7 @@
             // 
             // 運行距離
             // 
-            this.運行距離.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.運行距離.FillWeight = 64.37476F;
+            this.運行距離.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.運行距離, "運行距離");
             this.運行距離.Name = "運行距離";
             this.運行距離.ReadOnly = true;
@@ -2376,8 +2366,7 @@
             // 
             // 運行壽命
             // 
-            this.運行壽命.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.運行壽命.FillWeight = 68.39409F;
+            this.運行壽命.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.運行壽命, "運行壽命");
             this.運行壽命.Name = "運行壽命";
             this.運行壽命.ReadOnly = true;

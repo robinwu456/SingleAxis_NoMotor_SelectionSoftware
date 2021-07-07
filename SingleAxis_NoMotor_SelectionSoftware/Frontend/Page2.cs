@@ -263,7 +263,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         // 側邊欄
                         formMain.sideTable.ClearModelImg();
                         formMain.sideTable.ClearModelInfo();
-                        formMain.sideTable.ClearSelectedModelInfo();
+                        //formMain.sideTable.ClearSelectedModelInfo();
                     }));
 
                     formMain.Invoke(new Action(() => formMain.sideTable.UpdateMsg("此使用條件無法計算，請嘗試調整使用條件。", SideTable.MsgStatus.Alarm)));

@@ -826,13 +826,13 @@
     <value>True</value>
   </metadata>
   <data name="重複定位精度.HeaderText" xml:space="preserve">
-    <value>重複定位精度</value>
+    <value>重複定位精度(mm)</value>
   </data>
   <data name="重複定位精度.MinimumWidth" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>125</value>
   </data>
   <data name="重複定位精度.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>125</value>
   </data>
   <metadata name="導程.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -850,7 +850,7 @@
     <value>True</value>
   </metadata>
   <data name="荷重.HeaderText" xml:space="preserve">
-    <value>荷重</value>
+    <value>荷重(kg)</value>
   </data>
   <data name="荷重.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
@@ -862,97 +862,88 @@
     <value>True</value>
   </metadata>
   <data name="最高轉速.HeaderText" xml:space="preserve">
-    <value>最高轉速</value>
+    <value>最高轉速(RPM)</value>
   </data>
   <data name="最高轉速.MinimumWidth" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="最高轉速.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>100</value>
   </data>
   <metadata name="運行速度.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="運行速度.HeaderText" xml:space="preserve">
-    <value>運行速度</value>
+    <value>運行速度(mm/s)</value>
   </data>
   <data name="運行速度.MinimumWidth" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="運行速度.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>100</value>
   </data>
   <metadata name="加速度.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="加速度.HeaderText" xml:space="preserve">
-    <value>加速度</value>
+    <value>加速度(mm/s²)</value>
   </data>
   <data name="加速度.MinimumWidth" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>75</value>
   </data>
   <data name="加速度.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>75</value>
   </data>
   <metadata name="最大行程.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="最大行程.HeaderText" xml:space="preserve">
-    <value>最大行程</value>
+    <value>最大行程(mm)</value>
   </data>
   <data name="最大行程.MinimumWidth" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="最大行程.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>100</value>
   </data>
   <metadata name="運行時間.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="運行時間.HeaderText" xml:space="preserve">
-    <value>運行時間</value>
+    <value>運行時間(s)</value>
   </data>
   <data name="運行時間.MinimumWidth" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>90</value>
   </data>
   <data name="運行時間.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>90</value>
   </data>
   <metadata name="力矩A.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="力矩A.HeaderText" xml:space="preserve">
-    <value>力矩A</value>
+    <value>力矩A (mm)</value>
   </data>
   <data name="力矩A.MinimumWidth" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>94</value>
   </data>
   <data name="力矩A.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>94</value>
   </data>
   <metadata name="力矩B.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="力矩B.HeaderText" xml:space="preserve">
-    <value>力矩B</value>
+    <value>力矩B (mm)</value>
   </data>
   <data name="力矩B.MinimumWidth" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>94</value>
   </data>
   <data name="力矩B.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>94</value>
   </data>
   <metadata name="力矩C.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="力矩C.HeaderText" xml:space="preserve">
-    <value>力矩C</value>
+    <value>力矩C (mm)</value>
   </data>
   <data name="力矩C.MinimumWidth" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>94</value>
   </data>
   <data name="力矩C.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>94</value>
   </data>
   <metadata name="力矩警示.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -973,13 +964,10 @@
     <value>True</value>
   </metadata>
   <data name="馬達瓦數.HeaderText" xml:space="preserve">
-    <value>馬達瓦數</value>
+    <value>馬達瓦數(W)</value>
   </data>
   <data name="馬達瓦數.MinimumWidth" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="馬達瓦數.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>100</value>
   </data>
   <metadata name="皮帶馬達安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1045,25 +1033,22 @@
     <value>True</value>
   </metadata>
   <data name="運行距離.HeaderText" xml:space="preserve">
-    <value>運行距離</value>
+    <value>運行距離(km)</value>
   </data>
   <data name="運行距離.MinimumWidth" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="運行距離.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>100</value>
   </data>
   <metadata name="運行壽命.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="運行壽命.HeaderText" xml:space="preserve">
-    <value>運行壽命</value>
+    <value>運行壽命(年)</value>
   </data>
   <data name="運行壽命.MinimumWidth" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>75</value>
   </data>
   <data name="運行壽命.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>75</value>
   </data>
   <metadata name="是否推薦.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
