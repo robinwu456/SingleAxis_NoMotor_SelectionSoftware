@@ -120,7 +120,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void Update(object sender, EventArgs e) {
-            UpdateTableSelections();
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+                UpdateSelectedConditionValue("使用環境", formMain.panelUseEnv.Controls.Cast<Control>().ToList()
+                                                                  .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
+                                                                  .Text);
+            UpdateSelectedConditionValue("安裝方式", formMain.panelSetupMode.Controls.Cast<Control>().ToList()
+                                                           .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
+                                                           .Text);
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+                UpdateSelectedConditionValue("機構型態", formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.ToString());
+
+            formMain.panelSideTableIcon.Visible = formMain.tabMain.SelectedIndex == formMain.tabMain.TabPages.Count - 1;
         }
 
         public void UpdateMsg(string msg, MsgStatus msgStatus) {
@@ -152,20 +162,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public void ClearSelectedModelInfo() {
             formMain.sideTable.UpdateSelectedConditionValue("運行距離", "");
             formMain.sideTable.UpdateSelectedConditionValue("運行壽命", "");
-        }
-
-        public void UpdateTableSelections() {
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
-                UpdateSelectedConditionValue("使用環境", formMain.panelUseEnv.Controls.Cast<Control>().ToList()
-                                                                  .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
-                                                                  .Text);
-            UpdateSelectedConditionValue("安裝方式", formMain.panelSetupMode.Controls.Cast<Control>().ToList()
-                                                           .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
-                                                           .Text);
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
-                UpdateSelectedConditionValue("機構型態", formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.ToString());
-
-            formMain.panelSideTableIcon.Visible = formMain.tabMain.SelectedIndex == formMain.tabMain.TabPages.Count - 1;
         }
 
         public void UpdateSelectedConditionValue(string key, string value, bool isAlarm = false) {

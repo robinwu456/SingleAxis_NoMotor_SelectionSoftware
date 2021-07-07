@@ -90,6 +90,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void Load() {
+            formMain.explorerBar.ScrollControlIntoView(formMain.lbPrePage);
+
             // 版面更新
             UpdateLayout(null, null);
 
@@ -122,10 +124,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 重置版面
             recommandList.Refresh();
+            formMain.sideTable.ClearModelImg();
+            formMain.sideTable.ClearModelInfo();
+            recommandList.curSelectModel = (null, -1);
+            formMain.cmdConfirmStep2.Visible = false;
             chartInfo.Clear();
 
-            // 有效行程顯示
-            effectiveStroke.IsShowEffectiveStroke(false);
+            //// 有效行程顯示
+            //effectiveStroke.IsShowEffectiveStroke(false);
 
             // 側邊欄位置重整
             formMain.sideTable.RePosition();
@@ -232,8 +238,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void CmdConfirmStep2_Click(object sender, EventArgs e) {
-            if (recommandList.curSelectModel.model == null)
-                return;
+            // 取得有效行程
+            effectiveStroke.GetEffectiveStroke();
+
+            // 進下一頁
+            formMain.tabMain.SelectTab("tabResult");
+            formMain.page3.Load();
+            formMain.sideTable.Update(null, null);
         }
 
         private void CmdCalc_Click(object sender, EventArgs e) {
@@ -282,8 +293,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         formMain.Invoke(new Action(() => formMain.sideTable.UpdateMsg(showMsg, SideTable.MsgStatus.Alarm)));
                     }
 
-                    // 有效行程顯示
-                    formMain.page2.effectiveStroke.IsShowEffectiveStroke(false);
+                    //// 有效行程顯示
+                    //formMain.page2.effectiveStroke.IsShowEffectiveStroke(false);
 
                     return;
                 }
@@ -293,8 +304,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 // 表單顯示
                 recommandList.DisplayRecommandList();
 
-                // 有效行程顯示、賦值
-                formMain.Invoke(new Action(() => effectiveStroke.IsShowEffectiveStroke(true)));
+                //// 有效行程顯示、賦值
+                //formMain.Invoke(new Action(() => effectiveStroke.IsShowEffectiveStroke(true)));
             });
             threadCalc.Start();
 

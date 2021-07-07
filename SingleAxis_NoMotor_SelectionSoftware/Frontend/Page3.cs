@@ -38,14 +38,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void CmdResetStep5_Click(object sender, EventArgs e) {
-            formMain.tabMain.SelectTab(0);
-            //formMain.curStep = FormMain.Step.Step1;
-            formMain.sideTable.Update(null, null);
-            formMain.sideTable.ClearModelImg();
-            formMain.sideTable.ClearModelInfo();
-            formMain.page2.recommandList.Refresh();
-            //formMain._explorerBar.UpdateCurStep(formMain.curStep);
-            //formMain.explorerBar.ScrollControlIntoView(formMain.panelConfirmBtnsStep1);
+            formMain.tabMain.SelectTab("tabStart");
+            //formMain.sideTable.ClearModelImg();
+            //formMain.sideTable.ClearModelInfo();
+            formMain.panelSideTable.Visible = false;
+            //formMain.page2.recommandList.Refresh();
+            //formMain.sideTable.Update(null, null);
         }
     }
 }

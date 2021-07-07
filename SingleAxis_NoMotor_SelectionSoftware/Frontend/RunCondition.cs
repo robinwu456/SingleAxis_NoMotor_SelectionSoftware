@@ -247,8 +247,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //// 型號選行顯示
             //formMain.step2.SetSelectedModelConfirmBtnVisible(false);
 
-            // 有效行程
-            formMain.page2.effectiveStroke.IsShowEffectiveStroke(false);
+            //// 有效行程
+            //formMain.page2.effectiveStroke.IsShowEffectiveStroke(false);
 
             // 修正條件時，下一步隱藏
             formMain.cmdConfirmStep2.Visible = false;

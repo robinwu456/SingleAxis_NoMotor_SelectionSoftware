@@ -110,21 +110,22 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 驗證選擇項目異常
             VerifySelectedModelAlarm();
 
-            // 有效行程選項更新
-            if (curSelectModel.model != null)
-                formMain.page2.effectiveStroke.CmdEffectiveStroke_Click(null, null);
+            //// 有效行程選項更新
+            //if (curSelectModel.model != null)
+            //    formMain.page2.effectiveStroke.CmdEffectiveStroke_Click(null, null);
 
-            // 全部選型驗證選擇型號是否有項目Fail，有則不顯示下一步
-            if (curSelectModel.model != null) {
-                if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
-                    try {
-                        //bool isAllConditionSuccess = redFontConditions.All(con => con.Value(curRecommandList.First(model => model.name == curSelectModel.model && model.lead == curSelectModel.lead)));
-                        //formMain.cmdConfirmStep2.Visible = isAllConditionSuccess;
-                    } catch (Exception ex) {
-                        Console.WriteLine(ex);
-                    }
-                }
-            }
+            //// 全部選型驗證選擇型號是否有項目Fail，有則不顯示下一步
+            //if (curSelectModel.model != null) {
+            //    if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
+            //        try {
+            //            bool isAllConditionSuccess = redFontConditions.All(con => con.Value(curRecommandList.First(model => model.name == curSelectModel.model && model.lead == curSelectModel.lead)));
+            //            formMain.cmdConfirmStep2.Visible = isAllConditionSuccess;
+            //        } catch (Exception ex) {
+            //            Console.WriteLine(ex);
+            //        }
+            //    }
+            //}
+            formMain.cmdConfirmStep2.Visible = true;
 
             // Log所有參數
             if (curSelectModel.model != null) {
@@ -140,6 +141,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 型號選型結果顯示恢復隱藏
             curSelectModel = (null, -1);
             curCheckedModel = (null, -1);
+            formMain.dgvRecommandList.Rows.Clear();
         }
 
         public void DisplayRecommandList() {
