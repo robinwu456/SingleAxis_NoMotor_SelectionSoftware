@@ -13,6 +13,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public static string REDUCER_INFO_FILENAME = "./PRX/ReducerInfo.csv";
         public static string BELT_INFO_FILENAME = "./PRX/BeltInfo.csv";
         public static string MODEL_TYPE_INFO_FILENAME = "./PRX/ModelTypeInfo.csv";
-        public static string LOG_FILENAME = "./Model.log";
+
+        // log
+        public static string LOG_PARAM_FILENAME = "./Model.log";  // 所有參數Log
+        public static string LOG_FILTER_FILENAME = "./ModelFilter.log";  // 所有篩選Log
     }
 }

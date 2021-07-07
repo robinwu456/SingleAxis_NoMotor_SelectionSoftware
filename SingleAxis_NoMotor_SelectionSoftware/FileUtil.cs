@@ -400,7 +400,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 else
                     printInfo += info.key + "：" + info.value + "\r\n";
             }
-            FileWrite(Config.LOG_FILENAME, printInfo);
+            FileWrite(Config.LOG_PARAM_FILENAME, printInfo);
         }
     }
 }

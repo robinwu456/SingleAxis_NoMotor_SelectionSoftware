@@ -155,6 +155,23 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 { "皮帶T_max安全係數過低", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_beltMotor },
                 { "力矩警示異常", model => model.isMomentVerifySuccess },
             };
+
+            // log篩選
+            string logFilter = "";
+            foreach (Model model in resultModels) {
+                string curLog = "";
+                foreach (var con in filterMap) {
+                    string curFilterText = con.Key.Split('，')[0];
+                    if (!con.Value(model))
+                        curLog += "、" + curFilterText;
+                }
+                if (curLog != string.Empty) {
+                    curLog = curLog.Remove(0, 1);
+                    logFilter += string.Format("{0}-L{1}：", model.name, model.lead) + curLog + Environment.NewLine;
+                }
+            }
+            FileUtil.FileWrite(Config.LOG_FILTER_FILENAME, logFilter);
+
             foreach (var filter in filterMap) {
                 oldResultModelCount = resultModels.Count;
                 resultModels = resultModels.Where(filter.Value).ToList();

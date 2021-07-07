@@ -139,6 +139,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 力矩警示驗證
             VerifyMomentAlarm(model, condition.setupMethod);
 
+            if (model.load == 0)
+                model.slideTrackServiceLifeDistance = 999999999;
+
             return model.slideTrackServiceLifeDistance;
         }
 
