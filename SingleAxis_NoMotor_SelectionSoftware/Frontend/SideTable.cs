@@ -12,9 +12,10 @@ using System.Threading;
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class SideTable {
         public enum MsgStatus { Normal, Alarm }
-        public Size tableSize = new Size(224, 474);
-        public Point tablePosition = new Point(1000, 129);
 
+        private Size sizeSideTable = new Size(224, 474);
+        private Size sizeTableSelection = new Size(194, 145);
+        private Point positionSideTable = new Point(975, 129);        
         private FormMain formMain;
         // 側邊欄訊息 - 形狀選型
         private List<string> selectionTableItems_calcAll = new List<string>(){
@@ -45,6 +46,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.splitContainerBase.Panel2.Controls.Add(formMain.panelSideTable);
             formMain.panelSideTable.BringToFront();
             formMain.panelSideTable.Visible = true;
+
+            // 側邊欄規位
+            formMain.panelSideTable.Size = sizeSideTable;
+            formMain.panelSideTable.Location = positionSideTable;
+            formMain.panelSideTableSelections.Size = sizeTableSelection;
         }
 
         // 選項欄生成
@@ -58,73 +64,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 selectionTableItems = selectionTableItems_calcAll;
             else
                 selectionTableItems = selectionTableItems_calcSelectModel;
-
-            //if (formMain.tableSelections.RowCount == 1) {
-            //    // init table
-            //    formMain.panelSideTable.Visible = false;
-            //    formMain.tableSelections.RowCount = selectionTableItems.Count;
-            //    formMain.tableSelections.RowStyles.Clear();
-            //    selectionTableItems.ForEach(item => {
-            //        RowStyle row = new RowStyle(SizeType.Absolute, tableLayoutDefaultRowHeight);
-            //        formMain.tableSelections.RowStyles.Add(row);
-
-            //        Label title = new Label();
-            //        title.Name = "labelDataResult_" + item;
-            //        title.Font = new Font("微軟正黑體", 9);
-            //        title.ForeColor = Color.FromArgb(0, 0, 0);
-            //        title.AutoSize = false;
-            //        title.Dock = DockStyle.Fill;
-            //        title.TextAlign = ContentAlignment.MiddleLeft;
-            //        title.Text = item;
-            //        formMain.tableSelections.Controls.Add(title, 0, selectionTableItems.IndexOf(item));
-
-            //        Label value = new Label();
-            //        value.Name = "labelDataResult_" + item + "_value";
-            //        value.Font = new Font("微軟正黑體", 9);
-            //        value.ForeColor = tableConditionValueForeColor;
-            //        value.AutoSize = false;
-            //        value.Dock = DockStyle.Fill;
-            //        value.TextAlign = ContentAlignment.MiddleLeft;
-            //        value.Text = "";
-            //        formMain.tableSelections.Controls.Add(value, 1, selectionTableItems.IndexOf(item));
-            //    });
-            //    ResizeSideTable();
-            //    formMain.panelSideTable.Visible = true;
-            //} else {
-            //    if (selectionTableItems.Count != formMain.tableSelections.RowCount) {
-            //        // resize table
-            //        formMain.panelSideTable.Visible = false;
-            //        formMain.tableSelections.Controls.All().ToList().ForEach(control => formMain.tableSelections.Controls.Remove(control));
-            //        formMain.tableSelections.RowCount = selectionTableItems.Count;
-            //        formMain.tableSelections.RowStyles.Clear();
-            //        selectionTableItems.ForEach(item => {
-            //            RowStyle row = new RowStyle(SizeType.Absolute, tableLayoutDefaultRowHeight);
-            //            formMain.tableSelections.RowStyles.Add(row);
-
-            //            Label title = new Label();
-            //            title.Name = "labelDataResult_" + item;
-            //            title.Font = new Font("微軟正黑體", 9);
-            //            title.ForeColor = Color.FromArgb(0, 0, 0);
-            //            title.AutoSize = false;
-            //            title.Dock = DockStyle.Fill;
-            //            title.TextAlign = ContentAlignment.MiddleLeft;
-            //            title.Text = item;
-            //            formMain.tableSelections.Controls.Add(title, 0, selectionTableItems.IndexOf(item));
-
-            //            Label value = new Label();
-            //            value.Name = "labelDataResult_" + item + "_value";
-            //            value.Font = new Font("微軟正黑體", 9);
-            //            value.ForeColor = tableConditionValueForeColor;
-            //            value.AutoSize = false;
-            //            value.Dock = DockStyle.Fill;
-            //            value.TextAlign = ContentAlignment.MiddleLeft;
-            //            value.Text = "";
-            //            formMain.tableSelections.Controls.Add(value, 1, selectionTableItems.IndexOf(item));
-            //        });
-            //        ResizeSideTable();
-            //        formMain.panelSideTable.Visible = true;
-            //    }
-            //}
 
             // resize table
             formMain.panelSideTable.Visible = false;
@@ -192,6 +131,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public void UpdateModelImg(string model) {
             var obj = Properties.Resources.ResourceManager.GetObject(model, CultureInfo.InvariantCulture);
             formMain.picModelImg.Image = obj as Image;
+        }
+
+        public void UpdateModeInfo(string model, double lead) {
+            formMain.lbSideTableModelInfo.Text = string.Format("{0}-L{1}", model, lead);
         }
 
         public void ClearMsg() {

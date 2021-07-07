@@ -16,15 +16,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private FormMain formMain;
         private const decimal serviceLifeDistanceAlarmStandard = 3000;  // 運行距離標準(km)
         private const decimal serviceLifeTimeAlarmStandard = 3;         // 運行壽命標準(年)
-        // 顏色區分
-        private Dictionary<string, Func<Model, bool>> redFontConditions = new Dictionary<string, Func<Model, bool>>() {
-            { "T_max安全係數", model => model.tMaxSafeCoefficient >= Model.tMaxStandard },
-            { "運行距離", model => model.serviceLifeDistance >= serviceLifeDistanceAlarmStandard },
-            { "運行壽命", model => model.serviceLifeTime.year >= serviceLifeTimeAlarmStandard },
-            { "皮帶馬達安全係數", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < Model.beltMotorStandard },
-            { "皮帶T_max安全係數", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_beltMotor },
-            { "力矩警示", model => model.isMomentVerifySuccess },
-        };
+        //// 顏色區分
+        //private Dictionary<string, Func<Model, bool>> redFontConditions = new Dictionary<string, Func<Model, bool>>() {
+        //    { "T_max安全係數", model => model.tMaxSafeCoefficient >= Model.tMaxStandard },
+        //    { "運行距離", model => model.serviceLifeDistance >= serviceLifeDistanceAlarmStandard },
+        //    { "運行壽命", model => model.serviceLifeTime.year >= serviceLifeTimeAlarmStandard },
+        //    { "皮帶馬達安全係數", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < Model.beltMotorStandard },
+        //    { "皮帶T_max安全係數", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_beltMotor },
+        //    { "力矩警示", model => model.isMomentVerifySuccess },
+        //};
         // 錯誤訊息
         private Dictionary<string, string> alarmMsg = new Dictionary<string, string>() {
             { "力矩警示", "力矩判定異常，請洽詢Toyo業務人員" },
@@ -96,6 +96,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (curRow != null && curRow.Cells["項次"].Value != null && curRow.Cells["導程"].Value != null) {
                 string curModel = formMain.dgvRecommandList.CurrentRow.Cells["項次"].Value.ToString();
                 double lead = Convert.ToDouble(formMain.dgvRecommandList.CurrentRow.Cells["導程"].Value.ToString());
+                formMain.sideTable.UpdateModeInfo(curModel, lead);
             }
 
             // 驗證使用瓦數
@@ -117,8 +118,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (curSelectModel.model != null) {
                 if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
                     try {
-                        bool isAllConditionSuccess = redFontConditions.All(con => con.Value(curRecommandList.First(model => model.name == curSelectModel.model && model.lead == curSelectModel.lead)));
-                        formMain.cmdConfirmStep2.Visible = isAllConditionSuccess;
+                        //bool isAllConditionSuccess = redFontConditions.All(con => con.Value(curRecommandList.First(model => model.name == curSelectModel.model && model.lead == curSelectModel.lead)));
+                        //formMain.cmdConfirmStep2.Visible = isAllConditionSuccess;
                     } catch (Exception ex) {
                         Console.WriteLine(ex);
                     }
@@ -144,9 +145,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public void DisplayRecommandList() {
             formMain.Invoke(new Action(() => {
                 formMain.dgvRecommandList.Rows.Clear();
-                // 皮帶欄位顯示修正
-                formMain.dgvRecommandList.Columns["皮帶馬達安全係數"].Visible = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType();
-                formMain.dgvRecommandList.Columns["皮帶T_max安全係數"].Visible = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType();
+                //// 皮帶欄位顯示修正
+                //formMain.dgvRecommandList.Columns["皮帶馬達安全係數"].Visible = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType();
+                //formMain.dgvRecommandList.Columns["皮帶T_max安全係數"].Visible = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType();
             }));
 
             formMain.Invoke(new Action(() => {
@@ -156,6 +157,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         formMain.dgvRecommandList.Rows[index].Height = 35;
                         formMain.dgvRecommandList.Rows[index].Cells["鎖定"].Value = false;
                         formMain.dgvRecommandList.Rows[index].Cells["項次"].Value = model.name;
+                        formMain.dgvRecommandList.Rows[index].Cells["重複定位精度"].Value = "±" + model.repeatability;
                         formMain.dgvRecommandList.Rows[index].Cells["導程"].Value = model.lead;
                         formMain.dgvRecommandList.Rows[index].Cells["荷重"].Value = model.load;
                         formMain.dgvRecommandList.Rows[index].Cells["最高轉速"].Value = model.rpm;
@@ -171,17 +173,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         formMain.dgvRecommandList.Rows[index].Cells["皮帶馬達安全係數"].Value = model.beltMotorSafeCoefficient == -1 ? "無" : model.beltMotorSafeCoefficient.ToString();
                         formMain.dgvRecommandList.Rows[index].Cells["T_max安全係數"].Value = model.tMaxSafeCoefficient;
                         formMain.dgvRecommandList.Rows[index].Cells["皮帶T_max安全係數"].Value = model.beltSafeCoefficient == -1 ? "無" : model.beltSafeCoefficient.ToString();
-                        formMain.dgvRecommandList.Rows[index].Cells["是否推薦"].Value = redFontConditions.Any(con => con.Value(model) == false) ? Properties.Resources.notInCondition : Properties.Resources.inCondition;
+                        //formMain.dgvRecommandList.Rows[index].Cells["是否推薦"].Value = redFontConditions.Any(con => con.Value(model) == false) ? Properties.Resources.notInCondition : Properties.Resources.inCondition;
                         formMain.dgvRecommandList.Rows[index].Cells["更詳細資訊"].Value = Properties.Resources.detail_disable_in_condition;
 
                         // 運行距離
                         if (model.slideTrackServiceLifeDistance < 0)
                             formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "Error";
                         else {
-                            if (model.serviceLifeDistance > 20000)
-                                formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "2萬公里以上";
+                            if (model.serviceLifeDistance > 10000)
+                                formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "1萬公里以上";
                             else
-                                formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = ((float)model.serviceLifeDistance / 10000f).ToString("#0.0") + "萬公里";
+                                //formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = ((float)model.serviceLifeDistance / 10000f).ToString("#0.0") + "萬公里";
+                                formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = (float)model.serviceLifeDistance + "公里";
                         }
 
                         // 使用壽命時間
@@ -191,18 +194,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         else {
                             if (model.serviceLifeTime.year > 0)
                                 useTime += model.serviceLifeTime.year + "年";
-                            if (model.serviceLifeTime.month > 0)
-                                useTime += model.serviceLifeTime.month + "個月";
+                            //if (model.serviceLifeTime.month > 0)
+                            //    useTime += model.serviceLifeTime.month + "個月";
                             if (model.serviceLifeTime.year == 0 && model.serviceLifeTime.month == 0)
                                 useTime = "1個月以下";
                         }
                         formMain.dgvRecommandList.Rows[index].Cells["運行壽命"].Value = useTime;
 
-                        // 顏色區分
-                        foreach (var con in redFontConditions) {
-                            formMain.dgvRecommandList.Rows[index].Cells[con.Key].Style.ForeColor = con.Value(model) ? Color.Black : Color.Red;
-                            formMain.dgvRecommandList.Rows[index].Cells[con.Key].Style.SelectionForeColor = con.Value(model) ? Color.Black : Color.Red;
-                        }
+                        //// 顏色區分
+                        //foreach (var con in redFontConditions) {
+                        //    formMain.dgvRecommandList.Rows[index].Cells[con.Key].Style.ForeColor = con.Value(model) ? Color.Black : Color.Red;
+                        //    formMain.dgvRecommandList.Rows[index].Cells[con.Key].Style.SelectionForeColor = con.Value(model) ? Color.Black : Color.Red;
+                        //}
                     } catch (Exception ex) {
                         break;
                     }
@@ -286,18 +289,19 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             } else {
                 if (curModel.serviceLifeTime.year > 0)
                     useTime += curModel.serviceLifeTime.year + "年";
-                if (curModel.serviceLifeTime.month > 0)
-                    useTime += curModel.serviceLifeTime.month + "個月";
+                //if (curModel.serviceLifeTime.month > 0)
+                //    useTime += curModel.serviceLifeTime.month + "個月";
             }
             // 使用壽命距離
             string useDistance = "";
             if (curModel.slideTrackServiceLifeDistance < 0)
                 useDistance = "Error";
             else {
-                if (curModel.serviceLifeDistance > 20000)
-                    useDistance = "2萬公里以上";
+                if (curModel.serviceLifeDistance > 10000)
+                    useDistance = "1萬公里以上";
                 else
-                    useDistance = ((float)curModel.serviceLifeDistance / 10000f).ToString("#0.0") + "萬公里";
+                    //useDistance = ((float)curModel.serviceLifeDistance / 10000f).ToString("#0.0") + "萬公里";
+                    useDistance = (float)curModel.serviceLifeDistance + "公里";
             }
             Dictionary<string, string> item = new Dictionary<string, string>();
             if (formMain.page2.curSelectModelType.IsBeltType() && curModel.beltMotorSafeCoefficient != -1 && curModel.beltSafeCoefficient != -1)
@@ -328,65 +332,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 dt.Rows.Add(dr);
             }
 
-            // 顏色區分壽命規範
-            //int serviceYear = -1;
-            //long serviceDistance = -1;
-            //foreach (DataGridViewRow row in formMain.dgvCalcSelectedModel.Rows) {
-            //    if (row.Cells["Item"].Value.ToString() == "運行距離") {
-            //        serviceDistance = curModel.serviceLifeDistance;
-            //        row.Cells["Value"].Style.ForeColor = serviceDistance >= serviceLifeDistanceAlarmStandard ? Color.Black : Color.Red;
-            //    }
-            //    if (row.Cells["Item"].Value.ToString() == "運行壽命") {
-            //        int.TryParse(row.Cells["Value"].Value.ToString().Split('年')[0], out serviceYear);
-            //        row.Cells["Value"].Style.ForeColor = serviceYear >= serviceLifeTimeAlarmStandard ? Color.Black : Color.Red;
-            //    }
-            //    if (row.Cells["Item"].Value.ToString() == "扭矩確認") {
-            //        if (formMain.optRepeatabilityBelt.Checked)
-            //            row.Cells["Value"].Style.ForeColor = curModel.is_tMax_OK && curModel.isMotorOK && curModel.is_belt_tMax_OK ? Color.Green : Color.Red;
-            //        else
-            //            row.Cells["Value"].Style.ForeColor = curModel.is_tMax_OK ? Color.Green : Color.Red;
-            //    }
-            //    if (row.Cells["Item"].Value.ToString() == "T_max安全係數")
-            //        row.Cells["Value"].Style.ForeColor = curModel.tMaxSafeCoefficient >= Model.tMaxStandard ? Color.Black : Color.Red;
-            //    if (row.Cells["Item"].Value.ToString() == "T_Rms安全係數")
-            //        row.Cells["Value"].Style.ForeColor = curModel.tRmsSafeCoefficient > Model.tRmsStandard ? Color.Black : Color.Red;
-            //    if (row.Cells["Item"].Value.ToString() == "皮帶馬達安全係數" && row.Cells["Value"].Value.ToString() != "null")
-            //        row.Cells["Value"].Style.ForeColor = curModel.beltMotorSafeCoefficient < Model.beltMotorStandard ? Color.Black : Color.Red;
-            //    if (row.Cells["Item"].Value.ToString() == "皮帶T_max安全係數" && row.Cells["Value"].Value.ToString() != "null")
-            //        row.Cells["Value"].Style.ForeColor = curModel.beltSafeCoefficient >= Model.tMaxStandard_beltMotor ? Color.Black : Color.Red;
-            //    if (row.Cells["Item"].Value.ToString() == "力矩警示") {
-            //        row.Cells["Value"].Style.ForeColor = curModel.isMomentVerifySuccess ? Color.Black : Color.Red;
-            //        if (!curModel.isMomentVerifySuccess)
-            //            formMain.sideTable.UpdateMsg("力矩判定異常，請洽詢Toyo業務人員", SideTable.MsgStatus.Alarm);
-            //    }
+            //// 更新側邊欄數值
+            //formMain.sideTable.UpdateSelectedConditionValue("T_max安全係數", curModel.tMaxSafeCoefficient.ToString(), !redFontConditions["T_max安全係數"](curModel));
+            //formMain.sideTable.UpdateSelectedConditionValue("力矩警示", curModel.isMomentVerifySuccess ? "Pass" : "Fail", !redFontConditions["力矩警示"](curModel));
+            //formMain.sideTable.UpdateSelectedConditionValue("運行距離", useDistance, !redFontConditions["運行距離"](curModel));
+            //formMain.sideTable.UpdateSelectedConditionValue("運行壽命", useTime, !redFontConditions["運行壽命"](curModel));
+            //if (formMain.page2.curSelectModelType.IsBeltType() && formMain.page2.calc.beltModels.Contains(curModel.name)) {
+            //    formMain.sideTable.UpdateSelectedConditionValue("皮帶T_max安全係數", curModel.beltSafeCoefficient.ToString(), !redFontConditions["皮帶T_max安全係數"](curModel));
+            //    formMain.sideTable.UpdateSelectedConditionValue("皮帶馬達安全係數", curModel.beltMotorSafeCoefficient.ToString(), !redFontConditions["皮帶馬達安全係數"](curModel));
             //}
-
-            //foreach (DataGridViewColumn col in formMain.dgvCalcSelectedModel.Columns) {
-            //    // 欄位寬度更新
-            //    col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            //}
-
-            //// 型號選行取消選取
-            //formMain.dgvCalcSelectedModel.CurrentCell = null;
-
-            // 更新側邊欄數值
-            formMain.sideTable.UpdateSelectedConditionValue("T_max安全係數", curModel.tMaxSafeCoefficient.ToString(), !redFontConditions["T_max安全係數"](curModel));
-            formMain.sideTable.UpdateSelectedConditionValue("力矩警示", curModel.isMomentVerifySuccess ? "Pass" : "Fail", !redFontConditions["力矩警示"](curModel));
-            formMain.sideTable.UpdateSelectedConditionValue("運行距離", useDistance, !redFontConditions["運行距離"](curModel));
-            formMain.sideTable.UpdateSelectedConditionValue("運行壽命", useTime, !redFontConditions["運行壽命"](curModel));
-            if (formMain.page2.curSelectModelType.IsBeltType() && formMain.page2.calc.beltModels.Contains(curModel.name)) {
-                formMain.sideTable.UpdateSelectedConditionValue("皮帶T_max安全係數", curModel.beltSafeCoefficient.ToString(), !redFontConditions["皮帶T_max安全係數"](curModel));
-                formMain.sideTable.UpdateSelectedConditionValue("皮帶馬達安全係數", curModel.beltMotorSafeCoefficient.ToString(), !redFontConditions["皮帶馬達安全係數"](curModel));
-            }
 
             // 畫圖
             formMain.page2.chartInfo.PaintGraph();
-
-            // 型號選行下一步顯示
-            //bool isSuccess = curModel.isMomentVerifySuccess && curModel.tMaxSafeCoefficient >= Model.tMaxStandard && serviceYear >= 3 && serviceDistance >= 3000;
-            //if (formMain.page2.curSelectModelType.IsBeltType() && curModel.beltMotorSafeCoefficient != -1 && curModel.beltSafeCoefficient != -1)
-            //    isSuccess = isSuccess && curModel.beltMotorSafeCoefficient < Model.beltMotorStandard && curModel.beltSafeCoefficient >= Model.tMaxStandard_beltMotor;
-            //formMain.page2.SetSelectedModelConfirmBtnVisible(isSuccess);
         }
 
         public void VerifySelectedModelAlarm() {
@@ -397,7 +354,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     return;
                 }
             }
-            formMain.sideTable.ClearMsg();
+            formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType), SideTable.MsgStatus.Normal);
         }
     }
 }

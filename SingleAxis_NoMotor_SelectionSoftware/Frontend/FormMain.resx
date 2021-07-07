@@ -235,7 +235,7 @@
     <value>NoControl</value>
   </data>
   <data name="cmdExplorer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1126, 0</value>
+    <value>1128, 0</value>
   </data>
   <data name="cmdExplorer.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 35</value>
@@ -265,7 +265,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1145, 0</value>
+    <value>1147, 0</value>
   </data>
   <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>7, 35</value>
@@ -292,7 +292,7 @@
     <value>NoControl</value>
   </data>
   <data name="cmdNarrow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1152, 0</value>
+    <value>1154, 0</value>
   </data>
   <data name="cmdNarrow.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 2, 0</value>
@@ -325,7 +325,7 @@
     <value>NoControl</value>
   </data>
   <data name="cmdZoom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1186, 0</value>
+    <value>1188, 0</value>
   </data>
   <data name="cmdZoom.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 2, 0</value>
@@ -358,7 +358,7 @@
     <value>NoControl</value>
   </data>
   <data name="cmdClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1220, 0</value>
+    <value>1222, 0</value>
   </data>
   <data name="cmdClose.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 3, 0</value>
@@ -822,6 +822,18 @@
   <data name="項次.Width" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
+  <metadata name="重複定位精度.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="重複定位精度.HeaderText" xml:space="preserve">
+    <value>重複定位精度</value>
+  </data>
+  <data name="重複定位精度.MinimumWidth" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="重複定位精度.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
   <metadata name="導程.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -951,6 +963,9 @@
   <data name="力矩警示.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
+  <data name="力矩警示.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="力矩警示.Width" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
@@ -975,6 +990,9 @@
   <data name="皮帶馬達安全係數.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
+  <data name="皮帶馬達安全係數.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="皮帶馬達安全係數.Width" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
@@ -987,6 +1005,9 @@
   <data name="T_max安全係數.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
+  <data name="T_max安全係數.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="T_max安全係數.Width" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
@@ -998,6 +1019,9 @@
   </data>
   <data name="皮帶T_max安全係數.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
+  </data>
+  <data name="皮帶T_max安全係數.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="皮帶T_max安全係數.Width" type="System.Int32, mscorlib">
     <value>50</value>
@@ -1013,6 +1037,9 @@
   </data>
   <data name="T_Rms安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="T_Rms安全係數.Width" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
   <metadata name="運行距離.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1046,6 +1073,9 @@
   </data>
   <data name="是否推薦.MinimumWidth" type="System.Int32, mscorlib">
     <value>55</value>
+  </data>
+  <data name="是否推薦.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="是否推薦.Width" type="System.Int32, mscorlib">
     <value>55</value>
@@ -2725,6 +2755,9 @@
   <data name="panelAdvanceMode.TabIndex" type="System.Int32, mscorlib">
     <value>328</value>
   </data>
+  <data name="panelAdvanceMode.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;panelAdvanceMode.Name" xml:space="preserve">
     <value>panelAdvanceMode</value>
   </data>
@@ -4346,7 +4379,7 @@
     <value>NoControl</value>
   </data>
   <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>755, 16</value>
+    <value>755, 20</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 20</value>
@@ -4379,7 +4412,7 @@
     <value>NoControl</value>
   </data>
   <data name="label24.Location" type="System.Drawing.Point, System.Drawing">
-    <value>666, 44</value>
+    <value>666, 48</value>
   </data>
   <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 16</value>
@@ -4415,7 +4448,7 @@
     <value>NoControl</value>
   </data>
   <data name="label31.Location" type="System.Drawing.Point, System.Drawing">
-    <value>597, 67</value>
+    <value>597, 71</value>
   </data>
   <data name="label31.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 19</value>
@@ -4448,7 +4481,7 @@
     <value>NoControl</value>
   </data>
   <data name="label30.Location" type="System.Drawing.Point, System.Drawing">
-    <value>666, 95</value>
+    <value>666, 99</value>
   </data>
   <data name="label30.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 16</value>
@@ -4484,7 +4517,7 @@
     <value>NoControl</value>
   </data>
   <data name="label28.Location" type="System.Drawing.Point, System.Drawing">
-    <value>597, 118</value>
+    <value>597, 122</value>
   </data>
   <data name="label28.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 19</value>
@@ -4517,7 +4550,7 @@
     <value>NoControl</value>
   </data>
   <data name="label27.Location" type="System.Drawing.Point, System.Drawing">
-    <value>665, 147</value>
+    <value>665, 151</value>
   </data>
   <data name="label27.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 16</value>
@@ -4547,7 +4580,7 @@
     <value>微軟正黑體, 12pt</value>
   </data>
   <data name="txtMomentB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>669, 63</value>
+    <value>669, 67</value>
   </data>
   <data name="txtMomentB.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 29</value>
@@ -4577,7 +4610,7 @@
     <value>微軟正黑體, 12pt</value>
   </data>
   <data name="txtMomentC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>668, 114</value>
+    <value>668, 118</value>
   </data>
   <data name="txtMomentC.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 29</value>
@@ -4607,7 +4640,7 @@
     <value>微軟正黑體, 12pt</value>
   </data>
   <data name="txtMomentA.Location" type="System.Drawing.Point, System.Drawing">
-    <value>669, 12</value>
+    <value>669, 16</value>
   </data>
   <data name="txtMomentA.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 29</value>
@@ -4643,7 +4676,7 @@
     <value>NoControl</value>
   </data>
   <data name="label25.Location" type="System.Drawing.Point, System.Drawing">
-    <value>597, 16</value>
+    <value>597, 20</value>
   </data>
   <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 19</value>
@@ -4676,7 +4709,7 @@
     <value>NoControl</value>
   </data>
   <data name="label26.Location" type="System.Drawing.Point, System.Drawing">
-    <value>754, 117</value>
+    <value>754, 121</value>
   </data>
   <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 20</value>
@@ -4709,7 +4742,7 @@
     <value>NoControl</value>
   </data>
   <data name="label29.Location" type="System.Drawing.Point, System.Drawing">
-    <value>755, 66</value>
+    <value>755, 70</value>
   </data>
   <data name="label29.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 20</value>
@@ -4756,37 +4789,37 @@
   <data name="&gt;&gt;panelMoment.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="optUpsideDownUse.AutoSize" type="System.Boolean, mscorlib">
+  <data name="optVerticalUse.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="optUpsideDownUse.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="optVerticalUse.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 11pt, style=Bold</value>
   </data>
-  <data name="optUpsideDownUse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="optVerticalUse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="optUpsideDownUse.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="optVerticalUse.Location" type="System.Drawing.Point, System.Drawing">
     <value>52, 114</value>
   </data>
-  <data name="optUpsideDownUse.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="optVerticalUse.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 23</value>
   </data>
-  <data name="optUpsideDownUse.TabIndex" type="System.Int32, mscorlib">
+  <data name="optVerticalUse.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="optUpsideDownUse.Text" xml:space="preserve">
+  <data name="optVerticalUse.Text" xml:space="preserve">
     <value>垂直使用</value>
   </data>
-  <data name="&gt;&gt;optUpsideDownUse.Name" xml:space="preserve">
-    <value>optUpsideDownUse</value>
+  <data name="&gt;&gt;optVerticalUse.Name" xml:space="preserve">
+    <value>optVerticalUse</value>
   </data>
-  <data name="&gt;&gt;optUpsideDownUse.Type" xml:space="preserve">
+  <data name="&gt;&gt;optVerticalUse.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;optUpsideDownUse.Parent" xml:space="preserve">
+  <data name="&gt;&gt;optVerticalUse.Parent" xml:space="preserve">
     <value>panelSetupMode</value>
   </data>
-  <data name="&gt;&gt;optUpsideDownUse.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;optVerticalUse.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="optHorizontalUse.AutoSize" type="System.Boolean, mscorlib">
@@ -6258,13 +6291,13 @@ ETH、ECH</value>
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,282,Absolute,282,Absolute,282,Absolute,282" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,301,Absolute,301,Absolute,301,Absolute,301" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 313</value>
   </data>
   <data name="panelSideTableSelections.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 178</value>
+    <value>194, 0</value>
   </data>
   <data name="panelSideTableSelections.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -6549,13 +6582,13 @@ ETH、ECH</value>
     <value>7</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>975, 110</value>
+    <value>260, 16</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
   </data>
   <data name="panelSideTable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 507</value>
+    <value>87, 78</value>
   </data>
   <data name="panelSideTable.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6645,7 +6678,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-452, -1409</value>
+    <value>-596, -1805</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 16</value>
@@ -6675,7 +6708,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="label56.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-451, -1712</value>
+    <value>-595, -2108</value>
   </data>
   <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 2</value>
@@ -6708,7 +6741,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="lbResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-458, -1749</value>
+    <value>-602, -2145</value>
   </data>
   <data name="lbResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 31</value>
@@ -6738,7 +6771,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="picBoxResultImg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-452, -1692</value>
+    <value>-596, -2088</value>
   </data>
   <data name="picBoxResultImg.Size" type="System.Drawing.Size, System.Drawing">
     <value>452, 276</value>
@@ -7065,9 +7098,33 @@ ETH、ECH</value>
     <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.6, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabMain.Parent" xml:space="preserve">
-    <value>splitContainerBase.Panel2</value>
+    <value>panel4</value>
   </data>
   <data name="&gt;&gt;tabMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1271, 675</value>
+  </data>
+  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
+    <value>264</value>
+  </data>
+  <data name="&gt;&gt;panel4.Name" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;panel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
+    <value>splitContainerBase.Panel2</value>
+  </data>
+  <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;splitContainerBase.Panel2.Name" xml:space="preserve">
@@ -7083,7 +7140,7 @@ ETH、ECH</value>
     <value>1</value>
   </data>
   <data name="splitContainerBase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1269, 709</value>
+    <value>1271, 711</value>
   </data>
   <data name="splitContainerBase.SplitterDistance" type="System.Int32, mscorlib">
     <value>35</value>
@@ -10564,6 +10621,18 @@ ETH、ECH</value>
   <data name="$this.Text" xml:space="preserve">
     <value>不帶電選型系統</value>
   </data>
+  <data name="&gt;&gt;columnModel.Name" xml:space="preserve">
+    <value>columnModel</value>
+  </data>
+  <data name="&gt;&gt;columnModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnReducerRatio.Name" xml:space="preserve">
+    <value>columnReducerRatio</value>
+  </data>
+  <data name="&gt;&gt;columnReducerRatio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewComboBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;鎖定.Name" xml:space="preserve">
     <value>鎖定</value>
   </data>
@@ -10574,6 +10643,12 @@ ETH、ECH</value>
     <value>項次</value>
   </data>
   <data name="&gt;&gt;項次.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;重複定位精度.Name" xml:space="preserve">
+    <value>重複定位精度</value>
+  </data>
+  <data name="&gt;&gt;重複定位精度.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;導程.Name" xml:space="preserve">
@@ -10695,18 +10770,6 @@ ETH、ECH</value>
   </data>
   <data name="&gt;&gt;更詳細資訊.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnModel.Name" xml:space="preserve">
-    <value>columnModel</value>
-  </data>
-  <data name="&gt;&gt;columnModel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnReducerRatio.Name" xml:space="preserve">
-    <value>columnReducerRatio</value>
-  </data>
-  <data name="&gt;&gt;columnReducerRatio.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewComboBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormMain</value>

@@ -70,7 +70,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
 
             // 側邊欄顯示
-            formMain.sideTable.UpdateSelectedConditionValue("有效行程", formMain.page2.effectiveStroke.effectiveStroke.ToString() + "mm");
+            //formMain.sideTable.UpdateSelectedConditionValue("有效行程", formMain.page2.effectiveStroke.effectiveStroke.ToString() + "mm");
         }
         public void CmdEffectiveStroke_Click(object sender, EventArgs e) {
             if (!formMain.page2.inputValidate.VerifyAllInputValidate())
@@ -143,7 +143,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 確定有效行程
             effectiveStroke = Convert.ToDecimal(formMain.optEffectiveStroke1.Text);
-            formMain.sideTable.UpdateSelectedConditionValue("有效行程", formMain.page2.effectiveStroke.effectiveStroke.ToString() + "mm");
+            //formMain.sideTable.UpdateSelectedConditionValue("有效行程", formMain.page2.effectiveStroke.effectiveStroke.ToString() + "mm");
         }
 
         private void TxtEffectiveStroke_KeyDown(object sender, KeyEventArgs e) {

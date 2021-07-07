@@ -136,6 +136,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // scrollbars
             runCondition.scrollBarStroke.Initialize();
             runCondition.scrollBarLoad.Initialize();
+            runCondition.scrollBarStroke.Value = 70;
+            runCondition.scrollBarLoad.Value = 12;
         }
 
         private void InitEvents() {
