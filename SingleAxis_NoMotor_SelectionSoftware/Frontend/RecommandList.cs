@@ -107,8 +107,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 }
             }
 
-            // 驗證選擇項目異常
-            VerifySelectedModelAlarm();
+            //// 驗證選擇項目異常
+            //VerifySelectedModelAlarm();
+
+            // 顯示機構類行敘述
+            formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType), SideTable.MsgStatus.Normal);
 
             //// 有效行程選項更新
             //if (curSelectModel.model != null)
@@ -360,15 +363,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.page2.chartInfo.PaintGraph();
         }
 
-        public void VerifySelectedModelAlarm() {
-            var curRow = formMain.dgvRecommandList.CurrentRow;
-            foreach (DataGridViewCell cell in curRow.Cells) {
-                if (cell.Style.ForeColor == Color.Red) {
-                    formMain.sideTable.UpdateMsg(alarmMsg[formMain.dgvRecommandList.Columns[cell.ColumnIndex].Name], SideTable.MsgStatus.Alarm);
-                    return;
-                }
-            }
-            formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType), SideTable.MsgStatus.Normal);
-        }
+        //public void VerifySelectedModelAlarm() {
+        //    var curRow = formMain.dgvRecommandList.CurrentRow;
+        //    foreach (DataGridViewCell cell in curRow.Cells) {
+        //        if (cell.Style.ForeColor == Color.Red) {
+        //            formMain.sideTable.UpdateMsg(alarmMsg[formMain.dgvRecommandList.Columns[cell.ColumnIndex].Name], SideTable.MsgStatus.Alarm);
+        //            return;
+        //        }
+        //    }
+        //    formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType), SideTable.MsgStatus.Normal);
+        //}
     }
 }
