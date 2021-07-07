@@ -187,6 +187,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.panelModelType.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;       // 傳動方式
             formMain.panelModelSelection.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;  // 型號選擇
             formMain.panelCalcResult.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;      // 推薦規格
+            formMain.panelMoment.Visible = curSelectModelType != Model.ModelType.推桿系列 && curSelectModelType != Model.ModelType.輔助導桿推桿系列 && curSelectModelType != Model.ModelType.軌道外掛推桿系列;
 
             // 項目索引修正
             int titleIndex = 0;
@@ -210,6 +211,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             setupMethodOptMap.ToList().ForEach(pair => pair.Key.Enabled = modelTypeSupportSetupMethod.Contains(pair.Value));
             if (setupMethodOptMap.ToList().Any(pair => pair.Key.Checked && !pair.Key.Enabled))
                 setupMethodOptMap.ToList().First(pair => pair.Key.Enabled).Key.Checked = true;
+
+            // 判斷是否為Y系列，並修正panel
+            UpdateLayout(null, null);
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {

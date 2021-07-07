@@ -225,12 +225,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.accelSpeed *= 1000;
 
                 // 結果壽命
-                if (model.modelType.ToString().Contains("皮帶"))
+                if (model.modelType.IsBeltType())
                     // 皮帶型
                     model.serviceLifeDistance = model.slideTrackServiceLifeDistance;
-                else
-                    // 螺桿型滑軌、螺桿壽命取最小值
-                    model.serviceLifeDistance = Math.Min(model.slideTrackServiceLifeDistance, model.screwServiceLifeDistance);
+                else {
+                    if (model.modelType == Model.ModelType.推桿系列 || model.modelType == Model.ModelType.輔助導桿推桿系列 || model.modelType == Model.ModelType.軌道外掛推桿系列)
+                        // Y系列直接用螺桿壽命
+                        model.serviceLifeDistance = model.screwServiceLifeDistance;
+                    else
+                        // 螺桿型滑軌、螺桿壽命取最小值
+                        model.serviceLifeDistance = Math.Min(model.slideTrackServiceLifeDistance, model.screwServiceLifeDistance);
+                }
 
                 // 算壽命時間
                 model.serviceLifeTime = GetServiceLifeTime(model, con);

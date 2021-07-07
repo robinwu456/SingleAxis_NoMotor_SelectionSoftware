@@ -32,7 +32,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.moment_C = condition.moment_C;
             }
             // 推桿式力矩都為10
-            if (condition.modelType.ToString().Contains("推桿式")) {
+            if (condition.modelType.IsRodType()) {
                 model.moment_A = 10;
                 model.moment_B = 10;
                 model.moment_C = 10;
