@@ -253,6 +253,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 修正條件時，下一步隱藏
             formMain.cmdConfirmStep2.Visible = false;
+
+            // 修正條件時，側邊欄壽命清除
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
+                formMain.sideTable.ClearSelectedModelInfo();
         }
     }
 }
