@@ -146,6 +146,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 一開始就顯示側邊資訊
             formMain.sideTable.Update(null, null);
 
+            // 進階選項顯示
+            formMain.chkAdvanceMode.Checked = false;
+            formMain.panelAdvanceParams.Enabled = false;
+            formMain.panelAdvanceParams.Visible = false;
+            formMain.panelAdvanceMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
+
             // scrollbars
             runCondition.scrollBarStroke.Initialize();
             runCondition.scrollBarLoad.Initialize();
@@ -230,6 +236,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {
+            if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "") {
+                formMain.chkAdvanceMode.Checked = false;
+                return;
+            }
+
             formMain.panelAdvanceParams.Enabled = formMain.chkAdvanceMode.Checked;
             formMain.panelAdvanceParams.Visible = formMain.chkAdvanceMode.Checked;
             if (!formMain.chkAdvanceMode.Checked)

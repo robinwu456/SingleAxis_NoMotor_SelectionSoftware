@@ -49,7 +49,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 側邊欄規位
             //formMain.panelSideTable.Size = sizeSideTable;
-            formMain.panelSideTable.Location = positionSideTable;
+            //formMain.panelSideTable.Location = positionSideTable;
             //formMain.panelSideTableSelections.Size = sizeTableSelection;
         }
 
