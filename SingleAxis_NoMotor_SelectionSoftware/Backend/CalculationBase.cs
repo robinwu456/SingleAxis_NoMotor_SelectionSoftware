@@ -416,5 +416,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             return supportSetups.ToArray();
         }
+
+        public Model.ModelType GetModelType(string model) {
+            string type = modelInfo.Rows.Cast<DataRow>().First(row => row["Model"].ToString() == model)["Type"].ToString();
+            Model.ModelType modelType = (Model.ModelType)Convert.ToInt32(type);
+            return modelType;
+        }
+
+        public Model.UseEnvironment GetModelUseEnv(string model) {
+            string env = modelInfo.Rows.Cast<DataRow>().First(row => row["Model"].ToString() == model)["Env"].ToString();
+            Model.UseEnvironment useEnvironment = (Model.UseEnvironment)Convert.ToInt32(env);
+            return useEnvironment;
+        }
     }
 }

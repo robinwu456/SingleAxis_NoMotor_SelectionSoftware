@@ -104,14 +104,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
 
             // 偵測傳動方式有無
-            DetectModelTypeData();
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+                DetectModelTypeData();
 
-            // 馬達選項更新
-            motorPower.UpdateMotorCalcMode();
-            motorPower.Load();
+            // 匯入型號選擇
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
+                modelSelection.UpdateModel();
 
-            // 減速比顯示
-            formMain.panelReducer.Visible = formMain.optEuropeBeltActuator.Checked;
+            //// 馬達選項更新
+            //motorPower.UpdateMotorCalcMode();
+            //motorPower.Load();            
 
             // 驗證最大荷重
             inputValidate.ValidatingLoad(isShowAlarm: false);
@@ -214,6 +216,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 判斷是否為Y系列，並修正panel
             UpdateLayout(null, null);
+
+            // 減速比顯示
+            formMain.panelReducerRatio.Visible = formMain.optEuropeBeltActuator.Checked && formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {

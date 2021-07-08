@@ -38,7 +38,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.optVerticalUse.CheckedChanged += UpdateCondition;
             //formMain.optConditionSelection.CheckedChanged += UpdateCondition;
             //formMain.optModelSelection.CheckedChanged += UpdateCondition;
-            formMain.cboSeries.SelectedIndexChanged += UpdateCondition;
+            //formMain.cboSeries.SelectedIndexChanged += UpdateCondition;
             formMain.cboModel.SelectedIndexChanged += UpdateCondition;
             formMain.cboLead.SelectedIndexChanged += UpdateCondition;
             formMain.txtMomentA.TextChanged += UpdateCondition;

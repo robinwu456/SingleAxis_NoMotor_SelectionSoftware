@@ -228,12 +228,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             try {
                 formMain.Invoke(new Action(() => {
                     if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
-                        //// 欄位寬度更新
-                        //foreach (DataGridViewColumn col in formMain.dgvRecommandList.Columns)
-                        //    col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
                         // 欄位寬度更新
                         foreach (DataGridViewColumn col in formMain.dgvRecommandList.Columns)
-                            if (col.Name == "項次")
+                            if (col.Name == "項次" || col.Name == "導程")
                                 col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
 
                         // 畫圖

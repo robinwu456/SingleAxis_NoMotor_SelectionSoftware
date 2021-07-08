@@ -1603,7 +1603,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label55.Parent" xml:space="preserve">
-    <value>panelReducer</value>
+    <value>panelReducerRatio</value>
   </data>
   <data name="&gt;&gt;label55.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1627,7 +1627,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label58.Parent" xml:space="preserve">
-    <value>panelReducer</value>
+    <value>panelReducerRatio</value>
   </data>
   <data name="&gt;&gt;label58.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -1663,30 +1663,33 @@
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dgvReducerInfo.Parent" xml:space="preserve">
-    <value>panelReducer</value>
+    <value>panelReducerRatio</value>
   </data>
   <data name="&gt;&gt;dgvReducerInfo.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="panelReducer.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="panelReducerRatio.Location" type="System.Drawing.Point, System.Drawing">
     <value>210, 337</value>
   </data>
-  <data name="panelReducer.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="panelReducerRatio.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 172</value>
   </data>
-  <data name="panelReducer.TabIndex" type="System.Int32, mscorlib">
+  <data name="panelReducerRatio.TabIndex" type="System.Int32, mscorlib">
     <value>350</value>
   </data>
-  <data name="&gt;&gt;panelReducer.Name" xml:space="preserve">
-    <value>panelReducer</value>
+  <data name="panelReducerRatio.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;panelReducer.Type" xml:space="preserve">
+  <data name="&gt;&gt;panelReducerRatio.Name" xml:space="preserve">
+    <value>panelReducerRatio</value>
+  </data>
+  <data name="&gt;&gt;panelReducerRatio.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelReducer.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelReducerRatio.Parent" xml:space="preserve">
     <value>panelCalc</value>
   </data>
-  <data name="&gt;&gt;panelReducer.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panelReducerRatio.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="lbMaxSpeedAlarm.AutoSize" type="System.Boolean, mscorlib">
@@ -4570,6 +4573,120 @@
   <data name="&gt;&gt;panelSetup.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 28</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 19</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>337</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>panelModelSelectionReducerRatio</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 3</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 19</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>335</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>減速比</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>panelModelSelectionReducerRatio</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cboReducerRatio.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="cboReducerRatio.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt</value>
+  </data>
+  <data name="cboReducerRatio.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 25</value>
+  </data>
+  <data name="cboReducerRatio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 27</value>
+  </data>
+  <data name="cboReducerRatio.TabIndex" type="System.Int32, mscorlib">
+    <value>336</value>
+  </data>
+  <data name="&gt;&gt;cboReducerRatio.Name" xml:space="preserve">
+    <value>cboReducerRatio</value>
+  </data>
+  <data name="&gt;&gt;cboReducerRatio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboReducerRatio.Parent" xml:space="preserve">
+    <value>panelModelSelectionReducerRatio</value>
+  </data>
+  <data name="&gt;&gt;cboReducerRatio.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panelModelSelectionReducerRatio.Location" type="System.Drawing.Point, System.Drawing">
+    <value>564, 5</value>
+  </data>
+  <data name="panelModelSelectionReducerRatio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 63</value>
+  </data>
+  <data name="panelModelSelectionReducerRatio.TabIndex" type="System.Int32, mscorlib">
+    <value>338</value>
+  </data>
+  <data name="&gt;&gt;panelModelSelectionReducerRatio.Name" xml:space="preserve">
+    <value>panelModelSelectionReducerRatio</value>
+  </data>
+  <data name="&gt;&gt;panelModelSelectionReducerRatio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelModelSelectionReducerRatio.Parent" xml:space="preserve">
+    <value>panelModelSelection</value>
+  </data>
+  <data name="&gt;&gt;panelModelSelectionReducerRatio.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lbTitleModelSelection.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4604,7 +4721,7 @@
     <value>panelModelSelection</value>
   </data>
   <data name="&gt;&gt;lbTitleModelSelection.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="label61.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4616,7 +4733,7 @@
     <value>NoControl</value>
   </data>
   <data name="label61.Location" type="System.Drawing.Point, System.Drawing">
-    <value>562, 34</value>
+    <value>442, 33</value>
   </data>
   <data name="label61.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 19</value>
@@ -4637,100 +4754,7 @@
     <value>panelModelSelection</value>
   </data>
   <data name="&gt;&gt;label61.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label54.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label54.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="label54.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label54.Location" type="System.Drawing.Point, System.Drawing">
-    <value>433, 34</value>
-  </data>
-  <data name="label54.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 19</value>
-  </data>
-  <data name="label54.TabIndex" type="System.Int32, mscorlib">
-    <value>332</value>
-  </data>
-  <data name="label54.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="&gt;&gt;label54.Name" xml:space="preserve">
-    <value>label54</value>
-  </data>
-  <data name="&gt;&gt;label54.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label54.Parent" xml:space="preserve">
-    <value>panelModelSelection</value>
-  </data>
-  <data name="&gt;&gt;label54.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="label73.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label73.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="label73.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label73.Location" type="System.Drawing.Point, System.Drawing">
-    <value>355, 9</value>
-  </data>
-  <data name="label73.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 19</value>
-  </data>
-  <data name="label73.TabIndex" type="System.Int32, mscorlib">
-    <value>326</value>
-  </data>
-  <data name="label73.Text" xml:space="preserve">
-    <value>系列</value>
-  </data>
-  <data name="&gt;&gt;label73.Name" xml:space="preserve">
-    <value>label73</value>
-  </data>
-  <data name="&gt;&gt;label73.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label73.Parent" xml:space="preserve">
-    <value>panelModelSelection</value>
-  </data>
-  <data name="&gt;&gt;label73.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="cboSeries.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="cboSeries.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt</value>
-  </data>
-  <data name="cboSeries.Location" type="System.Drawing.Point, System.Drawing">
-    <value>326, 31</value>
-  </data>
-  <data name="cboSeries.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 27</value>
-  </data>
-  <data name="cboSeries.TabIndex" type="System.Int32, mscorlib">
-    <value>327</value>
-  </data>
-  <data name="&gt;&gt;cboSeries.Name" xml:space="preserve">
-    <value>cboSeries</value>
-  </data>
-  <data name="&gt;&gt;cboSeries.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cboSeries.Parent" xml:space="preserve">
-    <value>panelModelSelection</value>
-  </data>
-  <data name="&gt;&gt;cboSeries.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="label74.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4742,7 +4766,7 @@
     <value>NoControl</value>
   </data>
   <data name="label74.Location" type="System.Drawing.Point, System.Drawing">
-    <value>482, 9</value>
+    <value>362, 8</value>
   </data>
   <data name="label74.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 19</value>
@@ -4763,7 +4787,7 @@
     <value>panelModelSelection</value>
   </data>
   <data name="&gt;&gt;label74.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="label75.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4775,7 +4799,7 @@
     <value>NoControl</value>
   </data>
   <data name="label75.Location" type="System.Drawing.Point, System.Drawing">
-    <value>608, 9</value>
+    <value>488, 8</value>
   </data>
   <data name="label75.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 19</value>
@@ -4796,7 +4820,7 @@
     <value>panelModelSelection</value>
   </data>
   <data name="&gt;&gt;label75.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="cboModel.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -4805,7 +4829,7 @@
     <value>微軟正黑體, 11pt</value>
   </data>
   <data name="cboModel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>455, 31</value>
+    <value>335, 30</value>
   </data>
   <data name="cboModel.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 27</value>
@@ -4823,7 +4847,7 @@
     <value>panelModelSelection</value>
   </data>
   <data name="&gt;&gt;cboModel.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="cboLead.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -4832,7 +4856,7 @@
     <value>微軟正黑體, 11pt</value>
   </data>
   <data name="cboLead.Location" type="System.Drawing.Point, System.Drawing">
-    <value>584, 31</value>
+    <value>464, 30</value>
   </data>
   <data name="cboLead.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 27</value>
@@ -4850,7 +4874,7 @@
     <value>panelModelSelection</value>
   </data>
   <data name="&gt;&gt;cboLead.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="panelModelSelection.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>

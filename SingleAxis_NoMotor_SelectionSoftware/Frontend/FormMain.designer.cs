@@ -103,7 +103,7 @@
             this.scrollBarThumbStroke = new System.Windows.Forms.PictureBox();
             this.lbTitleCalc = new System.Windows.Forms.Label();
             this.cmdCalc = new CustomButton.CustomButton();
-            this.panelReducer = new System.Windows.Forms.Panel();
+            this.panelReducerRatio = new System.Windows.Forms.Panel();
             this.label55 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.dgvReducerInfo = new System.Windows.Forms.DataGridView();
@@ -202,9 +202,6 @@
             this.panelModelSelection = new System.Windows.Forms.Panel();
             this.lbTitleModelSelection = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.cboSeries = new System.Windows.Forms.ComboBox();
             this.label74 = new System.Windows.Forms.Label();
             this.label75 = new System.Windows.Forms.Label();
             this.cboModel = new System.Windows.Forms.ComboBox();
@@ -264,6 +261,10 @@
             this.cmdConfirmStep5 = new CustomButton.CustomButton();
             this.cmdResetStep5 = new CustomButton.CustomButton();
             this.label70 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboReducerRatio = new System.Windows.Forms.ComboBox();
+            this.panelModelSelectionReducerRatio = new System.Windows.Forms.Panel();
             this.panelBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -298,7 +299,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbLoad)).BeginInit();
             this.scrollBarPanelStroke.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbStroke)).BeginInit();
-            this.panelReducer.SuspendLayout();
+            this.panelReducerRatio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).BeginInit();
             this.panelAdvanceParams.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -342,6 +343,7 @@
             this.panelResult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).BeginInit();
             this.panelConfirmBtnsStep5.SuspendLayout();
+            this.panelModelSelectionReducerRatio.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBase
@@ -923,7 +925,7 @@
             this.panelCalc.Controls.Add(this.scrollBarPanelStroke);
             this.panelCalc.Controls.Add(this.lbTitleCalc);
             this.panelCalc.Controls.Add(this.cmdCalc);
-            this.panelCalc.Controls.Add(this.panelReducer);
+            this.panelCalc.Controls.Add(this.panelReducerRatio);
             this.panelCalc.Controls.Add(this.panelAdvanceParams);
             this.panelCalc.Controls.Add(this.panel6);
             this.panelCalc.Controls.Add(this.panelAdvanceMode);
@@ -1010,13 +1012,13 @@
             this.cmdCalc.Name = "cmdCalc";
             this.cmdCalc.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
             // 
-            // panelReducer
+            // panelReducerRatio
             // 
-            this.panelReducer.Controls.Add(this.label55);
-            this.panelReducer.Controls.Add(this.label58);
-            this.panelReducer.Controls.Add(this.dgvReducerInfo);
-            resources.ApplyResources(this.panelReducer, "panelReducer");
-            this.panelReducer.Name = "panelReducer";
+            this.panelReducerRatio.Controls.Add(this.label55);
+            this.panelReducerRatio.Controls.Add(this.label58);
+            this.panelReducerRatio.Controls.Add(this.dgvReducerInfo);
+            resources.ApplyResources(this.panelReducerRatio, "panelReducerRatio");
+            this.panelReducerRatio.Name = "panelReducerRatio";
             // 
             // label55
             // 
@@ -1708,11 +1710,9 @@
             // 
             // panelModelSelection
             // 
+            this.panelModelSelection.Controls.Add(this.panelModelSelectionReducerRatio);
             this.panelModelSelection.Controls.Add(this.lbTitleModelSelection);
             this.panelModelSelection.Controls.Add(this.label61);
-            this.panelModelSelection.Controls.Add(this.label54);
-            this.panelModelSelection.Controls.Add(this.label73);
-            this.panelModelSelection.Controls.Add(this.cboSeries);
             this.panelModelSelection.Controls.Add(this.label74);
             this.panelModelSelection.Controls.Add(this.label75);
             this.panelModelSelection.Controls.Add(this.cboModel);
@@ -1733,28 +1733,6 @@
             this.label61.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label61.Name = "label61";
             // 
-            // label54
-            // 
-            resources.ApplyResources(this.label54, "label54");
-            this.label54.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label54.Name = "label54";
-            // 
-            // label73
-            // 
-            resources.ApplyResources(this.label73, "label73");
-            this.label73.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label73.Name = "label73";
-            // 
-            // cboSeries
-            // 
-            this.cboSeries.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cboSeries.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSeries.DropDownWidth = 180;
-            resources.ApplyResources(this.cboSeries, "cboSeries");
-            this.cboSeries.ForeColor = System.Drawing.Color.White;
-            this.cboSeries.FormattingEnabled = true;
-            this.cboSeries.Name = "cboSeries";
-            // 
             // label74
             // 
             resources.ApplyResources(this.label74, "label74");
@@ -1769,8 +1747,9 @@
             // 
             // cboModel
             // 
+            this.cboModel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cboModel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cboModel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboModel.DropDownWidth = 180;
             resources.ApplyResources(this.cboModel, "cboModel");
             this.cboModel.ForeColor = System.Drawing.Color.White;
@@ -2234,6 +2213,36 @@
             this.label70.ForeColor = System.Drawing.Color.DimGray;
             this.label70.Name = "label70";
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label1.Name = "label1";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label5.Name = "label5";
+            // 
+            // cboReducerRatio
+            // 
+            this.cboReducerRatio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboReducerRatio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboReducerRatio.DropDownWidth = 180;
+            resources.ApplyResources(this.cboReducerRatio, "cboReducerRatio");
+            this.cboReducerRatio.ForeColor = System.Drawing.Color.White;
+            this.cboReducerRatio.FormattingEnabled = true;
+            this.cboReducerRatio.Name = "cboReducerRatio";
+            // 
+            // panelModelSelectionReducerRatio
+            // 
+            this.panelModelSelectionReducerRatio.Controls.Add(this.label1);
+            this.panelModelSelectionReducerRatio.Controls.Add(this.label5);
+            this.panelModelSelectionReducerRatio.Controls.Add(this.cboReducerRatio);
+            resources.ApplyResources(this.panelModelSelectionReducerRatio, "panelModelSelectionReducerRatio");
+            this.panelModelSelectionReducerRatio.Name = "panelModelSelectionReducerRatio";
+            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2285,8 +2294,8 @@
             this.scrollBarPanelStroke.ResumeLayout(false);
             this.scrollBarPanelStroke.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbStroke)).EndInit();
-            this.panelReducer.ResumeLayout(false);
-            this.panelReducer.PerformLayout();
+            this.panelReducerRatio.ResumeLayout(false);
+            this.panelReducerRatio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).EndInit();
             this.panelAdvanceParams.ResumeLayout(false);
             this.panelAdvanceParams.PerformLayout();
@@ -2346,6 +2355,8 @@
             this.panelResult.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).EndInit();
             this.panelConfirmBtnsStep5.ResumeLayout(false);
+            this.panelModelSelectionReducerRatio.ResumeLayout(false);
+            this.panelModelSelectionReducerRatio.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2465,7 +2476,7 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn columnReducerRatio;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label58;
-        public System.Windows.Forms.Panel panelReducer;
+        public System.Windows.Forms.Panel panelReducerRatio;
         public CustomButton.CustomButton cmdCalc;
         public System.Windows.Forms.PictureBox cmdModelSelection;
         public System.Windows.Forms.PictureBox cmdShapeSelection;
@@ -2545,9 +2556,6 @@
         public System.Windows.Forms.Panel scrollBarPanelLoad;
         public System.Windows.Forms.PictureBox scrollBarThumbLoad;
         public System.Windows.Forms.TextBox txtRunTime;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label73;
-        public System.Windows.Forms.ComboBox cboSeries;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn 鎖定;
         private System.Windows.Forms.DataGridViewTextBoxColumn 項次;
@@ -2581,6 +2589,10 @@
         private System.Windows.Forms.Label label56;
         public System.Windows.Forms.Label lbResult;
         public System.Windows.Forms.PictureBox picBoxResultImg;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.ComboBox cboReducerRatio;
+        public System.Windows.Forms.Panel panelModelSelectionReducerRatio;
     }
 }
 
