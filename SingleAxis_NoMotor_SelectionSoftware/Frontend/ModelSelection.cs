@@ -31,21 +31,30 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             curRow.Cells["columnReducerRatio"].Value = formMain.cboReducerRatio.Text;
         }
 
-        public void UpdateModel() {
+        public void InitModelSelectionCbo() {
             var allDiffModel = formMain.page2.calc.modelInfo.Rows.Cast<DataRow>()
                                                                .Select(row => row["Model"].ToString())
                                                                .Distinct();
             formMain.cboModel.DataSource = allDiffModel.ToList();
             formMain.cboModel.Text = "";
+            formMain.sideTable.ClearMsg();
             formMain.cboLead.DataSource = null;
+            formMain.cboPower.Items.Clear();
         }
 
         private void CboModel_LostFocus(object sender, EventArgs e) {
             var leads = formMain.page2.calc.modelInfo.Rows.Cast<DataRow>()
                                                .Where(row => row["Model"].ToString().Equals(formMain.cboModel.Text))
                                                .Select(row => row["Lead"].ToString());
-            if (leads.Count() == 0)
+            if (leads.Count() == 0) {
                 formMain.cboLead.DataSource = null;
+                formMain.sideTable.ClearModelInfo();
+                formMain.sideTable.ClearModelImg();
+                formMain.sideTable.ClearMsg();
+            } else {
+                formMain.sideTable.UpdateModeInfo(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
+                formMain.sideTable.UpdateModelImg(formMain.cboModel.Text);
+            }
         }
 
         private void CboModel_SelectedValueChanged(object sender, EventArgs e) {
@@ -76,7 +85,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 傳動方式更新
             Model.ModelType curModelType = formMain.page2.calc.GetModelType(formMain.cboModel.Text);
-            formMain.page2.modelTypeOptMap.First(pair => pair.Value == curModelType).Key.Checked = true;            
+            formMain.page2.modelTypeOptMap.First(pair => pair.Value == curModelType).Key.Checked = true;
+            formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(curModelType), SideTable.MsgStatus.Normal);
+
+            // 更新側邊型號
+            if (leads.Count() != 0) {
+                formMain.sideTable.UpdateModeInfo(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
+                formMain.sideTable.UpdateModelImg(formMain.cboModel.Text);
+            } else {
+                formMain.sideTable.ClearModelInfo();
+                formMain.sideTable.ClearModelImg();
+            }
         }
     }
 }

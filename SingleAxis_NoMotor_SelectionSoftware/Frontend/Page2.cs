@@ -101,7 +101,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 更新型號選擇
             formMain.sideTable.UpdateItem();
-            formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+                formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
+            else
+                formMain.sideTable.ClearMsg();
 
             // 偵測傳動方式有無
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
@@ -109,17 +112,19 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 匯入型號選擇
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
-                modelSelection.UpdateModel();
+                modelSelection.InitModelSelectionCbo();
 
-            //// 馬達選項更新
-            //motorPower.UpdateMotorCalcMode();
-            //motorPower.Load();            
+            // 馬達選項更新
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
+                motorPower.UpdateMotorCalcMode();
+                motorPower.Load();
+            }
 
             // 驗證最大荷重
             inputValidate.ValidatingLoad(isShowAlarm: false);
 
-            // 依照機構型態修正預設行程
-            formMain.txtStroke.Text = curSelectModelType.IsBeltType() ? "1000" : "70";
+            //// 依照機構型態修正預設行程
+            //formMain.txtStroke.Text = curSelectModelType.IsBeltType() ? "1000" : "70";
 
             // 驗證最大行程
             inputValidate.ValidatingStroke(isShowAlarm: false);
@@ -145,7 +150,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             runCondition.scrollBarStroke.Initialize();
             runCondition.scrollBarLoad.Initialize();
             runCondition.scrollBarStroke.Value = 70;
-            runCondition.scrollBarLoad.Value = 12;
+            runCondition.scrollBarLoad.Value = 12;            
         }
 
         private void InitEvents() {
@@ -214,6 +219,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (setupMethodOptMap.ToList().Any(pair => pair.Key.Checked && !pair.Key.Enabled))
                 setupMethodOptMap.ToList().First(pair => pair.Key.Enabled).Key.Checked = true;
 
+            // 依照機構型態修正預設行程
+            formMain.page2.runCondition.scrollBarStroke.Value = formMain.page2.curSelectModelType.IsBeltType() ? 1000 : 70;
+
             // 判斷是否為Y系列，並修正panel
             UpdateLayout(null, null);
 
@@ -257,6 +265,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void CmdCalc_Click(object sender, EventArgs e) {
+            // 全數值驗證
+            if (!formMain.page2.inputValidate.VerifyAllInputValidate())
+                return;
+
             // 最後更新使用條件
             runCondition.UpdateCondition(null, null);
 

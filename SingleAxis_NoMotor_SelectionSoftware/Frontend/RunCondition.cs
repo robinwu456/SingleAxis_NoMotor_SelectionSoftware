@@ -40,6 +40,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //formMain.optModelSelection.CheckedChanged += UpdateCondition;
             //formMain.cboSeries.SelectedIndexChanged += UpdateCondition;
             formMain.cboModel.SelectedIndexChanged += UpdateCondition;
+            //formMain.cboModel.TextChanged += UpdateCondition;
             formMain.cboLead.SelectedIndexChanged += UpdateCondition;
             formMain.txtMomentA.TextChanged += UpdateCondition;
             formMain.txtMomentB.TextChanged += UpdateCondition;
@@ -103,10 +104,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (formMain.page2 == null)
                 return;
 
-            // 型號選型驗證型號CBO
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
-                if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "")
-                    return;
+            //// 型號選型驗證型號CBO
+            //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
+            //    if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "")
+            //        return;
 
             // 全數值驗證
             if (!formMain.page2.inputValidate.VerifyAllInputValidate())
@@ -197,7 +198,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 }
             } else if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
                 // 單項計算可選擇該型號適用瓦數
-                if (formMain.cboPower.Text.Contains("標準")) {
+                if (formMain.cboPower.Text.Contains("標準-")) {
                     curCondition.powerSelection = Condition.PowerSelection.SelectedPower;
                     curCondition.selectedPower = Convert.ToInt32(new Regex(@"\d+").Match(formMain.cboPower.Text).Value);
                 } else if (formMain.cboPower.Text == "自訂" && formMain.optMotorParamsModifySimple.Checked) {

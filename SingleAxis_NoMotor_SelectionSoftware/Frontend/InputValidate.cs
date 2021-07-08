@@ -191,7 +191,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public bool VerifyAllInputValidate() {
-            // 數值有效驗證
+            // TextBox數值有效驗證
             foreach (Control control in formMain.panelCalc.Controls.All()) {
                 if (control is TextBox) {
                     TextBox txt = control as TextBox;
@@ -199,6 +199,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         return false;
                 }
             }
+
+            // 型號選型多驗證cbo為null
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
+                if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "" || formMain.cboPower.Text == "")
+                    return false;
+
             return true;
         }
 
