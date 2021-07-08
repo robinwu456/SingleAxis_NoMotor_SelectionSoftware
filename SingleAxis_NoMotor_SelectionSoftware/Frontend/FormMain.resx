@@ -5865,13 +5865,13 @@ ETH、ECH</value>
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,309,Absolute,309,Absolute,309,Absolute,309" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,314,Absolute,314,Absolute,314,Absolute,314" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 313</value>
   </data>
   <data name="panelSideTableSelections.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 0</value>
+    <value>194, 145</value>
   </data>
   <data name="panelSideTableSelections.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -6156,13 +6156,13 @@ ETH、ECH</value>
     <value>7</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>279, 15</value>
+    <value>975, 129</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
   </data>
   <data name="panelSideTable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 74</value>
+    <value>224, 474</value>
   </data>
   <data name="panelSideTable.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6252,7 +6252,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>228, 487</value>
+    <value>196, 487</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 16</value>
@@ -6282,7 +6282,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="label56.Location" type="System.Drawing.Point, System.Drawing">
-    <value>229, 184</value>
+    <value>197, 184</value>
   </data>
   <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 2</value>
@@ -6315,7 +6315,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="lbResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>222, 147</value>
+    <value>190, 147</value>
   </data>
   <data name="lbResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 31</value>
@@ -6345,7 +6345,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="picBoxResultImg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>228, 204</value>
+    <value>196, 204</value>
   </data>
   <data name="picBoxResultImg.Size" type="System.Drawing.Size, System.Drawing">
     <value>452, 276</value>
@@ -10104,9 +10104,6 @@ ETH、ECH</value>
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

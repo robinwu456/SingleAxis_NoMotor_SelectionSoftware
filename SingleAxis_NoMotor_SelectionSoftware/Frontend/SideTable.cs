@@ -48,9 +48,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.panelSideTable.Visible = true;
 
             // 側邊欄規位
-            formMain.panelSideTable.Size = sizeSideTable;
+            //formMain.panelSideTable.Size = sizeSideTable;
             formMain.panelSideTable.Location = positionSideTable;
-            formMain.panelSideTableSelections.Size = sizeTableSelection;
+            //formMain.panelSideTableSelections.Size = sizeTableSelection;
         }
 
         // 選項欄生成
