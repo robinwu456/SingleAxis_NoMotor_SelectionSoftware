@@ -26,12 +26,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public Image imgThumbHover;
         public NumericUpDown bindingNumericUpDown;
         public TextBox bindingTextBox;
+        public Image picThumbHover;
+        private Image picThumbNormal;
 
         private Form formMain;
         private Panel scrollBar;
         private PictureBox thumb;
         private PictureBox arrowLeft;
-        private PictureBox arrowRight;
+        private PictureBox arrowRight;        
         private int px, py;
         private bool isDragging = false;
         private Thread threadMoving;
@@ -43,9 +45,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private ScrollEventType curScrollType;
         private enum FocusOn { ScrollBar, Input }
         private FocusOn curFocusOn = FocusOn.ScrollBar;
-        private string placeHolder = null;
+        //private string placeHolder = null;
         private const int defaultValue = 0;
         //private bool showPlaceHolder = true;
+
+        private bool isDefaultTextBoxIsNull = true;     // 預設值為空
+        private bool isValueChanged = false;        
 
         public CustomScrollBar(Form formMain, Panel scrollBar, PictureBox thumb, PictureBox arrowLeft, PictureBox arrowRight) {
             this.formMain = formMain;
@@ -84,6 +89,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             thumb.MouseDown += Thumb_MouseDown;
             thumb.MouseUp += Thumb_MouseUp;
             thumb.MouseMove += Thumb_MouseMove;
+            if (picThumbHover != null) {
+                picThumbNormal = thumb.Image;
+                thumb.MouseEnter += Thumb_MouseEnter;
+                thumb.MouseLeave += Thumb_MouseLeave;
+            }
             if (arrowLeft != null)
                 arrowLeft.MouseDown += ArrowLeft_MouseDown;
             if (arrowRight != null)
@@ -98,6 +108,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 bindingTextBox.Leave += BindingTextBox_Leave;
                 bindingTextBox.KeyDown += BindingTextBox_KeyDown;
             }
+        }
+
+        private void Thumb_MouseEnter(object sender, EventArgs e) {
+            thumb.Image = picThumbHover;
+        }
+
+        private void Thumb_MouseLeave(object sender, EventArgs e) {
+            thumb.Image = picThumbNormal;
         }
 
         private void ArrowRight_MouseDown(object sender, MouseEventArgs e) {
@@ -128,6 +146,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (e.KeyCode == Keys.Enter) {
                 int a = 0;
                 if (Int32.TryParse(bindingTextBox.Text, out a)) {
+                    if (a > maxValue)
+                        a = maxValue;
+                    if (a < minValue)
+                        a = minValue;
+                    bindingTextBox.Text = a.ToString();
                     Value = a;
                 }
             }
@@ -191,7 +214,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         //double curPercent = (float)(thumb.Location.X) / ((float)scrollBar.Size.Width - maxPosOffset);
                         //Value = (int)(curPercent * maxValue);
 
-                        Value = (int)((float)(thumb.Location.X - minPosOffset) / (float)(scrollBar.Size.Width - maxPosOffset) * maxValue);
+                        Value = (int)((float)(thumb.Location.X - minPosOffset) / (float)(scrollBar.Size.Width - maxPosOffset) * maxValue);                        
 
                         // 滾動事件
                         if (Scroll != null) {
@@ -227,6 +250,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     newValue = Value;
 
                     if (oldValue != newValue) {
+                        isValueChanged = true;
+
                         formMain.Invoke(new Action(() => {
                             // 初始化位置
                             thumb.Location = new Point(
@@ -238,7 +263,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                 ValueChanged(this, null);
                         }));
                     }
-
+                    
                     oldValue = newValue;
 
                     Thread.Sleep(100);
@@ -276,16 +301,19 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         break;
 
                     if (bindingTextBox != null && curFocusOn == FocusOn.ScrollBar) {
-                        formMain.Invoke(new Action(() => {
-                            bindingTextBox.Text = Value.ToString();
+                        // 預設值為空驗證
+                        if (!isDefaultTextBoxIsNull || isDefaultTextBoxIsNull && isValueChanged) {
+                            formMain.Invoke(new Action(() => {
+                                bindingTextBox.Text = Value.ToString();
 
-                            if (Int32.TryParse(bindingTextBox.Text, out int curTextBoxValue)) {
-                                if (curTextBoxValue > maxValue)
-                                    bindingTextBox.Text = maxValue.ToString();
-                                if (curTextBoxValue < minValue)
-                                    bindingTextBox.Text = minValue.ToString();
-                            }
-                        }));
+                                if (Int32.TryParse(bindingTextBox.Text, out int curTextBoxValue)) {
+                                    if (curTextBoxValue > maxValue)
+                                        bindingTextBox.Text = maxValue.ToString();
+                                    if (curTextBoxValue < minValue)
+                                        bindingTextBox.Text = minValue.ToString();
+                                }
+                            }));
+                        }
                     }
 
                     Thread.Sleep(1);

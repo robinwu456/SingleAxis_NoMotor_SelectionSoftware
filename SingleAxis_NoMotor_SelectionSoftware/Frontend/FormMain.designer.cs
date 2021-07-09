@@ -265,6 +265,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cboReducerRatio = new System.Windows.Forms.ComboBox();
             this.panelModelSelectionReducerRatio = new System.Windows.Forms.Panel();
+            this.lbScrollbarMinLoad = new System.Windows.Forms.Label();
+            this.lbScrollbarMaxLoad = new System.Windows.Forms.Label();
+            this.lbScrollbarMinStroke = new System.Windows.Forms.Label();
+            this.lbScrollbarMaxStroke = new System.Windows.Forms.Label();
             this.panelBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -921,7 +925,11 @@
             // 
             // panelCalc
             // 
+            this.panelCalc.Controls.Add(this.lbScrollbarMaxStroke);
+            this.panelCalc.Controls.Add(this.lbScrollbarMinStroke);
             this.panelCalc.Controls.Add(this.scrollBarPanelLoad);
+            this.panelCalc.Controls.Add(this.lbScrollbarMaxLoad);
+            this.panelCalc.Controls.Add(this.lbScrollbarMinLoad);
             this.panelCalc.Controls.Add(this.scrollBarPanelStroke);
             this.panelCalc.Controls.Add(this.lbTitleCalc);
             this.panelCalc.Controls.Add(this.cmdCalc);
@@ -2243,6 +2251,26 @@
             resources.ApplyResources(this.panelModelSelectionReducerRatio, "panelModelSelectionReducerRatio");
             this.panelModelSelectionReducerRatio.Name = "panelModelSelectionReducerRatio";
             // 
+            // lbScrollbarMinLoad
+            // 
+            resources.ApplyResources(this.lbScrollbarMinLoad, "lbScrollbarMinLoad");
+            this.lbScrollbarMinLoad.Name = "lbScrollbarMinLoad";
+            // 
+            // lbScrollbarMaxLoad
+            // 
+            resources.ApplyResources(this.lbScrollbarMaxLoad, "lbScrollbarMaxLoad");
+            this.lbScrollbarMaxLoad.Name = "lbScrollbarMaxLoad";
+            // 
+            // lbScrollbarMinStroke
+            // 
+            resources.ApplyResources(this.lbScrollbarMinStroke, "lbScrollbarMinStroke");
+            this.lbScrollbarMinStroke.Name = "lbScrollbarMinStroke";
+            // 
+            // lbScrollbarMaxStroke
+            // 
+            resources.ApplyResources(this.lbScrollbarMaxStroke, "lbScrollbarMaxStroke");
+            this.lbScrollbarMaxStroke.Name = "lbScrollbarMaxStroke";
+            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2593,6 +2621,10 @@
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.ComboBox cboReducerRatio;
         public System.Windows.Forms.Panel panelModelSelectionReducerRatio;
+        public System.Windows.Forms.Label lbScrollbarMaxLoad;
+        public System.Windows.Forms.Label lbScrollbarMinLoad;
+        public System.Windows.Forms.Label lbScrollbarMaxStroke;
+        public System.Windows.Forms.Label lbScrollbarMinStroke;
     }
 }
 

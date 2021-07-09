@@ -87,6 +87,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 (dgvRow.Cells["columnReducerRatio"] as DataGridViewComboBoxCell).DataSource = row["ReducerRatio"].ToString().Split('、');
                 dgvRow.Cells["columnReducerRatio"].Value = row["ReducerRatio"].ToString().Split('、')[0];
             });
+
+            // scrollbars
+            runCondition.scrollBarStroke.Initialize();
+            runCondition.scrollBarLoad.Initialize();
         }
 
         public void Load() {
@@ -153,10 +157,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.panelAdvanceMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
 
             // scrollbars
-            runCondition.scrollBarStroke.Initialize();
-            runCondition.scrollBarLoad.Initialize();
-            runCondition.scrollBarStroke.Value = 70;
-            runCondition.scrollBarLoad.Value = 12;            
+            //runCondition.scrollBarStroke.Initialize();
+            //runCondition.scrollBarLoad.Initialize();            
+            runCondition.scrollBarStroke.Value = 0;
+            runCondition.scrollBarLoad.Value = 0;
+            formMain.txtStroke.Text = "";
+            formMain.txtLoad.Text = "";
         }
 
         private void InitEvents() {

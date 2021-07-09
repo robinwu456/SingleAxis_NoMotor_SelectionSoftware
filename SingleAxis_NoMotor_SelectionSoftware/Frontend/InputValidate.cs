@@ -221,8 +221,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void TxtStroke_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
             if (!decimal.TryParse(formMain.txtStroke.Text, out decimal keyStroke))
                 return;
-            if (keyStroke < 50)
-                formMain.txtStroke.Text = "50";
+            //if (keyStroke < 50)
+            //    formMain.txtStroke.Text = "50";
 
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
                 return;

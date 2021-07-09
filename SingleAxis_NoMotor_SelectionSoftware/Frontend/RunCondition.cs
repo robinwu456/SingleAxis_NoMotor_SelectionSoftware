@@ -72,14 +72,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             scrollBarStroke = new CustomScrollBar(formMain, formMain.scrollBarPanelStroke, formMain.scrollBarThumbStroke, null, null);
             scrollBarStroke.Name = "scrollBarStroke";
             scrollBarStroke.minValue = 50;
-            scrollBarStroke.maxValue = 6000;
+            scrollBarStroke.maxValue = 6000;            
             scrollBarStroke.bindingTextBox = formMain.txtStroke;
+            scrollBarStroke.picThumbHover = Properties.Resources.scrollBarThumb_hover;
+            formMain.lbScrollbarMinStroke.Text = scrollBarStroke.minValue.ToString();
+            formMain.lbScrollbarMaxStroke.Text = scrollBarStroke.maxValue.ToString();
 
             scrollBarLoad = new CustomScrollBar(formMain, formMain.scrollBarPanelLoad, formMain.scrollBarThumbLoad, null, null);
             scrollBarLoad.Name = "scrollBarStroke";
             scrollBarLoad.minValue = 0;
-            scrollBarLoad.maxValue = 500;
+            scrollBarLoad.maxValue = 500;            
             scrollBarLoad.bindingTextBox = formMain.txtLoad;
+            scrollBarLoad.picThumbHover = Properties.Resources.scrollBarThumb_hover;
+            formMain.lbScrollbarMinLoad.Text = scrollBarLoad.minValue.ToString();
+            formMain.lbScrollbarMaxLoad.Text = scrollBarLoad.maxValue.ToString();
 
             // txt placeHolder init
             SendMessage(formMain.txtRatedTorque.Handle, EM_SETCUEBANNER, 0, "額定轉矩");
