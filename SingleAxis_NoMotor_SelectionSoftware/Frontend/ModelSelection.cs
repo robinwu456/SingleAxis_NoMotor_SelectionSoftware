@@ -47,11 +47,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                                .Where(row => row["Model"].ToString().Equals(formMain.cboModel.Text))
                                                .Select(row => row["Lead"].ToString());
             if (leads.Count() == 0) {
+                // 型號搜尋不到時
                 formMain.cboLead.DataSource = null;
                 formMain.sideTable.ClearModelInfo();
                 formMain.sideTable.ClearModelImg();
                 formMain.sideTable.ClearMsg();
+                formMain.sideTable.ClearSelectedModelInfo();
+                formMain.panelModelSelectionReducerRatio.Visible = false;
+                formMain.panelConfirmBtnsStep2.Visible = false;
             } else {
+                // 型號搜尋到時
                 formMain.sideTable.UpdateModeInfo(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
                 formMain.sideTable.UpdateModelImg(formMain.cboModel.Text);
             }
