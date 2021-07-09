@@ -2535,9 +2535,6 @@
         public System.Windows.Forms.RadioButton optStandardScrewActuator;
         private System.Windows.Forms.PictureBox picStandardScrewActuator;
         private System.Windows.Forms.Label lbTitleModelSelection;
-        private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.Label label74;
-        private System.Windows.Forms.Label label75;
         public System.Windows.Forms.ComboBox cboModel;
         public System.Windows.Forms.ComboBox cboLead;
         public System.Windows.Forms.Panel panelCalcResult;
@@ -2625,6 +2622,9 @@
         public System.Windows.Forms.Label lbScrollbarMinLoad;
         public System.Windows.Forms.Label lbScrollbarMaxStroke;
         public System.Windows.Forms.Label lbScrollbarMinStroke;
+        public System.Windows.Forms.Label label61;
+        public System.Windows.Forms.Label label74;
+        public System.Windows.Forms.Label label75;
     }
 }
 

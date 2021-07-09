@@ -54,6 +54,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.sideTable.ClearMsg();
                 formMain.sideTable.ClearSelectedModelInfo();
                 formMain.panelModelSelectionReducerRatio.Visible = false;
+                formMain.page2.ReplaceItem();
                 formMain.panelConfirmBtnsStep2.Visible = false;
             } else {
                 // 型號搜尋到時
@@ -74,6 +75,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                                                     .Where(row => row["Model"].ToString() == formMain.cboModel.Text)
                                                                     .Select(row => row["ReducerRatio"].ToString().Split('、'));
             formMain.panelModelSelectionReducerRatio.Visible = reducerRatios.Count() != 0;
+            formMain.page2.ReplaceItem();
             if (reducerRatios.Count() != 0)
                 formMain.cboReducerRatio.DataSource = reducerRatios.First().ToList();
 
