@@ -131,9 +131,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void BindingTextBox_Leave(object sender, EventArgs e) {
-            //if (string.IsNullOrEmpty(bindingTextBox.Text))
-            //    showPlaceHolder = true;
-            //curFocusOn = FocusOn.ScrollBar;
+            int a = 0;
+            if (Int32.TryParse(bindingTextBox.Text, out a)) {
+                if (a > maxValue)
+                    a = maxValue;
+                if (a < minValue)
+                    a = minValue;
+                bindingTextBox.Text = a.ToString();
+                Value = a;
+            }
         }
 
         private void BindingTextBox_Enter(object sender, EventArgs e) {
