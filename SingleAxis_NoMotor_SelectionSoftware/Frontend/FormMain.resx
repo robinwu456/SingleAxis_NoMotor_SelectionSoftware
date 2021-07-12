@@ -1062,9 +1062,6 @@
   <data name="更詳細資訊.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="更詳細資訊.Width" type="System.Int32, mscorlib">
-    <value>106</value>
-  </data>
   <data name="dgvRecommandList.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 67</value>
   </data>
@@ -1201,7 +1198,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbAccelSpeed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>444, 289</value>
+    <value>470, 289</value>
   </data>
   <data name="lbAccelSpeed.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 16</value>
@@ -1267,7 +1264,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbCycleTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>444, 309</value>
+    <value>470, 309</value>
   </data>
   <data name="lbCycleTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 16</value>
@@ -1300,7 +1297,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbConstantTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>444, 269</value>
+    <value>470, 269</value>
   </data>
   <data name="lbConstantTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 16</value>
@@ -1717,13 +1714,13 @@
     <value>19, 16</value>
   </data>
   <data name="label55.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 24</value>
+    <value>105, 24</value>
   </data>
   <data name="label55.TabIndex" type="System.Int32, mscorlib">
     <value>338</value>
   </data>
   <data name="label55.Text" xml:space="preserve">
-    <value>減速機條件 (限定皮帶型)</value>
+    <value>減速機條件</value>
   </data>
   <data name="&gt;&gt;label55.Name" xml:space="preserve">
     <value>label55</value>
@@ -4154,7 +4151,7 @@
     <value>365</value>
   </data>
   <data name="label31.Text" xml:space="preserve">
-    <value>力矩C：</value>
+    <value>力矩B：</value>
   </data>
   <data name="&gt;&gt;label31.Name" xml:space="preserve">
     <value>label31</value>
@@ -4223,7 +4220,7 @@
     <value>362</value>
   </data>
   <data name="label28.Text" xml:space="preserve">
-    <value>力矩B：</value>
+    <value>力矩C：</value>
   </data>
   <data name="&gt;&gt;label28.Name" xml:space="preserve">
     <value>label28</value>
@@ -6009,7 +6006,7 @@ ETH、ECH</value>
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,314,Absolute,314,Absolute,314,Absolute,314" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,315,Absolute,315,Absolute,315,Absolute,315" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 313</value>
@@ -6300,7 +6297,7 @@ ETH、ECH</value>
     <value>7</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>975, 129</value>
+    <value>958, 129</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>

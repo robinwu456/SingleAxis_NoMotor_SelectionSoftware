@@ -97,8 +97,12 @@
             this.lbMaxSpeed = new System.Windows.Forms.Label();
             this.lbRunTime = new System.Windows.Forms.Label();
             this.panelCalc = new System.Windows.Forms.Panel();
+            this.lbScrollbarMaxStroke = new System.Windows.Forms.Label();
+            this.lbScrollbarMinStroke = new System.Windows.Forms.Label();
             this.scrollBarPanelLoad = new System.Windows.Forms.Panel();
             this.scrollBarThumbLoad = new System.Windows.Forms.PictureBox();
+            this.lbScrollbarMaxLoad = new System.Windows.Forms.Label();
+            this.lbScrollbarMinLoad = new System.Windows.Forms.Label();
             this.scrollBarPanelStroke = new System.Windows.Forms.Panel();
             this.scrollBarThumbStroke = new System.Windows.Forms.PictureBox();
             this.lbTitleCalc = new System.Windows.Forms.Label();
@@ -200,6 +204,10 @@
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.lbTitleSetup = new System.Windows.Forms.Label();
             this.panelModelSelection = new System.Windows.Forms.Panel();
+            this.panelModelSelectionReducerRatio = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboReducerRatio = new System.Windows.Forms.ComboBox();
             this.lbTitleModelSelection = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
             this.label74 = new System.Windows.Forms.Label();
@@ -261,14 +269,6 @@
             this.cmdConfirmStep5 = new CustomButton.CustomButton();
             this.cmdResetStep5 = new CustomButton.CustomButton();
             this.label70 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cboReducerRatio = new System.Windows.Forms.ComboBox();
-            this.panelModelSelectionReducerRatio = new System.Windows.Forms.Panel();
-            this.lbScrollbarMinLoad = new System.Windows.Forms.Label();
-            this.lbScrollbarMaxLoad = new System.Windows.Forms.Label();
-            this.lbScrollbarMinStroke = new System.Windows.Forms.Label();
-            this.lbScrollbarMaxStroke = new System.Windows.Forms.Label();
             this.panelBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -318,6 +318,7 @@
             this.panelSetupMode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.panelModelSelection.SuspendLayout();
+            this.panelModelSelectionReducerRatio.SuspendLayout();
             this.panelModelType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBuildInSupportTrackActuator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBuildOutRodTypeActuator)).BeginInit();
@@ -347,7 +348,6 @@
             this.panelResult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).BeginInit();
             this.panelConfirmBtnsStep5.SuspendLayout();
-            this.panelModelSelectionReducerRatio.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBase
@@ -969,6 +969,16 @@
             resources.ApplyResources(this.panelCalc, "panelCalc");
             this.panelCalc.Name = "panelCalc";
             // 
+            // lbScrollbarMaxStroke
+            // 
+            resources.ApplyResources(this.lbScrollbarMaxStroke, "lbScrollbarMaxStroke");
+            this.lbScrollbarMaxStroke.Name = "lbScrollbarMaxStroke";
+            // 
+            // lbScrollbarMinStroke
+            // 
+            resources.ApplyResources(this.lbScrollbarMinStroke, "lbScrollbarMinStroke");
+            this.lbScrollbarMinStroke.Name = "lbScrollbarMinStroke";
+            // 
             // scrollBarPanelLoad
             // 
             this.scrollBarPanelLoad.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.scrollBar;
@@ -982,6 +992,16 @@
             resources.ApplyResources(this.scrollBarThumbLoad, "scrollBarThumbLoad");
             this.scrollBarThumbLoad.Name = "scrollBarThumbLoad";
             this.scrollBarThumbLoad.TabStop = false;
+            // 
+            // lbScrollbarMaxLoad
+            // 
+            resources.ApplyResources(this.lbScrollbarMaxLoad, "lbScrollbarMaxLoad");
+            this.lbScrollbarMaxLoad.Name = "lbScrollbarMaxLoad";
+            // 
+            // lbScrollbarMinLoad
+            // 
+            resources.ApplyResources(this.lbScrollbarMinLoad, "lbScrollbarMinLoad");
+            this.lbScrollbarMinLoad.Name = "lbScrollbarMinLoad";
             // 
             // scrollBarPanelStroke
             // 
@@ -1728,6 +1748,36 @@
             resources.ApplyResources(this.panelModelSelection, "panelModelSelection");
             this.panelModelSelection.Name = "panelModelSelection";
             // 
+            // panelModelSelectionReducerRatio
+            // 
+            this.panelModelSelectionReducerRatio.Controls.Add(this.label1);
+            this.panelModelSelectionReducerRatio.Controls.Add(this.label5);
+            this.panelModelSelectionReducerRatio.Controls.Add(this.cboReducerRatio);
+            resources.ApplyResources(this.panelModelSelectionReducerRatio, "panelModelSelectionReducerRatio");
+            this.panelModelSelectionReducerRatio.Name = "panelModelSelectionReducerRatio";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label1.Name = "label1";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label5.Name = "label5";
+            // 
+            // cboReducerRatio
+            // 
+            this.cboReducerRatio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboReducerRatio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboReducerRatio.DropDownWidth = 180;
+            resources.ApplyResources(this.cboReducerRatio, "cboReducerRatio");
+            this.cboReducerRatio.ForeColor = System.Drawing.Color.White;
+            this.cboReducerRatio.FormattingEnabled = true;
+            this.cboReducerRatio.Name = "cboReducerRatio";
+            // 
             // lbTitleModelSelection
             // 
             resources.ApplyResources(this.lbTitleModelSelection, "lbTitleModelSelection");
@@ -2221,56 +2271,6 @@
             this.label70.ForeColor = System.Drawing.Color.DimGray;
             this.label70.Name = "label70";
             // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label1.Name = "label1";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label5.Name = "label5";
-            // 
-            // cboReducerRatio
-            // 
-            this.cboReducerRatio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cboReducerRatio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboReducerRatio.DropDownWidth = 180;
-            resources.ApplyResources(this.cboReducerRatio, "cboReducerRatio");
-            this.cboReducerRatio.ForeColor = System.Drawing.Color.White;
-            this.cboReducerRatio.FormattingEnabled = true;
-            this.cboReducerRatio.Name = "cboReducerRatio";
-            // 
-            // panelModelSelectionReducerRatio
-            // 
-            this.panelModelSelectionReducerRatio.Controls.Add(this.label1);
-            this.panelModelSelectionReducerRatio.Controls.Add(this.label5);
-            this.panelModelSelectionReducerRatio.Controls.Add(this.cboReducerRatio);
-            resources.ApplyResources(this.panelModelSelectionReducerRatio, "panelModelSelectionReducerRatio");
-            this.panelModelSelectionReducerRatio.Name = "panelModelSelectionReducerRatio";
-            // 
-            // lbScrollbarMinLoad
-            // 
-            resources.ApplyResources(this.lbScrollbarMinLoad, "lbScrollbarMinLoad");
-            this.lbScrollbarMinLoad.Name = "lbScrollbarMinLoad";
-            // 
-            // lbScrollbarMaxLoad
-            // 
-            resources.ApplyResources(this.lbScrollbarMaxLoad, "lbScrollbarMaxLoad");
-            this.lbScrollbarMaxLoad.Name = "lbScrollbarMaxLoad";
-            // 
-            // lbScrollbarMinStroke
-            // 
-            resources.ApplyResources(this.lbScrollbarMinStroke, "lbScrollbarMinStroke");
-            this.lbScrollbarMinStroke.Name = "lbScrollbarMinStroke";
-            // 
-            // lbScrollbarMaxStroke
-            // 
-            resources.ApplyResources(this.lbScrollbarMaxStroke, "lbScrollbarMaxStroke");
-            this.lbScrollbarMaxStroke.Name = "lbScrollbarMaxStroke";
-            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2349,6 +2349,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.panelModelSelection.ResumeLayout(false);
             this.panelModelSelection.PerformLayout();
+            this.panelModelSelectionReducerRatio.ResumeLayout(false);
+            this.panelModelSelectionReducerRatio.PerformLayout();
             this.panelModelType.ResumeLayout(false);
             this.panelModelType.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBuildInSupportTrackActuator)).EndInit();
@@ -2383,8 +2385,6 @@
             this.panelResult.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).EndInit();
             this.panelConfirmBtnsStep5.ResumeLayout(false);
-            this.panelModelSelectionReducerRatio.ResumeLayout(false);
-            this.panelModelSelectionReducerRatio.PerformLayout();
             this.ResumeLayout(false);
 
         }
