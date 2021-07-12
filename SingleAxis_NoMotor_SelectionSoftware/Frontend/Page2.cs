@@ -337,6 +337,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     //// 有效行程顯示
                     //formMain.page2.effectiveStroke.IsShowEffectiveStroke(false);
 
+                    // 搜尋不到項目時，下一步隱藏
+                    formMain.Invoke(new Action(() => formMain.cmdConfirmStep2.Visible = false));
+
                     return;
                 }
                 // 清空訊息
