@@ -286,7 +286,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void CmdCalc_Click(object sender, EventArgs e) {
             // 全數值驗證
-            if (!formMain.page2.inputValidate.VerifyAllInputValidate())
+            if (!formMain.page2.inputValidate.VerifyAllInputValidate(true))
                 return;
 
             // 最後更新使用條件

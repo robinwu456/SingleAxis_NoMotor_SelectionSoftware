@@ -75,6 +75,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             scrollBarStroke.maxValue = 6000;            
             scrollBarStroke.bindingTextBox = formMain.txtStroke;
             scrollBarStroke.picThumbHover = Properties.Resources.scrollBarThumb_hover;
+            scrollBarStroke.ValueChanged += new CustomScrollBar.EventHandler((sender, e) => { formMain.page2.inputValidate.InputCondition_Validating(formMain.txtStroke, null); });
             formMain.lbScrollbarMinStroke.Text = scrollBarStroke.minValue.ToString();
             formMain.lbScrollbarMaxStroke.Text = scrollBarStroke.maxValue.ToString();
 
@@ -84,6 +85,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             scrollBarLoad.maxValue = 500;            
             scrollBarLoad.bindingTextBox = formMain.txtLoad;
             scrollBarLoad.picThumbHover = Properties.Resources.scrollBarThumb_hover;
+            scrollBarLoad.ValueChanged += new CustomScrollBar.EventHandler((sender, e) => { formMain.page2.inputValidate.InputCondition_Validating(formMain.txtLoad, null); });
             formMain.lbScrollbarMinLoad.Text = scrollBarLoad.minValue.ToString();
             formMain.lbScrollbarMaxLoad.Text = scrollBarLoad.maxValue.ToString();
 

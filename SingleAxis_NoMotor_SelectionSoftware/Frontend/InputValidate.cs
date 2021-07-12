@@ -114,7 +114,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
         }
 
-        private void InputCondition_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
+        public void InputCondition_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
             TextBox txt = sender as TextBox;
             // Alarm顯示修正
             if (txt == formMain.txtHourPerDay)
@@ -190,22 +190,27 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return true;
         }
 
-        public bool VerifyAllInputValidate() {
-            // TextBox數值有效驗證
+        public bool VerifyAllInputValidate(bool isShowAlarm = false) {
+            bool isVerifySuccess = true;
+
+            // TextBox數值有效驗證            
             foreach (Control control in formMain.panelCalc.Controls.All()) {
                 if (control is TextBox) {
                     TextBox txt = control as TextBox;
+                    // show alarm
+                    if (isShowAlarm)
+                        InputCondition_Validating(control, null);
                     if (!decimal.TryParse(txt.Text, out decimal value))
-                        return false;
+                        isVerifySuccess = false;
                 }
             }
 
             // 型號選型多驗證cbo為null
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
                 if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "" || formMain.cboPower.Text == "")
-                    return false;
+                    isVerifySuccess = false;
 
-            return true;
+            return isVerifySuccess;
         }
 
         private void TxtStroke_KeyDown(object sender, KeyEventArgs e) {
