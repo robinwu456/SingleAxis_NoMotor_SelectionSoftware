@@ -204,16 +204,18 @@
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.lbTitleSetup = new System.Windows.Forms.Label();
             this.panelModelSelection = new System.Windows.Forms.Panel();
+            this.panelModelSelectionModel = new System.Windows.Forms.Panel();
+            this.label74 = new System.Windows.Forms.Label();
+            this.cboModel = new System.Windows.Forms.ComboBox();
+            this.panelModelSelectionLead = new System.Windows.Forms.Panel();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
+            this.cboLead = new System.Windows.Forms.ComboBox();
             this.panelModelSelectionReducerRatio = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cboReducerRatio = new System.Windows.Forms.ComboBox();
             this.lbTitleModelSelection = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
-            this.cboModel = new System.Windows.Forms.ComboBox();
-            this.cboLead = new System.Windows.Forms.ComboBox();
             this.panelModelType = new System.Windows.Forms.Panel();
             this.lbTitleModelType = new System.Windows.Forms.Label();
             this.optBuildInSupportTrackActuator = new System.Windows.Forms.RadioButton();
@@ -318,6 +320,8 @@
             this.panelSetupMode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.panelModelSelection.SuspendLayout();
+            this.panelModelSelectionModel.SuspendLayout();
+            this.panelModelSelectionLead.SuspendLayout();
             this.panelModelSelectionReducerRatio.SuspendLayout();
             this.panelModelType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBuildInSupportTrackActuator)).BeginInit();
@@ -1738,15 +1742,66 @@
             // 
             // panelModelSelection
             // 
+            this.panelModelSelection.Controls.Add(this.panelModelSelectionModel);
+            this.panelModelSelection.Controls.Add(this.panelModelSelectionLead);
             this.panelModelSelection.Controls.Add(this.panelModelSelectionReducerRatio);
             this.panelModelSelection.Controls.Add(this.lbTitleModelSelection);
-            this.panelModelSelection.Controls.Add(this.label61);
-            this.panelModelSelection.Controls.Add(this.label74);
-            this.panelModelSelection.Controls.Add(this.label75);
-            this.panelModelSelection.Controls.Add(this.cboModel);
-            this.panelModelSelection.Controls.Add(this.cboLead);
             resources.ApplyResources(this.panelModelSelection, "panelModelSelection");
             this.panelModelSelection.Name = "panelModelSelection";
+            // 
+            // panelModelSelectionModel
+            // 
+            this.panelModelSelectionModel.Controls.Add(this.label74);
+            this.panelModelSelectionModel.Controls.Add(this.cboModel);
+            resources.ApplyResources(this.panelModelSelectionModel, "panelModelSelectionModel");
+            this.panelModelSelectionModel.Name = "panelModelSelectionModel";
+            // 
+            // label74
+            // 
+            resources.ApplyResources(this.label74, "label74");
+            this.label74.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label74.Name = "label74";
+            // 
+            // cboModel
+            // 
+            this.cboModel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cboModel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboModel.DropDownWidth = 180;
+            resources.ApplyResources(this.cboModel, "cboModel");
+            this.cboModel.ForeColor = System.Drawing.Color.White;
+            this.cboModel.FormattingEnabled = true;
+            this.cboModel.Name = "cboModel";
+            // 
+            // panelModelSelectionLead
+            // 
+            this.panelModelSelectionLead.Controls.Add(this.label61);
+            this.panelModelSelectionLead.Controls.Add(this.label75);
+            this.panelModelSelectionLead.Controls.Add(this.cboLead);
+            resources.ApplyResources(this.panelModelSelectionLead, "panelModelSelectionLead");
+            this.panelModelSelectionLead.Name = "panelModelSelectionLead";
+            // 
+            // label61
+            // 
+            resources.ApplyResources(this.label61, "label61");
+            this.label61.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label61.Name = "label61";
+            // 
+            // label75
+            // 
+            resources.ApplyResources(this.label75, "label75");
+            this.label75.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label75.Name = "label75";
+            // 
+            // cboLead
+            // 
+            this.cboLead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboLead.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboLead.DropDownWidth = 180;
+            resources.ApplyResources(this.cboLead, "cboLead");
+            this.cboLead.ForeColor = System.Drawing.Color.White;
+            this.cboLead.FormattingEnabled = true;
+            this.cboLead.Name = "cboLead";
             // 
             // panelModelSelectionReducerRatio
             // 
@@ -1784,45 +1839,6 @@
             this.lbTitleModelSelection.BackColor = System.Drawing.Color.White;
             this.lbTitleModelSelection.ForeColor = System.Drawing.Color.DimGray;
             this.lbTitleModelSelection.Name = "lbTitleModelSelection";
-            // 
-            // label61
-            // 
-            resources.ApplyResources(this.label61, "label61");
-            this.label61.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label61.Name = "label61";
-            // 
-            // label74
-            // 
-            resources.ApplyResources(this.label74, "label74");
-            this.label74.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label74.Name = "label74";
-            // 
-            // label75
-            // 
-            resources.ApplyResources(this.label75, "label75");
-            this.label75.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label75.Name = "label75";
-            // 
-            // cboModel
-            // 
-            this.cboModel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cboModel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cboModel.DropDownWidth = 180;
-            resources.ApplyResources(this.cboModel, "cboModel");
-            this.cboModel.ForeColor = System.Drawing.Color.White;
-            this.cboModel.FormattingEnabled = true;
-            this.cboModel.Name = "cboModel";
-            // 
-            // cboLead
-            // 
-            this.cboLead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cboLead.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboLead.DropDownWidth = 180;
-            resources.ApplyResources(this.cboLead, "cboLead");
-            this.cboLead.ForeColor = System.Drawing.Color.White;
-            this.cboLead.FormattingEnabled = true;
-            this.cboLead.Name = "cboLead";
             // 
             // panelModelType
             // 
@@ -2349,6 +2365,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.panelModelSelection.ResumeLayout(false);
             this.panelModelSelection.PerformLayout();
+            this.panelModelSelectionModel.ResumeLayout(false);
+            this.panelModelSelectionModel.PerformLayout();
+            this.panelModelSelectionLead.ResumeLayout(false);
+            this.panelModelSelectionLead.PerformLayout();
             this.panelModelSelectionReducerRatio.ResumeLayout(false);
             this.panelModelSelectionReducerRatio.PerformLayout();
             this.panelModelType.ResumeLayout(false);
@@ -2625,6 +2645,8 @@
         public System.Windows.Forms.Label label61;
         public System.Windows.Forms.Label label74;
         public System.Windows.Forms.Label label75;
+        public System.Windows.Forms.Panel panelModelSelectionLead;
+        public System.Windows.Forms.Panel panelModelSelectionModel;
     }
 }
 

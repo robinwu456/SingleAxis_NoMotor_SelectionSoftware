@@ -26,6 +26,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void CboReducerRatio_SelectedValueChanged(object sender, EventArgs e) {
+            if (!formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().Any(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text))
+                return;
+
             DataGridViewRow curRow = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().First(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text);
             //DataGridViewComboBoxCell cboReducerRatio = curRow.Cells["columnReducerRatio"].Value as DataGridViewComboBoxCell;
             curRow.Cells["columnReducerRatio"].Value = formMain.cboReducerRatio.Text;
@@ -53,9 +56,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.sideTable.ClearModelImg();
                 formMain.sideTable.ClearMsg();
                 formMain.sideTable.ClearSelectedModelInfo();
-                formMain.panelModelSelectionReducerRatio.Visible = false;
-                formMain.page2.ReplaceItem();
-                //formMain.panelConfirmBtnsStep2.Visible = false;
+                formMain.cboReducerRatio.DataSource = null;
                 formMain.cmdConfirmStep2.Visible = false;
             } else {
                 // 型號搜尋到時
@@ -75,8 +76,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             var reducerRatios = formMain.page2.calc.reducerInfo.Rows.Cast<DataRow>()
                                                                     .Where(row => row["Model"].ToString() == formMain.cboModel.Text)
                                                                     .Select(row => row["ReducerRatio"].ToString().Split('、'));
-            formMain.panelModelSelectionReducerRatio.Visible = reducerRatios.Count() != 0;
-            formMain.page2.ReplaceItem();
+            formMain.panelModelSelectionReducerRatio.Visible = reducerRatios.Count() != 0;            
             if (reducerRatios.Count() != 0)
                 formMain.cboReducerRatio.DataSource = reducerRatios.First().ToList();
 
@@ -104,6 +104,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.sideTable.ClearModelInfo();
                 formMain.sideTable.ClearModelImg();
             }
+
+            // 歐規皮帶導程隱藏
+            formMain.panelModelSelectionLead.Visible = curModelType != Model.ModelType.歐規皮帶系列;
+            formMain.page2.ReplaceItem();
         }
     }
 }

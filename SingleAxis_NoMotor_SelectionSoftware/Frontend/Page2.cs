@@ -455,19 +455,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 型號選擇
             if (formMain.panelModelSelectionReducerRatio.Visible) {
-                formMain.label74.Location = new Point(362, 8);      // 型號
-                formMain.cboModel.Location = new Point(335, 30);
-                formMain.label61.Location = new Point(442, 33);     // -
-                formMain.label75.Location = new Point(488, 8);      // 導程
-                formMain.cboLead.Location = new Point(464, 30);
-                formMain.panelModelSelectionReducerRatio.Location = new Point(564, 5);
+                formMain.panelModelSelectionModel.Location = new Point(398, 5);
+                formMain.panelModelSelectionReducerRatio.Location = new Point(510, 5);
             } else {
-                formMain.label74.Location = new Point(432, 8);      // 型號
-                formMain.cboModel.Location = new Point(405, 30);
-                formMain.label61.Location = new Point(512, 33);     // -
-                formMain.label75.Location = new Point(558, 8);      // 導程
-                formMain.cboLead.Location = new Point(534, 30);
-                formMain.panelModelSelectionReducerRatio.Location = new Point(634, 5);
+                formMain.panelModelSelectionModel.Location = new Point(398, 5);
+                formMain.panelModelSelectionLead.Location = new Point(510, 5);
             }
         }
     }
