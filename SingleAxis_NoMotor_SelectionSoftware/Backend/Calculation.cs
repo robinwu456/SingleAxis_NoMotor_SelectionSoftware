@@ -144,7 +144,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 篩選條件
             Dictionary<string, Func<Model, bool>> filterMap = new Dictionary<string, Func<Model, bool>>() {
                 { "超過最大行程", model => model.maxStroke >= condition.stroke },
-                { "超過最大荷重", model => model.maxLoad == -1 || model.maxLoad != -1 && model.maxLoad >= condition.load },
+                { "超過最大荷重", model => model.maxLoad == -1 || (model.maxLoad != -1 && model.maxLoad >= condition.load) || condition.curCheckedModel.model != null },
                 { "線速度過大", model => model.vMax <= model.vMax_max },
                 { "行程過短，建議可增加行程，或降低線速度", model => model.constantTime >= 0 },
                 { "運行時間過短，請增加運行時間", model => model.moveTime <= condition.moveTime },

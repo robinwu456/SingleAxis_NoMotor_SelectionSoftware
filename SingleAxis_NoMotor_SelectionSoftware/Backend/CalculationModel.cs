@@ -75,10 +75,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             model.stroke = condition.stroke > model.maxStroke ? model.maxStroke : condition.stroke;
             model.accelSpeed = condition.accelSpeed / 1000f;
             model.load = condition.load;
-            // 最大荷重驗證
+            // 最大荷重驗證            
             model.maxLoad = GetMaxLoad(model.name, model.lead, condition);
-            if (model.maxLoad != int.MaxValue && model.load > model.maxLoad)
-                model.load = model.maxLoad;
+            if (condition.curCheckedModel.model == "") {
+                if (model.maxLoad != int.MaxValue && model.load > model.maxLoad)
+                    model.load = model.maxLoad;
+            }
 
             if (model.accelSpeed != 0) {
                 model.accelTime = model.vMax / model.accelSpeed;
@@ -143,28 +145,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.slideTrackServiceLifeDistance = 999999999;
 
             return model.slideTrackServiceLifeDistance;
-        }
-
-        private void VerifyMomentAlarm(Model model, Model.SetupMethod setupMethod) {
-            if (model.modelType == Model.ModelType.推桿系列 || model.modelType == Model.ModelType.輔助導桿推桿系列 || model.modelType == Model.ModelType.軌道外掛推桿系列) {
-                model.isMomentVerifySuccess = true;
-                return;
-            }
-
-            int maxMomentA = GetMaxMomentParam(model.name, model.lead, setupMethod, Model.Moment.A);
-            int maxMomentB = GetMaxMomentParam(model.name, model.lead, setupMethod, Model.Moment.B);
-            int maxMomentC = GetMaxMomentParam(model.name, model.lead, setupMethod, Model.Moment.C);
-            double verifyValueA = (float)model.moment_A / (float)maxMomentA;
-            double verifyValueB = (float)model.moment_B / (float)maxMomentB;
-            double verifyValueC = (float)model.moment_C / (float)maxMomentC;
-            if (double.IsNaN(verifyValueA))
-                verifyValueA = 0;
-            if (double.IsNaN(verifyValueB))
-                verifyValueB = 0;
-            if (double.IsNaN(verifyValueC))
-                verifyValueC = 0;
-            model.isMomentVerifySuccess = verifyValueA + verifyValueB + verifyValueC <= 1;
-        }
+        }        
 
         // 螺桿壽命計算
         protected long GetScrewEstimatedLife(Model model, Condition conditions) {
@@ -199,9 +180,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             model.accelSpeed = conditions.accelSpeed / 1000f;
             model.load = conditions.load;
             // 最大荷重驗證
-            double maxLoad = GetMaxLoad(model.name, model.lead, conditions);
-            if (maxLoad != int.MaxValue && model.load > maxLoad)
-                model.load = maxLoad;
+            if (conditions.curCheckedModel.model == "") {
+                double maxLoad = GetMaxLoad(model.name, model.lead, conditions);
+                if (maxLoad != int.MaxValue && model.load > maxLoad)
+                    model.load = maxLoad;
+            }
 
             if (model.accelSpeed != 0) {
                 model.accelTime = model.vMax / model.accelSpeed;
@@ -470,6 +453,28 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             day = fullDay - month * 30;
 
             return (year, month, day);
+        }
+
+        // 力矩警示驗證
+        private void VerifyMomentAlarm(Model model, Model.SetupMethod setupMethod) {
+            if (model.modelType == Model.ModelType.推桿系列 || model.modelType == Model.ModelType.輔助導桿推桿系列 || model.modelType == Model.ModelType.軌道外掛推桿系列) {
+                model.isMomentVerifySuccess = true;
+                return;
+            }
+
+            int maxMomentA = GetMaxMomentParam(model.name, model.lead, setupMethod, Model.Moment.A);
+            int maxMomentB = GetMaxMomentParam(model.name, model.lead, setupMethod, Model.Moment.B);
+            int maxMomentC = GetMaxMomentParam(model.name, model.lead, setupMethod, Model.Moment.C);
+            double verifyValueA = (float)model.moment_A / (float)maxMomentA;
+            double verifyValueB = (float)model.moment_B / (float)maxMomentB;
+            double verifyValueC = (float)model.moment_C / (float)maxMomentC;
+            if (double.IsNaN(verifyValueA))
+                verifyValueA = 0;
+            if (double.IsNaN(verifyValueB))
+                verifyValueB = 0;
+            if (double.IsNaN(verifyValueC))
+                verifyValueC = 0;
+            model.isMomentVerifySuccess = verifyValueA + verifyValueB + verifyValueC <= 1;
         }
     }
 }

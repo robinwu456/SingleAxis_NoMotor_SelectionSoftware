@@ -14,25 +14,29 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public (string model, double lead) curCheckedModel;
 
         private FormMain formMain;
-        private const decimal serviceLifeDistanceAlarmStandard = 3000;  // 運行距離標準(km)
-        private const decimal serviceLifeTimeAlarmStandard = 3;         // 運行壽命標準(年)
-        //// 顏色區分
-        //private Dictionary<string, Func<Model, bool>> redFontConditions = new Dictionary<string, Func<Model, bool>>() {
-        //    { "T_max安全係數", model => model.tMaxSafeCoefficient >= Model.tMaxStandard },
-        //    { "運行距離", model => model.serviceLifeDistance >= serviceLifeDistanceAlarmStandard },
-        //    { "運行壽命", model => model.serviceLifeTime.year >= serviceLifeTimeAlarmStandard },
-        //    { "皮帶馬達安全係數", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < Model.beltMotorStandard },
-        //    { "皮帶T_max安全係數", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_beltMotor },
-        //    { "力矩警示", model => model.isMomentVerifySuccess },
-        //};
+        //private const decimal serviceLifeDistanceAlarmStandard = 3000;  // 運行距離標準(km)
+        //private const decimal serviceLifeTimeAlarmStandard = 3;         // 運行壽命標準(年)
+        // 顏色區分
+        private Dictionary<string, Func<Model, bool>> redFontConditions = new Dictionary<string, Func<Model, bool>>() {
+            //{ "T_max安全係數", model => model.tMaxSafeCoefficient >= Model.tMaxStandard },
+            //{ "運行距離", model => model.serviceLifeDistance >= serviceLifeDistanceAlarmStandard },
+            //{ "運行壽命", model => model.serviceLifeTime.year >= serviceLifeTimeAlarmStandard },
+            //{ "皮帶馬達安全係數", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < Model.beltMotorStandard },
+            //{ "皮帶T_max安全係數", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_beltMotor },
+            //{ "力矩警示", model => model.isMomentVerifySuccess },
+            { "荷重", model => model.maxLoad == -1 || (model.maxLoad != -1 && model.maxLoad >= model.load) },
+            { "最大行程", model => model.maxStroke >= model.stroke },
+        };
         // 錯誤訊息
         private Dictionary<string, string> alarmMsg = new Dictionary<string, string>() {
-            { "力矩警示", "力矩判定異常，請洽詢Toyo業務人員" },
-            { "T_max安全係數", "扭矩安全係數過低，請調整荷重或馬達條件" },
-            { "運行距離", "運行距離過短" },
-            { "運行壽命", "運行壽命過短" },
-            { "皮帶馬達安全係數", "皮帶馬達安全係數過低，請調整荷重或馬達條件" },
-            { "皮帶T_max安全係數", "皮帶扭矩安全係數過低，請調整荷重或馬達條件" },
+            //{ "力矩警示", "力矩判定異常，請洽詢Toyo業務人員" },
+            //{ "T_max安全係數", "扭矩安全係數過低，請調整荷重或馬達條件" },
+            //{ "運行距離", "運行距離過短" },
+            //{ "運行壽命", "運行壽命過短" },
+            //{ "皮帶馬達安全係數", "皮帶馬達安全係數過低，請調整荷重或馬達條件" },
+            //{ "皮帶T_max安全係數", "皮帶扭矩安全係數過低，請調整荷重或馬達條件" },
+            { "荷重", "超過最大荷重" },
+            { "最大行程", "超過最大行程" },
         };
 
         public RecommandList(FormMain formMain) {
@@ -107,28 +111,28 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 }
             }
 
-            //// 驗證選擇項目異常
-            //VerifySelectedModelAlarm();
+            // 驗證選擇項目異常
+            VerifySelectedModelAlarm();
 
-            // 顯示機構類行敘述
-            formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType), SideTable.MsgStatus.Normal);
+            //// 顯示機構類行敘述
+            //formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType), SideTable.MsgStatus.Normal);
 
             //// 有效行程選項更新
             //if (curSelectModel.model != null)
             //    formMain.page2.effectiveStroke.CmdEffectiveStroke_Click(null, null);
 
-            //// 全部選型驗證選擇型號是否有項目Fail，有則不顯示下一步
-            //if (curSelectModel.model != null) {
-            //    if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
-            //        try {
-            //            bool isAllConditionSuccess = redFontConditions.All(con => con.Value(curRecommandList.First(model => model.name == curSelectModel.model && model.lead == curSelectModel.lead)));
-            //            formMain.cmdConfirmStep2.Visible = isAllConditionSuccess;
-            //        } catch (Exception ex) {
-            //            Console.WriteLine(ex);
-            //        }
-            //    }
-            //}
-            formMain.cmdConfirmStep2.Visible = true;
+            // 全部選型驗證選擇型號是否有項目Fail，有則不顯示下一步
+            if (curSelectModel.model != null) {
+                if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
+                    try {
+                        bool isAllConditionSuccess = redFontConditions.All(con => con.Value(curRecommandList.First(model => model.name == curSelectModel.model && model.lead == curSelectModel.lead)));
+                        formMain.cmdConfirmStep2.Visible = isAllConditionSuccess;
+                    } catch (Exception ex) {
+                        Console.WriteLine(ex);
+                    }
+                }
+            }
+            //formMain.cmdConfirmStep2.Visible = true;
 
             // Log所有參數
             if (curSelectModel.model != null) {
@@ -214,11 +218,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         }
                         formMain.dgvRecommandList.Rows[index].Cells["運行壽命"].Value = useTime;
 
-                        //// 顏色區分
-                        //foreach (var con in redFontConditions) {
-                        //    formMain.dgvRecommandList.Rows[index].Cells[con.Key].Style.ForeColor = con.Value(model) ? Color.Black : Color.Red;
-                        //    formMain.dgvRecommandList.Rows[index].Cells[con.Key].Style.SelectionForeColor = con.Value(model) ? Color.Black : Color.Red;
-                        //}
+                        // 顏色區分
+                        foreach (var con in redFontConditions) {
+                            formMain.dgvRecommandList.Rows[index].Cells[con.Key].Style.ForeColor = con.Value(model) ? Color.Black : Color.Red;
+                            formMain.dgvRecommandList.Rows[index].Cells[con.Key].Style.SelectionForeColor = con.Value(model) ? Color.Black : Color.Red;
+                        }
                     } catch (Exception ex) {
                         break;
                     }
@@ -361,15 +365,24 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.page2.chartInfo.PaintGraph();
         }
 
-        //public void VerifySelectedModelAlarm() {
-        //    var curRow = formMain.dgvRecommandList.CurrentRow;
-        //    foreach (DataGridViewCell cell in curRow.Cells) {
-        //        if (cell.Style.ForeColor == Color.Red) {
-        //            formMain.sideTable.UpdateMsg(alarmMsg[formMain.dgvRecommandList.Columns[cell.ColumnIndex].Name], SideTable.MsgStatus.Alarm);
-        //            return;
-        //        }
-        //    }
-        //    formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType), SideTable.MsgStatus.Normal);
-        //}
+        public void VerifySelectedModelAlarm() {
+            //var curRow = formMain.dgvRecommandList.CurrentRow;
+            //foreach (DataGridViewCell cell in curRow.Cells) {
+            //    if (cell.Style.ForeColor == Color.Red) {
+            //        formMain.sideTable.UpdateMsg(alarmMsg[formMain.dgvRecommandList.Columns[cell.ColumnIndex].Name], SideTable.MsgStatus.Alarm);
+            //        return;
+            //    }
+            //}
+            //formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType), SideTable.MsgStatus.Normal);
+
+            var curRow = formMain.dgvRecommandList.CurrentRow;
+            var errorColumnNames = curRow.Cells.Cast<DataGridViewCell>().Where(cell => cell.Style.ForeColor == Color.Red)
+                                                                        .Select(cell => formMain.dgvRecommandList.Columns[cell.ColumnIndex].Name);
+            var errorMsgs = alarmMsg.Where(pair => errorColumnNames.Contains(pair.Key)).Select(pair => pair.Value);
+            if (errorColumnNames.Count() == 0)
+                formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType), SideTable.MsgStatus.Normal);
+            else
+                formMain.sideTable.UpdateMsg(string.Join("、", errorMsgs), SideTable.MsgStatus.Alarm);
+        }
     }
 }
