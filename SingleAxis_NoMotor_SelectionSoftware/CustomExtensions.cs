@@ -54,5 +54,34 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             return beltType.Contains(modelType);
         }
+
+        /// <summary>
+        /// 是否為包含減速比的型號
+        /// </summary>
+        /// <param name="modelType">機構類別</param>
+        /// <returns></returns>
+        public static bool IsContainsReducerRatioType(this Model.ModelType modelType) {
+            Model.ModelType[] beltType = {
+                Model.ModelType.歐規皮帶系列,
+                Model.ModelType.軌道內崁皮帶系列,
+            };
+
+            return beltType.Contains(modelType);
+        }
+
+        /// <summary>
+        /// 是否為Y系列
+        /// </summary>
+        /// <param name="modelType">機構類別</param>
+        /// <returns></returns>
+        public static bool IsSeriesY(this Model.ModelType modelType) {
+            Model.ModelType[] beltType = {
+                Model.ModelType.推桿系列,
+                Model.ModelType.輔助導桿推桿系列,
+                Model.ModelType.軌道外掛推桿系列,
+            };
+
+            return beltType.Contains(modelType);
+        }
     }
 }

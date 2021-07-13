@@ -186,7 +186,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 dayPerYear = Convert.ToInt32(formMain.txtDayPerYear.Text)
             };
             // 希望壽命
-            curCondition.expectServiceLifeTime = formMain.optExpectServiceLife.Checked ? Convert.ToInt32(formMain.txtExpectServiceLifeTime.Text) : -1;
+            curCondition.expectServiceLifeTime = formMain.optExpectServiceLife.Checked ? Convert.ToInt32(formMain.txtExpectServiceLifeTime.Text) : Condition.defaultExpectServiceLifeTime;
             // 驗正加速時間
             if (formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType())
                 curCondition.accelTime = 0.4;

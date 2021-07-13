@@ -209,7 +209,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.panelModelType.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;       // 傳動方式
             formMain.panelModelSelection.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;  // 型號選擇
             formMain.panelCalcResult.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;      // 推薦規格
-            formMain.panelMoment.Visible = curSelectModelType != Model.ModelType.推桿系列 && curSelectModelType != Model.ModelType.輔助導桿推桿系列 && curSelectModelType != Model.ModelType.軌道外掛推桿系列;
+            formMain.panelMoment.Visible = !curSelectModelType.IsSeriesY();                                                       // 力矩長度
 
             // 項目索引修正
             int titleIndex = 0;
@@ -241,7 +241,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             UpdateLayout(null, null);
 
             // 減速比顯示
-            formMain.panelReducerRatio.Visible = formMain.optEuropeBeltActuator.Checked && formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
+            formMain.panelReducerRatio.Visible = curSelectModelType.IsContainsReducerRatioType() && formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {

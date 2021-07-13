@@ -107,7 +107,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
 
             // 歐規皮帶導程隱藏
-            formMain.panelModelSelectionLead.Visible = curModelType != Model.ModelType.歐規皮帶系列;
+            formMain.panelModelSelectionLead.Visible = !curModelType.IsContainsReducerRatioType();
             formMain.page2.ReplaceItem();
         }
 

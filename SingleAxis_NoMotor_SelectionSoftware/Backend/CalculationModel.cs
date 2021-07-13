@@ -146,6 +146,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void VerifyMomentAlarm(Model model, Model.SetupMethod setupMethod) {
+            if (model.modelType == Model.ModelType.推桿系列 || model.modelType == Model.ModelType.輔助導桿推桿系列 || model.modelType == Model.ModelType.軌道外掛推桿系列) {
+                model.isMomentVerifySuccess = true;
+                return;
+            }
+
             int maxMomentA = GetMaxMomentParam(model.name, model.lead, setupMethod, Model.Moment.A);
             int maxMomentB = GetMaxMomentParam(model.name, model.lead, setupMethod, Model.Moment.B);
             int maxMomentC = GetMaxMomentParam(model.name, model.lead, setupMethod, Model.Moment.C);

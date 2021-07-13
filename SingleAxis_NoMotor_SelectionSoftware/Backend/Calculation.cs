@@ -229,7 +229,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     // 皮帶型
                     model.serviceLifeDistance = model.slideTrackServiceLifeDistance;
                 else {
-                    if (model.modelType == Model.ModelType.推桿系列 || model.modelType == Model.ModelType.輔助導桿推桿系列 || model.modelType == Model.ModelType.軌道外掛推桿系列)
+                    if (model.modelType.IsSeriesY())
                         // Y系列直接用螺桿壽命
                         model.serviceLifeDistance = model.screwServiceLifeDistance;
                     else

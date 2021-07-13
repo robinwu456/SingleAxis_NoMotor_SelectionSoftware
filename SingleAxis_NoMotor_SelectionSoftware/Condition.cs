@@ -25,6 +25,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public bool isMomentLimitByCatalog = false;                                  // 最大力舉是否被型錄鎖定
         public (string model, double lead) calcModel;                                // 要計算的型號     
         public Func<double, bool> RepeatabilityCondition;                            // 重複定位精度搜尋範圍
-        public int expectServiceLifeTime = -1;                                       // 希望壽命(年)(-1無希望壽命)
+        public const int defaultExpectServiceLifeTime = 3;                           // 希望壽命預設要求
+        public int expectServiceLifeTime = defaultExpectServiceLifeTime;             // 希望壽命(年)(-1無希望壽命)
     }
 }

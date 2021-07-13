@@ -1783,7 +1783,7 @@
     <value>23, 64</value>
   </data>
   <data name="dgvReducerInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 98</value>
+    <value>246, 155</value>
   </data>
   <data name="dgvReducerInfo.TabIndex" type="System.Int32, mscorlib">
     <value>340</value>
@@ -1804,7 +1804,7 @@
     <value>231, 307</value>
   </data>
   <data name="panelReducerRatio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 172</value>
+    <value>288, 229</value>
   </data>
   <data name="panelReducerRatio.TabIndex" type="System.Int32, mscorlib">
     <value>350</value>
@@ -6054,7 +6054,7 @@ ETH、ECH</value>
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,346,Absolute,346,Absolute,346,Absolute,346" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,388,Absolute,388,Absolute,388,Absolute,388" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 313</value>
@@ -6345,7 +6345,7 @@ ETH、ECH</value>
     <value>7</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>970, 100</value>
+    <value>969, 100</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -6441,7 +6441,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-52, 487</value>
+    <value>-388, 487</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 16</value>
@@ -6471,7 +6471,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="label56.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-51, 184</value>
+    <value>-387, 184</value>
   </data>
   <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 2</value>
@@ -6504,7 +6504,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="lbResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-58, 147</value>
+    <value>-394, 147</value>
   </data>
   <data name="lbResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 31</value>
@@ -6534,7 +6534,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="picBoxResultImg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-52, 204</value>
+    <value>-388, 204</value>
   </data>
   <data name="picBoxResultImg.Size" type="System.Drawing.Size, System.Drawing">
     <value>452, 276</value>
