@@ -7,6 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {    
     public class RunCondition {
+        public const int defaultMinStroke = 50;
+        public const int defaultMaxStroke = 6000;
+        public const int defaultMinLoad = 0;
+        public const int defaultMaxLoad = 500;
+
         public Condition curCondition = new Condition();
         public CustomScrollBar scrollBarStroke;
         public CustomScrollBar scrollBarLoad;
@@ -70,24 +75,30 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // Custom scrollBar init
             scrollBarStroke = new CustomScrollBar(formMain, formMain.scrollBarPanelStroke, formMain.scrollBarThumbStroke, null, null);
-            scrollBarStroke.Name = "scrollBarStroke";
-            scrollBarStroke.minValue = 50;
-            scrollBarStroke.maxValue = 6000;            
+            scrollBarStroke.Name = "scrollBarStroke";                
             scrollBarStroke.bindingTextBox = formMain.txtStroke;
             scrollBarStroke.picThumbHover = Properties.Resources.scrollBarThumb_hover;
-            scrollBarStroke.ValueChanged += new CustomScrollBar.EventHandler((sender, e) => { formMain.page2.inputValidate.InputCondition_Validating(formMain.txtStroke, null); });
-            formMain.lbScrollbarMinStroke.Text = scrollBarStroke.minValue.ToString();
-            formMain.lbScrollbarMaxStroke.Text = scrollBarStroke.maxValue.ToString();
+            scrollBarStroke.lbMinValue = formMain.lbScrollbarMinStroke;
+            scrollBarStroke.lbMaxValue = formMain.lbScrollbarMaxStroke;
+            scrollBarStroke.minValue = defaultMinStroke;
+            scrollBarStroke.maxValue = defaultMaxStroke;
+            scrollBarStroke.ValueChanged += new CustomScrollBar.EventHandler((sender, e) => {
+                if (formMain.txtStroke.Text != "")
+                    formMain.page2.inputValidate.InputCondition_Validating(formMain.txtStroke, null);
+            });
 
             scrollBarLoad = new CustomScrollBar(formMain, formMain.scrollBarPanelLoad, formMain.scrollBarThumbLoad, null, null);
-            scrollBarLoad.Name = "scrollBarStroke";
-            scrollBarLoad.minValue = 0;
-            scrollBarLoad.maxValue = 500;            
+            scrollBarLoad.Name = "scrollBarStroke";                   
             scrollBarLoad.bindingTextBox = formMain.txtLoad;
             scrollBarLoad.picThumbHover = Properties.Resources.scrollBarThumb_hover;
-            scrollBarLoad.ValueChanged += new CustomScrollBar.EventHandler((sender, e) => { formMain.page2.inputValidate.InputCondition_Validating(formMain.txtLoad, null); });
-            formMain.lbScrollbarMinLoad.Text = scrollBarLoad.minValue.ToString();
-            formMain.lbScrollbarMaxLoad.Text = scrollBarLoad.maxValue.ToString();
+            scrollBarLoad.lbMinValue = formMain.lbScrollbarMinLoad;
+            scrollBarLoad.lbMaxValue = formMain.lbScrollbarMaxLoad;
+            scrollBarLoad.minValue = defaultMinLoad;
+            scrollBarLoad.maxValue = defaultMaxLoad;
+            scrollBarLoad.ValueChanged += new CustomScrollBar.EventHandler((sender, e) => {
+                if (formMain.txtLoad.Text != "")
+                    formMain.page2.inputValidate.InputCondition_Validating(formMain.txtLoad, null);
+            });
 
             // txt placeHolder init
             SendMessage(formMain.txtRatedTorque.Handle, EM_SETCUEBANNER, 0, "額定轉矩");

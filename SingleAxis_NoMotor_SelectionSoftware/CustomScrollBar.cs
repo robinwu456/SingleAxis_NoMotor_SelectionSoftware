@@ -8,6 +8,42 @@ using System.Drawing;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class CustomScrollBar {
+        public int minValue { 
+            get { return _minValue; } 
+            set { 
+                _minValue = value;
+                if (lbMinValue != null)
+                    lbMinValue.Text = value.ToString();
+                // 更新數值
+                if (bindingTextBox != null)
+                    BindingTextBox_Leave(null, null);
+                // 更新thumb位置
+                thumb.Location = new Point(
+                    (int)(((float)Value / (float)maxValue) * (scrollBar.Size.Width - maxPosOffset) + minPosOffset),
+                    thumb.Location.Y
+                );
+            }
+        }
+        public int maxValue {
+            get { return _maxValue; }
+            set {
+                _maxValue = value;
+                // 更新label
+                if (lbMaxValue != null)
+                    lbMaxValue.Text = value.ToString();
+                // 更新數值
+                if (bindingTextBox != null)
+                    BindingTextBox_Leave(null, null);
+                // 更新thumb位置
+                thumb.Location = new Point(
+                    (int)(((float)Value / (float)maxValue) * (scrollBar.Size.Width - maxPosOffset) + minPosOffset),
+                    thumb.Location.Y
+                );
+            }
+        }
+        private int _minValue = 0;
+        private int _maxValue = 100;        
+
         // 委派事件
         public delegate void EventHandler(object sender, EventArgs e);
         public delegate void ScrollEventHandler(object sender, ScrollEventArgs e);
@@ -17,9 +53,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public MouseEventHandler MouseUp;
         // 內件參數
         public string Name = "";
-        public int Value = defaultValue;
-        public int minValue = 0;
-        public int maxValue = 100;
+        public int Value = defaultValue;        
         public int smallChange = 10;
         public Image imgScrollBarLine;
         public Image imgThumbNormal;
@@ -28,6 +62,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public TextBox bindingTextBox;
         public Image picThumbHover;
         private Image picThumbNormal;
+        public Label lbMinValue;
+        public Label lbMaxValue;
 
         private Form formMain;
         private Panel scrollBar;
@@ -107,8 +143,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 bindingTextBox.Enter += BindingTextBox_Enter;
                 bindingTextBox.Leave += BindingTextBox_Leave;
                 bindingTextBox.KeyDown += BindingTextBox_KeyDown;
+                //bindingTextBox.TextChanged += BindingTextBox_TextChanged;
             }
-        }
+        }        
 
         private void Thumb_MouseEnter(object sender, EventArgs e) {
             thumb.Image = picThumbHover;
@@ -131,6 +168,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void BindingTextBox_Leave(object sender, EventArgs e) {
+            if (bindingTextBox.Text == "") {
+                // 歸0 thumb位置
+                thumb.Location = new Point(
+                    (int)(((float)0 / (float)maxValue) * (scrollBar.Size.Width - maxPosOffset) + minPosOffset),
+                    thumb.Location.Y
+                );
+            }
+
             int a = 0;
             if (Int32.TryParse(bindingTextBox.Text, out a)) {
                 if (a > maxValue)
@@ -139,7 +184,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     a = minValue;
                 bindingTextBox.Text = a.ToString();
                 Value = a;
-            }
+            }            
         }
 
         private void BindingTextBox_Enter(object sender, EventArgs e) {
@@ -161,6 +206,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 }
             }
         }
+
+        //private void BindingTextBox_TextChanged(object sender, EventArgs e) {
+        //    //int a = 0;
+        //    //if (Int32.TryParse(bindingTextBox.Text, out a))
+        //    //    Value = a;
+        //}
 
         private void BindingNumericUpDown_ValueChanged(object sender, EventArgs e) {
             Value = (int)bindingNumericUpDown.Value;

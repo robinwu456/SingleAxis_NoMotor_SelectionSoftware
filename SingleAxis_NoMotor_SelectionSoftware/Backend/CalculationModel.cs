@@ -77,7 +77,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             model.load = condition.load;
             // 最大荷重驗證
             model.maxLoad = GetMaxLoad(model.name, model.lead, condition);
-            if (model.maxLoad != -1 && model.load > model.maxLoad)
+            if (model.maxLoad != int.MaxValue && model.load > model.maxLoad)
                 model.load = model.maxLoad;
 
             if (model.accelSpeed != 0) {
@@ -195,7 +195,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             model.load = conditions.load;
             // 最大荷重驗證
             double maxLoad = GetMaxLoad(model.name, model.lead, conditions);
-            if (maxLoad != -1 && model.load > maxLoad)
+            if (maxLoad != int.MaxValue && model.load > maxLoad)
                 model.load = maxLoad;
 
             if (model.accelSpeed != 0) {

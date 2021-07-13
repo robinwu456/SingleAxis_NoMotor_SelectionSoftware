@@ -198,7 +198,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public double GetMaxLoad(string model, double lead, Condition conditions) {
             // 取最大荷重
-            double maxLoad = -1;
+            double maxLoad = int.MaxValue;
             string data = "";
             //lead = conditions.reducerRatio.Keys.Contains(model) ?
             //                        (int)Math.Round((lead * (double)conditions.reducerRatio[model]), 0) : lead;

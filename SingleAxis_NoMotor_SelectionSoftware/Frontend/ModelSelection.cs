@@ -23,7 +23,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.cboModel.SelectedValueChanged += CboModel_SelectedValueChanged;
             formMain.cboModel.LostFocus += CboModel_LostFocus;
             formMain.cboReducerRatio.SelectedValueChanged += CboReducerRatio_SelectedValueChanged;
-        }
+            formMain.cboLead.SelectedValueChanged += CboLead_SelectedValueChanged;
+        }        
 
         private void CboReducerRatio_SelectedValueChanged(object sender, EventArgs e) {
             if (!formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().Any(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text))
@@ -108,6 +109,29 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 歐規皮帶導程隱藏
             formMain.panelModelSelectionLead.Visible = curModelType != Model.ModelType.歐規皮帶系列;
             formMain.page2.ReplaceItem();
+        }
+
+        private void CboLead_SelectedValueChanged(object sender, EventArgs e) {
+            if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "")
+                return;
+
+            Condition con = new Condition();
+            if (formMain.optHorizontalUse.Checked)
+                con.setupMethod = Model.SetupMethod.Horizontal;
+            else if (formMain.optWallHangingUse.Checked)
+                con.setupMethod = Model.SetupMethod.WallHang;
+            else if (formMain.optVerticalUse.Checked)
+                con.setupMethod = Model.SetupMethod.Vertical;
+
+            // 更新荷重
+            double maxLoad = formMain.page2.calc.GetMaxLoad(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text), con);
+            if (maxLoad == int.MaxValue)
+                maxLoad = RunCondition.defaultMaxLoad;
+            formMain.page2.runCondition.scrollBarLoad.maxValue = (int)maxLoad;
+            // 更新行程
+            int maxStroke = formMain.page2.calc.GetMaxStroke(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text), 1);
+            formMain.page2.runCondition.scrollBarStroke.maxValue = maxStroke;
+
         }
     }
 }

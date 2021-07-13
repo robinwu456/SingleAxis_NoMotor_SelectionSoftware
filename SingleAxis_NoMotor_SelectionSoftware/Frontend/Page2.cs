@@ -124,14 +124,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 motorPower.Load();
             }
 
-            // 驗證最大荷重
-            inputValidate.ValidatingLoad(isShowAlarm: false);
+            //// 驗證最大荷重
+            //inputValidate.ValidatingLoad(isShowAlarm: false);
 
             //// 依照機構型態修正預設行程
             //formMain.txtStroke.Text = curSelectModelType.IsBeltType() ? "1000" : "70";
 
-            // 驗證最大行程
-            inputValidate.ValidatingStroke(isShowAlarm: false);
+            //// 驗證最大行程
+            //inputValidate.ValidatingStroke(isShowAlarm: false);
 
             // 重置版面
             recommandList.Refresh();
@@ -157,13 +157,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.panelAdvanceMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
 
             // scrollbars
-            //runCondition.scrollBarStroke.Initialize();
-            //runCondition.scrollBarLoad.Initialize();            
             runCondition.scrollBarStroke.Value = 0;
-            runCondition.scrollBarLoad.Value = 0;
+            runCondition.scrollBarLoad.Value = RunCondition.defaultMinLoad;
             formMain.txtStroke.Text = "";
             formMain.txtLoad.Text = "";
             formMain.txtRunTime.Text = "";
+            runCondition.scrollBarStroke.maxValue = RunCondition.defaultMaxStroke;
+            runCondition.scrollBarLoad.maxValue = RunCondition.defaultMaxLoad;
 
             ReplaceItem();
         }

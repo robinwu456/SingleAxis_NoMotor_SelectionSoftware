@@ -121,6 +121,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.lbHoursPerDayAlarm.Text = "請輸入有效時間";
             if (txt == formMain.txtDayPerYear)
                 formMain.lbDaysPerYearAlarm.Text = "請輸入有效天數";
+            //if (txt == formMain.txtStroke)
+            //    formMain.labelStrokeAlarm.Text = "請輸入有效行程";
+            //if (txt == formMain.txtLoad)
+            //    formMain.labelLoadAlarm.Text = "請輸入有效荷重";
 
             // 有效數值驗證
             Control lbAlarm = formMain.panelCalc.Controls.All().First(c => c.Tag == txt.Name);
@@ -135,6 +139,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.lbHoursPerDayAlarm.Text = "請輸入有效時間";
             if (txt == formMain.txtDayPerYear)
                 formMain.lbDaysPerYearAlarm.Text = "請輸入有效天數";
+            //if (txt == formMain.txtStroke)
+            //    formMain.labelStrokeAlarm.Text = "請輸入有效行程";
+            //if (txt == formMain.txtLoad)
+            //    formMain.labelLoadAlarm.Text = "請輸入有效荷重";
 
             // 有效數值驗證
             Control lbAlarm = formMain.panelCalc.Controls.All().First(c => c.Tag == txt.Name);
@@ -145,8 +153,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
                 return;
 
-            // 最大荷重驗證
-            ValidatingLoad();
+            //// 最大荷重驗證
+            //ValidatingLoad();
         }
 
         private void TxtLoad_KeyDown(object sender, KeyEventArgs e) {
@@ -156,39 +164,39 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
                 return;
 
-            // 最大荷重驗證
-            ValidatingLoad();
+            //// 最大荷重驗證
+            //ValidatingLoad();
         }
 
-        public bool ValidatingLoad(bool isShowAlarm = true) {
-            if (!decimal.TryParse(formMain.txtLoad.Text, out decimal keyLoad))
-                return true;
-            if (!double.TryParse(formMain.cboLead.Text, out double lead))
-                return true;
+        //public bool ValidatingLoad(bool isShowAlarm = true) {
+        //    if (!decimal.TryParse(formMain.txtLoad.Text, out decimal keyLoad))
+        //        return true;
+        //    if (!double.TryParse(formMain.cboLead.Text, out double lead))
+        //        return true;
 
-            Condition con = new Condition();
-            if (formMain.optHorizontalUse.Checked)
-                con.setupMethod = Model.SetupMethod.Horizontal;
-            else if (formMain.optWallHangingUse.Checked)
-                con.setupMethod = Model.SetupMethod.WallHang;
-            else if (formMain.optVerticalUse.Checked)
-                con.setupMethod = Model.SetupMethod.Vertical;
+        //    Condition con = new Condition();
+        //    if (formMain.optHorizontalUse.Checked)
+        //        con.setupMethod = Model.SetupMethod.Horizontal;
+        //    else if (formMain.optWallHangingUse.Checked)
+        //        con.setupMethod = Model.SetupMethod.WallHang;
+        //    else if (formMain.optVerticalUse.Checked)
+        //        con.setupMethod = Model.SetupMethod.Vertical;
 
-            string model = formMain.cboModel.Text;
+        //    string model = formMain.cboModel.Text;
 
-            double maxLoad = formMain.page2.calc.GetMaxLoad(model, lead, con);
-            formMain.labelLoadAlarm.Text = "最大: " + maxLoad.ToString() + "kg";
-            if (maxLoad == -1)
-                return true;
+        //    double maxLoad = formMain.page2.calc.GetMaxLoad(model, lead, con);
+        //    formMain.labelLoadAlarm.Text = "最大: " + maxLoad.ToString() + "kg";
+        //    if (maxLoad == -1)
+        //        return true;
 
-            if (isShowAlarm)
-                formMain.labelLoadAlarm.Visible = (double)keyLoad > maxLoad;
-            if ((double)keyLoad > maxLoad) {
-                formMain.txtLoad.Text = ((int)maxLoad).ToString();
-                return false;
-            }
-            return true;
-        }
+        //    if (isShowAlarm)
+        //        formMain.labelLoadAlarm.Visible = (double)keyLoad > maxLoad;
+        //    if ((double)keyLoad > maxLoad) {
+        //        formMain.txtLoad.Text = ((int)maxLoad).ToString();
+        //        return false;
+        //    }
+        //    return true;
+        //}
 
         public bool VerifyAllInputValidate(bool isShowAlarm = false) {
             bool isVerifySuccess = true;
@@ -220,7 +228,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
                 return;
 
-            ValidatingStroke();
+            //ValidatingStroke();
         }
 
         private void TxtStroke_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
@@ -232,32 +240,32 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
                 return;
 
-            ValidatingStroke();
+            //ValidatingStroke();
         }
-        public bool ValidatingStroke(bool isShowAlarm = true) {
-            if (!decimal.TryParse(formMain.txtStroke.Text, out decimal keyStroke))
-                return true;
-            if (!double.TryParse(formMain.cboLead.Text, out double lead))
-                return true;
+        //public bool ValidatingStroke(bool isShowAlarm = true) {
+        //    if (!decimal.TryParse(formMain.txtStroke.Text, out decimal keyStroke))
+        //        return true;
+        //    if (!double.TryParse(formMain.cboLead.Text, out double lead))
+        //        return true;
 
-            string model = formMain.cboModel.Text;
-            int reducerRatio = 1;
-            //if (calc.IsContainsReducerRatio(model)) {
-            //    string dgvReducerRatioValue = dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
-            //    reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
-            //}
+        //    string model = formMain.cboModel.Text;
+        //    int reducerRatio = 1;
+        //    //if (calc.IsContainsReducerRatio(model)) {
+        //    //    string dgvReducerRatioValue = dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
+        //    //    reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
+        //    //}
 
-            int maxStroke = formMain.page2.calc.GetMaxStroke(model, lead, reducerRatio);
-            formMain.labelStrokeAlarm.Text = "最大: " + maxStroke.ToString() + "mm";
-            if (isShowAlarm)
-                formMain.labelStrokeAlarm.Visible = (double)keyStroke > maxStroke;
-            if (keyStroke > maxStroke) {
-                formMain.txtStroke.Text = maxStroke.ToString();
-                return false;
-            }
+        //    int maxStroke = formMain.page2.calc.GetMaxStroke(model, lead, reducerRatio);
+        //    formMain.labelStrokeAlarm.Text = "最大: " + maxStroke.ToString() + "mm";
+        //    if (isShowAlarm)
+        //        formMain.labelStrokeAlarm.Visible = (double)keyStroke > maxStroke;
+        //    if (keyStroke > maxStroke) {
+        //        formMain.txtStroke.Text = maxStroke.ToString();
+        //        return false;
+        //    }
 
-            return true;
-        }
+        //    return true;
+        //}
 
         private void TxtMaxSpeed_KeyDown(object sender, KeyEventArgs e) {
             // 一般計算
