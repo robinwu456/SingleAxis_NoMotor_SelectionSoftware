@@ -17,16 +17,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         //private const decimal serviceLifeDistanceAlarmStandard = 3000;  // 運行距離標準(km)
         //private const decimal serviceLifeTimeAlarmStandard = 3;         // 運行壽命標準(年)
         // 顏色區分
-        private Dictionary<string, Func<Model, bool>> redFontConditions = new Dictionary<string, Func<Model, bool>>() {
-            //{ "T_max安全係數", model => model.tMaxSafeCoefficient >= Model.tMaxStandard },
-            //{ "運行距離", model => model.serviceLifeDistance >= serviceLifeDistanceAlarmStandard },
-            //{ "運行壽命", model => model.serviceLifeTime.year >= serviceLifeTimeAlarmStandard },
-            //{ "皮帶馬達安全係數", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < Model.beltMotorStandard },
-            //{ "皮帶T_max安全係數", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_beltMotor },
-            //{ "力矩警示", model => model.isMomentVerifySuccess },
-            { "荷重", model => model.maxLoad == -1 || (model.maxLoad != -1 && model.maxLoad >= model.load) },
-            { "最大行程", model => model.maxStroke >= model.stroke },
-        };
+        private Dictionary<string, Func<Model, bool>> redFontConditions = new Dictionary<string, Func<Model, bool>>();
         // 錯誤訊息
         private Dictionary<string, string> alarmMsg = new Dictionary<string, string>() {
             //{ "力矩警示", "力矩判定異常，請洽詢Toyo業務人員" },
@@ -37,10 +28,22 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //{ "皮帶T_max安全係數", "皮帶扭矩安全係數過低，請調整荷重或馬達條件" },
             { "荷重", "超過最大荷重" },
             { "最大行程", "超過最大行程" },
+            { "運行壽命", "每分鐘趟數過大" },
         };
 
         public RecommandList(FormMain formMain) {
             this.formMain = formMain;
+            redFontConditions = new Dictionary<string, Func<Model, bool>>() {
+                //{ "T_max安全係數", model => model.tMaxSafeCoefficient >= Model.tMaxStandard },
+                //{ "運行距離", model => model.serviceLifeDistance >= serviceLifeDistanceAlarmStandard },
+                //{ "運行壽命", model => model.serviceLifeTime.year >= serviceLifeTimeAlarmStandard },
+                //{ "皮帶馬達安全係數", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < Model.beltMotorStandard },
+                //{ "皮帶T_max安全係數", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_beltMotor },
+                //{ "力矩警示", model => model.isMomentVerifySuccess },
+                { "荷重", model => model.maxLoad == -1 || (model.maxLoad != -1 && model.maxLoad >= model.load) },
+                { "最大行程", model => model.maxStroke >= Convert.ToInt32(formMain.txtStroke.Text) },
+                { "運行壽命", model => model.serviceLifeTime != (-1, -1, -1) },
+            };
             InitEvents();
         }
 
@@ -199,22 +202,26 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
                         // 使用壽命時間
                         string useTime = "";
-                        if (model.serviceLifeTime.year >= 10)
-                            //useTime = "10年以上";
-                            useTime = "10以上";
+                        if (model.serviceLifeTime == (-1, -1, -1))
+                            useTime = "-";
                         else {
-                            //if (model.serviceLifeTime.year > 0)
-                            //    //useTime += model.serviceLifeTime.year + "年";
-                            //    useTime += model.serviceLifeTime.year;
-                            ////if (model.serviceLifeTime.month > 0)
-                            ////    useTime += model.serviceLifeTime.month + "個月";
-                            //if (model.serviceLifeTime.year == 0 && model.serviceLifeTime.month == 0)
-                            //    useTime = "1個月以下";
+                            if (model.serviceLifeTime.year >= 10)
+                                //useTime = "10年以上";
+                                useTime = "10以上";
+                            else {
+                                //if (model.serviceLifeTime.year > 0)
+                                //    //useTime += model.serviceLifeTime.year + "年";
+                                //    useTime += model.serviceLifeTime.year;
+                                ////if (model.serviceLifeTime.month > 0)
+                                ////    useTime += model.serviceLifeTime.month + "個月";
+                                //if (model.serviceLifeTime.year == 0 && model.serviceLifeTime.month == 0)
+                                //    useTime = "1個月以下";
 
-                            if (model.serviceLifeTime.year > 0)
-                                useTime += model.serviceLifeTime.year;
-                            else
-                                useTime = "1以下";
+                                if (model.serviceLifeTime.year > 0)
+                                    useTime += model.serviceLifeTime.year;
+                                else
+                                    useTime = "1以下";
+                            }
                         }
                         formMain.dgvRecommandList.Rows[index].Cells["運行壽命"].Value = useTime;
 
@@ -355,7 +362,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //formMain.sideTable.UpdateSelectedConditionValue("T_max安全係數", curModel.tMaxSafeCoefficient.ToString(), !redFontConditions["T_max安全係數"](curModel));
             //formMain.sideTable.UpdateSelectedConditionValue("力矩警示", curModel.isMomentVerifySuccess ? "Pass" : "Fail", !redFontConditions["力矩警示"](curModel));
             formMain.sideTable.UpdateSelectedConditionValue("運行距離", useDistance, false);
-            formMain.sideTable.UpdateSelectedConditionValue("運行壽命", useTime, false);
+            formMain.sideTable.UpdateSelectedConditionValue("運行壽命", useTime, useTime != "-");
             //if (formMain.page2.curSelectModelType.IsBeltType() && formMain.page2.calc.beltModels.Contains(curModel.name)) {
             //    formMain.sideTable.UpdateSelectedConditionValue("皮帶T_max安全係數", curModel.beltSafeCoefficient.ToString(), !redFontConditions["皮帶T_max安全係數"](curModel));
             //    formMain.sideTable.UpdateSelectedConditionValue("皮帶馬達安全係數", curModel.beltMotorSafeCoefficient.ToString(), !redFontConditions["皮帶馬達安全係數"](curModel));

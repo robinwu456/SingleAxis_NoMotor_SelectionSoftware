@@ -272,7 +272,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
 
             double decelTime = accelTime;
-            double constantTime = ((2f * (float)conditions.stroke / 1000f / _vMax) - accelTime - decelTime) / 2f;
+            //double constantTime = ((2f * (float)conditions.stroke / 1000f / _vMax) - accelTime - decelTime) / 2f;
+            double constantTime = ((2f * (float)conditions.stroke / _vMax) - accelTime - decelTime) / 2f;
             // 單趟來回需要的秒數
             //double totalTime = (accelTime + constantTime + decelTime + conditions.stopTime) * 2f;
             double totalTime = (accelTime + constantTime + decelTime) * 2f;
