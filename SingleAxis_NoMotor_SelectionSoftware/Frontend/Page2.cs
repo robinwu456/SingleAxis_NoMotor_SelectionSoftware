@@ -326,14 +326,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     if (!string.IsNullOrEmpty(result["Msg"] as string)) {
                         // 訊息斷行顯示
                         string alarmMsg = result["Msg"] as string;
-                        string showMsg = "";
-                        alarmMsg.Split('|').ToList().ForEach(alarm => {
-                            if (string.IsNullOrEmpty(alarm))
-                                return;
-                            int index = alarmMsg.Split('|').ToList().IndexOf(alarm) + 1;
-                            showMsg += alarm + "\r\n";
-                        });
-                        formMain.Invoke(new Action(() => formMain.sideTable.UpdateMsg(showMsg, SideTable.MsgStatus.Alarm)));
+                        formMain.Invoke(new Action(() => formMain.sideTable.UpdateMsg(alarmMsg, SideTable.MsgStatus.Alarm)));
                     }
 
                     //// 有效行程顯示

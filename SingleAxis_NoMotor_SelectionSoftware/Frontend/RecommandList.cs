@@ -335,7 +335,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 else
                     //useDistance = ((float)curModel.serviceLifeDistance / 10000f).ToString("#0.0") + "萬公里";
                     //useDistance = (float)curModel.serviceLifeDistance + "公里";
-                    useDistance = (int)curModel.serviceLifeDistance / 10000 + "萬km";
+                    useDistance = (int)curModel.serviceLifeDistance + "km";
             }
             //Dictionary<string, string> item = new Dictionary<string, string>();
             //if (formMain.page2.curSelectModelType.IsBeltType() && curModel.beltMotorSafeCoefficient != -1 && curModel.beltSafeCoefficient != -1)

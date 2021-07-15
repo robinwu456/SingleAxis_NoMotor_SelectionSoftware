@@ -464,19 +464,21 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 return;
             }
 
-            int maxMomentA = GetMaxMomentParam(model.name, model.lead, setupMethod, Model.Moment.A);
-            int maxMomentB = GetMaxMomentParam(model.name, model.lead, setupMethod, Model.Moment.B);
-            int maxMomentC = GetMaxMomentParam(model.name, model.lead, setupMethod, Model.Moment.C);
-            double verifyValueA = (float)model.moment_A / (float)maxMomentA;
-            double verifyValueB = (float)model.moment_B / (float)maxMomentB;
-            double verifyValueC = (float)model.moment_C / (float)maxMomentC;
-            if (double.IsNaN(verifyValueA))
-                verifyValueA = 0;
-            if (double.IsNaN(verifyValueB))
-                verifyValueB = 0;
-            if (double.IsNaN(verifyValueC))
-                verifyValueC = 0;
-            model.isMomentVerifySuccess = verifyValueA + verifyValueB + verifyValueC <= 1;
+            //int maxMomentA = GetMaxMomentParam(model.name, model.lead, setupMethod, Model.Moment.A);
+            //int maxMomentB = GetMaxMomentParam(model.name, model.lead, setupMethod, Model.Moment.B);
+            //int maxMomentC = GetMaxMomentParam(model.name, model.lead, setupMethod, Model.Moment.C);
+            //double verifyValueA = (float)model.moment_A / (float)maxMomentA;
+            //double verifyValueB = (float)model.moment_B / (float)maxMomentB;
+            //double verifyValueC = (float)model.moment_C / (float)maxMomentC;
+            //if (double.IsNaN(verifyValueA))
+            //    verifyValueA = 0;
+            //if (double.IsNaN(verifyValueB))
+            //    verifyValueB = 0;
+            //if (double.IsNaN(verifyValueC))
+            //    verifyValueC = 0;
+            //model.isMomentVerifySuccess = verifyValueA + verifyValueB + verifyValueC <= 1;
+
+            model.isMomentVerifySuccess = true;
         }
     }
 }
