@@ -184,7 +184,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     { "Condition", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < Model.beltMotorStandard } } },
                 { "皮帶T_max安全係數過低", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("標準: {0}, 計算值: {1}", Model.tMaxStandard_beltMotor, model.beltSafeCoefficient) },
-                    { "Condition", model => model.maxStroke >= condition.stroke } } },
+                    { "Condition", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_beltMotor } } },
                 { "力矩警示異常", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => "" },
                     { "Condition", model => model.isMomentVerifySuccess } } },
