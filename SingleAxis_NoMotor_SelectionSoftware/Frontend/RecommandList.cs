@@ -194,10 +194,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         else {
                             if (model.serviceLifeDistance > 10000)
                                 //formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "1萬公里以上";
-                                formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "10000以上";
+                                //formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "10000以上";
+                                formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "10000km↑";
                             else
                                 //formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = ((float)model.serviceLifeDistance / 10000f).ToString("#0.0") + "萬公里";
-                                formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = (float)model.serviceLifeDistance;
+                                //formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = (float)model.serviceLifeDistance;
+                                formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = model.serviceLifeDistance + "km";
                         }
 
                         // 使用壽命時間
@@ -207,7 +209,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         else {
                             if (model.serviceLifeTime.year >= 10)
                                 //useTime = "10年以上";
-                                useTime = "10以上";
+                                //useTime = "10以上";
+                                useTime = "10年↑";
                             else {
                                 //if (model.serviceLifeTime.year > 0)
                                 //    //useTime += model.serviceLifeTime.year + "年";
@@ -218,9 +221,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                 //    useTime = "1個月以下";
 
                                 if (model.serviceLifeTime.year > 0)
-                                    useTime += model.serviceLifeTime.year;
+                                    //useTime += model.serviceLifeTime.year;
+                                    useTime += model.serviceLifeTime.year + "年";
                                 else
-                                    useTime = "1以下";
+                                    //useTime = "1以下";
+                                    useTime = "1年↓";
                             }
                         }
                         formMain.dgvRecommandList.Rows[index].Cells["運行壽命"].Value = useTime;
@@ -310,7 +315,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 使用壽命時間
             string useTime = "";
             if (curModel.serviceLifeTime.year >= 10) {
-                useTime = "10年以上";
+                //useTime = "10年以上";
+                useTime = "10年↑";
             } else {
                 if (curModel.serviceLifeTime.year > 0)
                     useTime += curModel.serviceLifeTime.year + "年";
@@ -324,10 +330,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             else {
                 if (curModel.serviceLifeDistance > 10000)
                     //useDistance = "1萬公里以上";
-                    useDistance = "10000公里以上";
+                    //useDistance = "10000公里以上";
+                    useDistance = "10000km↑";
                 else
                     //useDistance = ((float)curModel.serviceLifeDistance / 10000f).ToString("#0.0") + "萬公里";
-                    useDistance = (float)curModel.serviceLifeDistance + "公里";
+                    //useDistance = (float)curModel.serviceLifeDistance + "公里";
+                    useDistance = (int)curModel.serviceLifeDistance / 10000 + "萬km";
             }
             //Dictionary<string, string> item = new Dictionary<string, string>();
             //if (formMain.page2.curSelectModelType.IsBeltType() && curModel.beltMotorSafeCoefficient != -1 && curModel.beltSafeCoefficient != -1)

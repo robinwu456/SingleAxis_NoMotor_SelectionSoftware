@@ -957,6 +957,9 @@
   <data name="力矩警示.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="力矩警示.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
   <metadata name="馬達瓦數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -978,6 +981,9 @@
   <data name="皮帶馬達安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="皮帶馬達安全係數.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
   <metadata name="T_max安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -989,6 +995,9 @@
   </data>
   <data name="T_max安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="T_max安全係數.Width" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
   <metadata name="皮帶T_max安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1002,6 +1011,9 @@
   <data name="皮帶T_max安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="皮帶T_max安全係數.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
   <metadata name="T_Rms安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1014,20 +1026,26 @@
   <data name="T_Rms安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="T_Rms安全係數.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
   <metadata name="運行距離.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="運行距離.HeaderText" xml:space="preserve">
-    <value>運行距離(km)</value>
+    <value>運行距離</value>
   </data>
   <data name="運行距離.MinimumWidth" type="System.Int32, mscorlib">
-    <value>100</value>
+    <value>120</value>
+  </data>
+  <data name="運行距離.Width" type="System.Int32, mscorlib">
+    <value>120</value>
   </data>
   <metadata name="運行壽命.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="運行壽命.HeaderText" xml:space="preserve">
-    <value>運行壽命(年)</value>
+    <value>運行壽命</value>
   </data>
   <data name="運行壽命.MinimumWidth" type="System.Int32, mscorlib">
     <value>75</value>
@@ -6054,7 +6072,7 @@ ETH、ECH</value>
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,388,Absolute,388,Absolute,388,Absolute,388" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,417,Absolute,417,Absolute,417,Absolute,417" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 313</value>
@@ -6345,7 +6363,7 @@ ETH、ECH</value>
     <value>7</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>969, 100</value>
+    <value>973, 100</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -6441,7 +6459,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-388, 487</value>
+    <value>-620, 487</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 16</value>
@@ -6471,7 +6489,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="label56.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-387, 184</value>
+    <value>-619, 184</value>
   </data>
   <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 2</value>
@@ -6504,7 +6522,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="lbResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-394, 147</value>
+    <value>-626, 147</value>
   </data>
   <data name="lbResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 31</value>
@@ -6534,7 +6552,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="picBoxResultImg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-388, 204</value>
+    <value>-620, 204</value>
   </data>
   <data name="picBoxResultImg.Size" type="System.Drawing.Size, System.Drawing">
     <value>452, 276</value>
@@ -10294,14 +10312,23 @@ ETH、ECH</value>
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>不帶電選型系統</value>
+  </data>
+  <data name="&gt;&gt;columnModel.Name" xml:space="preserve">
+    <value>columnModel</value>
+  </data>
+  <data name="&gt;&gt;columnModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnReducerRatio.Name" xml:space="preserve">
+    <value>columnReducerRatio</value>
+  </data>
+  <data name="&gt;&gt;columnReducerRatio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewComboBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;鎖定.Name" xml:space="preserve">
     <value>鎖定</value>
@@ -10440,18 +10467,6 @@ ETH、ECH</value>
   </data>
   <data name="&gt;&gt;更詳細資訊.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnModel.Name" xml:space="preserve">
-    <value>columnModel</value>
-  </data>
-  <data name="&gt;&gt;columnModel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnReducerRatio.Name" xml:space="preserve">
-    <value>columnReducerRatio</value>
-  </data>
-  <data name="&gt;&gt;columnReducerRatio.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewComboBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormMain</value>
