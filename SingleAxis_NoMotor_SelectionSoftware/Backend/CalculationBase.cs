@@ -263,12 +263,22 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             double _accelSpeed = (float)conditions.accelSpeed / 1000f;
 
-            //double accelTime = _vMax / _accelSpeed;
+            //double accelTime = _vMax / _accelSpeed;            
+
             double accelTime = 0;
             if (conditions.accelSpeed != 0) {
                 conditions.accelTime = conditions.vMax / conditions.accelSpeed;
             } else {
                 accelTime = conditions.accelTime;
+            }
+
+            if (isCheckStrokeTooShort) {
+                // 行程過短驗證
+                if (strokeTooShortModifyItem == Converter.ModifyItem.Vmax)
+                    _vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, (int)_vMax, accelTime, model.stroke);
+                else if (strokeTooShortModifyItem == Converter.ModifyItem.AccelSpeed) {
+                    accelTime = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, _vMax, accelTime, model.stroke);
+                }
             }
 
             double decelTime = accelTime;
