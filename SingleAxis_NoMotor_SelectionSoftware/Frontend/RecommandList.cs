@@ -362,7 +362,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //formMain.sideTable.UpdateSelectedConditionValue("T_max安全係數", curModel.tMaxSafeCoefficient.ToString(), !redFontConditions["T_max安全係數"](curModel));
             //formMain.sideTable.UpdateSelectedConditionValue("力矩警示", curModel.isMomentVerifySuccess ? "Pass" : "Fail", !redFontConditions["力矩警示"](curModel));
             formMain.sideTable.UpdateSelectedConditionValue("運行距離", useDistance, false);
-            formMain.sideTable.UpdateSelectedConditionValue("運行壽命", useTime, useTime != "-");
+            formMain.sideTable.UpdateSelectedConditionValue("運行壽命", useTime, useTime == "-");
             //if (formMain.page2.curSelectModelType.IsBeltType() && formMain.page2.calc.beltModels.Contains(curModel.name)) {
             //    formMain.sideTable.UpdateSelectedConditionValue("皮帶T_max安全係數", curModel.beltSafeCoefficient.ToString(), !redFontConditions["皮帶T_max安全係數"](curModel));
             //    formMain.sideTable.UpdateSelectedConditionValue("皮帶馬達安全係數", curModel.beltMotorSafeCoefficient.ToString(), !redFontConditions["皮帶馬達安全係數"](curModel));

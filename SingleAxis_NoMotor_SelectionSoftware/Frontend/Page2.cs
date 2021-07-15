@@ -313,8 +313,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         chartInfo.Clear();
                         recommandList.curSelectModel = (null, -1);
                         // 側邊欄
-                        formMain.sideTable.ClearModelImg();
-                        formMain.sideTable.ClearModelInfo();
+                        if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
+                            formMain.sideTable.ClearModelImg();
+                            formMain.sideTable.ClearModelInfo();
+                        }
                         //formMain.sideTable.ClearSelectedModelInfo();
                     }));
 
