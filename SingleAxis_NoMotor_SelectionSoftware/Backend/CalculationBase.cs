@@ -247,7 +247,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             double _vMax = 0;
             if (conditions.vMaxCalcMode == Condition.CalcVmax.Max) {
                 if (beltModels.Any(m => model.name.StartsWith(m))) {
-                    _vMax = GetBeltVmax(model.name, model.lead, 1, conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2);
+                    _vMax = GetBeltVmax_ms(model.name, model.lead, 1, conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2) * 1000;
                 } else {
                     if (conditions.reducerRatio.Keys.Contains(model.name))
                         _vMax = GetVmax_mms(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
@@ -297,7 +297,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         // 皮帶Vmax(m/s)
-        public double GetBeltVmax(string model, double lead, int reducer, int stroke, BeltWheel mainWheel, SubBeltWheel subWheel1, SubBeltWheel subWheel2) {
+        public double GetBeltVmax_ms(string model, double lead, int reducer, int stroke, BeltWheel mainWheel, SubBeltWheel subWheel1, SubBeltWheel subWheel2) {
             // 依照行程取RPM
             int rpm = GetRpmByStroke(model, lead, reducer, stroke);
             double reducerRpmRatio = subWheel1.diameter / mainWheel.diameter;

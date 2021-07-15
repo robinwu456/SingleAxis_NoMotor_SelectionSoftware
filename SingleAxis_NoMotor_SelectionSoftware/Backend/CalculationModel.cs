@@ -40,7 +40,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             if (condition.vMaxCalcMode == Condition.CalcVmax.Max) {
                 if (beltModels.Any(m => model.name.StartsWith(m))) {
-                    model.vMax = GetBeltVmax(model.name, model.lead, 1, condition.stroke, model.mainWheel, model.subWheel1, model.subWheel2);
+                    model.vMax = GetBeltVmax_ms(model.name, model.lead, 1, condition.stroke, model.mainWheel, model.subWheel1, model.subWheel2);
                 } else {
                     if (condition.reducerRatio.Keys.Contains(model.name))
                         model.vMax = GetVmax_ms(model.name, model.lead, condition.reducerRatio[model.name], condition.stroke);
