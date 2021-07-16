@@ -424,7 +424,7 @@
     <value>2</value>
   </data>
   <data name="label47.Text" xml:space="preserve">
-    <value>形狀選型/壽命計算</value>
+    <value>條件選型/壽命計算</value>
   </data>
   <data name="label47.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
@@ -957,9 +957,6 @@
   <data name="力矩警示.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="力矩警示.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
   <metadata name="馬達瓦數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -981,9 +978,6 @@
   <data name="皮帶馬達安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="皮帶馬達安全係數.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
   <metadata name="T_max安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -995,9 +989,6 @@
   </data>
   <data name="T_max安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="T_max安全係數.Width" type="System.Int32, mscorlib">
-    <value>50</value>
   </data>
   <metadata name="皮帶T_max安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1011,9 +1002,6 @@
   <data name="皮帶T_max安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="皮帶T_max安全係數.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
   <metadata name="T_Rms安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1025,9 +1013,6 @@
   </data>
   <data name="T_Rms安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="T_Rms安全係數.Width" type="System.Int32, mscorlib">
-    <value>50</value>
   </data>
   <metadata name="運行距離.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -6072,7 +6057,7 @@ ETH、ECH</value>
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,417,Absolute,417,Absolute,417,Absolute,417" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,432,Absolute,432,Absolute,432,Absolute,432" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 313</value>
@@ -6087,7 +6072,7 @@ ETH、ECH</value>
     <value>panelSideTableSelections</value>
   </data>
   <data name="&gt;&gt;panelSideTableSelections.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.7, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.8, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;panelSideTableSelections.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -6144,7 +6129,7 @@ ETH、ECH</value>
     <value>customPanel4</value>
   </data>
   <data name="&gt;&gt;customPanel4.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.7, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.8, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel4.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -6234,7 +6219,7 @@ ETH、ECH</value>
     <value>customPanel3</value>
   </data>
   <data name="&gt;&gt;customPanel3.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.7, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.8, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel3.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -6321,7 +6306,7 @@ ETH、ECH</value>
     <value>customPanel2</value>
   </data>
   <data name="&gt;&gt;customPanel2.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.7, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.8, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel2.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -6363,7 +6348,7 @@ ETH、ECH</value>
     <value>7</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>973, 100</value>
+    <value>969, 100</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -6378,7 +6363,7 @@ ETH、ECH</value>
     <value>panelSideTable</value>
   </data>
   <data name="&gt;&gt;panelSideTable.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.7, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.8, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;panelSideTable.Parent" xml:space="preserve">
     <value>explorerBar</value>
@@ -6459,7 +6444,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-620, 487</value>
+    <value>-732, 487</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 16</value>
@@ -6489,7 +6474,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="label56.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-619, 184</value>
+    <value>-731, 184</value>
   </data>
   <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 2</value>
@@ -6522,7 +6507,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="lbResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-626, 147</value>
+    <value>-738, 147</value>
   </data>
   <data name="lbResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 31</value>
@@ -6552,7 +6537,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="picBoxResultImg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-620, 204</value>
+    <value>-732, 204</value>
   </data>
   <data name="picBoxResultImg.Size" type="System.Drawing.Size, System.Drawing">
     <value>452, 276</value>
@@ -6792,7 +6777,7 @@ ETH、ECH</value>
     <value>tabMain</value>
   </data>
   <data name="&gt;&gt;tabMain.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.7, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.8, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabMain.Parent" xml:space="preserve">
     <value>panel4</value>
@@ -10318,18 +10303,6 @@ ETH、ECH</value>
   <data name="$this.Text" xml:space="preserve">
     <value>不帶電選型系統</value>
   </data>
-  <data name="&gt;&gt;columnModel.Name" xml:space="preserve">
-    <value>columnModel</value>
-  </data>
-  <data name="&gt;&gt;columnModel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnReducerRatio.Name" xml:space="preserve">
-    <value>columnReducerRatio</value>
-  </data>
-  <data name="&gt;&gt;columnReducerRatio.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewComboBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;鎖定.Name" xml:space="preserve">
     <value>鎖定</value>
   </data>
@@ -10467,6 +10440,18 @@ ETH、ECH</value>
   </data>
   <data name="&gt;&gt;更詳細資訊.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnModel.Name" xml:space="preserve">
+    <value>columnModel</value>
+  </data>
+  <data name="&gt;&gt;columnModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnReducerRatio.Name" xml:space="preserve">
+    <value>columnReducerRatio</value>
+  </data>
+  <data name="&gt;&gt;columnReducerRatio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewComboBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormMain</value>
