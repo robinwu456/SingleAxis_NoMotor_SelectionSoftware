@@ -209,7 +209,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.panelModelType.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;       // 傳動方式
             formMain.panelModelSelection.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;  // 型號選擇
             formMain.panelCalcResult.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;      // 推薦規格
-            formMain.panelMoment.Visible = !curSelectModelType.IsSeriesY();                                                       // 力矩長度
+            formMain.panelMoment.Visible = !curSelectModelType.IsRodType();                                                       // 力矩長度
 
             // 項目索引修正
             int titleIndex = 0;
