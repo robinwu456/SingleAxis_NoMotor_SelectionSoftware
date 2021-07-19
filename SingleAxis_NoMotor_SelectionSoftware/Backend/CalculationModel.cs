@@ -435,8 +435,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             int day = 0;
 
             // 驗證使用頻率
-            int maxCountPerMinute = GetMaxCountPerMinute(model, conditions);
-            int verifyCountPerMinute = conditions.useFrequence.countPerMinute > maxCountPerMinute ? maxCountPerMinute : conditions.useFrequence.countPerMinute;
+            double maxCountPerMinute = GetMaxCountPerMinute(model, conditions);
+            double verifyCountPerMinute = conditions.useFrequence.countPerMinute > maxCountPerMinute ? maxCountPerMinute : conditions.useFrequence.countPerMinute;
             if (conditions.useFrequence.countPerMinute > maxCountPerMinute)
                 return (-1, -1, -1);
             if (conditions.useFrequence.hourPerDay > 24)

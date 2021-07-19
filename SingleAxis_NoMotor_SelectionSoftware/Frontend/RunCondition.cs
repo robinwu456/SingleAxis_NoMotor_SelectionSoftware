@@ -179,7 +179,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 使用頻率
             curCondition.useFrequence = new Condition.UseFrequence() {
                 // 趟/分
-                countPerMinute = Convert.ToInt32(formMain.txtTimesPerMinute.Text),
+                countPerMinute = Convert.ToDouble(formMain.txtTimesPerMinute.Text),
                 // 小時/日
                 hourPerDay = Convert.ToInt32(formMain.txtHourPerDay.Text),
                 // 日/年

@@ -9,9 +9,22 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
     public class InputValidate {
         private FormMain formMain;    
         private System.Threading.Timer vMaxGetRPMCounter;
+        private TextBox[] allowDecimalPoint;
 
         public InputValidate(FormMain formMain) {
             this.formMain = formMain;
+
+            // 允許小數點的輸入項
+            allowDecimalPoint = new TextBox[] { 
+                formMain.txtRatedTorque,
+                formMain.txtRotateInertia,
+                formMain.txtMaxTorque,
+                formMain.txtLoad,
+                formMain.txtRunTime,
+                formMain.txtTimesPerMinute,
+                formMain.txtMaxSpeed,
+            };
+
             InitEvents();
         }
 
@@ -20,8 +33,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             foreach (Control control in formMain.panelCalc.Controls.All()) {
                 if (control is TextBox) {
                     TextBox txt = control as TextBox;
+                    txt.KeyPress += InputCondition_KeyPress;
                     txt.Validating += InputCondition_Validating;
                     txt.KeyDown += InputCondition_KeyDown;
+                }
+            }
+            // 數值有效驗證
+            foreach (Control control in formMain.panelMoment.Controls.All()) {
+                if (control is TextBox) {
+                    TextBox txt = control as TextBox;
+                    txt.KeyPress += InputCondition_KeyPress;
                 }
             }
 
@@ -46,6 +67,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.txtDayPerYear.Validating += UseFrequence_Validating;
             formMain.txtHourPerDay.KeyDown += UseFrequence_KeyDown;
             formMain.txtDayPerYear.KeyDown += UseFrequence_KeyDown;
+        }
+
+        private void InputCondition_KeyPress(object sender, KeyPressEventArgs e) {
+            TextBox txt = sender as TextBox;
+
+            if (!allowDecimalPoint.Contains(txt)) {
+                // 限制輸入小數點
+                if (!(e.KeyChar == '\b' || (e.KeyChar >= '0' && e.KeyChar <= '9')))
+                    e.Handled = true;
+            }
         }
 
         private void UseFrequence_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
@@ -133,7 +164,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //    e.Cancel = true;
         }
         private void InputCondition_KeyDown(object sender, KeyEventArgs e) {
-            TextBox txt = sender as TextBox;
+            TextBox txt = sender as TextBox;            
+
             // Alarm顯示修正
             if (txt == formMain.txtHourPerDay)
                 formMain.lbHoursPerDayAlarm.Text = "請輸入有效時間";

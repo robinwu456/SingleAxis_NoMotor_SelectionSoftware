@@ -6,7 +6,11 @@ using System.Text;
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Condition : Model {
         // 使用頻率
-        public class UseFrequence { public int countPerMinute, hourPerDay, dayPerYear; }
+        public class UseFrequence {
+            public double countPerMinute;
+            public int hourPerDay;
+            public int dayPerYear; 
+        }
 
         public enum CalcAccordingItem { None, Load, Moment, All }                    // 修正壽命的根據項目列舉
         public enum PowerSelection { Standard, SelectedPower, Custom }               // 馬達瓦數帶值

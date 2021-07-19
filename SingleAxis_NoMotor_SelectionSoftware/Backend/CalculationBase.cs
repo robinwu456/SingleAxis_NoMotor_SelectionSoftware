@@ -244,7 +244,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         // 1分鐘最多可以跑多少趟
-        public int GetMaxCountPerMinute(Model model, Condition conditions) {
+        public double GetMaxCountPerMinute(Model model, Condition conditions) {
             double _vMax = 0;
             if (conditions.vMaxCalcMode == Condition.CalcVmax.Max) {
                 if (beltModels.Any(m => model.name.StartsWith(m))) {
@@ -289,7 +289,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //double totalTime = (accelTime + constantTime + decelTime + conditions.stopTime) * 2f;
             double totalTime = (accelTime + constantTime + decelTime) * 2f;
 
-            int maxCountPerMinute = (int)(60f / totalTime);
+            double maxCountPerMinute = 60f / totalTime;
 
             return maxCountPerMinute;
         }
