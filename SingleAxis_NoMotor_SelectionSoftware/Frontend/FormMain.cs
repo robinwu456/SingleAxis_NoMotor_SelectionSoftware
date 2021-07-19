@@ -21,7 +21,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public Page3 page3;
 
         private string version;
-        private int trailVersionUseDays = 0;    // 試用版使用期限(天數)
+        //private int trailVersionUseDays = 0;    // 試用版使用期限(天數)
+        private DateTime trailVersionDateTime = new DateTime(2021, 12, 31);
 
         public FormMain() {
             InitializeComponent();            
@@ -47,6 +48,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 到期日判斷
             //UseDaysLimit();
+            VerifyDateTimeLimit();
         }
 
         private void FormMain_Resize(object sender, EventArgs e) {
@@ -82,34 +84,35 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //    Application.Exit(); //退出应用程序
             //}
 
-            // 到期日讀取
-            RegistryKey retKey = Registry.LocalMachine.OpenSubKey("software", true).OpenSubKey("SingleAxis_NoMotor_SelectionSoftware", true);
-            string setupDateTimeValueName = "SetupDateTime";
-            string userLevelValueName = "UserLevel";
-            string value = "";
-            try {
-                value = (string)retKey.GetValue(setupDateTimeValueName, 0);                
-            } catch {
-                MessageBox.Show("未正常安裝軟體，請再安裝一次", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
-            }
+            // -------------------------------------------------以下為正式Code----------------------------------------------------------------
+            //// 到期日讀取
+            //RegistryKey retKey = Registry.LocalMachine.OpenSubKey("software", true).OpenSubKey("SingleAxis_NoMotor_SelectionSoftware", true);
+            //string setupDateTimeValueName = "SetupDateTime";
+            //string userLevelValueName = "UserLevel";
+            //string value = "";
+            //try {
+            //    value = (string)retKey.GetValue(setupDateTimeValueName, 0);                
+            //} catch {
+            //    MessageBox.Show("未正常安裝軟體，請再安裝一次", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    Application.Exit();
+            //}
 
-            // userLevel=1時永久使用
-            try {
-                string userLevel = (string)retKey.GetValue(userLevelValueName, 0);
-                bool isAdmin = userLevel == "1";
-                if (isAdmin)
-                    return;
-            } catch { }
+            //// userLevel=1時永久使用
+            //try {
+            //    string userLevel = (string)retKey.GetValue(userLevelValueName, 0);
+            //    bool isAdmin = userLevel == "1";
+            //    if (isAdmin)
+            //        return;
+            //} catch { }
 
-            // 到期日判斷
-            DateTime setupTime = DateTime.ParseExact(value, "yyMMddHHmm", CultureInfo.InvariantCulture);
-            DateTime endDate = setupTime.AddDays(trailVersionUseDays);
-            //MessageBox.Show("到期日為：" + endDate, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            if (DateTime.Now > endDate) {
-                MessageBox.Show("已過使用期限", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
-            }
+            //// 到期日判斷
+            //DateTime setupTime = DateTime.ParseExact(value, "yyMMddHHmm", CultureInfo.InvariantCulture);
+            //DateTime endDate = setupTime.AddDays(trailVersionUseDays);
+            ////MessageBox.Show("到期日為：" + endDate, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //if (DateTime.Now > endDate) {
+            //    MessageBox.Show("已過使用期限", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    Application.Exit();
+            //}
         }
 
         private int openAdvanceModeCount = 0;       // 目前點擊次數
@@ -129,6 +132,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 MessageBox.Show("已開啟永久使用", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 openAdvanceModeCount = 0;
+            }
+        }
+
+        private void VerifyDateTimeLimit() {
+            if (DateTime.Now > trailVersionDateTime.AddDays(1)) {
+                MessageBox.Show("已過使用期限", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
             }
         }
     }

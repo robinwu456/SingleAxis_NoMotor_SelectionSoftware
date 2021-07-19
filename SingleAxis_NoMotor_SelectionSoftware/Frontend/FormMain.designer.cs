@@ -493,6 +493,7 @@
             // cmdShapeSelection
             // 
             this.cmdShapeSelection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cmdShapeSelection.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.cmdShapeSelection, "cmdShapeSelection");
             this.cmdShapeSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.型號選型;
             this.cmdShapeSelection.Name = "cmdShapeSelection";
@@ -513,6 +514,7 @@
             // cmdModelSelection
             // 
             this.cmdModelSelection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cmdModelSelection.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.cmdModelSelection, "cmdModelSelection");
             this.cmdModelSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.動作選型;
             this.cmdModelSelection.Name = "cmdModelSelection";
@@ -573,6 +575,7 @@
             // 
             resources.ApplyResources(this.lbPrePage, "lbPrePage");
             this.lbPrePage.BackColor = System.Drawing.Color.White;
+            this.lbPrePage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbPrePage.ForeColor = System.Drawing.Color.Red;
             this.lbPrePage.Name = "lbPrePage";
             // 
