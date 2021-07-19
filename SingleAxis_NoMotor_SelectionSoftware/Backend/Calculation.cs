@@ -174,7 +174,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     { "Remark",    model => string.Format("計算運行時間: {0}", model.moveTime) },
                     { "Condition", model => model.moveTime <= condition.moveTime } } },
                 { "未達希望壽命", new Dictionary<string, Func<Model, object>>(){
-                    { "Remark",    model => string.Format("希望壽命: {0}年, 計算壽命: {1}年", condition.expectServiceLifeTime, model.serviceLifeTime.year) },
+                    { "Remark",    model => model.serviceLifeTime == (-1, -1, -1) ?
+                                            string.Format("每分鐘趟數過大") :
+                                            string.Format("希望壽命: {0}年, 計算壽命: {1}年{2}個月又{3}天", condition.expectServiceLifeTime, model.serviceLifeTime.year, model.serviceLifeTime.month, model.serviceLifeTime.day) },
                     { "Condition", model => model.serviceLifeTime.year >= condition.expectServiceLifeTime } } },
                 // 以下為之前會顯示紅色項目
                 { "T_max安全係數過低", new Dictionary<string, Func<Model, object>>(){
