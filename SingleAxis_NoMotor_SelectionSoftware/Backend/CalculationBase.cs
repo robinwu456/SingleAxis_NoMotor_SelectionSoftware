@@ -166,6 +166,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 //throw new Exception(string.Format("1|{0}導程{1} 行程過大，搜尋不到RPM", model, lead));
                 return Convert.ToInt32(strokeRpms.Last()["RPM"].ToString());
             }
+
         }
 
         // 依照vMax取RPM

@@ -29,6 +29,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             { "荷重", "超過最大荷重" },
             { "最大行程", "超過最大行程" },
             { "運行壽命", "每分鐘趟數過大" },
+            { "運行壽命2", "未達希望壽命" },
         };
 
         public RecommandList(FormMain formMain) {
@@ -43,6 +44,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 { "荷重", model => model.maxLoad == -1 || (model.maxLoad != -1 && model.maxLoad >= model.load) },
                 { "最大行程", model => model.maxStroke >= Convert.ToInt32(formMain.txtStroke.Text) },
                 { "運行壽命", model => model.serviceLifeTime != (-1, -1, -1) },
+                { "運行壽命2", model => model.serviceLifeTime != (-1, -1, -1) && model.serviceLifeTime.year >= formMain.page2.runCondition.curCondition.expectServiceLifeTime },
             };
             InitEvents();
         }
@@ -232,8 +234,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
                         // 顏色區分
                         foreach (var con in redFontConditions) {
-                            formMain.dgvRecommandList.Rows[index].Cells[con.Key].Style.ForeColor = con.Value(model) ? Color.Black : Color.Red;
-                            formMain.dgvRecommandList.Rows[index].Cells[con.Key].Style.SelectionForeColor = con.Value(model) ? Color.Black : Color.Red;
+                            //formMain.dgvRecommandList.Rows[index].Cells[con.Key].Style.ForeColor = con.Value(model) ? Color.Black : Color.Red;
+                            //formMain.dgvRecommandList.Rows[index].Cells[con.Key].Style.SelectionForeColor = con.Value(model) ? Color.Black : Color.Red;
+
+                            int colIndex = formMain.dgvRecommandList.Columns.Cast<DataGridViewColumn>().First(col => con.Key.Contains(col.Name)).Index;
+
+                            formMain.dgvRecommandList.Rows[index].Cells[colIndex].Style.ForeColor = con.Value(model) ? Color.Black : Color.Red;
+                            formMain.dgvRecommandList.Rows[index].Cells[colIndex].Style.SelectionForeColor = con.Value(model) ? Color.Black : Color.Red;
                         }
                     } catch (Exception ex) {
                         break;
@@ -390,11 +397,24 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //}
             //formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType), SideTable.MsgStatus.Normal);
 
+            //var curRow = formMain.dgvRecommandList.CurrentRow;
+            //var errorColumnNames = curRow.Cells.Cast<DataGridViewCell>().Where(cell => cell.Style.ForeColor == Color.Red)
+            //                                                            .Select(cell => formMain.dgvRecommandList.Columns[cell.ColumnIndex].Name);
+            //var errorMsgs = alarmMsg.Where(pair => errorColumnNames.Contains(pair.Key)).Select(pair => pair.Value);
+            //if (errorColumnNames.Count() == 0)
+            //    formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType), SideTable.MsgStatus.Normal);
+            //else
+            //    formMain.sideTable.UpdateMsg(string.Join("、", errorMsgs), SideTable.MsgStatus.Alarm);
+
             var curRow = formMain.dgvRecommandList.CurrentRow;
-            var errorColumnNames = curRow.Cells.Cast<DataGridViewCell>().Where(cell => cell.Style.ForeColor == Color.Red)
-                                                                        .Select(cell => formMain.dgvRecommandList.Columns[cell.ColumnIndex].Name);
-            var errorMsgs = alarmMsg.Where(pair => errorColumnNames.Contains(pair.Key)).Select(pair => pair.Value);
-            if (errorColumnNames.Count() == 0)
+            if (curRow.Cells["項次"].Value == null)
+                return;
+            var selectModel = curRecommandList.Where(model => model.name == curRow.Cells["項次"].Value.ToString() && model.lead == Convert.ToDouble(curRow.Cells["導程"].Value.ToString()));
+            if (selectModel.Count() == 0)
+                return;
+            Model curModel = selectModel.First();
+            var errorMsgs = redFontConditions.Where(con => !con.Value(curModel)).Select(con => alarmMsg[con.Key]);
+            if (errorMsgs.Count() == 0)
                 formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType), SideTable.MsgStatus.Normal);
             else
                 formMain.sideTable.UpdateMsg(string.Join("、", errorMsgs), SideTable.MsgStatus.Alarm);

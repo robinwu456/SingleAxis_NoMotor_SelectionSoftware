@@ -6006,7 +6006,7 @@ ETH、ECH</value>
     <value>14, 8</value>
   </data>
   <data name="panelSideTableIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 300</value>
+    <value>195, 307</value>
   </data>
   <data name="panelSideTableIcon.TabIndex" type="System.Int32, mscorlib">
     <value>246</value>
@@ -6057,13 +6057,13 @@ ETH、ECH</value>
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,434,Absolute,434,Absolute,434,Absolute,434" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,443,Absolute,443,Absolute,443,Absolute,443" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 313</value>
+    <value>15, 321</value>
   </data>
   <data name="panelSideTableSelections.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 145</value>
+    <value>194, 156</value>
   </data>
   <data name="panelSideTableSelections.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -6183,7 +6183,7 @@ ETH、ECH</value>
     <value>10, 0</value>
   </data>
   <data name="lbSideTableMsg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 44</value>
+    <value>174, 52</value>
   </data>
   <data name="lbSideTableMsg.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6210,7 +6210,7 @@ ETH、ECH</value>
     <value>10, 0, 10, 0</value>
   </data>
   <data name="customPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 44</value>
+    <value>194, 52</value>
   </data>
   <data name="customPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -6348,13 +6348,13 @@ ETH、ECH</value>
     <value>7</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>970, 100</value>
+    <value>972, 100</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
   </data>
   <data name="panelSideTable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 474</value>
+    <value>224, 488</value>
   </data>
   <data name="panelSideTable.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6444,7 +6444,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-740, 487</value>
+    <value>-804, 487</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 16</value>
@@ -6474,7 +6474,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="label56.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-739, 184</value>
+    <value>-803, 184</value>
   </data>
   <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 2</value>
@@ -6507,7 +6507,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="lbResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-746, 147</value>
+    <value>-810, 147</value>
   </data>
   <data name="lbResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 31</value>
@@ -6537,7 +6537,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="picBoxResultImg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-740, 204</value>
+    <value>-804, 204</value>
   </data>
   <data name="picBoxResultImg.Size" type="System.Drawing.Size, System.Drawing">
     <value>452, 276</value>
@@ -10296,9 +10296,6 @@ ETH、ECH</value>
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

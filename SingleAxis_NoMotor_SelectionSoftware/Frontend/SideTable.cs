@@ -13,9 +13,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
     public class SideTable {
         public enum MsgStatus { Normal, Alarm }
 
-        private Size sizeSideTable = new Size(224, 474);
-        private Size sizeTableSelection = new Size(194, 145);
-        private Point positionSideTable = new Point(975, 129);        
+        //private Size sizeSideTable = new Size(224, 474);
+        //private Size sizeTableSelection = new Size(194, 145);
+        //private Point positionSideTable = new Point(975, 129);        
         private FormMain formMain;
         // 側邊欄訊息 - 形狀選型
         private List<string> selectionTableItems_calcAll = new List<string>(){

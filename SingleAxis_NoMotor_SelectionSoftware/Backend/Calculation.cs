@@ -162,7 +162,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     { "Condition", model => model.maxStroke >= condition.stroke } } },
                 { "超過最大荷重", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("最大荷重: {0}", model.maxLoad) },
-                    { "Condition", model => model.maxLoad == -1 || (model.maxLoad != -1 && model.maxLoad >= condition.load) || condition.curCheckedModel.model != null } } },
+                    //{ "Condition", model => model.maxLoad == -1 || (model.maxLoad != -1 && model.maxLoad >= condition.load) || condition.curCheckedModel.model != null } } },
+                    { "Condition", model => model.maxLoad == -1 || model.maxLoad != -1 && model.maxLoad >= condition.load } } },
                 { "線速度過大", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("最大線速度: {0}", model.vMax_max) },
                     { "Condition", model => model.vMax <= model.vMax_max } } },
