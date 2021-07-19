@@ -180,13 +180,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     { "Condition", model => model.serviceLifeTime.year >= condition.expectServiceLifeTime } } },
                 // 以下為之前會顯示紅色項目
                 { "T_max安全係數過低", new Dictionary<string, Func<Model, object>>(){
-                    { "Remark",    model => string.Format("標準: {0}, 計算值: {1}", Model.tMaxStandard, model.tMaxSafeCoefficient) },
+                    { "Remark",    model => string.Format("標準: 大於等於{0}, 計算值: {1}", Model.tMaxStandard, model.tMaxSafeCoefficient) },
                     { "Condition", model => model.tMaxSafeCoefficient >= Model.tMaxStandard } } },
                 { "皮帶馬達安全係數過低", new Dictionary<string, Func<Model, object>>(){
-                    { "Remark",    model => string.Format("標準: {0}, 計算值: {1}", Model.beltMotorStandard, model.beltMotorSafeCoefficient) },
+                    { "Remark",    model => string.Format("標準: 小於{0}, 計算值: {1}", Model.beltMotorStandard, model.beltMotorSafeCoefficient) },
                     { "Condition", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < Model.beltMotorStandard } } },
                 { "皮帶T_max安全係數過低", new Dictionary<string, Func<Model, object>>(){
-                    { "Remark",    model => string.Format("標準: {0}, 計算值: {1}", Model.tMaxStandard_beltMotor, model.beltSafeCoefficient) },
+                    { "Remark",    model => string.Format("標準: 大於等於{0}, 計算值: {1}", Model.tMaxStandard_beltMotor, model.beltSafeCoefficient) },
                     { "Condition", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_beltMotor } } },
                 { "力矩警示異常", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => "" },
