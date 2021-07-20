@@ -5117,14 +5117,13 @@
     <value>227, 200</value>
   </data>
   <data name="optBuildInSupportTrackActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 42</value>
+    <value>177, 23</value>
   </data>
   <data name="optBuildInSupportTrackActuator.TabIndex" type="System.Int32, mscorlib">
     <value>322</value>
   </data>
   <data name="optBuildInSupportTrackActuator.Text" xml:space="preserve">
-    <value>軌道內崁輔助導軌系列
-GTYD、GCYD</value>
+    <value>軌道內崁輔助導軌系列</value>
   </data>
   <data name="&gt;&gt;optBuildInSupportTrackActuator.Name" xml:space="preserve">
     <value>optBuildInSupportTrackActuator</value>
@@ -5178,14 +5177,13 @@ GTYD、GCYD</value>
     <value>577, 283</value>
   </data>
   <data name="optBuildOutRodTypeActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 42</value>
+    <value>147, 23</value>
   </data>
   <data name="optBuildOutRodTypeActuator.TabIndex" type="System.Int32, mscorlib">
     <value>320</value>
   </data>
   <data name="optBuildOutRodTypeActuator.Text" xml:space="preserve">
-    <value>軌道外掛推桿系列
-Y50L、Y65L</value>
+    <value>軌道外掛推桿系列</value>
   </data>
   <data name="&gt;&gt;optBuildOutRodTypeActuator.Name" xml:space="preserve">
     <value>optBuildOutRodTypeActuator</value>
@@ -5239,14 +5237,13 @@ Y50L、Y65L</value>
     <value>227, 283</value>
   </data>
   <data name="optBuildInBeltActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 42</value>
+    <value>147, 23</value>
   </data>
   <data name="optBuildInBeltActuator.TabIndex" type="System.Int32, mscorlib">
     <value>318</value>
   </data>
   <data name="optBuildInBeltActuator.Text" xml:space="preserve">
-    <value>軌道內崁皮帶系列
-MG、MCG65</value>
+    <value>軌道內崁皮帶系列</value>
   </data>
   <data name="&gt;&gt;optBuildInBeltActuator.Name" xml:space="preserve">
     <value>optBuildInBeltActuator</value>
@@ -5300,14 +5297,13 @@ MG、MCG65</value>
     <value>227, 368</value>
   </data>
   <data name="optEuropeBeltActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 42</value>
+    <value>117, 23</value>
   </data>
   <data name="optEuropeBeltActuator.TabIndex" type="System.Int32, mscorlib">
     <value>316</value>
   </data>
   <data name="optEuropeBeltActuator.Text" xml:space="preserve">
-    <value>歐規皮帶系列
-M</value>
+    <value>歐規皮帶系列</value>
   </data>
   <data name="&gt;&gt;optEuropeBeltActuator.Name" xml:space="preserve">
     <value>optEuropeBeltActuator</value>
@@ -5361,14 +5357,13 @@ M</value>
     <value>575, 367</value>
   </data>
   <data name="optStandardBeltActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 42</value>
+    <value>87, 23</value>
   </data>
   <data name="optStandardBeltActuator.TabIndex" type="System.Int32, mscorlib">
     <value>314</value>
   </data>
   <data name="optStandardBeltActuator.Text" xml:space="preserve">
-    <value>皮帶系列
-ETB、ECB</value>
+    <value>皮帶系列</value>
   </data>
   <data name="&gt;&gt;optStandardBeltActuator.Name" xml:space="preserve">
     <value>optStandardBeltActuator</value>
@@ -5422,14 +5417,13 @@ ETB、ECB</value>
     <value>577, 200</value>
   </data>
   <data name="optSupportTrackRodTypeActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 42</value>
+    <value>147, 23</value>
   </data>
   <data name="optSupportTrackRodTypeActuator.TabIndex" type="System.Int32, mscorlib">
     <value>312</value>
   </data>
   <data name="optSupportTrackRodTypeActuator.Text" xml:space="preserve">
-    <value>輔助導桿推桿系列
-Y50D、Y65D</value>
+    <value>輔助導桿推桿系列</value>
   </data>
   <data name="&gt;&gt;optSupportTrackRodTypeActuator.Name" xml:space="preserve">
     <value>optSupportTrackRodTypeActuator</value>
@@ -5483,14 +5477,13 @@ Y50D、Y65D</value>
     <value>577, 120</value>
   </data>
   <data name="optNoTrackRodTypeActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 42</value>
+    <value>87, 23</value>
   </data>
   <data name="optNoTrackRodTypeActuator.TabIndex" type="System.Int32, mscorlib">
     <value>310</value>
   </data>
   <data name="optNoTrackRodTypeActuator.Text" xml:space="preserve">
-    <value>推桿系列
-Y</value>
+    <value>推桿系列</value>
   </data>
   <data name="&gt;&gt;optNoTrackRodTypeActuator.Name" xml:space="preserve">
     <value>optNoTrackRodTypeActuator</value>
@@ -5544,14 +5537,13 @@ Y</value>
     <value>227, 120</value>
   </data>
   <data name="optBuildInRodTypeScrewActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 42</value>
+    <value>147, 23</value>
   </data>
   <data name="optBuildInRodTypeScrewActuator.TabIndex" type="System.Int32, mscorlib">
     <value>308</value>
   </data>
   <data name="optBuildInRodTypeScrewActuator.Text" xml:space="preserve">
-    <value>軌道內崁推桿滑台
-GTY、GCY</value>
+    <value>軌道內崁推桿滑台</value>
   </data>
   <data name="&gt;&gt;optBuildInRodTypeScrewActuator.Name" xml:space="preserve">
     <value>optBuildInRodTypeScrewActuator</value>
@@ -5605,14 +5597,13 @@ GTY、GCY</value>
     <value>227, 31</value>
   </data>
   <data name="optBuildInScrewActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 42</value>
+    <value>147, 23</value>
   </data>
   <data name="optBuildInScrewActuator.TabIndex" type="System.Int32, mscorlib">
     <value>306</value>
   </data>
   <data name="optBuildInScrewActuator.Text" xml:space="preserve">
-    <value>軌道內崁螺桿系列
-GTH、GCH</value>
+    <value>軌道內崁螺桿系列</value>
   </data>
   <data name="&gt;&gt;optBuildInScrewActuator.Name" xml:space="preserve">
     <value>optBuildInScrewActuator</value>
@@ -5666,14 +5657,13 @@ GTH、GCH</value>
     <value>577, 32</value>
   </data>
   <data name="optStandardScrewActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 42</value>
+    <value>87, 23</value>
   </data>
   <data name="optStandardScrewActuator.TabIndex" type="System.Int32, mscorlib">
     <value>304</value>
   </data>
   <data name="optStandardScrewActuator.Text" xml:space="preserve">
-    <value>螺桿系列
-ETH、ECH</value>
+    <value>螺桿系列</value>
   </data>
   <data name="&gt;&gt;optStandardScrewActuator.Name" xml:space="preserve">
     <value>optStandardScrewActuator</value>
@@ -6057,7 +6047,7 @@ ETH、ECH</value>
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,457,Absolute,457,Absolute,457,Absolute,457" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,479,Absolute,479,Absolute,479,Absolute,479" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 321</value>
@@ -6348,7 +6338,7 @@ ETH、ECH</value>
     <value>7</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>973, 100</value>
+    <value>974, 100</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -6444,7 +6434,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-916, 487</value>
+    <value>-1092, 487</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 16</value>
@@ -6474,7 +6464,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="label56.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-915, 184</value>
+    <value>-1091, 184</value>
   </data>
   <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 2</value>
@@ -6507,7 +6497,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="lbResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-922, 147</value>
+    <value>-1098, 147</value>
   </data>
   <data name="lbResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 31</value>
@@ -6537,7 +6527,7 @@ ETH、ECH</value>
     <value>NoControl</value>
   </data>
   <data name="picBoxResultImg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-916, 204</value>
+    <value>-1092, 204</value>
   </data>
   <data name="picBoxResultImg.Size" type="System.Drawing.Size, System.Drawing">
     <value>452, 276</value>

@@ -21,8 +21,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public DataTable modelTypeInfo = FileUtil.ReadCsv(Config.MODEL_TYPE_INFO_FILENAME);
 
         // 套用新扭矩公式的型號
-        public string[] beltModels = { "ETB10", "ETB14M", "ETB17M", "ETB22M",
-                                       "ECB10", "ECB14", "ECB17", "ECB22", };
+        public string[] beltModels = { 
+            "ETB10", "ETB14M", "ETB17M", "ETB22M",
+            "ECB10", "ECB14", "ECB17", "ECB22",
+            "MK65", "MK85", "MK110",
+            //"MH65", "MH80",
+            //"MG65" 
+        };
 
         public List<Model> GetAllModels(Condition condition) {
             List<Model> models = new List<Model>();
@@ -248,18 +253,32 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             double _vMax = 0;
             if (conditions.vMaxCalcMode == Condition.CalcVmax.Max) {
                 if (beltModels.Any(m => model.name.StartsWith(m))) {
-                    _vMax = GetBeltVmax_ms(model.name, model.lead, 1, conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2) * 1000;
+                    //_vMax = GetBeltVmax_ms(model.name, model.lead, 1, conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2) * 1000;
+                    if (conditions.reducerRatio.Keys.Contains(model.name))
+                        _vMax = GetBeltVmax_ms(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2);
+                    else
+                        _vMax = GetBeltVmax_ms(model.name, model.lead, 1, conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2);
                 } else {
                     if (conditions.reducerRatio.Keys.Contains(model.name))
-                        _vMax = GetVmax_mms(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
+                        _vMax = GetVmax_ms(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
                     else
-                        _vMax = GetVmax_mms(model.name, model.lead, 1, conditions.stroke);
+                        _vMax = GetVmax_ms(model.name, model.lead, 1, conditions.stroke);
                 }
             } else if (conditions.vMaxCalcMode == Condition.CalcVmax.Custom) {
-                if (conditions.reducerRatio.Keys.Contains(model.name))
-                    _vMax = conditions.vMax > GetVmax_mms(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke) ? GetVmax_ms(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke) : conditions.vMax; // 驗證最大Vmax
-                else
-                    _vMax = conditions.vMax > GetVmax_mms(model.name, model.lead, 1, conditions.stroke) ? GetVmax_ms(model.name, model.lead, 1, conditions.stroke) : conditions.vMax; // 驗證最大Vmax
+                _vMax = conditions.vMax / 1000f;
+
+                // 非皮帶機構才判斷
+                if (!beltModels.Any(m => model.name.StartsWith(m))) {
+                    // RPM驗證
+                    int strokeRpm;
+                    int vMaxRpm = GetRpmByMMS(model.lead, model.vMax * 1000);
+                    if (conditions.reducerRatio.Keys.Contains(model.name))
+                        strokeRpm = GetRpmByStroke(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
+                    else
+                        strokeRpm = GetRpmByStroke(model.name, model.lead, 1, conditions.stroke);
+                    int _rpm = Math.Min(strokeRpm, vMaxRpm);
+                    _vMax = RPM_TO_MMS(_rpm, model.lead) / 1000f;
+                }
             }
 
             double _accelSpeed = (float)conditions.accelSpeed / 1000f;
@@ -276,15 +295,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (isCheckStrokeTooShort) {
                 // 行程過短驗證
                 if (strokeTooShortModifyItem == Converter.ModifyItem.Vmax)
-                    _vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, (int)_vMax, accelTime, model.stroke);
+                    //_vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, (int)_vMax, accelTime, model.stroke);
+                    _vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, _vMax, accelTime, model.stroke);
                 else if (strokeTooShortModifyItem == Converter.ModifyItem.AccelSpeed) {
                     accelTime = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, _vMax, accelTime, model.stroke);
                 }
             }
 
             double decelTime = accelTime;
-            //double constantTime = ((2f * (float)conditions.stroke / 1000f / _vMax) - accelTime - decelTime) / 2f;
-            double constantTime = ((2f * (float)conditions.stroke / _vMax) - accelTime - decelTime) / 2f;
+            double constantTime = ((2f * (float)conditions.stroke / 1000f / _vMax) - accelTime - decelTime) / 2f;
+            //double constantTime = ((2f * (float)conditions.stroke / _vMax) - accelTime - decelTime) / 2f;
             // 單趟來回需要的秒數
             //double totalTime = (accelTime + constantTime + decelTime + conditions.stopTime) * 2f;
             double totalTime = (accelTime + constantTime + decelTime) * 2f;
@@ -316,7 +336,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             double vMax_belt = Math.PI * subWheel2.diameter * (subWheelRpm / 60) / 1000;
             return vMax_belt;
         }
-
+        
         // 圖表點資訊
         public List<PointF> GetChartPoints(Condition conditions) {
             //if (isCheckStrokeTooShort)
