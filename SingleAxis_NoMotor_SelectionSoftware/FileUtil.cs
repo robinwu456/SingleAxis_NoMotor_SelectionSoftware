@@ -31,6 +31,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
         }
 
+        public static void CheckFileIsOpen(this Form formMain, string fileName) {
+            // 檔案已開啟為1，測試總表
+            while (FileUtil.FileStatus.FileIsOpen(fileName) == 1) {
+                DialogResult stillContinue = MessageBox.Show(string.Format("[{0}]\n檔案已被開啟，確認關閉後按下確定。", new FileInfo(fileName).FullName), "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (stillContinue == DialogResult.No)
+                    formMain.Close();
+            }
+        }
+
         public static string FileRead(string fileName) {
             StringBuilder resultString = new StringBuilder();
 

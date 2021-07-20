@@ -35,6 +35,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         /// <summary>
+        /// 皮帶傳動方式
+        /// </summary>
+        public enum BeltCalcType {
+            減速機構,
+            減速機,
+            直接驅動
+        }
+
+        /// <summary>
         /// 型號名稱
         /// </summary>
         public string name;
@@ -59,6 +68,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// 機構型態
         /// </summary>
         public ModelType modelType = ModelType.螺桿系列;
+        /// <summary>
+        /// 是否套用皮帶公式
+        /// </summary>
+        public bool isUseBaltCalc = false;
+        /// <summary>
+        /// 皮帶傳動方式
+        /// </summary>
+        public BeltCalcType beltCalcType = BeltCalcType.減速機構;
 
         /// <summary>
         /// 滑軌預估壽命(km)

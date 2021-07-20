@@ -20,15 +20,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public DataTable beltInfo = FileUtil.ReadCsv(Config.BELT_INFO_FILENAME);
         public DataTable modelTypeInfo = FileUtil.ReadCsv(Config.MODEL_TYPE_INFO_FILENAME);
 
-        // 套用新扭矩公式的型號
-        public string[] beltModels = { 
-            "ETB10", "ETB14M", "ETB17M", "ETB22M",
-            "ECB10", "ECB14", "ECB17", "ECB22",
-            "MK65", "MK85", "MK110",
-            //"MH65", "MH80",
-            //"MG65" 
-        };
-
         public List<Model> GetAllModels(Condition condition) {
             List<Model> models = new List<Model>();
             // 搜尋荷重
@@ -56,8 +47,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 // 重複定位精度
                 model.repeatability = Convert.ToDouble(row["Repeatability"].ToString());
 
+                // 是否套用皮帶公式
+                model.isUseBaltCalc = beltInfo.Rows.Cast<DataRow>().Select(info => info["Model"].ToString()).Contains(model.name);
+
                 // 皮帶資訊
-                if (beltModels.Any(m => model.name.StartsWith(m))) {
+                if (model.isUseBaltCalc) {
                     Func<DataRow, bool> con = con = x => x["Model"].ToString().Equals(model.name);
                     var beltInfoRows = beltInfo.Rows.Cast<DataRow>().Where(con);
                     // 主動輪
@@ -88,6 +82,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     model.beltLength = beltInfoRows.Select(x => Convert.ToDouble(x["皮帶長度"].ToString())).First();
                     // 皮帶容許拉力
                     model.beltAllowableTension = beltInfoRows.Select(x => Convert.ToDouble(x["皮帶容許拉力"].ToString())).First();
+                    // 傳動方式
+                    model.beltCalcType = (Model.BeltCalcType)Enum.Parse(typeof(Model.BeltCalcType), beltInfoRows.Select(x => x["傳動方式"].ToString()).First());
                 }
 
                 models.Add(model);
@@ -252,7 +248,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public double GetMaxCountPerMinute(Model model, Condition conditions) {
             double _vMax = 0;
             if (conditions.vMaxCalcMode == Condition.CalcVmax.Max) {
-                if (beltModels.Any(m => model.name.StartsWith(m))) {
+                if (model.isUseBaltCalc) {
                     //_vMax = GetBeltVmax_ms(model.name, model.lead, 1, conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2) * 1000;
                     if (conditions.reducerRatio.Keys.Contains(model.name))
                         _vMax = GetBeltVmax_ms(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2);
@@ -268,7 +264,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 _vMax = conditions.vMax / 1000f;
 
                 // 非皮帶機構才判斷
-                if (!beltModels.Any(m => model.name.StartsWith(m))) {
+                if (!model.isUseBaltCalc) {
                     // RPM驗證
                     int strokeRpm;
                     int vMaxRpm = GetRpmByMMS(model.lead, model.vMax * 1000);

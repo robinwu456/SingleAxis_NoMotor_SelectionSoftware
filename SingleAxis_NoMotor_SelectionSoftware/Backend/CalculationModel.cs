@@ -39,7 +39,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
 
             if (condition.vMaxCalcMode == Condition.CalcVmax.Max) {
-                if (beltModels.Any(m => model.name.StartsWith(m))) {
+                if (model.isUseBaltCalc) {
                     //model.vMax = GetBeltVmax_ms(model.name, model.lead, 1, condition.stroke, model.mainWheel, model.subWheel1, model.subWheel2);
                     if (condition.reducerRatio.Keys.Contains(model.name))
                         model.vMax = GetBeltVmax_ms(model.name, model.lead, condition.reducerRatio[model.name], condition.stroke, model.mainWheel, model.subWheel1, model.subWheel2);
@@ -55,7 +55,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.vMax = condition.vMax / 1000f;
 
                 // 非皮帶機構才判斷
-                if (!beltModels.Any(m => model.name.StartsWith(m))) {
+                if (!model.isUseBaltCalc) {
                     // RPM驗證
                     int strokeRpm;
                     int vMaxRpm = GetRpmByMMS(model.lead, model.vMax * 1000);
@@ -286,7 +286,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.rotateInertia = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["RotateInertia"]).First());
             }
 
-            if (beltModels.Any(m => model.name.StartsWith(m))) {
+            if (model.isUseBaltCalc) {
                 // 馬達能力預估
                 MotorConfirm_ETB(model);
                 // 馬達最大扭矩確認
