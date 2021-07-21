@@ -6,7 +6,7 @@ using StrokeTooShortConverterLibraries;
 using System.Data;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
-    public class CalculationModel : CalculationBase {        
+    public class CalculationModel : CalculationBase {
 
         // 滑軌壽命計算
         protected long GetSlideTrackEstimatedLife(Model model, Condition condition) {
@@ -42,9 +42,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (model.isUseBaltCalc) {
                     //model.vMax = GetBeltVmax_ms(model.name, model.lead, 1, condition.stroke, model.mainWheel, model.subWheel1, model.subWheel2);
                     if (condition.reducerRatio.Keys.Contains(model.name))
-                        model.vMax = GetBeltVmax_ms(model.name, model.lead, condition.reducerRatio[model.name], condition.stroke, model.mainWheel, model.subWheel1, model.subWheel2);
+                        model.vMax = GetBeltVmax_ms(model.name, model.lead, condition.reducerRatio[model.name], condition.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
                     else
-                        model.vMax = GetBeltVmax_ms(model.name, model.lead, 1, condition.stroke, model.mainWheel, model.subWheel1, model.subWheel2);
+                        model.vMax = GetBeltVmax_ms(model.name, model.lead, 1, condition.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
                 } else {
                     if (condition.reducerRatio.Keys.Contains(model.name))
                         model.vMax = GetVmax_ms(model.name, model.lead, condition.reducerRatio[model.name], condition.stroke);
@@ -145,6 +145,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 力矩警示驗證
             VerifyMomentAlarm(model, condition.setupMethod);
 
+            // 荷重為0時，壽命無限大
             if (model.load == 0)
                 model.slideTrackServiceLifeDistance = 999999999;
 
@@ -254,182 +255,21 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         // 扭矩計算
-        protected (bool is_tMax_OK, bool is_tRms_OK) TorqueConfirm(Model model, Condition conditions) {
-            model.stopTime = conditions.stopTime;
-            model.screwLength = model.stroke + 100;
-            if (conditions.powerSelection == Condition.PowerSelection.Standard) {
-                // 取得適用功率
-                Func<DataRow, bool> GetLeadCondition = row => Convert.ToInt32(row["Lead"].ToString()) == model.lead;
-                // 導程減速比轉換
-                if (conditions.reducerRatio.Keys.Contains(model.name))
-                    GetLeadCondition = row => Convert.ToInt32(row["Lead"].ToString()) == (int)Math.Round(model.lead * conditions.reducerRatio[model.name], 0);
-                model.availablePowers = modelInfo.Rows.Cast<DataRow>().First(row => row["Model"].ToString() == model.name && GetLeadCondition(row))["Power"].ToString().Split('&').ToList()
-                                                                      .Select(power => Convert.ToInt32(power)).ToList();
-                // 取馬達參數
-                model.usePower = model.availablePowers.Max();   // 適用馬達的最大瓦數
-                Func<DataRow, bool> con = x => Convert.ToInt32(x["Power"]).Equals(model.usePower);
-                model.ratedTorque = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["RatedTorque"]).First());
-                model.maxTorque = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["MaxTorque"]).First());
-                model.rotateInertia = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["RotateInertia"]).First());
-            } else if (conditions.powerSelection == Condition.PowerSelection.Custom) {
-                //model.usePower = -1;
-                model.ratedTorque = conditions.ratedTorque;
-                model.maxTorque = conditions.maxTorque;
-                model.rotateInertia = conditions.rotateInertia;
-            } else if (conditions.powerSelection == Condition.PowerSelection.SelectedPower) {
-                // 取馬達參數
-                model.usePower = conditions.selectedPower;   // 適用馬達的最大瓦數
-                //model.usePower = conditions.curSelectModel;   // 適用馬達的最大瓦數
-                Func<DataRow, bool> con = x => Convert.ToInt32(x["Power"]).Equals(model.usePower);
-                model.ratedTorque = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["RatedTorque"]).First());
-                model.maxTorque = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["MaxTorque"]).First());
-                model.rotateInertia = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["RotateInertia"]).First());
-            }
+        protected (bool is_tMax_OK, bool is_tRms_OK) TorqueConfirm(Model model, Condition condition) {            
+            // 扭矩確認
+            TorqueConfirm torqueConfirm;
+            if (model.isUseBaltCalc && model.beltCalcType == Model.BeltCalcType.減速機構)
+                torqueConfirm = new TorqueConfirm_Belt_減速機構(model, condition);
+            else if (model.isUseBaltCalc && model.beltCalcType == Model.BeltCalcType.減速機)
+                torqueConfirm = new TorqueConfirm_Belt_減速機(model, condition);
+            else if (model.isUseBaltCalc && model.beltCalcType == Model.BeltCalcType.直接驅動)
+                torqueConfirm = new TorqueConfirm_Belt_直接驅動(model, condition);
+            else
+                torqueConfirm = new TorqueConfirm_Screw(model, condition);
 
-            if (model.isUseBaltCalc) {
-                // 馬達能力預估
-                MotorConfirm_ETB(model);
-                // 馬達最大扭矩確認
-                MotorTorqueConfirm_ETB(model, conditions);
-                // 皮帶最大扭矩確認
-                BeltTorqueConfirm_ETB(model);
-            } else {
-                // 轉動慣量
-                model.rotateInertia_motor = model.rotateInertia;
-                model.rotateInertia_screw = (Math.PI * (7.8 * Math.Pow(10, 3) * (model.screwLength / 1000f) * Math.Pow(model.outerDiameter / 1000f, 4))) / 32f;
-                model.rotateInertia_horizontalMove = (model.load + 1) * (Math.Pow((model.lead / 1000f) / (2f * Math.PI), 2));
-                model.rotateInertia_total = model.rotateInertia_motor + model.rotateInertia_screw + model.rotateInertia_horizontalMove + model.rotateInertia_couplingItem + model.rotateInertia_ballBearing;
-
-                // 軸向外力
-                model.forceTotal_accel = model.rollingFriction_accel + model.accessoriesFriction_accel + model.otherForce_accel;
-                model.forceTotal_constant = model.rollingFriction_constant + model.accessoriesFriction_constant + model.otherForce_constant;
-                model.forceTotal_decel = model.rollingFriction_decel + model.accessoriesFriction_decel + model.otherForce_decel;
-                model.forceTotal_stop = model.rollingFriction_stop + model.accessoriesFriction_stop + model.otherForce_stop;
-
-                // 加速區扭矩
-                model.inertialTorque_accel = (model.rotateInertia_total * (model.rpm - 0)) / (9.55f * model.accelTime);
-                model.forceTorque_accel = (model.forceTotal_accel * (model.lead / 1000f)) / (2f * Math.PI * 0.9f);
-                model.torqueTotal_accel = model.inertialTorque_accel + model.forceTorque_accel;
-
-                // 等速區扭矩
-                model.inertialTorque_constant = 0;
-                model.forceTorque_constant = (model.forceTotal_constant * (model.lead / 1000f)) / (2f * Math.PI * 0.9f);
-                model.torqueTotal_constant = model.inertialTorque_constant + model.forceTorque_constant;
-
-                // 減速區扭矩
-                model.inertialTorque_decel = (model.rotateInertia_total * (0 - model.rpm)) / (9.55f * model.accelTime);
-                model.forceTorque_decel = (model.forceTotal_decel * (model.lead / 1000f)) / (2f * Math.PI * 0.9f);
-                model.torqueTotal_decel = model.inertialTorque_decel + model.forceTorque_decel;
-
-                // 停等區扭矩
-                model.inertialTorque_stop = 0;
-                model.forceTorque_stop = (model.forceTotal_stop * (model.lead / 1000f)) / (2f * Math.PI * 0.9f);
-                model.torqueTotal_stop = model.inertialTorque_stop + model.forceTorque_stop;
-
-                // T_max最大扭矩確認
-                model.tMax = Math.Max(model.torqueTotal_accel, Math.Max(model.torqueTotal_constant, Math.Max(model.torqueTotal_decel, model.torqueTotal_stop)));
-                model.tMaxSafeCoefficient = Math.Round(model.maxTorque / model.tMax, 2);
-                model.is_tMax_OK = model.tMaxSafeCoefficient >= Model.tMaxStandard;
-
-                // T_Rms扭矩確認
-                if (model.name.StartsWith("MK"))
-                    model.tRmsSafeCoefficient = model.tMaxSafeCoefficient * conditions.reducerRatio[model.name] * 0.95;
-                else {
-                    model.tRms = Math.Pow((Math.Pow(model.torqueTotal_accel, 2) * model.accelTime +
-                                     Math.Pow(model.torqueTotal_constant, 2) * model.constantTime +
-                                     Math.Pow(model.torqueTotal_decel, 2) * model.decelTime +
-                                     Math.Pow(model.torqueTotal_stop, 2) * model.stopTime) / (model.accelTime + model.constantTime + model.decelTime + model.stopTime), 0.5f);
-                    model.tRmsSafeCoefficient = model.ratedTorque / model.tRms;
-                }
-                model.tRmsSafeCoefficient = Math.Round(model.tRmsSafeCoefficient, 2);
-                model.is_tRms_OK = model.tRmsSafeCoefficient > Model.tRmsStandard;
-            }
+            torqueConfirm.Calc();
 
             return (model.is_tMax_OK, model.is_tRms_OK);
-        }
-
-        private void MotorConfirm_ETB(Model model) {
-            // 皮帶輪加減速關係
-            model.mainWheelRpm = model.rpm;
-            model.reducerRpmRatio = model.subWheel1.diameter / model.mainWheel.diameter;
-            model.subWheelRpm = (int)(model.rpm / model.reducerRpmRatio);
-            model.beltLoad = model.beltUnitDensity / 1000 * model.beltWidth * model.beltLength / 1000;
-
-            // 轉動慣量
-            model.rotateInertia_motor = model.rotateInertia * Math.Pow(1000, 2);
-            model.rotateInertia_load = model.load * Math.Pow(model.subWheel2.diameter / 2, 2);
-            model.rotateInertia_belt = model.beltLoad * Math.Pow(model.subWheel2.diameter / 2, 2);
-            model.rotateInertia_total = model.rotateInertia_load + model.rotateInertia_belt + model.mainWheel.rotateInertia + model.subWheel1.rotateInertia + model.subWheel2.rotateInertia + model.subWheel3.rotateInertia;
-
-            // 馬達是否適用
-            model.beltMotorSafeCoefficient = Math.Round(model.rotateInertia_total / Math.Pow(model.reducerRpmRatio, 2) / model.rotateInertia_motor, 2);
-            Model.beltMotorStandard = Math.Round(model.loadInertiaMomentRatio * 2, 2);
-            model.isMotorOK = model.beltMotorSafeCoefficient < Model.beltMotorStandard;
-        }
-
-        // 馬達最大扭矩確認 ETB, ECB扭矩公式
-        private void MotorTorqueConfirm_ETB(Model model, Condition conditions) {
-            // 軸向外力
-            model.otherForce_accel = model.load * model.accelSpeed;
-            model.otherForce_constant = 0;
-            model.otherForce_decel = model.load * model.accelSpeed * -1;
-            model.otherForce_stop = 0;
-            model.forceTotal_accel = model.rollingFriction_accel + model.accessoriesFriction_belt_accel + model.otherForce_accel;
-            model.forceTotal_constant = model.rollingFriction_constant + model.accessoriesFriction_belt_constant + model.otherForce_constant;
-            model.forceTotal_decel = model.rollingFriction_decel + model.accessoriesFriction_belt_decel + model.otherForce_decel;
-            model.forceTotal_stop = model.rollingFriction_stop + model.accessoriesFriction_belt_stop + model.otherForce_stop;
-
-            // 加速區扭矩
-            model.rotateInertia_loadMoving_subWheel = model.load * Math.Pow(model.vMax, 2) / Math.Pow(model.subWheelRpm * 2 * Math.PI / 60, 2);
-            model.rotateInertia_loadMoving_motor = model.rotateInertia_loadMoving_subWheel / Math.Pow(model.reducerRpmRatio, 2);
-            model.inertialTorque_accel = ((model.mainWheelRpm - 0) * 2 * Math.PI / 60) * model.rotateInertia_loadMoving_motor / model.accelTime;
-            if (conditions.setupMethod == Model.SetupMethod.Horizontal)
-                model.forceTorque_accel = (model.forceTotal_accel * ((model.mainWheel.diameter / 2) / 1000)) / Math.Pow(model.reducerRpmRatio, 2);
-            else if (conditions.setupMethod == Model.SetupMethod.WallHang)
-                model.forceTorque_accel = (model.forceTotal_accel * ((model.subWheel2.diameter / 2) / 1000)) / Math.Pow(model.reducerRpmRatio, 2);
-            model.torqueTotal_accel = model.inertialTorque_accel + model.forceTorque_accel;
-
-            // 等速區扭矩
-            model.inertialTorque_constant = 0;
-            if (conditions.setupMethod == Model.SetupMethod.Horizontal)
-                model.forceTorque_constant = (model.forceTotal_constant * ((model.mainWheel.diameter / 2) / 1000)) / Math.Pow(model.reducerRpmRatio, 2);
-            else if (conditions.setupMethod == Model.SetupMethod.WallHang)
-                model.forceTorque_constant = (model.forceTotal_constant * ((model.subWheel2.diameter / 2) / 1000)) / Math.Pow(model.reducerRpmRatio, 2);
-            model.torqueTotal_constant = model.inertialTorque_constant + model.forceTorque_constant;
-
-            // 減速區扭矩
-            model.inertialTorque_decel = (-1 * (model.mainWheelRpm - 0) * 2 * Math.PI / 60) * model.rotateInertia_loadMoving_motor / model.accelTime;
-            if (conditions.setupMethod == Model.SetupMethod.Horizontal)
-                model.forceTorque_decel = (model.forceTotal_decel * ((model.mainWheel.diameter / 2) / 1000)) / Math.Pow(model.reducerRpmRatio, 2);
-            else if (conditions.setupMethod == Model.SetupMethod.WallHang)
-                model.forceTorque_decel = (model.forceTotal_decel * ((model.subWheel2.diameter / 2) / 1000)) / Math.Pow(model.reducerRpmRatio, 2);
-            model.torqueTotal_decel = model.inertialTorque_decel + model.forceTorque_decel;
-
-            // 停置區扭矩
-            model.inertialTorque_stop = 0;
-            model.forceTorque_stop = (model.forceTotal_stop * ((model.mainWheel.diameter / 2) / 1000)) / Math.Pow(model.reducerRpmRatio, 2);
-            model.torqueTotal_stop = model.inertialTorque_stop + model.forceTorque_stop;
-
-            // T_max最大扭矩確認
-            model.tMax = Math.Max(model.torqueTotal_accel, Math.Max(model.torqueTotal_constant, Math.Max(model.torqueTotal_decel, model.torqueTotal_stop)));
-            model.tMaxSafeCoefficient = Math.Round(model.maxTorque / model.tMax, 2);
-            model.is_tMax_OK = model.tMaxSafeCoefficient >= Model.tMaxStandard_beltMotor;
-        }
-
-        // 皮帶最大扭矩確認
-        private void BeltTorqueConfirm_ETB(Model model) {
-            // 各階段最大扭矩
-            model.beltTorque_accel = Math.Abs(model.forceTorque_accel * Math.Pow(model.reducerRpmRatio, 2));
-            model.beltTorque_constant = Math.Abs(model.forceTorque_constant * Math.Pow(model.reducerRpmRatio, 2));
-            model.beltTorque_decel = Math.Abs(model.forceTorque_decel * Math.Pow(model.reducerRpmRatio, 2));
-            model.beltTorque_stop = Math.Abs(model.forceTorque_stop * Math.Pow(model.reducerRpmRatio, 2));
-            // 皮帶T_max最大扭矩
-            model.belt_tMax = Math.Max(model.beltTorque_accel, Math.Max(model.beltTorque_constant, Math.Max(model.beltTorque_decel, model.beltTorque_stop)));
-            // 皮帶承受力
-            model.beltEndurance = model.belt_tMax * 1000 / (model.subWheel3.diameter / 2);
-            // 皮帶安全係數
-            model.beltSafeCoefficient = Math.Round(model.beltAllowableTension / model.beltEndurance, 2);
-            model.is_belt_tMax_OK = model.beltSafeCoefficient > Model.tMaxStandard_belt;
         }
 
         // 計算壽命時間

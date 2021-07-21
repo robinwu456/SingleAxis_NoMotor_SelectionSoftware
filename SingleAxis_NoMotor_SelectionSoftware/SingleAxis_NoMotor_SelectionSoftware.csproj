@@ -11,6 +11,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>
     </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>icon_0113_256_256_01_1CC_icon.ico</ApplicationIcon>
@@ -71,6 +74,12 @@
     <Compile Include="Backend\Calculation.cs" />
     <Compile Include="Backend\CalculationBase.cs" />
     <Compile Include="Backend\CalculationModel.cs" />
+    <Compile Include="Backend\TorqueConfirm\TorqueConfirm.cs" />
+    <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Belt.cs" />
+    <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Belt_減速機.cs" />
+    <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Belt_減速機構.cs" />
+    <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Belt_直接驅動.cs" />
+    <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Screw.cs" />
     <Compile Include="CustomObjects\BeltWheel.cs" />
     <Compile Include="CustomObjects\CalcMoment.cs" />
     <Compile Include="Condition.cs" />
@@ -157,6 +166,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>zh.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

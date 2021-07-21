@@ -2,7 +2,20 @@
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Model {
-        public enum SetupMethod { Horizontal, WallHang, Vertical }
+        public enum SetupMethod { 
+            /// <summary>
+            /// 水平
+            /// </summary>
+            Horizontal, 
+            /// <summary>
+            /// 橫掛
+            /// </summary>
+            WallHang, 
+            /// <summary>
+            /// 垂直
+            /// </summary>
+            Vertical 
+        }
         public enum Moment { A, B, C }                                    // 力舉參數
         /// <summary>
         /// 傳動方式列舉
