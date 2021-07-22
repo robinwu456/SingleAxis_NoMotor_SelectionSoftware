@@ -22,18 +22,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void InitEvents() {
             formMain.cboModel.SelectedValueChanged += CboModel_SelectedValueChanged;
             formMain.cboModel.LostFocus += CboModel_LostFocus;
-            formMain.cboReducerRatio.SelectedValueChanged += CboReducerRatio_SelectedValueChanged;
+            //formMain.cboReducerRatio.SelectedValueChanged += CboReducerRatio_SelectedValueChanged;
             formMain.cboLead.SelectedValueChanged += CboLead_SelectedValueChanged;
         }        
 
-        private void CboReducerRatio_SelectedValueChanged(object sender, EventArgs e) {
-            if (!formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().Any(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text))
-                return;
+        //private void CboReducerRatio_SelectedValueChanged(object sender, EventArgs e) {
+        //    if (!formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().Any(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text))
+        //        return;
 
-            DataGridViewRow curRow = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().First(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text);
-            //DataGridViewComboBoxCell cboReducerRatio = curRow.Cells["columnReducerRatio"].Value as DataGridViewComboBoxCell;
-            curRow.Cells["columnReducerRatio"].Value = formMain.cboReducerRatio.Text;
-        }
+        //    DataGridViewRow curRow = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().First(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text);
+        //    //DataGridViewComboBoxCell cboReducerRatio = curRow.Cells["columnReducerRatio"].Value as DataGridViewComboBoxCell;
+        //    curRow.Cells["columnReducerRatio"].Value = formMain.cboReducerRatio.Text;
+        //}
 
         public void InitModelSelectionCbo() {
             var allDiffModel = formMain.page2.calc.modelInfo.Rows.Cast<DataRow>()
@@ -74,9 +74,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.cboLead.DataSource = leads.ToList();
 
             // 減速比
-            var reducerRatios = formMain.page2.calc.reducerInfo.Rows.Cast<DataRow>()
-                                                                    .Where(row => row["Model"].ToString() == formMain.cboModel.Text)
-                                                                    .Select(row => row["ReducerRatio"].ToString().Split('、'));
+            //var reducerRatios = formMain.page2.calc.reducerInfo.Rows.Cast<DataRow>()
+            //                                                        .Where(row => row["Model"].ToString() == formMain.cboModel.Text)
+            //                                                        .Select(row => row["ReducerRatio"].ToString().Split('、'));
+            var reducerRatios = formMain.page2.calc.beltInfo.Rows.Cast<DataRow>().Where(row => row["Model"].ToString().StartsWith(formMain.cboModel.Text))
+                                                                                 .Select(row => row["Model"].ToString().Split('-')[1]);
             formMain.panelModelSelectionReducerRatio.Visible = reducerRatios.Count() != 0;            
             if (reducerRatios.Count() != 0)
                 formMain.cboReducerRatio.DataSource = reducerRatios.First().ToList();
@@ -129,7 +131,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 maxLoad = RunCondition.defaultMaxLoad;
             formMain.page2.runCondition.scrollBarLoad.maxValue = (int)maxLoad;
             // 更新行程
-            int maxStroke = formMain.page2.calc.GetMaxStroke(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text), 1);
+            int maxStroke = formMain.page2.calc.GetMaxStroke(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
             formMain.page2.runCondition.scrollBarStroke.maxValue = maxStroke;
 
         }

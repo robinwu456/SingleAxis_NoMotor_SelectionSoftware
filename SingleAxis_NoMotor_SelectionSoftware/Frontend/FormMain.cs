@@ -54,7 +54,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         page2.calc.strokeRpm = FileUtil.ReadCsv(Config.STROKE_RPM_FILENAME);
                         page2.calc.momentData = FileUtil.ReadCsv(Config.MOMENT_FILENAME);
                         page2.calc.motorInfo = FileUtil.ReadCsv(Config.MOTOR_INFO_FILENAME);
-                        page2.calc.reducerInfo = FileUtil.ReadCsv(Config.REDUCER_INFO_FILENAME);
                         page2.calc.beltInfo = FileUtil.ReadCsv(Config.BELT_INFO_FILENAME);
                         page2.calc.modelTypeInfo = FileUtil.ReadCsv(Config.MODEL_TYPE_INFO_FILENAME);
                     }

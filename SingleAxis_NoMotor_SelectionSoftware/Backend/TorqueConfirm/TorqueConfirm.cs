@@ -25,10 +25,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         protected void GetMotorParam() {
             if (condition.powerSelection == Condition.PowerSelection.Standard) {
                 // 取得適用功率
-                Func<DataRow, bool> GetLeadCondition = row => Convert.ToInt32(row["Lead"].ToString()) == model.lead;
-                // 導程減速比轉換
-                if (condition.reducerRatio.Keys.Contains(model.name))
-                    GetLeadCondition = row => Convert.ToInt32(row["Lead"].ToString()) == (int)Math.Round(model.lead * condition.reducerRatio[model.name], 0);
+                Func<DataRow, bool> GetLeadCondition = row => Convert.ToDouble(row["Lead"].ToString()) == model.lead;
+                //// 導程減速比轉換
+                //if (IsContainsReducerRatio(model.name))
+                //    GetLeadCondition = row => Convert.ToDouble(row["Lead"].ToString()) == model.lead;
                 model.availablePowers = modelInfo.Rows.Cast<DataRow>().First(row => row["Model"].ToString() == model.name && GetLeadCondition(row))["Power"].ToString().Split('&').ToList()
                                                                       .Select(power => Convert.ToInt32(power)).ToList();
                 // 取馬達參數

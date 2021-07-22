@@ -54,15 +54,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             model.is_tMax_OK = model.tMaxSafeCoefficient >= Model.tMaxStandard;
 
             // T_Rms扭矩確認
-            if (model.name.StartsWith("MK"))
-                model.tRmsSafeCoefficient = model.tMaxSafeCoefficient * condition.reducerRatio[model.name] * 0.95;
-            else {
-                model.tRms = Math.Pow((Math.Pow(model.torqueTotal_accel, 2) * model.accelTime +
+            model.tRms = Math.Pow((Math.Pow(model.torqueTotal_accel, 2) * model.accelTime +
                                  Math.Pow(model.torqueTotal_constant, 2) * model.constantTime +
                                  Math.Pow(model.torqueTotal_decel, 2) * model.decelTime +
                                  Math.Pow(model.torqueTotal_stop, 2) * model.stopTime) / (model.accelTime + model.constantTime + model.decelTime + model.stopTime), 0.5f);
-                model.tRmsSafeCoefficient = model.ratedTorque / model.tRms;
-            }
+            model.tRmsSafeCoefficient = model.ratedTorque / model.tRms;
             model.tRmsSafeCoefficient = Math.Round(model.tRmsSafeCoefficient, 2);
             model.is_tRms_OK = model.tRmsSafeCoefficient > Model.tRmsStandard;
         }

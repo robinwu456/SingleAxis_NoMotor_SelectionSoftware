@@ -78,15 +78,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 有效行程
             effectiveStroke = new EffectiveStroke(formMain);
 
-            // 減速比
-            calc.reducerInfo.Rows.Cast<DataRow>().ToList().ForEach(row => {
-                DataGridViewRow dgvRow = (DataGridViewRow)formMain.dgvReducerInfo.RowTemplate.Clone();
-                formMain.dgvReducerInfo.Rows.Add(dgvRow);
-                dgvRow = formMain.dgvReducerInfo.Rows[calc.reducerInfo.Rows.Cast<DataRow>().ToList().IndexOf(row)];
-                dgvRow.Cells["columnModel"].Value = row["Model"].ToString();
-                (dgvRow.Cells["columnReducerRatio"] as DataGridViewComboBoxCell).DataSource = row["ReducerRatio"].ToString().Split('、');
-                dgvRow.Cells["columnReducerRatio"].Value = row["ReducerRatio"].ToString().Split('、')[0];
-            });
+            //// 減速比
+            //calc.reducerInfo.Rows.Cast<DataRow>().ToList().ForEach(row => {
+            //    DataGridViewRow dgvRow = (DataGridViewRow)formMain.dgvReducerInfo.RowTemplate.Clone();
+            //    formMain.dgvReducerInfo.Rows.Add(dgvRow);
+            //    dgvRow = formMain.dgvReducerInfo.Rows[calc.reducerInfo.Rows.Cast<DataRow>().ToList().IndexOf(row)];
+            //    dgvRow.Cells["columnModel"].Value = row["Model"].ToString();
+            //    (dgvRow.Cells["columnReducerRatio"] as DataGridViewComboBoxCell).DataSource = row["ReducerRatio"].ToString().Split('、');
+            //    dgvRow.Cells["columnReducerRatio"].Value = row["ReducerRatio"].ToString().Split('、')[0];
+            //});
 
             // scrollbars
             runCondition.scrollBarStroke.Initialize();
@@ -240,8 +240,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 判斷是否為Y系列，並修正panel
             UpdateLayout(null, null);
 
-            // 減速比顯示
-            formMain.panelReducerRatio.Visible = curSelectModelType.IsContainsReducerRatioType() && formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
+            //// 減速比顯示
+            //formMain.panelReducerRatio.Visible = curSelectModelType.IsContainsReducerRatioType() && formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {
@@ -261,11 +261,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 double lead = Convert.ToDouble(formMain.cboLead.Text);
                 int reducerRatio = 1;
                 if (formMain.page2.calc.IsContainsReducerRatio(model)) {
-                    string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
-                    reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
+                    //string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
+                    //reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
+                    reducerRatio = Convert.ToInt32(formMain.cboReducerRatio.Text);
                     lead /= reducerRatio;
                 }
-                int maxAccelSpeed = formMain.page2.calc.GetMaxAccelSpeed(model, lead, reducerRatio, Convert.ToInt32(formMain.txtStroke.Text));
+                int maxAccelSpeed = formMain.page2.calc.GetMaxAccelSpeed(model, lead, Convert.ToInt32(formMain.txtStroke.Text));
                 formMain.txtAccelSpeed.Text = maxAccelSpeed.ToString();
 
                 // 切進接選項Vmax自動帶100mm/s

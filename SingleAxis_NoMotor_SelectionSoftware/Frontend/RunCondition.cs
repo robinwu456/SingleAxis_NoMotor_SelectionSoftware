@@ -70,7 +70,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.txtMaxTorque.TextChanged += UpdateCondition;
             //formMain.optRepeatabilityScrew.CheckedChanged += UpdateCondition;
             formMain.optMaxSpeedType_mms.CheckedChanged += UpdateCondition;
-            formMain.dgvReducerInfo.CellValueChanged += UpdateCondition;
+            //formMain.dgvReducerInfo.CellValueChanged += UpdateCondition;
             formMain.optExpectServiceLife.CheckedChanged += UpdateCondition;
 
             // Custom scrollBar init
@@ -160,7 +160,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (formMain.txtMaxSpeed.Text.Contains("."))
                     formMain.txtMaxSpeed.Text = formMain.txtMaxSpeed.Text.Split('.')[0];
                 if (formMain.page2.calc.IsContainsReducerRatio(formMain.cboModel.Text)) {
-                    string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text).Cells["columnReducerRatio"].Value.ToString();
+                    //string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text).Cells["columnReducerRatio"].Value.ToString();
+                    string dgvReducerRatioValue = formMain.cboReducerRatio.Text;
                     curCondition.vMax = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text) / Convert.ToDouble(dgvReducerRatioValue));
                 } else
                     curCondition.vMax = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text));
@@ -257,12 +258,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 curCondition.calcModel = calcModel;
             } else
                 curCondition.calcModel = (null, -1);
-            // 減速比
-            curCondition.reducerRatio.Clear();
-            formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().ForEach(row => {
-                //curCondition.reducerRatio.Add(row.Cells["columnModel"].Value.ToString(), Convert.ToInt32(row.Cells["columnReducerRatio"].Value.ToString()));
-                curCondition.reducerRatio[row.Cells["columnModel"].Value.ToString()] = Convert.ToInt32(row.Cells["columnReducerRatio"].Value.ToString());
-            });
+            //// 減速比
+            //curCondition.reducerRatio.Clear();
+            //formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().ForEach(row => {
+            //    //curCondition.reducerRatio.Add(row.Cells["columnModel"].Value.ToString(), Convert.ToInt32(row.Cells["columnReducerRatio"].Value.ToString()));
+            //    curCondition.reducerRatio[row.Cells["columnModel"].Value.ToString()] = Convert.ToInt32(row.Cells["columnReducerRatio"].Value.ToString());
+            //});
 
             //// 型號選行顯示
             //formMain.step2.SetSelectedModelConfirmBtnVisible(false);

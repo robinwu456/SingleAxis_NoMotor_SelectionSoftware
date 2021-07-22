@@ -276,7 +276,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
                     // 選第一列
                     if (curSelectModel.model != null) {
-                        if (formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().Any(row => row.Cells["columnModel"].Value.Equals(curSelectModel.model))) {
+                        //if (formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().Any(row => row.Cells["columnModel"].Value.Equals(curSelectModel.model))) {
+                        if (formMain.page2.calc.IsContainsReducerRatio(curSelectModel.model)) {
                             try {
                                 formMain.dgvRecommandList.CurrentCell = formMain.dgvRecommandList[0, formMain.dgvRecommandList.Rows.Cast<DataGridViewRow>()
                                                                                         .Where(row => row.Cells["項次"].Value.ToString() == curSelectModel.model)

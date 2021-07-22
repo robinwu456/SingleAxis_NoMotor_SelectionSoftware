@@ -23,7 +23,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public CalcVmax vMaxCalcMode = CalcVmax.Max;                                 // 線速度計算時帶入的值
         public int selectedPower = -1;                                               // 馬達瓦數選擇            
         public UseFrequence useFrequence = new UseFrequence();                       // 使用頻率            
-        public Dictionary<string, int> reducerRatio = new Dictionary<string, int>(); // 減速比
+        //public Dictionary<string, int> reducerRatio = new Dictionary<string, int>(); // 減速比
         public (string model, double lead) curSelectModel;                           // 目前選擇的項目            
         public (string model, double lead) curCheckedModel;                          // 目前打勾的項目            
         public bool isMomentLimitByCatalog = false;                                  // 最大力舉是否被型錄鎖定

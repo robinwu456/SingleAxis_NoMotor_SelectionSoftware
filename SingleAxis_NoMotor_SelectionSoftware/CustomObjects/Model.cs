@@ -52,8 +52,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// </summary>
         public enum BeltCalcType {
             減速機構,
-            減速機,
-            直接驅動
+            減速機2,
+            減速機4,
+            直接驅動,
         }
 
         /// <summary>

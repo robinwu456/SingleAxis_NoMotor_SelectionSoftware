@@ -31,9 +31,6 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBase = new System.Windows.Forms.Panel();
             this.splitContainerBase = new System.Windows.Forms.SplitContainer();
             this.lbTitle = new System.Windows.Forms.Label();
@@ -107,12 +104,6 @@
             this.scrollBarThumbStroke = new System.Windows.Forms.PictureBox();
             this.lbTitleCalc = new System.Windows.Forms.Label();
             this.cmdCalc = new CustomButton.CustomButton();
-            this.panelReducerRatio = new System.Windows.Forms.Panel();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.dgvReducerInfo = new System.Windows.Forms.DataGridView();
-            this.columnModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnReducerRatio = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.panelAdvanceParams = new System.Windows.Forms.Panel();
             this.lbMaxSpeedAlarm = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
@@ -305,8 +296,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbLoad)).BeginInit();
             this.scrollBarPanelStroke.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbStroke)).BeginInit();
-            this.panelReducerRatio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).BeginInit();
             this.panelAdvanceParams.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelExpectServiceLifeTime.SuspendLayout();
@@ -941,7 +930,6 @@
             this.panelCalc.Controls.Add(this.scrollBarPanelStroke);
             this.panelCalc.Controls.Add(this.lbTitleCalc);
             this.panelCalc.Controls.Add(this.cmdCalc);
-            this.panelCalc.Controls.Add(this.panelReducerRatio);
             this.panelCalc.Controls.Add(this.panelAdvanceParams);
             this.panelCalc.Controls.Add(this.panel6);
             this.panelCalc.Controls.Add(this.panelAdvanceMode);
@@ -1047,80 +1035,6 @@
             this.cmdCalc.GradientMode = CustomButton.LinearGradientMode.Horizontal;
             this.cmdCalc.Name = "cmdCalc";
             this.cmdCalc.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
-            // 
-            // panelReducerRatio
-            // 
-            this.panelReducerRatio.Controls.Add(this.label55);
-            this.panelReducerRatio.Controls.Add(this.label58);
-            this.panelReducerRatio.Controls.Add(this.dgvReducerInfo);
-            resources.ApplyResources(this.panelReducerRatio, "panelReducerRatio");
-            this.panelReducerRatio.Name = "panelReducerRatio";
-            // 
-            // label55
-            // 
-            resources.ApplyResources(this.label55, "label55");
-            this.label55.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label55.Name = "label55";
-            // 
-            // label58
-            // 
-            this.label58.BackColor = System.Drawing.Color.LightGray;
-            resources.ApplyResources(this.label58, "label58");
-            this.label58.Name = "label58";
-            // 
-            // dgvReducerInfo
-            // 
-            this.dgvReducerInfo.AllowUserToAddRows = false;
-            this.dgvReducerInfo.AllowUserToDeleteRows = false;
-            this.dgvReducerInfo.AllowUserToResizeColumns = false;
-            this.dgvReducerInfo.AllowUserToResizeRows = false;
-            resources.ApplyResources(this.dgvReducerInfo, "dgvReducerInfo");
-            this.dgvReducerInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvReducerInfo.BackgroundColor = System.Drawing.Color.White;
-            this.dgvReducerInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(58)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReducerInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvReducerInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReducerInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columnModel,
-            this.columnReducerRatio});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvReducerInfo.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvReducerInfo.EnableHeadersVisualStyles = false;
-            this.dgvReducerInfo.Name = "dgvReducerInfo";
-            this.dgvReducerInfo.RowHeadersVisible = false;
-            this.dgvReducerInfo.RowTemplate.Height = 24;
-            // 
-            // columnModel
-            // 
-            resources.ApplyResources(this.columnModel, "columnModel");
-            this.columnModel.Name = "columnModel";
-            this.columnModel.ReadOnly = true;
-            this.columnModel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // columnReducerRatio
-            // 
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(58)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(58)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.columnReducerRatio.DefaultCellStyle = dataGridViewCellStyle6;
-            this.columnReducerRatio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            resources.ApplyResources(this.columnReducerRatio, "columnReducerRatio");
-            this.columnReducerRatio.Name = "columnReducerRatio";
             // 
             // panelAdvanceParams
             // 
@@ -2342,9 +2256,6 @@
             this.scrollBarPanelStroke.ResumeLayout(false);
             this.scrollBarPanelStroke.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbStroke)).EndInit();
-            this.panelReducerRatio.ResumeLayout(false);
-            this.panelReducerRatio.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReducerInfo)).EndInit();
             this.panelAdvanceParams.ResumeLayout(false);
             this.panelAdvanceParams.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -2523,12 +2434,6 @@
         public System.Windows.Forms.TextBox txtLoad;
         public System.Windows.Forms.TextBox txtTimesPerMinute;
         public System.Windows.Forms.TextBox txtHourPerDay;
-        public System.Windows.Forms.DataGridView dgvReducerInfo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnModel;
-        private System.Windows.Forms.DataGridViewComboBoxColumn columnReducerRatio;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Label label58;
-        public System.Windows.Forms.Panel panelReducerRatio;
         public CustomButton.CustomButton cmdCalc;
         public System.Windows.Forms.PictureBox cmdModelSelection;
         public System.Windows.Forms.PictureBox cmdShapeSelection;

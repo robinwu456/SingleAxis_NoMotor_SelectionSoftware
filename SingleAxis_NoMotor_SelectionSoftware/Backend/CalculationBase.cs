@@ -16,7 +16,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public DataTable strokeRpm = FileUtil.ReadCsv(Config.STROKE_RPM_FILENAME);
         public DataTable momentData = FileUtil.ReadCsv(Config.MOMENT_FILENAME);
         public DataTable motorInfo = FileUtil.ReadCsv(Config.MOTOR_INFO_FILENAME);
-        public DataTable reducerInfo = FileUtil.ReadCsv(Config.REDUCER_INFO_FILENAME);
         public DataTable beltInfo = FileUtil.ReadCsv(Config.BELT_INFO_FILENAME);
         public DataTable modelTypeInfo = FileUtil.ReadCsv(Config.MODEL_TYPE_INFO_FILENAME);
 
@@ -27,8 +26,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 Model model = new Model();
                 model.name = row["Model"].ToString();
                 model.lead = Convert.ToDouble(row["Lead"].ToString());
-                if (condition.reducerRatio.Keys.Contains(model.name))
-                    model.lead = Convert.ToDouble((model.lead / (float)condition.reducerRatio[model.name]).ToString("#0.00"));
+                //if (condition.reducerRatio.Keys.Contains(model.name))
+                //    model.lead = Convert.ToDouble((model.lead / (float)condition.reducerRatio[model.name]).ToString("#0.00"));
                 // 安裝方式
                 model.supportedSetup = row["Setup"].ToString().Split('&').ToList().Select(setup => (Model.SetupMethod)Convert.ToInt32(setup)).ToList();
                 // 使用環境
@@ -126,21 +125,21 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
         }
 
-        public double GetVmax_ms(Model model, double lead, int reducer, int stroke) {
+        public double GetVmax_ms(Model model, double lead, int stroke) {
             try {
-                return GetVmax_mms(model, lead, reducer, stroke) / 1000f;
+                return GetVmax_mms(model, lead, stroke) / 1000f;
             } catch (Exception ex) {
                 Console.WriteLine(ex);
                 throw new Exception(ex.Message);
             }
         }
 
-        public double GetVmax_mms(Model model, double lead, int reducer, int stroke) {
+        public double GetVmax_mms(Model model, double lead, int stroke) {
             try {
                 // 依照行程取RPM
-                int rpm = GetRpmByStroke(model.name, lead, reducer, stroke);
+                int rpm = GetRpmByStroke(model.name, lead, stroke);
                 if (model.isUseBaltCalc)
-                    return GetBeltVmax_ms(model.name, lead, reducer, stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType) * 1000;
+                    return GetBeltVmax_ms(model.name, lead, stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType) * 1000;
                 else
                     // 轉速換算Vmax
                     return Math.Round(RPM_TO_MMS(rpm, lead), 2);    // 四捨五入取小數第一位
@@ -151,23 +150,23 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         // 依照行程取RPM
-        public int GetRpmByStroke(string model, double lead, int reducer, int stroke) {
+        public int GetRpmByStroke(string model, double lead, int stroke) {
             if (model == "")
                 return -1;
 
             // 取同型號集合
-            IEnumerable<DataRow> strokeRpms = strokeRpm.Rows.Cast<DataRow>()
-                                                            .Where(row => row["Model"].ToString() == model &&
-                                                                          Convert.ToDouble(row["Lead"].ToString()) == (int)Math.Round(lead * reducer, 0));
+            IEnumerable<DataRow> strokeRpms;
+            if (IsContainsReducerRatio(model))
+                strokeRpms = strokeRpm.Rows.Cast<DataRow>().Where(row => model.StartsWith(row["Model"].ToString()));
+            else
+                strokeRpms = strokeRpm.Rows.Cast<DataRow>().Where(row => row["Model"].ToString() == model && Convert.ToDouble(row["Lead"].ToString()) == (int)Math.Round(lead, 0));
+
             try {
                 // 依照行程取RPM
                 int strokeRpm = Convert.ToInt32(strokeRpms.First(row => Convert.ToInt32(row["Stroke"].ToString()) >= stroke)["RPM"]);
-                //int vMaxRpm = MMS_TO_RPM(vMax, lead);
-                //return Math.Min(vMaxRpm, strokeRpm);
                 return strokeRpm;
             } catch (Exception ex) {
                 Console.WriteLine(ex);
-                //throw new Exception(string.Format("1|{0}導程{1} 行程過大，搜尋不到RPM", model, lead));
                 return Convert.ToInt32(strokeRpms.Last()["RPM"].ToString());
             }
 
@@ -194,10 +193,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return (int)(mms * 60f / (float)lead);
         }
 
-        public int GetMaxStroke(string model, double lead, int reducer) {
-            IEnumerable<int> strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => row["Model"].ToString() == model &&
-                                                                                   Convert.ToDouble(row["Lead"].ToString()) == (int)Math.Round(lead * reducer, 0))
-                                                                     .Select(row => Convert.ToInt32(row["Stroke"].ToString()));
+        public int GetMaxStroke(string model, double lead) {
+            IEnumerable<int> strokes;
+            if (IsContainsReducerRatio(model))
+                strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => model.StartsWith(row["Model"].ToString()))
+                                                        .Select(row => Convert.ToInt32(row["Stroke"].ToString()));
+            else
+                strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => row["Model"].ToString() == model && Convert.ToDouble(row["Lead"].ToString()) == (int)Math.Round(lead, 0))
+                                                        .Select(row => Convert.ToInt32(row["Stroke"].ToString()));
             return strokes.Max();
         }
 
@@ -253,15 +256,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (conditions.vMaxCalcMode == Condition.CalcVmax.Max) {
                 if (model.isUseBaltCalc) {
                     //_vMax = GetBeltVmax_ms(model.name, model.lead, 1, conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2) * 1000;
-                    if (conditions.reducerRatio.Keys.Contains(model.name))
-                        _vMax = GetBeltVmax_ms(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
-                    else
-                        _vMax = GetBeltVmax_ms(model.name, model.lead, 1, conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
+                    //if (conditions.reducerRatio.Keys.Contains(model.name))
+                    //    _vMax = GetBeltVmax_ms(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
+                    //else
+                    //    _vMax = GetBeltVmax_ms(model.name, model.lead, 1, conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
+                    _vMax = GetBeltVmax_ms(model.name, model.lead, conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
                 } else {
-                    if (conditions.reducerRatio.Keys.Contains(model.name))
-                        _vMax = GetVmax_ms(model, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
-                    else
-                        _vMax = GetVmax_ms(model, model.lead, 1, conditions.stroke);
+                    //if (conditions.reducerRatio.Keys.Contains(model.name))
+                    //    _vMax = GetVmax_ms(model, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
+                    //else
+                    //    _vMax = GetVmax_ms(model, model.lead, 1, conditions.stroke);
+                    _vMax = GetVmax_ms(model, model.lead, conditions.stroke);
                 }
             } else if (conditions.vMaxCalcMode == Condition.CalcVmax.Custom) {
                 _vMax = conditions.vMax / 1000f;
@@ -271,10 +276,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     // RPM驗證
                     int strokeRpm;
                     int vMaxRpm = GetRpmByMMS(model.lead, model.vMax * 1000);
-                    if (conditions.reducerRatio.Keys.Contains(model.name))
-                        strokeRpm = GetRpmByStroke(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
-                    else
-                        strokeRpm = GetRpmByStroke(model.name, model.lead, 1, conditions.stroke);
+                    //if (conditions.reducerRatio.Keys.Contains(model.name))
+                    //    strokeRpm = GetRpmByStroke(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
+                    //else
+                    //    strokeRpm = GetRpmByStroke(model.name, model.lead, 1, conditions.stroke);
+                    strokeRpm = GetRpmByStroke(model.name, model.lead, conditions.stroke);
                     int _rpm = Math.Min(strokeRpm, vMaxRpm);
                     _vMax = RPM_TO_MMS(_rpm, model.lead) / 1000f;
                 }
@@ -323,21 +329,22 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public bool IsContainsReducerRatio(string model) {
-            return reducerInfo.Rows.Cast<DataRow>().Any(row => row["Model"].ToString() == model);
+            //return reducerInfo.Rows.Cast<DataRow>().Any(row => row["Model"].ToString() == model);
+            return beltInfo.Rows.Cast<DataRow>().Any(row => row["Model"].ToString().StartsWith(model) && row["Model"].ToString().Contains("-"));
         }
 
         // 皮帶Vmax(m/s)
-        public double GetBeltVmax_ms(string model, double lead, int reducer, int stroke, BeltWheel mainWheel, SubBeltWheel subWheel1, SubBeltWheel subWheel2, Model.BeltCalcType beltCalcType) {
-            if (beltCalcType == Model.BeltCalcType.減速機構 || beltCalcType == Model.BeltCalcType.減速機) {
+        public double GetBeltVmax_ms(string model, double lead, int stroke, BeltWheel mainWheel, SubBeltWheel subWheel1, SubBeltWheel subWheel2, Model.BeltCalcType beltCalcType) {
+            if (beltCalcType == Model.BeltCalcType.減速機構 || beltCalcType == Model.BeltCalcType.減速機2) {
                 // 依照行程取RPM
-                int rpm = GetRpmByStroke(model, lead, reducer, stroke);
+                int rpm = GetRpmByStroke(model, lead, stroke);
                 double reducerRpmRatio = subWheel1.diameter / mainWheel.diameter;
                 double subWheelRpm = (int)(rpm / reducerRpmRatio);
                 double vMax_belt = Math.PI * subWheel2.diameter * (subWheelRpm / 60) / 1000;
                 return vMax_belt;
             } else {
                 // 依照行程取RPM
-                int rpm = GetRpmByStroke(model, lead, reducer, stroke);
+                int rpm = GetRpmByStroke(model, lead, stroke);
                 double vMax_belt = Math.PI * subWheel2.diameter * (rpm / 60) / 1000;
                 return vMax_belt;
             }
@@ -353,7 +360,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <param name="beltCalcType"></param>
         /// <returns></returns>
         public int GetBeltRPM(double vMax_belt, BeltWheel mainWheel, SubBeltWheel subWheel1, SubBeltWheel subWheel2, Model.BeltCalcType beltCalcType) {
-            if (beltCalcType == Model.BeltCalcType.減速機構 || beltCalcType == Model.BeltCalcType.減速機) {
+            if (beltCalcType == Model.BeltCalcType.減速機構 || beltCalcType == Model.BeltCalcType.減速機2) {
                 double reducerRpmRatio = subWheel1.diameter / mainWheel.diameter;
                 double subWheelRpm = vMax_belt * 1000 * 60 / Math.PI / subWheel2.diameter;
                 int rpm = (int)(subWheelRpm * reducerRpmRatio);
@@ -432,11 +439,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return (accelTime, constantTime, runTime, conditions.accelSpeed, conditions.vMax, cycleTime);
         }
 
-        public int GetMaxAccelSpeed(string model, double lead, int reducer, int stroke) {
+        public int GetMaxAccelSpeed(string model, double lead, int stroke) {
             if (model == "")
                 return -1;
 
-            int rpm = GetRpmByStroke(model, lead, reducer, stroke);
+            int rpm = GetRpmByStroke(model, lead, stroke);
             double vMax = (lead * (double)rpm) / 60f;
             double repeatability = Convert.ToDouble(modelInfo.Rows.Cast<DataRow>().First(row => row["Model"].ToString() == model)["Repeatability"].ToString());
             double minAccelTime = repeatability <= 0.01 ? 0.2 : 0.4;

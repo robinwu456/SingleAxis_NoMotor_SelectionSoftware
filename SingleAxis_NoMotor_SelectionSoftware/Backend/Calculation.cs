@@ -29,11 +29,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             con = con.Where(model => condition.RepeatabilityCondition(model.repeatability));
             // 單項計算
             if (condition.calcModel.model != null) {
-                // 單項計算減速比驗證
-                if (condition.reducerRatio.Keys.Contains(condition.calcModel.model)) {
-                    condition.calcModel.lead /= (float)condition.reducerRatio[condition.calcModel.model];
-                    condition.calcModel.lead = Convert.ToDouble(condition.calcModel.lead.ToString("#0.00"));
-                }
+                //// 單項計算減速比驗證
+                //if (condition.reducerRatio.Keys.Contains(condition.calcModel.model)) {
+                //    condition.calcModel.lead /= (float)condition.reducerRatio[condition.calcModel.model];
+                //    condition.calcModel.lead = Convert.ToDouble(condition.calcModel.lead.ToString("#0.00"));
+                //}
                 con = con.Where(model => model.name.Equals(condition.calcModel.model) && model.lead == condition.calcModel.lead);
             }
 
@@ -127,11 +127,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (condition.curCheckedModel.model != null) {
                 // 減速比驗證
                 Func<Model, bool> predicate;
-                if (condition.reducerRatio.Keys.Contains(condition.curCheckedModel.model))
-                    // 包含減速比時，不判斷導程
-                    predicate = model => model.name == condition.curCheckedModel.model;
-                else
-                    predicate = model => model.name == condition.curCheckedModel.model && model.lead == condition.curCheckedModel.lead;
+                //if (condition.reducerRatio.Keys.Contains(condition.curCheckedModel.model))
+                //    // 包含減速比時，不判斷導程
+                //    predicate = model => model.name == condition.curCheckedModel.model;
+                //else
+                //    predicate = model => model.name == condition.curCheckedModel.model && model.lead == condition.curCheckedModel.lead;
+                predicate = model => model.name == condition.curCheckedModel.model && model.lead == condition.curCheckedModel.lead;
                 // Init打勾項目
                 if (resultModels.Any(predicate))
                     checkedModel = resultModels.First(model => model.name == condition.curCheckedModel.model && model.lead == condition.curCheckedModel.lead);
