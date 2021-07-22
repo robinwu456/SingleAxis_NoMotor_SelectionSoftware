@@ -56,9 +56,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 安裝方式opt統整
             setupMethodOptMap = new Dictionary<RadioButton, Model.SetupMethod>() {
-                { formMain.optHorizontalUse, Model.SetupMethod.Horizontal },
-                { formMain.optWallHangingUse, Model.SetupMethod.WallHang },
-                { formMain.optVerticalUse, Model.SetupMethod.Vertical },
+                { formMain.optHorizontalUse, Model.SetupMethod.水平 },
+                { formMain.optWallHangingUse, Model.SetupMethod.橫掛 },
+                { formMain.optVerticalUse, Model.SetupMethod.垂直 },
             };
 
             InitEvents();            
@@ -379,10 +379,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void DetectedUseEnvModelType(object sender, EventArgs e) {
-            Model.UseEnvironment useEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.Standard : Model.UseEnvironment.DustFree;
+            Model.UseEnvironment useEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.標準 : Model.UseEnvironment.無塵;
             Model.ModelType[] dustfreeModelTypes = calc.GetDustfreeModelType();
             modelTypeOptMap.ToList().ForEach(pair => {
-                if (useEnv == Model.UseEnvironment.DustFree)
+                if (useEnv == Model.UseEnvironment.無塵)
                     pair.Key.Visible = dustfreeModelTypes.Contains(pair.Value);
                 else
                     pair.Key.Visible = true;
@@ -393,7 +393,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             });
 
             // 目前選的沒有無塵，就自動選擇第一個
-            if (useEnv == Model.UseEnvironment.DustFree && !dustfreeModelTypes.Contains(curSelectModelType))
+            if (useEnv == Model.UseEnvironment.無塵 && !dustfreeModelTypes.Contains(curSelectModelType))
                 formMain.optBuildInScrewActuator.Checked = true;
 
             ReplaceItem();

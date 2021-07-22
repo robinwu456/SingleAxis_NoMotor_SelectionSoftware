@@ -89,9 +89,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 使用環境更新
             Model.UseEnvironment curModelUseEnv = formMain.page2.calc.GetModelUseEnv(formMain.cboModel.Text);
-            if (curModelUseEnv == Model.UseEnvironment.Standard)
+            if (curModelUseEnv == Model.UseEnvironment.標準)
                 formMain.optStandardEnv.Checked = true;
-            else if (curModelUseEnv == Model.UseEnvironment.DustFree)
+            else if (curModelUseEnv == Model.UseEnvironment.無塵)
                 formMain.optDustFreeEnv.Checked = true;
 
             // 傳動方式更新
@@ -119,11 +119,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             Condition con = new Condition();
             if (formMain.optHorizontalUse.Checked)
-                con.setupMethod = Model.SetupMethod.Horizontal;
+                con.setupMethod = Model.SetupMethod.水平;
             else if (formMain.optWallHangingUse.Checked)
-                con.setupMethod = Model.SetupMethod.WallHang;
+                con.setupMethod = Model.SetupMethod.橫掛;
             else if (formMain.optVerticalUse.Checked)
-                con.setupMethod = Model.SetupMethod.Vertical;
+                con.setupMethod = Model.SetupMethod.垂直;
 
             // 更新荷重
             double maxLoad = formMain.page2.calc.GetMaxLoad(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text), con);

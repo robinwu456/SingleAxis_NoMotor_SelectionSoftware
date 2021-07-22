@@ -25,18 +25,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         protected void GetMotorParam() {
             if (condition.powerSelection == Condition.PowerSelection.Standard) {
                 // 取得適用功率
-                Func<DataRow, bool> GetLeadCondition = row => Convert.ToDouble(row["Lead"].ToString()) == model.lead;
+                Func<DataRow, bool> GetLeadCondition = row => Convert.ToDouble(row["導程"].ToString()) == model.lead;
                 //// 導程減速比轉換
                 //if (IsContainsReducerRatio(model.name))
-                //    GetLeadCondition = row => Convert.ToDouble(row["Lead"].ToString()) == model.lead;
-                model.availablePowers = modelInfo.Rows.Cast<DataRow>().First(row => row["Model"].ToString() == model.name && GetLeadCondition(row))["Power"].ToString().Split('&').ToList()
+                //    GetLeadCondition = row => Convert.ToDouble(row["導程"].ToString()) == model.lead;
+                model.availablePowers = modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString() == model.name && GetLeadCondition(row))["馬達瓦數"].ToString().Split('&').ToList()
                                                                       .Select(power => Convert.ToInt32(power)).ToList();
                 // 取馬達參數
                 model.usePower = model.availablePowers.Max();   // 適用馬達的最大瓦數
-                Func<DataRow, bool> con = x => Convert.ToInt32(x["Power"]).Equals(model.usePower);
-                model.ratedTorque = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["RatedTorque"]).First());
-                model.maxTorque = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["MaxTorque"]).First());
-                model.rotateInertia = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["RotateInertia"]).First());
+                Func<DataRow, bool> con = x => Convert.ToInt32(x["馬達瓦數"]).Equals(model.usePower);
+                model.ratedTorque = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["額定轉矩"]).First());
+                model.maxTorque = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["最大轉矩"]).First());
+                model.rotateInertia = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["轉動慣量"]).First());
             } else if (condition.powerSelection == Condition.PowerSelection.Custom) {
                 //model.usePower = -1;
                 model.ratedTorque = condition.ratedTorque;
@@ -46,10 +46,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 // 取馬達參數
                 model.usePower = condition.selectedPower;   // 適用馬達的最大瓦數
                 //model.usePower = conditions.curSelectModel;   // 適用馬達的最大瓦數
-                Func<DataRow, bool> con = x => Convert.ToInt32(x["Power"]).Equals(model.usePower);
-                model.ratedTorque = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["RatedTorque"]).First());
-                model.maxTorque = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["MaxTorque"]).First());
-                model.rotateInertia = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["RotateInertia"]).First());
+                Func<DataRow, bool> con = x => Convert.ToInt32(x["馬達瓦數"]).Equals(model.usePower);
+                model.ratedTorque = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["額定轉矩"]).First());
+                model.maxTorque = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["最大轉矩"]).First());
+                model.rotateInertia = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["轉動慣量"]).First());
             }
 
             model.stopTime = condition.stopTime;

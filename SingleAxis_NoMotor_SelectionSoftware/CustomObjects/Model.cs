@@ -6,15 +6,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             /// <summary>
             /// 水平
             /// </summary>
-            Horizontal, 
+            水平, 
             /// <summary>
             /// 橫掛
             /// </summary>
-            WallHang, 
+            橫掛, 
             /// <summary>
             /// 垂直
             /// </summary>
-            Vertical 
+            垂直 
         }
         public enum Moment { A, B, C }                                    // 力舉參數
         /// <summary>
@@ -40,11 +40,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             /// <summary>
             /// 標準
             /// </summary>
-            Standard, 
+            標準, 
             /// <summary>
             /// 無塵
             /// </summary>
-            DustFree 
+            無塵 
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// </summary>
         public string name;
 
-        public UseEnvironment useEnvironment = UseEnvironment.Standard;
+        public UseEnvironment useEnvironment = UseEnvironment.標準;
 
         /// <summary>
         /// 總預估壽命(km)

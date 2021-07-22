@@ -28,7 +28,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public override void MotorTorqueConfirm() {
             // 軸向外力
-            if (condition.setupMethod == Model.SetupMethod.Vertical) {
+            if (condition.setupMethod == Model.SetupMethod.垂直) {
                 model.otherForce_accel = model.load * (model.accelSpeed + 9.81);
                 model.otherForce_constant = model.load * 9.81;
                 model.otherForce_decel = model.load * (9.81 - model.accelSpeed);

@@ -24,34 +24,34 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 搜尋荷重
             foreach (DataRow row in modelInfo.Rows) {
                 Model model = new Model();
-                model.name = row["Model"].ToString();
-                model.lead = Convert.ToDouble(row["Lead"].ToString());
+                model.name = row["型號"].ToString();
+                model.lead = Convert.ToDouble(row["導程"].ToString());
                 //if (condition.reducerRatio.Keys.Contains(model.name))
                 //    model.lead = Convert.ToDouble((model.lead / (float)condition.reducerRatio[model.name]).ToString("#0.00"));
                 // 安裝方式
-                model.supportedSetup = row["Setup"].ToString().Split('&').ToList().Select(setup => (Model.SetupMethod)Convert.ToInt32(setup)).ToList();
+                model.supportedSetup = row["安裝方式"].ToString().Split('&').ToList().Select(setup => (Model.SetupMethod)Enum.Parse(typeof(Model.SetupMethod), setup)).ToList();
                 // 使用環境
-                model.useEnvironment = (Model.UseEnvironment)Convert.ToInt32(row["Env"].ToString());
+                model.useEnvironment = (Model.UseEnvironment)Enum.Parse(typeof(Model.UseEnvironment), row["使用環境"].ToString());
                 // 機構型態
-                model.modelType = (Model.ModelType)Convert.ToInt32(row["Type"].ToString());
+                model.modelType = (Model.ModelType)Enum.Parse(typeof(Model.ModelType), row["型號類別"].ToString());
 
                 // 力舉參數
                 model.c = Convert.ToDouble(row["C"].ToString());
                 model.mr_C = Convert.ToDouble(row["MR_C"].ToString());
                 model.mp_C = Convert.ToDouble(row["MP_C"].ToString());
                 model.my_C = Convert.ToDouble(row["MY_C"].ToString());
-                model.dynamicLoadRating = Convert.ToInt32(row["DynamicLoadRating"].ToString());
-                model.outerDiameter = Convert.ToInt32(row["OuterDiameter"].ToString());
+                model.dynamicLoadRating = Convert.ToInt32(row["動額定負載"].ToString());
+                model.outerDiameter = Convert.ToInt32(row["外徑"].ToString());
 
                 // 重複定位精度
-                model.repeatability = Convert.ToDouble(row["Repeatability"].ToString());
+                model.repeatability = Convert.ToDouble(row["重複定位精度"].ToString());
 
                 // 是否套用皮帶公式
-                model.isUseBaltCalc = beltInfo.Rows.Cast<DataRow>().Select(info => info["Model"].ToString()).Contains(model.name);
+                model.isUseBaltCalc = beltInfo.Rows.Cast<DataRow>().Select(info => info["型號"].ToString()).Contains(model.name);
 
                 // 皮帶資訊
                 if (model.isUseBaltCalc) {
-                    Func<DataRow, bool> con = con = x => x["Model"].ToString().Equals(model.name);
+                    Func<DataRow, bool> con = con = x => x["型號"].ToString().Equals(model.name);
                     var beltInfoRows = beltInfo.Rows.Cast<DataRow>().Where(con);
                     // 主動輪
                     model.mainWheel = new BeltWheel(
@@ -115,9 +115,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //newLead = Convert.ToDouble(newLead.ToString("#0.00"));
 
             try {
-                var rows = momentData.Rows.Cast<DataRow>().Where(row => row["Model"].ToString() == model &&
-                                                                        Convert.ToDouble(row["Lead"].ToString()) == lead &&
-                                                                        Convert.ToInt32(row["Setup"].ToString()) == (int)setupMethod
+                var rows = momentData.Rows.Cast<DataRow>().Where(row => row["型號"].ToString() == model &&
+                                                                        Convert.ToDouble(row["導程"].ToString()) == lead &&
+                                                                        Convert.ToInt32(row["安裝方式"].ToString()) == (int)setupMethod
                                                                             );
                 return Convert.ToInt32(rows.First()[moment.ToString()]);
             } catch (Exception ex) {
@@ -157,17 +157,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 取同型號集合
             IEnumerable<DataRow> strokeRpms;
             if (IsContainsReducerRatio(model))
-                strokeRpms = strokeRpm.Rows.Cast<DataRow>().Where(row => model.StartsWith(row["Model"].ToString()));
+                strokeRpms = strokeRpm.Rows.Cast<DataRow>().Where(row => model.StartsWith(row["型號"].ToString()));
             else
-                strokeRpms = strokeRpm.Rows.Cast<DataRow>().Where(row => row["Model"].ToString() == model && Convert.ToDouble(row["Lead"].ToString()) == (int)Math.Round(lead, 0));
+                strokeRpms = strokeRpm.Rows.Cast<DataRow>().Where(row => row["型號"].ToString() == model && Convert.ToDouble(row["導程"].ToString()) == (int)Math.Round(lead, 0));
 
             try {
                 // 依照行程取RPM
-                int strokeRpm = Convert.ToInt32(strokeRpms.First(row => Convert.ToInt32(row["Stroke"].ToString()) >= stroke)["RPM"]);
+                int strokeRpm = Convert.ToInt32(strokeRpms.First(row => Convert.ToInt32(row["行程"].ToString()) >= stroke)["轉速"]);
                 return strokeRpm;
             } catch (Exception ex) {
                 Console.WriteLine(ex);
-                return Convert.ToInt32(strokeRpms.Last()["RPM"].ToString());
+                return Convert.ToInt32(strokeRpms.Last()["轉速"].ToString());
             }
 
         }
@@ -196,11 +196,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public int GetMaxStroke(string model, double lead) {
             IEnumerable<int> strokes;
             if (IsContainsReducerRatio(model))
-                strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => model.StartsWith(row["Model"].ToString()))
-                                                        .Select(row => Convert.ToInt32(row["Stroke"].ToString()));
+                strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => model.StartsWith(row["型號"].ToString()))
+                                                        .Select(row => Convert.ToInt32(row["行程"].ToString()));
             else
-                strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => row["Model"].ToString() == model && Convert.ToDouble(row["Lead"].ToString()) == (int)Math.Round(lead, 0))
-                                                        .Select(row => Convert.ToInt32(row["Stroke"].ToString()));
+                strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => row["型號"].ToString() == model && Convert.ToDouble(row["導程"].ToString()) == (int)Math.Round(lead, 0))
+                                                        .Select(row => Convert.ToInt32(row["行程"].ToString()));
             return strokes.Max();
         }
 
@@ -213,10 +213,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             try {
                 data = momentData.Rows.Cast<DataRow>()
-                                             .Where(row => row["Model"].ToString() == model &&
-                                                           Convert.ToDouble(row["Lead"].ToString()) == lead &&
-                                                           Convert.ToInt32(row["Setup"].ToString()) == (int)conditions.setupMethod)
-                                             .Select(row => row["MaxLoad"].ToString())
+                                             .Where(row => row["型號"].ToString() == model &&
+                                                           Convert.ToDouble(row["導程"].ToString()) == lead &&
+                                                           Convert.ToInt32(row["安裝方式"].ToString()) == (int)conditions.setupMethod)
+                                             .Select(row => row["最大荷重"].ToString())
                                              .First();
                 if (!string.IsNullOrEmpty(data))
                     maxLoad = Convert.ToDouble(data);
@@ -321,16 +321,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         // 取馬達資訊
         public (double ratedTorque, double maxTorque, double rotateInertia) GetMotorParams(int power) {
-            Func<DataRow, bool> con = row => Convert.ToInt32(row["Power"].ToString()) == power;
-            double ratedTorque = motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => Convert.ToDouble(row["RatedTorque"].ToString())).First();
-            double maxTorque = motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => Convert.ToDouble(row["MaxTorque"].ToString())).First();
-            double rotateInertia = motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => Convert.ToDouble(row["RotateInertia"].ToString())).First();
+            Func<DataRow, bool> con = row => Convert.ToInt32(row["馬達瓦數"].ToString()) == power;
+            double ratedTorque = motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => Convert.ToDouble(row["額定轉矩"].ToString())).First();
+            double maxTorque = motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => Convert.ToDouble(row["最大轉矩"].ToString())).First();
+            double rotateInertia = motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => Convert.ToDouble(row["轉動慣量"].ToString())).First();
             return (ratedTorque, maxTorque, rotateInertia);
         }
 
         public bool IsContainsReducerRatio(string model) {
-            //return reducerInfo.Rows.Cast<DataRow>().Any(row => row["Model"].ToString() == model);
-            return beltInfo.Rows.Cast<DataRow>().Any(row => row["Model"].ToString().StartsWith(model) && row["Model"].ToString().Contains("-"));
+            //return reducerInfo.Rows.Cast<DataRow>().Any(row => row["型號"].ToString() == model);
+            return beltInfo.Rows.Cast<DataRow>().Any(row => row["型號"].ToString().StartsWith(model) && row["型號"].ToString().Contains("-"));
         }
 
         // 皮帶Vmax(m/s)
@@ -445,36 +445,36 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             int rpm = GetRpmByStroke(model, lead, stroke);
             double vMax = (lead * (double)rpm) / 60f;
-            double repeatability = Convert.ToDouble(modelInfo.Rows.Cast<DataRow>().First(row => row["Model"].ToString() == model)["Repeatability"].ToString());
+            double repeatability = Convert.ToDouble(modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString() == model)["重複定位精度"].ToString());
             double minAccelTime = repeatability <= 0.01 ? 0.2 : 0.4;
             int maxAccelSpeed = (int)(vMax / minAccelTime);
             return maxAccelSpeed;
         }
 
         public Model.ModelType[] GetNotNullModelType() {
-            Model.ModelType[] allModelTypes = modelInfo.Rows.Cast<DataRow>().Select(row => (Model.ModelType)Convert.ToInt32(row["Type"].ToString())).Distinct().ToArray();
+            Model.ModelType[] allModelTypes = modelInfo.Rows.Cast<DataRow>().Select(row => (Model.ModelType)Enum.Parse(typeof(Model.ModelType), row["型號類別"].ToString())).Distinct().ToArray();
             return allModelTypes;
         }
 
         public Model.ModelType[] GetDustfreeModelType() {
             Model.ModelType[] allModelTypes = modelTypeInfo.Rows.Cast<DataRow>().Where(row => row["是否有無塵"].ToString() == "有")
-                                                                            .Select(row => (Model.ModelType)Convert.ToInt32(row["Type"].ToString()))
+                                                                            .Select(row => (Model.ModelType)Enum.Parse(typeof(Model.ModelType), row["型號類別"].ToString()))
                                                                             .ToArray();
             return allModelTypes;
         }
 
         public string GetModelTypeComment(Model.ModelType modelType) {
-            return modelTypeInfo.Rows.Cast<DataRow>().First(row => Convert.ToInt32(row["Type"].ToString()) == (int)modelType)["敘述"].ToString();
+            return modelTypeInfo.Rows.Cast<DataRow>().First(row => row["型號類別"].ToString() == modelType.ToString())["敘述"].ToString();
         }
 
         public Model.SetupMethod[] GetSupportMethod(Model.ModelType modelType) {
-            var setups = modelInfo.Rows.Cast<DataRow>().Where(row => Convert.ToInt32(row["Type"].ToString()) == (int)modelType)
-                                                       .Select(row => row["Setup"].ToString().Split('&'))
+            var setups = modelInfo.Rows.Cast<DataRow>().Where(row => row["型號類別"].ToString() == modelType.ToString())
+                                                       .Select(row => row["安裝方式"].ToString().Split('&'))
                                                        .Distinct();
             List<Model.SetupMethod> supportSetups = new List<Model.SetupMethod>();
             setups.ToList().ForEach(setup => {
                 setup.ToList().ForEach(s => {
-                    Model.SetupMethod _s = (Model.SetupMethod)Convert.ToInt32(s);
+                    Model.SetupMethod _s = (Model.SetupMethod)Enum.Parse(typeof(Model.SetupMethod), s);
                     if (!supportSetups.Contains(_s))
                         supportSetups.Add(_s);
                 });
@@ -484,14 +484,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public Model.ModelType GetModelType(string model) {
-            string type = modelInfo.Rows.Cast<DataRow>().First(row => row["Model"].ToString() == model)["Type"].ToString();
-            Model.ModelType modelType = (Model.ModelType)Convert.ToInt32(type);
+            string type = modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString() == model)["型號類別"].ToString();
+            Model.ModelType modelType = (Model.ModelType)Enum.Parse(typeof(Model.ModelType), type);
             return modelType;
         }
 
         public Model.UseEnvironment GetModelUseEnv(string model) {
-            string env = modelInfo.Rows.Cast<DataRow>().First(row => row["Model"].ToString() == model)["Env"].ToString();
-            Model.UseEnvironment useEnvironment = (Model.UseEnvironment)Convert.ToInt32(env);
+            string env = modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString() == model)["使用環境"].ToString();
+            Model.UseEnvironment useEnvironment = (Model.UseEnvironment)Enum.Parse(typeof(Model.UseEnvironment), env);
             return useEnvironment;
         }
     }

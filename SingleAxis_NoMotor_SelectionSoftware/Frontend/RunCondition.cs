@@ -140,19 +140,19 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 使用環境
             if (formMain.optStandardEnv.Checked)
-                curCondition.useEnvironment = Model.UseEnvironment.Standard;
+                curCondition.useEnvironment = Model.UseEnvironment.標準;
             else if (formMain.optDustFreeEnv.Checked)
-                curCondition.useEnvironment = Model.UseEnvironment.DustFree;
+                curCondition.useEnvironment = Model.UseEnvironment.無塵;
             // 機構型態
             //curCondition.modelType = (Model.ModelType)Enum.Parse(typeof(Model.ModelType), formMain.cboModelType.Text);
             curCondition.modelType = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value;
             // 安裝方式
             if (formMain.optHorizontalUse.Checked)
-                curCondition.setupMethod = Model.SetupMethod.Horizontal;
+                curCondition.setupMethod = Model.SetupMethod.水平;
             else if (formMain.optWallHangingUse.Checked)
-                curCondition.setupMethod = Model.SetupMethod.WallHang;
+                curCondition.setupMethod = Model.SetupMethod.橫掛;
             else if (formMain.optVerticalUse.Checked)
-                curCondition.setupMethod = Model.SetupMethod.Vertical;
+                curCondition.setupMethod = Model.SetupMethod.垂直;
             // 最高速度
             if (formMain.optMaxSpeedType_mms.Checked)
                 curCondition.vMax = Convert.ToDouble(formMain.txtMaxSpeed.Text);

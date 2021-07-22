@@ -13,15 +13,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 力舉參數驗證
             VerifyMomentParam(condition.moment_A, condition.moment_B, condition.moment_C);
             if (condition.isMomentLimitByCatalog) {
-                if (condition.setupMethod == Model.SetupMethod.Horizontal) {
+                if (condition.setupMethod == Model.SetupMethod.水平) {
                     model.moment_A = GetMaxMomentParam(model.name, model.lead, condition.setupMethod, Model.Moment.A);
                     model.moment_B = 0;
                     model.moment_C = 0;
-                } else if (condition.setupMethod == Model.SetupMethod.WallHang) {
+                } else if (condition.setupMethod == Model.SetupMethod.橫掛) {
                     model.moment_A = 0;
                     model.moment_B = 0;
                     model.moment_C = GetMaxMomentParam(model.name, model.lead, condition.setupMethod, Model.Moment.C);
-                } else if (condition.setupMethod == Model.SetupMethod.Vertical) {
+                } else if (condition.setupMethod == Model.SetupMethod.垂直) {
                     model.moment_A = GetMaxMomentParam(model.name, model.lead, condition.setupMethod, Model.Moment.A);
                     model.moment_B = 0;
                     model.moment_C = 0;
@@ -236,26 +236,26 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 加速區外力
             model.rollingFriction_accel = model.p_a * model.c * 0.003;
             model.inertialLoad_accel = (model.load + 3) * model.accelSpeed;
-            if (conditions.setupMethod == Model.SetupMethod.Vertical)
+            if (conditions.setupMethod == Model.SetupMethod.垂直)
                 model.otherForce_accel = model.load * 9.8;
             model.equivalentLoad_accel = Math.Abs(model.rollingFriction_accel + model.accessoriesFriction_accel + model.inertialLoad_accel + model.otherForce_accel);
 
             // 等速區外力
             model.rollingFriction_constant = model.p_c * model.c * 0.003;
             model.inertialLoad_constant = 0;
-            if (conditions.setupMethod == Model.SetupMethod.Vertical)
+            if (conditions.setupMethod == Model.SetupMethod.垂直)
                 model.otherForce_constant = model.load * 9.8;
             model.equivalentLoad_constant = Math.Abs(model.rollingFriction_constant + model.accessoriesFriction_constant + model.inertialLoad_constant + model.otherForce_constant);
 
             // 減速區外力
             model.rollingFriction_decel = model.p_d * model.c * 0.003;
             model.inertialLoad_decel = (model.load + 3) * model.accelSpeed * -1;
-            if (conditions.setupMethod == Model.SetupMethod.Vertical)
+            if (conditions.setupMethod == Model.SetupMethod.垂直)
                 model.otherForce_decel = model.load * 9.8;
             model.equivalentLoad_decel = Math.Abs(model.rollingFriction_decel + model.accessoriesFriction_decel + model.inertialLoad_decel + model.otherForce_decel);
 
             // 停等區外力
-            if (conditions.setupMethod == Model.SetupMethod.Vertical)
+            if (conditions.setupMethod == Model.SetupMethod.垂直)
                 model.otherForce_stop = model.load * 9.8;
 
             model.fwScrew = 1.2;

@@ -19,9 +19,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             this.model = model;
 
             CalcMethod = new Dictionary<Model.SetupMethod, Action>() {
-                { Model.SetupMethod.Horizontal, Calc_Horizontal },
-                { Model.SetupMethod.WallHang, Calc_WallHang },
-                { Model.SetupMethod.Vertical, Calc_Vertical },
+                { Model.SetupMethod.水平, Calc_Horizontal },
+                { Model.SetupMethod.橫掛, Calc_WallHang },
+                { Model.SetupMethod.垂直, Calc_Vertical },
             };
 
             CalcMethod[setupMethod]();
