@@ -47,9 +47,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         model.vMax = GetBeltVmax_ms(model.name, model.lead, 1, condition.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
                 } else {
                     if (condition.reducerRatio.Keys.Contains(model.name))
-                        model.vMax = GetVmax_ms(model.name, model.lead, condition.reducerRatio[model.name], condition.stroke);
+                        model.vMax = GetVmax_ms(model, model.lead, condition.reducerRatio[model.name], condition.stroke);
                     else
-                        model.vMax = GetVmax_ms(model.name, model.lead, 1, condition.stroke);
+                        model.vMax = GetVmax_ms(model, model.lead, 1, condition.stroke);
                 }
             } else if (condition.vMaxCalcMode == Condition.CalcVmax.Custom) {
                 model.vMax = condition.vMax / 1000f;
@@ -70,9 +70,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 取最高線速度
             if (condition.reducerRatio.Keys.Contains(model.name))
-                model.vMax_max = GetVmax_mms(model.name, model.lead, condition.reducerRatio[model.name], condition.stroke);
+                model.vMax_max = GetVmax_mms(model, model.lead, condition.reducerRatio[model.name], condition.stroke);
             else
-                model.vMax_max = GetVmax_mms(model.name, model.lead, 1, condition.stroke);
+                model.vMax_max = GetVmax_mms(model, model.lead, 1, condition.stroke);
 
             // 最大行程驗證
             model.maxStroke = GetMaxStroke(model.name, model.lead, condition.reducerRatio.Keys.Contains(model.name) ? condition.reducerRatio[model.name] : 1);
@@ -94,9 +94,19 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             if (isCheckStrokeTooShort) {
                 // 行程過短驗證
-                if (strokeTooShortModifyItem == Converter.ModifyItem.Vmax)
+                if (strokeTooShortModifyItem == Converter.ModifyItem.Vmax) {
                     model.vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, model.vMax, model.accelTime, model.stroke);
-                else if (strokeTooShortModifyItem == Converter.ModifyItem.AccelSpeed) {
+
+                    // rpm修正
+                    if (model.isUseBaltCalc) {
+                        model.rpm = GetBeltRPM(model.vMax, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
+                    } else {
+                        if (condition.reducerRatio.Keys.Contains(model.name))
+                            model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead / condition.reducerRatio[model.name]);
+                        else
+                            model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead);
+                    }
+                } else if (strokeTooShortModifyItem == Converter.ModifyItem.AccelSpeed) {
                     model.accelTime = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, model.vMax, model.accelTime, model.stroke);
                 }
             }
@@ -157,9 +167,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 使用者key
             if (conditions.vMaxCalcMode == Condition.CalcVmax.Max) {
                 if (conditions.reducerRatio.Keys.Contains(model.name))
-                    model.vMax = GetVmax_ms(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
+                    model.vMax = GetVmax_ms(model, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
                 else
-                    model.vMax = GetVmax_ms(model.name, model.lead, 1, conditions.stroke);
+                    model.vMax = GetVmax_ms(model, model.lead, 1, conditions.stroke);
             } else if (conditions.vMaxCalcMode == Condition.CalcVmax.Custom)
                 model.vMax = conditions.vMax / 1000f;
 
@@ -175,9 +185,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 取最高線速度
             if (conditions.reducerRatio.Keys.Contains(model.name))
-                model.vMax_max = GetVmax_mms(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
+                model.vMax_max = GetVmax_mms(model, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
             else
-                model.vMax_max = GetVmax_mms(model.name, model.lead, 1, conditions.stroke);
+                model.vMax_max = GetVmax_mms(model, model.lead, 1, conditions.stroke);
 
             // 最大行程驗證
             model.maxStroke = GetMaxStroke(model.name, model.lead, conditions.reducerRatio.Keys.Contains(model.name) ? conditions.reducerRatio[model.name] : 1);

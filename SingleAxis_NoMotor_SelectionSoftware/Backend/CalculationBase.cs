@@ -126,7 +126,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
         }
 
-        public double GetVmax_ms(string model, double lead, int reducer, int stroke) {
+        public double GetVmax_ms(Model model, double lead, int reducer, int stroke) {
             try {
                 return GetVmax_mms(model, lead, reducer, stroke) / 1000f;
             } catch (Exception ex) {
@@ -135,13 +135,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
         }
 
-        public double GetVmax_mms(string model, double lead, int reducer, int stroke) {
+        public double GetVmax_mms(Model model, double lead, int reducer, int stroke) {
             try {
                 // 依照行程取RPM
-                int rpm = GetRpmByStroke(model, lead, reducer, stroke);
-                //if (model.isUseBaltCalc)
-                //    return GetBeltVmax_ms(model.name, lead, reducer, stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType) * 1000;
-                //else
+                int rpm = GetRpmByStroke(model.name, lead, reducer, stroke);
+                if (model.isUseBaltCalc)
+                    return GetBeltVmax_ms(model.name, lead, reducer, stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType) * 1000;
+                else
                     // 轉速換算Vmax
                     return Math.Round(RPM_TO_MMS(rpm, lead), 2);    // 四捨五入取小數第一位
             } catch (Exception ex) {
@@ -259,9 +259,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         _vMax = GetBeltVmax_ms(model.name, model.lead, 1, conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
                 } else {
                     if (conditions.reducerRatio.Keys.Contains(model.name))
-                        _vMax = GetVmax_ms(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
+                        _vMax = GetVmax_ms(model, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
                     else
-                        _vMax = GetVmax_ms(model.name, model.lead, 1, conditions.stroke);
+                        _vMax = GetVmax_ms(model, model.lead, 1, conditions.stroke);
                 }
             } else if (conditions.vMaxCalcMode == Condition.CalcVmax.Custom) {
                 _vMax = conditions.vMax / 1000f;
@@ -340,6 +340,27 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 int rpm = GetRpmByStroke(model, lead, reducer, stroke);
                 double vMax_belt = Math.PI * subWheel2.diameter * (rpm / 60) / 1000;
                 return vMax_belt;
+            }
+        }
+
+        /// <summary>
+        /// 皮帶RPM回推
+        /// </summary>
+        /// <param name="vMax_belt">m/s</param>
+        /// <param name="mainWheel"></param>
+        /// <param name="subWheel1"></param>
+        /// <param name="subWheel2"></param>
+        /// <param name="beltCalcType"></param>
+        /// <returns></returns>
+        public int GetBeltRPM(double vMax_belt, BeltWheel mainWheel, SubBeltWheel subWheel1, SubBeltWheel subWheel2, Model.BeltCalcType beltCalcType) {
+            if (beltCalcType == Model.BeltCalcType.減速機構 || beltCalcType == Model.BeltCalcType.減速機) {
+                double reducerRpmRatio = subWheel1.diameter / mainWheel.diameter;
+                double subWheelRpm = vMax_belt * 1000 * 60 / Math.PI / subWheel2.diameter;
+                int rpm = (int)(subWheelRpm * reducerRpmRatio);
+                return rpm;
+            } else {
+                int rpm = (int)(vMax_belt * 1000 * 60 / Math.PI / subWheel2.diameter);
+                return rpm;
             }
         }
         

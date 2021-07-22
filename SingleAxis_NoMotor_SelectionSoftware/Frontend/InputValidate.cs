@@ -334,8 +334,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     lead /= reducerRatio;
                 }
 
+                Model m = formMain.page2.calc.GetAllModels(formMain.page2.runCondition.curCondition).First(_m => _m.name == model && _m.lead == lead);
                 if (formMain.optMaxSpeedType_mms.Checked) {
-                    double resultVmax = formMain.page2.calc.GetVmax_mms(model, lead, reducerRatio, (int)stroke);
+                    double resultVmax = formMain.page2.calc.GetVmax_mms(m, lead, reducerRatio, (int)stroke);
                     // vMax key過大修正
                     if (Convert.ToDouble(formMain.txtMaxSpeed.Text) > resultVmax)
                         formMain.txtMaxSpeed.Text = resultVmax.ToString();
@@ -343,7 +344,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     // RPM 顯示                
                     formMain.lbRpm.Text = "RPM: " + formMain.page2.calc.GetRpmByMMS(lead, Convert.ToDouble(formMain.txtMaxSpeed.Text)).ToString();
                 } else if (formMain.optMaxSpeedType_rpm.Checked) {
-                    double resultVmax = formMain.page2.calc.GetVmax_mms(model, lead, reducerRatio, (int)stroke);
+                    double resultVmax = formMain.page2.calc.GetVmax_mms(m, lead, reducerRatio, (int)stroke);
                     int resultRpm = formMain.page2.calc.MMS_TO_RPM(resultVmax, lead);
                     // vMax key過大修正
                     if (Convert.ToDouble(formMain.txtMaxSpeed.Text) > resultRpm)

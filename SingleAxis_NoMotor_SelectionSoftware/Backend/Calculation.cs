@@ -253,8 +253,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             foreach (Model model in models) {
                 // 滑軌壽命計算            
                 model.slideTrackServiceLifeDistance = GetSlideTrackEstimatedLife(model, con);
-                // 螺桿壽命計算
-                model.screwServiceLifeDistance = GetScrewEstimatedLife(model, con);
+                if (!model.isUseBaltCalc)
+                    // 螺桿壽命計算
+                    model.screwServiceLifeDistance = GetScrewEstimatedLife(model, con);
                 // 扭矩計算
                 (bool is_tMax_OK, bool is_tRms_OK) confirmResult = TorqueConfirm(model, con);
                 model.is_tMax_OK = confirmResult.is_tMax_OK;
