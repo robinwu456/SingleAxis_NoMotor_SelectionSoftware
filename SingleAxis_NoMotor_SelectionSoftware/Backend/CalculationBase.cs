@@ -53,25 +53,25 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (model.isUseBaltCalc) {
                     Func<DataRow, bool> con = con = x => x["型號"].ToString().Equals(model.name);
                     var beltInfoRows = beltInfo.Rows.Cast<DataRow>().Where(con);
-                    // 主動輪
-                    model.mainWheel = new BeltWheel(
-                        beltInfoRows.Select(x => Convert.ToDouble(x["主動輪徑"].ToString())).First(),
-                        beltInfoRows.Select(x => Convert.ToDouble(x["主動輪寬"].ToString())).First()
+                    // 主動輪P1
+                    model.mainWheel_P1 = new BeltWheel(
+                        beltInfoRows.Select(x => Convert.ToDouble(x["主動輪P1輪徑"].ToString())).First(),
+                        beltInfoRows.Select(x => Convert.ToDouble(x["主動輪P1輪寬"].ToString())).First()
                     );
-                    // 從動輪1
-                    model.subWheel1 = new SubBeltWheel(
-                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪1輪徑"].ToString())).First(),
-                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪1輪寬"].ToString())).First()
+                    // 從動輪P2
+                    model.subWheel_P2 = new SubBeltWheel(
+                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P2輪徑"].ToString())).First(),
+                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P2輪寬"].ToString())).First()
                     );
-                    // 從動輪2
-                    model.subWheel2 = new SubBeltWheel(
-                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪2輪徑"].ToString())).First(),
-                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪2輪寬"].ToString())).First()
+                    // 從動輪P3
+                    model.subWheel_P3 = new SubBeltWheel(
+                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P3輪徑"].ToString())).First(),
+                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P3輪寬"].ToString())).First()
                     );
-                    // 從動輪3
-                    model.subWheel3 = new SubBeltWheel(
-                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪3輪徑"].ToString())).First(),
-                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪3輪寬"].ToString())).First()
+                    // 從動輪P4
+                    model.subWheel_P4 = new SubBeltWheel(
+                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P4輪徑"].ToString())).First(),
+                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P4輪寬"].ToString())).First()
                     );
                     // 負載慣量與力矩比
                     model.loadInertiaMomentRatio = beltInfoRows.Select(x => Convert.ToDouble(x["負載慣量與力矩比"].ToString())).First();
@@ -139,7 +139,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 // 依照行程取RPM
                 int rpm = GetRpmByStroke(model.name, lead, stroke);
                 if (model.isUseBaltCalc)
-                    return GetBeltVmax_ms(model.name, lead, stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType) * 1000;
+                    return GetBeltVmax_ms(model.name, lead, stroke, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType) * 1000;
                 else
                     // 轉速換算Vmax
                     return Math.Round(RPM_TO_MMS(rpm, lead), 2);    // 四捨五入取小數第一位
@@ -260,7 +260,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     //    _vMax = GetBeltVmax_ms(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
                     //else
                     //    _vMax = GetBeltVmax_ms(model.name, model.lead, 1, conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
-                    _vMax = GetBeltVmax_ms(model.name, model.lead, conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
+                    _vMax = GetBeltVmax_ms(model.name, model.lead, conditions.stroke, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
                 } else {
                     //if (conditions.reducerRatio.Keys.Contains(model.name))
                     //    _vMax = GetVmax_ms(model, model.lead, conditions.reducerRatio[model.name], conditions.stroke);

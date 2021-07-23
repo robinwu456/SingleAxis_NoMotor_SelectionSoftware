@@ -45,7 +45,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     //    model.vMax = GetBeltVmax_ms(model.name, model.lead, condition.reducerRatio[model.name], condition.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
                     //else
                     //    model.vMax = GetBeltVmax_ms(model.name, model.lead, 1, condition.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
-                    model.vMax = GetBeltVmax_ms(model.name, model.lead, condition.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
+                    model.vMax = GetBeltVmax_ms(model.name, model.lead, condition.stroke, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
                 } else {
                     //if (condition.reducerRatio.Keys.Contains(model.name))
                     //    model.vMax = GetVmax_ms(model, model.lead, condition.reducerRatio[model.name], condition.stroke);
@@ -103,7 +103,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
                     // rpm修正
                     if (model.isUseBaltCalc) {
-                        model.rpm = GetBeltRPM(model.vMax, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
+                        model.rpm = GetBeltRPM(model.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
                     } else {
                         //if (condition.reducerRatio.Keys.Contains(model.name))
                         //    model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead / condition.reducerRatio[model.name]);

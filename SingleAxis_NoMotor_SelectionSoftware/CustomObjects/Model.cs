@@ -462,21 +462,21 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// </summary>
         public int subWheelRpm;
         /// <summary>
-        /// 主動輪
+        /// 主動輪P1
         /// </summary>
-        public BeltWheel mainWheel;
+        public BeltWheel mainWheel_P1;
         /// <summary>
-        /// 從動輪1
+        /// 從動輪P2
         /// </summary>
-        public SubBeltWheel subWheel1;
+        public SubBeltWheel subWheel_P2;
         /// <summary>
-        /// 從動輪2
+        /// 從動輪P3
         /// </summary>
-        public SubBeltWheel subWheel2;
+        public SubBeltWheel subWheel_P3;
         /// <summary>
-        /// 從動輪3
+        /// 從動輪P4
         /// </summary>
-        public SubBeltWheel subWheel3;
+        public SubBeltWheel subWheel_P4;
         #endregion
 
         #region 各階段軸向外力

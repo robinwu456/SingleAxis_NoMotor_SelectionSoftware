@@ -203,22 +203,22 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 ( "各階段軸向外力", "" ),
                 ( "  加速區外力(N)", " " ),
                 ( "    滾動摩擦", model.rollingFriction_accel ),
-                ( "    配件摩擦", model.mainWheel == null ? model.accessoriesFriction_accel : model.accessoriesFriction_belt_accel ),
+                ( "    配件摩擦", model.mainWheel_P1 == null ? model.accessoriesFriction_accel : model.accessoriesFriction_belt_accel ),
                 ( "    其他外力", model.otherForce_accel ),
                 ( "    合計", model.forceTotal_accel ),
                 ( "  等速區外力(N)", " " ),
                 ( "    滾動摩擦", model.rollingFriction_constant ),
-                ( "    配件摩擦", model.mainWheel == null ? model.accessoriesFriction_constant : model.accessoriesFriction_belt_constant ),
+                ( "    配件摩擦", model.mainWheel_P1 == null ? model.accessoriesFriction_constant : model.accessoriesFriction_belt_constant ),
                 ( "    其他外力", model.otherForce_constant ),
                 ( "    合計", model.forceTotal_constant ),
                 ( "  減速區外力(N)", " " ),
                 ( "    滾動摩擦", model.rollingFriction_decel ),
-                ( "    配件摩擦", model.mainWheel == null ? model.accessoriesFriction_decel : model.accessoriesFriction_belt_decel ),
+                ( "    配件摩擦", model.mainWheel_P1 == null ? model.accessoriesFriction_decel : model.accessoriesFriction_belt_decel ),
                 ( "    其他外力", model.otherForce_decel ),
                 ( "    合計", model.forceTotal_decel ),
                 ( "  停置區外力(N)", " " ),
                 ( "    滾動摩擦", model.rollingFriction_stop ),
-                ( "    配件摩擦", model.mainWheel == null ? model.accessoriesFriction_stop : model.accessoriesFriction_belt_stop ),
+                ( "    配件摩擦", model.mainWheel_P1 == null ? model.accessoriesFriction_stop : model.accessoriesFriction_belt_stop ),
                 ( "    其他外力", model.otherForce_stop ),
                 ( "    合計", model.forceTotal_stop ),
                 // 各階段馬達負擔扭矩
@@ -295,31 +295,31 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             var motorInfoBelt = new List<(string key, object value)>();
             var motorTorqueInfoBelt = new List<(string key, object value)>();
             var beltTorqueInfo = new List<(string key, object value)>();
-            if (model.mainWheel != null) {
+            if (model.mainWheel_P1 != null) {
                 beltInfo = new List<(string key, object value)>() {
                     ( "主動輪資訊(P1)", "" ),
-                    ( "  輪徑(mm)", model.mainWheel.diameter ),
-                    ( "  皮帶輪寬度(mm)", model.mainWheel.width ),
-                    ( "  皮帶輪材質密度(kg/m^3)", model.mainWheel.materialDensity ),
-                    ( "  皮帶輪轉動慣量(kg‧mm^2)", model.mainWheel.rotateInertia ),
+                    ( "  輪徑(mm)", model.mainWheel_P1.diameter ),
+                    ( "  皮帶輪寬度(mm)", model.mainWheel_P1.width ),
+                    ( "  皮帶輪材質密度(kg/m^3)", model.mainWheel_P1.materialDensity ),
+                    ( "  皮帶輪轉動慣量(kg‧mm^2)", model.mainWheel_P1.rotateInertia ),
                     ( "從動輪資訊(P2)", "" ),
-                    ( "  輪徑(mm)", model.subWheel1.diameter ),
-                    ( "  皮帶輪寬度(mm)", model.subWheel1.width ),
-                    ( "  皮帶輪材質密度(kg/m^3)", model.subWheel1.materialDensity ),
-                    ( "  皮帶輪轉動慣量(kg‧mm^2)", model.subWheel1.rotateInertia ),
-                    ( "  從動皮帶輪轉動慣量(kg‧mm^2)", model.subWheel1.rotateInertia_subWheel ),
+                    ( "  輪徑(mm)", model.subWheel_P2.diameter ),
+                    ( "  皮帶輪寬度(mm)", model.subWheel_P2.width ),
+                    ( "  皮帶輪材質密度(kg/m^3)", model.subWheel_P2.materialDensity ),
+                    ( "  皮帶輪轉動慣量(kg‧mm^2)", model.subWheel_P2.rotateInertia ),
+                    ( "  從動皮帶輪轉動慣量(kg‧mm^2)", model.subWheel_P2.rotateInertia_subWheel ),
                     ( "從動輪資訊(P3)", "" ),
-                    ( "  輪徑(mm)", model.subWheel2.diameter ),
-                    ( "  皮帶輪寬度(mm)", model.subWheel2.width ),
-                    ( "  皮帶輪材質密度(kg/m^3)", model.subWheel2.materialDensity ),
-                    ( "  皮帶輪轉動慣量(kg‧mm^2)", model.subWheel2.rotateInertia ),
-                    ( "  從動皮帶輪轉動慣量(kg‧mm^2)", model.subWheel2.rotateInertia_subWheel ),
+                    ( "  輪徑(mm)", model.subWheel_P3.diameter ),
+                    ( "  皮帶輪寬度(mm)", model.subWheel_P3.width ),
+                    ( "  皮帶輪材質密度(kg/m^3)", model.subWheel_P3.materialDensity ),
+                    ( "  皮帶輪轉動慣量(kg‧mm^2)", model.subWheel_P3.rotateInertia ),
+                    ( "  從動皮帶輪轉動慣量(kg‧mm^2)", model.subWheel_P3.rotateInertia_subWheel ),
                     ( "從動輪資訊(P4)", "" ),
-                    ( "  輪徑(mm)", model.subWheel3.diameter ),
-                    ( "  皮帶輪寬度(mm)", model.subWheel3.width ),
-                    ( "  皮帶輪材質密度(kg/m^3)", model.subWheel3.materialDensity ),
-                    ( "  皮帶輪轉動慣量(kg‧mm^2)", model.subWheel3.rotateInertia ),
-                    ( "  從動皮帶輪轉動慣量(kg‧mm^2)", model.subWheel3.rotateInertia_subWheel ),
+                    ( "  輪徑(mm)", model.subWheel_P4.diameter ),
+                    ( "  皮帶輪寬度(mm)", model.subWheel_P4.width ),
+                    ( "  皮帶輪材質密度(kg/m^3)", model.subWheel_P4.materialDensity ),
+                    ( "  皮帶輪轉動慣量(kg‧mm^2)", model.subWheel_P4.rotateInertia ),
+                    ( "  從動皮帶輪轉動慣量(kg‧mm^2)", model.subWheel_P4.rotateInertia_subWheel ),
                     ( "皮帶輪加減速關係", "" ),
                     ( "  主動輪(馬達)轉速(rpm)", model.mainWheelRpm ),
                     ( "  從動輪(減速機)轉速(rpm)", model.subWheelRpm ),
@@ -364,7 +364,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     ( "  評估(本身具有3的安全係數)", model.is_belt_tMax_OK ? "OK" : "NG" ),
                 };
             }
-            if (model.mainWheel == null) {
+            if (model.mainWheel_P1 == null) {
                 ///
                 /// 螺桿型
                 ///
