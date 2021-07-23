@@ -97,7 +97,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 傳動方式更新
             Model.ModelType curModelType = formMain.page2.calc.GetModelType(formMain.cboModel.Text);
             formMain.page2.modelTypeOptMap.First(pair => pair.Value == curModelType).Key.Checked = true;
-            formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(curModelType), SideTable.MsgStatus.Normal);
+            formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(curModelType, curModelUseEnv), SideTable.MsgStatus.Normal);
 
             // 更新側邊型號
             if (leads.Count() != 0) {

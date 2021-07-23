@@ -463,8 +463,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return allModelTypes;
         }
 
-        public string GetModelTypeComment(Model.ModelType modelType) {
-            return modelTypeInfo.Rows.Cast<DataRow>().First(row => row["型號類別"].ToString() == modelType.ToString())["敘述"].ToString();
+        public string GetModelTypeComment(Model.ModelType modelType, Model.UseEnvironment useEnvironment) {
+            string columnName = useEnvironment == Model.UseEnvironment.標準 ? "標準敘述" : "無塵敘述";
+            string comment = modelTypeInfo.Rows.Cast<DataRow>().First(row => row["型號類別"].ToString() == modelType.ToString())[columnName].ToString();
+            if (comment == "")
+                comment = modelTypeInfo.Rows.Cast<DataRow>().First(row => row["型號類別"].ToString() == modelType.ToString())["標準敘述"].ToString();
+            return comment;
         }
 
         public Model.SetupMethod[] GetSupportMethod(Model.ModelType modelType) {

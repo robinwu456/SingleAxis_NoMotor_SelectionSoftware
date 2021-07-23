@@ -44,13 +44,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             modelTypeOptMap = new Dictionary<RadioButton, Model.ModelType>() {
                 { formMain.optStandardScrewActuator, Model.ModelType.螺桿系列 },
                 { formMain.optBuildInScrewActuator, Model.ModelType.軌道內崁螺桿系列 },
-                { formMain.optBuildInRodTypeScrewActuator, Model.ModelType.軌道內崁推桿滑台 },
+                { formMain.optBuildInRodTypeScrewActuator, Model.ModelType.軌道內崁推桿系列 },
                 { formMain.optNoTrackRodTypeActuator, Model.ModelType.推桿系列 },
                 { formMain.optBuildOutRodTypeActuator, Model.ModelType.軌道外掛推桿系列 },
                 { formMain.optSupportTrackRodTypeActuator, Model.ModelType.輔助導桿推桿系列 },
                 { formMain.optStandardBeltActuator, Model.ModelType.皮帶系列 },
                 { formMain.optEuropeBeltActuator, Model.ModelType.歐規皮帶系列 },
-                { formMain.optBuildInBeltActuator, Model.ModelType.軌道內崁皮帶系列 },
+                { formMain.optBuildInBeltActuator, Model.ModelType.軌道內崁歐規皮帶系列 },
                 { formMain.optBuildInSupportTrackActuator, Model.ModelType.軌道內崁輔助導軌系列 },
             };
 
@@ -105,8 +105,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 更新型號選擇
             formMain.sideTable.UpdateItem();
+            Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.標準 : Model.UseEnvironment.無塵;
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
-                formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
+                formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType, curEnv), SideTable.MsgStatus.Normal);
             else
                 formMain.sideTable.ClearMsg();
 
@@ -227,7 +228,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 更新顯示傳動方式
             formMain.sideTable.Update(null, null);
             // 更新顯示傳動方式敘述
-            formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
+            Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.標準 : Model.UseEnvironment.無塵;
+            formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType, curEnv), SideTable.MsgStatus.Normal);
             // 驗證安裝方式選項
             Model.SetupMethod[] modelTypeSupportSetupMethod = calc.GetSupportMethod(curSelectModelType);
             setupMethodOptMap.ToList().ForEach(pair => pair.Key.Enabled = modelTypeSupportSetupMethod.Contains(pair.Value));
@@ -396,6 +398,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (useEnv == Model.UseEnvironment.無塵 && !dustfreeModelTypes.Contains(curSelectModelType))
                 formMain.optBuildInScrewActuator.Checked = true;
 
+            formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType, useEnv), SideTable.MsgStatus.Normal);
+
             ReplaceItem();
         }
 
@@ -415,9 +419,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             };
             Model.ModelType[] standardPos = {
                 Model.ModelType.軌道內崁螺桿系列,
-                Model.ModelType.軌道內崁推桿滑台,
+                Model.ModelType.軌道內崁推桿系列,
                 Model.ModelType.軌道內崁輔助導軌系列,
-                Model.ModelType.軌道內崁皮帶系列,
+                Model.ModelType.軌道內崁歐規皮帶系列,
                 Model.ModelType.歐規皮帶系列,
                 Model.ModelType.螺桿系列,
                 Model.ModelType.推桿系列,
@@ -427,13 +431,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             };
             Model.ModelType[] dustFree = {
                 Model.ModelType.軌道內崁螺桿系列,
-                Model.ModelType.軌道內崁推桿滑台,
+                Model.ModelType.軌道內崁推桿系列,
                 Model.ModelType.軌道內崁輔助導軌系列,
                 Model.ModelType.歐規皮帶系列,
                 Model.ModelType.推桿系列,
                 Model.ModelType.螺桿系列,
                 Model.ModelType.皮帶系列,
-                Model.ModelType.軌道內崁皮帶系列,
+                Model.ModelType.軌道內崁歐規皮帶系列,
                 Model.ModelType.軌道外掛推桿系列,
                 Model.ModelType.輔助導桿推桿系列,
             };

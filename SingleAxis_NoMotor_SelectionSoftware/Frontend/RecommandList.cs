@@ -415,8 +415,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 return;
             Model curModel = selectModel.First();
             var errorMsgs = redFontConditions.Where(con => !con.Value(curModel)).Select(con => alarmMsg[con.Key]);
+            Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.標準 : Model.UseEnvironment.無塵;
             if (errorMsgs.Count() == 0)
-                formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType), SideTable.MsgStatus.Normal);
+                formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType, curEnv), SideTable.MsgStatus.Normal);
             else
                 formMain.sideTable.UpdateMsg(string.Join("、", errorMsgs), SideTable.MsgStatus.Alarm);
         }

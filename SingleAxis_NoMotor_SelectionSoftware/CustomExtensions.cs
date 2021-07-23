@@ -32,8 +32,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             Model.ModelType[] beltType = {
                 Model.ModelType.皮帶系列,
                 Model.ModelType.歐規皮帶系列,
-                Model.ModelType.軌道內崁皮帶系列,
-                Model.ModelType.軌道內崁皮帶系列
+                Model.ModelType.軌道內崁歐規皮帶系列,
+                Model.ModelType.軌道內崁歐規皮帶系列
             };
 
             return beltType.Contains(modelType);
@@ -47,7 +47,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public static bool IsRodType(this Model.ModelType modelType) {
             Model.ModelType[] beltType = {
                 Model.ModelType.推桿系列,
-                Model.ModelType.軌道內崁推桿滑台,
+                Model.ModelType.軌道內崁推桿系列,
                 Model.ModelType.軌道外掛推桿系列,
                 Model.ModelType.輔助導桿推桿系列,
             };
@@ -63,7 +63,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public static bool IsContainsReducerRatioType(this Model.ModelType modelType) {
             Model.ModelType[] beltType = {
                 Model.ModelType.歐規皮帶系列,
-                Model.ModelType.軌道內崁皮帶系列,
+                Model.ModelType.軌道內崁歐規皮帶系列,
             };
 
             return beltType.Contains(modelType);

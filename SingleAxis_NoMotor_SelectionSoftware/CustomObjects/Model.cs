@@ -22,14 +22,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// </summary>
         public enum ModelType {
             軌道內崁螺桿系列,
-            軌道內崁推桿滑台,
+            軌道內崁推桿系列,
             螺桿系列,
             皮帶系列,
             歐規皮帶系列,
             推桿系列,
             軌道外掛推桿系列,
             輔助導桿推桿系列,
-            軌道內崁皮帶系列,
+            軌道內崁歐規皮帶系列,
             軌道內崁輔助導軌系列
         }
 
