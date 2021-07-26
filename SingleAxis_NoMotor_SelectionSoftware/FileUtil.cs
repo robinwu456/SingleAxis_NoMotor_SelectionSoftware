@@ -148,11 +148,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
         }
 
-        public static void LogModelInfo(Model model) {
+        public static void LogModelInfo(Model model, Model.SetupMethod setupMethod, bool isSuccessModel, string fileName = "") {
             var result = new List<(string key, object value)>() {
                 ("型號", model.name),
                 ( "導程", model.lead ),
                 ( "移動行程", model.stroke ),
+                ( "安裝方式", setupMethod.ToString()),
                 ( "C(N) Dyn", model.c ),
                 ( "Moment(Nm)", "" ),
                 ( "  MR_C", model.mr_C ),
@@ -397,7 +398,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
 
             // 匯出總資訊
-            string printInfo = "";
+            string printInfo = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss.fff\r\n");
             foreach (var info in result) {
                 // 一階
                 if (info.value.ToString() == "")
@@ -409,7 +410,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 else
                     printInfo += info.key + "：" + info.value + "\r\n";
             }
-            FileWrite(Config.LOG_PARAM_FILENAME, printInfo);
+
+            if (isSuccessModel)
+                FileWrite(Config.LOG_PARAM_FILENAME, printInfo);
+            else
+                FileWrite(Config.LOG_FAIL_MODELS_FILENAME + fileName + ".log", printInfo);
         }
     }
 }

@@ -62,7 +62,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void Calc_Vertical() {
-            w = 0;
+            if (model.modelType.IsBeltType())
+                w = model.load * 9.8;
+            else
+                w = 0;
             mr = 0;
 
             // 加速區                        

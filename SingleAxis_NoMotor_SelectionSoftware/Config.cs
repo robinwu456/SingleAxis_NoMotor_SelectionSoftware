@@ -14,7 +14,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public static string MODEL_TYPE_INFO_FILENAME = "./PRX/型號類別.csv";
 
         // log
-        public static string LOG_PARAM_FILENAME = "./Model.log";  // 所有參數Log
-        public static string LOG_FILTER_FILENAME = "./ModelFilter.log";  // 所有篩選Log
+        public static string LOG_FILENAME = "./Log/";  // 所有參數Log
+        public static string LOG_FAIL_MODELS_FILENAME = "./Log/FailModels/";  // 所有參數Log
+        public static string LOG_PARAM_FILENAME = "./Log/Model.log";  // 所有參數Log
+        public static string LOG_FILTER_FILENAME = "./Log/ModelFilter.log";  // 所有篩選Log
     }
 }

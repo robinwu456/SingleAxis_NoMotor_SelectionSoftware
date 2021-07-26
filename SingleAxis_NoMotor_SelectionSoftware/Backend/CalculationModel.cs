@@ -103,7 +103,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
                     // rpm修正
                     if (model.isUseBaltCalc) {
-                        model.rpm = GetBeltRPM(model.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
+                        model.rpm = GetBeltRPM(model.name, model.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
                     } else {
                         //if (condition.reducerRatio.Keys.Contains(model.name))
                         //    model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead / condition.reducerRatio[model.name]);
@@ -279,7 +279,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (model.isUseBaltCalc && model.beltCalcType == Model.BeltCalcType.減速機構)
                 torqueConfirm = new TorqueConfirm_Belt_減速機構(model, condition);
             else if (model.isUseBaltCalc && model.beltCalcType == Model.BeltCalcType.減速機2)
-                torqueConfirm = new TorqueConfirm_Belt_減速機(model, condition);
+                torqueConfirm = new TorqueConfirm_Belt_減速機2(model, condition);
+            else if (model.isUseBaltCalc && model.beltCalcType == Model.BeltCalcType.減速機4)
+                torqueConfirm = new TorqueConfirm_Belt_減速機4(model, condition);
             else if (model.isUseBaltCalc && model.beltCalcType == Model.BeltCalcType.直接驅動)
                 torqueConfirm = new TorqueConfirm_Belt_直接驅動(model, condition);
             else

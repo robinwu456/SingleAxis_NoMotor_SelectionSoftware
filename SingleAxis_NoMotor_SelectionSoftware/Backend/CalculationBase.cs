@@ -190,7 +190,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public int MMS_TO_RPM(double mms, double lead) {
-            return (int)(mms * 60f / (float)lead);
+            return (int)Math.Round(mms * 60f / (float)lead, 0);
+            //return (int)(mms * 60f / (float)lead);
         }
 
         public int GetMaxStroke(string model, double lead) {
@@ -334,18 +335,25 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         // 皮帶Vmax(m/s)
-        public double GetBeltVmax_ms(string model, double lead, int stroke, BeltWheel mainWheel, SubBeltWheel subWheel1, SubBeltWheel subWheel2, Model.BeltCalcType beltCalcType) {
-            if (beltCalcType == Model.BeltCalcType.減速機構 || beltCalcType == Model.BeltCalcType.減速機2) {
+        public double GetBeltVmax_ms(string model, double lead, int stroke, BeltWheel mainWheel_P1, SubBeltWheel subWheel_P2, SubBeltWheel subWheel_P3, Model.BeltCalcType beltCalcType) {
+            if (beltCalcType == Model.BeltCalcType.減速機構) {
                 // 依照行程取RPM
                 int rpm = GetRpmByStroke(model, lead, stroke);
-                double reducerRpmRatio = subWheel1.diameter / mainWheel.diameter;
+                double reducerRpmRatio = subWheel_P2.diameter / mainWheel_P1.diameter;
                 double subWheelRpm = (int)(rpm / reducerRpmRatio);
-                double vMax_belt = Math.PI * subWheel2.diameter * (subWheelRpm / 60) / 1000;
+                double vMax_belt = Math.PI * subWheel_P3.diameter * (subWheelRpm / 60) / 1000;
+                return vMax_belt;
+            } else if (beltCalcType == Model.BeltCalcType.減速機2 || beltCalcType == Model.BeltCalcType.減速機4) {
+                // 依照行程取RPM
+                int rpm = GetRpmByStroke(model, lead, stroke);
+                double reducerRpmRatio = Convert.ToDouble(model.Split('-')[1]);
+                double subWheelRpm = (int)(rpm / reducerRpmRatio);
+                double vMax_belt = Math.PI * subWheel_P3.diameter * (subWheelRpm / 60) / 1000;
                 return vMax_belt;
             } else {
                 // 依照行程取RPM
                 int rpm = GetRpmByStroke(model, lead, stroke);
-                double vMax_belt = Math.PI * subWheel2.diameter * (rpm / 60) / 1000;
+                double vMax_belt = Math.PI * subWheel_P3.diameter * (rpm / 60) / 1000;
                 return vMax_belt;
             }
         }
@@ -354,25 +362,30 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// 皮帶RPM回推
         /// </summary>
         /// <param name="vMax_belt">m/s</param>
-        /// <param name="mainWheel"></param>
-        /// <param name="subWheel1"></param>
-        /// <param name="subWheel2"></param>
+        /// <param name="mainWheel_P1"></param>
+        /// <param name="subWheel_P2"></param>
+        /// <param name="subWheel_P3"></param>
         /// <param name="beltCalcType"></param>
         /// <returns></returns>
-        public int GetBeltRPM(double vMax_belt, BeltWheel mainWheel, SubBeltWheel subWheel1, SubBeltWheel subWheel2, Model.BeltCalcType beltCalcType) {
-            if (beltCalcType == Model.BeltCalcType.減速機構 || beltCalcType == Model.BeltCalcType.減速機2) {
-                double reducerRpmRatio = subWheel1.diameter / mainWheel.diameter;
-                double subWheelRpm = vMax_belt * 1000 * 60 / Math.PI / subWheel2.diameter;
+        public int GetBeltRPM(string model, double vMax_belt, BeltWheel mainWheel_P1, SubBeltWheel subWheel_P2, SubBeltWheel subWheel_P3, Model.BeltCalcType beltCalcType) {
+            if (beltCalcType == Model.BeltCalcType.減速機構) {
+                double reducerRpmRatio = subWheel_P2.diameter / mainWheel_P1.diameter;
+                double subWheelRpm = vMax_belt * 1000 * 60 / Math.PI / subWheel_P3.diameter;
+                int rpm = (int)(subWheelRpm * reducerRpmRatio);
+                return rpm;
+            } else if (beltCalcType == Model.BeltCalcType.減速機2 || beltCalcType == Model.BeltCalcType.減速機4) {
+                double reducerRpmRatio = Convert.ToDouble(model.Split('-')[1]);
+                double subWheelRpm = vMax_belt * 1000 * 60 / Math.PI / subWheel_P3.diameter;
                 int rpm = (int)(subWheelRpm * reducerRpmRatio);
                 return rpm;
             } else {
-                int rpm = (int)(vMax_belt * 1000 * 60 / Math.PI / subWheel2.diameter);
+                int rpm = (int)(vMax_belt * 1000 * 60 / Math.PI / subWheel_P3.diameter);
                 return rpm;
             }
         }
         
         // 圖表點資訊
-        public List<PointF> GetChartPoints(Condition conditions) {
+        public List<PointF> GetChartPoints(Model model) {
             //if (isCheckStrokeTooShort)
             //    // 行程過短驗證
             //    conditions.vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, (int)conditions.vMax, (int)conditions.accelSpeed, (int)conditions.stroke);
@@ -385,23 +398,47 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //        conditions.accelSpeed = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, (int)conditions.vMax, (int)conditions.accelSpeed, (int)conditions.stroke);
             //}
 
-            double accelTime = conditions.vMax / conditions.accelSpeed;
-            double decelTime = accelTime;
+            //double accelTime = model.vMax / model.accelSpeed;
+            //double decelTime = accelTime;
             //double constantTime = ((2f * (float)conditions.stroke / conditions.vMax) - conditions.accelTime - conditions.decelTime) / 2f;
-            double constantTime = ((2f * (float)conditions.stroke / conditions.vMax) - accelTime - decelTime) / 2f;
+            //double constantTime = ((2f * (float)model.stroke / model.vMax) - accelTime - decelTime) / 2f;
 
             List<PointF> points = new List<PointF>() { new PointF(0, 0) };
             // 加速時間
-            points.Add(new PointF((float)accelTime, (float)conditions.vMax));
+            points.Add(new PointF((float)model.accelTime, (float)model.vMax));
             // 等速時間
-            points.Add(new PointF((float)accelTime + (float)constantTime, (float)conditions.vMax));
+            points.Add(new PointF((float)model.accelTime + (float)model.constantTime, (float)model.vMax));
             // 減速時間
-            points.Add(new PointF((float)accelTime + (float)constantTime + (float)decelTime, 0));
+            points.Add(new PointF((float)model.accelTime + (float)model.constantTime + (float)model.decelTime, 0));
             // 停等時間
-            points.Add(new PointF((float)accelTime + (float)constantTime + (float)decelTime + (float)conditions.stopTime, 0));
+            points.Add(new PointF((float)model.accelTime + (float)model.constantTime + (float)model.decelTime + (float)model.stopTime, 0));
 
             return points;
         }
+        //public (
+        //    double accelTime,
+        //    double constantTime,
+        //    double runTime,
+        //    double accelSpeed,
+        //    double maxSpeed,
+        //    double cycleTime
+        //) GetChartInfo(Condition conditions) {
+        //    double accelTime = conditions.vMax / conditions.accelSpeed;
+        //    double decelTime = accelTime;
+        //    double constantTime = ((2f * (float)conditions.stroke / conditions.vMax) - accelTime - decelTime) / 2f;
+
+        //    double runTime = accelTime + constantTime + decelTime;
+        //    double cycleTime = runTime * 2;
+
+        //    accelTime = Convert.ToDouble(accelTime.ToString("0.000"));
+        //    decelTime = Convert.ToDouble(decelTime.ToString("0.000"));
+        //    constantTime = Convert.ToDouble(constantTime.ToString("0.000"));
+        //    runTime = Convert.ToDouble(runTime.ToString("0.000"));
+        //    conditions.vMax = Convert.ToDouble(conditions.vMax.ToString("0.000"));
+        //    cycleTime = Convert.ToDouble(cycleTime.ToString("0.000"));
+
+        //    return (accelTime, constantTime, runTime, conditions.accelSpeed, conditions.vMax, cycleTime);
+        //}
         public (
             double accelTime,
             double constantTime,
@@ -409,34 +446,19 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             double accelSpeed,
             double maxSpeed,
             double cycleTime
-        ) GetChartInfo(Condition conditions) {
-            //if (isCheckStrokeTooShort)
-            //    // 行程過短驗證
-            //    conditions.vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, (int)conditions.vMax, (int)conditions.accelSpeed, (int)conditions.stroke);
-
-            //if (isCheckStrokeTooShort) {
-            //    // 行程過短驗證
-            //    if (strokeTooShortModifyItem == Converter.ModifyItem.Vmax)
-            //        conditions.vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, (int)conditions.vMax, (int)conditions.accelSpeed, (int)conditions.stroke);
-            //    else if (strokeTooShortModifyItem == Converter.ModifyItem.AccelSpeed)
-            //        conditions.accelSpeed = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, (int)conditions.vMax, (int)conditions.accelSpeed, (int)conditions.stroke);
-            //}
-
-            double accelTime = conditions.vMax / conditions.accelSpeed;
-            double decelTime = accelTime;
-            double constantTime = ((2f * (float)conditions.stroke / conditions.vMax) - accelTime - decelTime) / 2f;
-
-            double runTime = accelTime + constantTime + decelTime;
+        ) GetChartInfo(Model model) {
+            double runTime = model.accelTime + model.constantTime + model.decelTime;
             double cycleTime = runTime * 2;
 
-            accelTime = Convert.ToDouble(accelTime.ToString("0.000"));
-            decelTime = Convert.ToDouble(decelTime.ToString("0.000"));
-            constantTime = Convert.ToDouble(constantTime.ToString("0.000"));
+            double accelTime = Convert.ToDouble(model.accelTime.ToString("0.000"));
+            double constantTime = Convert.ToDouble(model.constantTime.ToString("0.000"));
+            runTime = Convert.ToDouble(runTime.ToString("0.000"));            
             runTime = Convert.ToDouble(runTime.ToString("0.000"));
-            conditions.vMax = Convert.ToDouble(conditions.vMax.ToString("0.000"));
             cycleTime = Convert.ToDouble(cycleTime.ToString("0.000"));
+            double vMax = Convert.ToDouble(model.vMax.ToString("0.000"));
+            double accelSpeed = Convert.ToDouble(model.accelSpeed.ToString("0.000"));
 
-            return (accelTime, constantTime, runTime, conditions.accelSpeed, conditions.vMax, cycleTime);
+            return (accelTime, constantTime, runTime, accelSpeed, vMax, cycleTime);
         }
 
         public int GetMaxAccelSpeed(string model, double lead, int stroke) {

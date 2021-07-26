@@ -76,7 +76,8 @@
     <Compile Include="Backend\CalculationModel.cs" />
     <Compile Include="Backend\TorqueConfirm\TorqueConfirm.cs" />
     <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Belt.cs" />
-    <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Belt_減速機.cs" />
+    <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Belt_減速機2.cs" />
+    <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Belt_減速機4.cs" />
     <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Belt_減速機構.cs" />
     <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Belt_直接驅動.cs" />
     <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Screw.cs" />

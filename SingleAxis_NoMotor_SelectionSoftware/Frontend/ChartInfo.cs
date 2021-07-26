@@ -39,13 +39,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 return;
 
             // 取座標
-            Condition curConditions = new Condition();
-            curConditions.stroke = Convert.ToInt32(formMain.txtStroke.Text);
-            curConditions.vMax = Convert.ToDouble(curRow.Cells["運行速度"].Value.ToString());
-            //curConditions.accelSpeed = Convert.ToInt32(txtAccelSpeed.Text);
-            curConditions.accelSpeed = Convert.ToDouble(curRow.Cells["加速度"].Value.ToString());
-            //curConditions.stopTime = Convert.ToDouble(txtStopTime.Text);
-            List<PointF> points = formMain.page2.calc.GetChartPoints(curConditions);
+            var models = formMain.page2.recommandList.curRecommandList.Where(model => model.name == curRow.Cells["項次"].Value.ToString() && model.lead == Convert.ToDouble(curRow.Cells["導程"].Value.ToString()));
+            if (models.Count() == 0)
+                return;
+            Model curModel = models.First();
+            //Condition curConditions = new Condition();
+            //curConditions.stroke = Convert.ToInt32(formMain.txtStroke.Text);
+            //curConditions.vMax = Convert.ToDouble(curRow.Cells["運行速度"].Value.ToString());
+            //curConditions.accelSpeed = Convert.ToDouble(curRow.Cells["加速度"].Value.ToString());
+            List<PointF> points = formMain.page2.calc.GetChartPoints(curModel);
 
             // 畫圖
             ChartArea chartArea = formMain.chart.ChartAreas[0];
@@ -74,7 +76,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.chart.Series[0].Points.AddXY(Convert.ToDouble(point.X.ToString("#0.000")), Convert.ToDouble(point.Y.ToString("#0.000")));
 
             // 取圖資訊
-            var chartInfo = formMain.page2.calc.GetChartInfo(curConditions);
+            var chartInfo = formMain.page2.calc.GetChartInfo(curModel);
             formMain.lbAccelTime.Text = "加/減速時間(s)：" + chartInfo.accelTime;
             formMain.lbConstantTime.Text = "等速時間(s)：" + chartInfo.constantTime;
             formMain.lbRunTime.Text = "運行時間(s)：" + chartInfo.runTime;

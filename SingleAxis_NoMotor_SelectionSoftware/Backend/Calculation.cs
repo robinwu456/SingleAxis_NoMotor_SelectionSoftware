@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.IO;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Calculation : CalculationModel {
@@ -165,12 +166,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     { "Remark",    model => string.Format("最大荷重: {0}", model.maxLoad) },
                     //{ "Condition", model => model.maxLoad == -1 || (model.maxLoad != -1 && model.maxLoad >= condition.load) || condition.curCheckedModel.model != null } } },
                     { "Condition", model => model.maxLoad == -1 || model.maxLoad != -1 && model.maxLoad >= condition.load } } },
-                { "線速度過大", new Dictionary<string, Func<Model, object>>(){
-                    { "Remark",    model => string.Format("最大線速度: {0}", model.vMax_max) },
-                    { "Condition", model => model.vMax <= model.vMax_max } } },
-                { "行程過短，建議可增加行程，或降低線速度", new Dictionary<string, Func<Model, object>>(){
-                    { "Remark",    model => string.Empty },
-                    { "Condition", model => model.constantTime >= 0 } } },
+                //{ "線速度過大", new Dictionary<string, Func<Model, object>>(){
+                //    { "Remark",    model => string.Format("最大線速度: {0}", model.vMax_max) },
+                //    { "Condition", model => model.vMax <= model.vMax_max } } },
+                //{ "行程過短，建議可增加行程，或降低線速度", new Dictionary<string, Func<Model, object>>(){
+                //    { "Remark",    model => string.Empty },
+                //    { "Condition", model => model.constantTime >= 0 } } },
                 { "運行時間過短，請增加運行時間", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("計算運行時間: {0}", model.moveTime) },
                     { "Condition", model => model.moveTime <= condition.moveTime } } },
@@ -181,20 +182,23 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     { "Condition", model => model.serviceLifeTime.year >= condition.expectServiceLifeTime } } },
                 // 以下為之前會顯示紅色項目
                 { "T_max安全係數過低", new Dictionary<string, Func<Model, object>>(){
-                    { "Remark",    model => string.Format("標準: 大於等於{0}, 計算值: {1}", Model.tMaxStandard, model.tMaxSafeCoefficient) },
-                    { "Condition", model => model.tMaxSafeCoefficient >= Model.tMaxStandard } } },
+                    { "Remark",    model => string.Format("標準: 大於等於{0}, 計算值: {1}", model.isUseBaltCalc ? Model.tMaxStandard_beltMotor : Model.tMaxStandard, model.tMaxSafeCoefficient) },
+                    { "Condition", model => model.tMaxSafeCoefficient >= (model.isUseBaltCalc ? Model.tMaxStandard_beltMotor : Model.tMaxStandard) } } },
                 { "皮帶馬達安全係數過低", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("標準: 小於{0}, 計算值: {1}", Model.beltMotorStandard, model.beltMotorSafeCoefficient) },
                     { "Condition", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < Model.beltMotorStandard } } },
                 { "皮帶T_max安全係數過低", new Dictionary<string, Func<Model, object>>(){
-                    { "Remark",    model => string.Format("標準: 大於等於{0}, 計算值: {1}", Model.tMaxStandard_beltMotor, model.beltSafeCoefficient) },
-                    { "Condition", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_beltMotor } } },
+                    { "Remark",    model => string.Format("標準: 大於等於{0}, 計算值: {1}", Model.tMaxStandard_belt, model.beltSafeCoefficient) },
+                    { "Condition", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_belt } } },
                 { "力矩警示異常", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => "" },
                     { "Condition", model => model.isMomentVerifySuccess } } },
             };
 
             // log篩選
+            if (Directory.Exists(Config.LOG_FAIL_MODELS_FILENAME))
+                Directory.Delete(Config.LOG_FAIL_MODELS_FILENAME, true);
+            Directory.CreateDirectory(Config.LOG_FAIL_MODELS_FILENAME);
             string logFilter = "";
             foreach (Model model in resultModels) {
                 string curLog = "";
@@ -206,8 +210,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (curLog != string.Empty) {
                     curLog = curLog.Remove(0, 1);
                     logFilter += string.Format("{0}-L{1}：", model.name, model.lead) + curLog + Environment.NewLine;
+                    FileUtil.LogModelInfo(model, condition.setupMethod, false, string.Format("{0}-L{1}", model.name, model.lead));
                 }
-            }
+            }            
             FileUtil.FileWrite(Config.LOG_FILTER_FILENAME, logFilter);
 
             // null訊息篩選

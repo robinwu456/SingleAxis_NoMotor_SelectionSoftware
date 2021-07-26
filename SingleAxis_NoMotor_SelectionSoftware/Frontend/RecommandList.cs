@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Data;
+using System.IO;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class RecommandList {
@@ -142,7 +143,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // Log所有參數
             if (curSelectModel.model != null) {
                 try {
-                    FileUtil.LogModelInfo(curRecommandList.First(model => model.name == curSelectModel.model && model.lead == curSelectModel.lead));
+                    if (!Directory.Exists(Config.LOG_FILENAME))
+                        Directory.CreateDirectory(Config.LOG_FILENAME);
+                    FileUtil.LogModelInfo(curRecommandList.First(model => model.name == curSelectModel.model && model.lead == curSelectModel.lead), formMain.page2.runCondition.curCondition.setupMethod, true);
                 } catch (Exception ex) {
                     Console.WriteLine("log error: " + ex);
                 }
