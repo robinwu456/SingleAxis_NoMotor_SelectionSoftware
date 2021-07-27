@@ -7,7 +7,7 @@ using System.Data;
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class MotorPower {
         // 馬達自訂參數
-        public (double ratedTorque, double maxTorque, double rotateInertia) customMotorParams = (-1, -1, -1);
+        public (double ratedTorque, double maxTorque, double rotateInertia, int loadInertiaMomentRatio) customMotorParams = (-1, -1, -1, -1);
         public int customMotorParamPower = 50;
 
         private FormMain formMain;
@@ -28,6 +28,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.txtRatedTorque.Text = motorParams.ratedTorque.ToString();
             formMain.txtMaxTorque.Text = motorParams.maxTorque.ToString();
             formMain.txtRotateInertia.Text = motorParams.rotateInertia.ToString("0." + new string('#', 339));
+            formMain.txtLoadInertiaMomentRatio.Text = motorParams.loadInertiaMomentRatio.ToString();
         }
 
         private void UpdateMotorOptionsEnabled(object sender, EventArgs e) {

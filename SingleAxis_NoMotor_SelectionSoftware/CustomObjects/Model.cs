@@ -113,14 +113,22 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// </summary>
         public double w;
         /// <summary>
-        /// 加速區 Mr
+        /// Mr
         /// </summary>
-        public double mr;
+        public double mr, mr_a, mr_d;
 
         /// <summary>
         /// 加速區
         /// </summary>
         public double mp_a, my_a, p_a;
+        /// <summary>
+        /// 加速區 - 重力產生的扭矩
+        /// </summary>
+        public double gravityMp_a, gravityMy_a, gravityMr_a;
+        /// <summary>
+        /// 加速區 - 加速度產生的扭矩
+        /// </summary>
+        public double accelSpeedMp_a, accelSpeedMy_a, accelSpeedMr_a;
         /// <summary>
         /// 等速區 Mp
         /// </summary>
@@ -129,6 +137,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// 減速區 Mp
         /// </summary>
         public double mp_d, my_d, p_d;
+        /// <summary>
+        /// 減速區 - 重力產生的扭矩
+        /// </summary>
+        public double gravityMp_d, gravityMy_d, gravityMr_d;
+        /// <summary>
+        /// 減速區 - 加速度產生的扭矩
+        /// </summary>
+        public double accelSpeedMp_d, accelSpeedMy_d, accelSpeedMr_d;
 
         /// <summary>
         /// Velocity(速度) Vmax
@@ -176,6 +192,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// 額定轉矩
         /// </summary>
         public double ratedTorque;
+        /// <summary>
+        /// 馬達尺寸
+        /// </summary>
+        public int motorSize;
         #endregion
 
         #region 荷重資訊
@@ -452,7 +472,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <summary>
         /// 負載慣量與力矩比
         /// </summary>
-        public double loadInertiaMomentRatio;
+        public int loadInertiaMomentRatio;
+        /// <summary>
+        /// 減速機轉動慣量
+        /// </summary>
+        public double reducerRotateInertia;
         /// <summary>
         /// 主動輪(馬達)轉速
         /// </summary>

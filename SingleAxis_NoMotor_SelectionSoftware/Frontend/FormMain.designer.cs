@@ -137,18 +137,26 @@
             this.label52 = new System.Windows.Forms.Label();
             this.lbTimesPerMinuteAlarm = new System.Windows.Forms.Label();
             this.panelMotorParams = new System.Windows.Forms.Panel();
+            this.panelReducerParam = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtReducerRotateInertia = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.txtRotateInertia = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.txtLoadInertiaMomentRatio = new System.Windows.Forms.TextBox();
             this.txtMaxTorque = new System.Windows.Forms.TextBox();
             this.txtRatedTorque = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.txtRotateInertia = new System.Windows.Forms.TextBox();
             this.lbHoursPerDayAlarm = new System.Windows.Forms.Label();
             this.txtTimesPerMinute = new System.Windows.Forms.TextBox();
             this.txtDayPerYear = new System.Windows.Forms.TextBox();
@@ -302,6 +310,7 @@
             this.panelAdvanceMode.SuspendLayout();
             this.panelPowerModifyMode.SuspendLayout();
             this.panelMotorParams.SuspendLayout();
+            this.panelReducerParam.SuspendLayout();
             this.panelPowerSelection.SuspendLayout();
             this.panelMoment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
@@ -1266,20 +1275,57 @@
             // 
             // panelMotorParams
             // 
+            this.panelMotorParams.Controls.Add(this.panelReducerParam);
             this.panelMotorParams.Controls.Add(this.label35);
             this.panelMotorParams.Controls.Add(this.label43);
+            this.panelMotorParams.Controls.Add(this.label16);
             this.panelMotorParams.Controls.Add(this.label42);
-            this.panelMotorParams.Controls.Add(this.label41);
             this.panelMotorParams.Controls.Add(this.label40);
+            this.panelMotorParams.Controls.Add(this.label18);
             this.panelMotorParams.Controls.Add(this.label39);
-            this.panelMotorParams.Controls.Add(this.label38);
-            this.panelMotorParams.Controls.Add(this.txtRotateInertia);
+            this.panelMotorParams.Controls.Add(this.label41);
+            this.panelMotorParams.Controls.Add(this.txtLoadInertiaMomentRatio);
             this.panelMotorParams.Controls.Add(this.txtMaxTorque);
             this.panelMotorParams.Controls.Add(this.txtRatedTorque);
             this.panelMotorParams.Controls.Add(this.label37);
             this.panelMotorParams.Controls.Add(this.label36);
+            this.panelMotorParams.Controls.Add(this.label38);
+            this.panelMotorParams.Controls.Add(this.txtRotateInertia);
             resources.ApplyResources(this.panelMotorParams, "panelMotorParams");
             this.panelMotorParams.Name = "panelMotorParams";
+            // 
+            // panelReducerParam
+            // 
+            this.panelReducerParam.Controls.Add(this.label8);
+            this.panelReducerParam.Controls.Add(this.label9);
+            this.panelReducerParam.Controls.Add(this.label11);
+            this.panelReducerParam.Controls.Add(this.txtReducerRotateInertia);
+            resources.ApplyResources(this.panelReducerParam, "panelReducerParam");
+            this.panelReducerParam.Name = "panelReducerParam";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label9.Name = "label9";
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Name = "label11";
+            this.label11.Tag = "txtReducerRotateInertia";
+            // 
+            // txtReducerRotateInertia
+            // 
+            resources.ApplyResources(this.txtReducerRotateInertia, "txtReducerRotateInertia");
+            this.txtReducerRotateInertia.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtReducerRotateInertia.Name = "txtReducerRotateInertia";
             // 
             // label35
             // 
@@ -1293,22 +1339,29 @@
             this.label43.Name = "label43";
             this.label43.Tag = "txtMaxTorque";
             // 
+            // label16
+            // 
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label16.Name = "label16";
+            // 
             // label42
             // 
             resources.ApplyResources(this.label42, "label42");
             this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label42.Name = "label42";
             // 
-            // label41
-            // 
-            resources.ApplyResources(this.label41, "label41");
-            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label41.Name = "label41";
-            // 
             // label40
             // 
             resources.ApplyResources(this.label40, "label40");
             this.label40.Name = "label40";
+            // 
+            // label18
+            // 
+            resources.ApplyResources(this.label18, "label18");
+            this.label18.ForeColor = System.Drawing.Color.Red;
+            this.label18.Name = "label18";
+            this.label18.Tag = "txtLoadInertiaMomentRatio";
             // 
             // label39
             // 
@@ -1317,18 +1370,17 @@
             this.label39.Name = "label39";
             this.label39.Tag = "txtRatedTorque";
             // 
-            // label38
+            // label41
             // 
-            resources.ApplyResources(this.label38, "label38");
-            this.label38.ForeColor = System.Drawing.Color.Red;
-            this.label38.Name = "label38";
-            this.label38.Tag = "txtRotateInertia";
+            resources.ApplyResources(this.label41, "label41");
+            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label41.Name = "label41";
             // 
-            // txtRotateInertia
+            // txtLoadInertiaMomentRatio
             // 
-            resources.ApplyResources(this.txtRotateInertia, "txtRotateInertia");
-            this.txtRotateInertia.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtRotateInertia.Name = "txtRotateInertia";
+            resources.ApplyResources(this.txtLoadInertiaMomentRatio, "txtLoadInertiaMomentRatio");
+            this.txtLoadInertiaMomentRatio.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtLoadInertiaMomentRatio.Name = "txtLoadInertiaMomentRatio";
             // 
             // txtMaxTorque
             // 
@@ -1352,6 +1404,19 @@
             // 
             resources.ApplyResources(this.label36, "label36");
             this.label36.Name = "label36";
+            // 
+            // label38
+            // 
+            resources.ApplyResources(this.label38, "label38");
+            this.label38.ForeColor = System.Drawing.Color.Red;
+            this.label38.Name = "label38";
+            this.label38.Tag = "txtRotateInertia";
+            // 
+            // txtRotateInertia
+            // 
+            resources.ApplyResources(this.txtRotateInertia, "txtRotateInertia");
+            this.txtRotateInertia.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtRotateInertia.Name = "txtRotateInertia";
             // 
             // lbHoursPerDayAlarm
             // 
@@ -2268,6 +2333,8 @@
             this.panelPowerModifyMode.PerformLayout();
             this.panelMotorParams.ResumeLayout(false);
             this.panelMotorParams.PerformLayout();
+            this.panelReducerParam.ResumeLayout(false);
+            this.panelReducerParam.PerformLayout();
             this.panelPowerSelection.ResumeLayout(false);
             this.panelPowerSelection.PerformLayout();
             this.panelMoment.ResumeLayout(false);
@@ -2556,6 +2623,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 運行壽命;
         private System.Windows.Forms.DataGridViewImageColumn 是否推薦;
         private System.Windows.Forms.DataGridViewImageColumn 更詳細資訊;
+        private System.Windows.Forms.Label label16;
+        public System.Windows.Forms.Label label18;
+        public System.Windows.Forms.TextBox txtLoadInertiaMomentRatio;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Label label11;
+        public System.Windows.Forms.TextBox txtReducerRotateInertia;
+        public System.Windows.Forms.Panel panelReducerParam;
     }
 }
 

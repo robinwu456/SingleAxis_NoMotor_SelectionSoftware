@@ -2,35 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
-    public class TorqueConfirm_Belt_減速機構 : TorqueConfirm_Belt {
+    public abstract class TorqueConfirm_Belt_減速機 : TorqueConfirm_Belt {
         private Model model;
         private Condition condition;
 
-        public TorqueConfirm_Belt_減速機構(Model model, Condition condition) : base(model, condition) {
+        public TorqueConfirm_Belt_減速機(Model model, Condition condition) : base(model, condition) {
             this.model = model;
             this.condition = condition;
-        }        
 
-        public override void MotorConfirm() {
-            // 皮帶輪加減速關係
-            model.mainWheelRpm = model.rpm;
-            model.reducerRpmRatio = model.subWheel_P2.diameter / model.mainWheel_P1.diameter;
-            model.subWheelRpm = (int)(model.rpm / model.reducerRpmRatio);
-            model.beltLoad = model.beltUnitDensity / 1000 * model.beltWidth * model.beltLength / 1000;
-
-            // 轉動慣量
-            model.rotateInertia_motor = model.rotateInertia * Math.Pow(1000, 2);
-            model.rotateInertia_load = model.load * Math.Pow(model.subWheel_P3.diameter / 2, 2);
-            model.rotateInertia_belt = model.beltLoad * Math.Pow(model.subWheel_P3.diameter / 2, 2);
-            model.rotateInertia_total = model.rotateInertia_load + model.rotateInertia_belt + model.mainWheel_P1.rotateInertia + model.subWheel_P2.rotateInertia + model.subWheel_P3.rotateInertia + model.subWheel_P4.rotateInertia;
-
-            // 馬達是否適用
-            model.beltMotorSafeCoefficient = Math.Round(model.rotateInertia_total / Math.Pow(model.reducerRpmRatio, 2) / model.rotateInertia_motor, 2);
-            Model.beltMotorStandard = model.loadInertiaMomentRatio * 2;
-            model.isMotorOK = model.beltMotorSafeCoefficient < Model.beltMotorStandard;
+            GetReducerRotateInertia();
         }
+
+        public abstract override void MotorConfirm();
+
+        public override void BeltTorqueConfirm() {
+            // 各階段最大扭矩
+            model.beltTorque_accel = Math.Abs(model.forceTorque_accel * Math.Pow(model.reducerRpmRatio, 2));
+            model.beltTorque_constant = Math.Abs(model.forceTorque_constant * Math.Pow(model.reducerRpmRatio, 2));
+            model.beltTorque_decel = Math.Abs(model.forceTorque_decel * Math.Pow(model.reducerRpmRatio, 2));
+            model.beltTorque_stop = Math.Abs(model.forceTorque_stop * Math.Pow(model.reducerRpmRatio, 2));
+            // 皮帶T_max最大扭矩
+            model.belt_tMax = Math.Max(model.beltTorque_accel, Math.Max(model.beltTorque_constant, Math.Max(model.beltTorque_decel, model.beltTorque_stop)));
+            // 皮帶承受力
+            model.beltEndurance = model.belt_tMax * 1000 / (model.subWheel_P4.diameter / 2);
+            // 皮帶安全係數
+            model.beltSafeCoefficient = Math.Round(model.beltAllowableTension / model.beltEndurance, 2);
+            model.is_belt_tMax_OK = model.beltSafeCoefficient > Model.tMaxStandard_belt;
+        }        
 
         public override void MotorTorqueConfirm() {
             // 軸向外力
@@ -78,19 +79,21 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             model.is_tMax_OK = model.tMaxSafeCoefficient >= Model.tMaxStandard_beltMotor;
         }
 
-        public override void BeltTorqueConfirm() {
-            // 各階段最大扭矩
-            model.beltTorque_accel = Math.Abs(model.forceTorque_accel * Math.Pow(model.reducerRpmRatio, 2));
-            model.beltTorque_constant = Math.Abs(model.forceTorque_constant * Math.Pow(model.reducerRpmRatio, 2));
-            model.beltTorque_decel = Math.Abs(model.forceTorque_decel * Math.Pow(model.reducerRpmRatio, 2));
-            model.beltTorque_stop = Math.Abs(model.forceTorque_stop * Math.Pow(model.reducerRpmRatio, 2));
-            // 皮帶T_max最大扭矩
-            model.belt_tMax = Math.Max(model.beltTorque_accel, Math.Max(model.beltTorque_constant, Math.Max(model.beltTorque_decel, model.beltTorque_stop)));
-            // 皮帶承受力
-            model.beltEndurance = model.belt_tMax * 1000 / (model.subWheel_P4.diameter / 2);
-            // 皮帶安全係數
-            model.beltSafeCoefficient = Math.Round(model.beltAllowableTension / model.beltEndurance, 2);
-            model.is_belt_tMax_OK = model.beltSafeCoefficient > Model.tMaxStandard_belt;
-        }                        
+        /// <summary>
+        /// 減速機轉動慣量撈值
+        /// </summary>
+        private void GetReducerRotateInertia() {
+            if (condition.powerSelection == Condition.PowerSelection.Standard || condition.powerSelection == Condition.PowerSelection.SelectedPower) {
+                DataColumn column = reducerRotateInertiaInfo.Columns.Cast<DataColumn>().Where(col => col.ColumnName.StartsWith("馬達尺寸"))
+                                                                                       .First(col => Convert.ToInt32(col.ColumnName.Split('_')[1]) >= model.motorSize);
+                DataRow row = reducerRotateInertiaInfo.Rows.Cast<DataRow>().First(_row => Convert.ToInt32(_row["減速比"].ToString()) == Convert.ToInt32(model.name.Split('-')[1]));
+                if (double.TryParse(row[column].ToString(), out model.reducerRotateInertia))
+                    model.reducerRotateInertia *= 100;
+                else
+                    throw new Exception("減速機轉動慣量撈值錯誤");
+            } else {
+                model.reducerRotateInertia = condition.reducerRotateInertia;
+            }
+        }
     }
 }

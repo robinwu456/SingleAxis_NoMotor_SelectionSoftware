@@ -180,24 +180,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 ( "  A(mm)", model.moment_A ),
                 ( "  B(mm)", model.moment_B ),
                 ( "  B(mm)", model.moment_C ),
-                ( "加速區", "" ),
-                ( "  W", model.w ),
-                ( "  Mr", model.mr ),
-                ( "  Mp", model.mp_a ),
-                ( "  My", model.my_a ),
-                ( "  P_a", model.p_a ),
-                ( "等速區", "" ),
-                ( "  W", model.w ),
-                ( "  Mr", model.mr ),
-                ( "  Mp", model.mp_c ),
-                ( "  My", model.my_c ),
-                ( "  P_c", model.p_c ),
-                ( "減速區", "" ),
-                ( "  W", model.w ),
-                ( "  Mr", model.mr ),
-                ( "  Mp", model.mp_d ),
-                ( "  My", model.my_d ),
-                ( "  P_d", model.p_d ),
                 ( "平均負載Pm", model.pmSlide ),
                 ( "負荷係數Fw", model.fwSlide ),
                 ( "預估壽命L(km)", model.slideTrackServiceLifeDistance ),
@@ -292,10 +274,31 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 ( "    負荷係數", model.fwScrew ),
                 ( "    預估壽命(km)", model.screwServiceLifeDistance ),
             };
+            var momentScrew = new List<(string key, object value)>() {
+                ( "加速區", "" ),
+                ( "  W", model.w ),
+                ( "  Mr", model.mr ),
+                ( "  Mp", model.mp_a ),
+                ( "  My", model.my_a ),
+                ( "  P_a", model.p_a ),
+                ( "等速區", "" ),
+                ( "  W", model.w ),
+                ( "  Mr", model.mr ),
+                ( "  Mp", model.mp_c ),
+                ( "  My", model.my_c ),
+                ( "  P_c", model.p_c ),
+                ( "減速區", "" ),
+                ( "  W", model.w ),
+                ( "  Mr", model.mr ),
+                ( "  Mp", model.mp_d ),
+                ( "  My", model.my_d ),
+                ( "  P_d", model.p_d ),
+            };
             var beltInfo = new List<(string key, object value)>();
             var motorInfoBelt = new List<(string key, object value)>();
             var motorTorqueInfoBelt = new List<(string key, object value)>();
             var beltTorqueInfo = new List<(string key, object value)>();
+            var momentBelt = new List<(string key, object value)>();
             if (model.mainWheel_P1 != null) {
                 beltInfo = new List<(string key, object value)>() {
                     ( "主動輪資訊(P1)", "" ),
@@ -364,6 +367,42 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     ( "  安全係數", model.beltSafeCoefficient ),
                     ( "  評估(本身具有3的安全係數)", model.is_belt_tMax_OK ? "OK" : "NG" ),
                 };
+                momentBelt = new List<(string key, object value)>() {
+                    ( "  W", model.w ),
+                    ( "加速區", "" ),
+                    ( "  重力產生的力矩", " " ),
+                    ( "    My", model.gravityMy_a ),
+                    ( "    Mr", model.gravityMr_a ),
+                    ( "    Mp", model.gravityMp_a ),                    
+                    ( "  加速度產生的力矩", " " ),
+                    ( "    My", model.accelSpeedMy_a ),
+                    ( "    Mr", model.accelSpeedMr_a ),
+                    ( "    Mp", model.accelSpeedMp_a ),                    
+                    ( "  加速區總力矩", " " ),
+                    ( "    ∑My", model.my_a ),
+                    ( "    ∑Mr", model.mr ),
+                    ( "    ∑Mp", model.mp_a ),                    
+                    ( "    P_a", model.p_a ),
+                    ( "等速區", "" ),
+                    ( "  My", model.my_c ),
+                    ( "  Mr", model.mr ),
+                    ( "  Mp", model.mp_c ),                    
+                    ( "  P_c", model.p_c ),
+                    ( "減速區", "" ),
+                    ( "  重力產生的力矩", " " ),
+                    ( "    My", model.gravityMy_d ),
+                    ( "    Mr", model.gravityMr_d ),
+                    ( "    Mp", model.gravityMp_d ),                    
+                    ( "  減速度產生的力矩", " " ),
+                    ( "    My", model.accelSpeedMy_d ),
+                    ( "    Mr", model.accelSpeedMr_d ),
+                    ( "    Mp", model.accelSpeedMp_d ),                    
+                    ( "  減速區總力矩", " " ),
+                    ( "    ∑My", model.my_d ),
+                    ( "    ∑Mr", model.mr ),
+                    ( "    ∑Mp", model.mp_d ),                    
+                    ( "    P_d", model.p_d ),
+                };
             }
             if (model.mainWheel_P1 == null) {
                 ///
@@ -373,6 +412,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 // 螺桿資訊
                 if (!model.modelType.ToString().Contains("皮帶"))                    
                     result.InsertRange(result.IndexOf(result.First(r => r.key == "Velocity")), screwInfo);
+                // 力矩計算
+                result.InsertRange(result.IndexOf(result.First(r => r.key == "平均負載Pm")), momentScrew);
                 // 馬達能力預估
                 result.InsertRange(result.IndexOf(result.First(r => r.key == "各階段軸向外力")), motorInfoScrew);
                 // 各階段馬達負擔扭矩
@@ -387,6 +428,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 /// 皮帶型
                 ///
 
+                // 力矩計算
+                result.InsertRange(result.IndexOf(result.First(r => r.key == "平均負載Pm")), momentBelt);
                 // 皮帶輪資訊
                 result.InsertRange(result.IndexOf(result.First(r => r.key == "Velocity")), beltInfo);
                 // 馬達能力預估

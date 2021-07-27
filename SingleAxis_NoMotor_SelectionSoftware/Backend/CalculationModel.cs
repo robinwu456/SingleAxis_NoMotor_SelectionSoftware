@@ -131,7 +131,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 加速區                        
             model.mp_a = calcMoment.mp_a;
             model.my_a = calcMoment.my_a;
-            model.p_a = Get_P(model.w, model.mr, model.mp_a, model.my_a, model.mr_C, model.mp_C, model.my_C, model.c);
+            model.mr_a = calcMoment.mr_a;
+            if (model.isUseBaltCalc)
+                model.p_a = Get_P(model.w, model.mr_a, model.mp_a, model.my_a, model.mr_C, model.mp_C, model.my_C, model.c);
+            else
+                model.p_a = Get_P(model.w, model.mr, model.mp_a, model.my_a, model.mr_C, model.mp_C, model.my_C, model.c);
 
             // 等速區
             model.mp_c = calcMoment.mp_c;
@@ -141,7 +145,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 減速區
             model.mp_d = calcMoment.mp_d;
             model.my_d = calcMoment.my_d;
-            model.p_d = Get_P(model.w, model.mr, model.mp_d, model.my_d, model.mr_C, model.mp_C, model.my_C, model.c);
+            model.mr_d = calcMoment.mr_d;
+            if (model.isUseBaltCalc)
+                model.p_d = Get_P(model.w, model.mr_d, model.mp_d, model.my_d, model.mr_C, model.mp_C, model.my_C, model.c);
+            else
+                model.p_d = Get_P(model.w, model.mr, model.mp_d, model.my_d, model.mr_C, model.mp_C, model.my_C, model.c);
 
             // 行程參數            
             model.accelDistance = Math.Pow(model.vMax, 2) / (2 * model.accelSpeed) * 1000;

@@ -18,6 +18,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public DataTable motorInfo = FileUtil.ReadCsv(Config.MOTOR_INFO_FILENAME);
         public DataTable beltInfo = FileUtil.ReadCsv(Config.BELT_INFO_FILENAME);
         public DataTable modelTypeInfo = FileUtil.ReadCsv(Config.MODEL_TYPE_INFO_FILENAME);
+        public DataTable reducerRotateInertiaInfo = FileUtil.ReadCsv(Config.ReducerRotateInertia);
 
         public List<Model> GetAllModels(Condition condition) {
             List<Model> models = new List<Model>();
@@ -47,7 +48,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.repeatability = Convert.ToDouble(row["重複定位精度"].ToString());
 
                 // 是否套用皮帶公式
-                model.isUseBaltCalc = beltInfo.Rows.Cast<DataRow>().Select(info => info["型號"].ToString()).Contains(model.name);
+                model.isUseBaltCalc = beltInfo.Rows.Cast<DataRow>().Select(info => info["型號"].ToString()).Contains(model.name);                
 
                 // 皮帶資訊
                 if (model.isUseBaltCalc) {
@@ -73,8 +74,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P4輪徑"].ToString())).First(),
                         beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P4輪寬"].ToString())).First()
                     );
-                    // 負載慣量與力矩比
-                    model.loadInertiaMomentRatio = beltInfoRows.Select(x => Convert.ToDouble(x["負載慣量與力矩比"].ToString())).First();
+                    //// 負載慣量與力矩比
+                    //model.loadInertiaMomentRatio = beltInfoRows.Select(x => Convert.ToDouble(x["負載慣量與力矩比"].ToString())).First();
                     // 皮帶寬
                     model.beltWidth = beltInfoRows.Select(x => Convert.ToDouble(x["皮帶寬"].ToString())).First();
                     // 皮帶長度
@@ -83,6 +84,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     model.beltAllowableTension = beltInfoRows.Select(x => Convert.ToDouble(x["皮帶容許拉力"].ToString())).First();
                     // 傳動方式
                     model.beltCalcType = (Model.BeltCalcType)Enum.Parse(typeof(Model.BeltCalcType), beltInfoRows.Select(x => x["傳動方式"].ToString()).First());
+                    // 馬達尺寸
+                    if (model.beltCalcType == Model.BeltCalcType.減速機2 || model.beltCalcType == Model.BeltCalcType.減速機4) {
+                        if (condition.powerSelection == Condition.PowerSelection.Standard)
+                            model.motorSize = beltInfoRows.Select(x => Convert.ToInt32(x["馬達尺寸"].ToString())).First();
+                        else if (condition.powerSelection == Condition.PowerSelection.SelectedPower)
+                            model.motorSize = Convert.ToInt32(motorInfo.Rows.Cast<DataRow>().First(x => Convert.ToInt32(x["馬達瓦數"].ToString()) == condition.selectedPower)["馬達尺寸"].ToString());
+                    }
                 }
 
                 models.Add(model);
@@ -321,12 +329,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         // 取馬達資訊
-        public (double ratedTorque, double maxTorque, double rotateInertia) GetMotorParams(int power) {
+        public (double ratedTorque, double maxTorque, double rotateInertia, int loadInertiaMomentRatio) GetMotorParams(int power) {
             Func<DataRow, bool> con = row => Convert.ToInt32(row["馬達瓦數"].ToString()) == power;
             double ratedTorque = motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => Convert.ToDouble(row["額定轉矩"].ToString())).First();
             double maxTorque = motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => Convert.ToDouble(row["最大轉矩"].ToString())).First();
             double rotateInertia = motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => Convert.ToDouble(row["轉動慣量"].ToString())).First();
-            return (ratedTorque, maxTorque, rotateInertia);
+            int loadInertiaMomentRatio = motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => Convert.ToInt32(row["負載慣量與力矩比"].ToString())).First();
+            return (ratedTorque, maxTorque, rotateInertia, loadInertiaMomentRatio);
         }
 
         public bool IsContainsReducerRatio(string model) {

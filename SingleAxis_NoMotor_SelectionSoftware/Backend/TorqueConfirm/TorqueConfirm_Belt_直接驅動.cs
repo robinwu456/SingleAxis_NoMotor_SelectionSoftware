@@ -14,6 +14,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public override void MotorConfirm() {
+            model.beltLoad = model.beltUnitDensity / 1000 * model.beltWidth * model.beltLength / 1000;
+
             // 轉動慣量
             model.rotateInertia_motor = model.rotateInertia * Math.Pow(1000, 2);
             model.rotateInertia_load = model.load * Math.Pow(model.subWheel_P3.diameter / 2, 2);
@@ -22,7 +24,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 馬達是否適用
             model.beltMotorSafeCoefficient = Math.Round(model.rotateInertia_total / model.rotateInertia_motor, 2);
-            Model.beltMotorStandard = Math.Round(model.loadInertiaMomentRatio * 2, 2);
+            Model.beltMotorStandard = model.loadInertiaMomentRatio * 2;
             model.isMotorOK = model.beltMotorSafeCoefficient < Model.beltMotorStandard;
         }
 

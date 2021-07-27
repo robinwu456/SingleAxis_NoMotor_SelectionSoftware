@@ -242,8 +242,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 判斷是否為Y系列，並修正panel
             UpdateLayout(null, null);
 
-            //// 減速比顯示
+            // 減速比顯示
             //formMain.panelReducerRatio.Visible = curSelectModelType.IsContainsReducerRatioType() && formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
+            formMain.panelReducerParam.Visible = curSelectModelType.IsContainsReducerRatioType();
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {

@@ -213,8 +213,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     if (formMain.optMotorParamsModifySimple.Checked) {
                         curCondition.powerSelection = Condition.PowerSelection.SelectedPower;
                         curCondition.selectedPower = Convert.ToInt32(formMain.cboMotorParamsMotorPowerSelection.Text);
-                    } else if (formMain.optMotorParamsModifyAdvance.Checked)
+                    } else if (formMain.optMotorParamsModifyAdvance.Checked) {
                         curCondition.powerSelection = Condition.PowerSelection.Custom;
+                    }
                 }
             } else if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
                 // 單項計算可選擇該型號適用瓦數
@@ -235,18 +236,24 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     curCondition.ratedTorque = p.ratedTorque;
                     curCondition.maxTorque = p.maxTorque;
                     curCondition.rotateInertia = p.rotateInertia;
+                    curCondition.loadInertiaMomentRatio = p.loadInertiaMomentRatio;
 
                     formMain.page2.motorPower.customMotorParams.ratedTorque = curCondition.ratedTorque;
                     formMain.page2.motorPower.customMotorParams.maxTorque = curCondition.maxTorque;
                     formMain.page2.motorPower.customMotorParams.rotateInertia = curCondition.rotateInertia;
+                    formMain.page2.motorPower.customMotorParams.loadInertiaMomentRatio = curCondition.loadInertiaMomentRatio;
+                    
                 } else {
                     curCondition.ratedTorque = Convert.ToDouble(formMain.txtRatedTorque.Text);
                     curCondition.maxTorque = Convert.ToDouble(formMain.txtMaxTorque.Text);
                     curCondition.rotateInertia = Convert.ToDouble(formMain.txtRotateInertia.Text);
+                    curCondition.loadInertiaMomentRatio = Convert.ToInt32(formMain.txtLoadInertiaMomentRatio.Text);
+                    curCondition.reducerRotateInertia = Convert.ToDouble(formMain.txtReducerRotateInertia.Text);
 
                     formMain.page2.motorPower.customMotorParams.ratedTorque = curCondition.ratedTorque;
                     formMain.page2.motorPower.customMotorParams.maxTorque = curCondition.maxTorque;
                     formMain.page2.motorPower.customMotorParams.rotateInertia = curCondition.rotateInertia;
+                    formMain.page2.motorPower.customMotorParams.loadInertiaMomentRatio = curCondition.loadInertiaMomentRatio;
                 }
             }
 

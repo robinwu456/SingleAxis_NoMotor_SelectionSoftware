@@ -37,11 +37,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.ratedTorque = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["額定轉矩"]).First());
                 model.maxTorque = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["最大轉矩"]).First());
                 model.rotateInertia = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["轉動慣量"]).First());
+                model.loadInertiaMomentRatio = Convert.ToInt32(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["負載慣量與力矩比"]).First());
             } else if (condition.powerSelection == Condition.PowerSelection.Custom) {
                 //model.usePower = -1;
                 model.ratedTorque = condition.ratedTorque;
                 model.maxTorque = condition.maxTorque;
                 model.rotateInertia = condition.rotateInertia;
+                model.loadInertiaMomentRatio = condition.loadInertiaMomentRatio;
             } else if (condition.powerSelection == Condition.PowerSelection.SelectedPower) {
                 // 取馬達參數
                 model.usePower = condition.selectedPower;   // 適用馬達的最大瓦數
@@ -50,6 +52,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.ratedTorque = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["額定轉矩"]).First());
                 model.maxTorque = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["最大轉矩"]).First());
                 model.rotateInertia = Convert.ToDouble(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["轉動慣量"]).First());
+                model.loadInertiaMomentRatio = Convert.ToInt32(motorInfo.Rows.Cast<DataRow>().Where(con).Select(row => row["負載慣量與力矩比"]).First());
             }
 
             model.stopTime = condition.stopTime;
