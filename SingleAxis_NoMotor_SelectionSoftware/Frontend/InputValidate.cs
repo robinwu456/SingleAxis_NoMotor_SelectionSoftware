@@ -132,13 +132,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
                 string model = formMain.cboModel.Text;
                 double lead = Convert.ToDouble(formMain.cboLead.Text);
-                int reducerRatio = 1;
-                if (formMain.page2.calc.IsContainsReducerRatio(model)) {
-                    //string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
-                    //reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
-                    reducerRatio = Convert.ToInt32(formMain.cboReducerRatio.Text);
-                    lead /= reducerRatio;
-                }
+                //int reducerRatio = 1;
+                //if (formMain.page2.calc.IsContainsReducerRatio(model)) {
+                //    //string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
+                //    //reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
+                //    reducerRatio = Convert.ToInt32(formMain.cboReducerRatio.Text);
+                //    lead /= reducerRatio;
+                //}
 
                 int maxAccelSpeed = formMain.page2.calc.GetMaxAccelSpeed(model, lead, Convert.ToInt32(formMain.txtStroke.Text));
                 if (curAccelSpeed > maxAccelSpeed)
@@ -328,36 +328,40 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     return;
 
                 string model = formMain.cboModel.Text;
-                int reducerRatio = 1;
-                if (formMain.page2.calc.IsContainsReducerRatio(model)) {
-                    //string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
-                    //reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
-                    reducerRatio = Convert.ToInt32(formMain.cboReducerRatio.Text);
-                    lead /= reducerRatio;
-                }
+                //int reducerRatio = 1;
+                //if (formMain.page2.calc.IsContainsReducerRatio(model)) {
+                //    //string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
+                //    //reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
+                //    reducerRatio = Convert.ToInt32(formMain.cboReducerRatio.Text);
+                //    lead /= reducerRatio;
+                //}
 
-                Model m = formMain.page2.calc.GetAllModels(formMain.page2.runCondition.curCondition).First(_m => _m.name == model && _m.lead == lead);
-                if (formMain.optMaxSpeedType_mms.Checked) {
-                    double resultVmax = formMain.page2.calc.GetVmax_mms(m, lead, (int)stroke);
-                    // vMax key過大修正
-                    if (Convert.ToDouble(formMain.txtMaxSpeed.Text) > resultVmax)
-                        formMain.txtMaxSpeed.Text = resultVmax.ToString();
+                try {
+                    Model m = formMain.page2.calc.GetAllModels(formMain.page2.runCondition.curCondition).First(_m => _m.name.StartsWith(model) && _m.lead == lead);
+                    if (formMain.optMaxSpeedType_mms.Checked) {
+                        double resultVmax = formMain.page2.calc.GetVmax_mms(m, lead, (int)stroke);
+                        // vMax key過大修正
+                        if (Convert.ToDouble(formMain.txtMaxSpeed.Text) > resultVmax)
+                            formMain.txtMaxSpeed.Text = resultVmax.ToString();
 
-                    // RPM 顯示                
-                    formMain.lbRpm.Text = "RPM: " + formMain.page2.calc.GetRpmByMMS(lead, Convert.ToDouble(formMain.txtMaxSpeed.Text)).ToString();
-                } else if (formMain.optMaxSpeedType_rpm.Checked) {
-                    double resultVmax = formMain.page2.calc.GetVmax_mms(m, lead, (int)stroke);
-                    int resultRpm = formMain.page2.calc.MMS_TO_RPM(resultVmax, lead);
-                    // vMax key過大修正
-                    if (Convert.ToDouble(formMain.txtMaxSpeed.Text) > resultRpm)
-                        formMain.txtMaxSpeed.Text = resultRpm.ToString();
+                        // RPM 顯示                
+                        formMain.lbRpm.Text = "RPM: " + formMain.page2.calc.GetRpmByMMS(lead, Convert.ToDouble(formMain.txtMaxSpeed.Text)).ToString();
+                    } else if (formMain.optMaxSpeedType_rpm.Checked) {
+                        double resultVmax = formMain.page2.calc.GetVmax_mms(m, lead, (int)stroke);
+                        int resultRpm = formMain.page2.calc.MMS_TO_RPM(resultVmax, lead);
+                        // vMax key過大修正
+                        if (Convert.ToDouble(formMain.txtMaxSpeed.Text) > resultRpm)
+                            formMain.txtMaxSpeed.Text = resultRpm.ToString();
 
-                    // RPM 顯示
-                    //lbRpm.Text = "RPM: " + calc.GetRpmByMMS(lead, Convert.ToDouble(txtMaxSpeed.Text)).ToString();
-                    if (formMain.txtMaxSpeed.Text.Contains("."))
-                        formMain.txtMaxSpeed.Text = formMain.txtMaxSpeed.Text.Split('.')[0];
-                    double _mms = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), lead);
-                    formMain.lbRpm.Text = "RPM: " + formMain.page2.calc.GetRpmByMMS(lead, _mms).ToString();
+                        // RPM 顯示
+                        //lbRpm.Text = "RPM: " + calc.GetRpmByMMS(lead, Convert.ToDouble(txtMaxSpeed.Text)).ToString();
+                        if (formMain.txtMaxSpeed.Text.Contains("."))
+                            formMain.txtMaxSpeed.Text = formMain.txtMaxSpeed.Text.Split('.')[0];
+                        double _mms = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), lead);
+                        formMain.lbRpm.Text = "RPM: " + formMain.page2.calc.GetRpmByMMS(lead, _mms).ToString();
+                    }
+                } catch (Exception ex) {
+                    Console.WriteLine(ex);
                 }
             }));
         }

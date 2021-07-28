@@ -476,7 +476,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             int rpm = GetRpmByStroke(model, lead, stroke);
             double vMax = (lead * (double)rpm) / 60f;
-            double repeatability = Convert.ToDouble(modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString() == model)["重複定位精度"].ToString());
+            double repeatability = Convert.ToDouble(modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString().StartsWith(model))["重複定位精度"].ToString());
             double minAccelTime = repeatability <= 0.01 ? 0.2 : 0.4;
             int maxAccelSpeed = (int)(vMax / minAccelTime);
             return maxAccelSpeed;
@@ -519,13 +519,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public Model.ModelType GetModelType(string model) {
-            string type = modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString() == model)["型號類別"].ToString();
+            string type = modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString().StartsWith(model))["型號類別"].ToString();
             Model.ModelType modelType = (Model.ModelType)Enum.Parse(typeof(Model.ModelType), type);
             return modelType;
         }
 
         public Model.UseEnvironment GetModelUseEnv(string model) {
-            string env = modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString() == model)["使用環境"].ToString();
+            string env = modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString().StartsWith(model))["使用環境"].ToString();
             Model.UseEnvironment useEnvironment = (Model.UseEnvironment)Enum.Parse(typeof(Model.UseEnvironment), env);
             return useEnvironment;
         }

@@ -22,22 +22,25 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void InitEvents() {
             formMain.cboModel.SelectedValueChanged += CboModel_SelectedValueChanged;
             formMain.cboModel.LostFocus += CboModel_LostFocus;
-            //formMain.cboReducerRatio.SelectedValueChanged += CboReducerRatio_SelectedValueChanged;
+            formMain.cboReducerRatio.SelectedValueChanged += CboReducerRatio_SelectedValueChanged;
             formMain.cboLead.SelectedValueChanged += CboLead_SelectedValueChanged;
-        }        
+        }
 
-        //private void CboReducerRatio_SelectedValueChanged(object sender, EventArgs e) {
-        //    if (!formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().Any(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text))
-        //        return;
+        private void CboReducerRatio_SelectedValueChanged(object sender, EventArgs e) {
+            //if (!formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().Any(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text))
+            //    return;
 
-        //    DataGridViewRow curRow = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().First(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text);
-        //    //DataGridViewComboBoxCell cboReducerRatio = curRow.Cells["columnReducerRatio"].Value as DataGridViewComboBoxCell;
-        //    curRow.Cells["columnReducerRatio"].Value = formMain.cboReducerRatio.Text;
-        //}
+            //DataGridViewRow curRow = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().First(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text);
+            ////DataGridViewComboBoxCell cboReducerRatio = curRow.Cells["columnReducerRatio"].Value as DataGridViewComboBoxCell;
+            //curRow.Cells["columnReducerRatio"].Value = formMain.cboReducerRatio.Text;
+
+            formMain.sideTable.UpdateModeInfo(formMain.cboModel.Text, Convert.ToInt32(formMain.cboReducerRatio.Text));
+            formMain.cboLead.SelectedIndex = formMain.cboReducerRatio.SelectedIndex;
+        }
 
         public void InitModelSelectionCbo() {
             var allDiffModel = formMain.page2.calc.modelInfo.Rows.Cast<DataRow>()
-                                                               .Select(row => row["Model"].ToString())
+                                                               .Select(row => row["型號"].ToString().Split('-')[0])
                                                                .Distinct();
             formMain.cboModel.DataSource = allDiffModel.ToList();
             formMain.cboModel.Text = "";
@@ -48,8 +51,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void CboModel_LostFocus(object sender, EventArgs e) {
             var leads = formMain.page2.calc.modelInfo.Rows.Cast<DataRow>()
-                                               .Where(row => row["Model"].ToString().Equals(formMain.cboModel.Text))
-                                               .Select(row => row["Lead"].ToString());
+                                               .Where(row => row["型號"].ToString().StartsWith(formMain.cboModel.Text))
+                                               .Select(row => row["導程"].ToString());
             if (leads.Count() == 0) {
                 // 型號搜尋不到時
                 formMain.cboLead.DataSource = null;
@@ -61,7 +64,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.cmdConfirmStep2.Visible = false;
             } else {
                 // 型號搜尋到時
-                formMain.sideTable.UpdateModeInfo(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
+                //Model.ModelType curModelType = formMain.page2.calc.GetModelType(formMain.cboModel.Text);
+                if (formMain.cboModel.Text.IsContainsReducerRatioType())
+                    formMain.sideTable.UpdateModeInfo(formMain.cboModel.Text, Convert.ToInt32(formMain.cboReducerRatio.Text));
+                else
+                    formMain.sideTable.UpdateModeInfo(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
                 formMain.sideTable.UpdateModelImg(formMain.cboModel.Text);
             }
         }
@@ -69,19 +76,21 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void CboModel_SelectedValueChanged(object sender, EventArgs e) {
             // 導程
             var leads = formMain.page2.calc.modelInfo.Rows.Cast<DataRow>()
-                                               .Where(row => row["Model"].ToString().Equals(formMain.cboModel.Text))
-                                               .Select(row => row["Lead"].ToString());
+                                               .Where(row => row["型號"].ToString().StartsWith(formMain.cboModel.Text))
+                                               .Select(row => row["導程"].ToString());
             formMain.cboLead.DataSource = leads.ToList();
 
             // 減速比
             //var reducerRatios = formMain.page2.calc.reducerInfo.Rows.Cast<DataRow>()
-            //                                                        .Where(row => row["Model"].ToString() == formMain.cboModel.Text)
+            //                                                        .Where(row => row["型號"].ToString() == formMain.cboModel.Text)
             //                                                        .Select(row => row["ReducerRatio"].ToString().Split('、'));
-            var reducerRatios = formMain.page2.calc.beltInfo.Rows.Cast<DataRow>().Where(row => row["Model"].ToString().StartsWith(formMain.cboModel.Text))
-                                                                                 .Select(row => row["Model"].ToString().Split('-')[1]);
-            formMain.panelModelSelectionReducerRatio.Visible = reducerRatios.Count() != 0;            
-            if (reducerRatios.Count() != 0)
-                formMain.cboReducerRatio.DataSource = reducerRatios.First().ToList();
+            var reducerRatios = formMain.page2.calc.beltInfo.Rows.Cast<DataRow>().Where(row => row["型號"].ToString().StartsWith(formMain.cboModel.Text) && row["型號"].ToString().Contains("-"));
+            formMain.panelModelSelectionReducerRatio.Visible = reducerRatios.Count() != 0;
+            if (reducerRatios.Count() != 0) {
+                //formMain.cboReducerRatio.DataSource = reducerRatios.First().ToList();
+                //formMain.cboReducerRatio.DataSource = reducerRatios.ToList();
+                formMain.cboReducerRatio.DataSource = reducerRatios.Select(row => row["型號"].ToString().Split('-')[1]).ToList();
+            }
 
             // 馬達選項更新
             formMain.page2.motorPower.UpdateMotorCalcMode();
@@ -101,7 +110,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 更新側邊型號
             if (leads.Count() != 0) {
-                formMain.sideTable.UpdateModeInfo(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
+                if (formMain.cboModel.Text.IsContainsReducerRatioType())
+                    formMain.sideTable.UpdateModeInfo(formMain.cboModel.Text, Convert.ToInt32(formMain.cboReducerRatio.Text));
+                else
+                    formMain.sideTable.UpdateModeInfo(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
                 formMain.sideTable.UpdateModelImg(formMain.cboModel.Text);
             } else {
                 formMain.sideTable.ClearModelInfo();
@@ -109,12 +121,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
 
             // 歐規皮帶導程隱藏
-            formMain.panelModelSelectionLead.Visible = !curModelType.IsContainsReducerRatioType();
+            formMain.panelModelSelectionLead.Visible = !formMain.cboModel.Text.IsContainsReducerRatioType();
             //formMain.page2.ReplaceItem();
         }
 
         private void CboLead_SelectedValueChanged(object sender, EventArgs e) {
-            if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "")
+            if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "" || formMain.cboReducerRatio.Text == "")
                 return;
 
             Condition con = new Condition();
@@ -134,6 +146,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             int maxStroke = formMain.page2.calc.GetMaxStroke(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
             formMain.page2.runCondition.scrollBarStroke.maxValue = maxStroke;
 
+            if (formMain.cboModel.Text.IsContainsReducerRatioType())
+                formMain.sideTable.UpdateModeInfo(formMain.cboModel.Text, Convert.ToInt32(formMain.cboReducerRatio.Text));
+            else
+                formMain.sideTable.UpdateModeInfo(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
         }
     }
 }

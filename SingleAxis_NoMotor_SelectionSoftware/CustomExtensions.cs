@@ -70,6 +70,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         /// <summary>
+        /// 是否為包含減速比的型號
+        /// </summary>
+        /// <param name="modelName">型號</param>
+        /// <returns></returns>
+        public static bool IsContainsReducerRatioType(this string modelName) {
+            return modelName.StartsWith("MK") || modelName.StartsWith("MG");
+        }
+
+        /// <summary>
         /// 是否為Y系列
         /// </summary>
         /// <param name="modelType">機構類別</param>

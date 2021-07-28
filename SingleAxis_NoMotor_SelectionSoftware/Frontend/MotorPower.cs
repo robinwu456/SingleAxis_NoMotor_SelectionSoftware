@@ -52,7 +52,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     return;
 
                 formMain.cboPower.Items.Clear();
-                formMain.page2.calc.modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString() == formMain.cboModel.Text && Convert.ToInt32(row["導程"].ToString()) == Convert.ToInt32(formMain.cboLead.Text))
+                formMain.page2.calc.modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString().StartsWith(formMain.cboModel.Text) && Convert.ToDouble(row["導程"].ToString()) == Convert.ToDouble(formMain.cboLead.Text))
                                                        ["馬達瓦數"].ToString().Split('&').ToList()
                                                        .ForEach(power => formMain.cboPower.Items.Add("標準-" + power + "W"));
                 formMain.cboPower.Items.Add("自訂");

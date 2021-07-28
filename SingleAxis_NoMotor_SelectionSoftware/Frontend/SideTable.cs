@@ -144,7 +144,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void UpdateModeInfo(string model, double lead) {
+            if (model.Contains("-"))
+                model = model.Split('-')[0];
             formMain.lbSideTableModelInfo.Text = string.Format("{0}-L{1}", model, lead);
+        }
+
+        public void UpdateModeInfo(string model, int reducerRatio) {
+            if (model.Contains("-"))
+                model = model.Split('-')[0];
+            formMain.lbSideTableModelInfo.Text = string.Format("{0}-{1}", model, reducerRatio);
         }
 
         public void ClearMsg() {

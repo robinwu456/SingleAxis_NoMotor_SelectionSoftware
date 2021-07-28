@@ -88,6 +88,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void DgvRecommandList_SelectionChanged(object sender, EventArgs e) {
+            if (formMain.dgvRecommandList.CurrentRow == null)
+                return;
+
             // 畫圖
             formMain.page2.chartInfo.PaintGraph();
 
@@ -106,7 +109,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (curRow != null && curRow.Cells["項次"].Value != null && curRow.Cells["導程"].Value != null) {
                 string curModel = formMain.dgvRecommandList.CurrentRow.Cells["項次"].Value.ToString();
                 double lead = Convert.ToDouble(formMain.dgvRecommandList.CurrentRow.Cells["導程"].Value.ToString());
-                formMain.sideTable.UpdateModeInfo(curModel, lead);
+                if (curModel.IsContainsReducerRatioType())
+                    formMain.sideTable.UpdateModeInfo(curModel, Convert.ToInt32(curModel.Split('-')[1]));
+                else
+                    formMain.sideTable.UpdateModeInfo(curModel, lead);
             }
 
             // 驗證使用瓦數

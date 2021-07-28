@@ -169,6 +169,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             runCondition.scrollBarLoad.maxValue = RunCondition.defaultMaxLoad;
 
             //ReplaceItem();
+
+            formMain.txtStroke.Text = "1000";
+            formMain.txtLoad.Text = "10";
+            formMain.txtRunTime.Text = "10";
         }
 
         private void InitEvents() {
@@ -314,8 +318,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (recommandList.curRecommandList.Count == 0) {
                     // 清空推薦規格
                     formMain.Invoke(new Action(() => {
-                        formMain.dgvRecommandList.DataSource = null;
+                        //formMain.dgvRecommandList.CurrentCell = null;
+                        //formMain.dgvRecommandList.DataSource = null;
+                        //formMain.dgvRecommandList.ClearSelection();
+                        //formMain.dgvRecommandList.Rows[0].Selected = false;
+                        if (formMain.dgvRecommandList.Rows.Count > 0)
+                            formMain.dgvRecommandList.Rows.RemoveAt(0);
                         formMain.dgvRecommandList.Rows.Clear();
+                        
                         chartInfo.Clear();
                         recommandList.curSelectModel = (null, -1);
                         // 側邊欄

@@ -35,7 +35,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 //    condition.calcModel.lead /= (float)condition.reducerRatio[condition.calcModel.model];
                 //    condition.calcModel.lead = Convert.ToDouble(condition.calcModel.lead.ToString("#0.00"));
                 //}
-                con = con.Where(model => model.name.Equals(condition.calcModel.model) && model.lead == condition.calcModel.lead);
+                con = con.Where(model => model.name.StartsWith(condition.calcModel.model) && model.lead == condition.calcModel.lead);
             }
 
             models = con.ToList();
