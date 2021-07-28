@@ -13,7 +13,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public int maxHeight = 1333;
         public Dictionary<RadioButton, Model.ModelType> modelTypeOptMap = new Dictionary<RadioButton, Model.ModelType>();
         public Dictionary<RadioButton, Model.SetupMethod> setupMethodOptMap = new Dictionary<RadioButton, Model.SetupMethod>();
-        public Model.ModelType curSelectModelType = Model.ModelType.螺桿系列;
+        public Model.ModelType curSelectModelType = Model.ModelType.ETH;
         public Calculation calc = new Calculation();
         // Step2各項目
         public MotorPower motorPower;
@@ -42,16 +42,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 機構類型opt統整
             modelTypeOptMap = new Dictionary<RadioButton, Model.ModelType>() {
-                { formMain.optStandardScrewActuator, Model.ModelType.螺桿系列 },
-                { formMain.optBuildInScrewActuator, Model.ModelType.軌道內崁螺桿系列 },
-                { formMain.optBuildInRodTypeScrewActuator, Model.ModelType.軌道內崁推桿系列 },
-                { formMain.optNoTrackRodTypeActuator, Model.ModelType.推桿系列 },
-                { formMain.optBuildOutRodTypeActuator, Model.ModelType.軌道外掛推桿系列 },
-                { formMain.optSupportTrackRodTypeActuator, Model.ModelType.輔助導桿推桿系列 },
-                { formMain.optStandardBeltActuator, Model.ModelType.皮帶系列 },
-                { formMain.optEuropeBeltActuator, Model.ModelType.歐規皮帶系列 },
-                { formMain.optBuildInBeltActuator, Model.ModelType.軌道內崁歐規皮帶系列 },
-                { formMain.optBuildInSupportTrackActuator, Model.ModelType.軌道內崁輔助導軌系列 },
+                { formMain.optStandardScrewActuator, Model.ModelType.ETH },
+                { formMain.optBuildInScrewActuator, Model.ModelType.GTH },
+                { formMain.optBuildInRodTypeScrewActuator, Model.ModelType.GTY },
+                { formMain.optNoTrackRodTypeActuator, Model.ModelType.Y },
+                { formMain.optBuildOutRodTypeActuator, Model.ModelType.YL },
+                { formMain.optSupportTrackRodTypeActuator, Model.ModelType.YD },
+                { formMain.optStandardBeltActuator, Model.ModelType.ETB },
+                { formMain.optEuropeBeltActuator, Model.ModelType.M },
+                { formMain.optBuildInBeltActuator, Model.ModelType.MG },
+                { formMain.optModelType_GCH, Model.ModelType.GCH },
+                { formMain.optModelType_ECH, Model.ModelType.ECH },
+                { formMain.optModelType_ECB, Model.ModelType.ECB },
             };
 
             // 安裝方式opt統整
@@ -107,7 +109,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.sideTable.UpdateItem();
             Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.標準 : Model.UseEnvironment.無塵;
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
-                formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType, curEnv), SideTable.MsgStatus.Normal);
+                formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
             else
                 formMain.sideTable.ClearMsg();
 
@@ -166,7 +168,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             runCondition.scrollBarStroke.maxValue = RunCondition.defaultMaxStroke;
             runCondition.scrollBarLoad.maxValue = RunCondition.defaultMaxLoad;
 
-            ReplaceItem();
+            //ReplaceItem();
         }
 
         private void InitEvents() {
@@ -229,7 +231,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.sideTable.Update(null, null);
             // 更新顯示傳動方式敘述
             Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.標準 : Model.UseEnvironment.無塵;
-            formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType, curEnv), SideTable.MsgStatus.Normal);
+            formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
             // 驗證安裝方式選項
             Model.SetupMethod[] modelTypeSupportSetupMethod = calc.GetSupportMethod(curSelectModelType);
             setupMethodOptMap.ToList().ForEach(pair => pair.Key.Enabled = modelTypeSupportSetupMethod.Contains(pair.Value));
@@ -399,69 +401,69 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (useEnv == Model.UseEnvironment.無塵 && !dustfreeModelTypes.Contains(curSelectModelType))
                 formMain.optBuildInScrewActuator.Checked = true;
 
-            formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType, useEnv), SideTable.MsgStatus.Normal);
+            formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
 
-            ReplaceItem();
+            //ReplaceItem();
         }
 
-        public void ReplaceItem() {
-            // 傳動方式
-            Dictionary<int, Dictionary<string, Point>> tablePos = new Dictionary<int, Dictionary<string, Point>>() {
-                { 0, new Dictionary<string, Point>(){ { "lbPos", new Point(227, 31) }, { "picPos", new Point(413, 6) }, } },
-                { 1, new Dictionary<string, Point>(){ { "lbPos", new Point(227, 120) }, { "picPos", new Point(413, 90) }, } },
-                { 2, new Dictionary<string, Point>(){ { "lbPos", new Point(227, 200) }, { "picPos", new Point(413, 174) }, } },
-                { 3, new Dictionary<string, Point>(){ { "lbPos", new Point(227, 283) }, { "picPos", new Point(413, 258) }, } },
-                { 4, new Dictionary<string, Point>(){ { "lbPos", new Point(227, 368) }, { "picPos", new Point(413, 342) }, } },
-                { 5, new Dictionary<string, Point>(){ { "lbPos", new Point(577, 32) }, { "picPos", new Point(734, 6) }, } },
-                { 6, new Dictionary<string, Point>(){ { "lbPos", new Point(577, 120) }, { "picPos", new Point(734, 90) }, } },
-                { 7, new Dictionary<string, Point>(){ { "lbPos", new Point(577, 200) }, { "picPos", new Point(734, 174) }, } },
-                { 8, new Dictionary<string, Point>(){ { "lbPos", new Point(577, 283) }, { "picPos", new Point(734, 258) }, } },
-                { 9, new Dictionary<string, Point>(){ { "lbPos", new Point(575, 367) }, { "picPos", new Point(734, 342) }, } },
-            };
-            Model.ModelType[] standardPos = {
-                Model.ModelType.軌道內崁螺桿系列,
-                Model.ModelType.軌道內崁推桿系列,
-                Model.ModelType.軌道內崁輔助導軌系列,
-                Model.ModelType.軌道內崁歐規皮帶系列,
-                Model.ModelType.歐規皮帶系列,
-                Model.ModelType.螺桿系列,
-                Model.ModelType.推桿系列,
-                Model.ModelType.輔助導桿推桿系列,
-                Model.ModelType.軌道外掛推桿系列,
-                Model.ModelType.皮帶系列
-            };
-            Model.ModelType[] dustFree = {
-                Model.ModelType.軌道內崁螺桿系列,
-                Model.ModelType.軌道內崁推桿系列,
-                Model.ModelType.軌道內崁輔助導軌系列,
-                Model.ModelType.歐規皮帶系列,
-                Model.ModelType.推桿系列,
-                Model.ModelType.螺桿系列,
-                Model.ModelType.皮帶系列,
-                Model.ModelType.軌道內崁歐規皮帶系列,
-                Model.ModelType.軌道外掛推桿系列,
-                Model.ModelType.輔助導桿推桿系列,
-            };
-            foreach (var item in modelTypeOptMap) {
-                RadioButton opt = item.Key;
-                PictureBox pic = formMain.panelModelType.Controls.Find(opt.Name.Replace("opt", "pic"), true)[0] as PictureBox;
-                if (formMain.optStandardEnv.Checked) {
-                    opt.Location = tablePos[standardPos.ToList().IndexOf(modelTypeOptMap[opt])]["lbPos"];
-                    pic.Location = tablePos[standardPos.ToList().IndexOf(modelTypeOptMap[opt])]["picPos"];
-                } else {
-                    opt.Location = tablePos[dustFree.ToList().IndexOf(modelTypeOptMap[opt])]["lbPos"];
-                    pic.Location = tablePos[dustFree.ToList().IndexOf(modelTypeOptMap[opt])]["picPos"];
-                }
-            }
+        //public void ReplaceItem() {
+        //    // 傳動方式
+        //    Dictionary<int, Dictionary<string, Point>> tablePos = new Dictionary<int, Dictionary<string, Point>>() {
+        //        { 0, new Dictionary<string, Point>(){ { "lbPos", new Point(227, 31) }, { "picPos", new Point(413, 6) }, } },
+        //        { 1, new Dictionary<string, Point>(){ { "lbPos", new Point(227, 120) }, { "picPos", new Point(413, 90) }, } },
+        //        { 2, new Dictionary<string, Point>(){ { "lbPos", new Point(227, 200) }, { "picPos", new Point(413, 174) }, } },
+        //        { 3, new Dictionary<string, Point>(){ { "lbPos", new Point(227, 283) }, { "picPos", new Point(413, 258) }, } },
+        //        { 4, new Dictionary<string, Point>(){ { "lbPos", new Point(227, 368) }, { "picPos", new Point(413, 342) }, } },
+        //        { 5, new Dictionary<string, Point>(){ { "lbPos", new Point(577, 32) }, { "picPos", new Point(734, 6) }, } },
+        //        { 6, new Dictionary<string, Point>(){ { "lbPos", new Point(577, 120) }, { "picPos", new Point(734, 90) }, } },
+        //        { 7, new Dictionary<string, Point>(){ { "lbPos", new Point(577, 200) }, { "picPos", new Point(734, 174) }, } },
+        //        { 8, new Dictionary<string, Point>(){ { "lbPos", new Point(577, 283) }, { "picPos", new Point(734, 258) }, } },
+        //        { 9, new Dictionary<string, Point>(){ { "lbPos", new Point(575, 367) }, { "picPos", new Point(734, 342) }, } },
+        //    };
+        //    Model.ModelType[] standardPos = {
+        //        Model.ModelType.GTH,
+        //        Model.ModelType.GTY,
+        //        Model.ModelType.軌道內崁輔助導軌系列,
+        //        Model.ModelType.MG,
+        //        Model.ModelType.M,
+        //        Model.ModelType.ETH,
+        //        Model.ModelType.Y,
+        //        Model.ModelType.YD,
+        //        Model.ModelType.YL,
+        //        Model.ModelType.ETB
+        //    };
+        //    Model.ModelType[] dustFree = {
+        //        Model.ModelType.GTH,
+        //        Model.ModelType.GTY,
+        //        Model.ModelType.軌道內崁輔助導軌系列,
+        //        Model.ModelType.M,
+        //        Model.ModelType.Y,
+        //        Model.ModelType.ETH,
+        //        Model.ModelType.ETB,
+        //        Model.ModelType.MG,
+        //        Model.ModelType.YL,
+        //        Model.ModelType.YD,
+        //    };
+        //    foreach (var item in modelTypeOptMap) {
+        //        RadioButton opt = item.Key;
+        //        PictureBox pic = formMain.panelModelType.Controls.Find(opt.Name.Replace("opt", "pic"), true)[0] as PictureBox;
+        //        if (formMain.optStandardEnv.Checked) {
+        //            opt.Location = tablePos[standardPos.ToList().IndexOf(modelTypeOptMap[opt])]["lbPos"];
+        //            pic.Location = tablePos[standardPos.ToList().IndexOf(modelTypeOptMap[opt])]["picPos"];
+        //        } else {
+        //            opt.Location = tablePos[dustFree.ToList().IndexOf(modelTypeOptMap[opt])]["lbPos"];
+        //            pic.Location = tablePos[dustFree.ToList().IndexOf(modelTypeOptMap[opt])]["picPos"];
+        //        }
+        //    }
 
-            // 型號選擇
-            if (formMain.panelModelSelectionReducerRatio.Visible) {
-                formMain.panelModelSelectionModel.Location = new Point(398, 5);
-                formMain.panelModelSelectionReducerRatio.Location = new Point(510, 5);
-            } else {
-                formMain.panelModelSelectionModel.Location = new Point(398, 5);
-                formMain.panelModelSelectionLead.Location = new Point(510, 5);
-            }
-        }
+        //    // 型號選擇
+        //    if (formMain.panelModelSelectionReducerRatio.Visible) {
+        //        formMain.panelModelSelectionModel.Location = new Point(398, 5);
+        //        formMain.panelModelSelectionReducerRatio.Location = new Point(510, 5);
+        //    } else {
+        //        formMain.panelModelSelectionModel.Location = new Point(398, 5);
+        //        formMain.panelModelSelectionLead.Location = new Point(510, 5);
+        //    }
+        //}
     }
 }

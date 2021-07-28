@@ -742,7 +742,7 @@
     <value>Top</value>
   </data>
   <data name="panelNextPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 2576</value>
+    <value>0, 2680</value>
   </data>
   <data name="panelNextPage.Size" type="System.Drawing.Size, System.Drawing">
     <value>934, 38</value>
@@ -1065,9 +1065,6 @@
   <data name="更詳細資訊.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="更詳細資訊.Width" type="System.Int32, mscorlib">
-    <value>106</value>
-  </data>
   <data name="dgvRecommandList.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 67</value>
   </data>
@@ -1150,7 +1147,7 @@
     <value>Top</value>
   </data>
   <data name="panelCalcResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 2089</value>
+    <value>0, 2193</value>
   </data>
   <data name="panelCalcResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>934, 487</value>
@@ -1396,7 +1393,7 @@
     <value>Top</value>
   </data>
   <data name="panelChart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 1743</value>
+    <value>0, 1847</value>
   </data>
   <data name="panelChart.Size" type="System.Drawing.Size, System.Drawing">
     <value>934, 346</value>
@@ -4127,7 +4124,7 @@
     <value>Top</value>
   </data>
   <data name="panelCalc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 1135</value>
+    <value>0, 1239</value>
   </data>
   <data name="panelCalc.Size" type="System.Drawing.Size, System.Drawing">
     <value>934, 608</value>
@@ -4610,7 +4607,7 @@
     <value>Top</value>
   </data>
   <data name="panelMoment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 971</value>
+    <value>0, 1075</value>
   </data>
   <data name="panelMoment.Size" type="System.Drawing.Size, System.Drawing">
     <value>934, 164</value>
@@ -4817,7 +4814,7 @@
     <value>Top</value>
   </data>
   <data name="panelSetup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 687</value>
+    <value>0, 791</value>
   </data>
   <data name="panelSetup.Size" type="System.Drawing.Size, System.Drawing">
     <value>934, 284</value>
@@ -5186,7 +5183,7 @@
     <value>Top</value>
   </data>
   <data name="panelModelSelection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 617</value>
+    <value>0, 721</value>
   </data>
   <data name="panelModelSelection.Size" type="System.Drawing.Size, System.Drawing">
     <value>934, 70</value>
@@ -5205,6 +5202,186 @@
   </data>
   <data name="&gt;&gt;panelModelSelection.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="optModelType_ECH.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optModelType_ECH.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optModelType_ECH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optModelType_ECH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>227, 452</value>
+  </data>
+  <data name="optModelType_ECH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 23</value>
+  </data>
+  <data name="optModelType_ECH.TabIndex" type="System.Int32, mscorlib">
+    <value>329</value>
+  </data>
+  <data name="optModelType_ECH.Text" xml:space="preserve">
+    <value>ECH</value>
+  </data>
+  <data name="&gt;&gt;optModelType_ECH.Name" xml:space="preserve">
+    <value>optModelType_ECH</value>
+  </data>
+  <data name="&gt;&gt;optModelType_ECH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optModelType_ECH.Parent" xml:space="preserve">
+    <value>panelModelType</value>
+  </data>
+  <data name="&gt;&gt;optModelType_ECH.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="picModelType_ECH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="picModelType_ECH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>413, 426</value>
+  </data>
+  <data name="picModelType_ECH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 78</value>
+  </data>
+  <data name="picModelType_ECH.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="picModelType_ECH.TabIndex" type="System.Int32, mscorlib">
+    <value>330</value>
+  </data>
+  <data name="&gt;&gt;picModelType_ECH.Name" xml:space="preserve">
+    <value>picModelType_ECH</value>
+  </data>
+  <data name="&gt;&gt;picModelType_ECH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picModelType_ECH.Parent" xml:space="preserve">
+    <value>panelModelType</value>
+  </data>
+  <data name="&gt;&gt;picModelType_ECH.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="optModelType_ECB.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optModelType_ECB.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optModelType_ECB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optModelType_ECB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>575, 451</value>
+  </data>
+  <data name="optModelType_ECB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 23</value>
+  </data>
+  <data name="optModelType_ECB.TabIndex" type="System.Int32, mscorlib">
+    <value>327</value>
+  </data>
+  <data name="optModelType_ECB.Text" xml:space="preserve">
+    <value>ECB</value>
+  </data>
+  <data name="&gt;&gt;optModelType_ECB.Name" xml:space="preserve">
+    <value>optModelType_ECB</value>
+  </data>
+  <data name="&gt;&gt;optModelType_ECB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optModelType_ECB.Parent" xml:space="preserve">
+    <value>panelModelType</value>
+  </data>
+  <data name="&gt;&gt;optModelType_ECB.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="picModelType_ECB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="picModelType_ECB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>734, 426</value>
+  </data>
+  <data name="picModelType_ECB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 78</value>
+  </data>
+  <data name="picModelType_ECB.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="picModelType_ECB.TabIndex" type="System.Int32, mscorlib">
+    <value>328</value>
+  </data>
+  <data name="&gt;&gt;picModelType_ECB.Name" xml:space="preserve">
+    <value>picModelType_ECB</value>
+  </data>
+  <data name="&gt;&gt;picModelType_ECB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picModelType_ECB.Parent" xml:space="preserve">
+    <value>panelModelType</value>
+  </data>
+  <data name="&gt;&gt;picModelType_ECB.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="optModelType_GCH.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optModelType_GCH.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optModelType_GCH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optModelType_GCH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>227, 368</value>
+  </data>
+  <data name="optModelType_GCH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 23</value>
+  </data>
+  <data name="optModelType_GCH.TabIndex" type="System.Int32, mscorlib">
+    <value>325</value>
+  </data>
+  <data name="optModelType_GCH.Text" xml:space="preserve">
+    <value>GCH</value>
+  </data>
+  <data name="&gt;&gt;optModelType_GCH.Name" xml:space="preserve">
+    <value>optModelType_GCH</value>
+  </data>
+  <data name="&gt;&gt;optModelType_GCH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optModelType_GCH.Parent" xml:space="preserve">
+    <value>panelModelType</value>
+  </data>
+  <data name="&gt;&gt;optModelType_GCH.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="picModelType_GCH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="picModelType_GCH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>413, 342</value>
+  </data>
+  <data name="picModelType_GCH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 78</value>
+  </data>
+  <data name="picModelType_GCH.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="picModelType_GCH.TabIndex" type="System.Int32, mscorlib">
+    <value>326</value>
+  </data>
+  <data name="&gt;&gt;picModelType_GCH.Name" xml:space="preserve">
+    <value>picModelType_GCH</value>
+  </data>
+  <data name="&gt;&gt;picModelType_GCH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picModelType_GCH.Parent" xml:space="preserve">
+    <value>panelModelType</value>
+  </data>
+  <data name="&gt;&gt;picModelType_GCH.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="lbTitleModelType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5240,67 +5417,7 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;lbTitleModelType.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="optBuildInSupportTrackActuator.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optBuildInSupportTrackActuator.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optBuildInSupportTrackActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optBuildInSupportTrackActuator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>227, 200</value>
-  </data>
-  <data name="optBuildInSupportTrackActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 23</value>
-  </data>
-  <data name="optBuildInSupportTrackActuator.TabIndex" type="System.Int32, mscorlib">
-    <value>322</value>
-  </data>
-  <data name="optBuildInSupportTrackActuator.Text" xml:space="preserve">
-    <value>軌道內崁輔助導軌系列</value>
-  </data>
-  <data name="&gt;&gt;optBuildInSupportTrackActuator.Name" xml:space="preserve">
-    <value>optBuildInSupportTrackActuator</value>
-  </data>
-  <data name="&gt;&gt;optBuildInSupportTrackActuator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optBuildInSupportTrackActuator.Parent" xml:space="preserve">
-    <value>panelModelType</value>
-  </data>
-  <data name="&gt;&gt;optBuildInSupportTrackActuator.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="picBuildInSupportTrackActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="picBuildInSupportTrackActuator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>413, 174</value>
-  </data>
-  <data name="picBuildInSupportTrackActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 78</value>
-  </data>
-  <data name="picBuildInSupportTrackActuator.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="picBuildInSupportTrackActuator.TabIndex" type="System.Int32, mscorlib">
-    <value>323</value>
-  </data>
-  <data name="&gt;&gt;picBuildInSupportTrackActuator.Name" xml:space="preserve">
-    <value>picBuildInSupportTrackActuator</value>
-  </data>
-  <data name="&gt;&gt;picBuildInSupportTrackActuator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;picBuildInSupportTrackActuator.Parent" xml:space="preserve">
-    <value>panelModelType</value>
-  </data>
-  <data name="&gt;&gt;picBuildInSupportTrackActuator.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="optBuildOutRodTypeActuator.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5315,13 +5432,13 @@
     <value>577, 283</value>
   </data>
   <data name="optBuildOutRodTypeActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 23</value>
+    <value>44, 23</value>
   </data>
   <data name="optBuildOutRodTypeActuator.TabIndex" type="System.Int32, mscorlib">
     <value>320</value>
   </data>
   <data name="optBuildOutRodTypeActuator.Text" xml:space="preserve">
-    <value>軌道外掛推桿系列</value>
+    <value>YL</value>
   </data>
   <data name="&gt;&gt;optBuildOutRodTypeActuator.Name" xml:space="preserve">
     <value>optBuildOutRodTypeActuator</value>
@@ -5333,7 +5450,7 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;optBuildOutRodTypeActuator.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="picBuildOutRodTypeActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5360,7 +5477,7 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;picBuildOutRodTypeActuator.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="optBuildInBeltActuator.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5372,16 +5489,16 @@
     <value>NoControl</value>
   </data>
   <data name="optBuildInBeltActuator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>227, 283</value>
+    <value>227, 200</value>
   </data>
   <data name="optBuildInBeltActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 23</value>
+    <value>53, 23</value>
   </data>
   <data name="optBuildInBeltActuator.TabIndex" type="System.Int32, mscorlib">
     <value>318</value>
   </data>
   <data name="optBuildInBeltActuator.Text" xml:space="preserve">
-    <value>軌道內崁皮帶系列</value>
+    <value>MG</value>
   </data>
   <data name="&gt;&gt;optBuildInBeltActuator.Name" xml:space="preserve">
     <value>optBuildInBeltActuator</value>
@@ -5393,13 +5510,13 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;optBuildInBeltActuator.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="picBuildInBeltActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="picBuildInBeltActuator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>413, 258</value>
+    <value>413, 175</value>
   </data>
   <data name="picBuildInBeltActuator.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 78</value>
@@ -5420,7 +5537,7 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;picBuildInBeltActuator.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="optEuropeBeltActuator.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5432,16 +5549,16 @@
     <value>NoControl</value>
   </data>
   <data name="optEuropeBeltActuator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>227, 368</value>
+    <value>227, 285</value>
   </data>
   <data name="optEuropeBeltActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 23</value>
+    <value>42, 23</value>
   </data>
   <data name="optEuropeBeltActuator.TabIndex" type="System.Int32, mscorlib">
     <value>316</value>
   </data>
   <data name="optEuropeBeltActuator.Text" xml:space="preserve">
-    <value>歐規皮帶系列</value>
+    <value>M</value>
   </data>
   <data name="&gt;&gt;optEuropeBeltActuator.Name" xml:space="preserve">
     <value>optEuropeBeltActuator</value>
@@ -5453,13 +5570,13 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;optEuropeBeltActuator.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="picEuropeBeltActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="picEuropeBeltActuator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>413, 342</value>
+    <value>413, 259</value>
   </data>
   <data name="picEuropeBeltActuator.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 78</value>
@@ -5480,7 +5597,7 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;picEuropeBeltActuator.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>12</value>
   </data>
   <data name="optStandardBeltActuator.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5495,13 +5612,13 @@
     <value>575, 367</value>
   </data>
   <data name="optStandardBeltActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 23</value>
+    <value>54, 23</value>
   </data>
   <data name="optStandardBeltActuator.TabIndex" type="System.Int32, mscorlib">
     <value>314</value>
   </data>
   <data name="optStandardBeltActuator.Text" xml:space="preserve">
-    <value>皮帶系列</value>
+    <value>ETB</value>
   </data>
   <data name="&gt;&gt;optStandardBeltActuator.Name" xml:space="preserve">
     <value>optStandardBeltActuator</value>
@@ -5513,7 +5630,7 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;optStandardBeltActuator.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>13</value>
   </data>
   <data name="picStandardBeltActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5540,7 +5657,7 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;picStandardBeltActuator.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>14</value>
   </data>
   <data name="optSupportTrackRodTypeActuator.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5555,13 +5672,13 @@
     <value>577, 200</value>
   </data>
   <data name="optSupportTrackRodTypeActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 23</value>
+    <value>48, 23</value>
   </data>
   <data name="optSupportTrackRodTypeActuator.TabIndex" type="System.Int32, mscorlib">
     <value>312</value>
   </data>
   <data name="optSupportTrackRodTypeActuator.Text" xml:space="preserve">
-    <value>輔助導桿推桿系列</value>
+    <value>YD</value>
   </data>
   <data name="&gt;&gt;optSupportTrackRodTypeActuator.Name" xml:space="preserve">
     <value>optSupportTrackRodTypeActuator</value>
@@ -5573,7 +5690,7 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;optSupportTrackRodTypeActuator.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>15</value>
   </data>
   <data name="picSupportTrackRodTypeActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5600,7 +5717,7 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;picSupportTrackRodTypeActuator.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>16</value>
   </data>
   <data name="optNoTrackRodTypeActuator.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5615,13 +5732,13 @@
     <value>577, 120</value>
   </data>
   <data name="optNoTrackRodTypeActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 23</value>
+    <value>36, 23</value>
   </data>
   <data name="optNoTrackRodTypeActuator.TabIndex" type="System.Int32, mscorlib">
     <value>310</value>
   </data>
   <data name="optNoTrackRodTypeActuator.Text" xml:space="preserve">
-    <value>推桿系列</value>
+    <value>Y</value>
   </data>
   <data name="&gt;&gt;optNoTrackRodTypeActuator.Name" xml:space="preserve">
     <value>optNoTrackRodTypeActuator</value>
@@ -5633,7 +5750,7 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;optNoTrackRodTypeActuator.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>17</value>
   </data>
   <data name="picNoTrackRodTypeActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5660,7 +5777,7 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;picNoTrackRodTypeActuator.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>18</value>
   </data>
   <data name="optBuildInRodTypeScrewActuator.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5675,13 +5792,13 @@
     <value>227, 120</value>
   </data>
   <data name="optBuildInRodTypeScrewActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 23</value>
+    <value>56, 23</value>
   </data>
   <data name="optBuildInRodTypeScrewActuator.TabIndex" type="System.Int32, mscorlib">
     <value>308</value>
   </data>
   <data name="optBuildInRodTypeScrewActuator.Text" xml:space="preserve">
-    <value>軌道內崁推桿系列</value>
+    <value>GTY</value>
   </data>
   <data name="&gt;&gt;optBuildInRodTypeScrewActuator.Name" xml:space="preserve">
     <value>optBuildInRodTypeScrewActuator</value>
@@ -5693,7 +5810,7 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;optBuildInRodTypeScrewActuator.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>19</value>
   </data>
   <data name="picBuildInRodTypeScrewActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5720,7 +5837,7 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;picBuildInRodTypeScrewActuator.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>20</value>
   </data>
   <data name="optBuildInScrewActuator.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5735,13 +5852,13 @@
     <value>227, 31</value>
   </data>
   <data name="optBuildInScrewActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 23</value>
+    <value>59, 23</value>
   </data>
   <data name="optBuildInScrewActuator.TabIndex" type="System.Int32, mscorlib">
     <value>306</value>
   </data>
   <data name="optBuildInScrewActuator.Text" xml:space="preserve">
-    <value>軌道內崁螺桿系列</value>
+    <value>GTH</value>
   </data>
   <data name="&gt;&gt;optBuildInScrewActuator.Name" xml:space="preserve">
     <value>optBuildInScrewActuator</value>
@@ -5753,7 +5870,7 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;optBuildInScrewActuator.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>21</value>
   </data>
   <data name="picBuildInScrewActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5780,7 +5897,7 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;picBuildInScrewActuator.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>22</value>
   </data>
   <data name="optStandardScrewActuator.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5795,13 +5912,13 @@
     <value>577, 32</value>
   </data>
   <data name="optStandardScrewActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 23</value>
+    <value>56, 23</value>
   </data>
   <data name="optStandardScrewActuator.TabIndex" type="System.Int32, mscorlib">
     <value>304</value>
   </data>
   <data name="optStandardScrewActuator.Text" xml:space="preserve">
-    <value>螺桿系列</value>
+    <value>ETH</value>
   </data>
   <data name="&gt;&gt;optStandardScrewActuator.Name" xml:space="preserve">
     <value>optStandardScrewActuator</value>
@@ -5813,7 +5930,7 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;optStandardScrewActuator.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>23</value>
   </data>
   <data name="picStandardScrewActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5840,7 +5957,7 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;picStandardScrewActuator.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>24</value>
   </data>
   <data name="panelModelType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -5849,7 +5966,7 @@
     <value>0, 191</value>
   </data>
   <data name="panelModelType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>934, 426</value>
+    <value>934, 530</value>
   </data>
   <data name="panelModelType.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -6185,7 +6302,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,509,Absolute,509,Absolute,509,Absolute,509" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,515,Absolute,515,Absolute,515,Absolute,515" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 321</value>
@@ -6476,7 +6593,7 @@
     <value>7</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>973, 100</value>
+    <value>972, 100</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -6572,7 +6689,7 @@
     <value>NoControl</value>
   </data>
   <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-1316, 487</value>
+    <value>-1356, 487</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 16</value>
@@ -6602,7 +6719,7 @@
     <value>NoControl</value>
   </data>
   <data name="label56.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-1315, 184</value>
+    <value>-1355, 184</value>
   </data>
   <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 2</value>
@@ -6635,7 +6752,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-1322, 147</value>
+    <value>-1362, 147</value>
   </data>
   <data name="lbResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 31</value>
@@ -6665,7 +6782,7 @@
     <value>NoControl</value>
   </data>
   <data name="picBoxResultImg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-1316, 204</value>
+    <value>-1356, 204</value>
   </data>
   <data name="picBoxResultImg.Size" type="System.Drawing.Size, System.Drawing">
     <value>452, 276</value>
@@ -10424,9 +10541,6 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

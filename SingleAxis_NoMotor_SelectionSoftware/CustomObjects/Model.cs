@@ -21,16 +21,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// 傳動方式列舉
         /// </summary>
         public enum ModelType {
-            軌道內崁螺桿系列,
-            軌道內崁推桿系列,
-            螺桿系列,
-            皮帶系列,
-            歐規皮帶系列,
-            推桿系列,
-            軌道外掛推桿系列,
-            輔助導桿推桿系列,
-            軌道內崁歐規皮帶系列,
-            軌道內崁輔助導軌系列
+            GTH,
+            GTY,
+            ETH,
+            ETB,
+            M,
+            Y,
+            YL,
+            YD,
+            MG,
+            GCH,
+            ECH,
+            ECB
         }
 
         /// <summary>
@@ -81,7 +83,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <summary>
         /// 機構型態
         /// </summary>
-        public ModelType modelType = ModelType.螺桿系列;
+        public ModelType modelType = ModelType.ETH;
         /// <summary>
         /// 是否套用皮帶公式
         /// </summary>

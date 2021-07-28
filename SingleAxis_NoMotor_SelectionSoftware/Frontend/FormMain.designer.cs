@@ -216,9 +216,13 @@
             this.cboReducerRatio = new System.Windows.Forms.ComboBox();
             this.lbTitleModelSelection = new System.Windows.Forms.Label();
             this.panelModelType = new System.Windows.Forms.Panel();
+            this.optModelType_ECH = new System.Windows.Forms.RadioButton();
+            this.picModelType_ECH = new System.Windows.Forms.PictureBox();
+            this.optModelType_ECB = new System.Windows.Forms.RadioButton();
+            this.picModelType_ECB = new System.Windows.Forms.PictureBox();
+            this.optModelType_GCH = new System.Windows.Forms.RadioButton();
+            this.picModelType_GCH = new System.Windows.Forms.PictureBox();
             this.lbTitleModelType = new System.Windows.Forms.Label();
-            this.optBuildInSupportTrackActuator = new System.Windows.Forms.RadioButton();
-            this.picBuildInSupportTrackActuator = new System.Windows.Forms.PictureBox();
             this.optBuildOutRodTypeActuator = new System.Windows.Forms.RadioButton();
             this.picBuildOutRodTypeActuator = new System.Windows.Forms.PictureBox();
             this.optBuildInBeltActuator = new System.Windows.Forms.RadioButton();
@@ -322,7 +326,9 @@
             this.panelModelSelectionLead.SuspendLayout();
             this.panelModelSelectionReducerRatio.SuspendLayout();
             this.panelModelType.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBuildInSupportTrackActuator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picModelType_ECH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picModelType_ECB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picModelType_GCH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBuildOutRodTypeActuator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBuildInBeltActuator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEuropeBeltActuator)).BeginInit();
@@ -1825,9 +1831,13 @@
             // 
             // panelModelType
             // 
+            this.panelModelType.Controls.Add(this.optModelType_ECH);
+            this.panelModelType.Controls.Add(this.picModelType_ECH);
+            this.panelModelType.Controls.Add(this.optModelType_ECB);
+            this.panelModelType.Controls.Add(this.picModelType_ECB);
+            this.panelModelType.Controls.Add(this.optModelType_GCH);
+            this.panelModelType.Controls.Add(this.picModelType_GCH);
             this.panelModelType.Controls.Add(this.lbTitleModelType);
-            this.panelModelType.Controls.Add(this.optBuildInSupportTrackActuator);
-            this.panelModelType.Controls.Add(this.picBuildInSupportTrackActuator);
             this.panelModelType.Controls.Add(this.optBuildOutRodTypeActuator);
             this.panelModelType.Controls.Add(this.picBuildOutRodTypeActuator);
             this.panelModelType.Controls.Add(this.optBuildInBeltActuator);
@@ -1849,27 +1859,57 @@
             resources.ApplyResources(this.panelModelType, "panelModelType");
             this.panelModelType.Name = "panelModelType";
             // 
+            // optModelType_ECH
+            // 
+            resources.ApplyResources(this.optModelType_ECH, "optModelType_ECH");
+            this.optModelType_ECH.ForeColor = System.Drawing.Color.Black;
+            this.optModelType_ECH.Name = "optModelType_ECH";
+            this.optModelType_ECH.UseVisualStyleBackColor = true;
+            // 
+            // picModelType_ECH
+            // 
+            this.picModelType_ECH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picModelType_ECH.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.M系列;
+            resources.ApplyResources(this.picModelType_ECH, "picModelType_ECH");
+            this.picModelType_ECH.Name = "picModelType_ECH";
+            this.picModelType_ECH.TabStop = false;
+            // 
+            // optModelType_ECB
+            // 
+            resources.ApplyResources(this.optModelType_ECB, "optModelType_ECB");
+            this.optModelType_ECB.ForeColor = System.Drawing.Color.Black;
+            this.optModelType_ECB.Name = "optModelType_ECB";
+            this.optModelType_ECB.UseVisualStyleBackColor = true;
+            // 
+            // picModelType_ECB
+            // 
+            this.picModelType_ECB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picModelType_ECB.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.螺桿滑台;
+            resources.ApplyResources(this.picModelType_ECB, "picModelType_ECB");
+            this.picModelType_ECB.Name = "picModelType_ECB";
+            this.picModelType_ECB.TabStop = false;
+            // 
+            // optModelType_GCH
+            // 
+            resources.ApplyResources(this.optModelType_GCH, "optModelType_GCH");
+            this.optModelType_GCH.ForeColor = System.Drawing.Color.Black;
+            this.optModelType_GCH.Name = "optModelType_GCH";
+            this.optModelType_GCH.UseVisualStyleBackColor = true;
+            // 
+            // picModelType_GCH
+            // 
+            this.picModelType_GCH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picModelType_GCH.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.M系列;
+            resources.ApplyResources(this.picModelType_GCH, "picModelType_GCH");
+            this.picModelType_GCH.Name = "picModelType_GCH";
+            this.picModelType_GCH.TabStop = false;
+            // 
             // lbTitleModelType
             // 
             resources.ApplyResources(this.lbTitleModelType, "lbTitleModelType");
             this.lbTitleModelType.BackColor = System.Drawing.Color.White;
             this.lbTitleModelType.ForeColor = System.Drawing.Color.DimGray;
             this.lbTitleModelType.Name = "lbTitleModelType";
-            // 
-            // optBuildInSupportTrackActuator
-            // 
-            resources.ApplyResources(this.optBuildInSupportTrackActuator, "optBuildInSupportTrackActuator");
-            this.optBuildInSupportTrackActuator.ForeColor = System.Drawing.Color.Black;
-            this.optBuildInSupportTrackActuator.Name = "optBuildInSupportTrackActuator";
-            this.optBuildInSupportTrackActuator.UseVisualStyleBackColor = true;
-            // 
-            // picBuildInSupportTrackActuator
-            // 
-            this.picBuildInSupportTrackActuator.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picBuildInSupportTrackActuator.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.GTYD;
-            resources.ApplyResources(this.picBuildInSupportTrackActuator, "picBuildInSupportTrackActuator");
-            this.picBuildInSupportTrackActuator.Name = "picBuildInSupportTrackActuator";
-            this.picBuildInSupportTrackActuator.TabStop = false;
             // 
             // optBuildOutRodTypeActuator
             // 
@@ -2355,7 +2395,9 @@
             this.panelModelSelectionReducerRatio.PerformLayout();
             this.panelModelType.ResumeLayout(false);
             this.panelModelType.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBuildInSupportTrackActuator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picModelType_ECH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picModelType_ECB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picModelType_GCH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBuildOutRodTypeActuator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBuildInBeltActuator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEuropeBeltActuator)).EndInit();
@@ -2510,8 +2552,6 @@
         public System.Windows.Forms.PictureBox picStandardEnv;
         private System.Windows.Forms.Label lbTitleUseEnv;
         private System.Windows.Forms.Label lbTitleModelType;
-        public System.Windows.Forms.RadioButton optBuildInSupportTrackActuator;
-        private System.Windows.Forms.PictureBox picBuildInSupportTrackActuator;
         public System.Windows.Forms.RadioButton optBuildOutRodTypeActuator;
         private System.Windows.Forms.PictureBox picBuildOutRodTypeActuator;
         public System.Windows.Forms.RadioButton optBuildInBeltActuator;
@@ -2631,6 +2671,12 @@
         public System.Windows.Forms.Label label11;
         public System.Windows.Forms.TextBox txtReducerRotateInertia;
         public System.Windows.Forms.Panel panelReducerParam;
+        public System.Windows.Forms.RadioButton optModelType_ECH;
+        private System.Windows.Forms.PictureBox picModelType_ECH;
+        public System.Windows.Forms.RadioButton optModelType_ECB;
+        private System.Windows.Forms.PictureBox picModelType_ECB;
+        public System.Windows.Forms.RadioButton optModelType_GCH;
+        private System.Windows.Forms.PictureBox picModelType_GCH;
     }
 }
 

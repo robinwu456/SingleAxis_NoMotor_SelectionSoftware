@@ -331,7 +331,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         // 力矩警示驗證
         private void VerifyMomentAlarm(Model model, Model.SetupMethod setupMethod) {
-            if (model.modelType == Model.ModelType.推桿系列 || model.modelType == Model.ModelType.輔助導桿推桿系列 || model.modelType == Model.ModelType.軌道外掛推桿系列) {
+            if (model.modelType == Model.ModelType.Y || model.modelType == Model.ModelType.YD || model.modelType == Model.ModelType.YL) {
                 model.isMomentVerifySuccess = true;
                 return;
             }

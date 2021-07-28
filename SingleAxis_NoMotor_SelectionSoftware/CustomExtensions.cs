@@ -30,10 +30,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <param name="modelType">機構類別</param>
         public static bool IsBeltType(this Model.ModelType modelType) {
             Model.ModelType[] beltType = {
-                Model.ModelType.皮帶系列,
-                Model.ModelType.歐規皮帶系列,
-                Model.ModelType.軌道內崁歐規皮帶系列,
-                Model.ModelType.軌道內崁歐規皮帶系列
+                Model.ModelType.ETB,
+                Model.ModelType.M,
+                Model.ModelType.MG,
+                Model.ModelType.MG
             };
 
             return beltType.Contains(modelType);
@@ -46,10 +46,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <returns></returns>
         public static bool IsRodType(this Model.ModelType modelType) {
             Model.ModelType[] beltType = {
-                Model.ModelType.推桿系列,
-                Model.ModelType.軌道內崁推桿系列,
-                Model.ModelType.軌道外掛推桿系列,
-                Model.ModelType.輔助導桿推桿系列,
+                Model.ModelType.Y,
+                Model.ModelType.GTY,
+                Model.ModelType.YL,
+                Model.ModelType.YD,
             };
 
             return beltType.Contains(modelType);
@@ -62,8 +62,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <returns></returns>
         public static bool IsContainsReducerRatioType(this Model.ModelType modelType) {
             Model.ModelType[] beltType = {
-                Model.ModelType.歐規皮帶系列,
-                Model.ModelType.軌道內崁歐規皮帶系列,
+                Model.ModelType.M,
+                Model.ModelType.MG,
             };
 
             return beltType.Contains(modelType);
@@ -76,9 +76,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <returns></returns>
         public static bool IsSeriesY(this Model.ModelType modelType) {
             Model.ModelType[] beltType = {
-                Model.ModelType.推桿系列,
-                Model.ModelType.輔助導桿推桿系列,
-                Model.ModelType.軌道外掛推桿系列,
+                Model.ModelType.Y,
+                Model.ModelType.YD,
+                Model.ModelType.YL,
             };
 
             return beltType.Contains(modelType);

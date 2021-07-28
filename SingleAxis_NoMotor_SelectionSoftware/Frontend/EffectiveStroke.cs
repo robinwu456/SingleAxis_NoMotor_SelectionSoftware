@@ -20,8 +20,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public decimal GetEffectiveStroke() {
             // 依照型號導程搜尋所有行程
             var strokeList = formMain.page2.calc.strokeRpm.Rows.Cast<DataRow>()
-                                                               .Where(row => row["Model"].ToString() == formMain.page2.recommandList.curSelectModel.model)
-                                                               .Select(row => (stroke: Convert.ToDecimal(row["Stroke"].ToString()), rpm: Convert.ToDecimal(row["RPM"].ToString())));
+                                                               .Where(row => row["型號"].ToString() == formMain.page2.recommandList.curSelectModel.model)
+                                                               .Select(row => (stroke: Convert.ToDecimal(row["行程"].ToString()), rpm: Convert.ToDecimal(row["轉速"].ToString())));
             decimal runStroke = Convert.ToDecimal(formMain.txtStroke.Text);
             effectiveStroke = strokeList.First(item => item.stroke > runStroke).stroke;
             return effectiveStroke;

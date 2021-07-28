@@ -488,17 +488,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public Model.ModelType[] GetDustfreeModelType() {
-            Model.ModelType[] allModelTypes = modelTypeInfo.Rows.Cast<DataRow>().Where(row => row["是否有無塵"].ToString() == "有")
+            Model.ModelType[] allModelTypes = modelInfo.Rows.Cast<DataRow>().Where(row => row["使用環境"].ToString() == "無塵")
                                                                             .Select(row => (Model.ModelType)Enum.Parse(typeof(Model.ModelType), row["型號類別"].ToString()))
+                                                                            .Distinct()
                                                                             .ToArray();
             return allModelTypes;
         }
 
-        public string GetModelTypeComment(Model.ModelType modelType, Model.UseEnvironment useEnvironment) {
-            string columnName = useEnvironment == Model.UseEnvironment.標準 ? "標準敘述" : "無塵敘述";
-            string comment = modelTypeInfo.Rows.Cast<DataRow>().First(row => row["型號類別"].ToString() == modelType.ToString())[columnName].ToString();
-            if (comment == "")
-                comment = modelTypeInfo.Rows.Cast<DataRow>().First(row => row["型號類別"].ToString() == modelType.ToString())["標準敘述"].ToString();
+        public string GetModelTypeComment(Model.ModelType modelType) {
+            string comment = modelTypeInfo.Rows.Cast<DataRow>().First(row => row["型號類別"].ToString() == modelType.ToString())["敘述"].ToString();
+            //if (comment == "")
+            //    comment = modelTypeInfo.Rows.Cast<DataRow>().First(row => row["型號類別"].ToString() == modelType.ToString())["標準敘述"].ToString();
             return comment;
         }
 
