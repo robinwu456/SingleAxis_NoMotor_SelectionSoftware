@@ -1065,6 +1065,9 @@
   <data name="更詳細資訊.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="更詳細資訊.Width" type="System.Int32, mscorlib">
+    <value>106</value>
+  </data>
   <data name="dgvRecommandList.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 67</value>
   </data>
@@ -5224,6 +5227,9 @@
   <data name="optModelType_ECH.Text" xml:space="preserve">
     <value>ECH</value>
   </data>
+  <data name="optModelType_ECH.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;optModelType_ECH.Name" xml:space="preserve">
     <value>optModelType_ECH</value>
   </data>
@@ -5250,6 +5256,9 @@
   </data>
   <data name="picModelType_ECH.TabIndex" type="System.Int32, mscorlib">
     <value>330</value>
+  </data>
+  <data name="picModelType_ECH.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;picModelType_ECH.Name" xml:space="preserve">
     <value>picModelType_ECH</value>
@@ -5344,6 +5353,9 @@
   <data name="optModelType_GCH.Text" xml:space="preserve">
     <value>GCH</value>
   </data>
+  <data name="optModelType_GCH.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;optModelType_GCH.Name" xml:space="preserve">
     <value>optModelType_GCH</value>
   </data>
@@ -5370,6 +5382,9 @@
   </data>
   <data name="picModelType_GCH.TabIndex" type="System.Int32, mscorlib">
     <value>326</value>
+  </data>
+  <data name="picModelType_GCH.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;picModelType_GCH.Name" xml:space="preserve">
     <value>picModelType_GCH</value>
@@ -6302,7 +6317,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,515,Absolute,515,Absolute,515,Absolute,515" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,566,Absolute,566,Absolute,566,Absolute,566" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 321</value>
@@ -6593,7 +6608,7 @@
     <value>7</value>
   </data>
   <data name="panelSideTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>972, 100</value>
+    <value>973, 100</value>
   </data>
   <data name="panelSideTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>15, 5, 15, 0</value>
@@ -6689,7 +6704,7 @@
     <value>NoControl</value>
   </data>
   <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-1356, 487</value>
+    <value>-1764, 487</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 16</value>
@@ -6719,7 +6734,7 @@
     <value>NoControl</value>
   </data>
   <data name="label56.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-1355, 184</value>
+    <value>-1763, 184</value>
   </data>
   <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 2</value>
@@ -6752,7 +6767,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-1362, 147</value>
+    <value>-1770, 147</value>
   </data>
   <data name="lbResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 31</value>
@@ -6782,7 +6797,7 @@
     <value>NoControl</value>
   </data>
   <data name="picBoxResultImg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-1356, 204</value>
+    <value>-1764, 204</value>
   </data>
   <data name="picBoxResultImg.Size" type="System.Drawing.Size, System.Drawing">
     <value>452, 276</value>
@@ -10541,6 +10556,9 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

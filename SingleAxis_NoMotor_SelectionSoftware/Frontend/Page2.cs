@@ -37,6 +37,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //"Chart",            // 圖表
         };
 
+        private Model.ModelType[][] modelTypePosition_standard = {
+            new Model.ModelType[]{ Model.ModelType.GTH, Model.ModelType.GTY },
+            new Model.ModelType[]{ Model.ModelType.ETH, Model.ModelType.Y, Model.ModelType.YD, Model.ModelType.YL },
+            new Model.ModelType[]{ Model.ModelType.MG, Model.ModelType.M, Model.ModelType.ETB },
+        };
+        private Model.ModelType[][] modelTypePosition_dustfree = {
+            new Model.ModelType[]{ Model.ModelType.GCH, },
+            new Model.ModelType[]{ Model.ModelType.ECH, Model.ModelType.ECB, },
+        };
+
         public Page2(FormMain formMain) {
             this.formMain = formMain;
 
@@ -169,10 +179,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             runCondition.scrollBarLoad.maxValue = RunCondition.defaultMaxLoad;
 
             //ReplaceItem();
-
-            formMain.txtStroke.Text = "1000";
-            formMain.txtLoad.Text = "10";
-            formMain.txtRunTime.Text = "10";
         }
 
         private void InitEvents() {
@@ -265,17 +271,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.optMaxSpeedType_mms.Checked = true;
             
             if (formMain.chkAdvanceMode.Checked) {
+
+
                 // 切進接選項自動換算最大加速度(加速時間=0.2/0.4)
                 string model = formMain.cboModel.Text;
                 double lead = Convert.ToDouble(formMain.cboLead.Text);
-                int reducerRatio = 1;
-                if (formMain.page2.calc.IsContainsReducerRatio(model)) {
-                    //string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
-                    //reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
-                    reducerRatio = Convert.ToInt32(formMain.cboReducerRatio.Text);
-                    lead /= reducerRatio;
-                }
-                int maxAccelSpeed = formMain.page2.calc.GetMaxAccelSpeed(model, lead, Convert.ToInt32(formMain.txtStroke.Text));
+                //int reducerRatio = 1;
+                //if (formMain.page2.calc.IsContainsReducerRatio(model)) {
+                //    //string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
+                //    //reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
+                //    reducerRatio = Convert.ToInt32(formMain.cboReducerRatio.Text);
+                //    lead /= reducerRatio;
+                //}
+                Model m = formMain.page2.calc.GetAllModels(formMain.page2.runCondition.curCondition).First(_m => _m.name.StartsWith(model) && _m.lead == lead);
+                int maxAccelSpeed = formMain.page2.calc.GetMaxAccelSpeed(m, Convert.ToInt32(formMain.txtStroke.Text), m.modelType);
                 formMain.txtAccelSpeed.Text = maxAccelSpeed.ToString();
 
                 // 切進接選項Vmax自動帶100mm/s
@@ -400,7 +409,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (useEnv == Model.UseEnvironment.無塵)
                     pair.Key.Visible = dustfreeModelTypes.Contains(pair.Value);
                 else
-                    pair.Key.Visible = true;
+                    pair.Key.Visible = !dustfreeModelTypes.Contains(pair.Value);
 
                 // 圖片處理
                 PictureBox picModelType = formMain.panelModelType.Controls.Find(pair.Key.Name.Replace("opt", "pic"), true)[0] as PictureBox;

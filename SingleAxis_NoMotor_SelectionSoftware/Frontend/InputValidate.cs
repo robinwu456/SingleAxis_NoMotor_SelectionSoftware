@@ -139,8 +139,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 //    reducerRatio = Convert.ToInt32(formMain.cboReducerRatio.Text);
                 //    lead /= reducerRatio;
                 //}
-
-                int maxAccelSpeed = formMain.page2.calc.GetMaxAccelSpeed(model, lead, Convert.ToInt32(formMain.txtStroke.Text));
+                Model m = formMain.page2.calc.GetAllModels(formMain.page2.runCondition.curCondition).First(_m => _m.name.StartsWith(model) && _m.lead == lead);
+                int maxAccelSpeed = formMain.page2.calc.GetMaxAccelSpeed(m, Convert.ToInt32(formMain.txtStroke.Text), m.modelType);
                 if (curAccelSpeed > maxAccelSpeed)
                     formMain.txtAccelSpeed.Text = maxAccelSpeed.ToString();
             }

@@ -31,9 +31,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public static bool IsBeltType(this Model.ModelType modelType) {
             Model.ModelType[] beltType = {
                 Model.ModelType.ETB,
+                Model.ModelType.ECB,
                 Model.ModelType.M,
                 Model.ModelType.MG,
-                Model.ModelType.MG
             };
 
             return beltType.Contains(modelType);

@@ -367,6 +367,27 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
         }
 
+        // 皮帶Vmax(m/s)
+        public double GetBeltVmaxByRpm_ms(string model, int rpm, BeltWheel mainWheel_P1, SubBeltWheel subWheel_P2, SubBeltWheel subWheel_P3, Model.BeltCalcType beltCalcType) {
+            if (beltCalcType == Model.BeltCalcType.減速機構) {
+                // 依照行程取RPM
+                double reducerRpmRatio = subWheel_P2.diameter / mainWheel_P1.diameter;
+                double subWheelRpm = (int)(rpm / reducerRpmRatio);
+                double vMax_belt = Math.PI * subWheel_P3.diameter * (subWheelRpm / 60) / 1000;
+                return vMax_belt;
+            } else if (beltCalcType == Model.BeltCalcType.減速機2 || beltCalcType == Model.BeltCalcType.減速機4) {
+                // 依照行程取RPM
+                double reducerRpmRatio = Convert.ToDouble(model.Split('-')[1]);
+                double subWheelRpm = (int)(rpm / reducerRpmRatio);
+                double vMax_belt = Math.PI * subWheel_P3.diameter * (subWheelRpm / 60) / 1000;
+                return vMax_belt;
+            } else {
+                // 依照行程取RPM
+                double vMax_belt = Math.PI * subWheel_P3.diameter * (rpm / 60) / 1000;
+                return vMax_belt;
+            }
+        }
+
         /// <summary>
         /// 皮帶RPM回推
         /// </summary>
@@ -470,13 +491,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return (accelTime, constantTime, runTime, accelSpeed, vMax, cycleTime);
         }
 
-        public int GetMaxAccelSpeed(string model, double lead, int stroke) {
-            if (model == "")
+        public int GetMaxAccelSpeed(Model model, int stroke, Model.ModelType modelType) {
+            if (model.name == "")
                 return -1;
 
-            int rpm = GetRpmByStroke(model, lead, stroke);
-            double vMax = (lead * (double)rpm) / 60f;
-            double repeatability = Convert.ToDouble(modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString().StartsWith(model))["重複定位精度"].ToString());
+            int rpm = GetRpmByStroke(model.name, model.lead, stroke);
+            double vMax = 0;
+            if (modelType.IsBeltType())
+                //vMax = (lead * (double)rpm) / 60f;
+                vMax = GetBeltVmax_ms(model.name, model.lead, stroke, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType) * 1000;
+            else
+                vMax = GetVmax_mms(model, model.lead, stroke);
+            double repeatability = Convert.ToDouble(modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString().StartsWith(model.name))["重複定位精度"].ToString());
             double minAccelTime = repeatability <= 0.01 ? 0.2 : 0.4;
             int maxAccelSpeed = (int)(vMax / minAccelTime);
             return maxAccelSpeed;
@@ -531,3 +557,4 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
     }
 }
+
