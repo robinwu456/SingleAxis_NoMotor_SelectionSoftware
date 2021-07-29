@@ -84,7 +84,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// </summary>
         private void GetReducerRotateInertia() {
             if (condition.powerSelection == Condition.PowerSelection.Standard || condition.powerSelection == Condition.PowerSelection.SelectedPower) {
-                DataColumn column = reducerRotateInertiaInfo.Columns.Cast<DataColumn>().Where(col => col.ColumnName.StartsWith("馬達尺寸"))
+                DataColumn column = reducerRotateInertiaInfo.Columns.Cast<DataColumn>().Where(col => col.ColumnName.StartsWith("減速機外框尺寸"))
                                                                                        .First(col => Convert.ToInt32(col.ColumnName.Split('_')[1]) >= model.motorSize);
                 DataRow row = reducerRotateInertiaInfo.Rows.Cast<DataRow>().First(_row => Convert.ToInt32(_row["減速比"].ToString()) == Convert.ToInt32(model.name.Split('-')[1]));
                 if (double.TryParse(row[column].ToString(), out model.reducerRotateInertia))

@@ -87,9 +87,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     // 馬達尺寸
                     if (model.beltCalcType == Model.BeltCalcType.減速機2 || model.beltCalcType == Model.BeltCalcType.減速機4) {
                         if (condition.powerSelection == Condition.PowerSelection.Standard)
-                            model.motorSize = beltInfoRows.Select(x => Convert.ToInt32(x["馬達尺寸"].ToString())).First();
+                            model.motorSize = beltInfoRows.Select(x => Convert.ToInt32(x["減速機外框尺寸"].ToString())).First();
                         else if (condition.powerSelection == Condition.PowerSelection.SelectedPower)
-                            model.motorSize = Convert.ToInt32(motorInfo.Rows.Cast<DataRow>().First(x => Convert.ToInt32(x["馬達瓦數"].ToString()) == condition.selectedPower)["馬達尺寸"].ToString());
+                            model.motorSize = Convert.ToInt32(motorInfo.Rows.Cast<DataRow>().First(x => Convert.ToInt32(x["馬達瓦數"].ToString()) == condition.selectedPower)["減速機外框尺寸"].ToString());
                     }
                 }
 
