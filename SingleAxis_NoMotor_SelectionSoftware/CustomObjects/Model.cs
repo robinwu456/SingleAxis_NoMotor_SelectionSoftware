@@ -21,6 +21,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// 傳動方式列舉
         /// </summary>
         public enum ModelType {
+            /// <summary>
+            /// 不限制
+            /// </summary>
+            Null,
             GTH,
             GTY,
             ETH,

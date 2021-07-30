@@ -38,27 +38,30 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             page1 = new Page1(this);
             page2 = new Page2(this);
             page3 = new Page3(this);
+
+            // 測試
+            Test test = new Test(this);
         }        
 
         private void FormMain_Load(object sender, EventArgs e) {
-            // 判斷DB被開啟
-            foreach (string fileName in Directory.GetFiles(Config.DATABASE_FILENAME)) {
-                // 檔案已開啟為1，測試總表
-                while (FileUtil.FileStatus.FileIsOpen(fileName) == 1) {
-                    DialogResult stillContinue = MessageBox.Show(string.Format("[{0}]\n檔案已被開啟，確認關閉後按下確定。", new FileInfo(fileName).FullName), "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (stillContinue == DialogResult.No)
-                        Close();
-                    else {
-                        // 重Load DB
-                        page2.calc.modelInfo = FileUtil.ReadCsv(Config.MODEL_INFO_FILENAME);
-                        page2.calc.strokeRpm = FileUtil.ReadCsv(Config.STROKE_RPM_FILENAME);
-                        page2.calc.momentData = FileUtil.ReadCsv(Config.MOMENT_FILENAME);
-                        page2.calc.motorInfo = FileUtil.ReadCsv(Config.MOTOR_INFO_FILENAME);
-                        page2.calc.beltInfo = FileUtil.ReadCsv(Config.BELT_INFO_FILENAME);
-                        page2.calc.modelTypeInfo = FileUtil.ReadCsv(Config.MODEL_TYPE_INFO_FILENAME);
-                    }
-                }
-            }
+            //// 判斷DB被開啟
+            //foreach (string fileName in Directory.GetFiles(Config.DATABASE_FILENAME)) {
+            //    // 檔案已開啟為1，測試總表
+            //    while (FileUtil.FileStatus.FileIsOpen(fileName) == 1) {
+            //        DialogResult stillContinue = MessageBox.Show(string.Format("[{0}]\n檔案已被開啟，確認關閉後按下確定。", new FileInfo(fileName).FullName), "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //        if (stillContinue == DialogResult.No)
+            //            Close();
+            //        else {
+            //            // 重Load DB
+            //            page2.calc.modelInfo = FileUtil.ReadCsv(Config.MODEL_INFO_FILENAME);
+            //            page2.calc.strokeRpm = FileUtil.ReadCsv(Config.STROKE_RPM_FILENAME);
+            //            page2.calc.momentData = FileUtil.ReadCsv(Config.MOMENT_FILENAME);
+            //            page2.calc.motorInfo = FileUtil.ReadCsv(Config.MOTOR_INFO_FILENAME);
+            //            page2.calc.beltInfo = FileUtil.ReadCsv(Config.BELT_INFO_FILENAME);
+            //            page2.calc.modelTypeInfo = FileUtil.ReadCsv(Config.MODEL_TYPE_INFO_FILENAME);
+            //        }
+            //    }
+            //}
 
             // 取得當前版本
             Assembly assembly = Assembly.GetExecutingAssembly();
@@ -69,6 +72,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 到期日判斷
             //UseDaysLimit();
             VerifyDateTimeLimit();
+
+            panelSideTable.Anchor = AnchorStyles.Right;
         }
 
         private void FormMain_Resize(object sender, EventArgs e) {

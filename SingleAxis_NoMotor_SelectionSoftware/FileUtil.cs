@@ -75,7 +75,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (File.Exists(fileName))
                     File.Delete(fileName);
 
-                using (StreamWriter sw = File.AppendText(fileName)) {
+                //using (StreamWriter sw = StreamWriter(fileName, false, System.Text.Encoding.UTF8)) {
+                //    sw.WriteLine(content);
+                //}
+                using (StreamWriter sw = new StreamWriter(fileName, false, System.Text.Encoding.UTF8)) {
                     sw.WriteLine(content);
                 }
             } catch (Exception ex) {
@@ -457,7 +460,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (isSuccessModel)
                 FileWrite(Config.LOG_PARAM_FILENAME, printInfo);
             else
-                FileWrite(Config.LOG_FAIL_MODELS_FILENAME + fileName + ".log", printInfo);
+                FileWrite(fileName + ".log", printInfo);
         }
     }
 }

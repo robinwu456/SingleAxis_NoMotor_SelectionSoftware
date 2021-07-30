@@ -39,6 +39,9 @@
   <PropertyGroup>
     <ApplicationIcon>icon_0113_256_256_01_1CC_icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Binarymission.WinForms.Controls.BinaryExplorerBar">
       <HintPath>..\..\CustomControls\UIControlSuite\ExplorerBar\Binarymission.WinForms.Controls.BinaryExplorerBar.dll</HintPath>
@@ -138,6 +141,7 @@
     <Compile Include="Frontend\Page2.cs" />
     <Compile Include="Frontend\Page3.cs" />
     <Compile Include="Frontend\ToyoBorder.cs" />
+    <Compile Include="Test.cs" />
     <Compile Include="zh.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -169,6 +173,7 @@
       <LastGenOutput>zh.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

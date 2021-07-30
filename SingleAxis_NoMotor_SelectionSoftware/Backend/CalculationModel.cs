@@ -96,6 +96,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.accelTime = condition.accelTime;
             }
 
+            if (condition.stopTime != 0)
+                model.stopTime = condition.stopTime;
+
             if (isCheckStrokeTooShort) {
                 // 行程過短驗證
                 if (strokeTooShortModifyItem == Converter.ModifyItem.Vmax) {
@@ -103,7 +106,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
                     // rpm修正
                     if (model.isUseBaltCalc) {
-                        model.rpm = GetBeltRPM(model.name, model.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
+                        //model.rpm = GetBeltRPM(model.name, model.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
+                        model.rpm = GetRpmByMMS(model.lead, model.vMax * 1000);
                     } else {
                         //if (condition.reducerRatio.Keys.Contains(model.name))
                         //    model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead / condition.reducerRatio[model.name]);

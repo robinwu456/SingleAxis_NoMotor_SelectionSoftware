@@ -37,12 +37,21 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.modelType = (Model.ModelType)Enum.Parse(typeof(Model.ModelType), row["型號類別"].ToString());
 
                 // 力舉參數
-                model.c = Convert.ToDouble(row["C"].ToString());
-                model.mr_C = Convert.ToDouble(row["MR_C"].ToString());
-                model.mp_C = Convert.ToDouble(row["MP_C"].ToString());
-                model.my_C = Convert.ToDouble(row["MY_C"].ToString());
-                model.dynamicLoadRating = Convert.ToInt32(row["動額定負載"].ToString());
-                model.outerDiameter = Convert.ToInt32(row["外徑"].ToString());
+                if (condition.c != 0) {
+                    model.c = condition.c;
+                    model.mr_C = condition.mr_C;
+                    model.mp_C = condition.mp_C;
+                    model.my_C = condition.my_C;
+                    model.dynamicLoadRating = condition.dynamicLoadRating;
+                    model.outerDiameter = condition.outerDiameter;
+                } else {
+                    model.c = Convert.ToDouble(row["C"].ToString());
+                    model.mr_C = Convert.ToDouble(row["MR_C"].ToString());
+                    model.mp_C = Convert.ToDouble(row["MP_C"].ToString());
+                    model.my_C = Convert.ToDouble(row["MY_C"].ToString());
+                    model.dynamicLoadRating = Convert.ToInt32(row["動額定負載"].ToString());
+                    model.outerDiameter = Convert.ToInt32(row["外徑"].ToString());
+                }
 
                 // 重複定位精度
                 model.repeatability = Convert.ToDouble(row["重複定位精度"].ToString());
@@ -52,44 +61,56 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
                 // 皮帶資訊
                 if (model.isUseBaltCalc) {
-                    Func<DataRow, bool> con = con = x => x["型號"].ToString().Equals(model.name);
-                    var beltInfoRows = beltInfo.Rows.Cast<DataRow>().Where(con);
-                    // 主動輪P1
-                    model.mainWheel_P1 = new BeltWheel(
-                        beltInfoRows.Select(x => Convert.ToDouble(x["主動輪P1輪徑"].ToString())).First(),
-                        beltInfoRows.Select(x => Convert.ToDouble(x["主動輪P1輪寬"].ToString())).First()
-                    );
-                    // 從動輪P2
-                    model.subWheel_P2 = new SubBeltWheel(
-                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P2輪徑"].ToString())).First(),
-                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P2輪寬"].ToString())).First()
-                    );
-                    // 從動輪P3
-                    model.subWheel_P3 = new SubBeltWheel(
-                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P3輪徑"].ToString())).First(),
-                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P3輪寬"].ToString())).First()
-                    );
-                    // 從動輪P4
-                    model.subWheel_P4 = new SubBeltWheel(
-                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P4輪徑"].ToString())).First(),
-                        beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P4輪寬"].ToString())).First()
-                    );
-                    //// 負載慣量與力矩比
-                    //model.loadInertiaMomentRatio = beltInfoRows.Select(x => Convert.ToDouble(x["負載慣量與力矩比"].ToString())).First();
-                    // 皮帶寬
-                    model.beltWidth = beltInfoRows.Select(x => Convert.ToDouble(x["皮帶寬"].ToString())).First();
-                    // 皮帶長度
-                    model.beltLength = beltInfoRows.Select(x => Convert.ToDouble(x["皮帶長度"].ToString())).First();
-                    // 皮帶容許拉力
-                    model.beltAllowableTension = beltInfoRows.Select(x => Convert.ToDouble(x["皮帶容許拉力"].ToString())).First();
-                    // 傳動方式
-                    model.beltCalcType = (Model.BeltCalcType)Enum.Parse(typeof(Model.BeltCalcType), beltInfoRows.Select(x => x["傳動方式"].ToString()).First());
-                    // 馬達尺寸
-                    if (model.beltCalcType == Model.BeltCalcType.減速機2 || model.beltCalcType == Model.BeltCalcType.減速機4) {
-                        if (condition.powerSelection == Condition.PowerSelection.Standard)
-                            model.motorSize = beltInfoRows.Select(x => Convert.ToInt32(x["減速機外框尺寸"].ToString())).First();
-                        else if (condition.powerSelection == Condition.PowerSelection.SelectedPower)
-                            model.motorSize = Convert.ToInt32(motorInfo.Rows.Cast<DataRow>().First(x => Convert.ToInt32(x["馬達瓦數"].ToString()) == condition.selectedPower)["減速機外框尺寸"].ToString());
+                    if (condition.subWheel_P3 != null) {
+                        model.mainWheel_P1 = condition.mainWheel_P1;
+                        model.subWheel_P2 = condition.subWheel_P2;
+                        model.subWheel_P3 = condition.subWheel_P3;
+                        model.subWheel_P4 = condition.subWheel_P4;
+                        model.beltWidth = condition.beltWidth;
+                        model.beltLength = condition.beltLength;
+                        model.beltAllowableTension = condition.beltAllowableTension;
+                        model.beltCalcType = condition.beltCalcType;
+                        model.reducerRotateInertia = condition.reducerRotateInertia;
+                    } else {
+                        Func<DataRow, bool> con = con = x => x["型號"].ToString().Equals(model.name);
+                        var beltInfoRows = beltInfo.Rows.Cast<DataRow>().Where(con);
+                        // 主動輪P1
+                        model.mainWheel_P1 = new BeltWheel(
+                            beltInfoRows.Select(x => Convert.ToDouble(x["主動輪P1輪徑"].ToString())).First(),
+                            beltInfoRows.Select(x => Convert.ToDouble(x["主動輪P1輪寬"].ToString())).First()
+                        );
+                        // 從動輪P2
+                        model.subWheel_P2 = new SubBeltWheel(
+                            beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P2輪徑"].ToString())).First(),
+                            beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P2輪寬"].ToString())).First()
+                        );
+                        // 從動輪P3
+                        model.subWheel_P3 = new SubBeltWheel(
+                            beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P3輪徑"].ToString())).First(),
+                            beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P3輪寬"].ToString())).First()
+                        );
+                        // 從動輪P4
+                        model.subWheel_P4 = new SubBeltWheel(
+                            beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P4輪徑"].ToString())).First(),
+                            beltInfoRows.Select(x => Convert.ToDouble(x["從動輪P4輪寬"].ToString())).First()
+                        );
+                        //// 負載慣量與力矩比
+                        //model.loadInertiaMomentRatio = beltInfoRows.Select(x => Convert.ToDouble(x["負載慣量與力矩比"].ToString())).First();
+                        // 皮帶寬
+                        model.beltWidth = beltInfoRows.Select(x => Convert.ToDouble(x["皮帶寬"].ToString())).First();
+                        // 皮帶長度
+                        model.beltLength = beltInfoRows.Select(x => Convert.ToDouble(x["皮帶長度"].ToString())).First();
+                        // 皮帶容許拉力
+                        model.beltAllowableTension = beltInfoRows.Select(x => Convert.ToDouble(x["皮帶容許拉力"].ToString())).First();
+                        // 傳動方式
+                        model.beltCalcType = (Model.BeltCalcType)Enum.Parse(typeof(Model.BeltCalcType), beltInfoRows.Select(x => x["傳動方式"].ToString()).First());
+                        // 馬達尺寸
+                        if (model.beltCalcType == Model.BeltCalcType.減速機2 || model.beltCalcType == Model.BeltCalcType.減速機4) {
+                            if (condition.powerSelection == Condition.PowerSelection.Standard)
+                                model.motorSize = beltInfoRows.Select(x => Convert.ToInt32(x["減速機外框尺寸"].ToString())).First();
+                            else if (condition.powerSelection == Condition.PowerSelection.SelectedPower)
+                                model.motorSize = Convert.ToInt32(motorInfo.Rows.Cast<DataRow>().First(x => Convert.ToInt32(x["馬達瓦數"].ToString()) == condition.selectedPower)["減速機外框尺寸"].ToString());
+                        }
                     }
                 }
 
@@ -198,8 +219,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public int MMS_TO_RPM(double mms, double lead) {
-            return (int)Math.Round(mms * 60f / (float)lead, 0);
+            //return (int)Math.Round(mms * 60f / (float)lead, 0);
             //return (int)(mms * 60f / (float)lead);
+            return (int)(Math.Round(mms / (float)lead, 0) * 60);
         }
 
         public int GetMaxStroke(string model, double lead) {
@@ -401,7 +423,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (beltCalcType == Model.BeltCalcType.減速機構) {
                 double reducerRpmRatio = subWheel_P2.diameter / mainWheel_P1.diameter;
                 double subWheelRpm = vMax_belt * 1000 * 60 / Math.PI / subWheel_P3.diameter;
-                int rpm = (int)(subWheelRpm * reducerRpmRatio);
+                int rpm = (int)(Math.Round(subWheelRpm * reducerRpmRatio, 0));
                 return rpm;
             } else if (beltCalcType == Model.BeltCalcType.減速機2 || beltCalcType == Model.BeltCalcType.減速機4) {
                 double reducerRpmRatio = Convert.ToDouble(model.Split('-')[1]);
@@ -413,7 +435,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 return rpm;
             }
         }
-        
+
         // 圖表點資訊
         public List<PointF> GetChartPoints(Model model) {
             //if (isCheckStrokeTooShort)

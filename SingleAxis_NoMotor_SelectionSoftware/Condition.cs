@@ -31,5 +31,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public Func<double, bool> RepeatabilityCondition;                            // 重複定位精度搜尋範圍
         public const int defaultExpectServiceLifeTime = 3;                           // 希望壽命預設要求
         public int expectServiceLifeTime = defaultExpectServiceLifeTime;             // 希望壽命(年)(-1無希望壽命)
+        public bool isTesting = false;
     }
 }

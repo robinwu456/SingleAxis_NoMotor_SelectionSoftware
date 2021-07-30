@@ -54,6 +54,7 @@
             this.cmdModelSelection = new System.Windows.Forms.PictureBox();
             this.tabContent = new System.Windows.Forms.TabPage();
             this.explorerBar = new System.Windows.Forms.Panel();
+            this.cmdTest = new System.Windows.Forms.Button();
             this.panelNextPage = new System.Windows.Forms.Panel();
             this.panelConfirmBtnsStep2 = new System.Windows.Forms.TableLayoutPanel();
             this.cmdConfirmStep2 = new CustomButton.CustomButton();
@@ -534,6 +535,7 @@
             // explorerBar
             // 
             resources.ApplyResources(this.explorerBar, "explorerBar");
+            this.explorerBar.Controls.Add(this.cmdTest);
             this.explorerBar.Controls.Add(this.panelNextPage);
             this.explorerBar.Controls.Add(this.lbPrePage);
             this.explorerBar.Controls.Add(this.panelCalcResult);
@@ -546,6 +548,12 @@
             this.explorerBar.Controls.Add(this.panelUseEnv);
             this.explorerBar.Controls.Add(this.panelSideTable);
             this.explorerBar.Name = "explorerBar";
+            // 
+            // cmdTest
+            // 
+            resources.ApplyResources(this.cmdTest, "cmdTest");
+            this.cmdTest.Name = "cmdTest";
+            this.cmdTest.UseVisualStyleBackColor = true;
             // 
             // panelNextPage
             // 
@@ -2096,7 +2104,6 @@
             // 
             // panelSideTable
             // 
-            resources.ApplyResources(this.panelSideTable, "panelSideTable");
             this.panelSideTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelSideTable.Controls.Add(this.panelSideTableIcon);
             this.panelSideTable.Controls.Add(this.panelSideTableSelections);
@@ -2107,6 +2114,7 @@
             this.panelSideTable.Controls.Add(this.customPanel2);
             this.panelSideTable.Controls.Add(this.label2);
             this.panelSideTable.Curvature = 8;
+            resources.ApplyResources(this.panelSideTable, "panelSideTable");
             this.panelSideTable.Name = "panelSideTable";
             this.panelSideTable.Tag = "967, 100";
             // 
@@ -2677,6 +2685,7 @@
         private System.Windows.Forms.PictureBox picModelType_ECB;
         public System.Windows.Forms.RadioButton optModelType_GCH;
         private System.Windows.Forms.PictureBox picModelType_GCH;
+        public System.Windows.Forms.Button cmdTest;
     }
 }
 

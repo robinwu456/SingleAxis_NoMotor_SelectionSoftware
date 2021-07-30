@@ -16,7 +16,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public override void MotorConfirm() {
             // 皮帶輪加減速關係
             model.mainWheelRpm = model.rpm;
-            model.reducerRpmRatio = Convert.ToDouble(model.name.Split('-')[1]);
+            if (condition.reducerRpmRatio != 0)
+                model.reducerRpmRatio = condition.reducerRpmRatio;
+            else
+                model.reducerRpmRatio = Convert.ToDouble(model.name.Split('-')[1]);
             model.subWheelRpm = (int)(model.rpm / model.reducerRpmRatio);
             model.beltLoad = model.beltUnitDensity / 1000 * model.beltWidth * model.beltLength / 1000;
 

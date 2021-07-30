@@ -23,7 +23,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 使用環境
             con = con.Where(model => model.useEnvironment == condition.useEnvironment);
             // 機構型態
-            con = con.Where(model => model.modelType == condition.modelType);
+            con = con.Where(model => model.modelType == condition.modelType || condition.modelType == Model.ModelType.Null);
             // 安裝方式
             con = con.Where(model => model.supportedSetup.Contains(condition.setupMethod));
             // 重複定位精度(判斷螺桿、皮帶)
@@ -210,7 +210,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (curLog != string.Empty) {
                     curLog = curLog.Remove(0, 1);
                     logFilter += string.Format("{0}-L{1}：", model.name, model.lead) + curLog + Environment.NewLine;
-                    FileUtil.LogModelInfo(model, condition.setupMethod, false, string.Format("{0}-L{1}", model.name, model.lead));
+                    FileUtil.LogModelInfo(model, condition.setupMethod, false, Config.LOG_FAIL_MODELS_FILENAME + string.Format("{0}-L{1}", model.name, model.lead));
                 }
             }            
             FileUtil.FileWrite(Config.LOG_FILTER_FILENAME, logFilter);
@@ -221,7 +221,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //List<string> errorMsg = new List<string>();
             foreach (var filter in filterMap) {
                 oldResultModelCount = resultModels.Count;
-                resultModels = resultModels.Where(model => (bool)filter.Value["Condition"](model)).ToList();
+                resultModels = resultModels.Where(model => condition.isTesting || (bool)filter.Value["Condition"](model)).ToList();
                 //if (resultModels.Count < oldResultModelCount)
                 //    errorMsg.Add(filter.Key);
             }
