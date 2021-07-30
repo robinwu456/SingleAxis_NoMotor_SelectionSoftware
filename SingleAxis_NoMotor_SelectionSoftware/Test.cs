@@ -12,28 +12,28 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
     class Test {
         private FormMain formMain;
         private string outputFileName = "./Test/Result.csv";
-        //private string[] testDataFileNames = Directory.GetFiles("./Test/現有測試數據");
-        private string[] testDataFileNames = {
-            "./Test/現有測試數據/螺桿測試數據_水平.csv",
-            "./Test/現有測試數據/螺桿測試數據_橫掛.csv",
-            "./Test/現有測試數據/螺桿測試數據_垂直.csv",
+        private string[] testDataFileNames = Directory.GetFiles("./Test/現有測試數據");
+        //private string[] testDataFileNames = {
+        //    //"./Test/現有測試數據/螺桿測試數據_水平.csv",
+        //    //"./Test/現有測試數據/螺桿測試數據_橫掛.csv",
+        //    //"./Test/現有測試數據/螺桿測試數據_垂直.csv",
 
-            "./Test/現有測試數據/皮帶測試數據_減速機構_水平.csv",
-            "./Test/現有測試數據/皮帶測試數據_減速機構_橫掛.csv",
-            "./Test/現有測試數據/皮帶測試數據_減速機構_垂直.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_減速機構_水平.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_減速機構_橫掛.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_減速機構_垂直.csv",
 
-            "./Test/現有測試數據/皮帶測試數據_減速機2_水平.csv",
-            "./Test/現有測試數據/皮帶測試數據_減速機2_橫掛.csv",
-            "./Test/現有測試數據/皮帶測試數據_減速機2_垂直.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_減速機2_水平.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_減速機2_橫掛.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_減速機2_垂直.csv",
 
-            "./Test/現有測試數據/皮帶測試數據_減速機4_水平.csv",
-            "./Test/現有測試數據/皮帶測試數據_減速機4_橫掛.csv",
-            "./Test/現有測試數據/皮帶測試數據_減速機4_垂直.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_減速機4_水平.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_減速機4_橫掛.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_減速機4_垂直.csv",
 
-            "./Test/現有測試數據/皮帶測試數據_直接驅動_水平.csv",
-            "./Test/現有測試數據/皮帶測試數據_直接驅動_橫掛.csv",
-            "./Test/現有測試數據/皮帶測試數據_直接驅動_垂直.csv",
-        };
+        //    //"./Test/現有測試數據/皮帶測試數據_直接驅動_水平.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_直接驅動_橫掛.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_直接驅動_垂直.csv",
+        //};
         private int curCalcIndex = 1;
 
         public Test(FormMain formMain) {
@@ -42,12 +42,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void InitEvents() {
-            formMain.cmdTest.Click += CmdTest_Click;
+            formMain.lbTitle.DoubleClick += StartTest;
         }
 
-        private void CmdTest_Click(object sender, EventArgs e) {
+        private void StartTest(object sender, EventArgs e) {
+            // 測試主程序
             new Thread(Run).Start();
 
+            // 測試進度
             new Thread(() => {
                 formMain.Invoke(new Action(() => {
                     FormWaiting wait = new FormWaiting(GetCalcPercent);
@@ -182,8 +184,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     while (result.Count == 0)
                         Thread.Sleep(100);
                     Model model = result.First();
-                    FileUtil.LogModelInfo(model, con.setupMethod, false, "./Test/所有測試結果數據/" + string.Format("{0}-L{1}-{2}kg-A{3}-B{4}-C{5}", model.name, model.lead, model.load, model.moment_A, model.moment_B, model.moment_C));
-                    Console.WriteLine("{0}-L{1}", model.name, model.lead);
+                    string curTestInfo = string.Format("{0}-L{1}-{2}kg-A{3}-B{4}-C{5}", model.name, model.lead, model.load, model.moment_A, model.moment_B, model.moment_C);
+                    FileUtil.LogModelInfo(model, con.setupMethod, false, "./Test/所有測試結果數據/" + curTestInfo);
+                    Console.WriteLine(curTestInfo);
                     string log = "";
                     if (fileName.Contains("螺桿"))
                         log = string.Format("{0},{1},{2},{3},{4},{5},{6},,{7},{8},{9},,{10},{11},{12},,{13},{14},{15},,{16},{17},{18}\r\n",
