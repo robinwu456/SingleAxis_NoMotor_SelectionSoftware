@@ -183,7 +183,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         formMain.dgvRecommandList.Rows[index].Cells["重複定位精度"].Value = "±" + model.repeatability;
                         formMain.dgvRecommandList.Rows[index].Cells["導程"].Value = model.lead;
                         formMain.dgvRecommandList.Rows[index].Cells["荷重"].Value = model.load;
-                        formMain.dgvRecommandList.Rows[index].Cells["最高轉速"].Value = model.rpm;
+                        formMain.dgvRecommandList.Rows[index].Cells["最高轉速"].Value = model.showRpm;
                         formMain.dgvRecommandList.Rows[index].Cells["運行速度"].Value = Convert.ToDouble(model.vMax.ToString("#0.000"));
                         formMain.dgvRecommandList.Rows[index].Cells["加速度"].Value = model.accelSpeed;
                         formMain.dgvRecommandList.Rows[index].Cells["最大行程"].Value = model.maxStroke;

@@ -146,7 +146,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             try {
                 var rows = momentData.Rows.Cast<DataRow>().Where(row => row["型號"].ToString() == model &&
                                                                         Convert.ToDouble(row["導程"].ToString()) == lead &&
-                                                                        Convert.ToInt32(row["安裝方式"].ToString()) == (int)setupMethod
+                                                                        row["安裝方式"].ToString() == setupMethod.ToString()
                                                                             );
                 return Convert.ToInt32(rows.First()[moment.ToString()]);
             } catch (Exception ex) {
@@ -219,9 +219,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public int MMS_TO_RPM(double mms, double lead) {
-            //return (int)Math.Round(mms * 60f / (float)lead, 0);
+            return (int)Math.Round(mms * 60f / (float)lead, 0);
             //return (int)(mms * 60f / (float)lead);
-            return (int)(Math.Round(mms / (float)lead, 0) * 60);
+
+            //return (int)(Math.Round(mms / (float)lead, 0) * 60);
         }
 
         public int GetMaxStroke(string model, double lead) {
@@ -246,7 +247,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 data = momentData.Rows.Cast<DataRow>()
                                              .Where(row => row["型號"].ToString() == model &&
                                                            Convert.ToDouble(row["導程"].ToString()) == lead &&
-                                                           Convert.ToInt32(row["安裝方式"].ToString()) == (int)conditions.setupMethod)
+                                                           row["安裝方式"].ToString() == conditions.setupMethod.ToString())
                                              .Select(row => row["最大荷重"].ToString())
                                              .First();
                 if (!string.IsNullOrEmpty(data))

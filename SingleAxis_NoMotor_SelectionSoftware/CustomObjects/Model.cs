@@ -187,6 +187,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// </summary>
         public int rpm;
         /// <summary>
+        /// 顯示的RPM
+        /// </summary>
+        public int showRpm;
+        /// <summary>
         /// 最大轉矩
         /// </summary>
         public double maxTorque;

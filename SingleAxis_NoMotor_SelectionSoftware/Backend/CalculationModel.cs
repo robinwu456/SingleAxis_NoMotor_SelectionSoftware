@@ -99,6 +99,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (condition.stopTime != 0)
                 model.stopTime = condition.stopTime;
 
+            double recordVmax = model.vMax;
             if (isCheckStrokeTooShort) {
                 // 行程過短驗證
                 if (strokeTooShortModifyItem == Converter.ModifyItem.Vmax) {
@@ -119,6 +120,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     model.accelTime = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, model.vMax, model.accelTime, model.stroke);
                 }
             }
+            model.showRpm = recordVmax == model.vMax ? GetRpmByStroke(model.name, model.lead, model.stroke) : GetRpmByMMS(model.lead, model.vMax * 1000);
+
             // 小數點位數修正
             model.accelSpeed = model.vMax / model.accelTime;
             model.accelSpeed = Convert.ToDouble(model.accelSpeed.ToString("#0.000"));
