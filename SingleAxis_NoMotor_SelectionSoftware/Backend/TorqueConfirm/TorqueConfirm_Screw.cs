@@ -19,7 +19,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 轉動慣量
             model.rotateInertia_motor = model.rotateInertia;
             model.rotateInertia_screw = (Math.PI * (7.8 * Math.Pow(10, 3) * (model.screwLength / 1000f) * Math.Pow(model.outerDiameter / 1000f, 4))) / 32f;
-            model.rotateInertia_horizontalMove = (model.load + 1) * (Math.Pow((model.lead / 1000f) / (2f * Math.PI), 2));
+            if (condition.setupMethod == Model.SetupMethod.水平)
+                model.rotateInertia_horizontalMove = (model.load + 1) * (Math.Pow((model.lead / 1000f) / (2f * Math.PI), 2));
+            else
+                model.rotateInertia_horizontalMove = (model.load + 3) * (Math.Pow((model.lead / 1000f) / (2f * Math.PI), 2));
             model.rotateInertia_total = model.rotateInertia_motor + model.rotateInertia_screw + model.rotateInertia_horizontalMove + model.rotateInertia_couplingItem + model.rotateInertia_ballBearing;
 
             // 軸向外力

@@ -80,7 +80,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 // 加速區
                 model.gravityMr_a = w * model.moment_A / 1000;
                 model.gravityMp_a = 0;
-                model.gravityMy_a = 0;
+                model.gravityMy_a = w * model.moment_B / 1000;
                 model.accelSpeedMr_a = 0;
                 model.accelSpeedMp_a = model.load * model.accelSpeed * model.moment_A / 1000;
                 model.accelSpeedMy_a = model.load * model.accelSpeed * model.moment_C / 1000;
@@ -89,13 +89,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 my_a = model.gravityMy_a + model.accelSpeedMy_a;
 
                 // 等速區
-                mp_c = (float)w * (float)model.moment_B / 1000f;
-                my_c = 0;
+                mp_c = 0;
+                my_c = (float)w * (float)model.moment_B / 1000f;
 
                 // 減速區
                 model.gravityMr_d = w * model.moment_A / 1000;
-                model.gravityMp_d = w * model.moment_B / 1000;
-                model.gravityMy_d = 0;
+                model.gravityMp_d = 0;
+                model.gravityMy_d = w * model.moment_B / 1000;
                 model.accelSpeedMr_d = 0;
                 model.accelSpeedMp_d = -1 * model.load * model.accelSpeed * model.moment_A / 1000;
                 model.accelSpeedMy_d = -1 * model.load * model.accelSpeed * model.moment_C / 1000;

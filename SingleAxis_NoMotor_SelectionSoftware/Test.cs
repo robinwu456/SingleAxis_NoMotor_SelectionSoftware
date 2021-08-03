@@ -11,8 +11,8 @@ using System.Diagnostics;
 namespace SingleAxis_NoMotor_SelectionSoftware {
     class Test {
         private FormMain formMain;
-        private string outputFileName = "./Test/Result.csv";
-        private string[] testDataFileNames = Directory.GetFiles("./Test/現有測試數據");
+        private string outputFileName = "./Test/Result_{0}.csv";
+        private string[] testDataFileNames = Directory.GetFiles("./Test/現有測試數據").Reverse().ToArray();
         //private string[] testDataFileNames = {
         //    //"./Test/現有測試數據/螺桿測試數據_水平.csv",
         //    //"./Test/現有測試數據/螺桿測試數據_橫掛.csv",
@@ -66,7 +66,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void Run() {
-            string resultLog = "";
+            // 清除所有測試數據
+            Directory.GetFiles("./Test/所有測試結果數據").ToList().ForEach(testLog => File.Delete(testLog));
+
+            string resultLog_螺桿 = "";
+            string resultLog_減速機構 = "";
+            string resultLog_減速機2 = "";
+            string resultLog_減速機4 = "";
+            string resultLog_直接驅動 = "";
+            string resultLog_highDiff = "";
+
+            curCalcIndex = 1;
+
             foreach (string fileName in testDataFileNames) {
                 DataTable data = FileUtil.ReadCsv(fileName);
 
@@ -78,11 +89,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 else if (fileName.Contains("垂直"))
                     setupMethod = Model.SetupMethod.垂直;
 
-                string output = "";
+                string title = "";
                 if (fileName.Contains("螺桿"))
-                    output = "螺桿" + " " + setupMethod.ToString() + "\r\n項次,導程,行程,荷重,A,B,C,,預計滑軌壽命,計算滑軌壽命,滑軌壽命誤差,,預計T_max,計算T_max,T_max誤差,,預計T_Rms,計算T_Rms,T_Rms誤差,,預計螺桿壽命,計算螺桿壽命,螺桿壽命誤差\r\n";
+                    title = "螺桿" + " " + setupMethod.ToString() + "\r\n項次,導程,行程,荷重,A,B,C,,預計滑軌壽命,計算滑軌壽命,滑軌壽命誤差,,預計T_max,計算T_max,T_max誤差,,預計T_Rms,計算T_Rms,T_Rms誤差,,預計螺桿壽命,計算螺桿壽命,螺桿壽命誤差\r\n";
                 else if (fileName.Contains("皮帶")) {
-                    string title = "";
                     if (fileName.Contains("減速機構"))
                         title = "皮帶 減速機構";
                     else if (fileName.Contains("減速機2"))
@@ -91,9 +101,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         title = "皮帶 減速機4";
                     else if (fileName.Contains("直接驅動"))
                         title = "皮帶 直接驅動";
-                    output = title + " " + setupMethod.ToString() + "\r\n項次,導程,行程,荷重,A,B,C,,預計滑軌壽命,計算滑軌壽命,滑軌壽命誤差,,預計馬達能力預估-轉動慣量合計,計算馬達能力預估-轉動慣量合計,馬達能力預估-轉動慣量合計誤差,,預計T_max,計算T_max,T_max誤差,,預計皮帶安全係數,計算皮帶安全係數,皮帶安全係數誤差\r\n";
+                    title = title + " " + setupMethod.ToString() + "\r\n項次,導程,行程,荷重,A,B,C,,預計滑軌壽命,計算滑軌壽命,滑軌壽命誤差,,預計馬達能力預估-轉動慣量合計,計算馬達能力預估-轉動慣量合計,馬達能力預估-轉動慣量合計誤差,,預計T_max,計算T_max,T_max誤差,,預計皮帶安全係數,計算皮帶安全係數,皮帶安全係數誤差\r\n";
                 }
 
+                string output = "";
+                string hightDiffOutput = "";
+                output += title;
                 foreach (DataRow row in data.Rows) {
                     Condition con = new Condition();
                     con.isTesting = true;
@@ -153,6 +166,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         }
                         con.beltWidth = Convert.ToDouble(row["皮帶寬"].ToString());
                         con.beltLength = Convert.ToDouble(row["皮帶長度"].ToString());
+                        con.beltUnitDensity = Convert.ToDouble(row["皮帶單位密度"].ToString());
                         con.loadInertiaMomentRatio = Convert.ToInt32(row["負載慣量與力矩比"].ToString());
                         con.beltAllowableTension = Convert.ToDouble(row["皮帶容許拉力"].ToString());
                         if (con.beltCalcType == Model.BeltCalcType.減速機構 || con.beltCalcType == Model.BeltCalcType.減速機4) {
@@ -166,6 +180,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                 Convert.ToDouble(row["從動輪P2輪徑"].ToString()),
                                 Convert.ToDouble(row["從動輪P2輪寬"].ToString())
                             );
+                        } else {
+                            con.mainWheel_P1 = new BeltWheel(0, 0);
+                            con.subWheel_P2 = new SubBeltWheel(0, 0);
                         }
                         // 從動輪P3
                         con.subWheel_P3 = new SubBeltWheel(
@@ -184,12 +201,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     while (result.Count == 0)
                         Thread.Sleep(100);
                     Model model = result.First();
-                    string curTestInfo = string.Format("{0}-L{1}-{2}kg-A{3}-B{4}-C{5}", model.name, model.lead, model.load, model.moment_A, model.moment_B, model.moment_C);
-                    FileUtil.LogModelInfo(model, con.setupMethod, false, "./Test/所有測試結果數據/" + curTestInfo);
+                    string curTestInfo = string.Format("{0}-L{1}-{2}-{3}kg-A{4}-B{5}-C{6}", model.name, model.lead, con.beltCalcType.ToString(), model.load, model.moment_A, model.moment_B, model.moment_C);
+                    string logFileName = "./Test/所有測試結果數據/" + curTestInfo;
+                    FileUtil.LogModelInfo(model, con.setupMethod, false, logFileName);
                     Console.WriteLine(curTestInfo);
                     string log = "";
-                    if (fileName.Contains("螺桿"))
-                        log = string.Format("{0},{1},{2},{3},{4},{5},{6},,{7},{8},{9},,{10},{11},{12},,{13},{14},{15},,{16},{17},{18}\r\n",
+                    string highDiffLog = "";
+                    if (fileName.Contains("螺桿")) {
+                        double diffPercent_slideDistance = 100 - (Math.Min(Convert.ToDouble(row["滑軌壽命"].ToString()), model.slideTrackServiceLifeDistance) * 100 / Math.Max(Convert.ToDouble(row["滑軌壽命"].ToString()), model.slideTrackServiceLifeDistance));
+                        double diffPercent_tMax = 100 - (Math.Min(Convert.ToDouble(Convert.ToDouble(row["T_max安全係數"].ToString()).ToString("#0.00")), model.tMaxSafeCoefficient) * 100 / Math.Max(Convert.ToDouble(Convert.ToDouble(row["T_max安全係數"].ToString()).ToString("#0.00")), model.tMaxSafeCoefficient));
+                        double diffPercent_tRms = 100 - (Math.Min(Convert.ToDouble(Convert.ToDouble(row["T_Rms安全係數"].ToString()).ToString("#0.00")), model.tRmsSafeCoefficient) * 100 / Math.Max(Convert.ToDouble(Convert.ToDouble(row["T_Rms安全係數"].ToString()).ToString("#0.00")), model.tRmsSafeCoefficient));
+                        double diffPercent_screwDistance = 100 - (Math.Min(Convert.ToDouble(row["螺桿壽命"].ToString()), model.screwServiceLifeDistance) * 100 / Math.Max(Convert.ToDouble(row["螺桿壽命"].ToString()), model.screwServiceLifeDistance));
+                        log = string.Format("{0},{1},{2},{3},{4},{5},{6},,{7},{8},{9},,{10},{11},{12},,{13},{14},{15},,{16},{17},{18},,{19}\r\n",
                                                     model.name,
                                                     model.lead,
                                                     model.stroke,
@@ -199,19 +222,26 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                                     model.moment_C,
                                                     row["滑軌壽命"].ToString(),
                                                     model.slideTrackServiceLifeDistance,
-                                                    (100 - (Math.Min(Convert.ToDouble(row["滑軌壽命"].ToString()), model.slideTrackServiceLifeDistance) * 100 / Math.Max(Convert.ToDouble(row["滑軌壽命"].ToString()), model.slideTrackServiceLifeDistance))).ToString("#00.00") + "%",
-                                                    row["T_max安全係數"].ToString(),
+                                                    diffPercent_slideDistance.ToString("#00.00") + "%",
+                                                    Convert.ToDouble(row["T_max安全係數"].ToString()).ToString("#0.00"),
                                                     model.tMaxSafeCoefficient,
-                                                    (100 - (Math.Min(Convert.ToDouble(row["T_max安全係數"].ToString()), model.tMaxSafeCoefficient) * 100 / Math.Max(Convert.ToDouble(row["T_max安全係數"].ToString()), model.tMaxSafeCoefficient))).ToString("#00.00") + "%",
-                                                    row["T_Rms安全係數"].ToString(),
+                                                    diffPercent_tMax.ToString("#00.00") + "%",
+                                                    Convert.ToDouble(row["T_Rms安全係數"].ToString()).ToString("#0.00"),
                                                     model.tRmsSafeCoefficient,
-                                                    (100 - (Math.Min(Convert.ToDouble(row["T_Rms安全係數"].ToString()), model.tRmsSafeCoefficient) * 100 / Math.Max(Convert.ToDouble(row["T_Rms安全係數"].ToString()), model.tRmsSafeCoefficient))).ToString("#00.00") + "%",
+                                                    diffPercent_tRms.ToString("#00.00") + "%",
                                                     row["螺桿壽命"].ToString(),
                                                     model.screwServiceLifeDistance,
-                                                    (100 - (Math.Min(Convert.ToDouble(row["螺桿壽命"].ToString()), model.screwServiceLifeDistance) * 100 / Math.Max(Convert.ToDouble(row["螺桿壽命"].ToString()), model.screwServiceLifeDistance))).ToString("#00.00") + "%"
+                                                    diffPercent_screwDistance.ToString("#00.00") + "%",
+                                                    string.Format("=hyperlink(\"{0}\"，\"開啟Log\")", new FileInfo(logFileName + ".log").FullName)
                         );
-                    else if (fileName.Contains("皮帶"))
-                        log = string.Format("{0},{1},{2},{3},{4},{5},{6},,{7},{8},{9},,{10},{11},{12},,{13},{14},{15},,{16},{17},{18}\r\n",
+                        if (diffPercent_slideDistance > 1 || diffPercent_tMax > 1 || diffPercent_tRms > 1 || diffPercent_screwDistance > 1)
+                            highDiffLog += log;
+                    } else if (fileName.Contains("皮帶")) {
+                        double diffPercent_slideDistance = 100 - (Math.Min(Convert.ToDouble(row["滑軌壽命"].ToString()), model.slideTrackServiceLifeDistance) * 100 / Math.Max(Convert.ToDouble(row["滑軌壽命"].ToString()), model.slideTrackServiceLifeDistance));
+                        double diffPercent_rotateInertia_total = 100 - (Math.Min(Convert.ToDouble(row["馬達能力預估-轉動慣量合計"].ToString()), model.rotateInertia_total) * 100 / Math.Max(Convert.ToDouble(row["馬達能力預估-轉動慣量合計"].ToString()), model.rotateInertia_total));
+                        double diffPercent_tMax = 100 - (Math.Min(Convert.ToDouble(Convert.ToDouble(row["T_max安全係數"].ToString()).ToString("#0.00")), model.tMaxSafeCoefficient) * 100 / Math.Max(Convert.ToDouble(Convert.ToDouble(row["T_max安全係數"].ToString()).ToString("#0.00")), model.tMaxSafeCoefficient));
+                        double diffPercent_beltSafeCoefficient = 100 - (Math.Min(Convert.ToDouble(Convert.ToDouble(row["皮帶安全係數"].ToString()).ToString("#0.00")), model.beltSafeCoefficient) * 100 / Math.Max(Convert.ToDouble(Convert.ToDouble(row["皮帶安全係數"].ToString()).ToString("#0.00")), model.beltSafeCoefficient));
+                        log = string.Format("{0},{1},{2},{3},{4},{5},{6},,{7},{8},{9},,{10},{11},{12},,{13},{14},{15},,{16},{17},{18},,{19}\r\n",
                                                     model.name,
                                                     model.lead,
                                                     model.stroke,
@@ -221,29 +251,52 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                                     model.moment_C,
                                                     row["滑軌壽命"].ToString(),
                                                     model.slideTrackServiceLifeDistance,
-                                                    (100 - (Math.Min(Convert.ToDouble(row["滑軌壽命"].ToString()), model.slideTrackServiceLifeDistance) * 100 / Math.Max(Convert.ToDouble(row["滑軌壽命"].ToString()), model.slideTrackServiceLifeDistance))).ToString("#00.00") + "%",
+                                                    diffPercent_slideDistance.ToString("#00.00") + "%",
                                                     row["馬達能力預估-轉動慣量合計"].ToString(),
                                                     model.rotateInertia_total,
-                                                    (100 - (Math.Min(Convert.ToDouble(row["馬達能力預估-轉動慣量合計"].ToString()), model.rotateInertia_total) * 100 / Math.Max(Convert.ToDouble(row["馬達能力預估-轉動慣量合計"].ToString()), model.rotateInertia_total))).ToString("#00.00") + "%",
-                                                    row["T_max安全係數"].ToString(),
+                                                    diffPercent_rotateInertia_total.ToString("#00.00") + "%",
+                                                    Convert.ToDouble(row["T_max安全係數"].ToString()).ToString("#0.00"),
                                                     model.tMaxSafeCoefficient,
-                                                    (100 - (Math.Min(Convert.ToDouble(row["T_max安全係數"].ToString()), model.tMaxSafeCoefficient) * 100 / Math.Max(Convert.ToDouble(row["T_max安全係數"].ToString()), model.tMaxSafeCoefficient))).ToString("#00.00") + "%",                                                    
-                                                    row["皮帶安全係數"].ToString(),
+                                                    diffPercent_tMax.ToString("#00.00") + "%",
+                                                    Convert.ToDouble(row["皮帶安全係數"].ToString()).ToString("#0.00"),
                                                     model.beltSafeCoefficient,
-                                                    (100 - (Math.Min(Convert.ToDouble(row["皮帶安全係數"].ToString()), model.beltSafeCoefficient) * 100 / Math.Max(Convert.ToDouble(row["皮帶安全係數"].ToString()), model.beltSafeCoefficient))).ToString("#00.00") + "%"
+                                                    diffPercent_beltSafeCoefficient.ToString("#00.00") + "%",
+                                                    string.Format("=hyperlink(\"{0}\"，\"開啟Log\")", new FileInfo(logFileName + ".log").FullName)
                         );
+                        if (diffPercent_slideDistance > 1 || diffPercent_rotateInertia_total > 1 || diffPercent_tMax > 1 || diffPercent_beltSafeCoefficient > 1)
+                            highDiffLog += log;
+                    }
                     output += log;
+                    hightDiffOutput += highDiffLog;
 
                     curCalcIndex++;
                 }
 
-                resultLog += output + "\r\n";
+                if (fileName.Contains("螺桿"))
+                    resultLog_螺桿 += output + "\r\n";
+                else if (fileName.Contains("減速機構"))
+                    resultLog_減速機構 += output + "\r\n";
+                else if (fileName.Contains("減速機2"))
+                    resultLog_減速機2 += output + "\r\n";
+                else if (fileName.Contains("減速機4"))
+                    resultLog_減速機4 += output + "\r\n";
+                else if (fileName.Contains("直接驅動"))
+                    resultLog_直接驅動 += output + "\r\n";
+
+                if (hightDiffOutput != "")
+                    resultLog_highDiff += title + hightDiffOutput + "\r\n";
             }
 
-            FileUtil.FileWrite(outputFileName, resultLog);
+            FileUtil.FileWrite(string.Format(outputFileName, "螺桿"), resultLog_螺桿);
+            FileUtil.FileWrite(string.Format(outputFileName, "減速機構"), resultLog_減速機構);
+            FileUtil.FileWrite(string.Format(outputFileName, "減速機2"), resultLog_減速機2);
+            FileUtil.FileWrite(string.Format(outputFileName, "減速機4"), resultLog_減速機4);
+            FileUtil.FileWrite(string.Format(outputFileName, "直接驅動"), resultLog_直接驅動);
+
+            FileUtil.FileWrite(string.Format(outputFileName, "誤差過大"), resultLog_highDiff);
 
             MessageBox.Show("測試完成");
-            Process.Start(new DirectoryInfo(outputFileName).FullName);
+            Process.Start(new DirectoryInfo("./Test").FullName);
         }
     }
 }

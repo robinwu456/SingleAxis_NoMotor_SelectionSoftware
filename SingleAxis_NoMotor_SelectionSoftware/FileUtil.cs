@@ -234,6 +234,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             var motorInfoScrew = new List<(string key, object value)>() {
                 ( "馬達能力預估-轉動慣量", "" ),
                 ( "  馬達", model.rotateInertia_motor ),
+                ( "  螺桿", model.rotateInertia_screw ),
                 ( "  水平移動體", model.rotateInertia_horizontalMove ),
                 ( "  聯軸器", model.rotateInertia_couplingItem ),
                 ( "  滾珠軸承", model.rotateInertia_ballBearing ),
@@ -302,7 +303,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             var motorTorqueInfoBelt = new List<(string key, object value)>();
             var beltTorqueInfo = new List<(string key, object value)>();
             var momentBelt = new List<(string key, object value)>();
-            if (model.mainWheel_P1 != null) {
+            if (model.subWheel_P3 != null) {
                 beltInfo = new List<(string key, object value)>() {
                     ( "主動輪資訊(P1)", "" ),
                     ( "  輪徑(mm)", model.mainWheel_P1.diameter ),
@@ -407,7 +408,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     ( "    P_d", model.p_d ),
                 };
             }
-            if (model.mainWheel_P1 == null) {
+            if (model.subWheel_P3 == null) {
                 ///
                 /// 螺桿型
                 ///

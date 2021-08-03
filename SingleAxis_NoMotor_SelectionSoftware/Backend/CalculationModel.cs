@@ -31,12 +31,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.moment_B = condition.moment_B;
                 model.moment_C = condition.moment_C;
             }
-            // 推桿式力矩都為10
-            if (condition.modelType.IsRodType()) {
-                model.moment_A = 10;
-                model.moment_B = 10;
-                model.moment_C = 10;
-            }
+            //// 推桿式力矩都為10
+            //if (condition.modelType.IsRodType()) {
+            //    model.moment_A = 10;
+            //    model.moment_B = 10;
+            //    model.moment_C = 10;
+            //}
 
             if (condition.vMaxCalcMode == Condition.CalcVmax.Max) {
                 if (model.isUseBaltCalc) {
@@ -105,20 +105,39 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (strokeTooShortModifyItem == Converter.ModifyItem.Vmax) {
                     model.vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, model.vMax, model.accelTime, model.stroke);
 
-                    // rpm修正
-                    if (model.isUseBaltCalc) {
-                        //model.rpm = GetBeltRPM(model.name, model.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
-                        model.rpm = GetRpmByMMS(model.lead, model.vMax * 1000);
-                    } else {
-                        //if (condition.reducerRatio.Keys.Contains(model.name))
-                        //    model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead / condition.reducerRatio[model.name]);
-                        //else
-                        //    model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead);
-                        model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead);
-                    }
+                    //// rpm修正
+                    //if (model.isUseBaltCalc) {
+                    //    model.rpm = GetBeltRPM(model.name, model.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
+                    //    //model.rpm = GetRpmByMMS(model.lead, model.vMax * 1000);
+                    //} else {
+                    //    //if (condition.reducerRatio.Keys.Contains(model.name))
+                    //    //    model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead / condition.reducerRatio[model.name]);
+                    //    //else
+                    //    //    model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead);
+                    //    model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead);
+                    //}
                 } else if (strokeTooShortModifyItem == Converter.ModifyItem.AccelSpeed) {
                     model.accelTime = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, model.vMax, model.accelTime, model.stroke);
                 }
+            }
+
+            if (condition.setupMethod == Model.SetupMethod.水平 &&
+                model.beltCalcType == Model.BeltCalcType.減速機4 &&
+                model.name == "MK65-03" &&
+                model.lead == 36.67 &&
+                model.moment_A == 950)
+                Console.WriteLine(1);
+
+            // rpm修正
+            if (model.isUseBaltCalc) {
+                model.rpm = GetBeltRPM(model.name, model.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
+                //model.rpm = GetRpmByMMS(model.lead, model.vMax * 1000);
+            } else {
+                //if (condition.reducerRatio.Keys.Contains(model.name))
+                //    model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead / condition.reducerRatio[model.name]);
+                //else
+                //    model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead);
+                model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead);
             }
             model.showRpm = recordVmax == model.vMax ? GetRpmByStroke(model.name, model.lead, model.stroke) : GetRpmByMMS(model.lead, model.vMax * 1000);
 

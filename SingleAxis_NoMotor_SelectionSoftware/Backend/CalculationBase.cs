@@ -57,7 +57,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.repeatability = Convert.ToDouble(row["重複定位精度"].ToString());
 
                 // 是否套用皮帶公式
-                model.isUseBaltCalc = beltInfo.Rows.Cast<DataRow>().Select(info => info["型號"].ToString()).Contains(model.name);                
+                model.isUseBaltCalc = beltInfo.Rows.Cast<DataRow>().Select(info => info["型號"].ToString()).Contains(model.name);
+
+                // 測試不判斷行程過短
+                isCheckStrokeTooShort = !condition.isTesting;
 
                 // 皮帶資訊
                 if (model.isUseBaltCalc) {
@@ -68,6 +71,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         model.subWheel_P4 = condition.subWheel_P4;
                         model.beltWidth = condition.beltWidth;
                         model.beltLength = condition.beltLength;
+                        model.beltUnitDensity = condition.beltUnitDensity;
                         model.beltAllowableTension = condition.beltAllowableTension;
                         model.beltCalcType = condition.beltCalcType;
                         model.reducerRotateInertia = condition.reducerRotateInertia;
@@ -100,6 +104,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         model.beltWidth = beltInfoRows.Select(x => Convert.ToDouble(x["皮帶寬"].ToString())).First();
                         // 皮帶長度
                         model.beltLength = beltInfoRows.Select(x => Convert.ToDouble(x["皮帶長度"].ToString())).First();
+                        // 皮帶單位密度
+                        model.beltUnitDensity = beltInfoRows.Select(x => Convert.ToDouble(x["皮帶單位密度"].ToString())).First();
                         // 皮帶容許拉力
                         model.beltAllowableTension = beltInfoRows.Select(x => Convert.ToDouble(x["皮帶容許拉力"].ToString())).First();
                         // 傳動方式

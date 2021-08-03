@@ -470,7 +470,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <summary>
         /// 皮帶單位密度(g/mm寬*m長)
         /// </summary>
-        public double beltUnitDensity = 4;
+        public double beltUnitDensity;
         /// <summary>
         /// 皮帶重量(kg)
         /// </summary>
