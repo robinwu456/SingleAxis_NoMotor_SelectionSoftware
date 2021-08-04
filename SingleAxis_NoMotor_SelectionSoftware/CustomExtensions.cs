@@ -6,6 +6,7 @@ using System.Resources;
 using System.Reflection;
 using System.Globalization;
 using System.Windows.Forms;
+using System.Data;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public static class CustomExtensions {
@@ -45,14 +46,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <param name="modelType">機構類別</param>
         /// <returns></returns>
         public static bool IsRodType(this Model.ModelType modelType) {
-            Model.ModelType[] beltType = {
-                Model.ModelType.Y,
-                Model.ModelType.GTY,
-                Model.ModelType.YL,
-                Model.ModelType.YD,
-            };
+            DataTable modelTypeInfo = FileUtil.ReadCsv(Config.MODEL_TYPE_INFO_FILENAME);
+            var rodTypes =  modelTypeInfo.Rows.Cast<DataRow>().Where(row => row["是否使用力矩"].ToString() == "NO")
+                                                              .Select(row => (Model.ModelType)Enum.Parse(typeof(Model.ModelType), row["型號類別"].ToString()));
 
-            return beltType.Contains(modelType);
+            return rodTypes.Contains(modelType);
         }
 
         /// <summary>
@@ -76,21 +74,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <returns></returns>
         public static bool IsContainsReducerRatioType(this string modelName) {
             return modelName.StartsWith("MK") || modelName.StartsWith("MG");
-        }
-
-        /// <summary>
-        /// 是否為Y系列
-        /// </summary>
-        /// <param name="modelType">機構類別</param>
-        /// <returns></returns>
-        public static bool IsSeriesY(this Model.ModelType modelType) {
-            Model.ModelType[] beltType = {
-                Model.ModelType.Y,
-                Model.ModelType.YD,
-                Model.ModelType.YL,
-            };
-
-            return beltType.Contains(modelType);
         }
     }
 }

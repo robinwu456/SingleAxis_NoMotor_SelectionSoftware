@@ -188,9 +188,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         formMain.dgvRecommandList.Rows[index].Cells["加速度"].Value = model.accelSpeed;
                         formMain.dgvRecommandList.Rows[index].Cells["最大行程"].Value = model.maxStroke;
                         formMain.dgvRecommandList.Rows[index].Cells["運行時間"].Value = model.moveTime;
-                        formMain.dgvRecommandList.Rows[index].Cells["力矩A"].Value = model.moment_A;
-                        formMain.dgvRecommandList.Rows[index].Cells["力矩B"].Value = model.moment_B;
-                        formMain.dgvRecommandList.Rows[index].Cells["力矩C"].Value = model.moment_C;
+                        if (model.modelType.IsRodType()) {
+                            formMain.dgvRecommandList.Rows[index].Cells["力矩A"].Value = "-";
+                            formMain.dgvRecommandList.Rows[index].Cells["力矩B"].Value = "-";
+                            formMain.dgvRecommandList.Rows[index].Cells["力矩C"].Value = "-";
+                        } else {
+                            formMain.dgvRecommandList.Rows[index].Cells["力矩A"].Value = model.moment_A;
+                            formMain.dgvRecommandList.Rows[index].Cells["力矩B"].Value = model.moment_B;
+                            formMain.dgvRecommandList.Rows[index].Cells["力矩C"].Value = model.moment_C;
+                        }
                         formMain.dgvRecommandList.Rows[index].Cells["力矩警示"].Value = model.isMomentVerifySuccess ? "Pass" : "Fail";
                         formMain.dgvRecommandList.Rows[index].Cells["馬達瓦數"].Value = model.usePower;
                         formMain.dgvRecommandList.Rows[index].Cells["皮帶馬達安全係數"].Value = model.beltMotorSafeCoefficient == -1 ? "無" : model.beltMotorSafeCoefficient.ToString();

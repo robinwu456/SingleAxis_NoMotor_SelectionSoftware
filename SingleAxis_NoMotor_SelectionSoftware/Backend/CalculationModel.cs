@@ -10,8 +10,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         // 滑軌壽命計算
         protected long GetSlideTrackEstimatedLife(Model model, Condition condition) {
-            // 力舉參數驗證
-            VerifyMomentParam(condition.moment_A, condition.moment_B, condition.moment_C);
+            if (!condition.modelType.IsRodType())
+                // 力舉參數驗證
+                VerifyMomentParam(condition.moment_A, condition.moment_B, condition.moment_C);
+
             if (condition.isMomentLimitByCatalog) {
                 if (condition.setupMethod == Model.SetupMethod.水平) {
                     model.moment_A = GetMaxMomentParam(model.name, model.lead, condition.setupMethod, Model.Moment.A);
@@ -31,12 +33,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.moment_B = condition.moment_B;
                 model.moment_C = condition.moment_C;
             }
-            //// 推桿式力矩都為10
-            //if (condition.modelType.IsRodType()) {
-            //    model.moment_A = 10;
-            //    model.moment_B = 10;
-            //    model.moment_C = 10;
-            //}
+            // 推桿式力矩都為10
+            if (condition.modelType.IsRodType()) {
+                model.moment_A = 0;
+                model.moment_B = 0;
+                model.moment_C = 0;
+            }
 
             if (condition.vMaxCalcMode == Condition.CalcVmax.Max) {
                 if (model.isUseBaltCalc) {
