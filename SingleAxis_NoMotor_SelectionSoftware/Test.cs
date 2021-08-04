@@ -196,15 +196,26 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         );
                     }
 
-                    // 計算
-                    var result = formMain.page2.calc.GetRecommandResult(con)["List"] as List<Model>;
-                    while (result.Count == 0)
-                        Thread.Sleep(100);
-                    Model model = result.First();
-                    string curTestInfo = string.Format("{0}-L{1}-{2}-{3}kg-A{4}-B{5}-C{6}", model.name, model.lead, con.beltCalcType.ToString(), model.load, model.moment_A, model.moment_B, model.moment_C);
-                    string logFileName = "./Test/所有測試結果數據/" + curTestInfo;
-                    FileUtil.LogModelInfo(model, con.setupMethod, false, logFileName);
+                    string curTestInfo = string.Format("{0}-L{1}-{2}-{3}-{4}kg-A{5}-B{6}-C{7}", con.calcModel.model, con.calcModel.lead, con.beltCalcType.ToString(), con.setupMethod.ToString(), con.load, con.moment_A, con.moment_B, con.moment_C);
                     Console.WriteLine(curTestInfo);
+
+                    // 計算
+                    var result = formMain.page2.calc.GetRecommandResult(con);
+                    List<Model> resultModel = result["List"] as List<Model>;
+                    while (resultModel.Count == 0) {
+                        // 訊息顯示
+                        if (!string.IsNullOrEmpty(result["Msg"] as string)) {
+                            // 訊息斷行顯示
+                            string alarmMsg = result["Msg"] as string;
+                            //formMain.Invoke(new Action(() => formMain.sideTable.UpdateMsg(alarmMsg, SideTable.MsgStatus.Alarm)));
+                            formMain.Invoke(new Action(() => MessageBox.Show(alarmMsg)));
+                            return;
+                        }
+                        Thread.Sleep(100);
+                    }
+                    Model model = resultModel.First();                    
+                    string logFileName = "./Test/所有測試結果數據/" + curTestInfo;
+                    FileUtil.LogModelInfo(model, con.setupMethod, false, logFileName);                    
                     string log = "";
                     string highDiffLog = "";
                     if (fileName.Contains("螺桿")) {
