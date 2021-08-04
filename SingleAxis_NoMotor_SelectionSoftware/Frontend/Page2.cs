@@ -147,9 +147,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //inputValidate.ValidatingStroke(isShowAlarm: false);
 
             // 重置版面
+            formMain.optStandardEnv.Checked = true;
+            formMain.optBuildInScrewActuator.Checked = true;
             recommandList.Refresh();
             formMain.sideTable.ClearModelImg();
             formMain.sideTable.ClearModelInfo();
+            formMain.sideTable.ClearSelectedModelInfo();
             recommandList.curSelectModel = (null, -1);
             formMain.cmdConfirmStep2.Visible = false;
             chartInfo.Clear();

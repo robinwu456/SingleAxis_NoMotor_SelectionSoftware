@@ -45,6 +45,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.cboModel.DataSource = allDiffModel.ToList();
             formMain.cboModel.Text = "";
             formMain.sideTable.ClearMsg();
+            formMain.sideTable.UpdateSelectedConditionValue("機構型態", "");            
             formMain.cboLead.DataSource = null;
             formMain.cboPower.Items.Clear();
         }
@@ -107,6 +108,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             Model.ModelType curModelType = formMain.page2.calc.GetModelType(formMain.cboModel.Text);
             formMain.page2.modelTypeOptMap.First(pair => pair.Value == curModelType).Key.Checked = true;
             formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(curModelType), SideTable.MsgStatus.Normal);
+            formMain.sideTable.Update(null, null);
 
             // 更新側邊型號
             if (leads.Count() != 0) {

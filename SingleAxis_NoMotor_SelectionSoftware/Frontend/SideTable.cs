@@ -22,12 +22,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             "使用環境",
             "安裝方式",
             "機構型態",
+            "運行距離",
+            "運行壽命",
         };
         // 側邊欄訊息 - 型號選型
         private List<string> selectionTableItems_calcSelectModel = new List<string>(){
-            //"使用環境",
+            "使用環境",
             "安裝方式",
-            //"機構型態",
+            "機構型態",
             "運行距離",
             "運行壽命",
         };
@@ -120,14 +122,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void Update(object sender, EventArgs e) {
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+            //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
                 UpdateSelectedConditionValue("使用環境", formMain.panelUseEnv.Controls.Cast<Control>().ToList()
                                                                   .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
                                                                   .Text);
             UpdateSelectedConditionValue("安裝方式", formMain.panelSetupMode.Controls.Cast<Control>().ToList()
                                                            .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
                                                            .Text);
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection ||
+                (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection && formMain.cboModel.Text != ""))
                 UpdateSelectedConditionValue("機構型態", formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.ToString());
 
             formMain.panelSideTableIcon.Visible = formMain.tabMain.SelectedIndex == formMain.tabMain.TabPages.Count - 1;

@@ -38,6 +38,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.optStandardEnv.CheckedChanged += UpdateCondition;
             formMain.optDustFreeEnv.CheckedChanged += UpdateCondition;
             //formMain.cboModelType.SelectedIndexChanged += UpdateCondition;
+            foreach (Control control in formMain.panelModelType.Controls.All())
+                if (control is RadioButton)
+                    ((RadioButton)control).CheckedChanged += UpdateCondition;
             formMain.optHorizontalUse.CheckedChanged += UpdateCondition;
             formMain.optWallHangingUse.CheckedChanged += UpdateCondition;
             formMain.optVerticalUse.CheckedChanged += UpdateCondition;
@@ -294,8 +297,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.cmdConfirmStep2.Visible = false;
 
             // 修正條件時，側邊欄壽命清除
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
-                formMain.sideTable.ClearSelectedModelInfo();
+            //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
+                //formMain.sideTable.ClearSelectedModelInfo();
+            formMain.page2.recommandList.Refresh();
+            formMain.page2.chartInfo.Clear();
+            formMain.sideTable.ClearSelectedModelInfo();
         }
     }
 }

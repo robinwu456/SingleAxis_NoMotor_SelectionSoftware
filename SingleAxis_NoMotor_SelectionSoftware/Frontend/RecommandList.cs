@@ -113,7 +113,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     formMain.sideTable.UpdateModeInfo(curModel, Convert.ToInt32(curModel.Split('-')[1]));
                 else
                     formMain.sideTable.UpdateModeInfo(curModel, lead);
-            }
+                // 細項顯示
+                DisplaySelectedModel(curModel, lead);
+            }            
 
             // 驗證使用瓦數
             if (curRow != null && curRow.Cells["馬達瓦數"].Value != null) {
@@ -285,9 +287,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         // 驗證加速度
                         formMain.txtAccelSpeed.Text = curModel.accelSpeed.ToString();
 
-                        // 細項顯示
-                        DisplaySelectedModel();
+                        //// 細項顯示
+                        //DisplaySelectedModel();
                     }
+                    //// 細項顯示
+                    //DisplaySelectedModel();
 
                     // 選第一列
                     if (curSelectModel.model != null) {
@@ -333,8 +337,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }            
         }
 
-        public void DisplaySelectedModel() {
-            Model curModel = curRecommandList.First();
+        public void DisplaySelectedModel(string model, double lead) {
+            var models = curRecommandList.Where(m => m.name == model && m.lead == lead);
+            if (models.Count() == 0)
+                return;
+            Model curModel = models.First();
+
             // 使用壽命時間
             string useTime = "";
             if (curModel.serviceLifeTime.year >= 10) {
@@ -394,10 +402,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //formMain.sideTable.UpdateSelectedConditionValue("力矩警示", curModel.isMomentVerifySuccess ? "Pass" : "Fail", !redFontConditions["力矩警示"](curModel));
             formMain.sideTable.UpdateSelectedConditionValue("運行距離", useDistance, false);
             formMain.sideTable.UpdateSelectedConditionValue("運行壽命", useTime, useTime == "-");
-            //if (formMain.page2.curSelectModelType.IsBeltType() && formMain.page2.calc.beltModels.Contains(curModel.name)) {
-            //    formMain.sideTable.UpdateSelectedConditionValue("皮帶T_max安全係數", curModel.beltSafeCoefficient.ToString(), !redFontConditions["皮帶T_max安全係數"](curModel));
-            //    formMain.sideTable.UpdateSelectedConditionValue("皮帶馬達安全係數", curModel.beltMotorSafeCoefficient.ToString(), !redFontConditions["皮帶馬達安全係數"](curModel));
-            //}
 
             // 畫圖
             formMain.page2.chartInfo.PaintGraph();
