@@ -80,7 +80,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             scrollBarStroke = new CustomScrollBar(formMain, formMain.scrollBarPanelStroke, formMain.scrollBarThumbStroke, null, null);
             scrollBarStroke.Name = "scrollBarStroke";                
             scrollBarStroke.bindingTextBox = formMain.txtStroke;
-            scrollBarStroke.picThumbHover = Properties.Resources.scrollBarThumb_hover;
+            scrollBarStroke.picThumbHover = Properties.Resources.scrollBarThumb_hover2;
             scrollBarStroke.lbMinValue = formMain.lbScrollbarMinStroke;
             scrollBarStroke.lbMaxValue = formMain.lbScrollbarMaxStroke;
             scrollBarStroke.minValue = defaultMinStroke;
@@ -93,7 +93,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             scrollBarLoad = new CustomScrollBar(formMain, formMain.scrollBarPanelLoad, formMain.scrollBarThumbLoad, null, null);
             scrollBarLoad.Name = "scrollBarStroke";                   
             scrollBarLoad.bindingTextBox = formMain.txtLoad;
-            scrollBarLoad.picThumbHover = Properties.Resources.scrollBarThumb_hover;
+            scrollBarLoad.picThumbHover = Properties.Resources.scrollBarThumb_hover2;
             scrollBarLoad.lbMinValue = formMain.lbScrollbarMinLoad;
             scrollBarLoad.lbMaxValue = formMain.lbScrollbarMaxLoad;
             scrollBarLoad.minValue = defaultMinLoad;

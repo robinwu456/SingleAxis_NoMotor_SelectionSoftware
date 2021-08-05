@@ -32,7 +32,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             "ModelType",        // 傳動方式
             "ModelSelection",   // 型號選擇
             "Setup",            // 安裝方式
-            "Moment",           // 力矩長度
+            //"Moment",           // 力矩長度
             "Calc",             // 計算
             //"Chart",            // 圖表
         };

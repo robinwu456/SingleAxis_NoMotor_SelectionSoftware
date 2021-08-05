@@ -126,7 +126,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 UpdateSelectedConditionValue("使用環境", formMain.panelUseEnv.Controls.Cast<Control>().ToList()
                                                                   .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
                                                                   .Text);
-            UpdateSelectedConditionValue("安裝方式", formMain.panelSetupMode.Controls.Cast<Control>().ToList()
+            UpdateSelectedConditionValue("安裝方式", formMain.panelSetup.Controls.Cast<Control>().ToList()
                                                            .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
                                                            .Text);
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection ||

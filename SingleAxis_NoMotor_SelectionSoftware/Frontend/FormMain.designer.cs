@@ -102,35 +102,73 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panelChart = new System.Windows.Forms.Panel();
-            this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.lbAccelSpeed = new System.Windows.Forms.Label();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.customPanel1 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
             this.lbAccelTime = new System.Windows.Forms.Label();
-            this.lbCycleTime = new System.Windows.Forms.Label();
+            this.lbRunTime = new System.Windows.Forms.Label();
+            this.lbAccelSpeed = new System.Windows.Forms.Label();
             this.lbConstantTime = new System.Windows.Forms.Label();
             this.lbMaxSpeed = new System.Windows.Forms.Label();
-            this.lbRunTime = new System.Windows.Forms.Label();
+            this.lbCycleTime = new System.Windows.Forms.Label();
+            this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
             this.panelCalc = new System.Windows.Forms.Panel();
-            this.lbScrollbarMaxStroke = new System.Windows.Forms.Label();
-            this.lbScrollbarMinStroke = new System.Windows.Forms.Label();
-            this.scrollBarPanelLoad = new System.Windows.Forms.Panel();
-            this.scrollBarThumbLoad = new System.Windows.Forms.PictureBox();
-            this.lbScrollbarMaxLoad = new System.Windows.Forms.Label();
-            this.lbScrollbarMinLoad = new System.Windows.Forms.Label();
+            this.panelMotorParams = new System.Windows.Forms.Panel();
+            this.panelPowerSelection = new System.Windows.Forms.Panel();
+            this.label60 = new System.Windows.Forms.Label();
+            this.cboMotorParamsMotorPowerSelection = new System.Windows.Forms.ComboBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.panelReducerParam = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtReducerRotateInertia = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.customToggle1 = new CustomToggle.CustomToggle();
+            this.txtLoadInertiaMomentRatio = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.txtRotateInertia = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.cboPower = new System.Windows.Forms.ComboBox();
+            this.txtRatedTorque = new System.Windows.Forms.TextBox();
+            this.txtMaxTorque = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
             this.scrollBarPanelStroke = new System.Windows.Forms.Panel();
             this.scrollBarThumbStroke = new System.Windows.Forms.PictureBox();
-            this.lbTitleCalc = new System.Windows.Forms.Label();
-            this.cmdCalc = new CustomButton.CustomButton();
+            this.scrollBarPanelLoad = new System.Windows.Forms.Panel();
+            this.scrollBarThumbLoad = new System.Windows.Forms.PictureBox();
             this.panelAdvanceParams = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lbMaxSpeedAlarm = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
             this.txtAccelSpeed = new System.Windows.Forms.TextBox();
-            this.optMaxSpeedType_rpm = new System.Windows.Forms.RadioButton();
-            this.optMaxSpeedType_mms = new System.Windows.Forms.RadioButton();
             this.label79 = new System.Windows.Forms.Label();
             this.txtMaxSpeed = new System.Windows.Forms.TextBox();
             this.lbRpm = new System.Windows.Forms.Label();
+            this.optMaxSpeedType_mms = new System.Windows.Forms.RadioButton();
+            this.optMaxSpeedType_rpm = new System.Windows.Forms.RadioButton();
+            this.lbScrollbarMaxLoad = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelExpectServiceLifeTime = new System.Windows.Forms.Panel();
             this.label72 = new System.Windows.Forms.Label();
@@ -138,67 +176,46 @@
             this.txtExpectServiceLifeTime = new System.Windows.Forms.TextBox();
             this.optExpectServiceLife = new System.Windows.Forms.RadioButton();
             this.optNoExpectServiceLife = new System.Windows.Forms.RadioButton();
+            this.lbScrollbarMaxStroke = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.lbScrollbarMinLoad = new System.Windows.Forms.Label();
+            this.lbScrollbarMinStroke = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.lbDaysPerYearAlarm = new System.Windows.Forms.Label();
+            this.txtStroke = new System.Windows.Forms.TextBox();
+            this.txtDayPerYear = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.labelStrokeAlarm = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.lbHoursPerDayAlarm = new System.Windows.Forms.Label();
+            this.txtLoad = new System.Windows.Forms.TextBox();
+            this.lbTimesPerMinuteAlarm = new System.Windows.Forms.Label();
+            this.txtHourPerDay = new System.Windows.Forms.TextBox();
+            this.labelLoadAlarm = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtTimesPerMinute = new System.Windows.Forms.TextBox();
+            this.txtRunTime = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.labelStopTimeAlarm = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.lbTitleCalc = new System.Windows.Forms.Label();
+            this.cmdCalc = new CustomButton.CustomButton();
             this.panelAdvanceMode = new System.Windows.Forms.Panel();
             this.chkAdvanceMode = new CustomToggle.CustomToggle();
             this.labelAdvanceOption = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
             this.panelPowerModifyMode = new System.Windows.Forms.Panel();
             this.optMotorParamsModifySimple = new System.Windows.Forms.RadioButton();
             this.optMotorParamsModifyAdvance = new System.Windows.Forms.RadioButton();
             this.label34 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.lbDaysPerYearAlarm = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.lbTimesPerMinuteAlarm = new System.Windows.Forms.Label();
-            this.panelMotorParams = new System.Windows.Forms.Panel();
-            this.panelReducerParam = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtReducerRotateInertia = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.txtLoadInertiaMomentRatio = new System.Windows.Forms.TextBox();
-            this.txtMaxTorque = new System.Windows.Forms.TextBox();
-            this.txtRatedTorque = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.txtRotateInertia = new System.Windows.Forms.TextBox();
-            this.lbHoursPerDayAlarm = new System.Windows.Forms.Label();
-            this.txtTimesPerMinute = new System.Windows.Forms.TextBox();
-            this.txtDayPerYear = new System.Windows.Forms.TextBox();
-            this.panelPowerSelection = new System.Windows.Forms.Panel();
-            this.label60 = new System.Windows.Forms.Label();
-            this.cboMotorParamsMotorPowerSelection = new System.Windows.Forms.ComboBox();
-            this.label59 = new System.Windows.Forms.Label();
-            this.txtHourPerDay = new System.Windows.Forms.TextBox();
-            this.txtLoad = new System.Windows.Forms.TextBox();
-            this.cboPower = new System.Windows.Forms.ComboBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.txtStroke = new System.Windows.Forms.TextBox();
-            this.labelStopTimeAlarm = new System.Windows.Forms.Label();
-            this.labelStrokeAlarm = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txtRunTime = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.labelLoadAlarm = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.panelSetup = new System.Windows.Forms.Panel();
             this.panelMoment = new System.Windows.Forms.Panel();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.lbTitleMoment = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -206,18 +223,20 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.txtMomentB = new System.Windows.Forms.TextBox();
-            this.txtMomentC = new System.Windows.Forms.TextBox();
-            this.txtMomentA = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.txtMomentC = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.panelSetup = new System.Windows.Forms.Panel();
+            this.txtMomentA = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.optHorizontalUse = new System.Windows.Forms.RadioButton();
+            this.optVerticalUse = new System.Windows.Forms.RadioButton();
+            this.optWallHangingUse = new System.Windows.Forms.RadioButton();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lbTitleSetup = new System.Windows.Forms.Label();
-            this.optVerticalUse = new System.Windows.Forms.RadioButton();
-            this.optHorizontalUse = new System.Windows.Forms.RadioButton();
-            this.optWallHangingUse = new System.Windows.Forms.RadioButton();
             this.panelModelSelection = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lbTitleModelSelection = new System.Windows.Forms.Label();
@@ -233,35 +252,39 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cboReducerRatio = new System.Windows.Forms.ComboBox();
             this.panelModelType = new System.Windows.Forms.Panel();
-            this.optModelType_ECH = new System.Windows.Forms.RadioButton();
-            this.optModelType_GCH = new System.Windows.Forms.RadioButton();
-            this.optStandardScrewActuator = new System.Windows.Forms.RadioButton();
-            this.optModelType_ECB = new System.Windows.Forms.RadioButton();
-            this.optBuildInScrewActuator = new System.Windows.Forms.RadioButton();
             this.customTabControl1 = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.picStandardScrewActuator = new System.Windows.Forms.PictureBox();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.picBuildInBeltActuator = new System.Windows.Forms.PictureBox();
+            this.picEuropeBeltActuator = new System.Windows.Forms.PictureBox();
+            this.picStandardBeltActuator = new System.Windows.Forms.PictureBox();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.picBuildInScrewActuator = new System.Windows.Forms.PictureBox();
+            this.picStandardScrewActuator = new System.Windows.Forms.PictureBox();
+            this.picSupportTrackRodTypeActuator = new System.Windows.Forms.PictureBox();
+            this.picBuildOutRodTypeActuator = new System.Windows.Forms.PictureBox();
             this.picBuildInRodTypeScrewActuator = new System.Windows.Forms.PictureBox();
             this.picNoTrackRodTypeActuator = new System.Windows.Forms.PictureBox();
-            this.picBuildOutRodTypeActuator = new System.Windows.Forms.PictureBox();
-            this.picSupportTrackRodTypeActuator = new System.Windows.Forms.PictureBox();
-            this.picBuildInBeltActuator = new System.Windows.Forms.PictureBox();
-            this.picStandardBeltActuator = new System.Windows.Forms.PictureBox();
-            this.picEuropeBeltActuator = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.optModelType_ECH = new System.Windows.Forms.RadioButton();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.picModelType_ECB = new System.Windows.Forms.PictureBox();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.picModelType_GCH = new System.Windows.Forms.PictureBox();
             this.picModelType_ECH = new System.Windows.Forms.PictureBox();
-            this.picModelType_ECB = new System.Windows.Forms.PictureBox();
-            this.optBuildOutRodTypeActuator = new System.Windows.Forms.RadioButton();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lbTitleModelType = new System.Windows.Forms.Label();
-            this.optBuildInRodTypeScrewActuator = new System.Windows.Forms.RadioButton();
-            this.optStandardBeltActuator = new System.Windows.Forms.RadioButton();
-            this.optNoTrackRodTypeActuator = new System.Windows.Forms.RadioButton();
+            this.optModelType_GCH = new System.Windows.Forms.RadioButton();
+            this.optBuildInScrewActuator = new System.Windows.Forms.RadioButton();
             this.optSupportTrackRodTypeActuator = new System.Windows.Forms.RadioButton();
+            this.optStandardScrewActuator = new System.Windows.Forms.RadioButton();
+            this.optModelType_ECB = new System.Windows.Forms.RadioButton();
+            this.optNoTrackRodTypeActuator = new System.Windows.Forms.RadioButton();
+            this.optBuildInRodTypeScrewActuator = new System.Windows.Forms.RadioButton();
+            this.optBuildOutRodTypeActuator = new System.Windows.Forms.RadioButton();
             this.optEuropeBeltActuator = new System.Windows.Forms.RadioButton();
             this.optBuildInBeltActuator = new System.Windows.Forms.RadioButton();
+            this.optStandardBeltActuator = new System.Windows.Forms.RadioButton();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lbTitleModelType = new System.Windows.Forms.Label();
             this.panelUseEnv = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbTitleUseEnv = new System.Windows.Forms.Label();
@@ -280,9 +303,6 @@
             this.cmdConfirmStep5 = new CustomButton.CustomButton();
             this.cmdResetStep5 = new CustomButton.CustomButton();
             this.label70 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panelBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -321,23 +341,30 @@
             this.panelCalcResult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).BeginInit();
             this.panelChart.SuspendLayout();
+            this.panel16.SuspendLayout();
+            this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
+            this.panel15.SuspendLayout();
             this.panelCalc.SuspendLayout();
-            this.scrollBarPanelLoad.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbLoad)).BeginInit();
+            this.panelMotorParams.SuspendLayout();
+            this.panelPowerSelection.SuspendLayout();
+            this.panelReducerParam.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.scrollBarPanelStroke.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbStroke)).BeginInit();
+            this.scrollBarPanelLoad.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbLoad)).BeginInit();
             this.panelAdvanceParams.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelExpectServiceLifeTime.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.panelAdvanceMode.SuspendLayout();
             this.panelPowerModifyMode.SuspendLayout();
-            this.panelMotorParams.SuspendLayout();
-            this.panelReducerParam.SuspendLayout();
-            this.panelPowerSelection.SuspendLayout();
-            this.panelMoment.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             this.panelSetup.SuspendLayout();
+            this.panelMoment.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel8.SuspendLayout();
             this.panelModelSelection.SuspendLayout();
@@ -348,19 +375,23 @@
             this.panelModelType.SuspendLayout();
             this.customTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picStandardScrewActuator)).BeginInit();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBuildInBeltActuator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEuropeBeltActuator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picStandardBeltActuator)).BeginInit();
+            this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBuildInScrewActuator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picStandardScrewActuator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSupportTrackRodTypeActuator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBuildOutRodTypeActuator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBuildInRodTypeScrewActuator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNoTrackRodTypeActuator)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBuildOutRodTypeActuator)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSupportTrackRodTypeActuator)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBuildInBeltActuator)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picStandardBeltActuator)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picEuropeBeltActuator)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picModelType_ECB)).BeginInit();
+            this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picModelType_GCH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picModelType_ECH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picModelType_ECB)).BeginInit();
             this.panel5.SuspendLayout();
             this.panelUseEnv.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -371,9 +402,6 @@
             this.panelResult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).BeginInit();
             this.panelConfirmBtnsStep5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBase
@@ -558,7 +586,6 @@
             this.explorerBar.Controls.Add(this.panelCalcResult);
             this.explorerBar.Controls.Add(this.panelChart);
             this.explorerBar.Controls.Add(this.panelCalc);
-            this.explorerBar.Controls.Add(this.panelMoment);
             this.explorerBar.Controls.Add(this.panelSetup);
             this.explorerBar.Controls.Add(this.panelModelSelection);
             this.explorerBar.Controls.Add(this.panelModelType);
@@ -1009,15 +1036,117 @@
             // 
             // panelChart
             // 
-            this.panelChart.Controls.Add(this.chart);
-            this.panelChart.Controls.Add(this.lbAccelSpeed);
-            this.panelChart.Controls.Add(this.lbAccelTime);
-            this.panelChart.Controls.Add(this.lbCycleTime);
-            this.panelChart.Controls.Add(this.lbConstantTime);
-            this.panelChart.Controls.Add(this.lbMaxSpeed);
-            this.panelChart.Controls.Add(this.lbRunTime);
+            this.panelChart.Controls.Add(this.panel16);
+            this.panelChart.Controls.Add(this.panel15);
             resources.ApplyResources(this.panelChart, "panelChart");
             this.panelChart.Name = "panelChart";
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel16.Controls.Add(this.customPanel1);
+            this.panel16.Controls.Add(this.chart);
+            resources.ApplyResources(this.panel16, "panel16");
+            this.panel16.Name = "panel16";
+            // 
+            // customPanel1
+            // 
+            this.customPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(181)))), ((int)(((byte)(199)))));
+            this.customPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customPanel1.Controls.Add(this.label58);
+            this.customPanel1.Controls.Add(this.label57);
+            this.customPanel1.Controls.Add(this.label55);
+            this.customPanel1.Controls.Add(this.label54);
+            this.customPanel1.Controls.Add(this.label49);
+            this.customPanel1.Controls.Add(this.label33);
+            this.customPanel1.Controls.Add(this.label32);
+            this.customPanel1.Controls.Add(this.lbAccelTime);
+            this.customPanel1.Controls.Add(this.lbRunTime);
+            this.customPanel1.Controls.Add(this.lbAccelSpeed);
+            this.customPanel1.Controls.Add(this.lbConstantTime);
+            this.customPanel1.Controls.Add(this.lbMaxSpeed);
+            this.customPanel1.Controls.Add(this.lbCycleTime);
+            this.customPanel1.Curvature = 10;
+            resources.ApplyResources(this.customPanel1, "customPanel1");
+            this.customPanel1.Name = "customPanel1";
+            // 
+            // label58
+            // 
+            resources.ApplyResources(this.label58, "label58");
+            this.label58.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(181)))), ((int)(((byte)(199)))));
+            this.label58.Name = "label58";
+            // 
+            // label57
+            // 
+            resources.ApplyResources(this.label57, "label57");
+            this.label57.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(181)))), ((int)(((byte)(199)))));
+            this.label57.Name = "label57";
+            // 
+            // label55
+            // 
+            resources.ApplyResources(this.label55, "label55");
+            this.label55.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(181)))), ((int)(((byte)(199)))));
+            this.label55.Name = "label55";
+            // 
+            // label54
+            // 
+            resources.ApplyResources(this.label54, "label54");
+            this.label54.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(181)))), ((int)(((byte)(199)))));
+            this.label54.Name = "label54";
+            // 
+            // label49
+            // 
+            resources.ApplyResources(this.label49, "label49");
+            this.label49.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(181)))), ((int)(((byte)(199)))));
+            this.label49.Name = "label49";
+            // 
+            // label33
+            // 
+            resources.ApplyResources(this.label33, "label33");
+            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(181)))), ((int)(((byte)(199)))));
+            this.label33.Name = "label33";
+            // 
+            // label32
+            // 
+            resources.ApplyResources(this.label32, "label32");
+            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
+            this.label32.Name = "label32";
+            // 
+            // lbAccelTime
+            // 
+            resources.ApplyResources(this.lbAccelTime, "lbAccelTime");
+            this.lbAccelTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbAccelTime.Name = "lbAccelTime";
+            // 
+            // lbRunTime
+            // 
+            resources.ApplyResources(this.lbRunTime, "lbRunTime");
+            this.lbRunTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbRunTime.Name = "lbRunTime";
+            // 
+            // lbAccelSpeed
+            // 
+            resources.ApplyResources(this.lbAccelSpeed, "lbAccelSpeed");
+            this.lbAccelSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbAccelSpeed.Name = "lbAccelSpeed";
+            // 
+            // lbConstantTime
+            // 
+            resources.ApplyResources(this.lbConstantTime, "lbConstantTime");
+            this.lbConstantTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbConstantTime.Name = "lbConstantTime";
+            // 
+            // lbMaxSpeed
+            // 
+            resources.ApplyResources(this.lbMaxSpeed, "lbMaxSpeed");
+            this.lbMaxSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbMaxSpeed.Name = "lbMaxSpeed";
+            // 
+            // lbCycleTime
+            // 
+            resources.ApplyResources(this.lbCycleTime, "lbCycleTime");
+            this.lbCycleTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbCycleTime.Name = "lbCycleTime";
             // 
             // chart
             // 
@@ -1045,403 +1174,91 @@
             series1.Points.Add(dataPoint1);
             this.chart.Series.Add(series1);
             // 
-            // lbAccelSpeed
+            // panel15
             // 
-            resources.ApplyResources(this.lbAccelSpeed, "lbAccelSpeed");
-            this.lbAccelSpeed.Name = "lbAccelSpeed";
+            this.panel15.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
+            resources.ApplyResources(this.panel15, "panel15");
+            this.panel15.Controls.Add(this.label21);
+            this.panel15.Name = "panel15";
             // 
-            // lbAccelTime
+            // label21
             // 
-            resources.ApplyResources(this.lbAccelTime, "lbAccelTime");
-            this.lbAccelTime.Name = "lbAccelTime";
-            // 
-            // lbCycleTime
-            // 
-            resources.ApplyResources(this.lbCycleTime, "lbCycleTime");
-            this.lbCycleTime.Name = "lbCycleTime";
-            // 
-            // lbConstantTime
-            // 
-            resources.ApplyResources(this.lbConstantTime, "lbConstantTime");
-            this.lbConstantTime.Name = "lbConstantTime";
-            // 
-            // lbMaxSpeed
-            // 
-            resources.ApplyResources(this.lbMaxSpeed, "lbMaxSpeed");
-            this.lbMaxSpeed.Name = "lbMaxSpeed";
-            // 
-            // lbRunTime
-            // 
-            resources.ApplyResources(this.lbRunTime, "lbRunTime");
-            this.lbRunTime.Name = "lbRunTime";
+            resources.ApplyResources(this.label21, "label21");
+            this.label21.BackColor = System.Drawing.Color.White;
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Name = "label21";
             // 
             // panelCalc
             // 
-            this.panelCalc.Controls.Add(this.lbScrollbarMaxStroke);
-            this.panelCalc.Controls.Add(this.lbScrollbarMinStroke);
-            this.panelCalc.Controls.Add(this.scrollBarPanelLoad);
-            this.panelCalc.Controls.Add(this.lbScrollbarMaxLoad);
-            this.panelCalc.Controls.Add(this.lbScrollbarMinLoad);
-            this.panelCalc.Controls.Add(this.scrollBarPanelStroke);
-            this.panelCalc.Controls.Add(this.lbTitleCalc);
-            this.panelCalc.Controls.Add(this.cmdCalc);
-            this.panelCalc.Controls.Add(this.panelAdvanceParams);
-            this.panelCalc.Controls.Add(this.panel6);
-            this.panelCalc.Controls.Add(this.panelAdvanceMode);
-            this.panelCalc.Controls.Add(this.label71);
-            this.panelCalc.Controls.Add(this.label44);
-            this.panelCalc.Controls.Add(this.panelPowerModifyMode);
-            this.panelCalc.Controls.Add(this.label53);
-            this.panelCalc.Controls.Add(this.label45);
-            this.panelCalc.Controls.Add(this.lbDaysPerYearAlarm);
-            this.panelCalc.Controls.Add(this.label52);
-            this.panelCalc.Controls.Add(this.lbTimesPerMinuteAlarm);
             this.panelCalc.Controls.Add(this.panelMotorParams);
-            this.panelCalc.Controls.Add(this.lbHoursPerDayAlarm);
-            this.panelCalc.Controls.Add(this.txtTimesPerMinute);
-            this.panelCalc.Controls.Add(this.txtDayPerYear);
-            this.panelCalc.Controls.Add(this.panelPowerSelection);
-            this.panelCalc.Controls.Add(this.txtHourPerDay);
-            this.panelCalc.Controls.Add(this.txtLoad);
-            this.panelCalc.Controls.Add(this.cboPower);
-            this.panelCalc.Controls.Add(this.label46);
-            this.panelCalc.Controls.Add(this.label6);
-            this.panelCalc.Controls.Add(this.label7);
-            this.panelCalc.Controls.Add(this.label50);
-            this.panelCalc.Controls.Add(this.txtStroke);
-            this.panelCalc.Controls.Add(this.labelStopTimeAlarm);
-            this.panelCalc.Controls.Add(this.labelStrokeAlarm);
-            this.panelCalc.Controls.Add(this.label22);
-            this.panelCalc.Controls.Add(this.txtRunTime);
-            this.panelCalc.Controls.Add(this.label23);
-            this.panelCalc.Controls.Add(this.labelLoadAlarm);
-            this.panelCalc.Controls.Add(this.label15);
-            this.panelCalc.Controls.Add(this.label10);
+            this.panelCalc.Controls.Add(this.label19);
+            this.panelCalc.Controls.Add(this.panel14);
+            this.panelCalc.Controls.Add(this.panel13);
+            this.panelCalc.Controls.Add(this.cmdCalc);
+            this.panelCalc.Controls.Add(this.panelAdvanceMode);
+            this.panelCalc.Controls.Add(this.panelPowerModifyMode);
             resources.ApplyResources(this.panelCalc, "panelCalc");
             this.panelCalc.Name = "panelCalc";
             // 
-            // lbScrollbarMaxStroke
-            // 
-            resources.ApplyResources(this.lbScrollbarMaxStroke, "lbScrollbarMaxStroke");
-            this.lbScrollbarMaxStroke.Name = "lbScrollbarMaxStroke";
-            // 
-            // lbScrollbarMinStroke
-            // 
-            resources.ApplyResources(this.lbScrollbarMinStroke, "lbScrollbarMinStroke");
-            this.lbScrollbarMinStroke.Name = "lbScrollbarMinStroke";
-            // 
-            // scrollBarPanelLoad
-            // 
-            this.scrollBarPanelLoad.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.scrollBar;
-            resources.ApplyResources(this.scrollBarPanelLoad, "scrollBarPanelLoad");
-            this.scrollBarPanelLoad.Controls.Add(this.scrollBarThumbLoad);
-            this.scrollBarPanelLoad.Name = "scrollBarPanelLoad";
-            // 
-            // scrollBarThumbLoad
-            // 
-            this.scrollBarThumbLoad.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.scrollBarThumb;
-            resources.ApplyResources(this.scrollBarThumbLoad, "scrollBarThumbLoad");
-            this.scrollBarThumbLoad.Name = "scrollBarThumbLoad";
-            this.scrollBarThumbLoad.TabStop = false;
-            // 
-            // lbScrollbarMaxLoad
-            // 
-            resources.ApplyResources(this.lbScrollbarMaxLoad, "lbScrollbarMaxLoad");
-            this.lbScrollbarMaxLoad.Name = "lbScrollbarMaxLoad";
-            // 
-            // lbScrollbarMinLoad
-            // 
-            resources.ApplyResources(this.lbScrollbarMinLoad, "lbScrollbarMinLoad");
-            this.lbScrollbarMinLoad.Name = "lbScrollbarMinLoad";
-            // 
-            // scrollBarPanelStroke
-            // 
-            this.scrollBarPanelStroke.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.scrollBar;
-            resources.ApplyResources(this.scrollBarPanelStroke, "scrollBarPanelStroke");
-            this.scrollBarPanelStroke.Controls.Add(this.scrollBarThumbStroke);
-            this.scrollBarPanelStroke.Name = "scrollBarPanelStroke";
-            // 
-            // scrollBarThumbStroke
-            // 
-            this.scrollBarThumbStroke.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.scrollBarThumb;
-            resources.ApplyResources(this.scrollBarThumbStroke, "scrollBarThumbStroke");
-            this.scrollBarThumbStroke.Name = "scrollBarThumbStroke";
-            this.scrollBarThumbStroke.TabStop = false;
-            // 
-            // lbTitleCalc
-            // 
-            resources.ApplyResources(this.lbTitleCalc, "lbTitleCalc");
-            this.lbTitleCalc.BackColor = System.Drawing.Color.White;
-            this.lbTitleCalc.ForeColor = System.Drawing.Color.DimGray;
-            this.lbTitleCalc.Name = "lbTitleCalc";
-            // 
-            // cmdCalc
-            // 
-            this.cmdCalc.BackColor = System.Drawing.Color.Transparent;
-            this.cmdCalc.BackColor_Hover = System.Drawing.Color.DarkRed;
-            this.cmdCalc.BackColor_Normal = System.Drawing.Color.Red;
-            this.cmdCalc.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmdCalc.BackColor2_Hover = System.Drawing.Color.DarkRed;
-            this.cmdCalc.BackColor2_Normal = System.Drawing.Color.Red;
-            this.cmdCalc.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmdCalc.ButtonEnabled = true;
-            resources.ApplyResources(this.cmdCalc, "cmdCalc");
-            this.cmdCalc.Curvature = 15;
-            this.cmdCalc.GradientMode = CustomButton.LinearGradientMode.Horizontal;
-            this.cmdCalc.Name = "cmdCalc";
-            this.cmdCalc.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
-            // 
-            // panelAdvanceParams
-            // 
-            this.panelAdvanceParams.Controls.Add(this.lbMaxSpeedAlarm);
-            this.panelAdvanceParams.Controls.Add(this.label78);
-            this.panelAdvanceParams.Controls.Add(this.label81);
-            this.panelAdvanceParams.Controls.Add(this.label82);
-            this.panelAdvanceParams.Controls.Add(this.txtAccelSpeed);
-            this.panelAdvanceParams.Controls.Add(this.optMaxSpeedType_rpm);
-            this.panelAdvanceParams.Controls.Add(this.optMaxSpeedType_mms);
-            this.panelAdvanceParams.Controls.Add(this.label79);
-            this.panelAdvanceParams.Controls.Add(this.txtMaxSpeed);
-            this.panelAdvanceParams.Controls.Add(this.lbRpm);
-            resources.ApplyResources(this.panelAdvanceParams, "panelAdvanceParams");
-            this.panelAdvanceParams.Name = "panelAdvanceParams";
-            // 
-            // lbMaxSpeedAlarm
-            // 
-            resources.ApplyResources(this.lbMaxSpeedAlarm, "lbMaxSpeedAlarm");
-            this.lbMaxSpeedAlarm.ForeColor = System.Drawing.Color.Red;
-            this.lbMaxSpeedAlarm.Name = "lbMaxSpeedAlarm";
-            this.lbMaxSpeedAlarm.Tag = "txtMaxSpeed";
-            // 
-            // label78
-            // 
-            resources.ApplyResources(this.label78, "label78");
-            this.label78.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label78.Name = "label78";
-            // 
-            // label81
-            // 
-            resources.ApplyResources(this.label81, "label81");
-            this.label81.Name = "label81";
-            // 
-            // label82
-            // 
-            resources.ApplyResources(this.label82, "label82");
-            this.label82.ForeColor = System.Drawing.Color.Red;
-            this.label82.Name = "label82";
-            this.label82.Tag = "txtAccelSpeed";
-            // 
-            // txtAccelSpeed
-            // 
-            resources.ApplyResources(this.txtAccelSpeed, "txtAccelSpeed");
-            this.txtAccelSpeed.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtAccelSpeed.Name = "txtAccelSpeed";
-            // 
-            // optMaxSpeedType_rpm
-            // 
-            resources.ApplyResources(this.optMaxSpeedType_rpm, "optMaxSpeedType_rpm");
-            this.optMaxSpeedType_rpm.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.optMaxSpeedType_rpm.Name = "optMaxSpeedType_rpm";
-            this.optMaxSpeedType_rpm.UseVisualStyleBackColor = true;
-            // 
-            // optMaxSpeedType_mms
-            // 
-            resources.ApplyResources(this.optMaxSpeedType_mms, "optMaxSpeedType_mms");
-            this.optMaxSpeedType_mms.Checked = true;
-            this.optMaxSpeedType_mms.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.optMaxSpeedType_mms.Name = "optMaxSpeedType_mms";
-            this.optMaxSpeedType_mms.TabStop = true;
-            this.optMaxSpeedType_mms.UseVisualStyleBackColor = true;
-            // 
-            // label79
-            // 
-            resources.ApplyResources(this.label79, "label79");
-            this.label79.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label79.Name = "label79";
-            // 
-            // txtMaxSpeed
-            // 
-            resources.ApplyResources(this.txtMaxSpeed, "txtMaxSpeed");
-            this.txtMaxSpeed.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtMaxSpeed.Name = "txtMaxSpeed";
-            // 
-            // lbRpm
-            // 
-            resources.ApplyResources(this.lbRpm, "lbRpm");
-            this.lbRpm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.lbRpm.Name = "lbRpm";
-            this.lbRpm.Tag = "txtMaxSpeed";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.panelExpectServiceLifeTime);
-            this.panel6.Controls.Add(this.optExpectServiceLife);
-            this.panel6.Controls.Add(this.optNoExpectServiceLife);
-            resources.ApplyResources(this.panel6, "panel6");
-            this.panel6.Name = "panel6";
-            // 
-            // panelExpectServiceLifeTime
-            // 
-            this.panelExpectServiceLifeTime.Controls.Add(this.label72);
-            this.panelExpectServiceLifeTime.Controls.Add(this.lbExpectServiceLifeAlarm);
-            this.panelExpectServiceLifeTime.Controls.Add(this.txtExpectServiceLifeTime);
-            resources.ApplyResources(this.panelExpectServiceLifeTime, "panelExpectServiceLifeTime");
-            this.panelExpectServiceLifeTime.Name = "panelExpectServiceLifeTime";
-            // 
-            // label72
-            // 
-            resources.ApplyResources(this.label72, "label72");
-            this.label72.Name = "label72";
-            // 
-            // lbExpectServiceLifeAlarm
-            // 
-            resources.ApplyResources(this.lbExpectServiceLifeAlarm, "lbExpectServiceLifeAlarm");
-            this.lbExpectServiceLifeAlarm.ForeColor = System.Drawing.Color.Red;
-            this.lbExpectServiceLifeAlarm.Name = "lbExpectServiceLifeAlarm";
-            this.lbExpectServiceLifeAlarm.Tag = "txtExpectServiceLifeTime";
-            // 
-            // txtExpectServiceLifeTime
-            // 
-            resources.ApplyResources(this.txtExpectServiceLifeTime, "txtExpectServiceLifeTime");
-            this.txtExpectServiceLifeTime.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtExpectServiceLifeTime.Name = "txtExpectServiceLifeTime";
-            // 
-            // optExpectServiceLife
-            // 
-            resources.ApplyResources(this.optExpectServiceLife, "optExpectServiceLife");
-            this.optExpectServiceLife.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.optExpectServiceLife.Name = "optExpectServiceLife";
-            this.optExpectServiceLife.UseVisualStyleBackColor = true;
-            // 
-            // optNoExpectServiceLife
-            // 
-            resources.ApplyResources(this.optNoExpectServiceLife, "optNoExpectServiceLife");
-            this.optNoExpectServiceLife.Checked = true;
-            this.optNoExpectServiceLife.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.optNoExpectServiceLife.Name = "optNoExpectServiceLife";
-            this.optNoExpectServiceLife.TabStop = true;
-            this.optNoExpectServiceLife.UseVisualStyleBackColor = true;
-            // 
-            // panelAdvanceMode
-            // 
-            this.panelAdvanceMode.Controls.Add(this.chkAdvanceMode);
-            this.panelAdvanceMode.Controls.Add(this.labelAdvanceOption);
-            resources.ApplyResources(this.panelAdvanceMode, "panelAdvanceMode");
-            this.panelAdvanceMode.Name = "panelAdvanceMode";
-            // 
-            // chkAdvanceMode
-            // 
-            this.chkAdvanceMode.BackImg_ToggleOff_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_disable;
-            this.chkAdvanceMode.BackImg_ToggleOff_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_hover;
-            this.chkAdvanceMode.BackImg_ToggleOff_Normal = ((System.Drawing.Image)(resources.GetObject("chkAdvanceMode.BackImg_ToggleOff_Normal")));
-            this.chkAdvanceMode.BackImg_ToggleOn_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_disable;
-            this.chkAdvanceMode.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_hover;
-            this.chkAdvanceMode.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn;
-            this.chkAdvanceMode.Checked = false;
-            resources.ApplyResources(this.chkAdvanceMode, "chkAdvanceMode");
-            this.chkAdvanceMode.Name = "chkAdvanceMode";
-            // 
-            // labelAdvanceOption
-            // 
-            resources.ApplyResources(this.labelAdvanceOption, "labelAdvanceOption");
-            this.labelAdvanceOption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.labelAdvanceOption.Name = "labelAdvanceOption";
-            // 
-            // label71
-            // 
-            resources.ApplyResources(this.label71, "label71");
-            this.label71.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label71.Name = "label71";
-            // 
-            // label44
-            // 
-            resources.ApplyResources(this.label44, "label44");
-            this.label44.Name = "label44";
-            // 
-            // panelPowerModifyMode
-            // 
-            this.panelPowerModifyMode.Controls.Add(this.optMotorParamsModifySimple);
-            this.panelPowerModifyMode.Controls.Add(this.optMotorParamsModifyAdvance);
-            this.panelPowerModifyMode.Controls.Add(this.label34);
-            resources.ApplyResources(this.panelPowerModifyMode, "panelPowerModifyMode");
-            this.panelPowerModifyMode.Name = "panelPowerModifyMode";
-            // 
-            // optMotorParamsModifySimple
-            // 
-            resources.ApplyResources(this.optMotorParamsModifySimple, "optMotorParamsModifySimple");
-            this.optMotorParamsModifySimple.Checked = true;
-            this.optMotorParamsModifySimple.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.optMotorParamsModifySimple.Name = "optMotorParamsModifySimple";
-            this.optMotorParamsModifySimple.TabStop = true;
-            this.optMotorParamsModifySimple.UseVisualStyleBackColor = true;
-            // 
-            // optMotorParamsModifyAdvance
-            // 
-            resources.ApplyResources(this.optMotorParamsModifyAdvance, "optMotorParamsModifyAdvance");
-            this.optMotorParamsModifyAdvance.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.optMotorParamsModifyAdvance.Name = "optMotorParamsModifyAdvance";
-            this.optMotorParamsModifyAdvance.UseVisualStyleBackColor = true;
-            // 
-            // label34
-            // 
-            resources.ApplyResources(this.label34, "label34");
-            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label34.Name = "label34";
-            // 
-            // label53
-            // 
-            resources.ApplyResources(this.label53, "label53");
-            this.label53.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label53.Name = "label53";
-            // 
-            // label45
-            // 
-            resources.ApplyResources(this.label45, "label45");
-            this.label45.Name = "label45";
-            // 
-            // lbDaysPerYearAlarm
-            // 
-            resources.ApplyResources(this.lbDaysPerYearAlarm, "lbDaysPerYearAlarm");
-            this.lbDaysPerYearAlarm.ForeColor = System.Drawing.Color.Red;
-            this.lbDaysPerYearAlarm.Name = "lbDaysPerYearAlarm";
-            this.lbDaysPerYearAlarm.Tag = "txtDayPerYear";
-            // 
-            // label52
-            // 
-            resources.ApplyResources(this.label52, "label52");
-            this.label52.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label52.Name = "label52";
-            // 
-            // lbTimesPerMinuteAlarm
-            // 
-            resources.ApplyResources(this.lbTimesPerMinuteAlarm, "lbTimesPerMinuteAlarm");
-            this.lbTimesPerMinuteAlarm.ForeColor = System.Drawing.Color.Red;
-            this.lbTimesPerMinuteAlarm.Name = "lbTimesPerMinuteAlarm";
-            this.lbTimesPerMinuteAlarm.Tag = "txtTimesPerMinute";
-            // 
             // panelMotorParams
             // 
+            this.panelMotorParams.BackColor = System.Drawing.Color.Transparent;
+            this.panelMotorParams.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.bg_motor;
+            resources.ApplyResources(this.panelMotorParams, "panelMotorParams");
+            this.panelMotorParams.Controls.Add(this.panelPowerSelection);
             this.panelMotorParams.Controls.Add(this.panelReducerParam);
-            this.panelMotorParams.Controls.Add(this.label35);
-            this.panelMotorParams.Controls.Add(this.label43);
             this.panelMotorParams.Controls.Add(this.label16);
-            this.panelMotorParams.Controls.Add(this.label42);
-            this.panelMotorParams.Controls.Add(this.label40);
+            this.panelMotorParams.Controls.Add(this.label35);
             this.panelMotorParams.Controls.Add(this.label18);
-            this.panelMotorParams.Controls.Add(this.label39);
-            this.panelMotorParams.Controls.Add(this.label41);
+            this.panelMotorParams.Controls.Add(this.customToggle1);
             this.panelMotorParams.Controls.Add(this.txtLoadInertiaMomentRatio);
-            this.panelMotorParams.Controls.Add(this.txtMaxTorque);
-            this.panelMotorParams.Controls.Add(this.txtRatedTorque);
-            this.panelMotorParams.Controls.Add(this.label37);
-            this.panelMotorParams.Controls.Add(this.label36);
+            this.panelMotorParams.Controls.Add(this.label43);
+            this.panelMotorParams.Controls.Add(this.label41);
+            this.panelMotorParams.Controls.Add(this.label20);
+            this.panelMotorParams.Controls.Add(this.label42);
             this.panelMotorParams.Controls.Add(this.label38);
             this.panelMotorParams.Controls.Add(this.txtRotateInertia);
-            resources.ApplyResources(this.panelMotorParams, "panelMotorParams");
+            this.panelMotorParams.Controls.Add(this.label40);
+            this.panelMotorParams.Controls.Add(this.cboPower);
+            this.panelMotorParams.Controls.Add(this.txtRatedTorque);
+            this.panelMotorParams.Controls.Add(this.txtMaxTorque);
+            this.panelMotorParams.Controls.Add(this.label36);
+            this.panelMotorParams.Controls.Add(this.label39);
+            this.panelMotorParams.Controls.Add(this.label37);
             this.panelMotorParams.Name = "panelMotorParams";
+            // 
+            // panelPowerSelection
+            // 
+            this.panelPowerSelection.Controls.Add(this.label60);
+            this.panelPowerSelection.Controls.Add(this.cboMotorParamsMotorPowerSelection);
+            this.panelPowerSelection.Controls.Add(this.label59);
+            resources.ApplyResources(this.panelPowerSelection, "panelPowerSelection");
+            this.panelPowerSelection.Name = "panelPowerSelection";
+            // 
+            // label60
+            // 
+            resources.ApplyResources(this.label60, "label60");
+            this.label60.Name = "label60";
+            // 
+            // cboMotorParamsMotorPowerSelection
+            // 
+            this.cboMotorParamsMotorPowerSelection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboMotorParamsMotorPowerSelection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMotorParamsMotorPowerSelection.DropDownWidth = 180;
+            resources.ApplyResources(this.cboMotorParamsMotorPowerSelection, "cboMotorParamsMotorPowerSelection");
+            this.cboMotorParamsMotorPowerSelection.ForeColor = System.Drawing.Color.White;
+            this.cboMotorParamsMotorPowerSelection.FormattingEnabled = true;
+            this.cboMotorParamsMotorPowerSelection.Name = "cboMotorParamsMotorPowerSelection";
+            // 
+            // label59
+            // 
+            resources.ApplyResources(this.label59, "label59");
+            this.label59.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label59.Name = "label59";
             // 
             // panelReducerParam
             // 
+            this.panelReducerParam.BackColor = System.Drawing.Color.Transparent;
             this.panelReducerParam.Controls.Add(this.label8);
             this.panelReducerParam.Controls.Add(this.label9);
             this.panelReducerParam.Controls.Add(this.label11);
@@ -1473,34 +1290,16 @@
             this.txtReducerRotateInertia.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtReducerRotateInertia.Name = "txtReducerRotateInertia";
             // 
-            // label35
-            // 
-            resources.ApplyResources(this.label35, "label35");
-            this.label35.Name = "label35";
-            // 
-            // label43
-            // 
-            resources.ApplyResources(this.label43, "label43");
-            this.label43.ForeColor = System.Drawing.Color.Red;
-            this.label43.Name = "label43";
-            this.label43.Tag = "txtMaxTorque";
-            // 
             // label16
             // 
             resources.ApplyResources(this.label16, "label16");
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label16.Name = "label16";
             // 
-            // label42
+            // label35
             // 
-            resources.ApplyResources(this.label42, "label42");
-            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label42.Name = "label42";
-            // 
-            // label40
-            // 
-            resources.ApplyResources(this.label40, "label40");
-            this.label40.Name = "label40";
+            resources.ApplyResources(this.label35, "label35");
+            this.label35.Name = "label35";
             // 
             // label18
             // 
@@ -1509,18 +1308,17 @@
             this.label18.Name = "label18";
             this.label18.Tag = "txtLoadInertiaMomentRatio";
             // 
-            // label39
+            // customToggle1
             // 
-            resources.ApplyResources(this.label39, "label39");
-            this.label39.ForeColor = System.Drawing.Color.Red;
-            this.label39.Name = "label39";
-            this.label39.Tag = "txtRatedTorque";
-            // 
-            // label41
-            // 
-            resources.ApplyResources(this.label41, "label41");
-            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label41.Name = "label41";
+            this.customToggle1.BackImg_ToggleOff_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_disable;
+            this.customToggle1.BackImg_ToggleOff_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_hover;
+            this.customToggle1.BackImg_ToggleOff_Normal = ((System.Drawing.Image)(resources.GetObject("customToggle1.BackImg_ToggleOff_Normal")));
+            this.customToggle1.BackImg_ToggleOn_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_disable;
+            this.customToggle1.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_hover;
+            this.customToggle1.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn;
+            this.customToggle1.Checked = false;
+            resources.ApplyResources(this.customToggle1, "customToggle1");
+            this.customToggle1.Name = "customToggle1";
             // 
             // txtLoadInertiaMomentRatio
             // 
@@ -1528,28 +1326,30 @@
             this.txtLoadInertiaMomentRatio.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtLoadInertiaMomentRatio.Name = "txtLoadInertiaMomentRatio";
             // 
-            // txtMaxTorque
+            // label43
             // 
-            resources.ApplyResources(this.txtMaxTorque, "txtMaxTorque");
-            this.txtMaxTorque.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtMaxTorque.Name = "txtMaxTorque";
+            resources.ApplyResources(this.label43, "label43");
+            this.label43.ForeColor = System.Drawing.Color.Red;
+            this.label43.Name = "label43";
+            this.label43.Tag = "txtMaxTorque";
             // 
-            // txtRatedTorque
+            // label41
             // 
-            resources.ApplyResources(this.txtRatedTorque, "txtRatedTorque");
-            this.txtRatedTorque.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtRatedTorque.Name = "txtRatedTorque";
+            resources.ApplyResources(this.label41, "label41");
+            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label41.Name = "label41";
             // 
-            // label37
+            // label20
             // 
-            resources.ApplyResources(this.label37, "label37");
-            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label37.Name = "label37";
+            resources.ApplyResources(this.label20, "label20");
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label20.Name = "label20";
             // 
-            // label36
+            // label42
             // 
-            resources.ApplyResources(this.label36, "label36");
-            this.label36.Name = "label36";
+            resources.ApplyResources(this.label42, "label42");
+            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label42.Name = "label42";
             // 
             // label38
             // 
@@ -1564,64 +1364,10 @@
             this.txtRotateInertia.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtRotateInertia.Name = "txtRotateInertia";
             // 
-            // lbHoursPerDayAlarm
+            // label40
             // 
-            resources.ApplyResources(this.lbHoursPerDayAlarm, "lbHoursPerDayAlarm");
-            this.lbHoursPerDayAlarm.ForeColor = System.Drawing.Color.Red;
-            this.lbHoursPerDayAlarm.Name = "lbHoursPerDayAlarm";
-            this.lbHoursPerDayAlarm.Tag = "txtHourPerDay";
-            // 
-            // txtTimesPerMinute
-            // 
-            resources.ApplyResources(this.txtTimesPerMinute, "txtTimesPerMinute");
-            this.txtTimesPerMinute.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtTimesPerMinute.Name = "txtTimesPerMinute";
-            // 
-            // txtDayPerYear
-            // 
-            resources.ApplyResources(this.txtDayPerYear, "txtDayPerYear");
-            this.txtDayPerYear.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtDayPerYear.Name = "txtDayPerYear";
-            // 
-            // panelPowerSelection
-            // 
-            this.panelPowerSelection.Controls.Add(this.label60);
-            this.panelPowerSelection.Controls.Add(this.cboMotorParamsMotorPowerSelection);
-            this.panelPowerSelection.Controls.Add(this.label59);
-            resources.ApplyResources(this.panelPowerSelection, "panelPowerSelection");
-            this.panelPowerSelection.Name = "panelPowerSelection";
-            // 
-            // label60
-            // 
-            resources.ApplyResources(this.label60, "label60");
-            this.label60.Name = "label60";
-            // 
-            // cboMotorParamsMotorPowerSelection
-            // 
-            resources.ApplyResources(this.cboMotorParamsMotorPowerSelection, "cboMotorParamsMotorPowerSelection");
-            this.cboMotorParamsMotorPowerSelection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cboMotorParamsMotorPowerSelection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMotorParamsMotorPowerSelection.DropDownWidth = 180;
-            this.cboMotorParamsMotorPowerSelection.ForeColor = System.Drawing.Color.White;
-            this.cboMotorParamsMotorPowerSelection.FormattingEnabled = true;
-            this.cboMotorParamsMotorPowerSelection.Name = "cboMotorParamsMotorPowerSelection";
-            // 
-            // label59
-            // 
-            resources.ApplyResources(this.label59, "label59");
-            this.label59.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label59.Name = "label59";
-            // 
-            // txtHourPerDay
-            // 
-            resources.ApplyResources(this.txtHourPerDay, "txtHourPerDay");
-            this.txtHourPerDay.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtHourPerDay.Name = "txtHourPerDay";
-            // 
-            // txtLoad
-            // 
-            resources.ApplyResources(this.txtLoad, "txtLoad");
-            this.txtLoad.Name = "txtLoad";
+            resources.ApplyResources(this.label40, "label40");
+            this.label40.Name = "label40";
             // 
             // cboPower
             // 
@@ -1633,52 +1379,409 @@
             this.cboPower.FormattingEnabled = true;
             this.cboPower.Name = "cboPower";
             // 
-            // label46
+            // txtRatedTorque
             // 
-            resources.ApplyResources(this.label46, "label46");
-            this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label46.Name = "label46";
+            resources.ApplyResources(this.txtRatedTorque, "txtRatedTorque");
+            this.txtRatedTorque.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtRatedTorque.Name = "txtRatedTorque";
             // 
-            // label6
+            // txtMaxTorque
             // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label6.Name = "label6";
+            resources.ApplyResources(this.txtMaxTorque, "txtMaxTorque");
+            this.txtMaxTorque.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMaxTorque.Name = "txtMaxTorque";
             // 
-            // label7
+            // label36
             // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.Name = "label7";
+            resources.ApplyResources(this.label36, "label36");
+            this.label36.Name = "label36";
             // 
-            // label50
+            // label39
             // 
-            resources.ApplyResources(this.label50, "label50");
-            this.label50.Name = "label50";
+            resources.ApplyResources(this.label39, "label39");
+            this.label39.ForeColor = System.Drawing.Color.Red;
+            this.label39.Name = "label39";
+            this.label39.Tag = "txtRatedTorque";
+            // 
+            // label37
+            // 
+            resources.ApplyResources(this.label37, "label37");
+            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label37.Name = "label37";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.BackColor = System.Drawing.Color.White;
+            this.label19.ForeColor = System.Drawing.Color.Black;
+            this.label19.Name = "label19";
+            // 
+            // panel14
+            // 
+            this.panel14.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.bg_runCondition;
+            resources.ApplyResources(this.panel14, "panel14");
+            this.panel14.Controls.Add(this.label22);
+            this.panel14.Controls.Add(this.scrollBarPanelStroke);
+            this.panel14.Controls.Add(this.scrollBarPanelLoad);
+            this.panel14.Controls.Add(this.panelAdvanceParams);
+            this.panel14.Controls.Add(this.optMaxSpeedType_mms);
+            this.panel14.Controls.Add(this.optMaxSpeedType_rpm);
+            this.panel14.Controls.Add(this.lbScrollbarMaxLoad);
+            this.panel14.Controls.Add(this.panel6);
+            this.panel14.Controls.Add(this.lbScrollbarMaxStroke);
+            this.panel14.Controls.Add(this.label71);
+            this.panel14.Controls.Add(this.lbScrollbarMinLoad);
+            this.panel14.Controls.Add(this.lbScrollbarMinStroke);
+            this.panel14.Controls.Add(this.label53);
+            this.panel14.Controls.Add(this.label45);
+            this.panel14.Controls.Add(this.label44);
+            this.panel14.Controls.Add(this.lbDaysPerYearAlarm);
+            this.panel14.Controls.Add(this.txtStroke);
+            this.panel14.Controls.Add(this.txtDayPerYear);
+            this.panel14.Controls.Add(this.label10);
+            this.panel14.Controls.Add(this.labelStrokeAlarm);
+            this.panel14.Controls.Add(this.label6);
+            this.panel14.Controls.Add(this.label52);
+            this.panel14.Controls.Add(this.lbHoursPerDayAlarm);
+            this.panel14.Controls.Add(this.txtLoad);
+            this.panel14.Controls.Add(this.lbTimesPerMinuteAlarm);
+            this.panel14.Controls.Add(this.txtHourPerDay);
+            this.panel14.Controls.Add(this.labelLoadAlarm);
+            this.panel14.Controls.Add(this.label7);
+            this.panel14.Controls.Add(this.txtTimesPerMinute);
+            this.panel14.Controls.Add(this.txtRunTime);
+            this.panel14.Controls.Add(this.label15);
+            this.panel14.Controls.Add(this.label23);
+            this.panel14.Controls.Add(this.label46);
+            this.panel14.Controls.Add(this.label50);
+            this.panel14.Controls.Add(this.labelStopTimeAlarm);
+            this.panel14.Name = "panel14";
+            // 
+            // label22
+            // 
+            resources.ApplyResources(this.label22, "label22");
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label22.Name = "label22";
+            // 
+            // scrollBarPanelStroke
+            // 
+            this.scrollBarPanelStroke.BackColor = System.Drawing.Color.Transparent;
+            this.scrollBarPanelStroke.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.scrollBar2;
+            resources.ApplyResources(this.scrollBarPanelStroke, "scrollBarPanelStroke");
+            this.scrollBarPanelStroke.Controls.Add(this.scrollBarThumbStroke);
+            this.scrollBarPanelStroke.Name = "scrollBarPanelStroke";
+            // 
+            // scrollBarThumbStroke
+            // 
+            this.scrollBarThumbStroke.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.scrollBarThumb2;
+            resources.ApplyResources(this.scrollBarThumbStroke, "scrollBarThumbStroke");
+            this.scrollBarThumbStroke.Name = "scrollBarThumbStroke";
+            this.scrollBarThumbStroke.TabStop = false;
+            // 
+            // scrollBarPanelLoad
+            // 
+            this.scrollBarPanelLoad.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.scrollBar2;
+            resources.ApplyResources(this.scrollBarPanelLoad, "scrollBarPanelLoad");
+            this.scrollBarPanelLoad.Controls.Add(this.scrollBarThumbLoad);
+            this.scrollBarPanelLoad.Name = "scrollBarPanelLoad";
+            // 
+            // scrollBarThumbLoad
+            // 
+            this.scrollBarThumbLoad.BackColor = System.Drawing.Color.Transparent;
+            this.scrollBarThumbLoad.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.scrollBarThumb2;
+            resources.ApplyResources(this.scrollBarThumbLoad, "scrollBarThumbLoad");
+            this.scrollBarThumbLoad.Name = "scrollBarThumbLoad";
+            this.scrollBarThumbLoad.TabStop = false;
+            // 
+            // panelAdvanceParams
+            // 
+            this.panelAdvanceParams.BackColor = System.Drawing.Color.Transparent;
+            this.panelAdvanceParams.Controls.Add(this.comboBox1);
+            this.panelAdvanceParams.Controls.Add(this.lbMaxSpeedAlarm);
+            this.panelAdvanceParams.Controls.Add(this.label78);
+            this.panelAdvanceParams.Controls.Add(this.label81);
+            this.panelAdvanceParams.Controls.Add(this.label82);
+            this.panelAdvanceParams.Controls.Add(this.txtAccelSpeed);
+            this.panelAdvanceParams.Controls.Add(this.label79);
+            this.panelAdvanceParams.Controls.Add(this.txtMaxSpeed);
+            this.panelAdvanceParams.Controls.Add(this.lbRpm);
+            resources.ApplyResources(this.panelAdvanceParams, "panelAdvanceParams");
+            this.panelAdvanceParams.Name = "panelAdvanceParams";
+            // 
+            // comboBox1
+            // 
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.DropDownWidth = 180;
+            this.comboBox1.ForeColor = System.Drawing.Color.White;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Name = "comboBox1";
+            // 
+            // lbMaxSpeedAlarm
+            // 
+            resources.ApplyResources(this.lbMaxSpeedAlarm, "lbMaxSpeedAlarm");
+            this.lbMaxSpeedAlarm.BackColor = System.Drawing.Color.Transparent;
+            this.lbMaxSpeedAlarm.ForeColor = System.Drawing.Color.Red;
+            this.lbMaxSpeedAlarm.Name = "lbMaxSpeedAlarm";
+            this.lbMaxSpeedAlarm.Tag = "txtMaxSpeed";
+            // 
+            // label78
+            // 
+            resources.ApplyResources(this.label78, "label78");
+            this.label78.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label78.Name = "label78";
+            // 
+            // label81
+            // 
+            resources.ApplyResources(this.label81, "label81");
+            this.label81.Name = "label81";
+            // 
+            // label82
+            // 
+            resources.ApplyResources(this.label82, "label82");
+            this.label82.BackColor = System.Drawing.Color.Transparent;
+            this.label82.ForeColor = System.Drawing.Color.Red;
+            this.label82.Name = "label82";
+            this.label82.Tag = "txtAccelSpeed";
+            // 
+            // txtAccelSpeed
+            // 
+            resources.ApplyResources(this.txtAccelSpeed, "txtAccelSpeed");
+            this.txtAccelSpeed.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtAccelSpeed.Name = "txtAccelSpeed";
+            // 
+            // label79
+            // 
+            resources.ApplyResources(this.label79, "label79");
+            this.label79.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label79.Name = "label79";
+            // 
+            // txtMaxSpeed
+            // 
+            resources.ApplyResources(this.txtMaxSpeed, "txtMaxSpeed");
+            this.txtMaxSpeed.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMaxSpeed.Name = "txtMaxSpeed";
+            // 
+            // lbRpm
+            // 
+            resources.ApplyResources(this.lbRpm, "lbRpm");
+            this.lbRpm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.lbRpm.Name = "lbRpm";
+            this.lbRpm.Tag = "txtMaxSpeed";
+            // 
+            // optMaxSpeedType_mms
+            // 
+            resources.ApplyResources(this.optMaxSpeedType_mms, "optMaxSpeedType_mms");
+            this.optMaxSpeedType_mms.Checked = true;
+            this.optMaxSpeedType_mms.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.optMaxSpeedType_mms.Name = "optMaxSpeedType_mms";
+            this.optMaxSpeedType_mms.TabStop = true;
+            this.optMaxSpeedType_mms.UseVisualStyleBackColor = true;
+            // 
+            // optMaxSpeedType_rpm
+            // 
+            resources.ApplyResources(this.optMaxSpeedType_rpm, "optMaxSpeedType_rpm");
+            this.optMaxSpeedType_rpm.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.optMaxSpeedType_rpm.Name = "optMaxSpeedType_rpm";
+            this.optMaxSpeedType_rpm.UseVisualStyleBackColor = true;
+            // 
+            // lbScrollbarMaxLoad
+            // 
+            this.lbScrollbarMaxLoad.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lbScrollbarMaxLoad, "lbScrollbarMaxLoad");
+            this.lbScrollbarMaxLoad.Name = "lbScrollbarMaxLoad";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Transparent;
+            this.panel6.Controls.Add(this.panelExpectServiceLifeTime);
+            this.panel6.Controls.Add(this.optExpectServiceLife);
+            this.panel6.Controls.Add(this.optNoExpectServiceLife);
+            resources.ApplyResources(this.panel6, "panel6");
+            this.panel6.Name = "panel6";
+            // 
+            // panelExpectServiceLifeTime
+            // 
+            this.panelExpectServiceLifeTime.Controls.Add(this.label72);
+            this.panelExpectServiceLifeTime.Controls.Add(this.lbExpectServiceLifeAlarm);
+            this.panelExpectServiceLifeTime.Controls.Add(this.txtExpectServiceLifeTime);
+            resources.ApplyResources(this.panelExpectServiceLifeTime, "panelExpectServiceLifeTime");
+            this.panelExpectServiceLifeTime.Name = "panelExpectServiceLifeTime";
+            // 
+            // label72
+            // 
+            resources.ApplyResources(this.label72, "label72");
+            this.label72.Name = "label72";
+            // 
+            // lbExpectServiceLifeAlarm
+            // 
+            resources.ApplyResources(this.lbExpectServiceLifeAlarm, "lbExpectServiceLifeAlarm");
+            this.lbExpectServiceLifeAlarm.BackColor = System.Drawing.Color.Transparent;
+            this.lbExpectServiceLifeAlarm.ForeColor = System.Drawing.Color.Red;
+            this.lbExpectServiceLifeAlarm.Name = "lbExpectServiceLifeAlarm";
+            this.lbExpectServiceLifeAlarm.Tag = "txtExpectServiceLifeTime";
+            // 
+            // txtExpectServiceLifeTime
+            // 
+            resources.ApplyResources(this.txtExpectServiceLifeTime, "txtExpectServiceLifeTime");
+            this.txtExpectServiceLifeTime.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtExpectServiceLifeTime.Name = "txtExpectServiceLifeTime";
+            // 
+            // optExpectServiceLife
+            // 
+            resources.ApplyResources(this.optExpectServiceLife, "optExpectServiceLife");
+            this.optExpectServiceLife.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.optExpectServiceLife.Name = "optExpectServiceLife";
+            this.optExpectServiceLife.UseVisualStyleBackColor = true;
+            // 
+            // optNoExpectServiceLife
+            // 
+            resources.ApplyResources(this.optNoExpectServiceLife, "optNoExpectServiceLife");
+            this.optNoExpectServiceLife.Checked = true;
+            this.optNoExpectServiceLife.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.optNoExpectServiceLife.Name = "optNoExpectServiceLife";
+            this.optNoExpectServiceLife.TabStop = true;
+            this.optNoExpectServiceLife.UseVisualStyleBackColor = true;
+            // 
+            // lbScrollbarMaxStroke
+            // 
+            this.lbScrollbarMaxStroke.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lbScrollbarMaxStroke, "lbScrollbarMaxStroke");
+            this.lbScrollbarMaxStroke.Name = "lbScrollbarMaxStroke";
+            // 
+            // label71
+            // 
+            resources.ApplyResources(this.label71, "label71");
+            this.label71.BackColor = System.Drawing.Color.Transparent;
+            this.label71.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label71.Name = "label71";
+            // 
+            // lbScrollbarMinLoad
+            // 
+            this.lbScrollbarMinLoad.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lbScrollbarMinLoad, "lbScrollbarMinLoad");
+            this.lbScrollbarMinLoad.Name = "lbScrollbarMinLoad";
+            // 
+            // lbScrollbarMinStroke
+            // 
+            this.lbScrollbarMinStroke.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lbScrollbarMinStroke, "lbScrollbarMinStroke");
+            this.lbScrollbarMinStroke.Name = "lbScrollbarMinStroke";
+            // 
+            // label53
+            // 
+            resources.ApplyResources(this.label53, "label53");
+            this.label53.BackColor = System.Drawing.Color.Transparent;
+            this.label53.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label53.Name = "label53";
+            // 
+            // label45
+            // 
+            resources.ApplyResources(this.label45, "label45");
+            this.label45.BackColor = System.Drawing.Color.Transparent;
+            this.label45.Name = "label45";
+            // 
+            // label44
+            // 
+            resources.ApplyResources(this.label44, "label44");
+            this.label44.BackColor = System.Drawing.Color.Transparent;
+            this.label44.Name = "label44";
+            // 
+            // lbDaysPerYearAlarm
+            // 
+            resources.ApplyResources(this.lbDaysPerYearAlarm, "lbDaysPerYearAlarm");
+            this.lbDaysPerYearAlarm.BackColor = System.Drawing.Color.Transparent;
+            this.lbDaysPerYearAlarm.ForeColor = System.Drawing.Color.Red;
+            this.lbDaysPerYearAlarm.Name = "lbDaysPerYearAlarm";
+            this.lbDaysPerYearAlarm.Tag = "txtDayPerYear";
             // 
             // txtStroke
             // 
             resources.ApplyResources(this.txtStroke, "txtStroke");
             this.txtStroke.Name = "txtStroke";
             // 
-            // labelStopTimeAlarm
+            // txtDayPerYear
             // 
-            resources.ApplyResources(this.labelStopTimeAlarm, "labelStopTimeAlarm");
-            this.labelStopTimeAlarm.ForeColor = System.Drawing.Color.Red;
-            this.labelStopTimeAlarm.Name = "labelStopTimeAlarm";
-            this.labelStopTimeAlarm.Tag = "txtRunTime";
+            resources.ApplyResources(this.txtDayPerYear, "txtDayPerYear");
+            this.txtDayPerYear.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtDayPerYear.Name = "txtDayPerYear";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Name = "label10";
             // 
             // labelStrokeAlarm
             // 
             resources.ApplyResources(this.labelStrokeAlarm, "labelStrokeAlarm");
+            this.labelStrokeAlarm.BackColor = System.Drawing.Color.Transparent;
             this.labelStrokeAlarm.ForeColor = System.Drawing.Color.Red;
             this.labelStrokeAlarm.Name = "labelStrokeAlarm";
             this.labelStrokeAlarm.Tag = "txtStroke";
             // 
-            // label22
+            // label6
             // 
-            resources.ApplyResources(this.label22, "label22");
-            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label22.Name = "label22";
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label6.Name = "label6";
+            // 
+            // label52
+            // 
+            resources.ApplyResources(this.label52, "label52");
+            this.label52.BackColor = System.Drawing.Color.Transparent;
+            this.label52.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label52.Name = "label52";
+            // 
+            // lbHoursPerDayAlarm
+            // 
+            resources.ApplyResources(this.lbHoursPerDayAlarm, "lbHoursPerDayAlarm");
+            this.lbHoursPerDayAlarm.BackColor = System.Drawing.Color.Transparent;
+            this.lbHoursPerDayAlarm.ForeColor = System.Drawing.Color.Red;
+            this.lbHoursPerDayAlarm.Name = "lbHoursPerDayAlarm";
+            this.lbHoursPerDayAlarm.Tag = "txtHourPerDay";
+            // 
+            // txtLoad
+            // 
+            resources.ApplyResources(this.txtLoad, "txtLoad");
+            this.txtLoad.Name = "txtLoad";
+            // 
+            // lbTimesPerMinuteAlarm
+            // 
+            resources.ApplyResources(this.lbTimesPerMinuteAlarm, "lbTimesPerMinuteAlarm");
+            this.lbTimesPerMinuteAlarm.BackColor = System.Drawing.Color.Transparent;
+            this.lbTimesPerMinuteAlarm.ForeColor = System.Drawing.Color.Red;
+            this.lbTimesPerMinuteAlarm.Name = "lbTimesPerMinuteAlarm";
+            this.lbTimesPerMinuteAlarm.Tag = "txtTimesPerMinute";
+            // 
+            // txtHourPerDay
+            // 
+            resources.ApplyResources(this.txtHourPerDay, "txtHourPerDay");
+            this.txtHourPerDay.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtHourPerDay.Name = "txtHourPerDay";
+            // 
+            // labelLoadAlarm
+            // 
+            resources.ApplyResources(this.labelLoadAlarm, "labelLoadAlarm");
+            this.labelLoadAlarm.BackColor = System.Drawing.Color.Transparent;
+            this.labelLoadAlarm.ForeColor = System.Drawing.Color.Red;
+            this.labelLoadAlarm.Name = "labelLoadAlarm";
+            this.labelLoadAlarm.Tag = "txtLoad";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Name = "label7";
+            // 
+            // txtTimesPerMinute
+            // 
+            resources.ApplyResources(this.txtTimesPerMinute, "txtTimesPerMinute");
+            this.txtTimesPerMinute.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtTimesPerMinute.Name = "txtTimesPerMinute";
             // 
             // txtRunTime
             // 
@@ -1686,33 +1789,142 @@
             this.txtRunTime.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtRunTime.Name = "txtRunTime";
             // 
-            // label23
-            // 
-            resources.ApplyResources(this.label23, "label23");
-            this.label23.Name = "label23";
-            // 
-            // labelLoadAlarm
-            // 
-            resources.ApplyResources(this.labelLoadAlarm, "labelLoadAlarm");
-            this.labelLoadAlarm.ForeColor = System.Drawing.Color.Red;
-            this.labelLoadAlarm.Name = "labelLoadAlarm";
-            this.labelLoadAlarm.Tag = "txtLoad";
-            // 
             // label15
             // 
             resources.ApplyResources(this.label15, "label15");
+            this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label15.Name = "label15";
             // 
-            // label10
+            // label23
             // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
+            resources.ApplyResources(this.label23, "label23");
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.Name = "label23";
+            // 
+            // label46
+            // 
+            resources.ApplyResources(this.label46, "label46");
+            this.label46.BackColor = System.Drawing.Color.Transparent;
+            this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label46.Name = "label46";
+            // 
+            // label50
+            // 
+            resources.ApplyResources(this.label50, "label50");
+            this.label50.BackColor = System.Drawing.Color.Transparent;
+            this.label50.Name = "label50";
+            // 
+            // labelStopTimeAlarm
+            // 
+            resources.ApplyResources(this.labelStopTimeAlarm, "labelStopTimeAlarm");
+            this.labelStopTimeAlarm.BackColor = System.Drawing.Color.Transparent;
+            this.labelStopTimeAlarm.ForeColor = System.Drawing.Color.Red;
+            this.labelStopTimeAlarm.Name = "labelStopTimeAlarm";
+            this.labelStopTimeAlarm.Tag = "txtRunTime";
+            // 
+            // panel13
+            // 
+            this.panel13.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
+            resources.ApplyResources(this.panel13, "panel13");
+            this.panel13.Controls.Add(this.lbTitleCalc);
+            this.panel13.Name = "panel13";
+            // 
+            // lbTitleCalc
+            // 
+            resources.ApplyResources(this.lbTitleCalc, "lbTitleCalc");
+            this.lbTitleCalc.BackColor = System.Drawing.Color.White;
+            this.lbTitleCalc.ForeColor = System.Drawing.Color.Black;
+            this.lbTitleCalc.Name = "lbTitleCalc";
+            // 
+            // cmdCalc
+            // 
+            this.cmdCalc.BackColor = System.Drawing.Color.Transparent;
+            this.cmdCalc.BackColor_Hover = System.Drawing.Color.DarkRed;
+            this.cmdCalc.BackColor_Normal = System.Drawing.Color.Red;
+            this.cmdCalc.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdCalc.BackColor2_Hover = System.Drawing.Color.DarkRed;
+            this.cmdCalc.BackColor2_Normal = System.Drawing.Color.Red;
+            this.cmdCalc.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdCalc.ButtonEnabled = true;
+            resources.ApplyResources(this.cmdCalc, "cmdCalc");
+            this.cmdCalc.Curvature = 15;
+            this.cmdCalc.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdCalc.Name = "cmdCalc";
+            this.cmdCalc.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
+            // 
+            // panelAdvanceMode
+            // 
+            this.panelAdvanceMode.Controls.Add(this.chkAdvanceMode);
+            this.panelAdvanceMode.Controls.Add(this.labelAdvanceOption);
+            resources.ApplyResources(this.panelAdvanceMode, "panelAdvanceMode");
+            this.panelAdvanceMode.Name = "panelAdvanceMode";
+            // 
+            // chkAdvanceMode
+            // 
+            this.chkAdvanceMode.BackImg_ToggleOff_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_disable;
+            this.chkAdvanceMode.BackImg_ToggleOff_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_hover;
+            this.chkAdvanceMode.BackImg_ToggleOff_Normal = ((System.Drawing.Image)(resources.GetObject("chkAdvanceMode.BackImg_ToggleOff_Normal")));
+            this.chkAdvanceMode.BackImg_ToggleOn_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_disable;
+            this.chkAdvanceMode.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_hover;
+            this.chkAdvanceMode.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn;
+            this.chkAdvanceMode.Checked = false;
+            resources.ApplyResources(this.chkAdvanceMode, "chkAdvanceMode");
+            this.chkAdvanceMode.Name = "chkAdvanceMode";
+            // 
+            // labelAdvanceOption
+            // 
+            resources.ApplyResources(this.labelAdvanceOption, "labelAdvanceOption");
+            this.labelAdvanceOption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.labelAdvanceOption.Name = "labelAdvanceOption";
+            // 
+            // panelPowerModifyMode
+            // 
+            this.panelPowerModifyMode.Controls.Add(this.optMotorParamsModifySimple);
+            this.panelPowerModifyMode.Controls.Add(this.optMotorParamsModifyAdvance);
+            this.panelPowerModifyMode.Controls.Add(this.label34);
+            resources.ApplyResources(this.panelPowerModifyMode, "panelPowerModifyMode");
+            this.panelPowerModifyMode.Name = "panelPowerModifyMode";
+            // 
+            // optMotorParamsModifySimple
+            // 
+            resources.ApplyResources(this.optMotorParamsModifySimple, "optMotorParamsModifySimple");
+            this.optMotorParamsModifySimple.Checked = true;
+            this.optMotorParamsModifySimple.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.optMotorParamsModifySimple.Name = "optMotorParamsModifySimple";
+            this.optMotorParamsModifySimple.TabStop = true;
+            this.optMotorParamsModifySimple.UseVisualStyleBackColor = true;
+            // 
+            // optMotorParamsModifyAdvance
+            // 
+            resources.ApplyResources(this.optMotorParamsModifyAdvance, "optMotorParamsModifyAdvance");
+            this.optMotorParamsModifyAdvance.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.optMotorParamsModifyAdvance.Name = "optMotorParamsModifyAdvance";
+            this.optMotorParamsModifyAdvance.UseVisualStyleBackColor = true;
+            // 
+            // label34
+            // 
+            resources.ApplyResources(this.label34, "label34");
+            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label34.Name = "label34";
+            // 
+            // panelSetup
+            // 
+            this.panelSetup.Controls.Add(this.panelMoment);
+            this.panelSetup.Controls.Add(this.pictureBox9);
+            this.panelSetup.Controls.Add(this.optHorizontalUse);
+            this.panelSetup.Controls.Add(this.optVerticalUse);
+            this.panelSetup.Controls.Add(this.optWallHangingUse);
+            this.panelSetup.Controls.Add(this.pictureBox8);
+            this.panelSetup.Controls.Add(this.pictureBox7);
+            this.panelSetup.Controls.Add(this.pictureBox6);
+            this.panelSetup.Controls.Add(this.panel8);
+            resources.ApplyResources(this.panelSetup, "panelSetup");
+            this.panelSetup.Name = "panelSetup";
             // 
             // panelMoment
             // 
-            this.panelMoment.Controls.Add(this.pictureBox19);
-            this.panelMoment.Controls.Add(this.lbTitleMoment);
+            this.panelMoment.Controls.Add(this.label14);
             this.panelMoment.Controls.Add(this.label17);
             this.panelMoment.Controls.Add(this.label24);
             this.panelMoment.Controls.Add(this.label31);
@@ -1720,28 +1932,19 @@
             this.panelMoment.Controls.Add(this.label28);
             this.panelMoment.Controls.Add(this.label27);
             this.panelMoment.Controls.Add(this.txtMomentB);
-            this.panelMoment.Controls.Add(this.txtMomentC);
-            this.panelMoment.Controls.Add(this.txtMomentA);
             this.panelMoment.Controls.Add(this.label25);
-            this.panelMoment.Controls.Add(this.label26);
+            this.panelMoment.Controls.Add(this.txtMomentC);
             this.panelMoment.Controls.Add(this.label29);
+            this.panelMoment.Controls.Add(this.txtMomentA);
+            this.panelMoment.Controls.Add(this.label26);
             resources.ApplyResources(this.panelMoment, "panelMoment");
             this.panelMoment.Name = "panelMoment";
             // 
-            // pictureBox19
+            // label14
             // 
-            this.pictureBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox19.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.moment;
-            resources.ApplyResources(this.pictureBox19, "pictureBox19");
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.TabStop = false;
-            // 
-            // lbTitleMoment
-            // 
-            resources.ApplyResources(this.lbTitleMoment, "lbTitleMoment");
-            this.lbTitleMoment.BackColor = System.Drawing.Color.White;
-            this.lbTitleMoment.ForeColor = System.Drawing.Color.DimGray;
-            this.lbTitleMoment.Name = "lbTitleMoment";
+            this.label14.BackColor = System.Drawing.Color.DarkGray;
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.Name = "label14";
             // 
             // label17
             // 
@@ -1787,11 +1990,22 @@
             this.txtMomentB.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtMomentB.Name = "txtMomentB";
             // 
+            // label25
+            // 
+            resources.ApplyResources(this.label25, "label25");
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label25.Name = "label25";
+            // 
             // txtMomentC
             // 
             resources.ApplyResources(this.txtMomentC, "txtMomentC");
             this.txtMomentC.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtMomentC.Name = "txtMomentC";
+            // 
+            // label29
+            // 
+            resources.ApplyResources(this.label29, "label29");
+            this.label29.Name = "label29";
             // 
             // txtMomentA
             // 
@@ -1799,34 +2013,55 @@
             this.txtMomentA.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtMomentA.Name = "txtMomentA";
             // 
-            // label25
-            // 
-            resources.ApplyResources(this.label25, "label25");
-            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label25.Name = "label25";
-            // 
             // label26
             // 
             resources.ApplyResources(this.label26, "label26");
             this.label26.Name = "label26";
             // 
-            // label29
+            // pictureBox9
             // 
-            resources.ApplyResources(this.label29, "label29");
-            this.label29.Name = "label29";
+            this.pictureBox9.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.moment_horizontal;
+            resources.ApplyResources(this.pictureBox9, "pictureBox9");
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.TabStop = false;
             // 
-            // panelSetup
+            // optHorizontalUse
             // 
-            this.panelSetup.Controls.Add(this.pictureBox9);
-            this.panelSetup.Controls.Add(this.optHorizontalUse);
-            this.panelSetup.Controls.Add(this.optVerticalUse);
-            this.panelSetup.Controls.Add(this.optWallHangingUse);
-            this.panelSetup.Controls.Add(this.pictureBox8);
-            this.panelSetup.Controls.Add(this.pictureBox7);
-            this.panelSetup.Controls.Add(this.pictureBox6);
-            this.panelSetup.Controls.Add(this.panel8);
-            resources.ApplyResources(this.panelSetup, "panelSetup");
-            this.panelSetup.Name = "panelSetup";
+            resources.ApplyResources(this.optHorizontalUse, "optHorizontalUse");
+            this.optHorizontalUse.Checked = true;
+            this.optHorizontalUse.ForeColor = System.Drawing.Color.Black;
+            this.optHorizontalUse.Name = "optHorizontalUse";
+            this.optHorizontalUse.TabStop = true;
+            this.optHorizontalUse.UseVisualStyleBackColor = true;
+            // 
+            // optVerticalUse
+            // 
+            resources.ApplyResources(this.optVerticalUse, "optVerticalUse");
+            this.optVerticalUse.BackColor = System.Drawing.Color.Transparent;
+            this.optVerticalUse.ForeColor = System.Drawing.Color.Black;
+            this.optVerticalUse.Name = "optVerticalUse";
+            this.optVerticalUse.UseVisualStyleBackColor = false;
+            // 
+            // optWallHangingUse
+            // 
+            resources.ApplyResources(this.optWallHangingUse, "optWallHangingUse");
+            this.optWallHangingUse.ForeColor = System.Drawing.Color.Black;
+            this.optWallHangingUse.Name = "optWallHangingUse";
+            this.optWallHangingUse.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.壁掛安裝;
+            resources.ApplyResources(this.pictureBox8, "pictureBox8");
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.垂直安裝;
+            resources.ApplyResources(this.pictureBox7, "pictureBox7");
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.TabStop = false;
             // 
             // pictureBox6
             // 
@@ -1848,30 +2083,6 @@
             this.lbTitleSetup.BackColor = System.Drawing.Color.White;
             this.lbTitleSetup.ForeColor = System.Drawing.Color.Black;
             this.lbTitleSetup.Name = "lbTitleSetup";
-            // 
-            // optVerticalUse
-            // 
-            resources.ApplyResources(this.optVerticalUse, "optVerticalUse");
-            this.optVerticalUse.BackColor = System.Drawing.Color.Transparent;
-            this.optVerticalUse.ForeColor = System.Drawing.Color.Black;
-            this.optVerticalUse.Name = "optVerticalUse";
-            this.optVerticalUse.UseVisualStyleBackColor = false;
-            // 
-            // optHorizontalUse
-            // 
-            resources.ApplyResources(this.optHorizontalUse, "optHorizontalUse");
-            this.optHorizontalUse.Checked = true;
-            this.optHorizontalUse.ForeColor = System.Drawing.Color.Black;
-            this.optHorizontalUse.Name = "optHorizontalUse";
-            this.optHorizontalUse.TabStop = true;
-            this.optHorizontalUse.UseVisualStyleBackColor = true;
-            // 
-            // optWallHangingUse
-            // 
-            resources.ApplyResources(this.optWallHangingUse, "optWallHangingUse");
-            this.optWallHangingUse.ForeColor = System.Drawing.Color.Black;
-            this.optWallHangingUse.Name = "optWallHangingUse";
-            this.optWallHangingUse.UseVisualStyleBackColor = true;
             // 
             // panelModelSelection
             // 
@@ -1982,22 +2193,131 @@
             // 
             // panelModelType
             // 
-            this.panelModelType.Controls.Add(this.optModelType_ECH);
-            this.panelModelType.Controls.Add(this.optModelType_GCH);
-            this.panelModelType.Controls.Add(this.optStandardScrewActuator);
-            this.panelModelType.Controls.Add(this.optModelType_ECB);
-            this.panelModelType.Controls.Add(this.optBuildInScrewActuator);
             this.panelModelType.Controls.Add(this.customTabControl1);
-            this.panelModelType.Controls.Add(this.optBuildOutRodTypeActuator);
             this.panelModelType.Controls.Add(this.panel5);
-            this.panelModelType.Controls.Add(this.optBuildInRodTypeScrewActuator);
-            this.panelModelType.Controls.Add(this.optStandardBeltActuator);
-            this.panelModelType.Controls.Add(this.optNoTrackRodTypeActuator);
-            this.panelModelType.Controls.Add(this.optSupportTrackRodTypeActuator);
-            this.panelModelType.Controls.Add(this.optEuropeBeltActuator);
-            this.panelModelType.Controls.Add(this.optBuildInBeltActuator);
             resources.ApplyResources(this.panelModelType, "panelModelType");
             this.panelModelType.Name = "panelModelType";
+            // 
+            // customTabControl1
+            // 
+            this.customTabControl1.Controls.Add(this.tabPage1);
+            this.customTabControl1.Controls.Add(this.tabPage2);
+            resources.ApplyResources(this.customTabControl1, "customTabControl1");
+            this.customTabControl1.IsBorderShow = true;
+            this.customTabControl1.Name = "customTabControl1";
+            this.customTabControl1.SelectedIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.panel10);
+            this.tabPage1.Controls.Add(this.panel9);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel10
+            // 
+            this.panel10.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.bg_modelType_standard_belt;
+            resources.ApplyResources(this.panel10, "panel10");
+            this.panel10.Controls.Add(this.picBuildInBeltActuator);
+            this.panel10.Controls.Add(this.picEuropeBeltActuator);
+            this.panel10.Controls.Add(this.picStandardBeltActuator);
+            this.panel10.Name = "panel10";
+            // 
+            // picBuildInBeltActuator
+            // 
+            this.picBuildInBeltActuator.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.MG_normal;
+            resources.ApplyResources(this.picBuildInBeltActuator, "picBuildInBeltActuator");
+            this.picBuildInBeltActuator.Name = "picBuildInBeltActuator";
+            this.picBuildInBeltActuator.TabStop = false;
+            // 
+            // picEuropeBeltActuator
+            // 
+            this.picEuropeBeltActuator.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.M_normal;
+            resources.ApplyResources(this.picEuropeBeltActuator, "picEuropeBeltActuator");
+            this.picEuropeBeltActuator.Name = "picEuropeBeltActuator";
+            this.picEuropeBeltActuator.TabStop = false;
+            // 
+            // picStandardBeltActuator
+            // 
+            this.picStandardBeltActuator.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.ETB_normal;
+            resources.ApplyResources(this.picStandardBeltActuator, "picStandardBeltActuator");
+            this.picStandardBeltActuator.Name = "picStandardBeltActuator";
+            this.picStandardBeltActuator.TabStop = false;
+            // 
+            // panel9
+            // 
+            this.panel9.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.bg_modelType_standard_screw;
+            resources.ApplyResources(this.panel9, "panel9");
+            this.panel9.Controls.Add(this.picBuildInScrewActuator);
+            this.panel9.Controls.Add(this.picStandardScrewActuator);
+            this.panel9.Controls.Add(this.picSupportTrackRodTypeActuator);
+            this.panel9.Controls.Add(this.picBuildOutRodTypeActuator);
+            this.panel9.Controls.Add(this.picBuildInRodTypeScrewActuator);
+            this.panel9.Controls.Add(this.picNoTrackRodTypeActuator);
+            this.panel9.Name = "panel9";
+            // 
+            // picBuildInScrewActuator
+            // 
+            this.picBuildInScrewActuator.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.GTH_normal;
+            resources.ApplyResources(this.picBuildInScrewActuator, "picBuildInScrewActuator");
+            this.picBuildInScrewActuator.Name = "picBuildInScrewActuator";
+            this.picBuildInScrewActuator.TabStop = false;
+            // 
+            // picStandardScrewActuator
+            // 
+            this.picStandardScrewActuator.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.ETH_normal;
+            resources.ApplyResources(this.picStandardScrewActuator, "picStandardScrewActuator");
+            this.picStandardScrewActuator.Name = "picStandardScrewActuator";
+            this.picStandardScrewActuator.TabStop = false;
+            // 
+            // picSupportTrackRodTypeActuator
+            // 
+            this.picSupportTrackRodTypeActuator.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.YD_normal;
+            resources.ApplyResources(this.picSupportTrackRodTypeActuator, "picSupportTrackRodTypeActuator");
+            this.picSupportTrackRodTypeActuator.Name = "picSupportTrackRodTypeActuator";
+            this.picSupportTrackRodTypeActuator.TabStop = false;
+            // 
+            // picBuildOutRodTypeActuator
+            // 
+            this.picBuildOutRodTypeActuator.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.YL_normal;
+            resources.ApplyResources(this.picBuildOutRodTypeActuator, "picBuildOutRodTypeActuator");
+            this.picBuildOutRodTypeActuator.Name = "picBuildOutRodTypeActuator";
+            this.picBuildOutRodTypeActuator.TabStop = false;
+            // 
+            // picBuildInRodTypeScrewActuator
+            // 
+            this.picBuildInRodTypeScrewActuator.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.GTY_normal;
+            resources.ApplyResources(this.picBuildInRodTypeScrewActuator, "picBuildInRodTypeScrewActuator");
+            this.picBuildInRodTypeScrewActuator.Name = "picBuildInRodTypeScrewActuator";
+            this.picBuildInRodTypeScrewActuator.TabStop = false;
+            // 
+            // picNoTrackRodTypeActuator
+            // 
+            this.picNoTrackRodTypeActuator.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.Y_normal;
+            resources.ApplyResources(this.picNoTrackRodTypeActuator, "picNoTrackRodTypeActuator");
+            this.picNoTrackRodTypeActuator.Name = "picNoTrackRodTypeActuator";
+            this.picNoTrackRodTypeActuator.TabStop = false;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.optModelType_ECH);
+            this.tabPage2.Controls.Add(this.panel12);
+            this.tabPage2.Controls.Add(this.panel11);
+            this.tabPage2.Controls.Add(this.optModelType_GCH);
+            this.tabPage2.Controls.Add(this.optBuildInScrewActuator);
+            this.tabPage2.Controls.Add(this.optSupportTrackRodTypeActuator);
+            this.tabPage2.Controls.Add(this.optStandardScrewActuator);
+            this.tabPage2.Controls.Add(this.optModelType_ECB);
+            this.tabPage2.Controls.Add(this.optNoTrackRodTypeActuator);
+            this.tabPage2.Controls.Add(this.optBuildInRodTypeScrewActuator);
+            this.tabPage2.Controls.Add(this.optBuildOutRodTypeActuator);
+            this.tabPage2.Controls.Add(this.optEuropeBeltActuator);
+            this.tabPage2.Controls.Add(this.optBuildInBeltActuator);
+            this.tabPage2.Controls.Add(this.optStandardBeltActuator);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // optModelType_ECH
             // 
@@ -2006,12 +2326,64 @@
             this.optModelType_ECH.Name = "optModelType_ECH";
             this.optModelType_ECH.UseVisualStyleBackColor = true;
             // 
+            // panel12
+            // 
+            this.panel12.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.bg_modelType_dustfree_belt;
+            resources.ApplyResources(this.panel12, "panel12");
+            this.panel12.Controls.Add(this.picModelType_ECB);
+            this.panel12.Name = "panel12";
+            // 
+            // picModelType_ECB
+            // 
+            this.picModelType_ECB.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.ECB_normal;
+            resources.ApplyResources(this.picModelType_ECB, "picModelType_ECB");
+            this.picModelType_ECB.Name = "picModelType_ECB";
+            this.picModelType_ECB.TabStop = false;
+            // 
+            // panel11
+            // 
+            this.panel11.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.bg_modelType_dustfree_screw;
+            resources.ApplyResources(this.panel11, "panel11");
+            this.panel11.Controls.Add(this.picModelType_GCH);
+            this.panel11.Controls.Add(this.picModelType_ECH);
+            this.panel11.Name = "panel11";
+            // 
+            // picModelType_GCH
+            // 
+            this.picModelType_GCH.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.GCH_normal;
+            resources.ApplyResources(this.picModelType_GCH, "picModelType_GCH");
+            this.picModelType_GCH.Name = "picModelType_GCH";
+            this.picModelType_GCH.TabStop = false;
+            // 
+            // picModelType_ECH
+            // 
+            this.picModelType_ECH.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.ECH_normal;
+            resources.ApplyResources(this.picModelType_ECH, "picModelType_ECH");
+            this.picModelType_ECH.Name = "picModelType_ECH";
+            this.picModelType_ECH.TabStop = false;
+            // 
             // optModelType_GCH
             // 
             resources.ApplyResources(this.optModelType_GCH, "optModelType_GCH");
             this.optModelType_GCH.ForeColor = System.Drawing.Color.Black;
             this.optModelType_GCH.Name = "optModelType_GCH";
             this.optModelType_GCH.UseVisualStyleBackColor = true;
+            // 
+            // optBuildInScrewActuator
+            // 
+            resources.ApplyResources(this.optBuildInScrewActuator, "optBuildInScrewActuator");
+            this.optBuildInScrewActuator.Checked = true;
+            this.optBuildInScrewActuator.ForeColor = System.Drawing.Color.Black;
+            this.optBuildInScrewActuator.Name = "optBuildInScrewActuator";
+            this.optBuildInScrewActuator.TabStop = true;
+            this.optBuildInScrewActuator.UseVisualStyleBackColor = true;
+            // 
+            // optSupportTrackRodTypeActuator
+            // 
+            resources.ApplyResources(this.optSupportTrackRodTypeActuator, "optSupportTrackRodTypeActuator");
+            this.optSupportTrackRodTypeActuator.ForeColor = System.Drawing.Color.Black;
+            this.optSupportTrackRodTypeActuator.Name = "optSupportTrackRodTypeActuator";
+            this.optSupportTrackRodTypeActuator.UseVisualStyleBackColor = true;
             // 
             // optStandardScrewActuator
             // 
@@ -2027,163 +2399,12 @@
             this.optModelType_ECB.Name = "optModelType_ECB";
             this.optModelType_ECB.UseVisualStyleBackColor = true;
             // 
-            // optBuildInScrewActuator
+            // optNoTrackRodTypeActuator
             // 
-            resources.ApplyResources(this.optBuildInScrewActuator, "optBuildInScrewActuator");
-            this.optBuildInScrewActuator.Checked = true;
-            this.optBuildInScrewActuator.ForeColor = System.Drawing.Color.Black;
-            this.optBuildInScrewActuator.Name = "optBuildInScrewActuator";
-            this.optBuildInScrewActuator.TabStop = true;
-            this.optBuildInScrewActuator.UseVisualStyleBackColor = true;
-            // 
-            // customTabControl1
-            // 
-            this.customTabControl1.Controls.Add(this.tabPage1);
-            this.customTabControl1.Controls.Add(this.tabPage2);
-            this.customTabControl1.IsBorderShow = true;
-            resources.ApplyResources(this.customTabControl1, "customTabControl1");
-            this.customTabControl1.Name = "customTabControl1";
-            this.customTabControl1.SelectedIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.picStandardScrewActuator);
-            this.tabPage1.Controls.Add(this.picBuildInScrewActuator);
-            this.tabPage1.Controls.Add(this.picBuildInRodTypeScrewActuator);
-            this.tabPage1.Controls.Add(this.picNoTrackRodTypeActuator);
-            this.tabPage1.Controls.Add(this.picBuildOutRodTypeActuator);
-            this.tabPage1.Controls.Add(this.picSupportTrackRodTypeActuator);
-            this.tabPage1.Controls.Add(this.picBuildInBeltActuator);
-            this.tabPage1.Controls.Add(this.picStandardBeltActuator);
-            this.tabPage1.Controls.Add(this.picEuropeBeltActuator);
-            resources.ApplyResources(this.tabPage1, "tabPage1");
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // picStandardScrewActuator
-            // 
-            this.picStandardScrewActuator.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picStandardScrewActuator.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.皮帶滑台;
-            resources.ApplyResources(this.picStandardScrewActuator, "picStandardScrewActuator");
-            this.picStandardScrewActuator.Name = "picStandardScrewActuator";
-            this.picStandardScrewActuator.TabStop = false;
-            // 
-            // picBuildInScrewActuator
-            // 
-            this.picBuildInScrewActuator.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picBuildInScrewActuator.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.一般環境;
-            resources.ApplyResources(this.picBuildInScrewActuator, "picBuildInScrewActuator");
-            this.picBuildInScrewActuator.Name = "picBuildInScrewActuator";
-            this.picBuildInScrewActuator.TabStop = false;
-            // 
-            // picBuildInRodTypeScrewActuator
-            // 
-            this.picBuildInRodTypeScrewActuator.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picBuildInRodTypeScrewActuator.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.推桿式;
-            resources.ApplyResources(this.picBuildInRodTypeScrewActuator, "picBuildInRodTypeScrewActuator");
-            this.picBuildInRodTypeScrewActuator.Name = "picBuildInRodTypeScrewActuator";
-            this.picBuildInRodTypeScrewActuator.TabStop = false;
-            // 
-            // picNoTrackRodTypeActuator
-            // 
-            this.picNoTrackRodTypeActuator.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picNoTrackRodTypeActuator.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.Y65;
-            resources.ApplyResources(this.picNoTrackRodTypeActuator, "picNoTrackRodTypeActuator");
-            this.picNoTrackRodTypeActuator.Name = "picNoTrackRodTypeActuator";
-            this.picNoTrackRodTypeActuator.TabStop = false;
-            // 
-            // picBuildOutRodTypeActuator
-            // 
-            this.picBuildOutRodTypeActuator.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picBuildOutRodTypeActuator.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.Y65L;
-            resources.ApplyResources(this.picBuildOutRodTypeActuator, "picBuildOutRodTypeActuator");
-            this.picBuildOutRodTypeActuator.Name = "picBuildOutRodTypeActuator";
-            this.picBuildOutRodTypeActuator.TabStop = false;
-            // 
-            // picSupportTrackRodTypeActuator
-            // 
-            this.picSupportTrackRodTypeActuator.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picSupportTrackRodTypeActuator.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.Y65D;
-            resources.ApplyResources(this.picSupportTrackRodTypeActuator, "picSupportTrackRodTypeActuator");
-            this.picSupportTrackRodTypeActuator.Name = "picSupportTrackRodTypeActuator";
-            this.picSupportTrackRodTypeActuator.TabStop = false;
-            // 
-            // picBuildInBeltActuator
-            // 
-            this.picBuildInBeltActuator.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.picBuildInBeltActuator, "picBuildInBeltActuator");
-            this.picBuildInBeltActuator.Name = "picBuildInBeltActuator";
-            this.picBuildInBeltActuator.TabStop = false;
-            // 
-            // picStandardBeltActuator
-            // 
-            this.picStandardBeltActuator.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picStandardBeltActuator.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.螺桿滑台;
-            resources.ApplyResources(this.picStandardBeltActuator, "picStandardBeltActuator");
-            this.picStandardBeltActuator.Name = "picStandardBeltActuator";
-            this.picStandardBeltActuator.TabStop = false;
-            // 
-            // picEuropeBeltActuator
-            // 
-            this.picEuropeBeltActuator.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picEuropeBeltActuator.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.M系列;
-            resources.ApplyResources(this.picEuropeBeltActuator, "picEuropeBeltActuator");
-            this.picEuropeBeltActuator.Name = "picEuropeBeltActuator";
-            this.picEuropeBeltActuator.TabStop = false;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.picModelType_GCH);
-            this.tabPage2.Controls.Add(this.picModelType_ECH);
-            this.tabPage2.Controls.Add(this.picModelType_ECB);
-            resources.ApplyResources(this.tabPage2, "tabPage2");
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // picModelType_GCH
-            // 
-            this.picModelType_GCH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picModelType_GCH.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.M系列;
-            resources.ApplyResources(this.picModelType_GCH, "picModelType_GCH");
-            this.picModelType_GCH.Name = "picModelType_GCH";
-            this.picModelType_GCH.TabStop = false;
-            // 
-            // picModelType_ECH
-            // 
-            this.picModelType_ECH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picModelType_ECH.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.M系列;
-            resources.ApplyResources(this.picModelType_ECH, "picModelType_ECH");
-            this.picModelType_ECH.Name = "picModelType_ECH";
-            this.picModelType_ECH.TabStop = false;
-            // 
-            // picModelType_ECB
-            // 
-            this.picModelType_ECB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picModelType_ECB.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.螺桿滑台;
-            resources.ApplyResources(this.picModelType_ECB, "picModelType_ECB");
-            this.picModelType_ECB.Name = "picModelType_ECB";
-            this.picModelType_ECB.TabStop = false;
-            // 
-            // optBuildOutRodTypeActuator
-            // 
-            resources.ApplyResources(this.optBuildOutRodTypeActuator, "optBuildOutRodTypeActuator");
-            this.optBuildOutRodTypeActuator.ForeColor = System.Drawing.Color.Black;
-            this.optBuildOutRodTypeActuator.Name = "optBuildOutRodTypeActuator";
-            this.optBuildOutRodTypeActuator.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            this.panel5.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
-            resources.ApplyResources(this.panel5, "panel5");
-            this.panel5.Controls.Add(this.lbTitleModelType);
-            this.panel5.Name = "panel5";
-            // 
-            // lbTitleModelType
-            // 
-            resources.ApplyResources(this.lbTitleModelType, "lbTitleModelType");
-            this.lbTitleModelType.BackColor = System.Drawing.Color.White;
-            this.lbTitleModelType.ForeColor = System.Drawing.Color.Black;
-            this.lbTitleModelType.Name = "lbTitleModelType";
+            resources.ApplyResources(this.optNoTrackRodTypeActuator, "optNoTrackRodTypeActuator");
+            this.optNoTrackRodTypeActuator.ForeColor = System.Drawing.Color.Black;
+            this.optNoTrackRodTypeActuator.Name = "optNoTrackRodTypeActuator";
+            this.optNoTrackRodTypeActuator.UseVisualStyleBackColor = true;
             // 
             // optBuildInRodTypeScrewActuator
             // 
@@ -2192,26 +2413,12 @@
             this.optBuildInRodTypeScrewActuator.Name = "optBuildInRodTypeScrewActuator";
             this.optBuildInRodTypeScrewActuator.UseVisualStyleBackColor = true;
             // 
-            // optStandardBeltActuator
+            // optBuildOutRodTypeActuator
             // 
-            resources.ApplyResources(this.optStandardBeltActuator, "optStandardBeltActuator");
-            this.optStandardBeltActuator.ForeColor = System.Drawing.Color.Black;
-            this.optStandardBeltActuator.Name = "optStandardBeltActuator";
-            this.optStandardBeltActuator.UseVisualStyleBackColor = true;
-            // 
-            // optNoTrackRodTypeActuator
-            // 
-            resources.ApplyResources(this.optNoTrackRodTypeActuator, "optNoTrackRodTypeActuator");
-            this.optNoTrackRodTypeActuator.ForeColor = System.Drawing.Color.Black;
-            this.optNoTrackRodTypeActuator.Name = "optNoTrackRodTypeActuator";
-            this.optNoTrackRodTypeActuator.UseVisualStyleBackColor = true;
-            // 
-            // optSupportTrackRodTypeActuator
-            // 
-            resources.ApplyResources(this.optSupportTrackRodTypeActuator, "optSupportTrackRodTypeActuator");
-            this.optSupportTrackRodTypeActuator.ForeColor = System.Drawing.Color.Black;
-            this.optSupportTrackRodTypeActuator.Name = "optSupportTrackRodTypeActuator";
-            this.optSupportTrackRodTypeActuator.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.optBuildOutRodTypeActuator, "optBuildOutRodTypeActuator");
+            this.optBuildOutRodTypeActuator.ForeColor = System.Drawing.Color.Black;
+            this.optBuildOutRodTypeActuator.Name = "optBuildOutRodTypeActuator";
+            this.optBuildOutRodTypeActuator.UseVisualStyleBackColor = true;
             // 
             // optEuropeBeltActuator
             // 
@@ -2226,6 +2433,27 @@
             this.optBuildInBeltActuator.ForeColor = System.Drawing.Color.Black;
             this.optBuildInBeltActuator.Name = "optBuildInBeltActuator";
             this.optBuildInBeltActuator.UseVisualStyleBackColor = true;
+            // 
+            // optStandardBeltActuator
+            // 
+            resources.ApplyResources(this.optStandardBeltActuator, "optStandardBeltActuator");
+            this.optStandardBeltActuator.ForeColor = System.Drawing.Color.Black;
+            this.optStandardBeltActuator.Name = "optStandardBeltActuator";
+            this.optStandardBeltActuator.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            this.panel5.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
+            resources.ApplyResources(this.panel5, "panel5");
+            this.panel5.Controls.Add(this.lbTitleModelType);
+            this.panel5.Name = "panel5";
+            // 
+            // lbTitleModelType
+            // 
+            resources.ApplyResources(this.lbTitleModelType, "lbTitleModelType");
+            this.lbTitleModelType.BackColor = System.Drawing.Color.White;
+            this.lbTitleModelType.ForeColor = System.Drawing.Color.Black;
+            this.lbTitleModelType.Name = "lbTitleModelType";
             // 
             // panelUseEnv
             // 
@@ -2253,7 +2481,7 @@
             // 
             // picDustFree
             // 
-            this.picDustFree.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.dustFreeEnviroment;
+            this.picDustFree.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.useEnv_dustfree_normal;
             resources.ApplyResources(this.picDustFree, "picDustFree");
             this.picDustFree.Name = "picDustFree";
             this.picDustFree.TabStop = false;
@@ -2276,7 +2504,7 @@
             // 
             // picStandardEnv
             // 
-            this.picStandardEnv.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.standardEnviroment;
+            this.picStandardEnv.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.useEnv_standard_normal;
             resources.ApplyResources(this.picStandardEnv, "picStandardEnv");
             this.picStandardEnv.Name = "picStandardEnv";
             this.picStandardEnv.TabStop = false;
@@ -2375,26 +2603,6 @@
             this.label70.ForeColor = System.Drawing.Color.DimGray;
             this.label70.Name = "label70";
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.垂直安裝;
-            resources.ApplyResources(this.pictureBox7, "pictureBox7");
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.壁掛安裝;
-            resources.ApplyResources(this.pictureBox8, "pictureBox8");
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            resources.ApplyResources(this.pictureBox9, "pictureBox9");
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.TabStop = false;
-            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2447,37 +2655,45 @@
             this.panelCalcResult.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).EndInit();
             this.panelChart.ResumeLayout(false);
-            this.panelChart.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            this.customPanel1.ResumeLayout(false);
+            this.customPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.panelCalc.ResumeLayout(false);
             this.panelCalc.PerformLayout();
-            this.scrollBarPanelLoad.ResumeLayout(false);
-            this.scrollBarPanelLoad.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbLoad)).EndInit();
+            this.panelMotorParams.ResumeLayout(false);
+            this.panelMotorParams.PerformLayout();
+            this.panelPowerSelection.ResumeLayout(false);
+            this.panelPowerSelection.PerformLayout();
+            this.panelReducerParam.ResumeLayout(false);
+            this.panelReducerParam.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
             this.scrollBarPanelStroke.ResumeLayout(false);
-            this.scrollBarPanelStroke.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbStroke)).EndInit();
+            this.scrollBarPanelLoad.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbLoad)).EndInit();
             this.panelAdvanceParams.ResumeLayout(false);
             this.panelAdvanceParams.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panelExpectServiceLifeTime.ResumeLayout(false);
             this.panelExpectServiceLifeTime.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             this.panelAdvanceMode.ResumeLayout(false);
             this.panelAdvanceMode.PerformLayout();
             this.panelPowerModifyMode.ResumeLayout(false);
             this.panelPowerModifyMode.PerformLayout();
-            this.panelMotorParams.ResumeLayout(false);
-            this.panelMotorParams.PerformLayout();
-            this.panelReducerParam.ResumeLayout(false);
-            this.panelReducerParam.PerformLayout();
-            this.panelPowerSelection.ResumeLayout(false);
-            this.panelPowerSelection.PerformLayout();
-            this.panelMoment.ResumeLayout(false);
-            this.panelMoment.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             this.panelSetup.ResumeLayout(false);
             this.panelSetup.PerformLayout();
+            this.panelMoment.ResumeLayout(false);
+            this.panelMoment.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -2491,22 +2707,26 @@
             this.panelModelSelectionReducerRatio.ResumeLayout(false);
             this.panelModelSelectionReducerRatio.PerformLayout();
             this.panelModelType.ResumeLayout(false);
-            this.panelModelType.PerformLayout();
             this.customTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picStandardScrewActuator)).EndInit();
+            this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBuildInBeltActuator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEuropeBeltActuator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picStandardBeltActuator)).EndInit();
+            this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBuildInScrewActuator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picStandardScrewActuator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSupportTrackRodTypeActuator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBuildOutRodTypeActuator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBuildInRodTypeScrewActuator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNoTrackRodTypeActuator)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBuildOutRodTypeActuator)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSupportTrackRodTypeActuator)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBuildInBeltActuator)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picStandardBeltActuator)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picEuropeBeltActuator)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picModelType_ECB)).EndInit();
+            this.panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picModelType_GCH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picModelType_ECH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picModelType_ECB)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panelUseEnv.ResumeLayout(false);
@@ -2521,9 +2741,6 @@
             this.panelResult.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).EndInit();
             this.panelConfirmBtnsStep5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2597,7 +2814,6 @@
         public System.Windows.Forms.RadioButton optExpectServiceLife;
         public System.Windows.Forms.RadioButton optNoExpectServiceLife;
         private System.Windows.Forms.Label label71;
-        public System.Windows.Forms.Panel panelMotorParams;
         private System.Windows.Forms.Label label35;
         public System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label42;
@@ -2610,7 +2826,6 @@
         public System.Windows.Forms.TextBox txtRatedTorque;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label36;
-        public System.Windows.Forms.Panel panelPowerSelection;
         private System.Windows.Forms.Label label60;
         public System.Windows.Forms.ComboBox cboMotorParamsMotorPowerSelection;
         private System.Windows.Forms.Label label59;
@@ -2675,9 +2890,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.Panel panelChart;
-        public System.Windows.Forms.Panel panelMoment;
-        private System.Windows.Forms.PictureBox pictureBox19;
-        private System.Windows.Forms.Label lbTitleMoment;
         private System.Windows.Forms.Label label17;
         public System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label31;
@@ -2781,6 +2993,31 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel13;
+        public System.Windows.Forms.Panel panelMotorParams;
+        public CustomToggle.CustomToggle customToggle1;
+        public System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        public System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Label label21;
+        private CustomPanel customPanel1;
+        public System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label33;
+        public System.Windows.Forms.Panel panelPowerSelection;
+        public System.Windows.Forms.Panel panelMoment;
     }
 }
 
