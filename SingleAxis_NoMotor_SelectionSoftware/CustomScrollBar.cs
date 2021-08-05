@@ -76,8 +76,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private Thread threadValueChanged;
         private Thread threadUpdateNumeric;
         private Thread threadUpdateTextBox;
-        private int minPosOffset = 0;
-        private int maxPosOffset = 16;
+        private int minPosOffset = 2;
+        //private int minPosOffset = 0;
+        private int maxPosOffset = 35;
         private ScrollEventType curScrollType;
         private enum FocusOn { ScrollBar, Input }
         private FocusOn curFocusOn = FocusOn.ScrollBar;
@@ -271,7 +272,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         //double curPercent = (float)(thumb.Location.X) / ((float)scrollBar.Size.Width - maxPosOffset);
                         //Value = (int)(curPercent * maxValue);
 
-                        Value = (int)((float)(thumb.Location.X - minPosOffset) / (float)(scrollBar.Size.Width - maxPosOffset) * maxValue);                        
+                        //Value = (int)((float)(thumb.Location.X - minPosOffset) / (float)(scrollBar.Size.Width - maxPosOffset) * maxValue);                        
+                        Value = (int)(((float)(thumb.Location.X - minPosOffset) / (float)(scrollBar.Size.Width - maxPosOffset - minPosOffset)) * (maxValue - minValue)) + minValue;                        
 
                         // 滾動事件
                         if (Scroll != null) {
@@ -312,7 +314,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         formMain.Invoke(new Action(() => {
                             // 初始化位置
                             thumb.Location = new Point(
-                                (int)(((float)Value / (float)maxValue) * (scrollBar.Size.Width - maxPosOffset) + minPosOffset),
+                                //(int)(((float)Value / (float)maxValue) * (scrollBar.Size.Width - maxPosOffset) + minPosOffset),
+                                (int)((((float)Value - (float)minValue) / ((float)maxValue - (float)minValue)) * (scrollBar.Size.Width - maxPosOffset-minPosOffset) + minPosOffset),
                                 thumb.Location.Y
                             );
 

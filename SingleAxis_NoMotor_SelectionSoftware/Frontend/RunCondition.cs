@@ -65,8 +65,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.txtMaxSpeed.TextChanged += UpdateCondition;
             formMain.txtAccelSpeed.TextChanged += UpdateCondition;
             formMain.cboPower.SelectedIndexChanged += UpdateCondition;
-            formMain.optMotorParamsModifySimple.CheckedChanged += UpdateCondition;
-            formMain.optMotorParamsModifyAdvance.CheckedChanged += UpdateCondition;
+            formMain.chkMotorAdvanceMode.CheckedChanged += UpdateCondition;
+            //formMain.optMotorParamsModifyAdvance.CheckedChanged += UpdateCondition;
             formMain.cboMotorParamsMotorPowerSelection.SelectedIndexChanged += UpdateCondition;
             formMain.txtRatedTorque.TextChanged += UpdateCondition;
             formMain.txtRotateInertia.TextChanged += UpdateCondition;
@@ -225,11 +225,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (formMain.cboPower.Text == "標準")
                     curCondition.powerSelection = Condition.PowerSelection.Standard;
                 else if (formMain.cboPower.Text == "自訂") {
-                    if (formMain.optMotorParamsModifySimple.Checked) {
+                    if (formMain.chkMotorAdvanceMode.Checked) {
+                        curCondition.powerSelection = Condition.PowerSelection.Custom;
+                    } else {
                         curCondition.powerSelection = Condition.PowerSelection.SelectedPower;
                         curCondition.selectedPower = Convert.ToInt32(formMain.cboMotorParamsMotorPowerSelection.Text);
-                    } else if (formMain.optMotorParamsModifyAdvance.Checked) {
-                        curCondition.powerSelection = Condition.PowerSelection.Custom;
                     }
                 }
             } else if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
@@ -237,33 +237,32 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (formMain.cboPower.Text.Contains("標準-")) {
                     curCondition.powerSelection = Condition.PowerSelection.SelectedPower;
                     curCondition.selectedPower = Convert.ToInt32(new Regex(@"\d+").Match(formMain.cboPower.Text).Value);
-                } else if (formMain.cboPower.Text == "自訂" && formMain.optMotorParamsModifySimple.Checked) {
+                } else if (formMain.cboPower.Text == "自訂" && !formMain.chkMotorAdvanceMode.Checked) {
                     curCondition.powerSelection = Condition.PowerSelection.SelectedPower;
                     curCondition.selectedPower = Convert.ToInt32(formMain.cboMotorParamsMotorPowerSelection.Text);
-                } else if (formMain.cboPower.Text == "自訂" && formMain.optMotorParamsModifyAdvance.Checked) {
+                } else if (formMain.cboPower.Text == "自訂" && formMain.chkMotorAdvanceMode.Checked) {
                     curCondition.powerSelection = Condition.PowerSelection.Custom;
                 }
             }
             // 馬達參數自訂
             if (curCondition.powerSelection == Condition.PowerSelection.Custom) {
-                if (formMain.optMotorParamsModifySimple.Checked) {
-                    var p = formMain.page2.calc.GetMotorParams(Convert.ToInt32(formMain.cboMotorParamsMotorPowerSelection.Text));
-                    curCondition.ratedTorque = p.ratedTorque;
-                    curCondition.maxTorque = p.maxTorque;
-                    curCondition.rotateInertia = p.rotateInertia;
-                    curCondition.loadInertiaMomentRatio = p.loadInertiaMomentRatio;
-
-                    formMain.page2.motorPower.customMotorParams.ratedTorque = curCondition.ratedTorque;
-                    formMain.page2.motorPower.customMotorParams.maxTorque = curCondition.maxTorque;
-                    formMain.page2.motorPower.customMotorParams.rotateInertia = curCondition.rotateInertia;
-                    formMain.page2.motorPower.customMotorParams.loadInertiaMomentRatio = curCondition.loadInertiaMomentRatio;
-                    
-                } else {
+                if (formMain.chkMotorAdvanceMode.Checked) {
                     curCondition.ratedTorque = Convert.ToDouble(formMain.txtRatedTorque.Text);
                     curCondition.maxTorque = Convert.ToDouble(formMain.txtMaxTorque.Text);
                     curCondition.rotateInertia = Convert.ToDouble(formMain.txtRotateInertia.Text);
                     curCondition.loadInertiaMomentRatio = Convert.ToInt32(formMain.txtLoadInertiaMomentRatio.Text);
                     curCondition.reducerRotateInertia = Convert.ToDouble(formMain.txtReducerRotateInertia.Text);
+
+                    formMain.page2.motorPower.customMotorParams.ratedTorque = curCondition.ratedTorque;
+                    formMain.page2.motorPower.customMotorParams.maxTorque = curCondition.maxTorque;
+                    formMain.page2.motorPower.customMotorParams.rotateInertia = curCondition.rotateInertia;
+                    formMain.page2.motorPower.customMotorParams.loadInertiaMomentRatio = curCondition.loadInertiaMomentRatio;
+                } else {
+                    var p = formMain.page2.calc.GetMotorParams(Convert.ToInt32(formMain.cboMotorParamsMotorPowerSelection.Text));
+                    curCondition.ratedTorque = p.ratedTorque;
+                    curCondition.maxTorque = p.maxTorque;
+                    curCondition.rotateInertia = p.rotateInertia;
+                    curCondition.loadInertiaMomentRatio = p.loadInertiaMomentRatio;
 
                     formMain.page2.motorPower.customMotorParams.ratedTorque = curCondition.ratedTorque;
                     formMain.page2.motorPower.customMotorParams.maxTorque = curCondition.maxTorque;

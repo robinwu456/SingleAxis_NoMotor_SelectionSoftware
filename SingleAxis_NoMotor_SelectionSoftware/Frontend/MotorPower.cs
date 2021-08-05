@@ -18,7 +18,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void InitEvents() {
             formMain.cboPower.SelectedValueChanged += UpdateMotorOptionsEnabled;
-            formMain.optMotorParamsModifySimple.CheckedChanged += UpdateMotorOptionsEnabled;
+            formMain.chkMotorAdvanceMode.CheckedChanged += UpdateMotorOptionsEnabled;
             formMain.cboMotorParamsMotorPowerSelection.SelectedValueChanged += CboMotorParamsMotorPowerSelection_SelectedValueChanged;
         }
 
@@ -32,9 +32,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void UpdateMotorOptionsEnabled(object sender, EventArgs e) {
-            formMain.panelPowerModifyMode.Enabled = formMain.cboPower.Text.Contains("自訂");
-            formMain.panelPowerSelection.Enabled = formMain.cboPower.Text == "自訂" && formMain.optMotorParamsModifySimple.Checked;
-            formMain.panelMotorParams.Enabled = formMain.cboPower.Text == "自訂" && formMain.optMotorParamsModifyAdvance.Checked;
+            formMain.panelMotorAdvanceMode.Enabled = formMain.cboPower.Text.Contains("自訂");
+            formMain.panelPowerSelection.Enabled = formMain.cboPower.Text == "自訂" && !formMain.chkMotorAdvanceMode.Checked;
+            formMain.panelMotorParams.Enabled = formMain.cboPower.Text == "自訂" && formMain.chkMotorAdvanceMode.Checked;
         }
 
         public void Load() {

@@ -678,42 +678,6 @@
   <data name="explorerBar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="optECH.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optECH.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optECH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optECH.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1136, 782</value>
-  </data>
-  <data name="optECH.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 23</value>
-  </data>
-  <data name="optECH.TabIndex" type="System.Int32, mscorlib">
-    <value>329</value>
-  </data>
-  <data name="optECH.Text" xml:space="preserve">
-    <value>ECH</value>
-  </data>
-  <data name="optECH.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;optECH.Name" xml:space="preserve">
-    <value>optECH</value>
-  </data>
-  <data name="&gt;&gt;optECH.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optECH.Parent" xml:space="preserve">
-    <value>explorerBar</value>
-  </data>
-  <data name="&gt;&gt;optECH.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="panelConfirmBtnsStep2.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -796,7 +760,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelNextPage.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="pictureBox5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1246,7 +1210,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelSideTable.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="lbPrePage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1279,151 +1243,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;lbPrePage.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="optECB.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optECB.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optECB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optECB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1198, 782</value>
-  </data>
-  <data name="optECB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 23</value>
-  </data>
-  <data name="optECB.TabIndex" type="System.Int32, mscorlib">
-    <value>327</value>
-  </data>
-  <data name="optECB.Text" xml:space="preserve">
-    <value>ECB</value>
-  </data>
-  <data name="optECB.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;optECB.Name" xml:space="preserve">
-    <value>optECB</value>
-  </data>
-  <data name="&gt;&gt;optECB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optECB.Parent" xml:space="preserve">
-    <value>explorerBar</value>
-  </data>
-  <data name="&gt;&gt;optECB.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="optGCH.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optGCH.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optGCH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optGCH.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1198, 724</value>
-  </data>
-  <data name="optGCH.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 23</value>
-  </data>
-  <data name="optGCH.TabIndex" type="System.Int32, mscorlib">
-    <value>325</value>
-  </data>
-  <data name="optGCH.Text" xml:space="preserve">
-    <value>GCH</value>
-  </data>
-  <data name="optGCH.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;optGCH.Name" xml:space="preserve">
-    <value>optGCH</value>
-  </data>
-  <data name="&gt;&gt;optGCH.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optGCH.Parent" xml:space="preserve">
-    <value>explorerBar</value>
-  </data>
-  <data name="&gt;&gt;optGCH.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="optMG.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optMG.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optMG.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optMG.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1136, 753</value>
-  </data>
-  <data name="optMG.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 23</value>
-  </data>
-  <data name="optMG.TabIndex" type="System.Int32, mscorlib">
-    <value>318</value>
-  </data>
-  <data name="optMG.Text" xml:space="preserve">
-    <value>MG</value>
-  </data>
-  <data name="optMG.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;optMG.Name" xml:space="preserve">
-    <value>optMG</value>
-  </data>
-  <data name="&gt;&gt;optMG.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optMG.Parent" xml:space="preserve">
-    <value>explorerBar</value>
-  </data>
-  <data name="&gt;&gt;optMG.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="optETB.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optETB.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optETB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optETB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1198, 753</value>
-  </data>
-  <data name="optETB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 23</value>
-  </data>
-  <data name="optETB.TabIndex" type="System.Int32, mscorlib">
-    <value>314</value>
-  </data>
-  <data name="optETB.Text" xml:space="preserve">
-    <value>ETB</value>
-  </data>
-  <data name="optETB.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;optETB.Name" xml:space="preserve">
-    <value>optETB</value>
-  </data>
-  <data name="&gt;&gt;optETB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optETB.Parent" xml:space="preserve">
-    <value>explorerBar</value>
-  </data>
-  <data name="&gt;&gt;optETB.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>2</value>
   </data>
   <data name="dgvRecommandList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1798,187 +1618,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelCalcResult.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="optETH.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optETH.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optETH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optETH.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1136, 695</value>
-  </data>
-  <data name="optETH.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 23</value>
-  </data>
-  <data name="optETH.TabIndex" type="System.Int32, mscorlib">
-    <value>304</value>
-  </data>
-  <data name="optETH.Text" xml:space="preserve">
-    <value>ETH</value>
-  </data>
-  <data name="optETH.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;optETH.Name" xml:space="preserve">
-    <value>optETH</value>
-  </data>
-  <data name="&gt;&gt;optETH.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optETH.Parent" xml:space="preserve">
-    <value>explorerBar</value>
-  </data>
-  <data name="&gt;&gt;optETH.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="optGTH.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optGTH.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optGTH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optGTH.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1136, 637</value>
-  </data>
-  <data name="optGTH.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 23</value>
-  </data>
-  <data name="optGTH.TabIndex" type="System.Int32, mscorlib">
-    <value>306</value>
-  </data>
-  <data name="optGTH.Text" xml:space="preserve">
-    <value>GTH</value>
-  </data>
-  <data name="optGTH.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;optGTH.Name" xml:space="preserve">
-    <value>optGTH</value>
-  </data>
-  <data name="&gt;&gt;optGTH.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optGTH.Parent" xml:space="preserve">
-    <value>explorerBar</value>
-  </data>
-  <data name="&gt;&gt;optGTH.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="optYL.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optYL.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optYL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optYL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1136, 724</value>
-  </data>
-  <data name="optYL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 23</value>
-  </data>
-  <data name="optYL.TabIndex" type="System.Int32, mscorlib">
-    <value>320</value>
-  </data>
-  <data name="optYL.Text" xml:space="preserve">
-    <value>YL</value>
-  </data>
-  <data name="optYL.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;optYL.Name" xml:space="preserve">
-    <value>optYL</value>
-  </data>
-  <data name="&gt;&gt;optYL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optYL.Parent" xml:space="preserve">
-    <value>explorerBar</value>
-  </data>
-  <data name="&gt;&gt;optYL.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="optYD.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optYD.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optYD.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optYD.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1201, 666</value>
-  </data>
-  <data name="optYD.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 23</value>
-  </data>
-  <data name="optYD.TabIndex" type="System.Int32, mscorlib">
-    <value>312</value>
-  </data>
-  <data name="optYD.Text" xml:space="preserve">
-    <value>YD</value>
-  </data>
-  <data name="optYD.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;optYD.Name" xml:space="preserve">
-    <value>optYD</value>
-  </data>
-  <data name="&gt;&gt;optYD.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optYD.Parent" xml:space="preserve">
-    <value>explorerBar</value>
-  </data>
-  <data name="&gt;&gt;optYD.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="optM.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optM.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optM.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optM.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1198, 695</value>
-  </data>
-  <data name="optM.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 23</value>
-  </data>
-  <data name="optM.TabIndex" type="System.Int32, mscorlib">
-    <value>316</value>
-  </data>
-  <data name="optM.Text" xml:space="preserve">
-    <value>M</value>
-  </data>
-  <data name="optM.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;optM.Name" xml:space="preserve">
-    <value>optM</value>
-  </data>
-  <data name="&gt;&gt;optM.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optM.Parent" xml:space="preserve">
-    <value>explorerBar</value>
-  </data>
-  <data name="&gt;&gt;optM.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>3</value>
   </data>
   <data name="label58.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2542,123 +2182,106 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelChart.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>4</value>
   </data>
-  <data name="panelMotorParams.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+  <data name="panelxxx.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="label60.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="chkMotorAdvanceMode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
-  <data name="label60.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 12pt</value>
+  <data name="chkMotorAdvanceMode.BackImg_ToggleOff_Normal" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACIAAAAUCAYAAADoZO9yAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAJwSURBVEhL1ZbJalpxFMYdAgmlLS1d2GERXOvGARyCihMiRiWIiDjPEWdpl1llYdNo99GSPkvT
+        RchThKbZp/UFTs8X/FMl15peaWkPfBvlnu93z6SK/yGUM6lY6jWFHCLf/aNerz+tVqu9crn8qVQq3RQK
+        BcrlcpTJZCiVSlEymaREIkHxeJxisRjt7e1RNBqlcDhMoVCIgsEgBQIB8vv9Nx6P58zpdL7W6/UaTr3B
+        AtTKUO7v73sY5LJWq1GlUiEGoTVAyOv1ktvtJob5Yjabg+yxyUKVllbnFqLRaBCDEEBarRYNh0Majye3
+        Ojp6R1wlWSAul4scDgcZjcZd9tpiScOgHWx8KUD6/T5NJh/o9PTjggBUrdZkg+zs7FxptdpttkRl7rap
+        3W73UQGA9Ho9SQghfJfP5+WCkMlkOmDLRyzMzEIoGeRMgIxG7yUB5jUYvJUNYrFYztnzGQstWmiPqtPp
+        fBMgv6qG0MnJWDaI1Wr9zp7YogfwBoAI9d8EsdlsU/Z8wXoIbwCIUHNrPv9szUjSfF6DwWCd1lywpySI
+        igHeCJBut7tyWHM5+cNqMBgO2VOyNcpIJKJpNptXAMH6LtscfIZDJ3d97Xb7tUaj0bOn5LAiNrLZbFCA
+        4KAxGB0fLx40XNp1DppOp0uy13OW5PoiUKJNPuG7DPH1D5z46xnEK9YTeM087wRKhMHZ4vJtp9PpAwY4
+        LxaLU7kgPp9vypW44HU9nLUDlQDE8hM/CwEDWpQOfcRQvWThTeQIzyIHciHnyh+9+UDJ0D+QY7KxZkjy
+        +DeFZ/AsciDXvf8GzAeIITyIN1hHyCHy/cuhUPwAlpD8XG4UxA0AAAAASUVORK5CYII=
+</value>
   </data>
-  <data name="label60.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="chkMotorAdvanceMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>91, 15</value>
   </data>
-  <data name="label60.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 9</value>
+  <data name="chkMotorAdvanceMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 20</value>
   </data>
-  <data name="label60.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 20</value>
+  <data name="chkMotorAdvanceMode.TabIndex" type="System.Int32, mscorlib">
+    <value>323</value>
   </data>
-  <data name="label60.TabIndex" type="System.Int32, mscorlib">
-    <value>251</value>
+  <data name="&gt;&gt;chkMotorAdvanceMode.Name" xml:space="preserve">
+    <value>chkMotorAdvanceMode</value>
   </data>
-  <data name="label60.Text" xml:space="preserve">
-    <value>[W]</value>
+  <data name="&gt;&gt;chkMotorAdvanceMode.Type" xml:space="preserve">
+    <value>CustomToggle.CustomToggle, CustomToggle, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;label60.Name" xml:space="preserve">
-    <value>label60</value>
+  <data name="&gt;&gt;chkMotorAdvanceMode.Parent" xml:space="preserve">
+    <value>panelMotorAdvanceMode</value>
   </data>
-  <data name="&gt;&gt;label60.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label60.Parent" xml:space="preserve">
-    <value>panelPowerSelection</value>
-  </data>
-  <data name="&gt;&gt;label60.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chkMotorAdvanceMode.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="cboMotorParamsMotorPowerSelection.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
+  <data name="label20.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
-  <data name="cboMotorParamsMotorPowerSelection.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt</value>
-  </data>
-  <data name="cboMotorParamsMotorPowerSelection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 7</value>
-  </data>
-  <data name="cboMotorParamsMotorPowerSelection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 27</value>
-  </data>
-  <data name="cboMotorParamsMotorPowerSelection.TabIndex" type="System.Int32, mscorlib">
-    <value>250</value>
-  </data>
-  <data name="&gt;&gt;cboMotorParamsMotorPowerSelection.Name" xml:space="preserve">
-    <value>cboMotorParamsMotorPowerSelection</value>
-  </data>
-  <data name="&gt;&gt;cboMotorParamsMotorPowerSelection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cboMotorParamsMotorPowerSelection.Parent" xml:space="preserve">
-    <value>panelPowerSelection</value>
-  </data>
-  <data name="&gt;&gt;cboMotorParamsMotorPowerSelection.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label59.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label20.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label59.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
+  <data name="label20.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 12pt, style=Bold</value>
   </data>
-  <data name="label59.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label20.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label59.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 10</value>
+  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 14</value>
   </data>
-  <data name="label59.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 19</value>
+  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 21</value>
   </data>
-  <data name="label59.TabIndex" type="System.Int32, mscorlib">
-    <value>249</value>
+  <data name="label20.TabIndex" type="System.Int32, mscorlib">
+    <value>322</value>
   </data>
-  <data name="label59.Text" xml:space="preserve">
-    <value>馬達功率選擇：</value>
+  <data name="label20.Text" xml:space="preserve">
+    <value>進階選項</value>
   </data>
-  <data name="&gt;&gt;label59.Name" xml:space="preserve">
-    <value>label59</value>
+  <data name="&gt;&gt;label20.Name" xml:space="preserve">
+    <value>label20</value>
   </data>
-  <data name="&gt;&gt;label59.Type" xml:space="preserve">
+  <data name="&gt;&gt;label20.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label59.Parent" xml:space="preserve">
-    <value>panelPowerSelection</value>
+  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
+    <value>panelMotorAdvanceMode</value>
   </data>
-  <data name="&gt;&gt;label59.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="panelPowerSelection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 106</value>
+  <data name="panelMotorAdvanceMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 60</value>
   </data>
-  <data name="panelPowerSelection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 37</value>
+  <data name="panelMotorAdvanceMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 43</value>
   </data>
-  <data name="panelPowerSelection.TabIndex" type="System.Int32, mscorlib">
-    <value>324</value>
+  <data name="panelMotorAdvanceMode.TabIndex" type="System.Int32, mscorlib">
+    <value>326</value>
   </data>
-  <data name="&gt;&gt;panelPowerSelection.Name" xml:space="preserve">
-    <value>panelPowerSelection</value>
+  <data name="&gt;&gt;panelMotorAdvanceMode.Name" xml:space="preserve">
+    <value>panelMotorAdvanceMode</value>
   </data>
-  <data name="&gt;&gt;panelPowerSelection.Type" xml:space="preserve">
+  <data name="&gt;&gt;panelMotorAdvanceMode.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelPowerSelection.Parent" xml:space="preserve">
-    <value>panelMotorParams</value>
+  <data name="&gt;&gt;panelMotorAdvanceMode.Parent" xml:space="preserve">
+    <value>panelxxx</value>
   </data>
-  <data name="&gt;&gt;panelPowerSelection.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panelMotorAdvanceMode.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -2806,7 +2429,7 @@
     <value>3</value>
   </data>
   <data name="panelReducerParam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 353</value>
+    <value>3, 206</value>
   </data>
   <data name="panelReducerParam.Size" type="System.Drawing.Size, System.Drawing">
     <value>322, 55</value>
@@ -2827,7 +2450,7 @@
     <value>panelMotorParams</value>
   </data>
   <data name="&gt;&gt;panelReducerParam.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2839,7 +2462,7 @@
     <value>NoControl</value>
   </data>
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 306</value>
+    <value>6, 159</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 19</value>
@@ -2860,7 +2483,7 @@
     <value>panelMotorParams</value>
   </data>
   <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="label35.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2872,7 +2495,7 @@
     <value>NoControl</value>
   </data>
   <data name="label35.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 253</value>
+    <value>253, 106</value>
   </data>
   <data name="label35.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 20</value>
@@ -2893,7 +2516,7 @@
     <value>panelMotorParams</value>
   </data>
   <data name="&gt;&gt;label35.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="label18.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2905,7 +2528,7 @@
     <value>NoControl</value>
   </data>
   <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>154, 334</value>
+    <value>149, 187</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
     <value>164, 16</value>
@@ -2929,50 +2552,13 @@
     <value>panelMotorParams</value>
   </data>
   <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="customToggle1.BackImg_ToggleOff_Normal" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACIAAAAUCAYAAADoZO9yAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAJwSURBVEhL1ZbJalpxFMYdAgmlLS1d2GERXOvGARyCihMiRiWIiDjPEWdpl1llYdNo99GSPkvT
-        RchThKbZp/UFTs8X/FMl15peaWkPfBvlnu93z6SK/yGUM6lY6jWFHCLf/aNerz+tVqu9crn8qVQq3RQK
-        BcrlcpTJZCiVSlEymaREIkHxeJxisRjt7e1RNBqlcDhMoVCIgsEgBQIB8vv9Nx6P58zpdL7W6/UaTr3B
-        AtTKUO7v73sY5LJWq1GlUiEGoTVAyOv1ktvtJob5Yjabg+yxyUKVllbnFqLRaBCDEEBarRYNh0Majye3
-        Ojp6R1wlWSAul4scDgcZjcZd9tpiScOgHWx8KUD6/T5NJh/o9PTjggBUrdZkg+zs7FxptdpttkRl7rap
-        3W73UQGA9Ho9SQghfJfP5+WCkMlkOmDLRyzMzEIoGeRMgIxG7yUB5jUYvJUNYrFYztnzGQstWmiPqtPp
-        fBMgv6qG0MnJWDaI1Wr9zp7YogfwBoAI9d8EsdlsU/Z8wXoIbwCIUHNrPv9szUjSfF6DwWCd1lywpySI
-        igHeCJBut7tyWHM5+cNqMBgO2VOyNcpIJKJpNptXAMH6LtscfIZDJ3d97Xb7tUaj0bOn5LAiNrLZbFCA
-        4KAxGB0fLx40XNp1DppOp0uy13OW5PoiUKJNPuG7DPH1D5z46xnEK9YTeM087wRKhMHZ4vJtp9PpAwY4
-        LxaLU7kgPp9vypW44HU9nLUDlQDE8hM/CwEDWpQOfcRQvWThTeQIzyIHciHnyh+9+UDJ0D+QY7KxZkjy
-        +DeFZ/AsciDXvf8GzAeIITyIN1hHyCHy/cuhUPwAlpD8XG4UxA0AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="customToggle1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 77</value>
-  </data>
-  <data name="customToggle1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 20</value>
-  </data>
-  <data name="customToggle1.TabIndex" type="System.Int32, mscorlib">
-    <value>323</value>
-  </data>
-  <data name="&gt;&gt;customToggle1.Name" xml:space="preserve">
-    <value>customToggle1</value>
-  </data>
-  <data name="&gt;&gt;customToggle1.Type" xml:space="preserve">
-    <value>CustomToggle.CustomToggle, CustomToggle, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;customToggle1.Parent" xml:space="preserve">
-    <value>panelMotorParams</value>
-  </data>
-  <data name="&gt;&gt;customToggle1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="txtLoadInertiaMomentRatio.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 12pt</value>
   </data>
   <data name="txtLoadInertiaMomentRatio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 302</value>
+    <value>156, 155</value>
   </data>
   <data name="txtLoadInertiaMomentRatio.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 29</value>
@@ -2996,7 +2582,7 @@
     <value>panelMotorParams</value>
   </data>
   <data name="&gt;&gt;txtLoadInertiaMomentRatio.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="label43.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3008,7 +2594,7 @@
     <value>NoControl</value>
   </data>
   <data name="label43.Location" type="System.Drawing.Point, System.Drawing">
-    <value>154, 232</value>
+    <value>149, 85</value>
   </data>
   <data name="label43.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 16</value>
@@ -3032,7 +2618,7 @@
     <value>panelMotorParams</value>
   </data>
   <data name="&gt;&gt;label43.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="label41.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3044,7 +2630,7 @@
     <value>NoControl</value>
   </data>
   <data name="label41.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 254</value>
+    <value>6, 107</value>
   </data>
   <data name="label41.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 19</value>
@@ -3065,40 +2651,7 @@
     <value>panelMotorParams</value>
   </data>
   <data name="&gt;&gt;label41.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="label20.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label20.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 12pt, style=Bold</value>
-  </data>
-  <data name="label20.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 76</value>
-  </data>
-  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 21</value>
-  </data>
-  <data name="label20.TabIndex" type="System.Int32, mscorlib">
-    <value>322</value>
-  </data>
-  <data name="label20.Text" xml:space="preserve">
-    <value>進階選項</value>
-  </data>
-  <data name="&gt;&gt;label20.Name" xml:space="preserve">
-    <value>label20</value>
-  </data>
-  <data name="&gt;&gt;label20.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
-    <value>panelMotorParams</value>
-  </data>
-  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>6</value>
   </data>
   <data name="label42.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3110,7 +2663,7 @@
     <value>NoControl</value>
   </data>
   <data name="label42.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 204</value>
+    <value>6, 57</value>
   </data>
   <data name="label42.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 19</value>
@@ -3131,7 +2684,7 @@
     <value>panelMotorParams</value>
   </data>
   <data name="&gt;&gt;label42.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>7</value>
   </data>
   <data name="label38.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3143,7 +2696,7 @@
     <value>NoControl</value>
   </data>
   <data name="label38.Location" type="System.Drawing.Point, System.Drawing">
-    <value>154, 283</value>
+    <value>149, 136</value>
   </data>
   <data name="label38.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 16</value>
@@ -3167,13 +2720,13 @@
     <value>panelMotorParams</value>
   </data>
   <data name="&gt;&gt;label38.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>8</value>
   </data>
   <data name="txtRotateInertia.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 12pt</value>
   </data>
   <data name="txtRotateInertia.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 251</value>
+    <value>156, 104</value>
   </data>
   <data name="txtRotateInertia.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 29</value>
@@ -3197,7 +2750,7 @@
     <value>panelMotorParams</value>
   </data>
   <data name="&gt;&gt;txtRotateInertia.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>9</value>
   </data>
   <data name="label40.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3209,7 +2762,7 @@
     <value>NoControl</value>
   </data>
   <data name="label40.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 150</value>
+    <value>253, 3</value>
   </data>
   <data name="label40.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 20</value>
@@ -3230,40 +2783,13 @@
     <value>panelMotorParams</value>
   </data>
   <data name="&gt;&gt;label40.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="cboPower.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="cboPower.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt</value>
-  </data>
-  <data name="cboPower.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 18</value>
-  </data>
-  <data name="cboPower.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 27</value>
-  </data>
-  <data name="cboPower.TabIndex" type="System.Int32, mscorlib">
-    <value>321</value>
-  </data>
-  <data name="&gt;&gt;cboPower.Name" xml:space="preserve">
-    <value>cboPower</value>
-  </data>
-  <data name="&gt;&gt;cboPower.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cboPower.Parent" xml:space="preserve">
-    <value>panelMotorParams</value>
-  </data>
-  <data name="&gt;&gt;cboPower.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>10</value>
   </data>
   <data name="txtRatedTorque.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 12pt</value>
   </data>
   <data name="txtRatedTorque.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 147</value>
+    <value>156, 0</value>
   </data>
   <data name="txtRatedTorque.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 29</value>
@@ -3287,13 +2813,13 @@
     <value>panelMotorParams</value>
   </data>
   <data name="&gt;&gt;txtRatedTorque.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>11</value>
   </data>
   <data name="txtMaxTorque.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 12pt</value>
   </data>
   <data name="txtMaxTorque.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 200</value>
+    <value>156, 53</value>
   </data>
   <data name="txtMaxTorque.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 29</value>
@@ -3317,7 +2843,7 @@
     <value>panelMotorParams</value>
   </data>
   <data name="&gt;&gt;txtMaxTorque.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>12</value>
   </data>
   <data name="label36.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3329,7 +2855,7 @@
     <value>NoControl</value>
   </data>
   <data name="label36.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 203</value>
+    <value>253, 56</value>
   </data>
   <data name="label36.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 20</value>
@@ -3350,7 +2876,7 @@
     <value>panelMotorParams</value>
   </data>
   <data name="&gt;&gt;label36.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>13</value>
   </data>
   <data name="label39.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3362,7 +2888,7 @@
     <value>NoControl</value>
   </data>
   <data name="label39.Location" type="System.Drawing.Point, System.Drawing">
-    <value>154, 179</value>
+    <value>149, 32</value>
   </data>
   <data name="label39.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 16</value>
@@ -3386,7 +2912,7 @@
     <value>panelMotorParams</value>
   </data>
   <data name="&gt;&gt;label39.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>14</value>
   </data>
   <data name="label37.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3398,7 +2924,7 @@
     <value>NoControl</value>
   </data>
   <data name="label37.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 151</value>
+    <value>6, 4</value>
   </data>
   <data name="label37.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 19</value>
@@ -3419,16 +2945,16 @@
     <value>panelMotorParams</value>
   </data>
   <data name="&gt;&gt;label37.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>15</value>
   </data>
   <data name="panelMotorParams.Location" type="System.Drawing.Point, System.Drawing">
-    <value>592, 102</value>
+    <value>5, 147</value>
   </data>
   <data name="panelMotorParams.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 429</value>
+    <value>326, 272</value>
   </data>
   <data name="panelMotorParams.TabIndex" type="System.Int32, mscorlib">
-    <value>379</value>
+    <value>325</value>
   </data>
   <data name="&gt;&gt;panelMotorParams.Name" xml:space="preserve">
     <value>panelMotorParams</value>
@@ -3437,9 +2963,180 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panelMotorParams.Parent" xml:space="preserve">
-    <value>panelCalc</value>
+    <value>panelxxx</value>
   </data>
   <data name="&gt;&gt;panelMotorParams.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label60.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="label60.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label60.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 12pt</value>
+  </data>
+  <data name="label60.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label60.Location" type="System.Drawing.Point, System.Drawing">
+    <value>250, 12</value>
+  </data>
+  <data name="label60.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 20</value>
+  </data>
+  <data name="label60.TabIndex" type="System.Int32, mscorlib">
+    <value>251</value>
+  </data>
+  <data name="label60.Text" xml:space="preserve">
+    <value>[W]</value>
+  </data>
+  <data name="&gt;&gt;label60.Name" xml:space="preserve">
+    <value>label60</value>
+  </data>
+  <data name="&gt;&gt;label60.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label60.Parent" xml:space="preserve">
+    <value>panelPowerSelection</value>
+  </data>
+  <data name="&gt;&gt;label60.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cboMotorParamsMotorPowerSelection.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="cboMotorParamsMotorPowerSelection.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="cboMotorParamsMotorPowerSelection.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt</value>
+  </data>
+  <data name="cboMotorParamsMotorPowerSelection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 10</value>
+  </data>
+  <data name="cboMotorParamsMotorPowerSelection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 27</value>
+  </data>
+  <data name="cboMotorParamsMotorPowerSelection.TabIndex" type="System.Int32, mscorlib">
+    <value>250</value>
+  </data>
+  <data name="&gt;&gt;cboMotorParamsMotorPowerSelection.Name" xml:space="preserve">
+    <value>cboMotorParamsMotorPowerSelection</value>
+  </data>
+  <data name="&gt;&gt;cboMotorParamsMotorPowerSelection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboMotorParamsMotorPowerSelection.Parent" xml:space="preserve">
+    <value>panelPowerSelection</value>
+  </data>
+  <data name="&gt;&gt;cboMotorParamsMotorPowerSelection.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label59.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="label59.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label59.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="label59.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label59.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 13</value>
+  </data>
+  <data name="label59.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 19</value>
+  </data>
+  <data name="label59.TabIndex" type="System.Int32, mscorlib">
+    <value>249</value>
+  </data>
+  <data name="label59.Text" xml:space="preserve">
+    <value>馬達功率選擇：</value>
+  </data>
+  <data name="&gt;&gt;label59.Name" xml:space="preserve">
+    <value>label59</value>
+  </data>
+  <data name="&gt;&gt;label59.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label59.Parent" xml:space="preserve">
+    <value>panelPowerSelection</value>
+  </data>
+  <data name="&gt;&gt;label59.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panelPowerSelection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 103</value>
+  </data>
+  <data name="panelPowerSelection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 40</value>
+  </data>
+  <data name="panelPowerSelection.TabIndex" type="System.Int32, mscorlib">
+    <value>324</value>
+  </data>
+  <data name="&gt;&gt;panelPowerSelection.Name" xml:space="preserve">
+    <value>panelPowerSelection</value>
+  </data>
+  <data name="&gt;&gt;panelPowerSelection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelPowerSelection.Parent" xml:space="preserve">
+    <value>panelxxx</value>
+  </data>
+  <data name="&gt;&gt;panelPowerSelection.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cboPower.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="cboPower.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt</value>
+  </data>
+  <data name="cboPower.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 18</value>
+  </data>
+  <data name="cboPower.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 27</value>
+  </data>
+  <data name="cboPower.TabIndex" type="System.Int32, mscorlib">
+    <value>321</value>
+  </data>
+  <data name="&gt;&gt;cboPower.Name" xml:space="preserve">
+    <value>cboPower</value>
+  </data>
+  <data name="&gt;&gt;cboPower.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboPower.Parent" xml:space="preserve">
+    <value>panelxxx</value>
+  </data>
+  <data name="&gt;&gt;cboPower.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panelxxx.Location" type="System.Drawing.Point, System.Drawing">
+    <value>592, 102</value>
+  </data>
+  <data name="panelxxx.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 429</value>
+  </data>
+  <data name="panelxxx.TabIndex" type="System.Int32, mscorlib">
+    <value>379</value>
+  </data>
+  <data name="&gt;&gt;panelxxx.Name" xml:space="preserve">
+    <value>panelxxx</value>
+  </data>
+  <data name="&gt;&gt;panelxxx.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelxxx.Parent" xml:space="preserve">
+    <value>panelCalc</value>
+  </data>
+  <data name="&gt;&gt;panelxxx.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label19.AutoSize" type="System.Boolean, mscorlib">
@@ -5330,129 +5027,6 @@
   <data name="&gt;&gt;panelAdvanceMode.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="optMotorParamsModifySimple.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optMotorParamsModifySimple.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt</value>
-  </data>
-  <data name="optMotorParamsModifySimple.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optMotorParamsModifySimple.Location" type="System.Drawing.Point, System.Drawing">
-    <value>119, 3</value>
-  </data>
-  <data name="optMotorParamsModifySimple.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 23</value>
-  </data>
-  <data name="optMotorParamsModifySimple.TabIndex" type="System.Int32, mscorlib">
-    <value>248</value>
-  </data>
-  <data name="optMotorParamsModifySimple.Text" xml:space="preserve">
-    <value>簡易</value>
-  </data>
-  <data name="&gt;&gt;optMotorParamsModifySimple.Name" xml:space="preserve">
-    <value>optMotorParamsModifySimple</value>
-  </data>
-  <data name="&gt;&gt;optMotorParamsModifySimple.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optMotorParamsModifySimple.Parent" xml:space="preserve">
-    <value>panelPowerModifyMode</value>
-  </data>
-  <data name="&gt;&gt;optMotorParamsModifySimple.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="optMotorParamsModifyAdvance.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optMotorParamsModifyAdvance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt</value>
-  </data>
-  <data name="optMotorParamsModifyAdvance.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optMotorParamsModifyAdvance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>178, 3</value>
-  </data>
-  <data name="optMotorParamsModifyAdvance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 23</value>
-  </data>
-  <data name="optMotorParamsModifyAdvance.TabIndex" type="System.Int32, mscorlib">
-    <value>249</value>
-  </data>
-  <data name="optMotorParamsModifyAdvance.Text" xml:space="preserve">
-    <value>進階</value>
-  </data>
-  <data name="&gt;&gt;optMotorParamsModifyAdvance.Name" xml:space="preserve">
-    <value>optMotorParamsModifyAdvance</value>
-  </data>
-  <data name="&gt;&gt;optMotorParamsModifyAdvance.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optMotorParamsModifyAdvance.Parent" xml:space="preserve">
-    <value>panelPowerModifyMode</value>
-  </data>
-  <data name="&gt;&gt;optMotorParamsModifyAdvance.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label34.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label34.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="label34.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label34.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 5</value>
-  </data>
-  <data name="label34.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 19</value>
-  </data>
-  <data name="label34.TabIndex" type="System.Int32, mscorlib">
-    <value>247</value>
-  </data>
-  <data name="label34.Text" xml:space="preserve">
-    <value>調整模式：</value>
-  </data>
-  <data name="&gt;&gt;label34.Name" xml:space="preserve">
-    <value>label34</value>
-  </data>
-  <data name="&gt;&gt;label34.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label34.Parent" xml:space="preserve">
-    <value>panelPowerModifyMode</value>
-  </data>
-  <data name="&gt;&gt;label34.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panelPowerModifyMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>600, 60</value>
-  </data>
-  <data name="panelPowerModifyMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>305, 29</value>
-  </data>
-  <data name="panelPowerModifyMode.TabIndex" type="System.Int32, mscorlib">
-    <value>327</value>
-  </data>
-  <data name="panelPowerModifyMode.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;panelPowerModifyMode.Name" xml:space="preserve">
-    <value>panelPowerModifyMode</value>
-  </data>
-  <data name="&gt;&gt;panelPowerModifyMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelPowerModifyMode.Parent" xml:space="preserve">
-    <value>panelCalc</value>
-  </data>
-  <data name="&gt;&gt;panelPowerModifyMode.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="panelCalc.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -5475,7 +5049,103 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelCalc.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>5</value>
+  </data>
+  <data name="label64.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="label64.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label64.Location" type="System.Drawing.Point, System.Drawing">
+    <value>279, 187</value>
+  </data>
+  <data name="label64.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 23</value>
+  </data>
+  <data name="label64.TabIndex" type="System.Int32, mscorlib">
+    <value>372</value>
+  </data>
+  <data name="label64.Text" xml:space="preserve">
+    <value>橫掛使用</value>
+  </data>
+  <data name="label64.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label64.Name" xml:space="preserve">
+    <value>label64</value>
+  </data>
+  <data name="&gt;&gt;label64.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label64.Parent" xml:space="preserve">
+    <value>panelSetup</value>
+  </data>
+  <data name="&gt;&gt;label64.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label63.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="label63.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label63.Location" type="System.Drawing.Point, System.Drawing">
+    <value>140, 187</value>
+  </data>
+  <data name="label63.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 23</value>
+  </data>
+  <data name="label63.TabIndex" type="System.Int32, mscorlib">
+    <value>371</value>
+  </data>
+  <data name="label63.Text" xml:space="preserve">
+    <value>垂直使用</value>
+  </data>
+  <data name="label63.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label63.Name" xml:space="preserve">
+    <value>label63</value>
+  </data>
+  <data name="&gt;&gt;label63.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label63.Parent" xml:space="preserve">
+    <value>panelSetup</value>
+  </data>
+  <data name="&gt;&gt;label63.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label62.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="label62.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 187</value>
+  </data>
+  <data name="label62.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 23</value>
+  </data>
+  <data name="label62.TabIndex" type="System.Int32, mscorlib">
+    <value>370</value>
+  </data>
+  <data name="label62.Text" xml:space="preserve">
+    <value>水平使用</value>
+  </data>
+  <data name="label62.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label62.Name" xml:space="preserve">
+    <value>label62</value>
+  </data>
+  <data name="&gt;&gt;label62.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label62.Parent" xml:space="preserve">
+    <value>panelSetup</value>
+  </data>
+  <data name="&gt;&gt;label62.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="label14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5916,7 +5586,7 @@
     <value>panelSetup</value>
   </data>
   <data name="&gt;&gt;panelMoment.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="pictureBox9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5943,7 +5613,7 @@
     <value>panelSetup</value>
   </data>
   <data name="&gt;&gt;pictureBox9.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="optHorizontalUse.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5955,7 +5625,7 @@
     <value>NoControl</value>
   </data>
   <data name="optHorizontalUse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 190</value>
+    <value>438, 190</value>
   </data>
   <data name="optHorizontalUse.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 23</value>
@@ -5965,6 +5635,9 @@
   </data>
   <data name="optHorizontalUse.Text" xml:space="preserve">
     <value>水平使用</value>
+  </data>
+  <data name="optHorizontalUse.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;optHorizontalUse.Name" xml:space="preserve">
     <value>optHorizontalUse</value>
@@ -5976,7 +5649,7 @@
     <value>panelSetup</value>
   </data>
   <data name="&gt;&gt;optHorizontalUse.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="optVerticalUse.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5988,7 +5661,7 @@
     <value>NoControl</value>
   </data>
   <data name="optVerticalUse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 190</value>
+    <value>531, 190</value>
   </data>
   <data name="optVerticalUse.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 23</value>
@@ -5998,6 +5671,9 @@
   </data>
   <data name="optVerticalUse.Text" xml:space="preserve">
     <value>垂直使用</value>
+  </data>
+  <data name="optVerticalUse.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;optVerticalUse.Name" xml:space="preserve">
     <value>optVerticalUse</value>
@@ -6009,7 +5685,7 @@
     <value>panelSetup</value>
   </data>
   <data name="&gt;&gt;optVerticalUse.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="optWallHangingUse.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6021,7 +5697,7 @@
     <value>NoControl</value>
   </data>
   <data name="optWallHangingUse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>297, 190</value>
+    <value>438, 214</value>
   </data>
   <data name="optWallHangingUse.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 23</value>
@@ -6031,6 +5707,9 @@
   </data>
   <data name="optWallHangingUse.Text" xml:space="preserve">
     <value>橫掛使用</value>
+  </data>
+  <data name="optWallHangingUse.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;optWallHangingUse.Name" xml:space="preserve">
     <value>optWallHangingUse</value>
@@ -6042,7 +5721,7 @@
     <value>panelSetup</value>
   </data>
   <data name="&gt;&gt;optWallHangingUse.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="picWallHangingUse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6069,7 +5748,7 @@
     <value>panelSetup</value>
   </data>
   <data name="&gt;&gt;picWallHangingUse.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="picVerticalUse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6096,7 +5775,7 @@
     <value>panelSetup</value>
   </data>
   <data name="&gt;&gt;picVerticalUse.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="picHorizontalUse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6123,7 +5802,7 @@
     <value>panelSetup</value>
   </data>
   <data name="&gt;&gt;picHorizontalUse.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="panel8.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -6186,7 +5865,7 @@
     <value>panelSetup</value>
   </data>
   <data name="&gt;&gt;panel8.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="panelSetup.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -6210,43 +5889,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelSetup.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="optY.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optY.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1136, 666</value>
-  </data>
-  <data name="optY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 23</value>
-  </data>
-  <data name="optY.TabIndex" type="System.Int32, mscorlib">
-    <value>310</value>
-  </data>
-  <data name="optY.Text" xml:space="preserve">
-    <value>Y</value>
-  </data>
-  <data name="optY.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;optY.Name" xml:space="preserve">
-    <value>optY</value>
-  </data>
-  <data name="&gt;&gt;optY.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optY.Parent" xml:space="preserve">
-    <value>explorerBar</value>
-  </data>
-  <data name="&gt;&gt;optY.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>6</value>
   </data>
   <data name="panel7.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -6642,43 +6285,43 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelModelSelection.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>7</value>
   </data>
-  <data name="optGTY.AutoSize" type="System.Boolean, mscorlib">
+  <data name="optECH.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="optGTY.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="optECH.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 11pt, style=Bold</value>
   </data>
-  <data name="optGTY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="optECH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="optGTY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1201, 637</value>
+  <data name="optECH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>839, 230</value>
   </data>
-  <data name="optGTY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 23</value>
+  <data name="optECH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 23</value>
   </data>
-  <data name="optGTY.TabIndex" type="System.Int32, mscorlib">
-    <value>308</value>
+  <data name="optECH.TabIndex" type="System.Int32, mscorlib">
+    <value>329</value>
   </data>
-  <data name="optGTY.Text" xml:space="preserve">
-    <value>GTY</value>
+  <data name="optECH.Text" xml:space="preserve">
+    <value>ECH</value>
   </data>
-  <data name="optGTY.Visible" type="System.Boolean, mscorlib">
+  <data name="optECH.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;optGTY.Name" xml:space="preserve">
-    <value>optGTY</value>
+  <data name="&gt;&gt;optECH.Name" xml:space="preserve">
+    <value>optECH</value>
   </data>
-  <data name="&gt;&gt;optGTY.Type" xml:space="preserve">
+  <data name="&gt;&gt;optECH.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;optGTY.Parent" xml:space="preserve">
-    <value>explorerBar</value>
+  <data name="&gt;&gt;optECH.Parent" xml:space="preserve">
+    <value>panelModelType</value>
   </data>
-  <data name="&gt;&gt;optGTY.ZOrder" xml:space="preserve">
-    <value>19</value>
+  <data name="&gt;&gt;optECH.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="panel10.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -6978,7 +6621,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabModelType_standard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>955, 378</value>
+    <value>821, 378</value>
   </data>
   <data name="tabModelType_standard.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -7155,13 +6798,13 @@
     <value>1</value>
   </data>
   <data name="tabModelType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+    <value>Left</value>
   </data>
   <data name="tabModelType.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 35</value>
   </data>
   <data name="tabModelType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 404</value>
+    <value>829, 404</value>
   </data>
   <data name="tabModelType.TabIndex" type="System.Int32, mscorlib">
     <value>258</value>
@@ -7176,7 +6819,7 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;tabModelType.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="panel5.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -7239,7 +6882,403 @@
     <value>panelModelType</value>
   </data>
   <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="optGTH.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optGTH.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optGTH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optGTH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>839, 85</value>
+  </data>
+  <data name="optGTH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 23</value>
+  </data>
+  <data name="optGTH.TabIndex" type="System.Int32, mscorlib">
+    <value>306</value>
+  </data>
+  <data name="optGTH.Text" xml:space="preserve">
+    <value>GTH</value>
+  </data>
+  <data name="optGTH.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optGTH.Name" xml:space="preserve">
+    <value>optGTH</value>
+  </data>
+  <data name="&gt;&gt;optGTH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optGTH.Parent" xml:space="preserve">
+    <value>panelModelType</value>
+  </data>
+  <data name="&gt;&gt;optGTH.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="optGTY.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optGTY.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optGTY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optGTY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>904, 85</value>
+  </data>
+  <data name="optGTY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 23</value>
+  </data>
+  <data name="optGTY.TabIndex" type="System.Int32, mscorlib">
+    <value>308</value>
+  </data>
+  <data name="optGTY.Text" xml:space="preserve">
+    <value>GTY</value>
+  </data>
+  <data name="optGTY.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optGTY.Name" xml:space="preserve">
+    <value>optGTY</value>
+  </data>
+  <data name="&gt;&gt;optGTY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optGTY.Parent" xml:space="preserve">
+    <value>panelModelType</value>
+  </data>
+  <data name="&gt;&gt;optGTY.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="optECB.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optECB.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optECB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optECB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>901, 230</value>
+  </data>
+  <data name="optECB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 23</value>
+  </data>
+  <data name="optECB.TabIndex" type="System.Int32, mscorlib">
+    <value>327</value>
+  </data>
+  <data name="optECB.Text" xml:space="preserve">
+    <value>ECB</value>
+  </data>
+  <data name="optECB.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optECB.Name" xml:space="preserve">
+    <value>optECB</value>
+  </data>
+  <data name="&gt;&gt;optECB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optECB.Parent" xml:space="preserve">
+    <value>panelModelType</value>
+  </data>
+  <data name="&gt;&gt;optECB.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="optY.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optY.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>839, 114</value>
+  </data>
+  <data name="optY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 23</value>
+  </data>
+  <data name="optY.TabIndex" type="System.Int32, mscorlib">
+    <value>310</value>
+  </data>
+  <data name="optY.Text" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="optY.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optY.Name" xml:space="preserve">
+    <value>optY</value>
+  </data>
+  <data name="&gt;&gt;optY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optY.Parent" xml:space="preserve">
+    <value>panelModelType</value>
+  </data>
+  <data name="&gt;&gt;optY.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="optGCH.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optGCH.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optGCH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optGCH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>901, 172</value>
+  </data>
+  <data name="optGCH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 23</value>
+  </data>
+  <data name="optGCH.TabIndex" type="System.Int32, mscorlib">
+    <value>325</value>
+  </data>
+  <data name="optGCH.Text" xml:space="preserve">
+    <value>GCH</value>
+  </data>
+  <data name="optGCH.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optGCH.Name" xml:space="preserve">
+    <value>optGCH</value>
+  </data>
+  <data name="&gt;&gt;optGCH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optGCH.Parent" xml:space="preserve">
+    <value>panelModelType</value>
+  </data>
+  <data name="&gt;&gt;optGCH.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="optM.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optM.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optM.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>901, 143</value>
+  </data>
+  <data name="optM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 23</value>
+  </data>
+  <data name="optM.TabIndex" type="System.Int32, mscorlib">
+    <value>316</value>
+  </data>
+  <data name="optM.Text" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="optM.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optM.Name" xml:space="preserve">
+    <value>optM</value>
+  </data>
+  <data name="&gt;&gt;optM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optM.Parent" xml:space="preserve">
+    <value>panelModelType</value>
+  </data>
+  <data name="&gt;&gt;optM.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="optMG.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optMG.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optMG.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optMG.Location" type="System.Drawing.Point, System.Drawing">
+    <value>839, 201</value>
+  </data>
+  <data name="optMG.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 23</value>
+  </data>
+  <data name="optMG.TabIndex" type="System.Int32, mscorlib">
+    <value>318</value>
+  </data>
+  <data name="optMG.Text" xml:space="preserve">
+    <value>MG</value>
+  </data>
+  <data name="optMG.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optMG.Name" xml:space="preserve">
+    <value>optMG</value>
+  </data>
+  <data name="&gt;&gt;optMG.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optMG.Parent" xml:space="preserve">
+    <value>panelModelType</value>
+  </data>
+  <data name="&gt;&gt;optMG.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="optYD.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optYD.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optYD.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optYD.Location" type="System.Drawing.Point, System.Drawing">
+    <value>904, 114</value>
+  </data>
+  <data name="optYD.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 23</value>
+  </data>
+  <data name="optYD.TabIndex" type="System.Int32, mscorlib">
+    <value>312</value>
+  </data>
+  <data name="optYD.Text" xml:space="preserve">
+    <value>YD</value>
+  </data>
+  <data name="optYD.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optYD.Name" xml:space="preserve">
+    <value>optYD</value>
+  </data>
+  <data name="&gt;&gt;optYD.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optYD.Parent" xml:space="preserve">
+    <value>panelModelType</value>
+  </data>
+  <data name="&gt;&gt;optYD.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="optETB.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optETB.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optETB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optETB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>901, 201</value>
+  </data>
+  <data name="optETB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 23</value>
+  </data>
+  <data name="optETB.TabIndex" type="System.Int32, mscorlib">
+    <value>314</value>
+  </data>
+  <data name="optETB.Text" xml:space="preserve">
+    <value>ETB</value>
+  </data>
+  <data name="optETB.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optETB.Name" xml:space="preserve">
+    <value>optETB</value>
+  </data>
+  <data name="&gt;&gt;optETB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optETB.Parent" xml:space="preserve">
+    <value>panelModelType</value>
+  </data>
+  <data name="&gt;&gt;optETB.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="optYL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optYL.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optYL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optYL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>839, 172</value>
+  </data>
+  <data name="optYL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 23</value>
+  </data>
+  <data name="optYL.TabIndex" type="System.Int32, mscorlib">
+    <value>320</value>
+  </data>
+  <data name="optYL.Text" xml:space="preserve">
+    <value>YL</value>
+  </data>
+  <data name="optYL.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optYL.Name" xml:space="preserve">
+    <value>optYL</value>
+  </data>
+  <data name="&gt;&gt;optYL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optYL.Parent" xml:space="preserve">
+    <value>panelModelType</value>
+  </data>
+  <data name="&gt;&gt;optYL.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="optETH.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optETH.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optETH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optETH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>839, 143</value>
+  </data>
+  <data name="optETH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 23</value>
+  </data>
+  <data name="optETH.TabIndex" type="System.Int32, mscorlib">
+    <value>304</value>
+  </data>
+  <data name="optETH.Text" xml:space="preserve">
+    <value>ETH</value>
+  </data>
+  <data name="optETH.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optETH.Name" xml:space="preserve">
+    <value>optETH</value>
+  </data>
+  <data name="&gt;&gt;optETH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optETH.Parent" xml:space="preserve">
+    <value>panelModelType</value>
+  </data>
+  <data name="&gt;&gt;optETH.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="panelModelType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -7263,7 +7302,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelModelType.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>8</value>
   </data>
   <data name="panel3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -7473,7 +7512,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelUseEnv.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>9</value>
   </data>
   <data name="explorerBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
