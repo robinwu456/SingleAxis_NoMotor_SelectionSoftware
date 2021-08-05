@@ -37,33 +37,23 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //"Chart",            // 圖表
         };
 
-        private Model.ModelType[][] modelTypePosition_standard = {
-            new Model.ModelType[]{ Model.ModelType.GTH, Model.ModelType.GTY },
-            new Model.ModelType[]{ Model.ModelType.ETH, Model.ModelType.Y, Model.ModelType.YD, Model.ModelType.YL },
-            new Model.ModelType[]{ Model.ModelType.MG, Model.ModelType.M, Model.ModelType.ETB },
-        };
-        private Model.ModelType[][] modelTypePosition_dustfree = {
-            new Model.ModelType[]{ Model.ModelType.GCH, },
-            new Model.ModelType[]{ Model.ModelType.ECH, Model.ModelType.ECB, },
-        };
-
         public Page2(FormMain formMain) {
             this.formMain = formMain;
 
             // 機構類型opt統整
             modelTypeOptMap = new Dictionary<RadioButton, Model.ModelType>() {
-                { formMain.optStandardScrewActuator, Model.ModelType.ETH },
-                { formMain.optBuildInScrewActuator, Model.ModelType.GTH },
-                { formMain.optBuildInRodTypeScrewActuator, Model.ModelType.GTY },
-                { formMain.optNoTrackRodTypeActuator, Model.ModelType.Y },
-                { formMain.optBuildOutRodTypeActuator, Model.ModelType.YL },
-                { formMain.optSupportTrackRodTypeActuator, Model.ModelType.YD },
-                { formMain.optStandardBeltActuator, Model.ModelType.ETB },
-                { formMain.optEuropeBeltActuator, Model.ModelType.M },
-                { formMain.optBuildInBeltActuator, Model.ModelType.MG },
-                { formMain.optModelType_GCH, Model.ModelType.GCH },
-                { formMain.optModelType_ECH, Model.ModelType.ECH },
-                { formMain.optModelType_ECB, Model.ModelType.ECB },
+                { formMain.optETH, Model.ModelType.ETH },
+                { formMain.optGTH, Model.ModelType.GTH },
+                { formMain.optGTY, Model.ModelType.GTY },
+                { formMain.optY, Model.ModelType.Y },
+                { formMain.optYL, Model.ModelType.YL },
+                { formMain.optYD, Model.ModelType.YD },
+                { formMain.optETB, Model.ModelType.ETB },
+                { formMain.optM, Model.ModelType.M },
+                { formMain.optMG, Model.ModelType.MG },
+                { formMain.optGCH, Model.ModelType.GCH },
+                { formMain.optECH, Model.ModelType.ECH },
+                { formMain.optECB, Model.ModelType.ECB },
             };
 
             // 安裝方式opt統整
@@ -148,7 +138,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 重置版面
             formMain.optStandardEnv.Checked = true;
-            formMain.optBuildInScrewActuator.Checked = true;
+            formMain.optGTH.Checked = true;
             recommandList.Refresh();
             formMain.sideTable.ClearModelImg();
             formMain.sideTable.ClearModelInfo();
@@ -407,85 +397,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void DetectedUseEnvModelType(object sender, EventArgs e) {
             Model.UseEnvironment useEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.標準 : Model.UseEnvironment.無塵;
-            Model.ModelType[] dustfreeModelTypes = calc.GetDustfreeModelType();
-            modelTypeOptMap.ToList().ForEach(pair => {
-                if (useEnv == Model.UseEnvironment.無塵)
-                    pair.Key.Visible = dustfreeModelTypes.Contains(pair.Value);
-                else
-                    pair.Key.Visible = !dustfreeModelTypes.Contains(pair.Value);
-
-                // 圖片處理
-                PictureBox picModelType = formMain.panelModelType.Controls.Find(pair.Key.Name.Replace("opt", "pic"), true)[0] as PictureBox;
-                picModelType.Visible = pair.Key.Visible;
-            });
-
-            // 目前選的沒有無塵，就自動選擇第一個
-            if (useEnv == Model.UseEnvironment.無塵 && !dustfreeModelTypes.Contains(curSelectModelType))
-                formMain.optBuildInScrewActuator.Checked = true;
-
+            formMain.tabModelType.SelectTab((int)useEnv);
             formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
-
-            //ReplaceItem();
         }
-
-        //public void ReplaceItem() {
-        //    // 傳動方式
-        //    Dictionary<int, Dictionary<string, Point>> tablePos = new Dictionary<int, Dictionary<string, Point>>() {
-        //        { 0, new Dictionary<string, Point>(){ { "lbPos", new Point(227, 31) }, { "picPos", new Point(413, 6) }, } },
-        //        { 1, new Dictionary<string, Point>(){ { "lbPos", new Point(227, 120) }, { "picPos", new Point(413, 90) }, } },
-        //        { 2, new Dictionary<string, Point>(){ { "lbPos", new Point(227, 200) }, { "picPos", new Point(413, 174) }, } },
-        //        { 3, new Dictionary<string, Point>(){ { "lbPos", new Point(227, 283) }, { "picPos", new Point(413, 258) }, } },
-        //        { 4, new Dictionary<string, Point>(){ { "lbPos", new Point(227, 368) }, { "picPos", new Point(413, 342) }, } },
-        //        { 5, new Dictionary<string, Point>(){ { "lbPos", new Point(577, 32) }, { "picPos", new Point(734, 6) }, } },
-        //        { 6, new Dictionary<string, Point>(){ { "lbPos", new Point(577, 120) }, { "picPos", new Point(734, 90) }, } },
-        //        { 7, new Dictionary<string, Point>(){ { "lbPos", new Point(577, 200) }, { "picPos", new Point(734, 174) }, } },
-        //        { 8, new Dictionary<string, Point>(){ { "lbPos", new Point(577, 283) }, { "picPos", new Point(734, 258) }, } },
-        //        { 9, new Dictionary<string, Point>(){ { "lbPos", new Point(575, 367) }, { "picPos", new Point(734, 342) }, } },
-        //    };
-        //    Model.ModelType[] standardPos = {
-        //        Model.ModelType.GTH,
-        //        Model.ModelType.GTY,
-        //        Model.ModelType.軌道內崁輔助導軌系列,
-        //        Model.ModelType.MG,
-        //        Model.ModelType.M,
-        //        Model.ModelType.ETH,
-        //        Model.ModelType.Y,
-        //        Model.ModelType.YD,
-        //        Model.ModelType.YL,
-        //        Model.ModelType.ETB
-        //    };
-        //    Model.ModelType[] dustFree = {
-        //        Model.ModelType.GTH,
-        //        Model.ModelType.GTY,
-        //        Model.ModelType.軌道內崁輔助導軌系列,
-        //        Model.ModelType.M,
-        //        Model.ModelType.Y,
-        //        Model.ModelType.ETH,
-        //        Model.ModelType.ETB,
-        //        Model.ModelType.MG,
-        //        Model.ModelType.YL,
-        //        Model.ModelType.YD,
-        //    };
-        //    foreach (var item in modelTypeOptMap) {
-        //        RadioButton opt = item.Key;
-        //        PictureBox pic = formMain.panelModelType.Controls.Find(opt.Name.Replace("opt", "pic"), true)[0] as PictureBox;
-        //        if (formMain.optStandardEnv.Checked) {
-        //            opt.Location = tablePos[standardPos.ToList().IndexOf(modelTypeOptMap[opt])]["lbPos"];
-        //            pic.Location = tablePos[standardPos.ToList().IndexOf(modelTypeOptMap[opt])]["picPos"];
-        //        } else {
-        //            opt.Location = tablePos[dustFree.ToList().IndexOf(modelTypeOptMap[opt])]["lbPos"];
-        //            pic.Location = tablePos[dustFree.ToList().IndexOf(modelTypeOptMap[opt])]["picPos"];
-        //        }
-        //    }
-
-        //    // 型號選擇
-        //    if (formMain.panelModelSelectionReducerRatio.Visible) {
-        //        formMain.panelModelSelectionModel.Location = new Point(398, 5);
-        //        formMain.panelModelSelectionReducerRatio.Location = new Point(510, 5);
-        //    } else {
-        //        formMain.panelModelSelectionModel.Location = new Point(398, 5);
-        //        formMain.panelModelSelectionLead.Location = new Point(510, 5);
-        //    }
-        //}
     }
 }

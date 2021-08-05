@@ -678,6 +678,42 @@
   <data name="explorerBar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="optECH.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optECH.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optECH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optECH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1136, 782</value>
+  </data>
+  <data name="optECH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 23</value>
+  </data>
+  <data name="optECH.TabIndex" type="System.Int32, mscorlib">
+    <value>329</value>
+  </data>
+  <data name="optECH.Text" xml:space="preserve">
+    <value>ECH</value>
+  </data>
+  <data name="optECH.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optECH.Name" xml:space="preserve">
+    <value>optECH</value>
+  </data>
+  <data name="&gt;&gt;optECH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optECH.Parent" xml:space="preserve">
+    <value>explorerBar</value>
+  </data>
+  <data name="&gt;&gt;optECH.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="panelConfirmBtnsStep2.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -760,7 +796,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelNextPage.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="pictureBox5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1210,7 +1246,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelSideTable.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lbPrePage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1243,7 +1279,151 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;lbPrePage.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <data name="optECB.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optECB.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optECB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optECB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1198, 782</value>
+  </data>
+  <data name="optECB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 23</value>
+  </data>
+  <data name="optECB.TabIndex" type="System.Int32, mscorlib">
+    <value>327</value>
+  </data>
+  <data name="optECB.Text" xml:space="preserve">
+    <value>ECB</value>
+  </data>
+  <data name="optECB.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optECB.Name" xml:space="preserve">
+    <value>optECB</value>
+  </data>
+  <data name="&gt;&gt;optECB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optECB.Parent" xml:space="preserve">
+    <value>explorerBar</value>
+  </data>
+  <data name="&gt;&gt;optECB.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="optGCH.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optGCH.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optGCH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optGCH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1198, 724</value>
+  </data>
+  <data name="optGCH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 23</value>
+  </data>
+  <data name="optGCH.TabIndex" type="System.Int32, mscorlib">
+    <value>325</value>
+  </data>
+  <data name="optGCH.Text" xml:space="preserve">
+    <value>GCH</value>
+  </data>
+  <data name="optGCH.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optGCH.Name" xml:space="preserve">
+    <value>optGCH</value>
+  </data>
+  <data name="&gt;&gt;optGCH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optGCH.Parent" xml:space="preserve">
+    <value>explorerBar</value>
+  </data>
+  <data name="&gt;&gt;optGCH.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="optMG.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optMG.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optMG.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optMG.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1136, 753</value>
+  </data>
+  <data name="optMG.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 23</value>
+  </data>
+  <data name="optMG.TabIndex" type="System.Int32, mscorlib">
+    <value>318</value>
+  </data>
+  <data name="optMG.Text" xml:space="preserve">
+    <value>MG</value>
+  </data>
+  <data name="optMG.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optMG.Name" xml:space="preserve">
+    <value>optMG</value>
+  </data>
+  <data name="&gt;&gt;optMG.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optMG.Parent" xml:space="preserve">
+    <value>explorerBar</value>
+  </data>
+  <data name="&gt;&gt;optMG.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="optETB.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optETB.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optETB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optETB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1198, 753</value>
+  </data>
+  <data name="optETB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 23</value>
+  </data>
+  <data name="optETB.TabIndex" type="System.Int32, mscorlib">
+    <value>314</value>
+  </data>
+  <data name="optETB.Text" xml:space="preserve">
+    <value>ETB</value>
+  </data>
+  <data name="optETB.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optETB.Name" xml:space="preserve">
+    <value>optETB</value>
+  </data>
+  <data name="&gt;&gt;optETB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optETB.Parent" xml:space="preserve">
+    <value>explorerBar</value>
+  </data>
+  <data name="&gt;&gt;optETB.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="dgvRecommandList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1618,7 +1798,187 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelCalcResult.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>8</value>
+  </data>
+  <data name="optETH.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optETH.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optETH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optETH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1136, 695</value>
+  </data>
+  <data name="optETH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 23</value>
+  </data>
+  <data name="optETH.TabIndex" type="System.Int32, mscorlib">
+    <value>304</value>
+  </data>
+  <data name="optETH.Text" xml:space="preserve">
+    <value>ETH</value>
+  </data>
+  <data name="optETH.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optETH.Name" xml:space="preserve">
+    <value>optETH</value>
+  </data>
+  <data name="&gt;&gt;optETH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optETH.Parent" xml:space="preserve">
+    <value>explorerBar</value>
+  </data>
+  <data name="&gt;&gt;optETH.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="optGTH.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optGTH.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optGTH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optGTH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1136, 637</value>
+  </data>
+  <data name="optGTH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 23</value>
+  </data>
+  <data name="optGTH.TabIndex" type="System.Int32, mscorlib">
+    <value>306</value>
+  </data>
+  <data name="optGTH.Text" xml:space="preserve">
+    <value>GTH</value>
+  </data>
+  <data name="optGTH.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optGTH.Name" xml:space="preserve">
+    <value>optGTH</value>
+  </data>
+  <data name="&gt;&gt;optGTH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optGTH.Parent" xml:space="preserve">
+    <value>explorerBar</value>
+  </data>
+  <data name="&gt;&gt;optGTH.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="optYL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optYL.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optYL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optYL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1136, 724</value>
+  </data>
+  <data name="optYL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 23</value>
+  </data>
+  <data name="optYL.TabIndex" type="System.Int32, mscorlib">
+    <value>320</value>
+  </data>
+  <data name="optYL.Text" xml:space="preserve">
+    <value>YL</value>
+  </data>
+  <data name="optYL.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optYL.Name" xml:space="preserve">
+    <value>optYL</value>
+  </data>
+  <data name="&gt;&gt;optYL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optYL.Parent" xml:space="preserve">
+    <value>explorerBar</value>
+  </data>
+  <data name="&gt;&gt;optYL.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="optYD.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optYD.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optYD.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optYD.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1201, 666</value>
+  </data>
+  <data name="optYD.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 23</value>
+  </data>
+  <data name="optYD.TabIndex" type="System.Int32, mscorlib">
+    <value>312</value>
+  </data>
+  <data name="optYD.Text" xml:space="preserve">
+    <value>YD</value>
+  </data>
+  <data name="optYD.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optYD.Name" xml:space="preserve">
+    <value>optYD</value>
+  </data>
+  <data name="&gt;&gt;optYD.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optYD.Parent" xml:space="preserve">
+    <value>explorerBar</value>
+  </data>
+  <data name="&gt;&gt;optYD.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="optM.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optM.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optM.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1198, 695</value>
+  </data>
+  <data name="optM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 23</value>
+  </data>
+  <data name="optM.TabIndex" type="System.Int32, mscorlib">
+    <value>316</value>
+  </data>
+  <data name="optM.Text" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="optM.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optM.Name" xml:space="preserve">
+    <value>optM</value>
+  </data>
+  <data name="&gt;&gt;optM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optM.Parent" xml:space="preserve">
+    <value>explorerBar</value>
+  </data>
+  <data name="&gt;&gt;optM.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="label58.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2182,7 +2542,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelChart.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>14</value>
   </data>
   <data name="panelMotorParams.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -3062,7 +3422,7 @@
     <value>19</value>
   </data>
   <data name="panelMotorParams.Location" type="System.Drawing.Point, System.Drawing">
-    <value>607, 102</value>
+    <value>592, 102</value>
   </data>
   <data name="panelMotorParams.Size" type="System.Drawing.Size, System.Drawing">
     <value>333, 429</value>
@@ -3092,7 +3452,7 @@
     <value>NoControl</value>
   </data>
   <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 69</value>
+    <value>10, 69</value>
   </data>
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 21</value>
@@ -4769,7 +5129,7 @@
     <value>34</value>
   </data>
   <data name="panel14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 102</value>
+    <value>0, 102</value>
   </data>
   <data name="panel14.Size" type="System.Drawing.Size, System.Drawing">
     <value>577, 429</value>
@@ -4947,7 +5307,7 @@
     <value>1</value>
   </data>
   <data name="panelAdvanceMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 60</value>
+    <value>122, 60</value>
   </data>
   <data name="panelAdvanceMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 36</value>
@@ -5070,7 +5430,7 @@
     <value>2</value>
   </data>
   <data name="panelPowerModifyMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>615, 60</value>
+    <value>600, 60</value>
   </data>
   <data name="panelPowerModifyMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>305, 29</value>
@@ -5115,7 +5475,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelCalc.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>15</value>
   </data>
   <data name="label14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5538,7 +5898,7 @@
     <value>12</value>
   </data>
   <data name="panelMoment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>661, 46</value>
+    <value>646, 45</value>
   </data>
   <data name="panelMoment.Size" type="System.Drawing.Size, System.Drawing">
     <value>257, 181</value>
@@ -5562,7 +5922,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>453, 69</value>
+    <value>438, 68</value>
   </data>
   <data name="pictureBox9.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 112</value>
@@ -5595,7 +5955,7 @@
     <value>NoControl</value>
   </data>
   <data name="optHorizontalUse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 191</value>
+    <value>21, 190</value>
   </data>
   <data name="optHorizontalUse.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 23</value>
@@ -5628,7 +5988,7 @@
     <value>NoControl</value>
   </data>
   <data name="optVerticalUse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 191</value>
+    <value>159, 190</value>
   </data>
   <data name="optVerticalUse.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 23</value>
@@ -5661,7 +6021,7 @@
     <value>NoControl</value>
   </data>
   <data name="optWallHangingUse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 191</value>
+    <value>297, 190</value>
   </data>
   <data name="optWallHangingUse.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 23</value>
@@ -5684,85 +6044,85 @@
   <data name="&gt;&gt;optWallHangingUse.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="pictureBox8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="picWallHangingUse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="pictureBox8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>294, 65</value>
+  <data name="picWallHangingUse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>279, 64</value>
   </data>
-  <data name="pictureBox8.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="picWallHangingUse.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 120</value>
   </data>
-  <data name="pictureBox8.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="picWallHangingUse.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="pictureBox8.TabIndex" type="System.Int32, mscorlib">
+  <data name="picWallHangingUse.TabIndex" type="System.Int32, mscorlib">
     <value>359</value>
   </data>
-  <data name="&gt;&gt;pictureBox8.Name" xml:space="preserve">
-    <value>pictureBox8</value>
+  <data name="&gt;&gt;picWallHangingUse.Name" xml:space="preserve">
+    <value>picWallHangingUse</value>
   </data>
-  <data name="&gt;&gt;pictureBox8.Type" xml:space="preserve">
+  <data name="&gt;&gt;picWallHangingUse.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pictureBox8.Parent" xml:space="preserve">
+  <data name="&gt;&gt;picWallHangingUse.Parent" xml:space="preserve">
     <value>panelSetup</value>
   </data>
-  <data name="&gt;&gt;pictureBox8.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;picWallHangingUse.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="pictureBox7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="picVerticalUse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="pictureBox7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 65</value>
+  <data name="picVerticalUse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>140, 64</value>
   </data>
-  <data name="pictureBox7.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="picVerticalUse.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 120</value>
   </data>
-  <data name="pictureBox7.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="picVerticalUse.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="pictureBox7.TabIndex" type="System.Int32, mscorlib">
+  <data name="picVerticalUse.TabIndex" type="System.Int32, mscorlib">
     <value>358</value>
   </data>
-  <data name="&gt;&gt;pictureBox7.Name" xml:space="preserve">
-    <value>pictureBox7</value>
+  <data name="&gt;&gt;picVerticalUse.Name" xml:space="preserve">
+    <value>picVerticalUse</value>
   </data>
-  <data name="&gt;&gt;pictureBox7.Type" xml:space="preserve">
+  <data name="&gt;&gt;picVerticalUse.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pictureBox7.Parent" xml:space="preserve">
+  <data name="&gt;&gt;picVerticalUse.Parent" xml:space="preserve">
     <value>panelSetup</value>
   </data>
-  <data name="&gt;&gt;pictureBox7.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;picVerticalUse.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="pictureBox6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="picHorizontalUse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="pictureBox6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 65</value>
+  <data name="picHorizontalUse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 64</value>
   </data>
-  <data name="pictureBox6.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="picHorizontalUse.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 120</value>
   </data>
-  <data name="pictureBox6.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="picHorizontalUse.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="pictureBox6.TabIndex" type="System.Int32, mscorlib">
+  <data name="picHorizontalUse.TabIndex" type="System.Int32, mscorlib">
     <value>357</value>
   </data>
-  <data name="&gt;&gt;pictureBox6.Name" xml:space="preserve">
-    <value>pictureBox6</value>
+  <data name="&gt;&gt;picHorizontalUse.Name" xml:space="preserve">
+    <value>picHorizontalUse</value>
   </data>
-  <data name="&gt;&gt;pictureBox6.Type" xml:space="preserve">
+  <data name="&gt;&gt;picHorizontalUse.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pictureBox6.Parent" xml:space="preserve">
+  <data name="&gt;&gt;picHorizontalUse.Parent" xml:space="preserve">
     <value>panelSetup</value>
   </data>
-  <data name="&gt;&gt;pictureBox6.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;picHorizontalUse.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="panel8.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
@@ -5850,7 +6210,43 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelSetup.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>16</value>
+  </data>
+  <data name="optY.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optY.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1136, 666</value>
+  </data>
+  <data name="optY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 23</value>
+  </data>
+  <data name="optY.TabIndex" type="System.Int32, mscorlib">
+    <value>310</value>
+  </data>
+  <data name="optY.Text" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="optY.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optY.Name" xml:space="preserve">
+    <value>optY</value>
+  </data>
+  <data name="&gt;&gt;optY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optY.Parent" xml:space="preserve">
+    <value>explorerBar</value>
+  </data>
+  <data name="&gt;&gt;optY.ZOrder" xml:space="preserve">
+    <value>17</value>
   </data>
   <data name="panel7.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -6246,90 +6642,126 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelModelSelection.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>18</value>
+  </data>
+  <data name="optGTY.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optGTY.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="optGTY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optGTY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1201, 637</value>
+  </data>
+  <data name="optGTY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 23</value>
+  </data>
+  <data name="optGTY.TabIndex" type="System.Int32, mscorlib">
+    <value>308</value>
+  </data>
+  <data name="optGTY.Text" xml:space="preserve">
+    <value>GTY</value>
+  </data>
+  <data name="optGTY.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;optGTY.Name" xml:space="preserve">
+    <value>optGTY</value>
+  </data>
+  <data name="&gt;&gt;optGTY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optGTY.Parent" xml:space="preserve">
+    <value>explorerBar</value>
+  </data>
+  <data name="&gt;&gt;optGTY.ZOrder" xml:space="preserve">
+    <value>19</value>
   </data>
   <data name="panel10.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="picBuildInBeltActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="picMG.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="picBuildInBeltActuator.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="picMG.Location" type="System.Drawing.Point, System.Drawing">
     <value>130, 12</value>
   </data>
-  <data name="picBuildInBeltActuator.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="picMG.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 87</value>
   </data>
-  <data name="picBuildInBeltActuator.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="picMG.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="picBuildInBeltActuator.TabIndex" type="System.Int32, mscorlib">
+  <data name="picMG.TabIndex" type="System.Int32, mscorlib">
     <value>319</value>
   </data>
-  <data name="&gt;&gt;picBuildInBeltActuator.Name" xml:space="preserve">
-    <value>picBuildInBeltActuator</value>
+  <data name="&gt;&gt;picMG.Name" xml:space="preserve">
+    <value>picMG</value>
   </data>
-  <data name="&gt;&gt;picBuildInBeltActuator.Type" xml:space="preserve">
+  <data name="&gt;&gt;picMG.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;picBuildInBeltActuator.Parent" xml:space="preserve">
+  <data name="&gt;&gt;picMG.Parent" xml:space="preserve">
     <value>panel10</value>
   </data>
-  <data name="&gt;&gt;picBuildInBeltActuator.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;picMG.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="picEuropeBeltActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="picM.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="picEuropeBeltActuator.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="picM.Location" type="System.Drawing.Point, System.Drawing">
     <value>295, 12</value>
   </data>
-  <data name="picEuropeBeltActuator.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="picM.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 87</value>
   </data>
-  <data name="picEuropeBeltActuator.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="picM.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="picEuropeBeltActuator.TabIndex" type="System.Int32, mscorlib">
+  <data name="picM.TabIndex" type="System.Int32, mscorlib">
     <value>317</value>
   </data>
-  <data name="&gt;&gt;picEuropeBeltActuator.Name" xml:space="preserve">
-    <value>picEuropeBeltActuator</value>
+  <data name="&gt;&gt;picM.Name" xml:space="preserve">
+    <value>picM</value>
   </data>
-  <data name="&gt;&gt;picEuropeBeltActuator.Type" xml:space="preserve">
+  <data name="&gt;&gt;picM.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;picEuropeBeltActuator.Parent" xml:space="preserve">
+  <data name="&gt;&gt;picM.Parent" xml:space="preserve">
     <value>panel10</value>
   </data>
-  <data name="&gt;&gt;picEuropeBeltActuator.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;picM.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="picStandardBeltActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="picETB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="picStandardBeltActuator.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="picETB.Location" type="System.Drawing.Point, System.Drawing">
     <value>461, 12</value>
   </data>
-  <data name="picStandardBeltActuator.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="picETB.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 87</value>
   </data>
-  <data name="picStandardBeltActuator.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="picETB.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="picStandardBeltActuator.TabIndex" type="System.Int32, mscorlib">
+  <data name="picETB.TabIndex" type="System.Int32, mscorlib">
     <value>315</value>
   </data>
-  <data name="&gt;&gt;picStandardBeltActuator.Name" xml:space="preserve">
-    <value>picStandardBeltActuator</value>
+  <data name="&gt;&gt;picETB.Name" xml:space="preserve">
+    <value>picETB</value>
   </data>
-  <data name="&gt;&gt;picStandardBeltActuator.Type" xml:space="preserve">
+  <data name="&gt;&gt;picETB.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;picStandardBeltActuator.Parent" xml:space="preserve">
+  <data name="&gt;&gt;picETB.Parent" xml:space="preserve">
     <value>panel10</value>
   </data>
-  <data name="&gt;&gt;picStandardBeltActuator.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;picETB.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="panel10.Location" type="System.Drawing.Point, System.Drawing">
@@ -6348,7 +6780,7 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panel10.Parent" xml:space="preserve">
-    <value>tabPage1</value>
+    <value>tabModelType_standard</value>
   </data>
   <data name="&gt;&gt;panel10.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -6356,166 +6788,166 @@
   <data name="panel9.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="picBuildInScrewActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="picGTH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="picBuildInScrewActuator.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="picGTH.Location" type="System.Drawing.Point, System.Drawing">
     <value>130, 15</value>
   </data>
-  <data name="picBuildInScrewActuator.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="picGTH.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 87</value>
   </data>
-  <data name="picBuildInScrewActuator.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="picGTH.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
   </data>
-  <data name="picBuildInScrewActuator.TabIndex" type="System.Int32, mscorlib">
+  <data name="picGTH.TabIndex" type="System.Int32, mscorlib">
     <value>307</value>
   </data>
-  <data name="&gt;&gt;picBuildInScrewActuator.Name" xml:space="preserve">
-    <value>picBuildInScrewActuator</value>
+  <data name="&gt;&gt;picGTH.Name" xml:space="preserve">
+    <value>picGTH</value>
   </data>
-  <data name="&gt;&gt;picBuildInScrewActuator.Type" xml:space="preserve">
+  <data name="&gt;&gt;picGTH.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;picBuildInScrewActuator.Parent" xml:space="preserve">
+  <data name="&gt;&gt;picGTH.Parent" xml:space="preserve">
     <value>panel9</value>
   </data>
-  <data name="&gt;&gt;picBuildInScrewActuator.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;picGTH.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="picStandardScrewActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="picETH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="picStandardScrewActuator.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="picETH.Location" type="System.Drawing.Point, System.Drawing">
     <value>130, 108</value>
   </data>
-  <data name="picStandardScrewActuator.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="picETH.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 87</value>
   </data>
-  <data name="picStandardScrewActuator.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="picETH.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="picStandardScrewActuator.TabIndex" type="System.Int32, mscorlib">
+  <data name="picETH.TabIndex" type="System.Int32, mscorlib">
     <value>305</value>
   </data>
-  <data name="&gt;&gt;picStandardScrewActuator.Name" xml:space="preserve">
-    <value>picStandardScrewActuator</value>
+  <data name="&gt;&gt;picETH.Name" xml:space="preserve">
+    <value>picETH</value>
   </data>
-  <data name="&gt;&gt;picStandardScrewActuator.Type" xml:space="preserve">
+  <data name="&gt;&gt;picETH.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;picStandardScrewActuator.Parent" xml:space="preserve">
+  <data name="&gt;&gt;picETH.Parent" xml:space="preserve">
     <value>panel9</value>
   </data>
-  <data name="&gt;&gt;picStandardScrewActuator.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;picETH.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="picSupportTrackRodTypeActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="picYD.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="picSupportTrackRodTypeActuator.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="picYD.Location" type="System.Drawing.Point, System.Drawing">
     <value>461, 108</value>
   </data>
-  <data name="picSupportTrackRodTypeActuator.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="picYD.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 87</value>
   </data>
-  <data name="picSupportTrackRodTypeActuator.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="picYD.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="picSupportTrackRodTypeActuator.TabIndex" type="System.Int32, mscorlib">
+  <data name="picYD.TabIndex" type="System.Int32, mscorlib">
     <value>313</value>
   </data>
-  <data name="&gt;&gt;picSupportTrackRodTypeActuator.Name" xml:space="preserve">
-    <value>picSupportTrackRodTypeActuator</value>
+  <data name="&gt;&gt;picYD.Name" xml:space="preserve">
+    <value>picYD</value>
   </data>
-  <data name="&gt;&gt;picSupportTrackRodTypeActuator.Type" xml:space="preserve">
+  <data name="&gt;&gt;picYD.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;picSupportTrackRodTypeActuator.Parent" xml:space="preserve">
+  <data name="&gt;&gt;picYD.Parent" xml:space="preserve">
     <value>panel9</value>
   </data>
-  <data name="&gt;&gt;picSupportTrackRodTypeActuator.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;picYD.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="picBuildOutRodTypeActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="picYL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="picBuildOutRodTypeActuator.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="picYL.Location" type="System.Drawing.Point, System.Drawing">
     <value>627, 108</value>
   </data>
-  <data name="picBuildOutRodTypeActuator.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="picYL.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 87</value>
   </data>
-  <data name="picBuildOutRodTypeActuator.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="picYL.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="picBuildOutRodTypeActuator.TabIndex" type="System.Int32, mscorlib">
+  <data name="picYL.TabIndex" type="System.Int32, mscorlib">
     <value>321</value>
   </data>
-  <data name="&gt;&gt;picBuildOutRodTypeActuator.Name" xml:space="preserve">
-    <value>picBuildOutRodTypeActuator</value>
+  <data name="&gt;&gt;picYL.Name" xml:space="preserve">
+    <value>picYL</value>
   </data>
-  <data name="&gt;&gt;picBuildOutRodTypeActuator.Type" xml:space="preserve">
+  <data name="&gt;&gt;picYL.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;picBuildOutRodTypeActuator.Parent" xml:space="preserve">
+  <data name="&gt;&gt;picYL.Parent" xml:space="preserve">
     <value>panel9</value>
   </data>
-  <data name="&gt;&gt;picBuildOutRodTypeActuator.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;picYL.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="picBuildInRodTypeScrewActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="picGTY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="picBuildInRodTypeScrewActuator.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="picGTY.Location" type="System.Drawing.Point, System.Drawing">
     <value>295, 15</value>
   </data>
-  <data name="picBuildInRodTypeScrewActuator.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="picGTY.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 87</value>
   </data>
-  <data name="picBuildInRodTypeScrewActuator.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="picGTY.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="picBuildInRodTypeScrewActuator.TabIndex" type="System.Int32, mscorlib">
+  <data name="picGTY.TabIndex" type="System.Int32, mscorlib">
     <value>309</value>
   </data>
-  <data name="&gt;&gt;picBuildInRodTypeScrewActuator.Name" xml:space="preserve">
-    <value>picBuildInRodTypeScrewActuator</value>
+  <data name="&gt;&gt;picGTY.Name" xml:space="preserve">
+    <value>picGTY</value>
   </data>
-  <data name="&gt;&gt;picBuildInRodTypeScrewActuator.Type" xml:space="preserve">
+  <data name="&gt;&gt;picGTY.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;picBuildInRodTypeScrewActuator.Parent" xml:space="preserve">
+  <data name="&gt;&gt;picGTY.Parent" xml:space="preserve">
     <value>panel9</value>
   </data>
-  <data name="&gt;&gt;picBuildInRodTypeScrewActuator.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;picGTY.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="picNoTrackRodTypeActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="picY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="picNoTrackRodTypeActuator.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="picY.Location" type="System.Drawing.Point, System.Drawing">
     <value>295, 108</value>
   </data>
-  <data name="picNoTrackRodTypeActuator.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="picY.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 87</value>
   </data>
-  <data name="picNoTrackRodTypeActuator.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="picY.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="picNoTrackRodTypeActuator.TabIndex" type="System.Int32, mscorlib">
+  <data name="picY.TabIndex" type="System.Int32, mscorlib">
     <value>311</value>
   </data>
-  <data name="&gt;&gt;picNoTrackRodTypeActuator.Name" xml:space="preserve">
-    <value>picNoTrackRodTypeActuator</value>
+  <data name="&gt;&gt;picY.Name" xml:space="preserve">
+    <value>picY</value>
   </data>
-  <data name="&gt;&gt;picNoTrackRodTypeActuator.Type" xml:space="preserve">
+  <data name="&gt;&gt;picY.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;picNoTrackRodTypeActuator.Parent" xml:space="preserve">
+  <data name="&gt;&gt;picY.Parent" xml:space="preserve">
     <value>panel9</value>
   </data>
-  <data name="&gt;&gt;picNoTrackRodTypeActuator.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;picY.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="panel9.Location" type="System.Drawing.Point, System.Drawing">
@@ -6534,105 +6966,66 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panel9.Parent" xml:space="preserve">
-    <value>tabPage1</value>
+    <value>tabModelType_standard</value>
   </data>
   <data name="&gt;&gt;panel9.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabModelType_standard.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabModelType_standard.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabModelType_standard.Size" type="System.Drawing.Size, System.Drawing">
     <value>955, 378</value>
   </data>
-  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+  <data name="tabModelType_standard.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>tabPage1</value>
+  <data name="tabModelType_standard.Text" xml:space="preserve">
+    <value>標準環境</value>
   </data>
-  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
-    <value>tabPage1</value>
+  <data name="&gt;&gt;tabModelType_standard.Name" xml:space="preserve">
+    <value>tabModelType_standard</value>
   </data>
-  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabModelType_standard.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
-    <value>customTabControl1</value>
+  <data name="&gt;&gt;tabModelType_standard.Parent" xml:space="preserve">
+    <value>tabModelType</value>
   </data>
-  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="optModelType_ECH.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optModelType_ECH.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optModelType_ECH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optModelType_ECH.Location" type="System.Drawing.Point, System.Drawing">
-    <value>272, 324</value>
-  </data>
-  <data name="optModelType_ECH.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 23</value>
-  </data>
-  <data name="optModelType_ECH.TabIndex" type="System.Int32, mscorlib">
-    <value>329</value>
-  </data>
-  <data name="optModelType_ECH.Text" xml:space="preserve">
-    <value>ECH</value>
-  </data>
-  <data name="optModelType_ECH.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;optModelType_ECH.Name" xml:space="preserve">
-    <value>optModelType_ECH</value>
-  </data>
-  <data name="&gt;&gt;optModelType_ECH.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optModelType_ECH.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;optModelType_ECH.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tabModelType_standard.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="panel12.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="picModelType_ECB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="picECB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="picModelType_ECB.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="picECB.Location" type="System.Drawing.Point, System.Drawing">
     <value>130, 12</value>
   </data>
-  <data name="picModelType_ECB.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="picECB.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 87</value>
   </data>
-  <data name="picModelType_ECB.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="picECB.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="picModelType_ECB.TabIndex" type="System.Int32, mscorlib">
+  <data name="picECB.TabIndex" type="System.Int32, mscorlib">
     <value>328</value>
   </data>
-  <data name="picModelType_ECB.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;picECB.Name" xml:space="preserve">
+    <value>picECB</value>
   </data>
-  <data name="&gt;&gt;picModelType_ECB.Name" xml:space="preserve">
-    <value>picModelType_ECB</value>
-  </data>
-  <data name="&gt;&gt;picModelType_ECB.Type" xml:space="preserve">
+  <data name="&gt;&gt;picECB.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;picModelType_ECB.Parent" xml:space="preserve">
+  <data name="&gt;&gt;picECB.Parent" xml:space="preserve">
     <value>panel12</value>
   </data>
-  <data name="&gt;&gt;picModelType_ECB.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;picECB.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="panel12.Location" type="System.Drawing.Point, System.Drawing">
@@ -6651,72 +7044,66 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panel12.Parent" xml:space="preserve">
-    <value>tabPage2</value>
+    <value>tabModelType_dustfree</value>
   </data>
   <data name="&gt;&gt;panel12.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="panel11.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="picModelType_GCH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="picGCH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="picModelType_GCH.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="picGCH.Location" type="System.Drawing.Point, System.Drawing">
     <value>130, 12</value>
   </data>
-  <data name="picModelType_GCH.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="picGCH.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 87</value>
   </data>
-  <data name="picModelType_GCH.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="picGCH.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="picModelType_GCH.TabIndex" type="System.Int32, mscorlib">
+  <data name="picGCH.TabIndex" type="System.Int32, mscorlib">
     <value>326</value>
   </data>
-  <data name="picModelType_GCH.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;picGCH.Name" xml:space="preserve">
+    <value>picGCH</value>
   </data>
-  <data name="&gt;&gt;picModelType_GCH.Name" xml:space="preserve">
-    <value>picModelType_GCH</value>
-  </data>
-  <data name="&gt;&gt;picModelType_GCH.Type" xml:space="preserve">
+  <data name="&gt;&gt;picGCH.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;picModelType_GCH.Parent" xml:space="preserve">
+  <data name="&gt;&gt;picGCH.Parent" xml:space="preserve">
     <value>panel11</value>
   </data>
-  <data name="&gt;&gt;picModelType_GCH.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;picGCH.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="picModelType_ECH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="picECH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="picModelType_ECH.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="picECH.Location" type="System.Drawing.Point, System.Drawing">
     <value>295, 12</value>
   </data>
-  <data name="picModelType_ECH.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="picECH.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 87</value>
   </data>
-  <data name="picModelType_ECH.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="picECH.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="picModelType_ECH.TabIndex" type="System.Int32, mscorlib">
+  <data name="picECH.TabIndex" type="System.Int32, mscorlib">
     <value>330</value>
   </data>
-  <data name="picModelType_ECH.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;picECH.Name" xml:space="preserve">
+    <value>picECH</value>
   </data>
-  <data name="&gt;&gt;picModelType_ECH.Name" xml:space="preserve">
-    <value>picModelType_ECH</value>
-  </data>
-  <data name="&gt;&gt;picModelType_ECH.Type" xml:space="preserve">
+  <data name="&gt;&gt;picECH.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;picModelType_ECH.Parent" xml:space="preserve">
+  <data name="&gt;&gt;picECH.Parent" xml:space="preserve">
     <value>panel11</value>
   </data>
-  <data name="&gt;&gt;picModelType_ECH.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;picECH.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="panel11.Location" type="System.Drawing.Point, System.Drawing">
@@ -6735,429 +7122,60 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panel11.Parent" xml:space="preserve">
-    <value>tabPage2</value>
+    <value>tabModelType_dustfree</value>
   </data>
   <data name="&gt;&gt;panel11.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
-  <data name="optModelType_GCH.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optModelType_GCH.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optModelType_GCH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optModelType_GCH.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 324</value>
-  </data>
-  <data name="optModelType_GCH.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 23</value>
-  </data>
-  <data name="optModelType_GCH.TabIndex" type="System.Int32, mscorlib">
-    <value>325</value>
-  </data>
-  <data name="optModelType_GCH.Text" xml:space="preserve">
-    <value>GCH</value>
-  </data>
-  <data name="optModelType_GCH.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;optModelType_GCH.Name" xml:space="preserve">
-    <value>optModelType_GCH</value>
-  </data>
-  <data name="&gt;&gt;optModelType_GCH.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optModelType_GCH.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;optModelType_GCH.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="optBuildInScrewActuator.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optBuildInScrewActuator.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optBuildInScrewActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optBuildInScrewActuator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 295</value>
-  </data>
-  <data name="optBuildInScrewActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 23</value>
-  </data>
-  <data name="optBuildInScrewActuator.TabIndex" type="System.Int32, mscorlib">
-    <value>306</value>
-  </data>
-  <data name="optBuildInScrewActuator.Text" xml:space="preserve">
-    <value>GTH</value>
-  </data>
-  <data name="&gt;&gt;optBuildInScrewActuator.Name" xml:space="preserve">
-    <value>optBuildInScrewActuator</value>
-  </data>
-  <data name="&gt;&gt;optBuildInScrewActuator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optBuildInScrewActuator.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;optBuildInScrewActuator.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="optSupportTrackRodTypeActuator.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optSupportTrackRodTypeActuator.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optSupportTrackRodTypeActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optSupportTrackRodTypeActuator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 324</value>
-  </data>
-  <data name="optSupportTrackRodTypeActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 23</value>
-  </data>
-  <data name="optSupportTrackRodTypeActuator.TabIndex" type="System.Int32, mscorlib">
-    <value>312</value>
-  </data>
-  <data name="optSupportTrackRodTypeActuator.Text" xml:space="preserve">
-    <value>YD</value>
-  </data>
-  <data name="&gt;&gt;optSupportTrackRodTypeActuator.Name" xml:space="preserve">
-    <value>optSupportTrackRodTypeActuator</value>
-  </data>
-  <data name="&gt;&gt;optSupportTrackRodTypeActuator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optSupportTrackRodTypeActuator.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;optSupportTrackRodTypeActuator.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="optStandardScrewActuator.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optStandardScrewActuator.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optStandardScrewActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optStandardScrewActuator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 295</value>
-  </data>
-  <data name="optStandardScrewActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 23</value>
-  </data>
-  <data name="optStandardScrewActuator.TabIndex" type="System.Int32, mscorlib">
-    <value>304</value>
-  </data>
-  <data name="optStandardScrewActuator.Text" xml:space="preserve">
-    <value>ETH</value>
-  </data>
-  <data name="&gt;&gt;optStandardScrewActuator.Name" xml:space="preserve">
-    <value>optStandardScrewActuator</value>
-  </data>
-  <data name="&gt;&gt;optStandardScrewActuator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optStandardScrewActuator.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;optStandardScrewActuator.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="optModelType_ECB.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optModelType_ECB.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optModelType_ECB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optModelType_ECB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>334, 324</value>
-  </data>
-  <data name="optModelType_ECB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 23</value>
-  </data>
-  <data name="optModelType_ECB.TabIndex" type="System.Int32, mscorlib">
-    <value>327</value>
-  </data>
-  <data name="optModelType_ECB.Text" xml:space="preserve">
-    <value>ECB</value>
-  </data>
-  <data name="optModelType_ECB.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;optModelType_ECB.Name" xml:space="preserve">
-    <value>optModelType_ECB</value>
-  </data>
-  <data name="&gt;&gt;optModelType_ECB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optModelType_ECB.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;optModelType_ECB.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="optNoTrackRodTypeActuator.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optNoTrackRodTypeActuator.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optNoTrackRodTypeActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optNoTrackRodTypeActuator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 324</value>
-  </data>
-  <data name="optNoTrackRodTypeActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 23</value>
-  </data>
-  <data name="optNoTrackRodTypeActuator.TabIndex" type="System.Int32, mscorlib">
-    <value>310</value>
-  </data>
-  <data name="optNoTrackRodTypeActuator.Text" xml:space="preserve">
-    <value>Y</value>
-  </data>
-  <data name="&gt;&gt;optNoTrackRodTypeActuator.Name" xml:space="preserve">
-    <value>optNoTrackRodTypeActuator</value>
-  </data>
-  <data name="&gt;&gt;optNoTrackRodTypeActuator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optNoTrackRodTypeActuator.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;optNoTrackRodTypeActuator.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="optBuildInRodTypeScrewActuator.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optBuildInRodTypeScrewActuator.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optBuildInRodTypeScrewActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optBuildInRodTypeScrewActuator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 295</value>
-  </data>
-  <data name="optBuildInRodTypeScrewActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 23</value>
-  </data>
-  <data name="optBuildInRodTypeScrewActuator.TabIndex" type="System.Int32, mscorlib">
-    <value>308</value>
-  </data>
-  <data name="optBuildInRodTypeScrewActuator.Text" xml:space="preserve">
-    <value>GTY</value>
-  </data>
-  <data name="&gt;&gt;optBuildInRodTypeScrewActuator.Name" xml:space="preserve">
-    <value>optBuildInRodTypeScrewActuator</value>
-  </data>
-  <data name="&gt;&gt;optBuildInRodTypeScrewActuator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optBuildInRodTypeScrewActuator.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;optBuildInRodTypeScrewActuator.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="optBuildOutRodTypeActuator.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optBuildOutRodTypeActuator.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optBuildOutRodTypeActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optBuildOutRodTypeActuator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 324</value>
-  </data>
-  <data name="optBuildOutRodTypeActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 23</value>
-  </data>
-  <data name="optBuildOutRodTypeActuator.TabIndex" type="System.Int32, mscorlib">
-    <value>320</value>
-  </data>
-  <data name="optBuildOutRodTypeActuator.Text" xml:space="preserve">
-    <value>YL</value>
-  </data>
-  <data name="&gt;&gt;optBuildOutRodTypeActuator.Name" xml:space="preserve">
-    <value>optBuildOutRodTypeActuator</value>
-  </data>
-  <data name="&gt;&gt;optBuildOutRodTypeActuator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optBuildOutRodTypeActuator.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;optBuildOutRodTypeActuator.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="optEuropeBeltActuator.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optEuropeBeltActuator.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optEuropeBeltActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optEuropeBeltActuator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 295</value>
-  </data>
-  <data name="optEuropeBeltActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 23</value>
-  </data>
-  <data name="optEuropeBeltActuator.TabIndex" type="System.Int32, mscorlib">
-    <value>316</value>
-  </data>
-  <data name="optEuropeBeltActuator.Text" xml:space="preserve">
-    <value>M</value>
-  </data>
-  <data name="&gt;&gt;optEuropeBeltActuator.Name" xml:space="preserve">
-    <value>optEuropeBeltActuator</value>
-  </data>
-  <data name="&gt;&gt;optEuropeBeltActuator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optEuropeBeltActuator.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;optEuropeBeltActuator.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="optBuildInBeltActuator.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optBuildInBeltActuator.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optBuildInBeltActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optBuildInBeltActuator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>272, 295</value>
-  </data>
-  <data name="optBuildInBeltActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 23</value>
-  </data>
-  <data name="optBuildInBeltActuator.TabIndex" type="System.Int32, mscorlib">
-    <value>318</value>
-  </data>
-  <data name="optBuildInBeltActuator.Text" xml:space="preserve">
-    <value>MG</value>
-  </data>
-  <data name="&gt;&gt;optBuildInBeltActuator.Name" xml:space="preserve">
-    <value>optBuildInBeltActuator</value>
-  </data>
-  <data name="&gt;&gt;optBuildInBeltActuator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optBuildInBeltActuator.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;optBuildInBeltActuator.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="optStandardBeltActuator.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optStandardBeltActuator.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="optStandardBeltActuator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="optStandardBeltActuator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>334, 295</value>
-  </data>
-  <data name="optStandardBeltActuator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 23</value>
-  </data>
-  <data name="optStandardBeltActuator.TabIndex" type="System.Int32, mscorlib">
-    <value>314</value>
-  </data>
-  <data name="optStandardBeltActuator.Text" xml:space="preserve">
-    <value>ETB</value>
-  </data>
-  <data name="&gt;&gt;optStandardBeltActuator.Name" xml:space="preserve">
-    <value>optStandardBeltActuator</value>
-  </data>
-  <data name="&gt;&gt;optStandardBeltActuator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optStandardBeltActuator.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;optStandardBeltActuator.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabModelType_dustfree.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabModelType_dustfree.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabModelType_dustfree.Size" type="System.Drawing.Size, System.Drawing">
     <value>955, 378</value>
   </data>
-  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
+  <data name="tabModelType_dustfree.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>tabPage2</value>
+  <data name="tabModelType_dustfree.Text" xml:space="preserve">
+    <value>無塵環境</value>
   </data>
-  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
-    <value>tabPage2</value>
+  <data name="&gt;&gt;tabModelType_dustfree.Name" xml:space="preserve">
+    <value>tabModelType_dustfree</value>
   </data>
-  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabModelType_dustfree.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
-    <value>customTabControl1</value>
+  <data name="&gt;&gt;tabModelType_dustfree.Parent" xml:space="preserve">
+    <value>tabModelType</value>
   </data>
-  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tabModelType_dustfree.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="customTabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="tabModelType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="customTabControl1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabModelType.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 35</value>
   </data>
-  <data name="customTabControl1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabModelType.Size" type="System.Drawing.Size, System.Drawing">
     <value>963, 404</value>
   </data>
-  <data name="customTabControl1.TabIndex" type="System.Int32, mscorlib">
+  <data name="tabModelType.TabIndex" type="System.Int32, mscorlib">
     <value>258</value>
   </data>
-  <data name="&gt;&gt;customTabControl1.Name" xml:space="preserve">
-    <value>customTabControl1</value>
+  <data name="&gt;&gt;tabModelType.Name" xml:space="preserve">
+    <value>tabModelType</value>
   </data>
-  <data name="&gt;&gt;customTabControl1.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabModelType.Type" xml:space="preserve">
     <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.10, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;customTabControl1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabModelType.Parent" xml:space="preserve">
     <value>panelModelType</value>
   </data>
-  <data name="&gt;&gt;customTabControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tabModelType.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="panel5.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
@@ -7245,7 +7263,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelModelType.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>20</value>
   </data>
   <data name="panel3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -7455,7 +7473,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelUseEnv.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>21</value>
   </data>
   <data name="explorerBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

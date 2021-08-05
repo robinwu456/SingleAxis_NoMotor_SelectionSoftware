@@ -31,6 +31,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 標題列
             ToyoBorder toyoBorder = new ToyoBorder(this);
 
+            // 圖片切換
+            ImgSwitch imgSwitch = new ImgSwitch(this);
+
             // 測邊欄
             sideTable = new SideTable(this);
 

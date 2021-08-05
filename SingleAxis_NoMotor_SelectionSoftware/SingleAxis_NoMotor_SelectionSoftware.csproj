@@ -127,6 +127,8 @@
     </Compile>
     <Compile Include="Frontend\ChartInfo.cs" />
     <Compile Include="Frontend\EffectiveStroke.cs" />
+    <Compile Include="Frontend\Img\ImgInit.cs" />
+    <Compile Include="Frontend\Img\ImgSwitch.cs" />
     <Compile Include="Frontend\InputValidate.cs" />
     <Compile Include="Frontend\ModelSelection.cs" />
     <Compile Include="Frontend\MotorPower.cs" />
