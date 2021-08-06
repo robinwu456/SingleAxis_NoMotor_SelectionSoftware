@@ -171,7 +171,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             runCondition.scrollBarStroke.maxValue = RunCondition.defaultMaxStroke;
             runCondition.scrollBarLoad.maxValue = RunCondition.defaultMaxLoad;
 
-            //ReplaceItem();
+            // 運行速度單位
+            formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s", "RPM" };
         }
 
         private void InitEvents() {
@@ -261,7 +262,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.panelAdvanceParams.Enabled = formMain.chkAdvanceMode.Checked;
             //formMain.panelAdvanceParams.Visible = formMain.chkAdvanceMode.Checked;
             if (!formMain.chkAdvanceMode.Checked)
-                formMain.optMaxSpeedType_mms.Checked = true;
+                //formMain.optMaxSpeedType_mms.Checked = true;
+                formMain.cboMaxSpeedUnit.Text = "mm/s";
             
             if (formMain.chkAdvanceMode.Checked) {
 

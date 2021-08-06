@@ -208,7 +208,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         formMain.dgvRecommandList.Rows[index].Cells["更詳細資訊"].Value = Properties.Resources.detail_disable_in_condition;
 
                         // 運行距離
-                        if (model.slideTrackServiceLifeDistance < 0)
+                        if (model.serviceLifeDistance < 0)
                             formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "Error";
                         else {
                             if (model.serviceLifeDistance > 10000)
@@ -278,9 +278,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     } else {
                         // 驗證Vmax
                         Model curModel = curRecommandList.First();
-                        if (formMain.optMaxSpeedType_mms.Checked) {
+                        if (formMain.cboMaxSpeedUnit.Text == "mm/s") {
                             formMain.txtMaxSpeed.Text = Convert.ToDouble(curModel.vMax.ToString("#0.000")).ToString();
-                        } else if (formMain.optMaxSpeedType_rpm.Checked) {
+                        } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
                             int curRpm = formMain.page2.calc.MMS_TO_RPM(curModel.vMax, curModel.lead);
                             formMain.txtMaxSpeed.Text = curRpm.ToString();
                         }

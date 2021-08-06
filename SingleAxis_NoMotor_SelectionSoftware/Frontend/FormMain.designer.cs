@@ -157,7 +157,7 @@
             this.scrollBarPanelLoad = new System.Windows.Forms.Panel();
             this.scrollBarThumbLoad = new System.Windows.Forms.PictureBox();
             this.panelAdvanceParams = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboMaxSpeedUnit = new System.Windows.Forms.ComboBox();
             this.lbMaxSpeedAlarm = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
@@ -166,8 +166,6 @@
             this.label79 = new System.Windows.Forms.Label();
             this.txtMaxSpeed = new System.Windows.Forms.TextBox();
             this.lbRpm = new System.Windows.Forms.Label();
-            this.optMaxSpeedType_mms = new System.Windows.Forms.RadioButton();
-            this.optMaxSpeedType_rpm = new System.Windows.Forms.RadioButton();
             this.lbScrollbarMaxLoad = new System.Windows.Forms.Label();
             this.label72 = new System.Windows.Forms.Label();
             this.lbExpectServiceLifeAlarm = new System.Windows.Forms.Label();
@@ -235,11 +233,9 @@
             this.label74 = new System.Windows.Forms.Label();
             this.cboModel = new System.Windows.Forms.ComboBox();
             this.panelModelSelectionLead = new System.Windows.Forms.Panel();
-            this.label61 = new System.Windows.Forms.Label();
             this.label75 = new System.Windows.Forms.Label();
             this.cboLead = new System.Windows.Forms.ComboBox();
             this.panelModelSelectionReducerRatio = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cboReducerRatio = new System.Windows.Forms.ComboBox();
             this.panelModelType = new System.Windows.Forms.Panel();
@@ -301,6 +297,8 @@
             this.panelMotorAdvanceMode = new System.Windows.Forms.Panel();
             this.panelExpectServiceLifeTime = new System.Windows.Forms.Panel();
             this.chkExpectServiceLife = new CustomToggle.CustomToggle();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -400,6 +398,7 @@
             this.panelMotorParams.SuspendLayout();
             this.panelMotorAdvanceMode.SuspendLayout();
             this.panelExpectServiceLifeTime.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBase
@@ -1192,8 +1191,6 @@
             this.panelCalc.Controls.Add(this.label19);
             this.panelCalc.Controls.Add(this.panel14);
             this.panelCalc.Controls.Add(this.panel13);
-            this.panelCalc.Controls.Add(this.optMaxSpeedType_mms);
-            this.panelCalc.Controls.Add(this.optMaxSpeedType_rpm);
             this.panelCalc.Controls.Add(this.cmdCalc);
             resources.ApplyResources(this.panelCalc, "panelCalc");
             this.panelCalc.Name = "panelCalc";
@@ -1478,7 +1475,7 @@
             // 
             resources.ApplyResources(this.panelAdvanceParams, "panelAdvanceParams");
             this.panelAdvanceParams.BackColor = System.Drawing.Color.Transparent;
-            this.panelAdvanceParams.Controls.Add(this.comboBox1);
+            this.panelAdvanceParams.Controls.Add(this.cboMaxSpeedUnit);
             this.panelAdvanceParams.Controls.Add(this.lbMaxSpeedAlarm);
             this.panelAdvanceParams.Controls.Add(this.label78);
             this.panelAdvanceParams.Controls.Add(this.label81);
@@ -1489,15 +1486,15 @@
             this.panelAdvanceParams.Controls.Add(this.lbRpm);
             this.panelAdvanceParams.Name = "panelAdvanceParams";
             // 
-            // comboBox1
+            // cboMaxSpeedUnit
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.DropDownWidth = 180;
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.ForeColor = System.Drawing.Color.White;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Name = "comboBox1";
+            this.cboMaxSpeedUnit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboMaxSpeedUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMaxSpeedUnit.DropDownWidth = 180;
+            resources.ApplyResources(this.cboMaxSpeedUnit, "cboMaxSpeedUnit");
+            this.cboMaxSpeedUnit.ForeColor = System.Drawing.Color.White;
+            this.cboMaxSpeedUnit.FormattingEnabled = true;
+            this.cboMaxSpeedUnit.Name = "cboMaxSpeedUnit";
             // 
             // lbMaxSpeedAlarm
             // 
@@ -1550,22 +1547,6 @@
             this.lbRpm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.lbRpm.Name = "lbRpm";
             this.lbRpm.Tag = "txtMaxSpeed";
-            // 
-            // optMaxSpeedType_mms
-            // 
-            resources.ApplyResources(this.optMaxSpeedType_mms, "optMaxSpeedType_mms");
-            this.optMaxSpeedType_mms.Checked = true;
-            this.optMaxSpeedType_mms.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.optMaxSpeedType_mms.Name = "optMaxSpeedType_mms";
-            this.optMaxSpeedType_mms.TabStop = true;
-            this.optMaxSpeedType_mms.UseVisualStyleBackColor = true;
-            // 
-            // optMaxSpeedType_rpm
-            // 
-            resources.ApplyResources(this.optMaxSpeedType_rpm, "optMaxSpeedType_rpm");
-            this.optMaxSpeedType_rpm.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.optMaxSpeedType_rpm.Name = "optMaxSpeedType_rpm";
-            this.optMaxSpeedType_rpm.UseVisualStyleBackColor = true;
             // 
             // lbScrollbarMaxLoad
             // 
@@ -2002,10 +1983,8 @@
             // 
             // panelModelSelection
             // 
+            this.panelModelSelection.Controls.Add(this.panel6);
             this.panelModelSelection.Controls.Add(this.panel7);
-            this.panelModelSelection.Controls.Add(this.panelModelSelectionModel);
-            this.panelModelSelection.Controls.Add(this.panelModelSelectionLead);
-            this.panelModelSelection.Controls.Add(this.panelModelSelectionReducerRatio);
             resources.ApplyResources(this.panelModelSelection, "panelModelSelection");
             this.panelModelSelection.Name = "panelModelSelection";
             // 
@@ -2049,17 +2028,10 @@
             // 
             // panelModelSelectionLead
             // 
-            this.panelModelSelectionLead.Controls.Add(this.label61);
             this.panelModelSelectionLead.Controls.Add(this.label75);
             this.panelModelSelectionLead.Controls.Add(this.cboLead);
             resources.ApplyResources(this.panelModelSelectionLead, "panelModelSelectionLead");
             this.panelModelSelectionLead.Name = "panelModelSelectionLead";
-            // 
-            // label61
-            // 
-            resources.ApplyResources(this.label61, "label61");
-            this.label61.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label61.Name = "label61";
             // 
             // label75
             // 
@@ -2079,17 +2051,10 @@
             // 
             // panelModelSelectionReducerRatio
             // 
-            this.panelModelSelectionReducerRatio.Controls.Add(this.label1);
             this.panelModelSelectionReducerRatio.Controls.Add(this.label5);
             this.panelModelSelectionReducerRatio.Controls.Add(this.cboReducerRatio);
             resources.ApplyResources(this.panelModelSelectionReducerRatio, "panelModelSelectionReducerRatio");
             this.panelModelSelectionReducerRatio.Name = "panelModelSelectionReducerRatio";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label1.Name = "label1";
             // 
             // label5
             // 
@@ -2585,6 +2550,20 @@
             this.chkExpectServiceLife.Checked = false;
             this.chkExpectServiceLife.Name = "chkExpectServiceLife";
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panelModelSelectionReducerRatio);
+            this.panel6.Controls.Add(this.panelModelSelectionLead);
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.panelModelSelectionModel);
+            resources.ApplyResources(this.panel6, "panel6");
+            this.panel6.Name = "panel6";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2675,11 +2654,8 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panelModelSelectionModel.ResumeLayout(false);
-            this.panelModelSelectionModel.PerformLayout();
             this.panelModelSelectionLead.ResumeLayout(false);
-            this.panelModelSelectionLead.PerformLayout();
             this.panelModelSelectionReducerRatio.ResumeLayout(false);
-            this.panelModelSelectionReducerRatio.PerformLayout();
             this.panelModelType.ResumeLayout(false);
             this.panelModelType.PerformLayout();
             this.tabModelType.ResumeLayout(false);
@@ -2721,6 +2697,7 @@
             this.panelMotorAdvanceMode.PerformLayout();
             this.panelExpectServiceLifeTime.ResumeLayout(false);
             this.panelExpectServiceLifeTime.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2776,8 +2753,6 @@
         private System.Windows.Forms.Label label81;
         public System.Windows.Forms.Label label82;
         public System.Windows.Forms.TextBox txtAccelSpeed;
-        public System.Windows.Forms.RadioButton optMaxSpeedType_rpm;
-        public System.Windows.Forms.RadioButton optMaxSpeedType_mms;
         private System.Windows.Forms.Label label79;
         public System.Windows.Forms.TextBox txtMaxSpeed;
         public System.Windows.Forms.Label lbRpm;
@@ -2894,7 +2869,6 @@
         private System.Windows.Forms.Label label56;
         public System.Windows.Forms.Label lbResult;
         public System.Windows.Forms.PictureBox picBoxResultImg;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.ComboBox cboReducerRatio;
         public System.Windows.Forms.Panel panelModelSelectionReducerRatio;
@@ -2902,7 +2876,6 @@
         public System.Windows.Forms.Label lbScrollbarMinLoad;
         public System.Windows.Forms.Label lbScrollbarMaxStroke;
         public System.Windows.Forms.Label lbScrollbarMinStroke;
-        public System.Windows.Forms.Label label61;
         public System.Windows.Forms.Label label74;
         public System.Windows.Forms.Label label75;
         public System.Windows.Forms.Panel panelModelSelectionLead;
@@ -2959,7 +2932,7 @@
         public CustomToggle.CustomToggle chkMotorAdvanceMode;
         public System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox cboMaxSpeedUnit;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label label21;
@@ -2996,6 +2969,8 @@
         public System.Windows.Forms.Panel panelMotorAdvanceMode;
         public System.Windows.Forms.Panel panelExpectServiceLifeTime;
         public CustomToggle.CustomToggle chkExpectServiceLife;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label1;
     }
 }
 

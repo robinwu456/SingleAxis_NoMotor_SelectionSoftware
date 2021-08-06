@@ -74,7 +74,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.txtRotateInertia.TextChanged += UpdateCondition;
             formMain.txtMaxTorque.TextChanged += UpdateCondition;
             //formMain.optRepeatabilityScrew.CheckedChanged += UpdateCondition;
-            formMain.optMaxSpeedType_mms.CheckedChanged += UpdateCondition;
+            //formMain.optMaxSpeedType_mms.CheckedChanged += UpdateCondition;
+            formMain.cboMaxSpeedUnit.SelectedValueChanged += UpdateCondition;
             //formMain.dgvReducerInfo.CellValueChanged += UpdateCondition;
             //formMain.optExpectServiceLife.CheckedChanged += UpdateCondition;
 
@@ -159,9 +160,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             else if (formMain.optVerticalUse.Checked)
                 curCondition.setupMethod = Model.SetupMethod.垂直;
             // 最高速度
-            if (formMain.optMaxSpeedType_mms.Checked)
+            if (formMain.cboMaxSpeedUnit.Text == "mm/s")
                 curCondition.vMax = Convert.ToDouble(formMain.txtMaxSpeed.Text);
-            else if (formMain.optMaxSpeedType_rpm.Checked) {
+            else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
                 if (formMain.txtMaxSpeed.Text.Contains("."))
                     formMain.txtMaxSpeed.Text = formMain.txtMaxSpeed.Text.Split('.')[0];
                 //if (formMain.page2.calc.IsContainsReducerRatio(formMain.cboModel.Text)) {

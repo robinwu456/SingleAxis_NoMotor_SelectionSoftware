@@ -57,7 +57,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 運行速度驗證
             formMain.txtMaxSpeed.KeyDown += TxtMaxSpeed_KeyDown;
             formMain.txtMaxSpeed.TextChanged += TxtMaxSpeed_TextChanged;
-            formMain.optMaxSpeedType_mms.CheckedChanged += OptMaxSpeedType_mms_CheckedChanged;
+            //formMain.optMaxSpeedType_mms.CheckedChanged += OptMaxSpeedType_mms_CheckedChanged;
+            formMain.cboMaxSpeedUnit.SelectedValueChanged += OptMaxSpeedType_mms_CheckedChanged;
 
             // 加速度驗證
             formMain.txtAccelSpeed.Validating += TxtAccelSpeed_Validating;
@@ -338,7 +339,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
                 try {
                     Model m = formMain.page2.calc.GetAllModels(formMain.page2.runCondition.curCondition).First(_m => _m.name.StartsWith(model) && _m.lead == lead);
-                    if (formMain.optMaxSpeedType_mms.Checked) {
+                    if (formMain.cboMaxSpeedUnit.Text == "mm/s") {
                         double resultVmax = formMain.page2.calc.GetVmax_mms(m, lead, (int)stroke);
                         // vMax key過大修正
                         if (Convert.ToDouble(formMain.txtMaxSpeed.Text) > resultVmax)
@@ -346,7 +347,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
                         // RPM 顯示                
                         formMain.lbRpm.Text = "RPM: " + formMain.page2.calc.GetRpmByMMS(lead, Convert.ToDouble(formMain.txtMaxSpeed.Text)).ToString();
-                    } else if (formMain.optMaxSpeedType_rpm.Checked) {
+                    } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
                         double resultVmax = formMain.page2.calc.GetVmax_mms(m, lead, (int)stroke);
                         int resultRpm = formMain.page2.calc.MMS_TO_RPM(resultVmax, lead);
                         // vMax key過大修正
