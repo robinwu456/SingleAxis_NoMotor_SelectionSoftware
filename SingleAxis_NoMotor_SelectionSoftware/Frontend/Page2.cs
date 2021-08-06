@@ -239,7 +239,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 Panel panelSelection = formMain.explorerBar.Controls.Find("panel" + title, true)[0] as Panel;
                 if (panelSelection.Visible)
                     titleIndex++;
-                lbTite.Text = Regex.Replace(lbTite.Text, @"\d+", titleIndex.ToString());
+                //lbTite.Text = Regex.Replace(lbTite.Text, @"\d+", titleIndex.ToString());
+                lbTite.Text = "Step." + titleIndex;
             });
         }
 

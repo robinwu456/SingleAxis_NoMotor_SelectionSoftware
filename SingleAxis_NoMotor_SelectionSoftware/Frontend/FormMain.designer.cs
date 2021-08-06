@@ -299,6 +299,18 @@
             this.chkExpectServiceLife = new CustomToggle.CustomToggle();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.panelBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -399,6 +411,12 @@
             this.panelMotorAdvanceMode.SuspendLayout();
             this.panelExpectServiceLifeTime.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBase
@@ -1175,14 +1193,14 @@
             // 
             this.panel15.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
             resources.ApplyResources(this.panel15, "panel15");
-            this.panel15.Controls.Add(this.label21);
+            this.panel15.Controls.Add(this.tableLayoutPanel8);
             this.panel15.Name = "panel15";
             // 
             // label21
             // 
+            this.label21.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.label21, "label21");
-            this.label21.BackColor = System.Drawing.Color.White;
-            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.ForeColor = System.Drawing.Color.Gainsboro;
             this.label21.Name = "label21";
             // 
             // panelCalc
@@ -1755,14 +1773,14 @@
             // 
             this.panel13.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
             resources.ApplyResources(this.panel13, "panel13");
-            this.panel13.Controls.Add(this.lbTitleCalc);
+            this.panel13.Controls.Add(this.tableLayoutPanel7);
             this.panel13.Name = "panel13";
             // 
             // lbTitleCalc
             // 
+            this.lbTitleCalc.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.lbTitleCalc, "lbTitleCalc");
-            this.lbTitleCalc.BackColor = System.Drawing.Color.White;
-            this.lbTitleCalc.ForeColor = System.Drawing.Color.Black;
+            this.lbTitleCalc.ForeColor = System.Drawing.Color.Gainsboro;
             this.lbTitleCalc.Name = "lbTitleCalc";
             // 
             // cmdCalc
@@ -1971,14 +1989,14 @@
             // 
             this.panel8.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
             resources.ApplyResources(this.panel8, "panel8");
-            this.panel8.Controls.Add(this.lbTitleSetup);
+            this.panel8.Controls.Add(this.tableLayoutPanel6);
             this.panel8.Name = "panel8";
             // 
             // lbTitleSetup
             // 
+            this.lbTitleSetup.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.lbTitleSetup, "lbTitleSetup");
-            this.lbTitleSetup.BackColor = System.Drawing.Color.White;
-            this.lbTitleSetup.ForeColor = System.Drawing.Color.Black;
+            this.lbTitleSetup.ForeColor = System.Drawing.Color.Gainsboro;
             this.lbTitleSetup.Name = "lbTitleSetup";
             // 
             // panelModelSelection
@@ -1992,14 +2010,14 @@
             // 
             this.panel7.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
             resources.ApplyResources(this.panel7, "panel7");
-            this.panel7.Controls.Add(this.lbTitleModelSelection);
+            this.panel7.Controls.Add(this.tableLayoutPanel5);
             this.panel7.Name = "panel7";
             // 
             // lbTitleModelSelection
             // 
+            this.lbTitleModelSelection.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.lbTitleModelSelection, "lbTitleModelSelection");
-            this.lbTitleModelSelection.BackColor = System.Drawing.Color.White;
-            this.lbTitleModelSelection.ForeColor = System.Drawing.Color.Black;
+            this.lbTitleModelSelection.ForeColor = System.Drawing.Color.Gainsboro;
             this.lbTitleModelSelection.Name = "lbTitleModelSelection";
             // 
             // panelModelSelectionModel
@@ -2326,14 +2344,14 @@
             // 
             this.panel5.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
             resources.ApplyResources(this.panel5, "panel5");
-            this.panel5.Controls.Add(this.lbTitleModelType);
+            this.panel5.Controls.Add(this.tableLayoutPanel4);
             this.panel5.Name = "panel5";
             // 
             // lbTitleModelType
             // 
+            this.lbTitleModelType.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.lbTitleModelType, "lbTitleModelType");
-            this.lbTitleModelType.BackColor = System.Drawing.Color.White;
-            this.lbTitleModelType.ForeColor = System.Drawing.Color.Black;
+            this.lbTitleModelType.ForeColor = System.Drawing.Color.Gainsboro;
             this.lbTitleModelType.Name = "lbTitleModelType";
             // 
             // panelUseEnv
@@ -2350,14 +2368,14 @@
             // 
             this.panel3.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
             resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.Controls.Add(this.lbTitleUseEnv);
+            this.panel3.Controls.Add(this.tableLayoutPanel3);
             this.panel3.Name = "panel3";
             // 
             // lbTitleUseEnv
             // 
             this.lbTitleUseEnv.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.lbTitleUseEnv, "lbTitleUseEnv");
-            this.lbTitleUseEnv.ForeColor = System.Drawing.Color.Black;
+            this.lbTitleUseEnv.ForeColor = System.Drawing.Color.Gainsboro;
             this.lbTitleUseEnv.Name = "lbTitleUseEnv";
             // 
             // picDustFree
@@ -2564,6 +2582,96 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
+            // label34
+            // 
+            this.label34.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.label34, "label34");
+            this.label34.ForeColor = System.Drawing.Color.Black;
+            this.label34.Name = "label34";
+            // 
+            // label61
+            // 
+            resources.ApplyResources(this.label61, "label61");
+            this.label61.BackColor = System.Drawing.Color.Transparent;
+            this.label61.ForeColor = System.Drawing.Color.Black;
+            this.label61.Name = "label61";
+            // 
+            // label65
+            // 
+            resources.ApplyResources(this.label65, "label65");
+            this.label65.BackColor = System.Drawing.Color.Transparent;
+            this.label65.ForeColor = System.Drawing.Color.Black;
+            this.label65.Name = "label65";
+            // 
+            // label66
+            // 
+            resources.ApplyResources(this.label66, "label66");
+            this.label66.BackColor = System.Drawing.Color.Transparent;
+            this.label66.ForeColor = System.Drawing.Color.Black;
+            this.label66.Name = "label66";
+            // 
+            // label67
+            // 
+            resources.ApplyResources(this.label67, "label67");
+            this.label67.BackColor = System.Drawing.Color.Transparent;
+            this.label67.ForeColor = System.Drawing.Color.Black;
+            this.label67.Name = "label67";
+            // 
+            // label68
+            // 
+            resources.ApplyResources(this.label68, "label68");
+            this.label68.BackColor = System.Drawing.Color.Transparent;
+            this.label68.ForeColor = System.Drawing.Color.Black;
+            this.label68.Name = "label68";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
+            this.tableLayoutPanel3.Controls.Add(this.label34, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lbTitleUseEnv, 0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.tableLayoutPanel4, "tableLayoutPanel4");
+            this.tableLayoutPanel4.Controls.Add(this.lbTitleModelType, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label61, 1, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.tableLayoutPanel5, "tableLayoutPanel5");
+            this.tableLayoutPanel5.Controls.Add(this.label65, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.lbTitleModelSelection, 0, 0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.tableLayoutPanel6, "tableLayoutPanel6");
+            this.tableLayoutPanel6.Controls.Add(this.label66, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.lbTitleSetup, 0, 0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.tableLayoutPanel7, "tableLayoutPanel7");
+            this.tableLayoutPanel7.Controls.Add(this.label67, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.lbTitleCalc, 0, 0);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.tableLayoutPanel8, "tableLayoutPanel8");
+            this.tableLayoutPanel8.Controls.Add(this.label68, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.label21, 0, 0);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2621,7 +2729,6 @@
             this.customPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
             this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
             this.panelCalc.ResumeLayout(false);
             this.panelCalc.PerformLayout();
             this.panelxxx.ResumeLayout(false);
@@ -2638,7 +2745,6 @@
             this.panelAdvanceParams.ResumeLayout(false);
             this.panelAdvanceParams.PerformLayout();
             this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
             this.panelAdvanceMode.ResumeLayout(false);
             this.panelSetup.ResumeLayout(false);
             this.panelSetup.PerformLayout();
@@ -2649,10 +2755,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picVerticalUse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHorizontalUse)).EndInit();
             this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.panelModelSelection.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.panelModelSelectionModel.ResumeLayout(false);
             this.panelModelSelectionLead.ResumeLayout(false);
             this.panelModelSelectionReducerRatio.ResumeLayout(false);
@@ -2678,7 +2782,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picGCH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picECH)).EndInit();
             this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panelUseEnv.ResumeLayout(false);
             this.panelUseEnv.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -2698,6 +2801,17 @@
             this.panelExpectServiceLifeTime.ResumeLayout(false);
             this.panelExpectServiceLifeTime.PerformLayout();
             this.panel6.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2971,6 +3085,18 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.PictureBox picMoment;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
     }
 }
 
