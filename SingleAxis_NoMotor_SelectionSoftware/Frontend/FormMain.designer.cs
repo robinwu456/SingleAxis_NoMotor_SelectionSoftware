@@ -217,7 +217,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.txtMomentA = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.picMoment = new System.Windows.Forms.PictureBox();
             this.optHorizontalUse = new System.Windows.Forms.RadioButton();
             this.optVerticalUse = new System.Windows.Forms.RadioButton();
             this.optWallHangingUse = new System.Windows.Forms.RadioButton();
@@ -355,7 +355,7 @@
             this.panelAdvanceMode.SuspendLayout();
             this.panelSetup.SuspendLayout();
             this.panelMoment.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWallHangingUse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVerticalUse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHorizontalUse)).BeginInit();
@@ -1808,7 +1808,7 @@
             this.panelSetup.Controls.Add(this.label63);
             this.panelSetup.Controls.Add(this.label62);
             this.panelSetup.Controls.Add(this.panelMoment);
-            this.panelSetup.Controls.Add(this.pictureBox9);
+            this.panelSetup.Controls.Add(this.picMoment);
             this.panelSetup.Controls.Add(this.optHorizontalUse);
             this.panelSetup.Controls.Add(this.optVerticalUse);
             this.panelSetup.Controls.Add(this.optWallHangingUse);
@@ -1915,12 +1915,12 @@
             resources.ApplyResources(this.label26, "label26");
             this.label26.Name = "label26";
             // 
-            // pictureBox9
+            // picMoment
             // 
-            this.pictureBox9.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.moment_horizontal;
-            resources.ApplyResources(this.pictureBox9, "pictureBox9");
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.TabStop = false;
+            this.picMoment.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.moment_horizontal;
+            resources.ApplyResources(this.picMoment, "picMoment");
+            this.picMoment.Name = "picMoment";
+            this.picMoment.TabStop = false;
             // 
             // optHorizontalUse
             // 
@@ -1948,21 +1948,21 @@
             // 
             // picWallHangingUse
             // 
-            this.picWallHangingUse.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.壁掛安裝;
+            this.picWallHangingUse.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.setup_wallHang_normal;
             resources.ApplyResources(this.picWallHangingUse, "picWallHangingUse");
             this.picWallHangingUse.Name = "picWallHangingUse";
             this.picWallHangingUse.TabStop = false;
             // 
             // picVerticalUse
             // 
-            this.picVerticalUse.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.垂直安裝;
+            this.picVerticalUse.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.setup_vertical_normal;
             resources.ApplyResources(this.picVerticalUse, "picVerticalUse");
             this.picVerticalUse.Name = "picVerticalUse";
             this.picVerticalUse.TabStop = false;
             // 
             // picHorizontalUse
             // 
-            this.picHorizontalUse.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.水平安裝;
+            this.picHorizontalUse.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.setup_horizontal_enabled;
             resources.ApplyResources(this.picHorizontalUse, "picHorizontalUse");
             this.picHorizontalUse.Name = "picHorizontalUse";
             this.picHorizontalUse.TabStop = false;
@@ -2152,7 +2152,7 @@
             // 
             // picGTH
             // 
-            this.picGTH.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.GTH_normal;
+            this.picGTH.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.GTH_enabled;
             resources.ApplyResources(this.picGTH, "picGTH");
             this.picGTH.Name = "picGTH";
             this.picGTH.TabStop = false;
@@ -2385,7 +2385,7 @@
             // 
             // picStandardEnv
             // 
-            this.picStandardEnv.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.useEnv_standard_normal;
+            this.picStandardEnv.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.useEnv_standard_enabled;
             resources.ApplyResources(this.picStandardEnv, "picStandardEnv");
             this.picStandardEnv.Name = "picStandardEnv";
             this.picStandardEnv.TabStop = false;
@@ -2644,7 +2644,7 @@
             this.panelSetup.PerformLayout();
             this.panelMoment.ResumeLayout(false);
             this.panelMoment.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWallHangingUse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVerticalUse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHorizontalUse)).EndInit();
@@ -2920,7 +2920,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel12;
@@ -2971,6 +2970,7 @@
         public CustomToggle.CustomToggle chkExpectServiceLife;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.PictureBox picMoment;
     }
 }
 

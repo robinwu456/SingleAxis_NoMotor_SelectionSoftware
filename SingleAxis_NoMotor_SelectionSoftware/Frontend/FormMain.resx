@@ -5436,31 +5436,31 @@
   <data name="&gt;&gt;panelMoment.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="pictureBox9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="picMoment.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="pictureBox9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>438, 68</value>
+  <data name="picMoment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>436, 45</value>
   </data>
-  <data name="pictureBox9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 112</value>
+  <data name="picMoment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 183</value>
   </data>
-  <data name="pictureBox9.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>AutoSize</value>
+  <data name="picMoment.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
   </data>
-  <data name="pictureBox9.TabIndex" type="System.Int32, mscorlib">
+  <data name="picMoment.TabIndex" type="System.Int32, mscorlib">
     <value>360</value>
   </data>
-  <data name="&gt;&gt;pictureBox9.Name" xml:space="preserve">
-    <value>pictureBox9</value>
+  <data name="&gt;&gt;picMoment.Name" xml:space="preserve">
+    <value>picMoment</value>
   </data>
-  <data name="&gt;&gt;pictureBox9.Type" xml:space="preserve">
+  <data name="&gt;&gt;picMoment.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pictureBox9.Parent" xml:space="preserve">
+  <data name="&gt;&gt;picMoment.Parent" xml:space="preserve">
     <value>panelSetup</value>
   </data>
-  <data name="&gt;&gt;pictureBox9.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;picMoment.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="optHorizontalUse.AutoSize" type="System.Boolean, mscorlib">
@@ -5473,7 +5473,7 @@
     <value>NoControl</value>
   </data>
   <data name="optHorizontalUse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>438, 190</value>
+    <value>918, 61</value>
   </data>
   <data name="optHorizontalUse.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 23</value>
@@ -5509,7 +5509,7 @@
     <value>NoControl</value>
   </data>
   <data name="optVerticalUse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>531, 190</value>
+    <value>918, 118</value>
   </data>
   <data name="optVerticalUse.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 23</value>
@@ -5545,7 +5545,7 @@
     <value>NoControl</value>
   </data>
   <data name="optWallHangingUse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>438, 214</value>
+    <value>918, 89</value>
   </data>
   <data name="optWallHangingUse.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 23</value>
