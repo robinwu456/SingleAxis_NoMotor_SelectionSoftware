@@ -159,7 +159,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 進階選項顯示
             formMain.chkAdvanceMode.Checked = false;
             formMain.panelAdvanceParams.Enabled = false;
-            formMain.panelAdvanceParams.Visible = false;
+            //formMain.panelAdvanceParams.Visible = false;
             formMain.panelAdvanceMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
 
             // scrollbars
@@ -259,7 +259,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
 
             formMain.panelAdvanceParams.Enabled = formMain.chkAdvanceMode.Checked;
-            formMain.panelAdvanceParams.Visible = formMain.chkAdvanceMode.Checked;
+            //formMain.panelAdvanceParams.Visible = formMain.chkAdvanceMode.Checked;
             if (!formMain.chkAdvanceMode.Checked)
                 formMain.optMaxSpeedType_mms.Checked = true;
             

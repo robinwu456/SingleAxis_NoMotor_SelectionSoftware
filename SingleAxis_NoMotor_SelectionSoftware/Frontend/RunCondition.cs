@@ -31,8 +31,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void InitEvents() {
             // 希望壽命
-            formMain.optNoExpectServiceLife.CheckedChanged += ExpectServiceLife_CheckedChanged;
-            formMain.optExpectServiceLife.CheckedChanged += ExpectServiceLife_CheckedChanged;
+            //formMain.optNoExpectServiceLife.CheckedChanged += ExpectServiceLife_CheckedChanged;
+            //formMain.optExpectServiceLife.CheckedChanged += ExpectServiceLife_CheckedChanged;
+            formMain.chkExpectServiceLife.CheckedChanged += ExpectServiceLife_CheckedChanged;
 
             // 更新條件
             formMain.optStandardEnv.CheckedChanged += UpdateCondition;
@@ -59,8 +60,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.txtTimesPerMinute.TextChanged += UpdateCondition;
             formMain.txtHourPerDay.TextChanged += UpdateCondition;
             formMain.txtDayPerYear.TextChanged += UpdateCondition;
-            formMain.optNoExpectServiceLife.CheckedChanged += UpdateCondition;
-            formMain.optExpectServiceLife.CheckedChanged += UpdateCondition;
+            //formMain.optNoExpectServiceLife.CheckedChanged += UpdateCondition;
+            //formMain.optExpectServiceLife.CheckedChanged += UpdateCondition;
+            formMain.chkExpectServiceLife.CheckedChanged += UpdateCondition;
             formMain.txtExpectServiceLifeTime.TextChanged += UpdateCondition;
             formMain.txtMaxSpeed.TextChanged += UpdateCondition;
             formMain.txtAccelSpeed.TextChanged += UpdateCondition;
@@ -74,7 +76,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //formMain.optRepeatabilityScrew.CheckedChanged += UpdateCondition;
             formMain.optMaxSpeedType_mms.CheckedChanged += UpdateCondition;
             //formMain.dgvReducerInfo.CellValueChanged += UpdateCondition;
-            formMain.optExpectServiceLife.CheckedChanged += UpdateCondition;
+            //formMain.optExpectServiceLife.CheckedChanged += UpdateCondition;
 
             // Custom scrollBar init
             scrollBarStroke = new CustomScrollBar(formMain, formMain.scrollBarPanelStroke, formMain.scrollBarThumbStroke, null, null);
@@ -119,7 +121,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void ExpectServiceLife_CheckedChanged(object sender, EventArgs e) {
-            formMain.panelExpectServiceLifeTime.Enabled = formMain.optExpectServiceLife.Checked;
+            formMain.panelExpectServiceLifeTime.Enabled = formMain.chkExpectServiceLife.Checked;
         }
 
         public void UpdateCondition(object sender, EventArgs e) {
@@ -202,7 +204,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 dayPerYear = Convert.ToInt32(formMain.txtDayPerYear.Text)
             };
             // 希望壽命
-            curCondition.expectServiceLifeTime = formMain.optExpectServiceLife.Checked ? Convert.ToInt32(formMain.txtExpectServiceLifeTime.Text) : Condition.defaultExpectServiceLifeTime;
+            curCondition.expectServiceLifeTime = formMain.chkExpectServiceLife.Checked ? Convert.ToInt32(formMain.txtExpectServiceLifeTime.Text) : Condition.defaultExpectServiceLifeTime;
             // 驗正加速時間
             if (formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType())
                 curCondition.accelTime = 0.4;

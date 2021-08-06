@@ -169,13 +169,9 @@
             this.optMaxSpeedType_mms = new System.Windows.Forms.RadioButton();
             this.optMaxSpeedType_rpm = new System.Windows.Forms.RadioButton();
             this.lbScrollbarMaxLoad = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panelExpectServiceLifeTime = new System.Windows.Forms.Panel();
             this.label72 = new System.Windows.Forms.Label();
             this.lbExpectServiceLifeAlarm = new System.Windows.Forms.Label();
             this.txtExpectServiceLifeTime = new System.Windows.Forms.TextBox();
-            this.optExpectServiceLife = new System.Windows.Forms.RadioButton();
-            this.optNoExpectServiceLife = new System.Windows.Forms.RadioButton();
             this.lbScrollbarMaxStroke = new System.Windows.Forms.Label();
             this.label71 = new System.Windows.Forms.Label();
             this.lbScrollbarMinLoad = new System.Windows.Forms.Label();
@@ -208,7 +204,6 @@
             this.cmdCalc = new CustomButton.CustomButton();
             this.panelAdvanceMode = new System.Windows.Forms.Panel();
             this.chkAdvanceMode = new CustomToggle.CustomToggle();
-            this.labelAdvanceOption = new System.Windows.Forms.Label();
             this.panelSetup = new System.Windows.Forms.Panel();
             this.panelMoment = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
@@ -304,6 +299,8 @@
             this.label64 = new System.Windows.Forms.Label();
             this.panelMotorParams = new System.Windows.Forms.Panel();
             this.panelMotorAdvanceMode = new System.Windows.Forms.Panel();
+            this.panelExpectServiceLifeTime = new System.Windows.Forms.Panel();
+            this.chkExpectServiceLife = new CustomToggle.CustomToggle();
             this.panelBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -356,8 +353,6 @@
             this.scrollBarPanelLoad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbLoad)).BeginInit();
             this.panelAdvanceParams.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panelExpectServiceLifeTime.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panelAdvanceMode.SuspendLayout();
             this.panelSetup.SuspendLayout();
@@ -404,6 +399,7 @@
             this.panelConfirmBtnsStep5.SuspendLayout();
             this.panelMotorParams.SuspendLayout();
             this.panelMotorAdvanceMode.SuspendLayout();
+            this.panelExpectServiceLifeTime.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBase
@@ -1196,8 +1192,9 @@
             this.panelCalc.Controls.Add(this.label19);
             this.panelCalc.Controls.Add(this.panel14);
             this.panelCalc.Controls.Add(this.panel13);
+            this.panelCalc.Controls.Add(this.optMaxSpeedType_mms);
+            this.panelCalc.Controls.Add(this.optMaxSpeedType_rpm);
             this.panelCalc.Controls.Add(this.cmdCalc);
-            this.panelCalc.Controls.Add(this.panelAdvanceMode);
             resources.ApplyResources(this.panelCalc, "panelCalc");
             this.panelCalc.Name = "panelCalc";
             // 
@@ -1295,7 +1292,6 @@
             // 
             // chkMotorAdvanceMode
             // 
-            resources.ApplyResources(this.chkMotorAdvanceMode, "chkMotorAdvanceMode");
             this.chkMotorAdvanceMode.BackImg_ToggleOff_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_disable;
             this.chkMotorAdvanceMode.BackImg_ToggleOff_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_hover;
             this.chkMotorAdvanceMode.BackImg_ToggleOff_Normal = ((System.Drawing.Image)(resources.GetObject("chkMotorAdvanceMode.BackImg_ToggleOff_Normal")));
@@ -1303,6 +1299,7 @@
             this.chkMotorAdvanceMode.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_hover;
             this.chkMotorAdvanceMode.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn;
             this.chkMotorAdvanceMode.Checked = false;
+            resources.ApplyResources(this.chkMotorAdvanceMode, "chkMotorAdvanceMode");
             this.chkMotorAdvanceMode.Name = "chkMotorAdvanceMode";
             // 
             // txtLoadInertiaMomentRatio
@@ -1405,16 +1402,14 @@
             // 
             this.panel14.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.bg_runCondition;
             resources.ApplyResources(this.panel14, "panel14");
+            this.panel14.Controls.Add(this.chkExpectServiceLife);
+            this.panel14.Controls.Add(this.panelAdvanceMode);
+            this.panel14.Controls.Add(this.panelExpectServiceLifeTime);
             this.panel14.Controls.Add(this.label22);
             this.panel14.Controls.Add(this.scrollBarPanelStroke);
             this.panel14.Controls.Add(this.scrollBarPanelLoad);
-            this.panel14.Controls.Add(this.panelAdvanceParams);
-            this.panel14.Controls.Add(this.optMaxSpeedType_mms);
-            this.panel14.Controls.Add(this.optMaxSpeedType_rpm);
             this.panel14.Controls.Add(this.lbScrollbarMaxLoad);
-            this.panel14.Controls.Add(this.panel6);
             this.panel14.Controls.Add(this.lbScrollbarMaxStroke);
-            this.panel14.Controls.Add(this.label71);
             this.panel14.Controls.Add(this.lbScrollbarMinLoad);
             this.panel14.Controls.Add(this.lbScrollbarMinStroke);
             this.panel14.Controls.Add(this.label53);
@@ -1481,6 +1476,7 @@
             // 
             // panelAdvanceParams
             // 
+            resources.ApplyResources(this.panelAdvanceParams, "panelAdvanceParams");
             this.panelAdvanceParams.BackColor = System.Drawing.Color.Transparent;
             this.panelAdvanceParams.Controls.Add(this.comboBox1);
             this.panelAdvanceParams.Controls.Add(this.lbMaxSpeedAlarm);
@@ -1491,15 +1487,14 @@
             this.panelAdvanceParams.Controls.Add(this.label79);
             this.panelAdvanceParams.Controls.Add(this.txtMaxSpeed);
             this.panelAdvanceParams.Controls.Add(this.lbRpm);
-            resources.ApplyResources(this.panelAdvanceParams, "panelAdvanceParams");
             this.panelAdvanceParams.Name = "panelAdvanceParams";
             // 
             // comboBox1
             // 
-            resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.DropDownWidth = 180;
+            resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.ForeColor = System.Drawing.Color.White;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Name = "comboBox1";
@@ -1578,23 +1573,6 @@
             resources.ApplyResources(this.lbScrollbarMaxLoad, "lbScrollbarMaxLoad");
             this.lbScrollbarMaxLoad.Name = "lbScrollbarMaxLoad";
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Transparent;
-            this.panel6.Controls.Add(this.panelExpectServiceLifeTime);
-            this.panel6.Controls.Add(this.optExpectServiceLife);
-            this.panel6.Controls.Add(this.optNoExpectServiceLife);
-            resources.ApplyResources(this.panel6, "panel6");
-            this.panel6.Name = "panel6";
-            // 
-            // panelExpectServiceLifeTime
-            // 
-            this.panelExpectServiceLifeTime.Controls.Add(this.label72);
-            this.panelExpectServiceLifeTime.Controls.Add(this.lbExpectServiceLifeAlarm);
-            this.panelExpectServiceLifeTime.Controls.Add(this.txtExpectServiceLifeTime);
-            resources.ApplyResources(this.panelExpectServiceLifeTime, "panelExpectServiceLifeTime");
-            this.panelExpectServiceLifeTime.Name = "panelExpectServiceLifeTime";
-            // 
             // label72
             // 
             resources.ApplyResources(this.label72, "label72");
@@ -1613,22 +1591,6 @@
             resources.ApplyResources(this.txtExpectServiceLifeTime, "txtExpectServiceLifeTime");
             this.txtExpectServiceLifeTime.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtExpectServiceLifeTime.Name = "txtExpectServiceLifeTime";
-            // 
-            // optExpectServiceLife
-            // 
-            resources.ApplyResources(this.optExpectServiceLife, "optExpectServiceLife");
-            this.optExpectServiceLife.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.optExpectServiceLife.Name = "optExpectServiceLife";
-            this.optExpectServiceLife.UseVisualStyleBackColor = true;
-            // 
-            // optNoExpectServiceLife
-            // 
-            resources.ApplyResources(this.optNoExpectServiceLife, "optNoExpectServiceLife");
-            this.optNoExpectServiceLife.Checked = true;
-            this.optNoExpectServiceLife.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.optNoExpectServiceLife.Name = "optNoExpectServiceLife";
-            this.optNoExpectServiceLife.TabStop = true;
-            this.optNoExpectServiceLife.UseVisualStyleBackColor = true;
             // 
             // lbScrollbarMaxStroke
             // 
@@ -1840,13 +1802,16 @@
             // 
             // panelAdvanceMode
             // 
+            this.panelAdvanceMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.panelAdvanceMode.Controls.Add(this.chkAdvanceMode);
-            this.panelAdvanceMode.Controls.Add(this.labelAdvanceOption);
+            this.panelAdvanceMode.Controls.Add(this.panelAdvanceParams);
             resources.ApplyResources(this.panelAdvanceMode, "panelAdvanceMode");
             this.panelAdvanceMode.Name = "panelAdvanceMode";
             // 
             // chkAdvanceMode
             // 
+            resources.ApplyResources(this.chkAdvanceMode, "chkAdvanceMode");
+            this.chkAdvanceMode.BackColor = System.Drawing.Color.Transparent;
             this.chkAdvanceMode.BackImg_ToggleOff_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_disable;
             this.chkAdvanceMode.BackImg_ToggleOff_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_hover;
             this.chkAdvanceMode.BackImg_ToggleOff_Normal = ((System.Drawing.Image)(resources.GetObject("chkAdvanceMode.BackImg_ToggleOff_Normal")));
@@ -1854,14 +1819,7 @@
             this.chkAdvanceMode.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_hover;
             this.chkAdvanceMode.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn;
             this.chkAdvanceMode.Checked = false;
-            resources.ApplyResources(this.chkAdvanceMode, "chkAdvanceMode");
             this.chkAdvanceMode.Name = "chkAdvanceMode";
-            // 
-            // labelAdvanceOption
-            // 
-            resources.ApplyResources(this.labelAdvanceOption, "labelAdvanceOption");
-            this.labelAdvanceOption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.labelAdvanceOption.Name = "labelAdvanceOption";
             // 
             // panelSetup
             // 
@@ -2604,6 +2562,29 @@
             resources.ApplyResources(this.panelMotorAdvanceMode, "panelMotorAdvanceMode");
             this.panelMotorAdvanceMode.Name = "panelMotorAdvanceMode";
             // 
+            // panelExpectServiceLifeTime
+            // 
+            this.panelExpectServiceLifeTime.BackColor = System.Drawing.Color.Transparent;
+            this.panelExpectServiceLifeTime.Controls.Add(this.label72);
+            this.panelExpectServiceLifeTime.Controls.Add(this.lbExpectServiceLifeAlarm);
+            this.panelExpectServiceLifeTime.Controls.Add(this.txtExpectServiceLifeTime);
+            this.panelExpectServiceLifeTime.Controls.Add(this.label71);
+            resources.ApplyResources(this.panelExpectServiceLifeTime, "panelExpectServiceLifeTime");
+            this.panelExpectServiceLifeTime.Name = "panelExpectServiceLifeTime";
+            // 
+            // chkExpectServiceLife
+            // 
+            resources.ApplyResources(this.chkExpectServiceLife, "chkExpectServiceLife");
+            this.chkExpectServiceLife.BackColor = System.Drawing.Color.Transparent;
+            this.chkExpectServiceLife.BackImg_ToggleOff_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_disable;
+            this.chkExpectServiceLife.BackImg_ToggleOff_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_hover;
+            this.chkExpectServiceLife.BackImg_ToggleOff_Normal = ((System.Drawing.Image)(resources.GetObject("chkExpectServiceLife.BackImg_ToggleOff_Normal")));
+            this.chkExpectServiceLife.BackImg_ToggleOn_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_disable;
+            this.chkExpectServiceLife.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_hover;
+            this.chkExpectServiceLife.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn;
+            this.chkExpectServiceLife.Checked = false;
+            this.chkExpectServiceLife.Name = "chkExpectServiceLife";
+            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2677,14 +2658,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbLoad)).EndInit();
             this.panelAdvanceParams.ResumeLayout(false);
             this.panelAdvanceParams.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panelExpectServiceLifeTime.ResumeLayout(false);
-            this.panelExpectServiceLifeTime.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.panelAdvanceMode.ResumeLayout(false);
-            this.panelAdvanceMode.PerformLayout();
             this.panelSetup.ResumeLayout(false);
             this.panelSetup.PerformLayout();
             this.panelMoment.ResumeLayout(false);
@@ -2743,6 +2719,8 @@
             this.panelMotorParams.PerformLayout();
             this.panelMotorAdvanceMode.ResumeLayout(false);
             this.panelMotorAdvanceMode.PerformLayout();
+            this.panelExpectServiceLifeTime.ResumeLayout(false);
+            this.panelExpectServiceLifeTime.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2792,7 +2770,6 @@
         public System.Windows.Forms.DataVisualization.Charting.Chart chart;
         public System.Windows.Forms.Panel panelAdvanceMode;
         public CustomToggle.CustomToggle chkAdvanceMode;
-        public System.Windows.Forms.Label labelAdvanceOption;
         public System.Windows.Forms.Panel panelAdvanceParams;
         public System.Windows.Forms.Label lbMaxSpeedAlarm;
         private System.Windows.Forms.Label label78;
@@ -2804,13 +2781,9 @@
         private System.Windows.Forms.Label label79;
         public System.Windows.Forms.TextBox txtMaxSpeed;
         public System.Windows.Forms.Label lbRpm;
-        private System.Windows.Forms.Panel panel6;
-        public System.Windows.Forms.Panel panelExpectServiceLifeTime;
         private System.Windows.Forms.Label label72;
         public System.Windows.Forms.Label lbExpectServiceLifeAlarm;
         public System.Windows.Forms.TextBox txtExpectServiceLifeTime;
-        public System.Windows.Forms.RadioButton optExpectServiceLife;
-        public System.Windows.Forms.RadioButton optNoExpectServiceLife;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label35;
         public System.Windows.Forms.Label label43;
@@ -3021,6 +2994,8 @@
         private System.Windows.Forms.Label label62;
         public System.Windows.Forms.Panel panelMotorParams;
         public System.Windows.Forms.Panel panelMotorAdvanceMode;
+        public System.Windows.Forms.Panel panelExpectServiceLifeTime;
+        public CustomToggle.CustomToggle chkExpectServiceLife;
     }
 }
 
