@@ -116,7 +116,6 @@
             this.label54 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
             this.lbAccelTime = new System.Windows.Forms.Label();
             this.lbRunTime = new System.Windows.Forms.Label();
             this.lbAccelSpeed = new System.Windows.Forms.Label();
@@ -1129,17 +1128,16 @@
             this.customPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.customPanel1.Controls.Add(this.label58);
             this.customPanel1.Controls.Add(this.label57);
+            this.customPanel1.Controls.Add(this.lbCycleTime);
+            this.customPanel1.Controls.Add(this.lbMaxSpeed);
             this.customPanel1.Controls.Add(this.label55);
             this.customPanel1.Controls.Add(this.label54);
             this.customPanel1.Controls.Add(this.label49);
             this.customPanel1.Controls.Add(this.label33);
-            this.customPanel1.Controls.Add(this.label32);
             this.customPanel1.Controls.Add(this.lbAccelTime);
             this.customPanel1.Controls.Add(this.lbRunTime);
             this.customPanel1.Controls.Add(this.lbAccelSpeed);
             this.customPanel1.Controls.Add(this.lbConstantTime);
-            this.customPanel1.Controls.Add(this.lbMaxSpeed);
-            this.customPanel1.Controls.Add(this.lbCycleTime);
             this.customPanel1.Curvature = 10;
             resources.ApplyResources(this.customPanel1, "customPanel1");
             this.customPanel1.Name = "customPanel1";
@@ -1179,12 +1177,6 @@
             resources.ApplyResources(this.label33, "label33");
             this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(181)))), ((int)(((byte)(199)))));
             this.label33.Name = "label33";
-            // 
-            // label32
-            // 
-            resources.ApplyResources(this.label32, "label32");
-            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(88)))), ((int)(((byte)(111)))));
-            this.label32.Name = "label32";
             // 
             // lbAccelTime
             // 
@@ -3187,7 +3179,6 @@
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label label21;
         private CustomPanel customPanel1;
-        public System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label55;

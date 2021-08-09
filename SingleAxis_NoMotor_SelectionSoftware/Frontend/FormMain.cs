@@ -50,7 +50,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             foreach (Control control in this.Controls.All()) {
                 if (control is ComboBox)
                     control.MouseWheel += FormDetailedReport_MouseWheel;
-                control.MouseWheel += Control_MouseWheel;
+                if (!(control is DataGridView))
+                    control.MouseWheel += Control_MouseWheel;
             }
         }
 
