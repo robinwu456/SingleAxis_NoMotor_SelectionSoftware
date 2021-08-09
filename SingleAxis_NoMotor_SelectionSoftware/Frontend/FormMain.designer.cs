@@ -43,7 +43,6 @@
             this.cmdZoom = new System.Windows.Forms.PictureBox();
             this.cmdClose = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabMain = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
             this.tabStart = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -54,6 +53,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label48 = new System.Windows.Forms.Label();
             this.cmdModelSelection = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
             this.tabContent = new System.Windows.Forms.TabPage();
             this.explorerBar = new System.Windows.Forms.Panel();
             this.panelNextPage = new System.Windows.Forms.Panel();
@@ -125,6 +128,8 @@
             this.label68 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.panelCalc = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmdCalc = new CustomButton.CustomButton();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label69 = new System.Windows.Forms.Label();
             this.panelxxx = new System.Windows.Forms.Panel();
@@ -213,7 +218,6 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label67 = new System.Windows.Forms.Label();
             this.lbTitleCalc = new System.Windows.Forms.Label();
-            this.cmdCalc = new CustomButton.CustomButton();
             this.panelSetup = new System.Windows.Forms.Panel();
             this.label64 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
@@ -307,14 +311,22 @@
             this.tabResult = new System.Windows.Forms.TabPage();
             this.explorerBar_step5 = new System.Windows.Forms.Panel();
             this.panelResult = new System.Windows.Forms.Panel();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.lbResult = new System.Windows.Forms.Label();
-            this.picBoxResultImg = new System.Windows.Forms.PictureBox();
+            this.panel20 = new System.Windows.Forms.Panel();
             this.panelConfirmBtnsStep5 = new System.Windows.Forms.TableLayoutPanel();
             this.cmdConfirmStep5 = new CustomButton.CustomButton();
             this.cmdResetStep5 = new CustomButton.CustomButton();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.label77 = new System.Windows.Forms.Label();
+            this.lbResult = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
+            this.picBoxResultImg = new System.Windows.Forms.PictureBox();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.label93 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -336,6 +348,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdShapeSelection)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdModelSelection)).BeginInit();
+            this.tableLayoutPanel11.SuspendLayout();
+            this.panel18.SuspendLayout();
             this.tabContent.SuspendLayout();
             this.explorerBar.SuspendLayout();
             this.panelNextPage.SuspendLayout();
@@ -359,6 +373,7 @@
             this.panel15.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.panelCalc.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panelxxx.SuspendLayout();
             this.panelMotorAdvanceMode.SuspendLayout();
@@ -420,8 +435,13 @@
             this.tabResult.SuspendLayout();
             this.explorerBar_step5.SuspendLayout();
             this.panelResult.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).BeginInit();
+            this.panel20.SuspendLayout();
             this.panelConfirmBtnsStep5.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.panel21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).BeginInit();
+            this.panel19.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBase
@@ -518,15 +538,6 @@
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
             // 
-            // toolTip1
-            // 
-            this.toolTip1.AutoPopDelay = 50000;
-            this.toolTip1.InitialDelay = 500;
-            this.toolTip1.IsBalloon = true;
-            this.toolTip1.ReshowDelay = 100;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "變更非標準馬達時請注意";
-            // 
             // tabMain
             // 
             this.tabMain.Controls.Add(this.tabStart);
@@ -548,6 +559,7 @@
             // 
             resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel11, 0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
             // tableLayoutPanel1
@@ -598,6 +610,30 @@
             this.cmdModelSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.動作選型;
             this.cmdModelSelection.Name = "cmdModelSelection";
             this.cmdModelSelection.TabStop = false;
+            // 
+            // tableLayoutPanel11
+            // 
+            resources.ApplyResources(this.tableLayoutPanel11, "tableLayoutPanel11");
+            this.tableLayoutPanel11.Controls.Add(this.panel18, 1, 0);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.label73);
+            this.panel18.Controls.Add(this.label76);
+            resources.ApplyResources(this.panel18, "panel18");
+            this.panel18.Name = "panel18";
+            // 
+            // label73
+            // 
+            resources.ApplyResources(this.label73, "label73");
+            this.label73.Name = "label73";
+            // 
+            // label76
+            // 
+            this.label76.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.label76, "label76");
+            this.label76.Name = "label76";
             // 
             // tabContent
             // 
@@ -1234,15 +1270,37 @@
             // 
             // panelCalc
             // 
+            this.panelCalc.Controls.Add(this.tableLayoutPanel9);
             this.panelCalc.Controls.Add(this.pictureBox6);
             this.panelCalc.Controls.Add(this.label69);
             this.panelCalc.Controls.Add(this.panelxxx);
             this.panelCalc.Controls.Add(this.label19);
             this.panelCalc.Controls.Add(this.panel14);
             this.panelCalc.Controls.Add(this.panel13);
-            this.panelCalc.Controls.Add(this.cmdCalc);
             resources.ApplyResources(this.panelCalc, "panelCalc");
             this.panelCalc.Name = "panelCalc";
+            // 
+            // tableLayoutPanel9
+            // 
+            resources.ApplyResources(this.tableLayoutPanel9, "tableLayoutPanel9");
+            this.tableLayoutPanel9.Controls.Add(this.cmdCalc, 1, 0);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            // 
+            // cmdCalc
+            // 
+            this.cmdCalc.BackColor = System.Drawing.Color.Transparent;
+            this.cmdCalc.BackColor_Hover = System.Drawing.Color.DarkRed;
+            this.cmdCalc.BackColor_Normal = System.Drawing.Color.Red;
+            this.cmdCalc.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdCalc.BackColor2_Hover = System.Drawing.Color.DarkRed;
+            this.cmdCalc.BackColor2_Normal = System.Drawing.Color.Red;
+            this.cmdCalc.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdCalc.ButtonEnabled = true;
+            resources.ApplyResources(this.cmdCalc, "cmdCalc");
+            this.cmdCalc.Curvature = 15;
+            this.cmdCalc.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdCalc.Name = "cmdCalc";
+            this.cmdCalc.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
             // 
             // pictureBox6
             // 
@@ -1915,22 +1973,6 @@
             resources.ApplyResources(this.lbTitleCalc, "lbTitleCalc");
             this.lbTitleCalc.ForeColor = System.Drawing.Color.Gainsboro;
             this.lbTitleCalc.Name = "lbTitleCalc";
-            // 
-            // cmdCalc
-            // 
-            this.cmdCalc.BackColor = System.Drawing.Color.Transparent;
-            this.cmdCalc.BackColor_Hover = System.Drawing.Color.DarkRed;
-            this.cmdCalc.BackColor_Normal = System.Drawing.Color.Red;
-            this.cmdCalc.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmdCalc.BackColor2_Hover = System.Drawing.Color.DarkRed;
-            this.cmdCalc.BackColor2_Normal = System.Drawing.Color.Red;
-            this.cmdCalc.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmdCalc.ButtonEnabled = true;
-            resources.ApplyResources(this.cmdCalc, "cmdCalc");
-            this.cmdCalc.Curvature = 15;
-            this.cmdCalc.GradientMode = CustomButton.LinearGradientMode.Horizontal;
-            this.cmdCalc.Name = "cmdCalc";
-            this.cmdCalc.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
             // 
             // panelSetup
             // 
@@ -2624,38 +2666,18 @@
             // 
             // panelResult
             // 
+            this.panelResult.Controls.Add(this.panel20);
+            this.panelResult.Controls.Add(this.panel17);
             this.panelResult.Controls.Add(this.label51);
             this.panelResult.Controls.Add(this.label56);
-            this.panelResult.Controls.Add(this.lbResult);
-            this.panelResult.Controls.Add(this.picBoxResultImg);
-            this.panelResult.Controls.Add(this.panelConfirmBtnsStep5);
-            this.panelResult.Controls.Add(this.label70);
             resources.ApplyResources(this.panelResult, "panelResult");
             this.panelResult.Name = "panelResult";
             // 
-            // label51
+            // panel20
             // 
-            resources.ApplyResources(this.label51, "label51");
-            this.label51.ForeColor = System.Drawing.Color.Red;
-            this.label51.Name = "label51";
-            // 
-            // label56
-            // 
-            resources.ApplyResources(this.label56, "label56");
-            this.label56.BackColor = System.Drawing.Color.LightGray;
-            this.label56.Name = "label56";
-            // 
-            // lbResult
-            // 
-            resources.ApplyResources(this.lbResult, "lbResult");
-            this.lbResult.ForeColor = System.Drawing.Color.Red;
-            this.lbResult.Name = "lbResult";
-            // 
-            // picBoxResultImg
-            // 
-            resources.ApplyResources(this.picBoxResultImg, "picBoxResultImg");
-            this.picBoxResultImg.Name = "picBoxResultImg";
-            this.picBoxResultImg.TabStop = false;
+            this.panel20.Controls.Add(this.panelConfirmBtnsStep5);
+            resources.ApplyResources(this.panel20, "panel20");
+            this.panel20.Name = "panel20";
             // 
             // panelConfirmBtnsStep5
             // 
@@ -2696,12 +2718,88 @@
             this.cmdResetStep5.Name = "cmdResetStep5";
             this.cmdResetStep5.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
             // 
+            // panel17
+            // 
+            resources.ApplyResources(this.panel17, "panel17");
+            this.panel17.Controls.Add(this.panel21);
+            this.panel17.Controls.Add(this.panel19);
+            this.panel17.Name = "panel17";
+            // 
+            // panel21
+            // 
+            this.panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel21.Controls.Add(this.label77);
+            this.panel21.Controls.Add(this.lbResult);
+            this.panel21.Controls.Add(this.label70);
+            this.panel21.Controls.Add(this.picBoxResultImg);
+            resources.ApplyResources(this.panel21, "panel21");
+            this.panel21.Name = "panel21";
+            // 
+            // label77
+            // 
+            resources.ApplyResources(this.label77, "label77");
+            this.label77.ForeColor = System.Drawing.Color.Red;
+            this.label77.Name = "label77";
+            // 
+            // lbResult
+            // 
+            resources.ApplyResources(this.lbResult, "lbResult");
+            this.lbResult.ForeColor = System.Drawing.Color.Red;
+            this.lbResult.Name = "lbResult";
+            // 
             // label70
             // 
-            this.label70.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.label70, "label70");
-            this.label70.ForeColor = System.Drawing.Color.DimGray;
+            this.label70.BackColor = System.Drawing.Color.DarkGray;
             this.label70.Name = "label70";
+            // 
+            // picBoxResultImg
+            // 
+            resources.ApplyResources(this.picBoxResultImg, "picBoxResultImg");
+            this.picBoxResultImg.Name = "picBoxResultImg";
+            this.picBoxResultImg.TabStop = false;
+            // 
+            // panel19
+            // 
+            this.panel19.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
+            resources.ApplyResources(this.panel19, "panel19");
+            this.panel19.Controls.Add(this.tableLayoutPanel10);
+            this.panel19.Name = "panel19";
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.tableLayoutPanel10, "tableLayoutPanel10");
+            this.tableLayoutPanel10.Controls.Add(this.label93, 0, 0);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            // 
+            // label93
+            // 
+            this.label93.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.label93, "label93");
+            this.label93.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label93.Name = "label93";
+            // 
+            // label51
+            // 
+            resources.ApplyResources(this.label51, "label51");
+            this.label51.ForeColor = System.Drawing.Color.Red;
+            this.label51.Name = "label51";
+            // 
+            // label56
+            // 
+            resources.ApplyResources(this.label56, "label56");
+            this.label56.BackColor = System.Drawing.Color.LightGray;
+            this.label56.Name = "label56";
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 50000;
+            this.toolTip1.InitialDelay = 500;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ReshowDelay = 100;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "變更非標準馬達時請注意";
             // 
             // FormMain
             // 
@@ -2734,6 +2832,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdShapeSelection)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmdModelSelection)).EndInit();
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
             this.tabContent.ResumeLayout(false);
             this.tabContent.PerformLayout();
             this.explorerBar.ResumeLayout(false);
@@ -2764,6 +2864,7 @@
             this.tableLayoutPanel8.PerformLayout();
             this.panelCalc.ResumeLayout(false);
             this.panelCalc.PerformLayout();
+            this.tableLayoutPanel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panelxxx.ResumeLayout(false);
             this.panelMotorAdvanceMode.ResumeLayout(false);
@@ -2842,8 +2943,14 @@
             this.explorerBar_step5.ResumeLayout(false);
             this.panelResult.ResumeLayout(false);
             this.panelResult.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).EndInit();
+            this.panel20.ResumeLayout(false);
             this.panelConfirmBtnsStep5.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).EndInit();
+            this.panel19.ResumeLayout(false);
+            this.tableLayoutPanel10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -3007,7 +3114,6 @@
         public System.Windows.Forms.TextBox txtRunTime;
         private System.Windows.Forms.Panel panel4;
         public System.Windows.Forms.Panel panelResult;
-        private System.Windows.Forms.Label label70;
         public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep5;
         public CustomButton.CustomButton cmdConfirmStep5;
         public CustomButton.CustomButton cmdResetStep5;
@@ -3115,7 +3221,6 @@
         public System.Windows.Forms.Panel panelExpectServiceLifeTime;
         public CustomToggle.CustomToggle chkExpectServiceLife;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.PictureBox picMoment;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label61;
@@ -3132,6 +3237,20 @@
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.ToolTip toolTip1;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        public System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Label label77;
+        public System.Windows.Forms.Label label1;
     }
 }
 

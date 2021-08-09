@@ -13,6 +13,7 @@ using System.Reflection;
 using Microsoft.Win32;
 using System.Globalization;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public partial class FormMain : Form {
@@ -44,7 +45,25 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 測試
             Test test = new Test(this);
-        }        
+
+            // scroll頁面觸發
+            foreach (Control control in this.Controls.All()) {
+                if (control is ComboBox)
+                    control.MouseWheel += FormDetailedReport_MouseWheel;
+                control.MouseWheel += Control_MouseWheel;
+            }
+        }
+
+        private void Control_MouseWheel(object sender, MouseEventArgs e) {
+            if (page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+                tabModelType.Focus();
+            else
+                label1.Focus();
+        }
+        private void FormDetailedReport_MouseWheel(object sender, EventArgs e) {
+            HandledMouseEventArgs ee = (HandledMouseEventArgs)e;
+            ee.Handled = true;
+        }
 
         private void FormMain_Load(object sender, EventArgs e) {
             //// 判斷DB被開啟
@@ -169,5 +188,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 Application.Exit();
             }
         }
+
+        //protected override void WndProc(ref Message m) {
+        //    base.WndProc(ref m);
+        //    // 0x115 and 0x20a both tell the control to scroll. If either one comes 
+        //    // through, you can handle the scrolling before any repaints take place
+        //    if (m.Msg == 0x115 || m.Msg == 0x20a) {
+        //        //Do you scroll processing
+        //        Console.WriteLine(1);
+        //    }
+        //}
     }
 }
