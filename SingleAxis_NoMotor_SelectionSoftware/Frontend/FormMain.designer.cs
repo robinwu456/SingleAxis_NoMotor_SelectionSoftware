@@ -43,6 +43,7 @@
             this.cmdZoom = new System.Windows.Forms.PictureBox();
             this.cmdClose = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabMain = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
             this.tabStart = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -326,7 +327,6 @@
             this.label93 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -537,6 +537,15 @@
             this.panel4.Controls.Add(this.tabMain);
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 50000;
+            this.toolTip1.InitialDelay = 500;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ReshowDelay = 100;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "變更非標準馬達時請注意";
             // 
             // tabMain
             // 
@@ -2792,15 +2801,6 @@
             this.label56.BackColor = System.Drawing.Color.LightGray;
             this.label56.Name = "label56";
             // 
-            // toolTip1
-            // 
-            this.toolTip1.AutoPopDelay = 50000;
-            this.toolTip1.InitialDelay = 500;
-            this.toolTip1.IsBalloon = true;
-            this.toolTip1.ReshowDelay = 100;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "變更非標準馬達時請注意";
-            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2975,7 +2975,6 @@
         private CustomPanel customPanel3;
         private System.Windows.Forms.Label label3;
         private CustomPanel customPanel2;
-        private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Panel panelModelSelection;
         public System.Windows.Forms.Panel panelModelType;
         public System.Windows.Forms.Panel panelUseEnv;
@@ -3251,6 +3250,7 @@
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Label label77;
         public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
     }
 }
 

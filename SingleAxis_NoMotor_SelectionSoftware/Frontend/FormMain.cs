@@ -55,10 +55,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void Control_MouseWheel(object sender, MouseEventArgs e) {
-            if (page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
-                tabModelType.Focus();
-            else
-                label1.Focus();
+            explorerBar.Focus();
         }
         private void FormDetailedReport_MouseWheel(object sender, EventArgs e) {
             HandledMouseEventArgs ee = (HandledMouseEventArgs)e;
