@@ -871,7 +871,7 @@
     <value>Top</value>
   </data>
   <data name="panelNextPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 2708</value>
+    <value>100, 2704</value>
   </data>
   <data name="panelNextPage.Size" type="System.Drawing.Size, System.Drawing">
     <value>963, 72</value>
@@ -1027,7 +1027,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,674,Absolute,674,Absolute,674,Absolute,674" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,720,Absolute,720,Absolute,720,Absolute,720" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 321</value>
@@ -1729,7 +1729,7 @@
     <value>Top</value>
   </data>
   <data name="panelCalcResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 2252</value>
+    <value>100, 2248</value>
   </data>
   <data name="panelCalcResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>963, 456</value>
@@ -2149,10 +2149,10 @@
     <value>0</value>
   </data>
   <data name="chart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 62</value>
+    <value>52, 26</value>
   </data>
   <data name="chart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>392, 219</value>
+    <value>402, 279</value>
   </data>
   <data name="chart.TabIndex" type="System.Int32, mscorlib">
     <value>331</value>
@@ -2176,7 +2176,7 @@
     <value>0, 62</value>
   </data>
   <data name="panel16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>820, 327</value>
+    <value>820, 313</value>
   </data>
   <data name="panel16.TabIndex" type="System.Int32, mscorlib">
     <value>378</value>
@@ -2338,7 +2338,7 @@
     <value>100, 1845</value>
   </data>
   <data name="panelChart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 407</value>
+    <value>963, 403</value>
   </data>
   <data name="panelChart.TabIndex" type="System.Int32, mscorlib">
     <value>250</value>
@@ -8211,7 +8211,7 @@
     <value>NoControl</value>
   </data>
   <data name="label77.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, 273</value>
+    <value>133, -509</value>
   </data>
   <data name="label77.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 16</value>
@@ -8247,7 +8247,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, -53</value>
+    <value>129, -835</value>
   </data>
   <data name="lbResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 31</value>
@@ -8277,7 +8277,7 @@
     <value>NoControl</value>
   </data>
   <data name="label70.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, -15</value>
+    <value>133, -797</value>
   </data>
   <data name="label70.Size" type="System.Drawing.Size, System.Drawing">
     <value>515, 2</value>
@@ -8304,7 +8304,7 @@
     <value>NoControl</value>
   </data>
   <data name="picBoxResultImg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, -6</value>
+    <value>135, -788</value>
   </data>
   <data name="picBoxResultImg.Size" type="System.Drawing.Size, System.Drawing">
     <value>513, 276</value>
@@ -8451,7 +8451,7 @@
     <value>1</value>
   </data>
   <data name="panel17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 88</value>
+    <value>-325, 88</value>
   </data>
   <data name="panel17.Size" type="System.Drawing.Size, System.Drawing">
     <value>790, 467</value>
@@ -8484,7 +8484,7 @@
     <value>NoControl</value>
   </data>
   <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2488, 487</value>
+    <value>-2902, 487</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 16</value>
@@ -8514,7 +8514,7 @@
     <value>NoControl</value>
   </data>
   <data name="label56.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2487, 184</value>
+    <value>-2901, 184</value>
   </data>
   <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 2</value>

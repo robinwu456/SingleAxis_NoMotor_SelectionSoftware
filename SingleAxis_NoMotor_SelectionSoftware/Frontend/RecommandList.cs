@@ -91,8 +91,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (formMain.dgvRecommandList.CurrentRow == null)
                 return;
 
-            // 畫圖
-            formMain.page2.chartInfo.PaintGraph();
+            //// 畫圖
+            //formMain.page2.chartInfo.PaintGraph();
 
             // 記錄當前選取項目
             var curRow = formMain.dgvRecommandList.CurrentRow;
@@ -273,8 +273,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                             if (col.Name == "項次" || col.Name == "導程")
                                 col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
 
-                        // 畫圖
-                        formMain.page2.chartInfo.PaintGraph();
+                        //// 畫圖
+                        //formMain.page2.chartInfo.PaintGraph();
                     } else {
                         // 驗證Vmax
                         Model curModel = curRecommandList.First();

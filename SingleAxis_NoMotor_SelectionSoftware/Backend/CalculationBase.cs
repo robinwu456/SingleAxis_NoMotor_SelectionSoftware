@@ -469,8 +469,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             points.Add(new PointF((float)model.accelTime + (float)model.constantTime, (float)model.vMax));
             // 減速時間
             points.Add(new PointF((float)model.accelTime + (float)model.constantTime + (float)model.decelTime, 0));
-            // 停等時間
-            points.Add(new PointF((float)model.accelTime + (float)model.constantTime + (float)model.decelTime + (float)model.stopTime, 0));
+            //// 停等時間
+            //points.Add(new PointF((float)model.accelTime + (float)model.constantTime + (float)model.decelTime + (float)model.stopTime, 0));
 
             return points;
         }

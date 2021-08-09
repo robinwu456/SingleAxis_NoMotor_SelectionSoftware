@@ -112,6 +112,8 @@
             this.customPanel1 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.label58 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
+            this.lbCycleTime = new System.Windows.Forms.Label();
+            this.lbMaxSpeed = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
@@ -120,8 +122,6 @@
             this.lbRunTime = new System.Windows.Forms.Label();
             this.lbAccelSpeed = new System.Windows.Forms.Label();
             this.lbConstantTime = new System.Windows.Forms.Label();
-            this.lbMaxSpeed = new System.Windows.Forms.Label();
-            this.lbCycleTime = new System.Windows.Forms.Label();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel15 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
@@ -1116,7 +1116,7 @@
             // 
             // panel16
             // 
-            this.panel16.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel16.BackColor = System.Drawing.Color.Transparent;
             this.panel16.Controls.Add(this.customPanel1);
             this.panel16.Controls.Add(this.chart);
             resources.ApplyResources(this.panel16, "panel16");
@@ -1153,6 +1153,18 @@
             resources.ApplyResources(this.label57, "label57");
             this.label57.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(181)))), ((int)(((byte)(199)))));
             this.label57.Name = "label57";
+            // 
+            // lbCycleTime
+            // 
+            resources.ApplyResources(this.lbCycleTime, "lbCycleTime");
+            this.lbCycleTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbCycleTime.Name = "lbCycleTime";
+            // 
+            // lbMaxSpeed
+            // 
+            resources.ApplyResources(this.lbMaxSpeed, "lbMaxSpeed");
+            this.lbMaxSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbMaxSpeed.Name = "lbMaxSpeed";
             // 
             // label55
             // 
@@ -1202,21 +1214,9 @@
             this.lbConstantTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbConstantTime.Name = "lbConstantTime";
             // 
-            // lbMaxSpeed
-            // 
-            resources.ApplyResources(this.lbMaxSpeed, "lbMaxSpeed");
-            this.lbMaxSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbMaxSpeed.Name = "lbMaxSpeed";
-            // 
-            // lbCycleTime
-            // 
-            resources.ApplyResources(this.lbCycleTime, "lbCycleTime");
-            this.lbCycleTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbCycleTime.Name = "lbCycleTime";
-            // 
             // chart
             // 
-            this.chart.BackColor = System.Drawing.Color.Transparent;
+            this.chart.BackColor = System.Drawing.Color.WhiteSmoke;
             chartArea1.AxisX.IsLabelAutoFit = false;
             chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             chartArea1.AxisX.MajorGrid.Enabled = false;
@@ -1231,6 +1231,11 @@
             chartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
             chartArea1.BackColor = System.Drawing.Color.Transparent;
             chartArea1.Name = "ChartArea";
+            chartArea1.Position.Auto = false;
+            chartArea1.Position.Height = 60F;
+            chartArea1.Position.Width = 94F;
+            chartArea1.Position.X = 3F;
+            chartArea1.Position.Y = 6.5F;
             this.chart.ChartAreas.Add(chartArea1);
             resources.ApplyResources(this.chart, "chart");
             this.chart.Name = "chart";
