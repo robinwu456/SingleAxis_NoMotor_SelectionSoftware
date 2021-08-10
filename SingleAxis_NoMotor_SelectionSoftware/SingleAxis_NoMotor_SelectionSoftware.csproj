@@ -408,6 +408,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_0113_256_256_01_1CC_icon.ico" />
+    <None Include="Resources\NewPic\toggleOn2_hover.png" />
+    <None Include="Resources\NewPic\toggleOn2_disable.png" />
+    <None Include="Resources\NewPic\toggleOn2.png" />
+    <None Include="Resources\NewPic\toggleOff2_hover.png" />
+    <None Include="Resources\NewPic\toggleOff2_disable.png" />
+    <None Include="Resources\NewPic\toggleOff2.png" />
+    <None Include="Resources\NewPic\selectionType_shape_normal.png" />
+    <None Include="Resources\NewPic\selectionType_model_normal.png" />
+    <None Include="Resources\NewPic\selectionType_shape_hover.png" />
+    <None Include="Resources\NewPic\selectionType_model_hover.png" />
     <None Include="Resources\NewPic\toolTipMotorPic.PNG" />
     <None Include="Resources\NewPic\toolTipIcon.PNG" />
     <None Include="Resources\NewPic\bg_runCondition.png" />

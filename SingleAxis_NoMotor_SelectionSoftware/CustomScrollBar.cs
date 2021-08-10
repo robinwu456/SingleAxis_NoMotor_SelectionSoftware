@@ -76,9 +76,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private Thread threadValueChanged;
         private Thread threadUpdateNumeric;
         private Thread threadUpdateTextBox;
-        private int minPosOffset = 2;
-        //private int minPosOffset = 0;
-        private int maxPosOffset = 35;
+        //private int minPosOffset = 2;
+        private int minPosOffset = 0;
+        private int maxPosOffset = 19;
         private ScrollEventType curScrollType;
         private enum FocusOn { ScrollBar, Input }
         private FocusOn curFocusOn = FocusOn.ScrollBar;

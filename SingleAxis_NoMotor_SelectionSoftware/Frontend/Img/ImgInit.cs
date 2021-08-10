@@ -24,6 +24,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public ImgInit(FormMain formMain) {
 
             img = new Dictionary<PictureBox, Dictionary<ButtonStatus, Image>>() {
+                // 選型方式
+                { formMain.cmdShapeSelection, new Dictionary<ButtonStatus, Image>(){
+                    { ButtonStatus.Normal, Properties.Resources.selectionType_shape_normal },
+                    { ButtonStatus.Hover, Properties.Resources.selectionType_shape_hover },
+                    { ButtonStatus.Press, Properties.Resources.selectionType_shape_normal },
+                } },
+                { formMain.cmdModelSelection, new Dictionary<ButtonStatus, Image>(){
+                    { ButtonStatus.Normal, Properties.Resources.selectionType_model_normal },
+                    { ButtonStatus.Hover, Properties.Resources.selectionType_model_hover },
+                    { ButtonStatus.Press, Properties.Resources.selectionType_model_normal },
+                } },
                 // 使用環境
                 { formMain.picStandardEnv, new Dictionary<ButtonStatus, Image>(){
                     { ButtonStatus.Normal, Properties.Resources.useEnv_standard_normal },

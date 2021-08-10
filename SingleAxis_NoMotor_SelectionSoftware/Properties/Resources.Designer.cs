@@ -1143,6 +1143,46 @@ namespace SingleAxis_NoMotor_SelectionSoftware.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap selectionType_model_hover {
+            get {
+                object obj = ResourceManager.GetObject("selectionType_model_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap selectionType_model_normal {
+            get {
+                object obj = ResourceManager.GetObject("selectionType_model_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap selectionType_shape_hover {
+            get {
+                object obj = ResourceManager.GetObject("selectionType_shape_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap selectionType_shape_normal {
+            get {
+                object obj = ResourceManager.GetObject("selectionType_shape_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap setup_horizontal_enabled {
             get {
                 object obj = ResourceManager.GetObject("setup_horizontal_enabled", resourceCulture);
@@ -1293,6 +1333,36 @@ namespace SingleAxis_NoMotor_SelectionSoftware.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap toggleOff2 {
+            get {
+                object obj = ResourceManager.GetObject("toggleOff2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap toggleOff2_disable {
+            get {
+                object obj = ResourceManager.GetObject("toggleOff2_disable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap toggleOff2_hover {
+            get {
+                object obj = ResourceManager.GetObject("toggleOff2_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap toggleOn {
             get {
                 object obj = ResourceManager.GetObject("toggleOn", resourceCulture);
@@ -1316,6 +1386,36 @@ namespace SingleAxis_NoMotor_SelectionSoftware.Properties {
         internal static System.Drawing.Bitmap toggleOn_hover {
             get {
                 object obj = ResourceManager.GetObject("toggleOn_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap toggleOn2 {
+            get {
+                object obj = ResourceManager.GetObject("toggleOn2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap toggleOn2_disable {
+            get {
+                object obj = ResourceManager.GetObject("toggleOn2_disable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap toggleOn2_hover {
+            get {
+                object obj = ResourceManager.GetObject("toggleOn2_hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

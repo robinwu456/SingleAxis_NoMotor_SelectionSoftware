@@ -25,17 +25,22 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             });
 
             foreach (var pic in img.Keys) {
-                // 圖片Click事件
-                pic.Click += (sender, e) => cmdOptMap[sender as PictureBox].Checked = true;
                 // 停懸事件
                 CmdSwitchEventsDelegate(pic);
-                cmdOptMap[pic].CheckedChanged += UpdateImg_OptTabMain;
+                if (cmdOptMap.Keys.Contains(pic)) {
+                    // 圖片Click事件
+                    pic.Click += (sender, e) => cmdOptMap[sender as PictureBox].Checked = true;
+                    cmdOptMap[pic].CheckedChanged += UpdateImg_OptTabMain;
+                }
             }
         }
 
         private void SetSwitchBtnImg(object sender, ButtonStatus buttonStatus) {
             PictureBox cmd = sender as PictureBox;
-            cmd.Image = cmdOptMap[cmd].Checked ? img[cmd][ButtonStatus.Enable] : img[cmd][buttonStatus];
+            if (cmdOptMap.Keys.Contains(cmd))
+                cmd.Image = cmdOptMap[cmd].Checked ? img[cmd][ButtonStatus.Enable] : img[cmd][buttonStatus];
+            else
+                cmd.Image = img[cmd][buttonStatus];
         }
 
         public void UpdateImg_OptTabMain(object sender, EventArgs e) {

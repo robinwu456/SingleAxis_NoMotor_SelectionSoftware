@@ -402,47 +402,8 @@
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="label47.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="label47.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="label47.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label47.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 175</value>
-  </data>
-  <data name="label47.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 10, 0, 0</value>
-  </data>
-  <data name="label47.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 28</value>
-  </data>
-  <data name="label47.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label47.Text" xml:space="preserve">
-    <value>條件選型/壽命計算</value>
-  </data>
-  <data name="label47.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="&gt;&gt;label47.Name" xml:space="preserve">
-    <value>label47</value>
-  </data>
-  <data name="&gt;&gt;label47.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label47.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;label47.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="cmdShapeSelection.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+    <value>Fill</value>
   </data>
   <data name="cmdShapeSelection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -451,7 +412,7 @@
     <value>0, 0</value>
   </data>
   <data name="cmdShapeSelection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 175</value>
+    <value>294, 203</value>
   </data>
   <data name="cmdShapeSelection.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -469,7 +430,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;cmdShapeSelection.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -495,47 +456,8 @@
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label48.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="label48.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 11pt, style=Bold</value>
-  </data>
-  <data name="label48.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label48.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 175</value>
-  </data>
-  <data name="label48.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 10, 0, 0</value>
-  </data>
-  <data name="label48.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 28</value>
-  </data>
-  <data name="label48.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="label48.Text" xml:space="preserve">
-    <value>型號選型/壽命計算</value>
-  </data>
-  <data name="label48.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="&gt;&gt;label48.Name" xml:space="preserve">
-    <value>label48</value>
-  </data>
-  <data name="&gt;&gt;label48.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label48.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;label48.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="cmdModelSelection.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+    <value>Fill</value>
   </data>
   <data name="cmdModelSelection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -544,7 +466,7 @@
     <value>0, 0</value>
   </data>
   <data name="cmdModelSelection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 175</value>
+    <value>294, 203</value>
   </data>
   <data name="cmdModelSelection.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -562,7 +484,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;cmdModelSelection.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1027,7 +949,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,720,Absolute,720,Absolute,720,Absolute,720" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,730,Absolute,730,Absolute,730,Absolute,730" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 321</value>
@@ -1387,7 +1309,7 @@
     <value>50</value>
   </data>
   <data name="鎖定.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>5</value>
   </data>
   <metadata name="項次.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1399,7 +1321,7 @@
     <value>50</value>
   </data>
   <data name="項次.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>41</value>
   </data>
   <metadata name="重複定位精度.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1536,6 +1458,9 @@
   <data name="力矩警示.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="力矩警示.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
   <metadata name="馬達瓦數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1557,6 +1482,9 @@
   <data name="皮帶馬達安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="皮帶馬達安全係數.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
   <metadata name="T_max安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1568,6 +1496,9 @@
   </data>
   <data name="T_max安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="T_max安全係數.Width" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
   <metadata name="皮帶T_max安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1581,6 +1512,9 @@
   <data name="皮帶T_max安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="皮帶T_max安全係數.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
   <metadata name="T_Rms安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1592,6 +1526,9 @@
   </data>
   <data name="T_Rms安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="T_Rms安全係數.Width" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
   <metadata name="運行距離.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2492,30 +2429,17 @@
   <data name="panelxxx.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="chkMotorAdvanceMode.BackImg_ToggleOff_Normal" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACIAAAAUCAYAAADoZO9yAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAJwSURBVEhL1ZbJalpxFMYdAgmlLS1d2GERXOvGARyCihMiRiWIiDjPEWdpl1llYdNo99GSPkvT
-        RchThKbZp/UFTs8X/FMl15peaWkPfBvlnu93z6SK/yGUM6lY6jWFHCLf/aNerz+tVqu9crn8qVQq3RQK
-        BcrlcpTJZCiVSlEymaREIkHxeJxisRjt7e1RNBqlcDhMoVCIgsEgBQIB8vv9Nx6P58zpdL7W6/UaTr3B
-        AtTKUO7v73sY5LJWq1GlUiEGoTVAyOv1ktvtJob5Yjabg+yxyUKVllbnFqLRaBCDEEBarRYNh0Majye3
-        Ojp6R1wlWSAul4scDgcZjcZd9tpiScOgHWx8KUD6/T5NJh/o9PTjggBUrdZkg+zs7FxptdpttkRl7rap
-        3W73UQGA9Ho9SQghfJfP5+WCkMlkOmDLRyzMzEIoGeRMgIxG7yUB5jUYvJUNYrFYztnzGQstWmiPqtPp
-        fBMgv6qG0MnJWDaI1Wr9zp7YogfwBoAI9d8EsdlsU/Z8wXoIbwCIUHNrPv9szUjSfF6DwWCd1lywpySI
-        igHeCJBut7tyWHM5+cNqMBgO2VOyNcpIJKJpNptXAMH6LtscfIZDJ3d97Xb7tUaj0bOn5LAiNrLZbFCA
-        4KAxGB0fLx40XNp1DppOp0uy13OW5PoiUKJNPuG7DPH1D5z46xnEK9YTeM087wRKhMHZ4vJtp9PpAwY4
-        LxaLU7kgPp9vypW44HU9nLUDlQDE8hM/CwEDWpQOfcRQvWThTeQIzyIHciHnyh+9+UDJ0D+QY7KxZkjy
-        +DeFZ/AsciDXvf8GzAeIITyIN1hHyCHy/cuhUPwAlpD8XG4UxA0AAAAASUVORK5CYII=
-</value>
+  <data name="chkMotorAdvanceMode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="chkMotorAdvanceMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 3</value>
+    <value>11, 2</value>
   </data>
   <data name="chkMotorAdvanceMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 20</value>
+    <value>22, 22</value>
   </data>
   <data name="chkMotorAdvanceMode.TabIndex" type="System.Int32, mscorlib">
-    <value>323</value>
+    <value>378</value>
   </data>
   <data name="&gt;&gt;chkMotorAdvanceMode.Name" xml:space="preserve">
     <value>chkMotorAdvanceMode</value>
@@ -2563,7 +2487,7 @@
     <value>1</value>
   </data>
   <data name="panelMotorAdvanceMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 118</value>
+    <value>3, 116</value>
   </data>
   <data name="panelMotorAdvanceMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 29</value>
@@ -3480,27 +3404,11 @@
   <data name="chkExpectServiceLife.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="chkExpectServiceLife.BackImg_ToggleOff_Normal" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACIAAAAUCAYAAADoZO9yAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAJwSURBVEhL1ZbJalpxFMYdAgmlLS1d2GERXOvGARyCihMiRiWIiDjPEWdpl1llYdNo99GSPkvT
-        RchThKbZp/UFTs8X/FMl15peaWkPfBvlnu93z6SK/yGUM6lY6jWFHCLf/aNerz+tVqu9crn8qVQq3RQK
-        BcrlcpTJZCiVSlEymaREIkHxeJxisRjt7e1RNBqlcDhMoVCIgsEgBQIB8vv9Nx6P58zpdL7W6/UaTr3B
-        AtTKUO7v73sY5LJWq1GlUiEGoTVAyOv1ktvtJob5Yjabg+yxyUKVllbnFqLRaBCDEEBarRYNh0Majye3
-        Ojp6R1wlWSAul4scDgcZjcZd9tpiScOgHWx8KUD6/T5NJh/o9PTjggBUrdZkg+zs7FxptdpttkRl7rap
-        3W73UQGA9Ho9SQghfJfP5+WCkMlkOmDLRyzMzEIoGeRMgIxG7yUB5jUYvJUNYrFYztnzGQstWmiPqtPp
-        fBMgv6qG0MnJWDaI1Wr9zp7YogfwBoAI9d8EsdlsU/Z8wXoIbwCIUHNrPv9szUjSfF6DwWCd1lywpySI
-        igHeCJBut7tyWHM5+cNqMBgO2VOyNcpIJKJpNptXAMH6LtscfIZDJ3d97Xb7tUaj0bOn5LAiNrLZbFCA
-        4KAxGB0fLx40XNp1DppOp0uy13OW5PoiUKJNPuG7DPH1D5z46xnEK9YTeM087wRKhMHZ4vJtp9PpAwY4
-        LxaLU7kgPp9vypW44HU9nLUDlQDE8hM/CwEDWpQOfcRQvWThTeQIzyIHciHnyh+9+UDJ0D+QY7KxZkjy
-        +DeFZ/AsciDXvf8GzAeIITyIN1hHyCHy/cuhUPwAlpD8XG4UxA0AAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="chkExpectServiceLife.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 251</value>
+    <value>21, 249</value>
   </data>
   <data name="chkExpectServiceLife.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 20</value>
+    <value>22, 22</value>
   </data>
   <data name="chkExpectServiceLife.TabIndex" type="System.Int32, mscorlib">
     <value>377</value>
@@ -3520,30 +3428,14 @@
   <data name="chkAdvanceMode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="chkAdvanceMode.BackImg_ToggleOff_Normal" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACIAAAAUCAYAAADoZO9yAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAJwSURBVEhL1ZbJalpxFMYdAgmlLS1d2GERXOvGARyCihMiRiWIiDjPEWdpl1llYdNo99GSPkvT
-        RchThKbZp/UFTs8X/FMl15peaWkPfBvlnu93z6SK/yGUM6lY6jWFHCLf/aNerz+tVqu9crn8qVQq3RQK
-        BcrlcpTJZCiVSlEymaREIkHxeJxisRjt7e1RNBqlcDhMoVCIgsEgBQIB8vv9Nx6P58zpdL7W6/UaTr3B
-        AtTKUO7v73sY5LJWq1GlUiEGoTVAyOv1ktvtJob5Yjabg+yxyUKVllbnFqLRaBCDEEBarRYNh0Majye3
-        Ojp6R1wlWSAul4scDgcZjcZd9tpiScOgHWx8KUD6/T5NJh/o9PTjggBUrdZkg+zs7FxptdpttkRl7rap
-        3W73UQGA9Ho9SQghfJfP5+WCkMlkOmDLRyzMzEIoGeRMgIxG7yUB5jUYvJUNYrFYztnzGQstWmiPqtPp
-        fBMgv6qG0MnJWDaI1Wr9zp7YogfwBoAI9d8EsdlsU/Z8wXoIbwCIUHNrPv9szUjSfF6DwWCd1lywpySI
-        igHeCJBut7tyWHM5+cNqMBgO2VOyNcpIJKJpNptXAMH6LtscfIZDJ3d97Xb7tUaj0bOn5LAiNrLZbFCA
-        4KAxGB0fLx40XNp1DppOp0uy13OW5PoiUKJNPuG7DPH1D5z46xnEK9YTeM087wRKhMHZ4vJtp9PpAwY4
-        LxaLU7kgPp9vypW44HU9nLUDlQDE8hM/CwEDWpQOfcRQvWThTeQIzyIHciHnyh+9+UDJ0D+QY7KxZkjy
-        +DeFZ/AsciDXvf8GzAeIITyIN1hHyCHy/cuhUPwAlpD8XG4UxA0AAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="chkAdvanceMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2, 9</value>
+    <value>8, 7</value>
   </data>
   <data name="chkAdvanceMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 20</value>
+    <value>22, 22</value>
   </data>
   <data name="chkAdvanceMode.TabIndex" type="System.Int32, mscorlib">
-    <value>291</value>
+    <value>378</value>
   </data>
   <data name="&gt;&gt;chkAdvanceMode.Name" xml:space="preserve">
     <value>chkAdvanceMode</value>
@@ -4098,7 +3990,7 @@
     <value>0, 0</value>
   </data>
   <data name="scrollBarThumbStroke.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 19</value>
+    <value>19, 19</value>
   </data>
   <data name="scrollBarThumbStroke.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -4149,7 +4041,7 @@
     <value>0, 0</value>
   </data>
   <data name="scrollBarThumbLoad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 19</value>
+    <value>19, 19</value>
   </data>
   <data name="scrollBarThumbLoad.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -6981,7 +6873,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabModelType_standard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>821, 399</value>
+    <value>821, 434</value>
   </data>
   <data name="tabModelType_standard.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -8211,7 +8103,7 @@
     <value>NoControl</value>
   </data>
   <data name="label77.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, -509</value>
+    <value>133, -662</value>
   </data>
   <data name="label77.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 16</value>
@@ -8247,7 +8139,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, -835</value>
+    <value>129, -988</value>
   </data>
   <data name="lbResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 31</value>
@@ -8277,7 +8169,7 @@
     <value>NoControl</value>
   </data>
   <data name="label70.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, -797</value>
+    <value>133, -950</value>
   </data>
   <data name="label70.Size" type="System.Drawing.Size, System.Drawing">
     <value>515, 2</value>
@@ -8304,7 +8196,7 @@
     <value>NoControl</value>
   </data>
   <data name="picBoxResultImg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, -788</value>
+    <value>135, -941</value>
   </data>
   <data name="picBoxResultImg.Size" type="System.Drawing.Size, System.Drawing">
     <value>513, 276</value>
@@ -8451,7 +8343,7 @@
     <value>1</value>
   </data>
   <data name="panel17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-325, 88</value>
+    <value>-397, 88</value>
   </data>
   <data name="panel17.Size" type="System.Drawing.Size, System.Drawing">
     <value>790, 467</value>
@@ -8484,7 +8376,7 @@
     <value>NoControl</value>
   </data>
   <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2902, 487</value>
+    <value>-2974, 487</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 16</value>
@@ -8514,7 +8406,7 @@
     <value>NoControl</value>
   </data>
   <data name="label56.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2901, 184</value>
+    <value>-2973, 184</value>
   </data>
   <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 2</value>

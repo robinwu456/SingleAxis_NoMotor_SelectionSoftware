@@ -49,10 +49,8 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label47 = new System.Windows.Forms.Label();
             this.cmdShapeSelection = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label48 = new System.Windows.Forms.Label();
             this.cmdModelSelection = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.panel18 = new System.Windows.Forms.Panel();
@@ -579,43 +577,29 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label47);
             this.panel1.Controls.Add(this.cmdShapeSelection);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // label47
-            // 
-            resources.ApplyResources(this.label47, "label47");
-            this.label47.Name = "label47";
-            // 
             // cmdShapeSelection
             // 
-            this.cmdShapeSelection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cmdShapeSelection.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.cmdShapeSelection, "cmdShapeSelection");
-            this.cmdShapeSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.型號選型;
+            this.cmdShapeSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.selectionType_shape_normal;
             this.cmdShapeSelection.Name = "cmdShapeSelection";
             this.cmdShapeSelection.TabStop = false;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label48);
             this.panel2.Controls.Add(this.cmdModelSelection);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
-            // label48
-            // 
-            resources.ApplyResources(this.label48, "label48");
-            this.label48.Name = "label48";
-            // 
             // cmdModelSelection
             // 
-            this.cmdModelSelection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cmdModelSelection.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.cmdModelSelection, "cmdModelSelection");
-            this.cmdModelSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.動作選型;
+            this.cmdModelSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.selectionType_model_normal;
             this.cmdModelSelection.Name = "cmdModelSelection";
             this.cmdModelSelection.TabStop = false;
             // 
@@ -1343,14 +1327,15 @@
             // 
             // chkMotorAdvanceMode
             // 
-            this.chkMotorAdvanceMode.BackImg_ToggleOff_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_disable;
-            this.chkMotorAdvanceMode.BackImg_ToggleOff_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_hover;
-            this.chkMotorAdvanceMode.BackImg_ToggleOff_Normal = ((System.Drawing.Image)(resources.GetObject("chkMotorAdvanceMode.BackImg_ToggleOff_Normal")));
-            this.chkMotorAdvanceMode.BackImg_ToggleOn_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_disable;
-            this.chkMotorAdvanceMode.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_hover;
-            this.chkMotorAdvanceMode.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn;
-            this.chkMotorAdvanceMode.Checked = false;
             resources.ApplyResources(this.chkMotorAdvanceMode, "chkMotorAdvanceMode");
+            this.chkMotorAdvanceMode.BackColor = System.Drawing.Color.Transparent;
+            this.chkMotorAdvanceMode.BackImg_ToggleOff_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff2_disable;
+            this.chkMotorAdvanceMode.BackImg_ToggleOff_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff2_hover;
+            this.chkMotorAdvanceMode.BackImg_ToggleOff_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff2;
+            this.chkMotorAdvanceMode.BackImg_ToggleOn_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn2_disable;
+            this.chkMotorAdvanceMode.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn2_hover;
+            this.chkMotorAdvanceMode.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn2;
+            this.chkMotorAdvanceMode.Checked = false;
             this.chkMotorAdvanceMode.Name = "chkMotorAdvanceMode";
             // 
             // label20
@@ -1594,12 +1579,12 @@
             // 
             resources.ApplyResources(this.chkExpectServiceLife, "chkExpectServiceLife");
             this.chkExpectServiceLife.BackColor = System.Drawing.Color.Transparent;
-            this.chkExpectServiceLife.BackImg_ToggleOff_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_disable;
-            this.chkExpectServiceLife.BackImg_ToggleOff_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_hover;
-            this.chkExpectServiceLife.BackImg_ToggleOff_Normal = ((System.Drawing.Image)(resources.GetObject("chkExpectServiceLife.BackImg_ToggleOff_Normal")));
-            this.chkExpectServiceLife.BackImg_ToggleOn_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_disable;
-            this.chkExpectServiceLife.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_hover;
-            this.chkExpectServiceLife.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn;
+            this.chkExpectServiceLife.BackImg_ToggleOff_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff2_disable;
+            this.chkExpectServiceLife.BackImg_ToggleOff_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff2_hover;
+            this.chkExpectServiceLife.BackImg_ToggleOff_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff2;
+            this.chkExpectServiceLife.BackImg_ToggleOn_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn2_disable;
+            this.chkExpectServiceLife.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn2_hover;
+            this.chkExpectServiceLife.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn2;
             this.chkExpectServiceLife.Checked = false;
             this.chkExpectServiceLife.Name = "chkExpectServiceLife";
             // 
@@ -1615,12 +1600,12 @@
             // 
             resources.ApplyResources(this.chkAdvanceMode, "chkAdvanceMode");
             this.chkAdvanceMode.BackColor = System.Drawing.Color.Transparent;
-            this.chkAdvanceMode.BackImg_ToggleOff_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_disable;
-            this.chkAdvanceMode.BackImg_ToggleOff_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff_hover;
-            this.chkAdvanceMode.BackImg_ToggleOff_Normal = ((System.Drawing.Image)(resources.GetObject("chkAdvanceMode.BackImg_ToggleOff_Normal")));
-            this.chkAdvanceMode.BackImg_ToggleOn_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_disable;
-            this.chkAdvanceMode.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn_hover;
-            this.chkAdvanceMode.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn;
+            this.chkAdvanceMode.BackImg_ToggleOff_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff2_disable;
+            this.chkAdvanceMode.BackImg_ToggleOff_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff2_hover;
+            this.chkAdvanceMode.BackImg_ToggleOff_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff2;
+            this.chkAdvanceMode.BackImg_ToggleOn_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn2_disable;
+            this.chkAdvanceMode.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn2_hover;
+            this.chkAdvanceMode.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn2;
             this.chkAdvanceMode.Checked = false;
             this.chkAdvanceMode.Name = "chkAdvanceMode";
             // 
@@ -1761,6 +1746,7 @@
             // 
             // scrollBarPanelLoad
             // 
+            this.scrollBarPanelLoad.BackColor = System.Drawing.Color.Transparent;
             this.scrollBarPanelLoad.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.scrollBar2;
             resources.ApplyResources(this.scrollBarPanelLoad, "scrollBarPanelLoad");
             this.scrollBarPanelLoad.Controls.Add(this.scrollBarThumbLoad);
@@ -2995,7 +2981,6 @@
         public System.Windows.Forms.Label lbAccelTime;
         public System.Windows.Forms.DataVisualization.Charting.Chart chart;
         public System.Windows.Forms.Panel panelAdvanceMode;
-        public CustomToggle.CustomToggle chkAdvanceMode;
         public System.Windows.Forms.Panel panelAdvanceParams;
         public System.Windows.Forms.Label lbMaxSpeedAlarm;
         private System.Windows.Forms.Label label78;
@@ -3097,8 +3082,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label47;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         public System.Windows.Forms.Panel panelNextPage;
         private System.Windows.Forms.Label lbTitleCalc;
@@ -3176,7 +3159,6 @@
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel13;
         public System.Windows.Forms.Panel panelxxx;
-        public CustomToggle.CustomToggle chkMotorAdvanceMode;
         public System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         public System.Windows.Forms.ComboBox cboMaxSpeedUnit;
@@ -3247,6 +3229,8 @@
         private System.Windows.Forms.Label label77;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
+        public CustomToggle.CustomToggle chkMotorAdvanceMode;
+        public CustomToggle.CustomToggle chkAdvanceMode;
     }
 }
 
