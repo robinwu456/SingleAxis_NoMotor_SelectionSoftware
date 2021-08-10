@@ -73,6 +73,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap beltModel {
+            get {
+                object obj = ResourceManager.GetObject("beltModel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap bg_modelType_dustfree_belt {
             get {
                 object obj = ResourceManager.GetObject("bg_modelType_dustfree_belt", resourceCulture);
@@ -1083,6 +1093,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap screwModel {
+            get {
+                object obj = ResourceManager.GetObject("screwModel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap scrollBar {
             get {
                 object obj = ResourceManager.GetObject("scrollBar", resourceCulture);
@@ -1276,6 +1296,46 @@ namespace SingleAxis_NoMotor_SelectionSoftware.Properties {
         internal static System.Drawing.Bitmap setupMode {
             get {
                 object obj = ResourceManager.GetObject("setupMode", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap slideModel_doubleSlide {
+            get {
+                object obj = ResourceManager.GetObject("slideModel_doubleSlide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap slideModel_GTYSlide {
+            get {
+                object obj = ResourceManager.GetObject("slideModel_GTYSlide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap slideModel_singleSlide {
+            get {
+                object obj = ResourceManager.GetObject("slideModel_singleSlide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap slideModel_slide {
+            get {
+                object obj = ResourceManager.GetObject("slideModel_slide", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1716,6 +1776,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware.Properties {
         internal static System.Drawing.Bitmap YL_normal {
             get {
                 object obj = ResourceManager.GetObject("YL_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap YLModel {
+            get {
+                object obj = ResourceManager.GetObject("YLModel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

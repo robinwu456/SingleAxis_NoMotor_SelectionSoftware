@@ -141,6 +141,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.optGTH.Checked = true;
             recommandList.Refresh();
             formMain.sideTable.ClearModelImg();
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+                ModelType_CheckedChanged(null, null);
             formMain.sideTable.ClearModelInfo();
             formMain.sideTable.ClearSelectedModelInfo();
             recommandList.curSelectModel = (null, -1);
@@ -172,7 +174,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             runCondition.scrollBarLoad.maxValue = RunCondition.defaultMaxLoad;
 
             // 運行速度單位
-            formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s", "RPM" };
+            formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s", "RPM" };            
         }
 
         private void InitEvents() {
@@ -251,6 +253,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 更新顯示傳動方式敘述
             Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.標準 : Model.UseEnvironment.無塵;
             formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+                formMain.sideTable.UpdateModelImg(curSelectModelType);
             // 驗證安裝方式選項
             Model.SetupMethod[] modelTypeSupportSetupMethod = calc.GetSupportMethod(curSelectModelType);
             setupMethodOptMap.ToList().ForEach(pair => pair.Key.Enabled = modelTypeSupportSetupMethod.Contains(pair.Value));
@@ -415,6 +419,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void DetectedUseEnvModelType(object sender, EventArgs e) {
             Model.UseEnvironment useEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.標準 : Model.UseEnvironment.無塵;
             formMain.tabModelType.SelectTab((int)useEnv);
+            if (useEnv == Model.UseEnvironment.標準)
+                formMain.optGTH.Checked = true;
+            else
+                formMain.optGCH.Checked = true;
             formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
         }
     }

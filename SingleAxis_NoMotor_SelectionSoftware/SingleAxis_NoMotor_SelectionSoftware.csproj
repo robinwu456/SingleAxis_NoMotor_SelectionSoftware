@@ -408,6 +408,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_0113_256_256_01_1CC_icon.ico" />
+    <None Include="Resources\NewPic\beltModel.png" />
+    <None Include="Resources\NewPic\screwModel.png" />
+    <None Include="Resources\NewPic\slideModel_doubleSlide.png" />
+    <None Include="Resources\NewPic\slideModel_singleSlide.png" />
+    <None Include="Resources\NewPic\slideModel_GTYSlide.png" />
+    <None Include="Resources\NewPic\YLModel.png" />
+    <None Include="Resources\NewPic\slideModel_slide.png" />
     <None Include="Resources\NewPic\toggleOn2_hover.png" />
     <None Include="Resources\NewPic\toggleOn2_disable.png" />
     <None Include="Resources\NewPic\toggleOn2.png" />

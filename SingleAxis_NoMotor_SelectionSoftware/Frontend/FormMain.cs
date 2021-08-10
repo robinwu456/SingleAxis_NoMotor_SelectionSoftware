@@ -94,6 +94,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             VerifyDateTimeLimit();
 
             panelSideTable.Anchor = AnchorStyles.Right;
+            tabSideTableImg.Multiline = true;
         }
 
         private void FormMain_Resize(object sender, EventArgs e) {

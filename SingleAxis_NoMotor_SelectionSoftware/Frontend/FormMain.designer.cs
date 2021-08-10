@@ -75,7 +75,50 @@
             this.lbSideTableMsg = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.customPanel2 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
+            this.tabSideTableImg = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
+            this.型號 = new System.Windows.Forms.TabPage();
             this.picModelImg = new System.Windows.Forms.PictureBox();
+            this.GTH = new System.Windows.Forms.TabPage();
+            this.GTY = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.ETH = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.Y = new System.Windows.Forms.TabPage();
+            this.pictureBox27 = new System.Windows.Forms.PictureBox();
+            this.YD = new System.Windows.Forms.TabPage();
+            this.pictureBox28 = new System.Windows.Forms.PictureBox();
+            this.YL = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.MG = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.M = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.ETB = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.GCH = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
+            this.pictureBox22 = new System.Windows.Forms.PictureBox();
+            this.ECH = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox23 = new System.Windows.Forms.PictureBox();
+            this.pictureBox24 = new System.Windows.Forms.PictureBox();
+            this.ECB = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox25 = new System.Windows.Forms.PictureBox();
+            this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbPrePage = new System.Windows.Forms.Label();
             this.panelCalcResult = new System.Windows.Forms.Panel();
@@ -324,6 +367,9 @@
             this.label93 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panelBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -360,7 +406,50 @@
             this.customPanel4.SuspendLayout();
             this.customPanel3.SuspendLayout();
             this.customPanel2.SuspendLayout();
+            this.tabSideTableImg.SuspendLayout();
+            this.型號.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).BeginInit();
+            this.GTH.SuspendLayout();
+            this.GTY.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.ETH.SuspendLayout();
+            this.tableLayoutPanel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            this.Y.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
+            this.YD.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
+            this.YL.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            this.MG.SuspendLayout();
+            this.tableLayoutPanel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            this.M.SuspendLayout();
+            this.tableLayoutPanel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
+            this.ETB.SuspendLayout();
+            this.tableLayoutPanel18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            this.GCH.SuspendLayout();
+            this.tableLayoutPanel19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
+            this.ECH.SuspendLayout();
+            this.tableLayoutPanel20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
+            this.ECB.SuspendLayout();
+            this.tableLayoutPanel21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             this.panelCalcResult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).BeginInit();
             this.panelChart.SuspendLayout();
@@ -439,6 +528,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).BeginInit();
             this.panel19.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBase
@@ -782,10 +874,37 @@
             // 
             this.customPanel2.BorderColor = System.Drawing.Color.Silver;
             this.customPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customPanel2.Controls.Add(this.picModelImg);
+            this.customPanel2.Controls.Add(this.tabSideTableImg);
             this.customPanel2.Curvature = 8;
             resources.ApplyResources(this.customPanel2, "customPanel2");
             this.customPanel2.Name = "customPanel2";
+            // 
+            // tabSideTableImg
+            // 
+            this.tabSideTableImg.Controls.Add(this.型號);
+            this.tabSideTableImg.Controls.Add(this.GTH);
+            this.tabSideTableImg.Controls.Add(this.GTY);
+            this.tabSideTableImg.Controls.Add(this.ETH);
+            this.tabSideTableImg.Controls.Add(this.Y);
+            this.tabSideTableImg.Controls.Add(this.YD);
+            this.tabSideTableImg.Controls.Add(this.YL);
+            this.tabSideTableImg.Controls.Add(this.MG);
+            this.tabSideTableImg.Controls.Add(this.M);
+            this.tabSideTableImg.Controls.Add(this.ETB);
+            this.tabSideTableImg.Controls.Add(this.GCH);
+            this.tabSideTableImg.Controls.Add(this.ECH);
+            this.tabSideTableImg.Controls.Add(this.ECB);
+            resources.ApplyResources(this.tabSideTableImg, "tabSideTableImg");
+            this.tabSideTableImg.IsBorderShow = true;
+            this.tabSideTableImg.Name = "tabSideTableImg";
+            this.tabSideTableImg.SelectedIndex = 0;
+            // 
+            // 型號
+            // 
+            this.型號.Controls.Add(this.picModelImg);
+            resources.ApplyResources(this.型號, "型號");
+            this.型號.Name = "型號";
+            this.型號.UseVisualStyleBackColor = true;
             // 
             // picModelImg
             // 
@@ -793,6 +912,293 @@
             this.picModelImg.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.MK85;
             this.picModelImg.Name = "picModelImg";
             this.picModelImg.TabStop = false;
+            // 
+            // GTH
+            // 
+            this.GTH.Controls.Add(this.tableLayoutPanel12);
+            resources.ApplyResources(this.GTH, "GTH");
+            this.GTH.Name = "GTH";
+            this.GTH.UseVisualStyleBackColor = true;
+            // 
+            // GTY
+            // 
+            this.GTY.Controls.Add(this.tableLayoutPanel13);
+            resources.ApplyResources(this.GTY, "GTY");
+            this.GTY.Name = "GTY";
+            this.GTY.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel13
+            // 
+            resources.ApplyResources(this.tableLayoutPanel13, "tableLayoutPanel13");
+            this.tableLayoutPanel13.Controls.Add(this.pictureBox9, 1, 0);
+            this.tableLayoutPanel13.Controls.Add(this.pictureBox10, 0, 0);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            // 
+            // pictureBox9
+            // 
+            resources.ApplyResources(this.pictureBox9, "pictureBox9");
+            this.pictureBox9.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_GTYSlide;
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            resources.ApplyResources(this.pictureBox10, "pictureBox10");
+            this.pictureBox10.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.TabStop = false;
+            // 
+            // ETH
+            // 
+            this.ETH.Controls.Add(this.tableLayoutPanel14);
+            resources.ApplyResources(this.ETH, "ETH");
+            this.ETH.Name = "ETH";
+            this.ETH.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel14
+            // 
+            resources.ApplyResources(this.tableLayoutPanel14, "tableLayoutPanel14");
+            this.tableLayoutPanel14.Controls.Add(this.pictureBox11, 1, 0);
+            this.tableLayoutPanel14.Controls.Add(this.pictureBox12, 0, 0);
+            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
+            // 
+            // pictureBox11
+            // 
+            resources.ApplyResources(this.pictureBox11, "pictureBox11");
+            this.pictureBox11.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_doubleSlide;
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            resources.ApplyResources(this.pictureBox12, "pictureBox12");
+            this.pictureBox12.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.TabStop = false;
+            // 
+            // Y
+            // 
+            this.Y.Controls.Add(this.pictureBox27);
+            resources.ApplyResources(this.Y, "Y");
+            this.Y.Name = "Y";
+            this.Y.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox27
+            // 
+            resources.ApplyResources(this.pictureBox27, "pictureBox27");
+            this.pictureBox27.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
+            this.pictureBox27.Name = "pictureBox27";
+            this.pictureBox27.TabStop = false;
+            // 
+            // YD
+            // 
+            this.YD.Controls.Add(this.pictureBox28);
+            resources.ApplyResources(this.YD, "YD");
+            this.YD.Name = "YD";
+            this.YD.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox28
+            // 
+            resources.ApplyResources(this.pictureBox28, "pictureBox28");
+            this.pictureBox28.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
+            this.pictureBox28.Name = "pictureBox28";
+            this.pictureBox28.TabStop = false;
+            // 
+            // YL
+            // 
+            this.YL.Controls.Add(this.tableLayoutPanel15);
+            resources.ApplyResources(this.YL, "YL");
+            this.YL.Name = "YL";
+            this.YL.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel15
+            // 
+            resources.ApplyResources(this.tableLayoutPanel15, "tableLayoutPanel15");
+            this.tableLayoutPanel15.Controls.Add(this.pictureBox13, 1, 0);
+            this.tableLayoutPanel15.Controls.Add(this.pictureBox14, 0, 0);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            // 
+            // pictureBox13
+            // 
+            resources.ApplyResources(this.pictureBox13, "pictureBox13");
+            this.pictureBox13.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_slide;
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.TabStop = false;
+            // 
+            // pictureBox14
+            // 
+            resources.ApplyResources(this.pictureBox14, "pictureBox14");
+            this.pictureBox14.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.YLModel;
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.TabStop = false;
+            // 
+            // MG
+            // 
+            this.MG.Controls.Add(this.tableLayoutPanel16);
+            resources.ApplyResources(this.MG, "MG");
+            this.MG.Name = "MG";
+            this.MG.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel16
+            // 
+            resources.ApplyResources(this.tableLayoutPanel16, "tableLayoutPanel16");
+            this.tableLayoutPanel16.Controls.Add(this.pictureBox15, 1, 0);
+            this.tableLayoutPanel16.Controls.Add(this.pictureBox16, 0, 0);
+            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
+            // 
+            // pictureBox15
+            // 
+            resources.ApplyResources(this.pictureBox15, "pictureBox15");
+            this.pictureBox15.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_singleSlide;
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.TabStop = false;
+            // 
+            // pictureBox16
+            // 
+            resources.ApplyResources(this.pictureBox16, "pictureBox16");
+            this.pictureBox16.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.beltModel;
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.TabStop = false;
+            // 
+            // M
+            // 
+            this.M.Controls.Add(this.tableLayoutPanel17);
+            resources.ApplyResources(this.M, "M");
+            this.M.Name = "M";
+            this.M.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel17
+            // 
+            resources.ApplyResources(this.tableLayoutPanel17, "tableLayoutPanel17");
+            this.tableLayoutPanel17.Controls.Add(this.pictureBox17, 0, 0);
+            this.tableLayoutPanel17.Controls.Add(this.pictureBox18, 0, 0);
+            this.tableLayoutPanel17.Name = "tableLayoutPanel17";
+            // 
+            // pictureBox17
+            // 
+            resources.ApplyResources(this.pictureBox17, "pictureBox17");
+            this.pictureBox17.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_slide;
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.TabStop = false;
+            // 
+            // pictureBox18
+            // 
+            resources.ApplyResources(this.pictureBox18, "pictureBox18");
+            this.pictureBox18.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.beltModel;
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.TabStop = false;
+            // 
+            // ETB
+            // 
+            this.ETB.Controls.Add(this.tableLayoutPanel18);
+            resources.ApplyResources(this.ETB, "ETB");
+            this.ETB.Name = "ETB";
+            this.ETB.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel18
+            // 
+            resources.ApplyResources(this.tableLayoutPanel18, "tableLayoutPanel18");
+            this.tableLayoutPanel18.Controls.Add(this.pictureBox19, 0, 0);
+            this.tableLayoutPanel18.Controls.Add(this.pictureBox20, 0, 0);
+            this.tableLayoutPanel18.Name = "tableLayoutPanel18";
+            // 
+            // pictureBox19
+            // 
+            resources.ApplyResources(this.pictureBox19, "pictureBox19");
+            this.pictureBox19.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_doubleSlide;
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.TabStop = false;
+            // 
+            // pictureBox20
+            // 
+            resources.ApplyResources(this.pictureBox20, "pictureBox20");
+            this.pictureBox20.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.beltModel;
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.TabStop = false;
+            // 
+            // GCH
+            // 
+            this.GCH.Controls.Add(this.tableLayoutPanel19);
+            resources.ApplyResources(this.GCH, "GCH");
+            this.GCH.Name = "GCH";
+            this.GCH.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel19
+            // 
+            resources.ApplyResources(this.tableLayoutPanel19, "tableLayoutPanel19");
+            this.tableLayoutPanel19.Controls.Add(this.pictureBox21, 1, 0);
+            this.tableLayoutPanel19.Controls.Add(this.pictureBox22, 0, 0);
+            this.tableLayoutPanel19.Name = "tableLayoutPanel19";
+            // 
+            // pictureBox21
+            // 
+            resources.ApplyResources(this.pictureBox21, "pictureBox21");
+            this.pictureBox21.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_singleSlide;
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.TabStop = false;
+            // 
+            // pictureBox22
+            // 
+            resources.ApplyResources(this.pictureBox22, "pictureBox22");
+            this.pictureBox22.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
+            this.pictureBox22.Name = "pictureBox22";
+            this.pictureBox22.TabStop = false;
+            // 
+            // ECH
+            // 
+            this.ECH.Controls.Add(this.tableLayoutPanel20);
+            resources.ApplyResources(this.ECH, "ECH");
+            this.ECH.Name = "ECH";
+            this.ECH.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel20
+            // 
+            resources.ApplyResources(this.tableLayoutPanel20, "tableLayoutPanel20");
+            this.tableLayoutPanel20.Controls.Add(this.pictureBox23, 0, 0);
+            this.tableLayoutPanel20.Controls.Add(this.pictureBox24, 0, 0);
+            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
+            // 
+            // pictureBox23
+            // 
+            resources.ApplyResources(this.pictureBox23, "pictureBox23");
+            this.pictureBox23.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_doubleSlide;
+            this.pictureBox23.Name = "pictureBox23";
+            this.pictureBox23.TabStop = false;
+            // 
+            // pictureBox24
+            // 
+            resources.ApplyResources(this.pictureBox24, "pictureBox24");
+            this.pictureBox24.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
+            this.pictureBox24.Name = "pictureBox24";
+            this.pictureBox24.TabStop = false;
+            // 
+            // ECB
+            // 
+            this.ECB.Controls.Add(this.tableLayoutPanel21);
+            resources.ApplyResources(this.ECB, "ECB");
+            this.ECB.Name = "ECB";
+            this.ECB.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel21
+            // 
+            resources.ApplyResources(this.tableLayoutPanel21, "tableLayoutPanel21");
+            this.tableLayoutPanel21.Controls.Add(this.pictureBox25, 0, 0);
+            this.tableLayoutPanel21.Controls.Add(this.pictureBox26, 0, 0);
+            this.tableLayoutPanel21.Name = "tableLayoutPanel21";
+            // 
+            // pictureBox25
+            // 
+            resources.ApplyResources(this.pictureBox25, "pictureBox25");
+            this.pictureBox25.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_doubleSlide;
+            this.pictureBox25.Name = "pictureBox25";
+            this.pictureBox25.TabStop = false;
+            // 
+            // pictureBox26
+            // 
+            resources.ApplyResources(this.pictureBox26, "pictureBox26");
+            this.pictureBox26.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.beltModel;
+            this.pictureBox26.Name = "pictureBox26";
+            this.pictureBox26.TabStop = false;
             // 
             // label2
             // 
@@ -2784,6 +3190,27 @@
             this.label56.BackColor = System.Drawing.Color.LightGray;
             this.label56.Name = "label56";
             // 
+            // tableLayoutPanel12
+            // 
+            resources.ApplyResources(this.tableLayoutPanel12, "tableLayoutPanel12");
+            this.tableLayoutPanel12.Controls.Add(this.pictureBox7, 1, 0);
+            this.tableLayoutPanel12.Controls.Add(this.pictureBox8, 0, 0);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            // 
+            // pictureBox7
+            // 
+            resources.ApplyResources(this.pictureBox7, "pictureBox7");
+            this.pictureBox7.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_singleSlide;
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            resources.ApplyResources(this.pictureBox8, "pictureBox8");
+            this.pictureBox8.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.TabStop = false;
+            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -2833,7 +3260,50 @@
             this.customPanel4.ResumeLayout(false);
             this.customPanel3.ResumeLayout(false);
             this.customPanel2.ResumeLayout(false);
+            this.tabSideTableImg.ResumeLayout(false);
+            this.型號.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).EndInit();
+            this.GTH.ResumeLayout(false);
+            this.GTY.ResumeLayout(false);
+            this.tableLayoutPanel13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            this.ETH.ResumeLayout(false);
+            this.tableLayoutPanel14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            this.Y.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
+            this.YD.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
+            this.YL.ResumeLayout(false);
+            this.tableLayoutPanel15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            this.MG.ResumeLayout(false);
+            this.tableLayoutPanel16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            this.M.ResumeLayout(false);
+            this.tableLayoutPanel17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+            this.ETB.ResumeLayout(false);
+            this.tableLayoutPanel18.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            this.GCH.ResumeLayout(false);
+            this.tableLayoutPanel19.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
+            this.ECH.ResumeLayout(false);
+            this.tableLayoutPanel20.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
+            this.ECB.ResumeLayout(false);
+            this.tableLayoutPanel21.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             this.panelCalcResult.ResumeLayout(false);
             this.panelCalcResult.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).EndInit();
@@ -2934,6 +3404,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).EndInit();
             this.panel19.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3231,6 +3704,52 @@
         public System.Windows.Forms.Label label2;
         public CustomToggle.CustomToggle chkMotorAdvanceMode;
         public CustomToggle.CustomToggle chkAdvanceMode;
+        public CustomTabControl tabSideTableImg;
+        private System.Windows.Forms.TabPage 型號;
+        private System.Windows.Forms.TabPage GTH;
+        private System.Windows.Forms.TabPage GTY;
+        private System.Windows.Forms.TabPage ETH;
+        private System.Windows.Forms.TabPage Y;
+        private System.Windows.Forms.TabPage YD;
+        private System.Windows.Forms.TabPage YL;
+        private System.Windows.Forms.TabPage MG;
+        private System.Windows.Forms.TabPage M;
+        private System.Windows.Forms.TabPage ETB;
+        private System.Windows.Forms.TabPage GCH;
+        private System.Windows.Forms.TabPage ECH;
+        private System.Windows.Forms.TabPage ECB;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
+        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
+        private System.Windows.Forms.PictureBox pictureBox21;
+        private System.Windows.Forms.PictureBox pictureBox22;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
+        private System.Windows.Forms.PictureBox pictureBox24;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
+        private System.Windows.Forms.PictureBox pictureBox27;
+        private System.Windows.Forms.PictureBox pictureBox28;
+        private System.Windows.Forms.PictureBox pictureBox17;
+        private System.Windows.Forms.PictureBox pictureBox18;
+        private System.Windows.Forms.PictureBox pictureBox19;
+        private System.Windows.Forms.PictureBox pictureBox20;
+        private System.Windows.Forms.PictureBox pictureBox23;
+        private System.Windows.Forms.PictureBox pictureBox25;
+        private System.Windows.Forms.PictureBox pictureBox26;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }
 

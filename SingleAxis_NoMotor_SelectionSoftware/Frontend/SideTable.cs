@@ -12,10 +12,7 @@ using System.Threading;
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class SideTable {
         public enum MsgStatus { Normal, Alarm }
-
-        //private Size sizeSideTable = new Size(224, 474);
-        //private Size sizeTableSelection = new Size(194, 145);
-        //private Point positionSideTable = new Point(975, 129);        
+     
         private FormMain formMain;
         // 側邊欄訊息 - 形狀選型
         private List<string> selectionTableItems_calcAll = new List<string>(){
@@ -142,8 +139,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void UpdateModelImg(string model) {
+            formMain.tabSideTableImg.SelectTab("型號");
             var obj = Properties.Resources.ResourceManager.GetObject(model, CultureInfo.InvariantCulture);
             formMain.picModelImg.Image = obj as Image;
+        }
+
+        public void UpdateModelImg(Model.ModelType modelType) {
+            formMain.tabSideTableImg.SelectTab(modelType.ToString());
         }
 
         public void UpdateModeInfo(string model, double lead) {

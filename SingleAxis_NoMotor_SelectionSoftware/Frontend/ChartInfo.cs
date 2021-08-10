@@ -74,10 +74,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             foreach (PointF point in points)
                 formMain.chart.Series[0].Points.AddXY(Convert.ToDouble(point.X.ToString("#0.000")), Convert.ToDouble(point.Y.ToString("#0.000")));
 
-            turningPoints = formMain.chart.Series[0].Points.Select(p => new PointF(
-                (float)chartArea.AxisX.ValueToPixelPosition(p.XValue),
-                (float)chartArea.AxisY.ValueToPixelPosition(p.YValues[0])
-            )).ToArray();
+            //turningPoints = formMain.chart.Series[0].Points.Select(p => new PointF(
+            //    (float)chartArea.AxisX.ValueToPixelPosition(p.XValue),
+            //    (float)chartArea.AxisY.ValueToPixelPosition(p.YValues[0])
+            //)).ToArray();
 
             // 取圖資訊
             var chartInfo = formMain.page2.calc.GetChartInfo(curModel);
