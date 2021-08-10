@@ -44,7 +44,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             page3 = new Page3(this);
 
             // 測試
-            Test test = new Test(this);
+            try {
+                Test test = new Test(this);
+            } catch (Exception ex) {
+                Console.WriteLine(ex);
+            }
 
             // scroll頁面觸發
             foreach (Control control in this.Controls.All()) {
