@@ -43,7 +43,6 @@
             this.cmdZoom = new System.Windows.Forms.PictureBox();
             this.cmdClose = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabMain = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
             this.tabStart = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -79,6 +78,9 @@
             this.型號 = new System.Windows.Forms.TabPage();
             this.picModelImg = new System.Windows.Forms.PictureBox();
             this.GTH = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.GTY = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
@@ -352,24 +354,21 @@
             this.tabResult = new System.Windows.Forms.TabPage();
             this.explorerBar_step5 = new System.Windows.Forms.Panel();
             this.panelResult = new System.Windows.Forms.Panel();
-            this.panel20 = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
             this.panelConfirmBtnsStep5 = new System.Windows.Forms.TableLayoutPanel();
             this.cmdConfirmStep5 = new CustomButton.CustomButton();
             this.cmdResetStep5 = new CustomButton.CustomButton();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.label77 = new System.Windows.Forms.Label();
+            this.lbResultAlarm = new System.Windows.Forms.Label();
             this.lbResult = new System.Windows.Forms.Label();
-            this.label70 = new System.Windows.Forms.Label();
+            this.lbResultBar = new System.Windows.Forms.Label();
             this.picBoxResultImg = new System.Windows.Forms.PictureBox();
             this.panel19 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.label93 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -410,6 +409,9 @@
             this.型號.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).BeginInit();
             this.GTH.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.GTY.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -521,16 +523,12 @@
             this.tabResult.SuspendLayout();
             this.explorerBar_step5.SuspendLayout();
             this.panelResult.SuspendLayout();
-            this.panel20.SuspendLayout();
-            this.panelConfirmBtnsStep5.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel21.SuspendLayout();
+            this.panelConfirmBtnsStep5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).BeginInit();
             this.panel19.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
-            this.tableLayoutPanel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBase
@@ -626,15 +624,6 @@
             this.panel4.Controls.Add(this.tabMain);
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.AutoPopDelay = 50000;
-            this.toolTip1.InitialDelay = 500;
-            this.toolTip1.IsBalloon = true;
-            this.toolTip1.ReshowDelay = 100;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "變更非標準馬達時請注意";
             // 
             // tabMain
             // 
@@ -919,6 +908,27 @@
             resources.ApplyResources(this.GTH, "GTH");
             this.GTH.Name = "GTH";
             this.GTH.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel12
+            // 
+            resources.ApplyResources(this.tableLayoutPanel12, "tableLayoutPanel12");
+            this.tableLayoutPanel12.Controls.Add(this.pictureBox7, 1, 0);
+            this.tableLayoutPanel12.Controls.Add(this.pictureBox8, 0, 0);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            // 
+            // pictureBox7
+            // 
+            resources.ApplyResources(this.pictureBox7, "pictureBox7");
+            this.pictureBox7.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_singleSlide;
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            resources.ApplyResources(this.pictureBox8, "pictureBox8");
+            this.pictureBox8.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.TabStop = false;
             // 
             // GTY
             // 
@@ -1487,8 +1497,8 @@
             // 
             // label12
             // 
-            this.label12.BackColor = System.Drawing.Color.LightGray;
             resources.ApplyResources(this.label12, "label12");
+            this.label12.BackColor = System.Drawing.Color.LightGray;
             this.label12.Name = "label12";
             // 
             // label13
@@ -1506,7 +1516,7 @@
             // 
             // panel16
             // 
-            this.panel16.BackColor = System.Drawing.Color.Transparent;
+            this.panel16.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel16.Controls.Add(this.customPanel1);
             this.panel16.Controls.Add(this.chart);
             resources.ApplyResources(this.panel16, "panel16");
@@ -3064,18 +3074,29 @@
             // 
             // panelResult
             // 
-            this.panelResult.Controls.Add(this.panel20);
             this.panelResult.Controls.Add(this.panel17);
             this.panelResult.Controls.Add(this.label51);
             this.panelResult.Controls.Add(this.label56);
             resources.ApplyResources(this.panelResult, "panelResult");
             this.panelResult.Name = "panelResult";
             // 
-            // panel20
+            // panel17
             // 
-            this.panel20.Controls.Add(this.panelConfirmBtnsStep5);
-            resources.ApplyResources(this.panel20, "panel20");
-            this.panel20.Name = "panel20";
+            this.panel17.Controls.Add(this.panel21);
+            this.panel17.Controls.Add(this.panel19);
+            resources.ApplyResources(this.panel17, "panel17");
+            this.panel17.Name = "panel17";
+            // 
+            // panel21
+            // 
+            this.panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel21.Controls.Add(this.panelConfirmBtnsStep5);
+            this.panel21.Controls.Add(this.lbResultAlarm);
+            this.panel21.Controls.Add(this.lbResult);
+            this.panel21.Controls.Add(this.lbResultBar);
+            this.panel21.Controls.Add(this.picBoxResultImg);
+            resources.ApplyResources(this.panel21, "panel21");
+            this.panel21.Name = "panel21";
             // 
             // panelConfirmBtnsStep5
             // 
@@ -3116,28 +3137,11 @@
             this.cmdResetStep5.Name = "cmdResetStep5";
             this.cmdResetStep5.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
             // 
-            // panel17
+            // lbResultAlarm
             // 
-            resources.ApplyResources(this.panel17, "panel17");
-            this.panel17.Controls.Add(this.panel21);
-            this.panel17.Controls.Add(this.panel19);
-            this.panel17.Name = "panel17";
-            // 
-            // panel21
-            // 
-            this.panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel21.Controls.Add(this.label77);
-            this.panel21.Controls.Add(this.lbResult);
-            this.panel21.Controls.Add(this.label70);
-            this.panel21.Controls.Add(this.picBoxResultImg);
-            resources.ApplyResources(this.panel21, "panel21");
-            this.panel21.Name = "panel21";
-            // 
-            // label77
-            // 
-            resources.ApplyResources(this.label77, "label77");
-            this.label77.ForeColor = System.Drawing.Color.Red;
-            this.label77.Name = "label77";
+            resources.ApplyResources(this.lbResultAlarm, "lbResultAlarm");
+            this.lbResultAlarm.ForeColor = System.Drawing.Color.Red;
+            this.lbResultAlarm.Name = "lbResultAlarm";
             // 
             // lbResult
             // 
@@ -3145,11 +3149,11 @@
             this.lbResult.ForeColor = System.Drawing.Color.Red;
             this.lbResult.Name = "lbResult";
             // 
-            // label70
+            // lbResultBar
             // 
-            resources.ApplyResources(this.label70, "label70");
-            this.label70.BackColor = System.Drawing.Color.DarkGray;
-            this.label70.Name = "label70";
+            resources.ApplyResources(this.lbResultBar, "lbResultBar");
+            this.lbResultBar.BackColor = System.Drawing.Color.DarkGray;
+            this.lbResultBar.Name = "lbResultBar";
             // 
             // picBoxResultImg
             // 
@@ -3190,26 +3194,14 @@
             this.label56.BackColor = System.Drawing.Color.LightGray;
             this.label56.Name = "label56";
             // 
-            // tableLayoutPanel12
+            // toolTip1
             // 
-            resources.ApplyResources(this.tableLayoutPanel12, "tableLayoutPanel12");
-            this.tableLayoutPanel12.Controls.Add(this.pictureBox7, 1, 0);
-            this.tableLayoutPanel12.Controls.Add(this.pictureBox8, 0, 0);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            // 
-            // pictureBox7
-            // 
-            resources.ApplyResources(this.pictureBox7, "pictureBox7");
-            this.pictureBox7.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_singleSlide;
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            resources.ApplyResources(this.pictureBox8, "pictureBox8");
-            this.pictureBox8.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.TabStop = false;
+            this.toolTip1.AutoPopDelay = 50000;
+            this.toolTip1.InitialDelay = 500;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ReshowDelay = 100;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "變更非標準馬達時請注意";
             // 
             // FormMain
             // 
@@ -3264,6 +3256,9 @@
             this.型號.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).EndInit();
             this.GTH.ResumeLayout(false);
+            this.tableLayoutPanel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.GTY.ResumeLayout(false);
             this.tableLayoutPanel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -3396,17 +3391,13 @@
             this.explorerBar_step5.ResumeLayout(false);
             this.panelResult.ResumeLayout(false);
             this.panelResult.PerformLayout();
-            this.panel20.ResumeLayout(false);
-            this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
+            this.panelConfirmBtnsStep5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).EndInit();
             this.panel19.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
-            this.tableLayoutPanel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3566,9 +3557,6 @@
         public System.Windows.Forms.TextBox txtRunTime;
         private System.Windows.Forms.Panel panel4;
         public System.Windows.Forms.Panel panelResult;
-        public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep5;
-        public CustomButton.CustomButton cmdConfirmStep5;
-        public CustomButton.CustomButton cmdResetStep5;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label56;
         public System.Windows.Forms.Label lbResult;
@@ -3692,14 +3680,13 @@
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Label label93;
-        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label lbResultBar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Label label76;
         private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.Label lbResultAlarm;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
         public CustomToggle.CustomToggle chkMotorAdvanceMode;
@@ -3750,6 +3737,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
+        public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep5;
+        public CustomButton.CustomButton cmdConfirmStep5;
+        public CustomButton.CustomButton cmdResetStep5;
     }
 }
 

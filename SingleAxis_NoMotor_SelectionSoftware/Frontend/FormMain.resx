@@ -895,7 +895,7 @@
     <value>2</value>
   </data>
   <data name="panelSideTableIcon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 8</value>
+    <value>15, 8</value>
   </data>
   <data name="panelSideTableIcon.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 307</value>
@@ -949,7 +949,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,733,Absolute,733,Absolute,733,Absolute,733" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,735,Absolute,735,Absolute,735,Absolute,735" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 321</value>
@@ -2644,7 +2644,7 @@
     <value>50</value>
   </data>
   <data name="鎖定.Width" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>50</value>
   </data>
   <metadata name="項次.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2656,7 +2656,7 @@
     <value>50</value>
   </data>
   <data name="項次.Width" type="System.Int32, mscorlib">
-    <value>41</value>
+    <value>50</value>
   </data>
   <metadata name="重複定位精度.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2793,9 +2793,6 @@
   <data name="力矩警示.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="力矩警示.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
   <metadata name="馬達瓦數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2817,9 +2814,6 @@
   <data name="皮帶馬達安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="皮帶馬達安全係數.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
   <metadata name="T_max安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2831,9 +2825,6 @@
   </data>
   <data name="T_max安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="T_max安全係數.Width" type="System.Int32, mscorlib">
-    <value>50</value>
   </data>
   <metadata name="皮帶T_max安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2847,9 +2838,6 @@
   <data name="皮帶T_max安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="皮帶T_max安全係數.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
   <metadata name="T_Rms安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2861,9 +2849,6 @@
   </data>
   <data name="T_Rms安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="T_Rms安全係數.Width" type="System.Int32, mscorlib">
-    <value>50</value>
   </data>
   <metadata name="運行距離.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2916,9 +2901,6 @@
   <data name="更詳細資訊.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="更詳細資訊.Width" type="System.Int32, mscorlib">
-    <value>106</value>
-  </data>
   <data name="dgvRecommandList.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 67</value>
   </data>
@@ -2940,6 +2922,9 @@
   <data name="&gt;&gt;dgvRecommandList.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="label12.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -2947,7 +2932,7 @@
     <value>20, 46</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>723, 2</value>
+    <value>920, 2</value>
   </data>
   <data name="label12.TabIndex" type="System.Int32, mscorlib">
     <value>256</value>
@@ -8208,7 +8193,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabModelType_standard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>821, 434</value>
+    <value>821, 399</value>
   </data>
   <data name="tabModelType_standard.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -9321,10 +9306,10 @@
     <value>Fill</value>
   </data>
   <data name="cmdConfirmStep5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>357, 3</value>
+    <value>289, 3</value>
   </data>
   <data name="cmdConfirmStep5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 32</value>
+    <value>137, 32</value>
   </data>
   <data name="cmdConfirmStep5.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -9348,10 +9333,10 @@
     <value>Fill</value>
   </data>
   <data name="cmdResetStep5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>534, 3</value>
+    <value>432, 3</value>
   </data>
   <data name="cmdResetStep5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 32</value>
+    <value>137, 32</value>
   </data>
   <data name="cmdResetStep5.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -9369,19 +9354,19 @@
     <value>1</value>
   </data>
   <data name="panelConfirmBtnsStep5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+    <value>Bottom</value>
   </data>
   <data name="panelConfirmBtnsStep5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>0, 376</value>
   </data>
   <data name="panelConfirmBtnsStep5.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="panelConfirmBtnsStep5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1063, 38</value>
+    <value>861, 38</value>
   </data>
   <data name="panelConfirmBtnsStep5.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+    <value>359</value>
   </data>
   <data name="&gt;&gt;panelConfirmBtnsStep5.Name" xml:space="preserve">
     <value>panelConfirmBtnsStep5</value>
@@ -9390,7 +9375,7 @@
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panelConfirmBtnsStep5.Parent" xml:space="preserve">
-    <value>panel20</value>
+    <value>panel21</value>
   </data>
   <data name="&gt;&gt;panelConfirmBtnsStep5.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -9398,68 +9383,41 @@
   <data name="panelConfirmBtnsStep5.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cmdConfirmStep5" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cmdResetStep5" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33.33333,Percent,16.66667,Percent,16.66667,Percent,33.33333" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="panel20.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="panel20.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 572</value>
-  </data>
-  <data name="panel20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1063, 79</value>
-  </data>
-  <data name="panel20.TabIndex" type="System.Int32, mscorlib">
-    <value>250</value>
-  </data>
-  <data name="&gt;&gt;panel20.Name" xml:space="preserve">
-    <value>panel20</value>
-  </data>
-  <data name="&gt;&gt;panel20.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel20.Parent" xml:space="preserve">
-    <value>panelResult</value>
-  </data>
-  <data name="&gt;&gt;panel20.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel17.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="lbResultAlarm.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="label77.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="label77.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lbResultAlarm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label77.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lbResultAlarm.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 9pt</value>
   </data>
-  <data name="label77.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lbResultAlarm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label77.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, -866</value>
+  <data name="lbResultAlarm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 351</value>
   </data>
-  <data name="label77.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lbResultAlarm.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 16</value>
   </data>
-  <data name="label77.TabIndex" type="System.Int32, mscorlib">
+  <data name="lbResultAlarm.TabIndex" type="System.Int32, mscorlib">
     <value>358</value>
   </data>
-  <data name="label77.Text" xml:space="preserve">
+  <data name="lbResultAlarm.Text" xml:space="preserve">
     <value>注：選型照片僅供參考，詳細以出貨為準。</value>
   </data>
-  <data name="&gt;&gt;label77.Name" xml:space="preserve">
-    <value>label77</value>
+  <data name="&gt;&gt;lbResultAlarm.Name" xml:space="preserve">
+    <value>lbResultAlarm</value>
   </data>
-  <data name="&gt;&gt;label77.Type" xml:space="preserve">
+  <data name="&gt;&gt;lbResultAlarm.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label77.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lbResultAlarm.Parent" xml:space="preserve">
     <value>panel21</value>
   </data>
-  <data name="&gt;&gt;label77.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;lbResultAlarm.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="lbResult.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -9474,7 +9432,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, -1192</value>
+    <value>169, 12</value>
   </data>
   <data name="lbResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 31</value>
@@ -9495,34 +9453,34 @@
     <value>panel21</value>
   </data>
   <data name="&gt;&gt;lbResult.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
-  <data name="label70.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="lbResultBar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="label70.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lbResultBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label70.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, -1154</value>
+  <data name="lbResultBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 49</value>
   </data>
-  <data name="label70.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lbResultBar.Size" type="System.Drawing.Size, System.Drawing">
     <value>515, 2</value>
   </data>
-  <data name="label70.TabIndex" type="System.Int32, mscorlib">
+  <data name="lbResultBar.TabIndex" type="System.Int32, mscorlib">
     <value>357</value>
   </data>
-  <data name="&gt;&gt;label70.Name" xml:space="preserve">
-    <value>label70</value>
+  <data name="&gt;&gt;lbResultBar.Name" xml:space="preserve">
+    <value>lbResultBar</value>
   </data>
-  <data name="&gt;&gt;label70.Type" xml:space="preserve">
+  <data name="&gt;&gt;lbResultBar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label70.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lbResultBar.Parent" xml:space="preserve">
     <value>panel21</value>
   </data>
-  <data name="&gt;&gt;label70.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;lbResultBar.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="picBoxResultImg.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -9531,7 +9489,7 @@
     <value>NoControl</value>
   </data>
   <data name="picBoxResultImg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, -1145</value>
+    <value>175, 72</value>
   </data>
   <data name="picBoxResultImg.Size" type="System.Drawing.Size, System.Drawing">
     <value>513, 276</value>
@@ -9552,7 +9510,7 @@
     <value>panel21</value>
   </data>
   <data name="&gt;&gt;picBoxResultImg.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="panel21.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -9561,7 +9519,7 @@
     <value>0, 35</value>
   </data>
   <data name="panel21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>790, 432</value>
+    <value>863, 416</value>
   </data>
   <data name="panel21.TabIndex" type="System.Int32, mscorlib">
     <value>358</value>
@@ -9600,7 +9558,7 @@
     <value>3, 0, 0, 0</value>
   </data>
   <data name="label93.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 35</value>
+    <value>132, 35</value>
   </data>
   <data name="label93.TabIndex" type="System.Int32, mscorlib">
     <value>354</value>
@@ -9633,7 +9591,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>790, 35</value>
+    <value>863, 35</value>
   </data>
   <data name="tableLayoutPanel10.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -9660,7 +9618,7 @@
     <value>0, 0</value>
   </data>
   <data name="panel19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>790, 35</value>
+    <value>863, 35</value>
   </data>
   <data name="panel19.TabIndex" type="System.Int32, mscorlib">
     <value>356</value>
@@ -9677,11 +9635,14 @@
   <data name="&gt;&gt;panel19.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="panel17.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
   <data name="panel17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-397, 88</value>
+    <value>100, 100</value>
   </data>
   <data name="panel17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>790, 467</value>
+    <value>863, 451</value>
   </data>
   <data name="panel17.TabIndex" type="System.Int32, mscorlib">
     <value>249</value>
@@ -9696,7 +9657,7 @@
     <value>panelResult</value>
   </data>
   <data name="&gt;&gt;panel17.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="label51.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -9711,7 +9672,7 @@
     <value>NoControl</value>
   </data>
   <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2974, 487</value>
+    <value>-2974, 482</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 16</value>
@@ -9732,7 +9693,7 @@
     <value>panelResult</value>
   </data>
   <data name="&gt;&gt;label51.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="label56.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -9741,7 +9702,7 @@
     <value>NoControl</value>
   </data>
   <data name="label56.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2973, 184</value>
+    <value>-2973, 179</value>
   </data>
   <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 2</value>
@@ -9759,7 +9720,7 @@
     <value>panelResult</value>
   </data>
   <data name="&gt;&gt;label56.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="panelResult.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -9768,7 +9729,7 @@
     <value>0, 0</value>
   </data>
   <data name="panelResult.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 10, 0, 0</value>
+    <value>100, 100, 100, 100</value>
   </data>
   <data name="panelResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>1063, 651</value>
@@ -13381,20 +13342,11 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>不帶電選型系統</value>
-  </data>
-  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
-    <value>toolTip1</value>
-  </data>
-  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;鎖定.Name" xml:space="preserve">
     <value>鎖定</value>
@@ -13533,6 +13485,12 @@
   </data>
   <data name="&gt;&gt;更詳細資訊.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
+    <value>toolTip1</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormMain</value>

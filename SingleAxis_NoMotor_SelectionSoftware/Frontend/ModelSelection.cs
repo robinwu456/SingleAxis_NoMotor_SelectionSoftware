@@ -76,10 +76,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void CboModel_SelectedValueChanged(object sender, EventArgs e) {
             // 導程
-            var leads = formMain.page2.calc.modelInfo.Rows.Cast<DataRow>()
-                                               .Where(row => row["型號"].ToString().StartsWith(formMain.cboModel.Text))
-                                               .Select(row => row["導程"].ToString());
-            formMain.cboLead.DataSource = leads.ToList();
+            List<string> leads = new List<string>();
+            if (formMain.cboModel.Text.StartsWith("M"))
+                leads = formMain.page2.calc.modelInfo.Rows.Cast<DataRow>()
+                                                   .Where(row => row["型號"].ToString().StartsWith(formMain.cboModel.Text))
+                                                   .Select(row => row["導程"].ToString()).ToList();
+            else
+                leads = formMain.page2.calc.modelInfo.Rows.Cast<DataRow>()
+                                                   .Where(row => row["型號"].ToString().Equals(formMain.cboModel.Text))
+                                                   .Select(row => row["導程"].ToString()).ToList();
+            formMain.cboLead.DataSource = leads;
 
             // 減速比
             //var reducerRatios = formMain.page2.calc.reducerInfo.Rows.Cast<DataRow>()
