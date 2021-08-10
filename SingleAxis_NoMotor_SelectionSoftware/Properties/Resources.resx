@@ -121,6 +121,9 @@
   <data name="M_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\M_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="detail_disable_in_condition" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\detail_disable_in_condition.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="selectionType_model_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\selectionType_model_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -135,9 +138,6 @@
   </data>
   <data name="ETH13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModelPic\ETH13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="beltModel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NewPic\beltModel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Top_RE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Top_RE2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,8 +199,8 @@
   <data name="slideModel_GTYSlide" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\slideModel_GTYSlide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="scrollBarThumb_hover2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NewPic\scrollBarThumb_hover2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="一般環境1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\一般環境1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GTY12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModelPic\GTY12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,20 +229,14 @@
   <data name="GCH8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModelPic\GCH8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Y_enabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NewPic\Y_enabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="setup_wallHang_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\setup_wallHang_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="order" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\order.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ECB6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ModelPic\ECB6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="螢幕擷取畫面 2021-06-25 225553" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\螢幕擷取畫面 2021-06-25 225553.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Y65D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Y65D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ECB_enabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\ECB_enabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -255,9 +249,6 @@
   </data>
   <data name="Top_Close2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Top_Close2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CSG25" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ModelPic\CSG25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GTH3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModelPic\GTH3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -279,6 +270,9 @@
   </data>
   <data name="scrollBarThumb2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\scrollBarThumb2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="toggleOff_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\toggleOff_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg_modelType_dustfree_screw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\bg_modelType_dustfree_screw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -307,14 +301,11 @@
   <data name="toggleOff2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\toggleOff2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="detail_disable_in_condition" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\detail_disable_in_condition.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="YLModel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewPic\YLModel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ETH22" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModelPic\ETH22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GTY8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ModelPic\GTY8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="選型軟體" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\選型軟體.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -325,9 +316,6 @@
   <data name="GTY_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\GTY_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="YL_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NewPic\YL_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ECB_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\ECB_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -336,9 +324,6 @@
   </data>
   <data name="2D_3D" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2D_3D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="YLModel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NewPic\YLModel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ETB10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModelPic\ETB10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -349,8 +334,8 @@
   <data name="toolTipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\toolTipIcon.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="螢幕擷取畫面 2021-06-26 000419" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\螢幕擷取畫面 2021-06-26 000419.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="useEnv_dustfree_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewPic\useEnv_dustfree_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GTY_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\GTY_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -358,8 +343,8 @@
   <data name="ETH17M" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModelPic\ETH17M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ECH17" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ModelPic\ECH17.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="螢幕擷取畫面 2021-06-25 225553" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\螢幕擷取畫面 2021-06-25 225553.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="toggleOn_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\toggleOn_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -372,9 +357,6 @@
   </data>
   <data name="DMH25" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModelPic\DMH25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="useEnv_dustfree_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NewPic\useEnv_dustfree_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="安裝方式" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\安裝方式.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -427,8 +409,8 @@
   <data name="bg_modelType_dustfree_belt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\bg_modelType_dustfree_belt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Y65D" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Y65D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="toggleOff_disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\toggleOff_disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ECH14" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModelPic\ECH14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -444,6 +426,12 @@
   </data>
   <data name="scrollBarThumb_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\scrollBarThumb_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="YD_enabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewPic\YD_enabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ECB_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewPic\ECB_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ETH22M" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModelPic\ETH22M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -466,9 +454,6 @@
   <data name="壁掛安裝" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\壁掛安裝.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ETH_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NewPic\ETH_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="useEnv_standard_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\useEnv_standard_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -483,6 +468,9 @@
   </data>
   <data name="螢幕擷取畫面 2021-06-25 230600" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\螢幕擷取畫面 2021-06-25 230600.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dataResultPic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewPic\dataResultPic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MG_enabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\MG_enabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -511,14 +499,23 @@
   <data name="ECH_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\ECH_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="detail_disable_not_in_condition" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\detail_disable_not_in_condition.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="GTH_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\GTH_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="G2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\G2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="螢幕擷取畫面 2021-06-26 000419" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\螢幕擷取畫面 2021-06-26 000419.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="useEnv_dustfree_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\useEnv_dustfree_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="toggleOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\toggleOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GTH5S" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModelPic\GTH5S.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -541,11 +538,11 @@
   <data name="螺桿滑台" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\螺桿滑台.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GTYD" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GTYD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="水平安裝" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\水平安裝.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GTY8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GTY8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="selectionType_model_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\selectionType_model_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -580,11 +577,11 @@
   <data name="bg_modelType_standard_screw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\bg_modelType_standard_screw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="detail_disable_not_in_condition" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\detail_disable_not_in_condition.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ETH_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewPic\ETH_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="toggleOff_disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\toggleOff_disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="YL_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewPic\YL_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MG_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\MG_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -610,11 +607,14 @@
   <data name="皮帶滑台" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\皮帶滑台.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ECB_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NewPic\ECB_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ECH17" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ECH17.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ECB5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModelPic\ECB5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ComingSoon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ComingSoon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="slideModel_doubleSlide" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\slideModel_doubleSlide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -637,11 +637,11 @@
   <data name="螢幕擷取畫面 2021-06-25 230653" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\螢幕擷取畫面 2021-06-25 230653.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="toggleOff_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\toggleOff_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="scrollBarThumb_hover2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewPic\scrollBarThumb_hover2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="YD_enabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NewPic\YD_enabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="GTYD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GTYD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ETB_enabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\ETB_enabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -652,29 +652,32 @@
   <data name="screwModel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\screwModel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GTY5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GTY5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="dataResultBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dataResultBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ETB17M" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModelPic\ETB17M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ComingSoon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ComingSoon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CSG25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CSG25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ETB6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModelPic\ETB6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="一般環境1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\一般環境1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ECB6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ECB6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="toggleOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\toggleOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Y_enabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewPic\Y_enabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GTH_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\GTH_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GTY5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ModelPic\GTY5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="beltModel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewPic\beltModel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="YL_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPic\YL_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -703,7 +706,379 @@
   <data name="GCH12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModelPic\GCH12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dataResultPic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NewPic\dataResultPic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CCB10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CCB10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CGCH4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CGCH4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CGCH5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CGCH5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CGTH3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CGTH3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CGTH4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CGTH4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CGTH5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CGTH5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CGTY4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CGTY4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CGTY5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CGTY5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CHB6-S11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CHB6-S11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CHB6-S14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CHB6-S14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CHB6T-S14(三爪)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CHB6T-S14(三爪).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CHG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CHG2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CHS2C-S20(無塵)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CHS2C-S20(無塵).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CHS2-S12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CHS2-S12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CHS2-S20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CHS2-S20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CHS2-S40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CHS2-S40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CHS2-S68" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CHS2-S68.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CHY2B-S80(黑色)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CHY2B-S80(黑色).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CHY2B-S80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CHY2B-S80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CHY2B-S150(黑色)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CHY2B-S150(黑色).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CHY2B-S150" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CHY2B-S150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CHZ20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CHZ20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CHZ25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CHZ25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CSF20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CSF20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CSG251" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CSG25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CSH20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CSH20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CSL8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CSL8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CSS20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\CSS20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DGTH3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\DGTH3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DGTH4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\DGTH4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DGTH5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\DGTH5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DGTY4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\DGTY4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DGTY5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\DGTY5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DMG251" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\DMG25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DMG401" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\DMG40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DMH251" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\DMH25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DMH401" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\DMH40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ECB51" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ECB5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ECB61" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ECB6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ECB101" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ECB10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ECB141" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ECB14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ECB171" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ECB17.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ECB221" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ECB22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ECH141" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ECH14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ECH171" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ECH17.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ECH17M" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ECH17M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ECH221" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ECH22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ECH22M" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ECH22M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ETB51" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ETB5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ETB61" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ETB6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ETB101" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ETB10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ETB14M1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ETB14M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ETB17M1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ETB17M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ETB22M1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ETB22M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ETH131" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ETH13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ETH141" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ETH14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ETH171" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ETH17.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ETH17M1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ETH17M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ETH221" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ETH22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ETH22M1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\ETH22M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GCH41" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GCH4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GCH51" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GCH5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GCH5S" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GCH5S.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GCH81" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GCH8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GCH8S" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GCH8S.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GCH121" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GCH12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GCY4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GCY4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GCY5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GCY5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GCY8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GCY8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GCY12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GCY12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GTH31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GTH3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GTH3K" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GTH3K.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GTH41" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GTH4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GTH4K" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GTH4K.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GTH51" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GTH5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GTH5K" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GTH5K.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GTH5S1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GTH5S.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GTH81" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GTH8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GTH8K" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GTH8K.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GTH8S1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GTH8S.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GTH121" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GTH12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GTH12K" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GTH12K.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GTY41" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GTY4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GTY51" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GTY5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GTY81" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GTY8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GTY121" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\GTY12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MH65" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\MH65.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MH80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\MH80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK651" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\MK65.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK851" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\MK85.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK1101" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\MK110.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYCGT320-A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYCGT320-A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYCGT321-A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYCGT321-A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYGT210-A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYGT210-A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYGT320-A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYGT320-A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYGT321-A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYGT321-A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYGT430-A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYGT430-A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYGT432-A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYGT432-A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYGT440-A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYGT440-A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYSGT430-A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYSGT430-A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYSGT432-A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYSGT432-A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYTB650-A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYTB650-A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYTB760-A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYTB760-A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYTB870-A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYTB870-A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYTB870-G" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYTB870-G.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYTB876-A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYTB876-A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYTB876-G" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYTB876-G.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYTH650-A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYTH650-A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYTH650-P" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYTH650-P.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYTH760-A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYTH760-A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYTH760-F" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYTH760-F.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYTH760-G" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYTH760-G.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYTH760-P" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYTH760-P.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYTH870-A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYTH870-A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYTH870-G" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYTH870-G.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYTH876-A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYTH876-A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYTH876-G" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYTH876-G.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYTH880-P" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYTH880-P.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XYTH886-P" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\XYTH886-P.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Y50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\Y50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Y50D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\Y50D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Y50L" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\Y50L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Y651" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\Y65.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Y65D1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\Y65D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Y65L1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModelPic\Y65L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
