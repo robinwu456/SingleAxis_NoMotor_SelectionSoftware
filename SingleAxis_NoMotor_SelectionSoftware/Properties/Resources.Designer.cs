@@ -183,6 +183,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap dataResultPic {
+            get {
+                object obj = ResourceManager.GetObject("dataResultPic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap detail_disable_in_condition {
             get {
                 object obj = ResourceManager.GetObject("detail_disable_in_condition", resourceCulture);

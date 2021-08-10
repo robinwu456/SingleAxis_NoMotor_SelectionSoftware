@@ -356,16 +356,18 @@
             this.panelResult = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.panelConfirmBtnsStep5 = new System.Windows.Forms.TableLayoutPanel();
-            this.cmdConfirmStep5 = new CustomButton.CustomButton();
-            this.cmdResetStep5 = new CustomButton.CustomButton();
-            this.lbResultAlarm = new System.Windows.Forms.Label();
-            this.lbResult = new System.Windows.Forms.Label();
-            this.lbResultBar = new System.Windows.Forms.Label();
+            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.label32 = new System.Windows.Forms.Label();
             this.picBoxResultImg = new System.Windows.Forms.PictureBox();
+            this.lbResultBar = new System.Windows.Forms.Label();
+            this.lbResult = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.label93 = new System.Windows.Forms.Label();
+            this.panelConfirmBtnsStep5 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmdConfirmStep5 = new CustomButton.CustomButton();
+            this.cmdResetStep5 = new CustomButton.CustomButton();
             this.label51 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -525,10 +527,12 @@
             this.panelResult.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel21.SuspendLayout();
-            this.panelConfirmBtnsStep5.SuspendLayout();
+            this.tableLayoutPanel22.SuspendLayout();
+            this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).BeginInit();
             this.panel19.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
+            this.panelConfirmBtnsStep5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBase
@@ -3075,6 +3079,7 @@
             // panelResult
             // 
             this.panelResult.Controls.Add(this.panel17);
+            this.panelResult.Controls.Add(this.panelConfirmBtnsStep5);
             this.panelResult.Controls.Add(this.label51);
             this.panelResult.Controls.Add(this.label56);
             resources.ApplyResources(this.panelResult, "panelResult");
@@ -3082,21 +3087,80 @@
             // 
             // panel17
             // 
+            resources.ApplyResources(this.panel17, "panel17");
             this.panel17.Controls.Add(this.panel21);
             this.panel17.Controls.Add(this.panel19);
-            resources.ApplyResources(this.panel17, "panel17");
             this.panel17.Name = "panel17";
             // 
             // panel21
             // 
-            this.panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel21.Controls.Add(this.panelConfirmBtnsStep5);
-            this.panel21.Controls.Add(this.lbResultAlarm);
-            this.panel21.Controls.Add(this.lbResult);
-            this.panel21.Controls.Add(this.lbResultBar);
-            this.panel21.Controls.Add(this.picBoxResultImg);
+            this.panel21.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.panel21, "panel21");
+            this.panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel21.Controls.Add(this.tableLayoutPanel22);
             this.panel21.Name = "panel21";
+            // 
+            // tableLayoutPanel22
+            // 
+            resources.ApplyResources(this.tableLayoutPanel22, "tableLayoutPanel22");
+            this.tableLayoutPanel22.Controls.Add(this.panel20, 1, 0);
+            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.label32);
+            this.panel20.Controls.Add(this.picBoxResultImg);
+            this.panel20.Controls.Add(this.lbResultBar);
+            this.panel20.Controls.Add(this.lbResult);
+            resources.ApplyResources(this.panel20, "panel20");
+            this.panel20.Name = "panel20";
+            // 
+            // label32
+            // 
+            resources.ApplyResources(this.label32, "label32");
+            this.label32.ForeColor = System.Drawing.Color.Red;
+            this.label32.Name = "label32";
+            // 
+            // picBoxResultImg
+            // 
+            this.picBoxResultImg.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.picBoxResultImg, "picBoxResultImg");
+            this.picBoxResultImg.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.GTH4;
+            this.picBoxResultImg.Name = "picBoxResultImg";
+            this.picBoxResultImg.TabStop = false;
+            // 
+            // lbResultBar
+            // 
+            this.lbResultBar.BackColor = System.Drawing.Color.DarkGray;
+            resources.ApplyResources(this.lbResultBar, "lbResultBar");
+            this.lbResultBar.Name = "lbResultBar";
+            // 
+            // lbResult
+            // 
+            resources.ApplyResources(this.lbResult, "lbResult");
+            this.lbResult.ForeColor = System.Drawing.Color.Red;
+            this.lbResult.Name = "lbResult";
+            // 
+            // panel19
+            // 
+            this.panel19.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
+            resources.ApplyResources(this.panel19, "panel19");
+            this.panel19.Controls.Add(this.tableLayoutPanel10);
+            this.panel19.Name = "panel19";
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.tableLayoutPanel10, "tableLayoutPanel10");
+            this.tableLayoutPanel10.Controls.Add(this.label93, 0, 0);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            // 
+            // label93
+            // 
+            this.label93.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.label93, "label93");
+            this.label93.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label93.Name = "label93";
             // 
             // panelConfirmBtnsStep5
             // 
@@ -3136,51 +3200,6 @@
             this.cmdResetStep5.GradientMode = CustomButton.LinearGradientMode.Horizontal;
             this.cmdResetStep5.Name = "cmdResetStep5";
             this.cmdResetStep5.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
-            // 
-            // lbResultAlarm
-            // 
-            resources.ApplyResources(this.lbResultAlarm, "lbResultAlarm");
-            this.lbResultAlarm.ForeColor = System.Drawing.Color.Red;
-            this.lbResultAlarm.Name = "lbResultAlarm";
-            // 
-            // lbResult
-            // 
-            resources.ApplyResources(this.lbResult, "lbResult");
-            this.lbResult.ForeColor = System.Drawing.Color.Red;
-            this.lbResult.Name = "lbResult";
-            // 
-            // lbResultBar
-            // 
-            resources.ApplyResources(this.lbResultBar, "lbResultBar");
-            this.lbResultBar.BackColor = System.Drawing.Color.DarkGray;
-            this.lbResultBar.Name = "lbResultBar";
-            // 
-            // picBoxResultImg
-            // 
-            resources.ApplyResources(this.picBoxResultImg, "picBoxResultImg");
-            this.picBoxResultImg.Name = "picBoxResultImg";
-            this.picBoxResultImg.TabStop = false;
-            // 
-            // panel19
-            // 
-            this.panel19.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
-            resources.ApplyResources(this.panel19, "panel19");
-            this.panel19.Controls.Add(this.tableLayoutPanel10);
-            this.panel19.Name = "panel19";
-            // 
-            // tableLayoutPanel10
-            // 
-            this.tableLayoutPanel10.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.tableLayoutPanel10, "tableLayoutPanel10");
-            this.tableLayoutPanel10.Controls.Add(this.label93, 0, 0);
-            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            // 
-            // label93
-            // 
-            this.label93.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.label93, "label93");
-            this.label93.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label93.Name = "label93";
             // 
             // label51
             // 
@@ -3393,11 +3412,12 @@
             this.panelResult.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
-            this.panel21.PerformLayout();
-            this.panelConfirmBtnsStep5.ResumeLayout(false);
+            this.tableLayoutPanel22.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).EndInit();
             this.panel19.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
+            this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -3686,7 +3706,6 @@
         private System.Windows.Forms.Label label76;
         private System.Windows.Forms.Label label73;
         private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.Label lbResultAlarm;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
         public CustomToggle.CustomToggle chkMotorAdvanceMode;
@@ -3740,6 +3759,9 @@
         public System.Windows.Forms.TableLayoutPanel panelConfirmBtnsStep5;
         public CustomButton.CustomButton cmdConfirmStep5;
         public CustomButton.CustomButton cmdResetStep5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Label label32;
     }
 }
 
