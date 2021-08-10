@@ -200,23 +200,29 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 上一頁
             formMain.lbPrePage.Click += PrePage_Click;
 
-            // 安裝方式力矩圖片顯示
-            formMain.optHorizontalUse.CheckedChanged += UpdateMomentPic;
-            formMain.optVerticalUse.CheckedChanged += UpdateMomentPic;
-            formMain.optWallHangingUse.CheckedChanged += UpdateMomentPic;
+            //// 安裝方式力矩圖片顯示
+            //formMain.optHorizontalUse.CheckedChanged += UpdateMomentPic;
+            //formMain.optVerticalUse.CheckedChanged += UpdateMomentPic;
+            //formMain.optWallHangingUse.CheckedChanged += UpdateMomentPic;
         }
 
-        private void UpdateMomentPic(object sender, EventArgs e) {
+        //private void UpdateMomentPic(object sender, EventArgs e) {
+            
+        //}
+
+        private void SteupMethod_CheckedChanged(object sender, EventArgs e) {
+            formMain.sideTable.Update(null, null);
+
+            // 變更力矩圖片
             if (formMain.optHorizontalUse.Checked)
                 formMain.picMoment.Image = Properties.Resources.moment_horizontal;
             else if (formMain.optWallHangingUse.Checked)
                 formMain.picMoment.Image = Properties.Resources.moment_wallHang;
             else if (formMain.optVerticalUse.Checked)
                 formMain.picMoment.Image = Properties.Resources.moment_vertical;
-        }
 
-        private void SteupMethod_CheckedChanged(object sender, EventArgs e) {
-            formMain.sideTable.Update(null, null);            
+            // 垂直不顯示力矩B
+            formMain.panelMomentB.Visible = !formMain.optVerticalUse.Checked;
         }
 
         private void PrePage_Click(object sender, EventArgs e) {

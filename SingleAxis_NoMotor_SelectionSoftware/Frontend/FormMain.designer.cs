@@ -267,19 +267,23 @@
             this.label63 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this.panelMoment = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.panel25 = new System.Windows.Forms.Panel();
             this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.txtMomentB = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
             this.txtMomentC = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.txtMomentA = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
+            this.panelMomentB = new System.Windows.Forms.Panel();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txtMomentB = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtMomentA = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.picMoment = new System.Windows.Forms.PictureBox();
             this.optHorizontalUse = new System.Windows.Forms.RadioButton();
             this.optVerticalUse = new System.Windows.Forms.RadioButton();
@@ -482,6 +486,10 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.panelSetup.SuspendLayout();
             this.panelMoment.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.panel25.SuspendLayout();
+            this.panelMomentB.SuspendLayout();
+            this.panel23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMoment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWallHangingUse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVerticalUse)).BeginInit();
@@ -2429,58 +2437,39 @@
             // 
             // panelMoment
             // 
+            this.panelMoment.Controls.Add(this.panel22);
             this.panelMoment.Controls.Add(this.label14);
-            this.panelMoment.Controls.Add(this.label17);
-            this.panelMoment.Controls.Add(this.label24);
-            this.panelMoment.Controls.Add(this.label31);
-            this.panelMoment.Controls.Add(this.label30);
-            this.panelMoment.Controls.Add(this.label28);
-            this.panelMoment.Controls.Add(this.label27);
-            this.panelMoment.Controls.Add(this.txtMomentB);
-            this.panelMoment.Controls.Add(this.label25);
-            this.panelMoment.Controls.Add(this.txtMomentC);
-            this.panelMoment.Controls.Add(this.label29);
-            this.panelMoment.Controls.Add(this.txtMomentA);
-            this.panelMoment.Controls.Add(this.label26);
             resources.ApplyResources(this.panelMoment, "panelMoment");
             this.panelMoment.Name = "panelMoment";
             // 
-            // label14
+            // panel22
             // 
-            this.label14.BackColor = System.Drawing.Color.DarkGray;
-            resources.ApplyResources(this.label14, "label14");
-            this.label14.Name = "label14";
+            this.panel22.Controls.Add(this.panel25);
+            this.panel22.Controls.Add(this.panelMomentB);
+            this.panel22.Controls.Add(this.panel23);
+            resources.ApplyResources(this.panel22, "panel22");
+            this.panel22.Name = "panel22";
             // 
-            // label17
+            // panel25
             // 
-            resources.ApplyResources(this.label17, "label17");
-            this.label17.Name = "label17";
-            // 
-            // label24
-            // 
-            resources.ApplyResources(this.label24, "label24");
-            this.label24.ForeColor = System.Drawing.Color.Red;
-            this.label24.Name = "label24";
-            this.label24.Tag = "txtMomentA";
-            // 
-            // label31
-            // 
-            resources.ApplyResources(this.label31, "label31");
-            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label31.Name = "label31";
-            // 
-            // label30
-            // 
-            resources.ApplyResources(this.label30, "label30");
-            this.label30.ForeColor = System.Drawing.Color.Red;
-            this.label30.Name = "label30";
-            this.label30.Tag = "txtMomentB";
+            this.panel25.Controls.Add(this.label28);
+            this.panel25.Controls.Add(this.txtMomentC);
+            this.panel25.Controls.Add(this.label27);
+            this.panel25.Controls.Add(this.label26);
+            resources.ApplyResources(this.panel25, "panel25");
+            this.panel25.Name = "panel25";
             // 
             // label28
             // 
             resources.ApplyResources(this.label28, "label28");
             this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label28.Name = "label28";
+            // 
+            // txtMomentC
+            // 
+            resources.ApplyResources(this.txtMomentC, "txtMomentC");
+            this.txtMomentC.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMomentC.Name = "txtMomentC";
             // 
             // label27
             // 
@@ -2489,11 +2478,57 @@
             this.label27.Name = "label27";
             this.label27.Tag = "txtMomentC";
             // 
+            // label26
+            // 
+            resources.ApplyResources(this.label26, "label26");
+            this.label26.Name = "label26";
+            // 
+            // panelMomentB
+            // 
+            this.panelMomentB.Controls.Add(this.label31);
+            this.panelMomentB.Controls.Add(this.txtMomentB);
+            this.panelMomentB.Controls.Add(this.label30);
+            this.panelMomentB.Controls.Add(this.label29);
+            resources.ApplyResources(this.panelMomentB, "panelMomentB");
+            this.panelMomentB.Name = "panelMomentB";
+            // 
+            // label31
+            // 
+            resources.ApplyResources(this.label31, "label31");
+            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label31.Name = "label31";
+            // 
             // txtMomentB
             // 
             resources.ApplyResources(this.txtMomentB, "txtMomentB");
             this.txtMomentB.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtMomentB.Name = "txtMomentB";
+            // 
+            // label30
+            // 
+            resources.ApplyResources(this.label30, "label30");
+            this.label30.ForeColor = System.Drawing.Color.Red;
+            this.label30.Name = "label30";
+            this.label30.Tag = "txtMomentB";
+            // 
+            // label29
+            // 
+            resources.ApplyResources(this.label29, "label29");
+            this.label29.Name = "label29";
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.label17);
+            this.panel23.Controls.Add(this.label25);
+            this.panel23.Controls.Add(this.label24);
+            this.panel23.Controls.Add(this.txtMomentA);
+            resources.ApplyResources(this.panel23, "panel23");
+            this.panel23.Name = "panel23";
+            // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
             // 
             // label25
             // 
@@ -2501,16 +2536,12 @@
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.label25.Name = "label25";
             // 
-            // txtMomentC
+            // label24
             // 
-            resources.ApplyResources(this.txtMomentC, "txtMomentC");
-            this.txtMomentC.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtMomentC.Name = "txtMomentC";
-            // 
-            // label29
-            // 
-            resources.ApplyResources(this.label29, "label29");
-            this.label29.Name = "label29";
+            resources.ApplyResources(this.label24, "label24");
+            this.label24.ForeColor = System.Drawing.Color.Red;
+            this.label24.Name = "label24";
+            this.label24.Tag = "txtMomentA";
             // 
             // txtMomentA
             // 
@@ -2518,10 +2549,11 @@
             this.txtMomentA.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtMomentA.Name = "txtMomentA";
             // 
-            // label26
+            // label14
             // 
-            resources.ApplyResources(this.label26, "label26");
-            this.label26.Name = "label26";
+            this.label14.BackColor = System.Drawing.Color.DarkGray;
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.Name = "label14";
             // 
             // picMoment
             // 
@@ -3359,7 +3391,13 @@
             this.panelSetup.ResumeLayout(false);
             this.panelSetup.PerformLayout();
             this.panelMoment.ResumeLayout(false);
-            this.panelMoment.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
+            this.panelMomentB.ResumeLayout(false);
+            this.panelMomentB.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMoment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWallHangingUse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVerticalUse)).EndInit();
@@ -3762,6 +3800,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Panel panel25;
+        private System.Windows.Forms.Panel panel23;
+        public System.Windows.Forms.Panel panelMomentB;
     }
 }
 

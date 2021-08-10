@@ -38,7 +38,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.moment_A = 0;
                 model.moment_B = 0;
                 model.moment_C = 0;
-            }
+            }            
 
             if (condition.vMaxCalcMode == Condition.CalcVmax.Max) {
                 if (model.isUseBaltCalc) {

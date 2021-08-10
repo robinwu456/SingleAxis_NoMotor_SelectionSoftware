@@ -190,15 +190,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         formMain.dgvRecommandList.Rows[index].Cells["加速度"].Value = model.accelSpeed;
                         formMain.dgvRecommandList.Rows[index].Cells["最大行程"].Value = model.maxStroke;
                         formMain.dgvRecommandList.Rows[index].Cells["運行時間"].Value = model.moveTime;
+                        formMain.dgvRecommandList.Rows[index].Cells["力矩A"].Value = model.moment_A;
+                        formMain.dgvRecommandList.Rows[index].Cells["力矩B"].Value = model.moment_B;
+                        formMain.dgvRecommandList.Rows[index].Cells["力矩C"].Value = model.moment_C;
+                        // 推桿式不顯示力矩
                         if (model.modelType.IsRodType()) {
                             formMain.dgvRecommandList.Rows[index].Cells["力矩A"].Value = "-";
                             formMain.dgvRecommandList.Rows[index].Cells["力矩B"].Value = "-";
                             formMain.dgvRecommandList.Rows[index].Cells["力矩C"].Value = "-";
-                        } else {
-                            formMain.dgvRecommandList.Rows[index].Cells["力矩A"].Value = model.moment_A;
-                            formMain.dgvRecommandList.Rows[index].Cells["力矩B"].Value = model.moment_B;
-                            formMain.dgvRecommandList.Rows[index].Cells["力矩C"].Value = model.moment_C;
                         }
+                        // 垂直不顯示力矩B
+                        if (formMain.page2.runCondition.curCondition.setupMethod == Model.SetupMethod.垂直)
+                            formMain.dgvRecommandList.Rows[index].Cells["力矩B"].Value = "-";
                         formMain.dgvRecommandList.Rows[index].Cells["力矩警示"].Value = model.isMomentVerifySuccess ? "Pass" : "Fail";
                         formMain.dgvRecommandList.Rows[index].Cells["馬達瓦數"].Value = model.usePower;
                         formMain.dgvRecommandList.Rows[index].Cells["皮帶馬達安全係數"].Value = model.beltMotorSafeCoefficient == -1 ? "無" : model.beltMotorSafeCoefficient.ToString();
@@ -346,13 +349,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 使用壽命時間
             string useTime = "";
             if (curModel.serviceLifeTime.year >= 10) {
-                //useTime = "10年以上";
                 useTime = "10年↑";
             } else {
                 if (curModel.serviceLifeTime.year > 0)
                     useTime += curModel.serviceLifeTime.year + "年";
-                //if (curModel.serviceLifeTime.month > 0)
-                //    useTime += curModel.serviceLifeTime.month + "個月";
             }
             // 使用壽命距離
             string useDistance = "";
@@ -360,46 +360,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 useDistance = "Error";
             else {
                 if (curModel.serviceLifeDistance > 10000)
-                    //useDistance = "1萬公里以上";
-                    //useDistance = "10000公里以上";
                     useDistance = "10000km↑";
                 else
-                    //useDistance = ((float)curModel.serviceLifeDistance / 10000f).ToString("#0.0") + "萬公里";
-                    //useDistance = (float)curModel.serviceLifeDistance + "公里";
                     useDistance = (int)curModel.serviceLifeDistance + "km";
             }
-            //Dictionary<string, string> item = new Dictionary<string, string>();
-            //if (formMain.page2.curSelectModelType.IsBeltType() && curModel.beltMotorSafeCoefficient != -1 && curModel.beltSafeCoefficient != -1)
-            //    item = new Dictionary<string, string>() {
-            //        { "項次", curModel.name.ToString() + "-L" + curModel.lead.ToString() },
-            //        { "T_max安全係數", curModel.tMaxSafeCoefficient.ToString() },
-            //        { "皮帶馬達安全係數", curModel.beltMotorSafeCoefficient == -1 ? "null" : curModel.beltMotorSafeCoefficient.ToString() },
-            //        { "皮帶T_max安全係數", curModel.beltSafeCoefficient == -1 ? "null" : curModel.beltSafeCoefficient.ToString() },
-            //        { "力矩警示", curModel.isMomentVerifySuccess ? "Pass" : "Fail" },
-            //        { "運行距離", useDistance },
-            //        { "運行壽命", useTime },
-            //    };
-            //else
-            //    item = new Dictionary<string, string>() {
-            //        { "項次", curModel.name.ToString() + "-L" + curModel.lead.ToString() },
-            //        { "T_max安全係數", curModel.tMaxSafeCoefficient.ToString() },
-            //        { "力矩警示", curModel.isMomentVerifySuccess ? "Pass" : "Fail" },
-            //        { "運行距離", useDistance },
-            //        { "運行壽命", useTime },
-            //    };
-            //DataTable dt = new DataTable();
-            //dt.Columns.Add("Item");
-            //dt.Columns.Add("Value");
-            //foreach (var i in item) {
-            //    DataRow dr = dt.NewRow();
-            //    dr["Item"] = i.Key;
-            //    dr["Value"] = i.Value;
-            //    dt.Rows.Add(dr);
-            //}
-
-            //// 更新側邊欄數值
-            //formMain.sideTable.UpdateSelectedConditionValue("T_max安全係數", curModel.tMaxSafeCoefficient.ToString(), !redFontConditions["T_max安全係數"](curModel));
-            //formMain.sideTable.UpdateSelectedConditionValue("力矩警示", curModel.isMomentVerifySuccess ? "Pass" : "Fail", !redFontConditions["力矩警示"](curModel));
             formMain.sideTable.UpdateSelectedConditionValue("運行距離", useDistance, false);
             formMain.sideTable.UpdateSelectedConditionValue("運行壽命", useTime, useTime == "-");
 

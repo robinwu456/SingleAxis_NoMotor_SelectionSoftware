@@ -74,10 +74,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             foreach (PointF point in points)
                 formMain.chart.Series[0].Points.AddXY(Convert.ToDouble(point.X.ToString("#0.000")), Convert.ToDouble(point.Y.ToString("#0.000")));
 
-            //turningPoints = formMain.chart.Series[0].Points.Select(p => new PointF(
-            //    (float)chartArea.AxisX.ValueToPixelPosition(p.XValue),
-            //    (float)chartArea.AxisY.ValueToPixelPosition(p.YValues[0])
-            //)).ToArray();
+            //try {
+            //    // 轉換點座標
+            //    turningPoints = formMain.chart.Series[0].Points.Select(p => new PointF(
+            //        (float)chartArea.AxisX.ValueToPixelPosition(p.XValue),
+            //        (float)chartArea.AxisY.ValueToPixelPosition(p.YValues[0])
+            //    )).ToArray();
+            //    // 畫虛線
+            //    PaintChartArrow(null, new PaintEventArgs(formMain.chart.CreateGraphics(), new Rectangle(0, 0, 402, 279)));
+            //} catch (Exception ex) {
+            //    Console.WriteLine("虛線繪製錯誤：" + ex);
+            //}
 
             // 取圖資訊
             var chartInfo = formMain.page2.calc.GetChartInfo(curModel);
@@ -86,9 +93,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.lbRunTime.Text = "運行時間(s)：" + chartInfo.runTime;
             formMain.lbAccelSpeed.Text = "加速度(mm/s²)：" + chartInfo.accelSpeed;
             formMain.lbMaxSpeed.Text = "運行速度(mm/s)：" + chartInfo.maxSpeed;
-            formMain.lbCycleTime.Text = "往返時間(s)：" + chartInfo.cycleTime;
-
-            //PaintChartArrow(null, new PaintEventArgs(formMain.chart.CreateGraphics(), new Rectangle(0, 0, 402, 279)));
+            formMain.lbCycleTime.Text = "往返時間(s)：" + chartInfo.cycleTime;            
         }
 
         private float lineWidth = 1;

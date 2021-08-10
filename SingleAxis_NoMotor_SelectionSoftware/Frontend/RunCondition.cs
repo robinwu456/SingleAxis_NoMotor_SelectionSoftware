@@ -187,8 +187,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             curCondition.vMaxCalcMode = !formMain.chkAdvanceMode.Checked ? Condition.CalcVmax.Max : Condition.CalcVmax.Custom;
             // 力矩參數
             curCondition.moment_A = Convert.ToInt32(formMain.txtMomentA.Text);
-            curCondition.moment_B = Convert.ToInt32(formMain.txtMomentB.Text);
+            curCondition.moment_B = Convert.ToInt32(formMain.txtMomentB.Text);            
             curCondition.moment_C = Convert.ToInt32(formMain.txtMomentC.Text);
+            // 垂直力矩B固定為0
+            if (curCondition.setupMethod == Model.SetupMethod.垂直)
+                curCondition.moment_B = 0;
             // 行程
             curCondition.stroke = Convert.ToInt32(formMain.txtStroke.Text);
             // 荷重
