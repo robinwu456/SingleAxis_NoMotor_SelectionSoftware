@@ -11,6 +11,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,6 +22,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,9 +34,13 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>icon_0113_256_256_01_1CC_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Binarymission.WinForms.Controls.BinaryExplorerBar">
@@ -69,12 +77,21 @@
     <Compile Include="Backend\Calculation.cs" />
     <Compile Include="Backend\CalculationBase.cs" />
     <Compile Include="Backend\CalculationModel.cs" />
+    <Compile Include="Backend\TorqueConfirm\TorqueConfirm.cs" />
+    <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Belt.cs" />
+    <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Belt_減速機.cs" />
+    <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Belt_減速機2.cs" />
+    <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Belt_減速機4.cs" />
+    <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Belt_減速機構.cs" />
+    <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Belt_直接驅動.cs" />
+    <Compile Include="Backend\TorqueConfirm\TorqueConfirm_Screw.cs" />
     <Compile Include="CustomObjects\BeltWheel.cs" />
     <Compile Include="CustomObjects\CalcMoment.cs" />
     <Compile Include="Condition.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="CustomExtensions.cs" />
     <Compile Include="CustomObjects\SubBeltWheel.cs" />
+    <Compile Include="CustomScrollBar.cs" />
     <Compile Include="en.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -96,7 +113,6 @@
     <Compile Include="Frontend\CustomTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Frontend\ExplorerBar.cs" />
     <Compile Include="Frontend\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,26 +125,25 @@
     <Compile Include="Frontend\FormWaiting.designer.cs">
       <DependentUpon>FormWaiting.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frontend\Step2\ChartInfo.cs" />
-    <Compile Include="Frontend\Step2\EffectiveStroke.cs" />
-    <Compile Include="Frontend\Step2\GearRatio.cs" />
-    <Compile Include="Frontend\Step2\InputValidate.cs" />
-    <Compile Include="Frontend\Step2\Moment.cs" />
-    <Compile Include="Frontend\Step2\MotorPower.cs" />
-    <Compile Include="Frontend\Step2\RecommandList.cs" />
-    <Compile Include="Frontend\Step2\Repeatability.cs" />
-    <Compile Include="Frontend\Step2\RunCondition.cs" />
+    <Compile Include="Frontend\ChartInfo.cs" />
+    <Compile Include="Frontend\EffectiveStroke.cs" />
+    <Compile Include="Frontend\Img\ImgInit.cs" />
+    <Compile Include="Frontend\Img\ImgSwitch.cs" />
+    <Compile Include="Frontend\InputValidate.cs" />
+    <Compile Include="Frontend\ModelSelection.cs" />
+    <Compile Include="Frontend\MotorPower.cs" />
+    <Compile Include="Frontend\RecommandList.cs" />
+    <Compile Include="Frontend\RunCondition.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="CustomObjects\Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Frontend\SideTable.cs" />
-    <Compile Include="Frontend\Step1.cs" />
-    <Compile Include="Frontend\Step2\Step2.cs" />
-    <Compile Include="Frontend\Step3.cs" />
-    <Compile Include="Frontend\Step4.cs" />
-    <Compile Include="Frontend\Step5.cs" />
+    <Compile Include="Frontend\Page1.cs" />
+    <Compile Include="Frontend\Page2.cs" />
+    <Compile Include="Frontend\Page3.cs" />
     <Compile Include="Frontend\ToyoBorder.cs" />
+    <Compile Include="Test.cs" />
     <Compile Include="zh.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -159,6 +174,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>zh.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -391,6 +408,207 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_0113_256_256_01_1CC_icon.ico" />
+    <None Include="Resources\ModelPic\Y65L.png" />
+    <None Include="Resources\ModelPic\Y65D.png" />
+    <None Include="Resources\ModelPic\Y65.png" />
+    <None Include="Resources\ModelPic\Y50L.png" />
+    <None Include="Resources\ModelPic\Y50D.png" />
+    <None Include="Resources\ModelPic\Y50.png" />
+    <None Include="Resources\ModelPic\XYTH886-P.png" />
+    <None Include="Resources\ModelPic\XYTH880-P.png" />
+    <None Include="Resources\ModelPic\XYTH876-G.png" />
+    <None Include="Resources\ModelPic\XYTH876-A.png" />
+    <None Include="Resources\ModelPic\XYTH870-G.png" />
+    <None Include="Resources\ModelPic\XYTH870-A.png" />
+    <None Include="Resources\ModelPic\XYTH760-P.png" />
+    <None Include="Resources\ModelPic\XYTH760-G.png" />
+    <None Include="Resources\ModelPic\XYTH760-F.png" />
+    <None Include="Resources\ModelPic\XYTH760-A.png" />
+    <None Include="Resources\ModelPic\XYTH650-P.png" />
+    <None Include="Resources\ModelPic\XYTH650-A.png" />
+    <None Include="Resources\ModelPic\XYTB876-G.png" />
+    <None Include="Resources\ModelPic\XYTB876-A.png" />
+    <None Include="Resources\ModelPic\XYTB870-G.png" />
+    <None Include="Resources\ModelPic\XYTB870-A.png" />
+    <None Include="Resources\ModelPic\XYTB760-A.png" />
+    <None Include="Resources\ModelPic\XYTB650-A.png" />
+    <None Include="Resources\ModelPic\XYSGT432-A.png" />
+    <None Include="Resources\ModelPic\XYSGT430-A.png" />
+    <None Include="Resources\ModelPic\XYGT440-A.png" />
+    <None Include="Resources\ModelPic\XYGT432-A.png" />
+    <None Include="Resources\ModelPic\XYGT430-A.png" />
+    <None Include="Resources\ModelPic\XYGT321-A.png" />
+    <None Include="Resources\ModelPic\XYGT320-A.png" />
+    <None Include="Resources\ModelPic\XYGT210-A.png" />
+    <None Include="Resources\ModelPic\XYCGT321-A.png" />
+    <None Include="Resources\ModelPic\XYCGT320-A.png" />
+    <None Include="Resources\ModelPic\MH80.png" />
+    <None Include="Resources\ModelPic\MH65.png" />
+    <None Include="Resources\ModelPic\GTH12K.png" />
+    <None Include="Resources\ModelPic\GTH8K.png" />
+    <None Include="Resources\ModelPic\GTH5K.png" />
+    <None Include="Resources\ModelPic\GTH4K.png" />
+    <None Include="Resources\ModelPic\GTH3K.png" />
+    <None Include="Resources\ModelPic\GCY12.png" />
+    <None Include="Resources\ModelPic\GCY8.png" />
+    <None Include="Resources\ModelPic\GCY5.png" />
+    <None Include="Resources\ModelPic\GCY4.png" />
+    <None Include="Resources\ModelPic\GCH8S.png" />
+    <None Include="Resources\ModelPic\GCH5S.png" />
+    <None Include="Resources\ModelPic\ECH22M.png" />
+    <None Include="Resources\ModelPic\ECH17M.png" />
+    <None Include="Resources\ModelPic\DGTY5.png" />
+    <None Include="Resources\ModelPic\DGTY4.png" />
+    <None Include="Resources\ModelPic\DGTH5.png" />
+    <None Include="Resources\ModelPic\DGTH4.png" />
+    <None Include="Resources\ModelPic\DGTH3.png" />
+    <None Include="Resources\ModelPic\CSS20.png" />
+    <None Include="Resources\ModelPic\CSL8.png" />
+    <None Include="Resources\ModelPic\CSH20.png" />
+    <None Include="Resources\ModelPic\CSF20.png" />
+    <None Include="Resources\ModelPic\CHZ25.png" />
+    <None Include="Resources\ModelPic\CHZ20.png" />
+    <None Include="Resources\ModelPic\CHY2B-S150.png" />
+    <None Include="Resources\ModelPic\CHY2B-S150%28黑色%29.png" />
+    <None Include="Resources\ModelPic\CHY2B-S80.png" />
+    <None Include="Resources\ModelPic\CHY2B-S80%28黑色%29.png" />
+    <None Include="Resources\ModelPic\CHS2-S68.png" />
+    <None Include="Resources\ModelPic\CHS2-S40.png" />
+    <None Include="Resources\ModelPic\CHS2-S20.png" />
+    <None Include="Resources\ModelPic\CHS2-S12.png" />
+    <None Include="Resources\ModelPic\CHS2C-S20%28無塵%29.png" />
+    <None Include="Resources\ModelPic\CHG2.png" />
+    <None Include="Resources\ModelPic\CHB6T-S14%28三爪%29.png" />
+    <None Include="Resources\ModelPic\CHB6-S14.png" />
+    <None Include="Resources\ModelPic\CHB6-S11.png" />
+    <None Include="Resources\ModelPic\CGTY5.png" />
+    <None Include="Resources\ModelPic\CGTY4.png" />
+    <None Include="Resources\ModelPic\CGTH5.png" />
+    <None Include="Resources\ModelPic\CGTH4.png" />
+    <None Include="Resources\ModelPic\CGTH3.png" />
+    <None Include="Resources\ModelPic\CGCH5.png" />
+    <None Include="Resources\ModelPic\CGCH4.png" />
+    <None Include="Resources\ModelPic\CCB10.png" />
+    <None Include="Resources\NewPic\dataResultPic.png" />
+    <None Include="Resources\NewPic\beltModel.png" />
+    <None Include="Resources\NewPic\screwModel.png" />
+    <None Include="Resources\NewPic\slideModel_doubleSlide.png" />
+    <None Include="Resources\NewPic\slideModel_singleSlide.png" />
+    <None Include="Resources\NewPic\slideModel_GTYSlide.png" />
+    <None Include="Resources\NewPic\YLModel.png" />
+    <None Include="Resources\NewPic\slideModel_slide.png" />
+    <None Include="Resources\NewPic\toggleOn2_hover.png" />
+    <None Include="Resources\NewPic\toggleOn2_disable.png" />
+    <None Include="Resources\NewPic\toggleOn2.png" />
+    <None Include="Resources\NewPic\toggleOff2_hover.png" />
+    <None Include="Resources\NewPic\toggleOff2_disable.png" />
+    <None Include="Resources\NewPic\toggleOff2.png" />
+    <None Include="Resources\NewPic\selectionType_shape_normal.png" />
+    <None Include="Resources\NewPic\selectionType_model_normal.png" />
+    <None Include="Resources\NewPic\selectionType_shape_hover.png" />
+    <None Include="Resources\NewPic\selectionType_model_hover.png" />
+    <None Include="Resources\NewPic\toolTipMotorPic.PNG" />
+    <None Include="Resources\NewPic\toolTipIcon.PNG" />
+    <None Include="Resources\NewPic\bg_runCondition.png" />
+    <None Include="Resources\NewPic\bg_motor.png" />
+    <None Include="Resources\NewPic\YL_normal.png" />
+    <None Include="Resources\NewPic\YL_hover.png" />
+    <None Include="Resources\NewPic\YL_enabled.png" />
+    <None Include="Resources\NewPic\YD_normal.png" />
+    <None Include="Resources\NewPic\YD_hover.png" />
+    <None Include="Resources\NewPic\YD_enabled.png" />
+    <None Include="Resources\NewPic\Y_normal.png" />
+    <None Include="Resources\NewPic\Y_hover.png" />
+    <None Include="Resources\NewPic\Y_enabled.png" />
+    <None Include="Resources\NewPic\useEnv_standard_normal.png" />
+    <None Include="Resources\NewPic\useEnv_standard_hover.png" />
+    <None Include="Resources\NewPic\useEnv_standard_enabled.png" />
+    <None Include="Resources\NewPic\useEnv_dustfree_normal.png" />
+    <None Include="Resources\NewPic\useEnv_dustfree_hover.png" />
+    <None Include="Resources\NewPic\useEnv_dustfree_enabled.png" />
+    <None Include="Resources\NewPic\setup_wallHang_normal.png" />
+    <None Include="Resources\NewPic\setup_wallHang_hover.png" />
+    <None Include="Resources\NewPic\setup_wallHang_enabled.png" />
+    <None Include="Resources\NewPic\setup_vertical_normal.png" />
+    <None Include="Resources\NewPic\setup_vertical_hover.png" />
+    <None Include="Resources\NewPic\setup_vertical_enabled.png" />
+    <None Include="Resources\NewPic\setup_horizontal_normal.png" />
+    <None Include="Resources\NewPic\setup_horizontal_hover.png" />
+    <None Include="Resources\NewPic\setup_horizontal_enabled.png" />
+    <None Include="Resources\NewPic\scrollBarThumb2.png" />
+    <None Include="Resources\NewPic\scrollBarThumb_hover2.png" />
+    <None Include="Resources\NewPic\scrollBar2.png" />
+    <None Include="Resources\NewPic\moment_wallHang.png" />
+    <None Include="Resources\NewPic\moment_vertical.png" />
+    <None Include="Resources\NewPic\moment_horizontal.png" />
+    <None Include="Resources\NewPic\modelType_screw.png" />
+    <None Include="Resources\NewPic\modelType_belt.png" />
+    <None Include="Resources\NewPic\MG_normal.png" />
+    <None Include="Resources\NewPic\MG_hover.png" />
+    <None Include="Resources\NewPic\MG_enabled.png" />
+    <None Include="Resources\NewPic\M_normal.png" />
+    <None Include="Resources\NewPic\M_hover.png" />
+    <None Include="Resources\NewPic\M_enabled.png" />
+    <None Include="Resources\NewPic\GTY_normal.png" />
+    <None Include="Resources\NewPic\GTY_hover.png" />
+    <None Include="Resources\NewPic\GTY_enabled.png" />
+    <None Include="Resources\NewPic\GTH_normal.png" />
+    <None Include="Resources\NewPic\GTH_hover.png" />
+    <None Include="Resources\NewPic\GTH_enabled.png" />
+    <None Include="Resources\NewPic\GCH_normal.png" />
+    <None Include="Resources\NewPic\GCH_hover.png" />
+    <None Include="Resources\NewPic\GCH_enabled.png" />
+    <None Include="Resources\NewPic\ETH_normal.png" />
+    <None Include="Resources\NewPic\ETH_hover.png" />
+    <None Include="Resources\NewPic\ETH_enabled.png" />
+    <None Include="Resources\NewPic\ETB_normal.png" />
+    <None Include="Resources\NewPic\ETB_hover.png" />
+    <None Include="Resources\NewPic\ETB_enabled.png" />
+    <None Include="Resources\NewPic\ECH_normal.png" />
+    <None Include="Resources\NewPic\ECH_hover.png" />
+    <None Include="Resources\NewPic\ECH_enabled.png" />
+    <None Include="Resources\NewPic\ECB_normal.png" />
+    <None Include="Resources\NewPic\ECB_hover.png" />
+    <None Include="Resources\NewPic\ECB_enabled.png" />
+    <None Include="Resources\NewPic\bg_modelType_standard_screw.png" />
+    <None Include="Resources\NewPic\bg_modelType_standard_belt.png" />
+    <None Include="Resources\NewPic\bg_modelType_dustfree_screw.png" />
+    <None Include="Resources\NewPic\bg_modelType_dustfree_belt.png" />
+    <None Include="Resources\壁掛安裝.png" />
+    <None Include="Resources\垂直安裝.png" />
+    <None Include="Resources\水平安裝.png" />
+    <None Include="Resources\ComingSoon.jpg" />
+    <None Include="Resources\scrollBarThumb_hover.png" />
+    <None Include="Resources\scrollBarThumb.png" />
+    <None Include="Resources\scrollBar.png" />
+    <None Include="Resources\皮帶滑台.png" />
+    <None Include="Resources\GTYD1.png" />
+    <None Include="Resources\Y65L.png" />
+    <None Include="Resources\Y65D.png" />
+    <None Include="Resources\Y65.png" />
+    <None Include="Resources\螺桿滑台.png" />
+    <None Include="Resources\螢幕擷取畫面 2021-06-26 000419.png" />
+    <None Include="Resources\螢幕擷取畫面 2021-06-25 232457.png" />
+    <None Include="Resources\螢幕擷取畫面 2021-06-25 230653.png" />
+    <None Include="Resources\螢幕擷取畫面 2021-06-25 230600.png" />
+    <None Include="Resources\螢幕擷取畫面 2021-06-25 225632.png" />
+    <None Include="Resources\螢幕擷取畫面 2021-06-25 225614.png" />
+    <None Include="Resources\螢幕擷取畫面 2021-06-25 225553.png" />
+    <None Include="Resources\螢幕擷取畫面 2021-06-25 225533.png" />
+    <None Include="Resources\標準皮帶.png" />
+    <None Include="Resources\推桿式.png" />
+    <None Include="Resources\拉霸.png" />
+    <None Include="Resources\安裝方式.png" />
+    <None Include="Resources\一般環境1.png" />
+    <None Include="Resources\M系列.png" />
+    <None Include="Resources\GTYD2.png" />
+    <None Include="Resources\GTYD.png" />
+    <None Include="Resources\G2.png" />
+    <None Include="Resources\一般環境.png" />
+    <None Include="Resources\moment.jpg" />
+    <None Include="Resources\選型軟體.png" />
+    <None Include="Resources\動作選型.png" />
+    <None Include="Resources\型號選型.png" />
     <None Include="Resources\pdf.png" />
     <None Include="Resources\order.png" />
     <None Include="Resources\2D_3D.png" />

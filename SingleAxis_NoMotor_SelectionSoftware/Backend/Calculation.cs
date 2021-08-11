@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.IO;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Calculation : CalculationModel {
@@ -22,19 +23,19 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 使用環境
             con = con.Where(model => model.useEnvironment == condition.useEnvironment);
             // 機構型態
-            con = con.Where(model => model.modelType == condition.modelType);
+            con = con.Where(model => model.modelType == condition.modelType || condition.modelType == Model.ModelType.Null);
             // 安裝方式
             con = con.Where(model => model.supportedSetup.Contains(condition.setupMethod));
             // 重複定位精度(判斷螺桿、皮帶)
             con = con.Where(model => condition.RepeatabilityCondition(model.repeatability));
             // 單項計算
             if (condition.calcModel.model != null) {
-                // 單項計算減速比驗證
-                if (condition.reducerRatio.Keys.Contains(condition.calcModel.model)) {
-                    condition.calcModel.lead /= (float)condition.reducerRatio[condition.calcModel.model];
-                    condition.calcModel.lead = Convert.ToDouble(condition.calcModel.lead.ToString("#0.00"));
-                }
-                con = con.Where(model => model.name.Equals(condition.calcModel.model) && model.lead == condition.calcModel.lead);
+                //// 單項計算減速比驗證
+                //if (condition.reducerRatio.Keys.Contains(condition.calcModel.model)) {
+                //    condition.calcModel.lead /= (float)condition.reducerRatio[condition.calcModel.model];
+                //    condition.calcModel.lead = Convert.ToDouble(condition.calcModel.lead.ToString("#0.00"));
+                //}
+                con = con.Where(model => model.name.StartsWith(condition.calcModel.model) && model.lead == condition.calcModel.lead);
             }
 
             models = con.ToList();
@@ -127,11 +128,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (condition.curCheckedModel.model != null) {
                 // 減速比驗證
                 Func<Model, bool> predicate;
-                if (condition.reducerRatio.Keys.Contains(condition.curCheckedModel.model))
-                    // 包含減速比時，不判斷導程
-                    predicate = model => model.name == condition.curCheckedModel.model;
-                else
-                    predicate = model => model.name == condition.curCheckedModel.model && model.lead == condition.curCheckedModel.lead;
+                //if (condition.reducerRatio.Keys.Contains(condition.curCheckedModel.model))
+                //    // 包含減速比時，不判斷導程
+                //    predicate = model => model.name == condition.curCheckedModel.model;
+                //else
+                //    predicate = model => model.name == condition.curCheckedModel.model && model.lead == condition.curCheckedModel.lead;
+                predicate = model => model.name == condition.curCheckedModel.model && model.lead == condition.curCheckedModel.lead;
                 // Init打勾項目
                 if (resultModels.Any(predicate))
                     checkedModel = resultModels.First(model => model.name == condition.curCheckedModel.model && model.lead == condition.curCheckedModel.lead);
@@ -142,21 +144,88 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
 
             // 篩選條件
-            Dictionary<string, Func<Model, bool>> filterMap = new Dictionary<string, Func<Model, bool>>() {
-                { "超過最大行程", model => model.maxStroke >= condition.stroke },
-                { "超過最大荷重", model => model.maxLoad == -1 || model.maxLoad != -1 && model.maxLoad >= condition.load },
-                { "線速度過大", model => model.vMax <= model.vMax_max },
-                { "行程過短，建議可增加行程，或降低線速度", model => model.constantTime >= 0 },
-                { "運行時間過短，請增加運行時間", model => model.moveTime <= condition.moveTime },
-                { "未達希望壽命", model => model.serviceLifeTime.year >= condition.expectServiceLifeTime },
+            //Dictionary<string, Func<Model, bool>> filterMap = new Dictionary<string, Func<Model, bool>>() {
+            //    { "超過最大行程", model => model.maxStroke >= condition.stroke },
+            //    { "超過最大荷重", model => model.maxLoad == -1 || (model.maxLoad != -1 && model.maxLoad >= condition.load) || condition.curCheckedModel.model != null },
+            //    { "線速度過大", model => model.vMax <= model.vMax_max },
+            //    { "行程過短，建議可增加行程，或降低線速度", model => model.constantTime >= 0 },
+            //    { "運行時間過短，請增加運行時間", model => model.moveTime <= condition.moveTime },
+            //    { "未達希望壽命", model => model.serviceLifeTime.year >= condition.expectServiceLifeTime },
+            //    // 以下為之前會顯示紅色項目
+            //    { "T_max安全係數過低", model => model.tMaxSafeCoefficient >= Model.tMaxStandard },
+            //    { "皮帶馬達安全係數過低", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < Model.beltMotorStandard },
+            //    { "皮帶T_max安全係數過低", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_beltMotor },
+            //    { "力矩警示異常", model => model.isMomentVerifySuccess },
+            //};
+
+            Dictionary<string, Dictionary<string, Func<Model, object>>> filterMap = new Dictionary<string, Dictionary<string, Func<Model, object>>>() {
+                { "超過最大行程", new Dictionary<string, Func<Model, object>>(){
+                    { "Remark",    model => string.Format("最大行程: {0}", model.maxStroke) },
+                    { "Condition", model => model.maxStroke >= condition.stroke } } },
+                { "超過最大荷重", new Dictionary<string, Func<Model, object>>(){
+                    { "Remark",    model => string.Format("最大荷重: {0}", model.maxLoad) },
+                    //{ "Condition", model => model.maxLoad == -1 || (model.maxLoad != -1 && model.maxLoad >= condition.load) || condition.curCheckedModel.model != null } } },
+                    { "Condition", model => model.maxLoad == -1 || model.maxLoad != -1 && model.maxLoad >= condition.load } } },
+                //{ "線速度過大", new Dictionary<string, Func<Model, object>>(){
+                //    { "Remark",    model => string.Format("最大線速度: {0}", model.vMax_max) },
+                //    { "Condition", model => model.vMax <= model.vMax_max } } },
+                //{ "行程過短，建議可增加行程，或降低線速度", new Dictionary<string, Func<Model, object>>(){
+                //    { "Remark",    model => string.Empty },
+                //    { "Condition", model => model.constantTime >= 0 } } },
+                { "運行時間過短，請增加運行時間", new Dictionary<string, Func<Model, object>>(){
+                    { "Remark",    model => string.Format("計算運行時間: {0}", model.moveTime) },
+                    { "Condition", model => model.moveTime <= condition.moveTime } } },
+                { "未達希望壽命", new Dictionary<string, Func<Model, object>>(){
+                    { "Remark",    model => model.serviceLifeTime == (-1, -1, -1) ?
+                                            string.Format("每分鐘趟數過大") :
+                                            string.Format("希望壽命: {0}年, 計算壽命: {1}年{2}個月又{3}天", condition.expectServiceLifeTime, model.serviceLifeTime.year, model.serviceLifeTime.month, model.serviceLifeTime.day) },
+                    { "Condition", model => model.serviceLifeTime.year >= condition.expectServiceLifeTime } } },
+                // 以下為之前會顯示紅色項目
+                { "T_max安全係數過低", new Dictionary<string, Func<Model, object>>(){
+                    { "Remark",    model => string.Format("標準: 大於等於{0}, 計算值: {1}", model.isUseBaltCalc ? Model.tMaxStandard_beltMotor : Model.tMaxStandard, model.tMaxSafeCoefficient) },
+                    { "Condition", model => model.tMaxSafeCoefficient >= (model.isUseBaltCalc ? Model.tMaxStandard_beltMotor : Model.tMaxStandard) } } },
+                { "皮帶馬達安全係數過低", new Dictionary<string, Func<Model, object>>(){
+                    { "Remark",    model => string.Format("標準: 小於{0}, 計算值: {1}", Model.beltMotorStandard, model.beltMotorSafeCoefficient) },
+                    { "Condition", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < Model.beltMotorStandard } } },
+                { "皮帶T_max安全係數過低", new Dictionary<string, Func<Model, object>>(){
+                    { "Remark",    model => string.Format("標準: 大於等於{0}, 計算值: {1}", Model.tMaxStandard_belt, model.beltSafeCoefficient) },
+                    { "Condition", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_belt } } },
+                { "力矩警示異常", new Dictionary<string, Func<Model, object>>(){
+                    { "Remark",    model => "" },
+                    { "Condition", model => model.isMomentVerifySuccess } } },
             };
+
+            // log篩選
+            if (Directory.Exists(Config.LOG_FAIL_MODELS_FILENAME))
+                Directory.Delete(Config.LOG_FAIL_MODELS_FILENAME, true);
+            Directory.CreateDirectory(Config.LOG_FAIL_MODELS_FILENAME);
+            string logFilter = "";
+            foreach (Model model in resultModels) {
+                string curLog = "";
+                foreach (var con in filterMap) {
+                    string curFilterText = con.Key.Split('，')[0];
+                    if (!(bool)con.Value["Condition"](model))
+                        curLog += "、" + string.Format("{0}({1})", curFilterText, con.Value["Remark"](model).ToString());
+                }
+                if (curLog != string.Empty) {
+                    curLog = curLog.Remove(0, 1);
+                    logFilter += string.Format("{0}-L{1}：", model.name, model.lead) + curLog + Environment.NewLine;
+                    FileUtil.LogModelInfo(model, condition.setupMethod, false, Config.LOG_FAIL_MODELS_FILENAME + string.Format("{0}-L{1}", model.name, model.lead));
+                }
+            }            
+            FileUtil.FileWrite(Config.LOG_FILTER_FILENAME, logFilter);
+
+            // null訊息篩選
+            var errorFilter = filterMap.Where(filter => resultModels.Any(model => !(bool)filter.Value["Condition"](model))).Select(filter => filter.Key);
+            nullModelAlarmMsg = string.Join("、", errorFilter);
+            //List<string> errorMsg = new List<string>();
             foreach (var filter in filterMap) {
                 oldResultModelCount = resultModels.Count;
-                resultModels = resultModels.Where(filter.Value).ToList();
-                // 篩選訊息
-                if (resultModels.Count < oldResultModelCount)
-                    nullModelAlarmMsg += filter.Key + "|";
+                resultModels = resultModels.Where(model => condition.isTesting || (bool)filter.Value["Condition"](model)).ToList();
+                //if (resultModels.Count < oldResultModelCount)
+                //    errorMsg.Add(filter.Key);
             }
+            //nullModelAlarmMsg = string.Join("、", errorMsg);            
 
             // 驗證打勾項目是否還在列表裡
             if (checkedModel != null) {
@@ -190,8 +259,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             foreach (Model model in models) {
                 // 滑軌壽命計算            
                 model.slideTrackServiceLifeDistance = GetSlideTrackEstimatedLife(model, con);
-                // 螺桿壽命計算
-                model.screwServiceLifeDistance = GetScrewEstimatedLife(model, con);
+                if (!model.isUseBaltCalc)
+                    // 螺桿壽命計算
+                    model.screwServiceLifeDistance = GetScrewEstimatedLife(model, con);
                 // 扭矩計算
                 (bool is_tMax_OK, bool is_tRms_OK) confirmResult = TorqueConfirm(model, con);
                 model.is_tMax_OK = confirmResult.is_tMax_OK;
@@ -203,12 +273,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.accelSpeed *= 1000;
 
                 // 結果壽命
-                if (model.modelType.ToString().Contains("皮帶"))
+                if (model.modelType.IsBeltType())
                     // 皮帶型
                     model.serviceLifeDistance = model.slideTrackServiceLifeDistance;
-                else
-                    // 螺桿型滑軌、螺桿壽命取最小值
-                    model.serviceLifeDistance = Math.Min(model.slideTrackServiceLifeDistance, model.screwServiceLifeDistance);
+                else {
+                    if (model.modelType.IsRodType())
+                        // Y系列直接用螺桿壽命
+                        model.serviceLifeDistance = model.screwServiceLifeDistance;
+                    else
+                        // 螺桿型滑軌、螺桿壽命取最小值
+                        model.serviceLifeDistance = Math.Min(model.slideTrackServiceLifeDistance, model.screwServiceLifeDistance);
+                }
 
                 // 算壽命時間
                 model.serviceLifeTime = GetServiceLifeTime(model, con);
