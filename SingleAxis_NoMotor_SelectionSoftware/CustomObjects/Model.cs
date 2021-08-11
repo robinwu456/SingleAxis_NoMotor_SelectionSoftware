@@ -2,27 +2,73 @@
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Model {
-        public enum SetupMethod { Horizontal, WallHang, Vertical }
+        public enum SetupMethod { 
+            /// <summary>
+            /// 水平
+            /// </summary>
+            水平, 
+            /// <summary>
+            /// 橫掛
+            /// </summary>
+            橫掛, 
+            /// <summary>
+            /// 垂直
+            /// </summary>
+            垂直 
+        }
         public enum Moment { A, B, C }                                    // 力舉參數
         /// <summary>
         /// 傳動方式列舉
         /// </summary>
         public enum ModelType {
-            軌道內嵌式螺桿滑台,
-            軌道內嵌推桿式螺桿滑台,
-            標準螺桿滑台,
-            推桿式螺桿滑台,
-            標準皮帶滑台,
-            歐規皮帶滑台,
+            /// <summary>
+            /// 不限制
+            /// </summary>
+            Null,
+            GTH,
+            GTY,
+            ETH,
+            ETB,
+            M,
+            Y,
+            YL,
+            YD,
+            MG,
+            GCH,
+            ECH,
+            ECB
         }
-        public enum UseEnvironment { Standard, DustFree }
+
+        /// <summary>
+        /// 使用環境
+        /// </summary>
+        public enum UseEnvironment { 
+            /// <summary>
+            /// 標準
+            /// </summary>
+            標準, 
+            /// <summary>
+            /// 無塵
+            /// </summary>
+            無塵 
+        }
+
+        /// <summary>
+        /// 皮帶傳動方式
+        /// </summary>
+        public enum BeltCalcType {
+            減速機構,
+            減速機2,
+            減速機4,
+            直接驅動,
+        }
 
         /// <summary>
         /// 型號名稱
         /// </summary>
         public string name;
 
-        public UseEnvironment useEnvironment = UseEnvironment.Standard;
+        public UseEnvironment useEnvironment = UseEnvironment.標準;
 
         /// <summary>
         /// 總預估壽命(km)
@@ -41,7 +87,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <summary>
         /// 機構型態
         /// </summary>
-        public ModelType modelType = ModelType.標準螺桿滑台;
+        public ModelType modelType = ModelType.ETH;
+        /// <summary>
+        /// 是否套用皮帶公式
+        /// </summary>
+        public bool isUseBaltCalc = false;
+        /// <summary>
+        /// 皮帶傳動方式
+        /// </summary>
+        public BeltCalcType beltCalcType = BeltCalcType.減速機構;
 
         /// <summary>
         /// 滑軌預估壽命(km)
@@ -65,14 +119,22 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// </summary>
         public double w;
         /// <summary>
-        /// 加速區 Mr
+        /// Mr
         /// </summary>
-        public double mr;
+        public double mr, mr_a, mr_d;
 
         /// <summary>
         /// 加速區
         /// </summary>
         public double mp_a, my_a, p_a;
+        /// <summary>
+        /// 加速區 - 重力產生的扭矩
+        /// </summary>
+        public double gravityMp_a, gravityMy_a, gravityMr_a;
+        /// <summary>
+        /// 加速區 - 加速度產生的扭矩
+        /// </summary>
+        public double accelSpeedMp_a, accelSpeedMy_a, accelSpeedMr_a;
         /// <summary>
         /// 等速區 Mp
         /// </summary>
@@ -81,6 +143,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// 減速區 Mp
         /// </summary>
         public double mp_d, my_d, p_d;
+        /// <summary>
+        /// 減速區 - 重力產生的扭矩
+        /// </summary>
+        public double gravityMp_d, gravityMy_d, gravityMr_d;
+        /// <summary>
+        /// 減速區 - 加速度產生的扭矩
+        /// </summary>
+        public double accelSpeedMp_d, accelSpeedMy_d, accelSpeedMr_d;
 
         /// <summary>
         /// Velocity(速度) Vmax
@@ -117,6 +187,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// </summary>
         public int rpm;
         /// <summary>
+        /// 顯示的RPM
+        /// </summary>
+        public int showRpm;
+        /// <summary>
         /// 最大轉矩
         /// </summary>
         public double maxTorque;
@@ -128,6 +202,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// 額定轉矩
         /// </summary>
         public double ratedTorque;
+        /// <summary>
+        /// 馬達尺寸
+        /// </summary>
+        public int motorSize;
         #endregion
 
         #region 荷重資訊
@@ -392,7 +470,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <summary>
         /// 皮帶單位密度(g/mm寬*m長)
         /// </summary>
-        public double beltUnitDensity = 4;
+        public double beltUnitDensity;
         /// <summary>
         /// 皮帶重量(kg)
         /// </summary>
@@ -404,7 +482,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <summary>
         /// 負載慣量與力矩比
         /// </summary>
-        public double loadInertiaMomentRatio;
+        public int loadInertiaMomentRatio;
+        /// <summary>
+        /// 減速機轉動慣量
+        /// </summary>
+        public double reducerRotateInertia;
         /// <summary>
         /// 主動輪(馬達)轉速
         /// </summary>
@@ -414,21 +496,21 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// </summary>
         public int subWheelRpm;
         /// <summary>
-        /// 主動輪
+        /// 主動輪P1
         /// </summary>
-        public BeltWheel mainWheel;
+        public BeltWheel mainWheel_P1;
         /// <summary>
-        /// 從動輪1
+        /// 從動輪P2
         /// </summary>
-        public SubBeltWheel subWheel1;
+        public SubBeltWheel subWheel_P2;
         /// <summary>
-        /// 從動輪2
+        /// 從動輪P3
         /// </summary>
-        public SubBeltWheel subWheel2;
+        public SubBeltWheel subWheel_P3;
         /// <summary>
-        /// 從動輪3
+        /// 從動輪P4
         /// </summary>
-        public SubBeltWheel subWheel3;
+        public SubBeltWheel subWheel_P4;
         #endregion
 
         #region 各階段軸向外力

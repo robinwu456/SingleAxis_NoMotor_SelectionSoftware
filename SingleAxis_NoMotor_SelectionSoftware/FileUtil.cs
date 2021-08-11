@@ -31,6 +31,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
         }
 
+        public static void CheckFileIsOpen(this Form formMain, string fileName) {
+            // 檔案已開啟為1，測試總表
+            while (FileUtil.FileStatus.FileIsOpen(fileName) == 1) {
+                DialogResult stillContinue = MessageBox.Show(string.Format("[{0}]\n檔案已被開啟，確認關閉後按下確定。", new FileInfo(fileName).FullName), "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (stillContinue == DialogResult.No)
+                    formMain.Close();
+            }
+        }
+
         public static string FileRead(string fileName) {
             StringBuilder resultString = new StringBuilder();
 
@@ -66,7 +75,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (File.Exists(fileName))
                     File.Delete(fileName);
 
-                using (StreamWriter sw = File.AppendText(fileName)) {
+                //using (StreamWriter sw = StreamWriter(fileName, false, System.Text.Encoding.UTF8)) {
+                //    sw.WriteLine(content);
+                //}
+                using (StreamWriter sw = new StreamWriter(fileName, false, System.Text.Encoding.UTF8)) {
                     sw.WriteLine(content);
                 }
             } catch (Exception ex) {
@@ -139,11 +151,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
         }
 
-        public static void LogModelInfo(Model model) {
+        public static void LogModelInfo(Model model, Model.SetupMethod setupMethod, bool isSuccessModel, string fileName = "") {
             var result = new List<(string key, object value)>() {
                 ("型號", model.name),
                 ( "導程", model.lead ),
                 ( "移動行程", model.stroke ),
+                ( "安裝方式", setupMethod.ToString()),
                 ( "C(N) Dyn", model.c ),
                 ( "Moment(Nm)", "" ),
                 ( "  MR_C", model.mr_C ),
@@ -170,46 +183,28 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 ( "  A(mm)", model.moment_A ),
                 ( "  B(mm)", model.moment_B ),
                 ( "  B(mm)", model.moment_C ),
-                ( "加速區", "" ),
-                ( "  W", model.w ),
-                ( "  Mr", model.mr ),
-                ( "  Mp", model.mp_a ),
-                ( "  My", model.my_a ),
-                ( "  P_a", model.p_a ),
-                ( "等速區", "" ),
-                ( "  W", model.w ),
-                ( "  Mr", model.mr ),
-                ( "  Mp", model.mp_c ),
-                ( "  My", model.my_c ),
-                ( "  P_c", model.p_c ),
-                ( "減速區", "" ),
-                ( "  W", model.w ),
-                ( "  Mr", model.mr ),
-                ( "  Mp", model.mp_d ),
-                ( "  My", model.my_d ),
-                ( "  P_d", model.p_d ),
                 ( "平均負載Pm", model.pmSlide ),
                 ( "負荷係數Fw", model.fwSlide ),
                 ( "預估壽命L(km)", model.slideTrackServiceLifeDistance ),
                 ( "各階段軸向外力", "" ),
                 ( "  加速區外力(N)", " " ),
                 ( "    滾動摩擦", model.rollingFriction_accel ),
-                ( "    配件摩擦", model.mainWheel == null ? model.accessoriesFriction_accel : model.accessoriesFriction_belt_accel ),
+                ( "    配件摩擦", model.mainWheel_P1 == null ? model.accessoriesFriction_accel : model.accessoriesFriction_belt_accel ),
                 ( "    其他外力", model.otherForce_accel ),
                 ( "    合計", model.forceTotal_accel ),
                 ( "  等速區外力(N)", " " ),
                 ( "    滾動摩擦", model.rollingFriction_constant ),
-                ( "    配件摩擦", model.mainWheel == null ? model.accessoriesFriction_constant : model.accessoriesFriction_belt_constant ),
+                ( "    配件摩擦", model.mainWheel_P1 == null ? model.accessoriesFriction_constant : model.accessoriesFriction_belt_constant ),
                 ( "    其他外力", model.otherForce_constant ),
                 ( "    合計", model.forceTotal_constant ),
                 ( "  減速區外力(N)", " " ),
                 ( "    滾動摩擦", model.rollingFriction_decel ),
-                ( "    配件摩擦", model.mainWheel == null ? model.accessoriesFriction_decel : model.accessoriesFriction_belt_decel ),
+                ( "    配件摩擦", model.mainWheel_P1 == null ? model.accessoriesFriction_decel : model.accessoriesFriction_belt_decel ),
                 ( "    其他外力", model.otherForce_decel ),
                 ( "    合計", model.forceTotal_decel ),
                 ( "  停置區外力(N)", " " ),
                 ( "    滾動摩擦", model.rollingFriction_stop ),
-                ( "    配件摩擦", model.mainWheel == null ? model.accessoriesFriction_stop : model.accessoriesFriction_belt_stop ),
+                ( "    配件摩擦", model.mainWheel_P1 == null ? model.accessoriesFriction_stop : model.accessoriesFriction_belt_stop ),
                 ( "    其他外力", model.otherForce_stop ),
                 ( "    合計", model.forceTotal_stop ),
                 // 各階段馬達負擔扭矩
@@ -239,6 +234,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             var motorInfoScrew = new List<(string key, object value)>() {
                 ( "馬達能力預估-轉動慣量", "" ),
                 ( "  馬達", model.rotateInertia_motor ),
+                ( "  螺桿", model.rotateInertia_screw ),
                 ( "  水平移動體", model.rotateInertia_horizontalMove ),
                 ( "  聯軸器", model.rotateInertia_couplingItem ),
                 ( "  滾珠軸承", model.rotateInertia_ballBearing ),
@@ -282,35 +278,56 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 ( "    負荷係數", model.fwScrew ),
                 ( "    預估壽命(km)", model.screwServiceLifeDistance ),
             };
+            var momentScrew = new List<(string key, object value)>() {
+                ( "加速區", "" ),
+                ( "  W", model.w ),
+                ( "  Mr", model.mr ),
+                ( "  Mp", model.mp_a ),
+                ( "  My", model.my_a ),
+                ( "  P_a", model.p_a ),
+                ( "等速區", "" ),
+                ( "  W", model.w ),
+                ( "  Mr", model.mr ),
+                ( "  Mp", model.mp_c ),
+                ( "  My", model.my_c ),
+                ( "  P_c", model.p_c ),
+                ( "減速區", "" ),
+                ( "  W", model.w ),
+                ( "  Mr", model.mr ),
+                ( "  Mp", model.mp_d ),
+                ( "  My", model.my_d ),
+                ( "  P_d", model.p_d ),
+            };
             var beltInfo = new List<(string key, object value)>();
             var motorInfoBelt = new List<(string key, object value)>();
             var motorTorqueInfoBelt = new List<(string key, object value)>();
             var beltTorqueInfo = new List<(string key, object value)>();
-            if (model.mainWheel != null) {
+            var momentBelt = new List<(string key, object value)>();
+            if (model.subWheel_P3 != null) {
                 beltInfo = new List<(string key, object value)>() {
                     ( "主動輪資訊(P1)", "" ),
-                    ( "  輪徑(mm)", model.mainWheel.diameter ),
-                    ( "  皮帶輪寬度(mm)", model.mainWheel.width ),
-                    ( "  皮帶輪材質密度(kg/m^3)", model.mainWheel.materialDensity ),
-                    ( "  皮帶輪轉動慣量(kg‧mm^2)", model.mainWheel.rotateInertia ),
+                    ( "  輪徑(mm)", model.mainWheel_P1.diameter ),
+                    ( "  皮帶輪寬度(mm)", model.mainWheel_P1.width ),
+                    ( "  皮帶輪材質密度(kg/m^3)", model.mainWheel_P1.materialDensity ),
+                    ( "  皮帶輪轉動慣量(kg‧mm^2)", model.mainWheel_P1.rotateInertia ),
                     ( "從動輪資訊(P2)", "" ),
-                    ( "  輪徑(mm)", model.subWheel1.diameter ),
-                    ( "  皮帶輪寬度(mm)", model.subWheel1.width ),
-                    ( "  皮帶輪材質密度(kg/m^3)", model.subWheel1.materialDensity ),
-                    ( "  皮帶輪轉動慣量(kg‧mm^2)", model.subWheel1.rotateInertia ),
-                    ( "  從動皮帶輪轉動慣量(kg‧mm^2)", model.subWheel1.rotateInertia_subWheel ),
+                    ( "  輪徑(mm)", model.subWheel_P2.diameter ),
+                    ( "  皮帶輪寬度(mm)", model.subWheel_P2.width ),
+                    ( "  皮帶輪材質密度(kg/m^3)", model.subWheel_P2.materialDensity ),
+                    ( "  皮帶輪轉動慣量(kg‧mm^2)", model.subWheel_P2.rotateInertia ),
+                    ( "  從動皮帶輪轉動慣量(kg‧mm^2)", model.subWheel_P2.rotateInertia_subWheel ),
                     ( "從動輪資訊(P3)", "" ),
-                    ( "  輪徑(mm)", model.subWheel2.diameter ),
-                    ( "  皮帶輪寬度(mm)", model.subWheel2.width ),
-                    ( "  皮帶輪材質密度(kg/m^3)", model.subWheel2.materialDensity ),
-                    ( "  皮帶輪轉動慣量(kg‧mm^2)", model.subWheel2.rotateInertia ),
-                    ( "  從動皮帶輪轉動慣量(kg‧mm^2)", model.subWheel2.rotateInertia_subWheel ),
+                    ( "  輪徑(mm)", model.subWheel_P3.diameter ),
+                    ( "  皮帶輪寬度(mm)", model.subWheel_P3.width ),
+                    ( "  皮帶輪材質密度(kg/m^3)", model.subWheel_P3.materialDensity ),
+                    ( "  皮帶輪轉動慣量(kg‧mm^2)", model.subWheel_P3.rotateInertia ),
+                    ( "  從動皮帶輪轉動慣量(kg‧mm^2)", model.subWheel_P3.rotateInertia_subWheel ),
                     ( "從動輪資訊(P4)", "" ),
-                    ( "  輪徑(mm)", model.subWheel3.diameter ),
-                    ( "  皮帶輪寬度(mm)", model.subWheel3.width ),
-                    ( "  皮帶輪材質密度(kg/m^3)", model.subWheel3.materialDensity ),
-                    ( "  皮帶輪轉動慣量(kg‧mm^2)", model.subWheel3.rotateInertia ),
-                    ( "  從動皮帶輪轉動慣量(kg‧mm^2)", model.subWheel3.rotateInertia_subWheel ),
+                    ( "  輪徑(mm)", model.subWheel_P4.diameter ),
+                    ( "  皮帶輪寬度(mm)", model.subWheel_P4.width ),
+                    ( "  皮帶輪材質密度(kg/m^3)", model.subWheel_P4.materialDensity ),
+                    ( "  皮帶輪轉動慣量(kg‧mm^2)", model.subWheel_P4.rotateInertia ),
+                    ( "  從動皮帶輪轉動慣量(kg‧mm^2)", model.subWheel_P4.rotateInertia_subWheel ),
                     ( "皮帶輪加減速關係", "" ),
                     ( "  主動輪(馬達)轉速(rpm)", model.mainWheelRpm ),
                     ( "  從動輪(減速機)轉速(rpm)", model.subWheelRpm ),
@@ -354,8 +371,44 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     ( "  安全係數", model.beltSafeCoefficient ),
                     ( "  評估(本身具有3的安全係數)", model.is_belt_tMax_OK ? "OK" : "NG" ),
                 };
+                momentBelt = new List<(string key, object value)>() {
+                    ( "  W", model.w ),
+                    ( "加速區", "" ),
+                    ( "  重力產生的力矩", " " ),
+                    ( "    My", model.gravityMy_a ),
+                    ( "    Mr", model.gravityMr_a ),
+                    ( "    Mp", model.gravityMp_a ),                    
+                    ( "  加速度產生的力矩", " " ),
+                    ( "    My", model.accelSpeedMy_a ),
+                    ( "    Mr", model.accelSpeedMr_a ),
+                    ( "    Mp", model.accelSpeedMp_a ),                    
+                    ( "  加速區總力矩", " " ),
+                    ( "    ∑My", model.my_a ),
+                    ( "    ∑Mr", model.mr ),
+                    ( "    ∑Mp", model.mp_a ),                    
+                    ( "    P_a", model.p_a ),
+                    ( "等速區", "" ),
+                    ( "  My", model.my_c ),
+                    ( "  Mr", model.mr ),
+                    ( "  Mp", model.mp_c ),                    
+                    ( "  P_c", model.p_c ),
+                    ( "減速區", "" ),
+                    ( "  重力產生的力矩", " " ),
+                    ( "    My", model.gravityMy_d ),
+                    ( "    Mr", model.gravityMr_d ),
+                    ( "    Mp", model.gravityMp_d ),                    
+                    ( "  減速度產生的力矩", " " ),
+                    ( "    My", model.accelSpeedMy_d ),
+                    ( "    Mr", model.accelSpeedMr_d ),
+                    ( "    Mp", model.accelSpeedMp_d ),                    
+                    ( "  減速區總力矩", " " ),
+                    ( "    ∑My", model.my_d ),
+                    ( "    ∑Mr", model.mr ),
+                    ( "    ∑Mp", model.mp_d ),                    
+                    ( "    P_d", model.p_d ),
+                };
             }
-            if (model.mainWheel == null) {
+            if (model.subWheel_P3 == null) {
                 ///
                 /// 螺桿型
                 ///
@@ -363,6 +416,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 // 螺桿資訊
                 if (!model.modelType.ToString().Contains("皮帶"))                    
                     result.InsertRange(result.IndexOf(result.First(r => r.key == "Velocity")), screwInfo);
+                // 力矩計算
+                result.InsertRange(result.IndexOf(result.First(r => r.key == "平均負載Pm")), momentScrew);
                 // 馬達能力預估
                 result.InsertRange(result.IndexOf(result.First(r => r.key == "各階段軸向外力")), motorInfoScrew);
                 // 各階段馬達負擔扭矩
@@ -377,6 +432,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 /// 皮帶型
                 ///
 
+                // 力矩計算
+                result.InsertRange(result.IndexOf(result.First(r => r.key == "平均負載Pm")), momentBelt);
                 // 皮帶輪資訊
                 result.InsertRange(result.IndexOf(result.First(r => r.key == "Velocity")), beltInfo);
                 // 馬達能力預估
@@ -388,7 +445,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
 
             // 匯出總資訊
-            string printInfo = "";
+            string printInfo = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss.fff\r\n");
             foreach (var info in result) {
                 // 一階
                 if (info.value.ToString() == "")
@@ -400,7 +457,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 else
                     printInfo += info.key + "：" + info.value + "\r\n";
             }
-            FileWrite(Config.LOG_FILENAME, printInfo);
+
+            if (isSuccessModel)
+                FileWrite(Config.LOG_PARAM_FILENAME, printInfo);
+            else
+                FileWrite(fileName + ".log", printInfo);
         }
     }
 }
