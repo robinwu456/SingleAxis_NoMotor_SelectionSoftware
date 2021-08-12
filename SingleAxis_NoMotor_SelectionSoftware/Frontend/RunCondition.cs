@@ -301,9 +301,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 修正條件時，側邊欄壽命清除
             //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
                 //formMain.sideTable.ClearSelectedModelInfo();
-            formMain.page2.recommandList.Refresh();
-            formMain.page2.chartInfo.Clear();
-            formMain.sideTable.ClearSelectedModelInfo();
+
+            //formMain.page2.recommandList.Refresh();
+            //formMain.page2.chartInfo.Clear();
+            formMain.sideTable.ClearSelectedModelInfo();            
 
             // 修正條件時，下一步隱藏
             formMain.cmdConfirmStep2.Visible = false;

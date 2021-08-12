@@ -53,16 +53,19 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // scroll頁面觸發
             foreach (Control control in this.Controls.All()) {
                 if (control is ComboBox)
-                    control.MouseWheel += FormDetailedReport_MouseWheel;
-                if (!(control is DataGridView))
-                    control.MouseWheel += Control_MouseWheel;
+                    control.MouseWheel += DisabledComboBoxMouseWheel;
+                control.MouseWheel += Control_MouseWheel;
             }
         }
 
         private void Control_MouseWheel(object sender, MouseEventArgs e) {
-            explorerBar.Focus();
+            // check is hover on dgv
+            if (dgvRecommandList.ClientRectangle.Contains(dgvRecommandList.PointToClient(Control.MousePosition)))
+                dgvRecommandList.Focus();
+            else
+                explorerBar.Focus();
         }
-        private void FormDetailedReport_MouseWheel(object sender, EventArgs e) {
+        private void DisabledComboBoxMouseWheel(object sender, EventArgs e) {
             HandledMouseEventArgs ee = (HandledMouseEventArgs)e;
             ee.Handled = true;
         }

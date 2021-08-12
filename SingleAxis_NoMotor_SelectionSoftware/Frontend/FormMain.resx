@@ -949,7 +949,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,747,Absolute,747,Absolute,747,Absolute,747" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,748,Absolute,748,Absolute,748,Absolute,748" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 321</value>
@@ -964,7 +964,7 @@
     <value>panelSideTableSelections</value>
   </data>
   <data name="&gt;&gt;panelSideTableSelections.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.11, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.12, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;panelSideTableSelections.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -1021,7 +1021,7 @@
     <value>customPanel4</value>
   </data>
   <data name="&gt;&gt;customPanel4.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.11, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.12, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel4.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -1111,7 +1111,7 @@
     <value>customPanel3</value>
   </data>
   <data name="&gt;&gt;customPanel3.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.11, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.12, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel3.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -2509,7 +2509,7 @@
     <value>tabSideTableImg</value>
   </data>
   <data name="&gt;&gt;tabSideTableImg.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.11, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.12, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabSideTableImg.Parent" xml:space="preserve">
     <value>customPanel2</value>
@@ -2533,7 +2533,7 @@
     <value>customPanel2</value>
   </data>
   <data name="&gt;&gt;customPanel2.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.11, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.12, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel2.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -2590,7 +2590,7 @@
     <value>panelSideTable</value>
   </data>
   <data name="&gt;&gt;panelSideTable.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.11, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.12, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;panelSideTable.Parent" xml:space="preserve">
     <value>explorerBar</value>
@@ -3415,7 +3415,7 @@
     <value>customPanel1</value>
   </data>
   <data name="&gt;&gt;customPanel1.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.11, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.12, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel1.Parent" xml:space="preserve">
     <value>panel16</value>
@@ -3424,7 +3424,7 @@
     <value>0</value>
   </data>
   <data name="chart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 26</value>
+    <value>52, 63</value>
   </data>
   <data name="chart.Size" type="System.Drawing.Size, System.Drawing">
     <value>402, 279</value>
@@ -7158,7 +7158,7 @@
     <value>NoControl</value>
   </data>
   <data name="optHorizontalUse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>918, 61</value>
+    <value>912, 61</value>
   </data>
   <data name="optHorizontalUse.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 23</value>
@@ -7194,7 +7194,7 @@
     <value>NoControl</value>
   </data>
   <data name="optVerticalUse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>918, 118</value>
+    <value>912, 118</value>
   </data>
   <data name="optVerticalUse.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 23</value>
@@ -7230,7 +7230,7 @@
     <value>NoControl</value>
   </data>
   <data name="optWallHangingUse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>918, 89</value>
+    <value>912, 89</value>
   </data>
   <data name="optWallHangingUse.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 23</value>
@@ -8496,7 +8496,7 @@
     <value>tabModelType</value>
   </data>
   <data name="&gt;&gt;tabModelType.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.11, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.12, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabModelType.Parent" xml:space="preserve">
     <value>panelModelType</value>
@@ -9525,7 +9525,7 @@
     <value>31</value>
   </data>
   <data name="lbResult.Text" xml:space="preserve">
-    <value>GTY4 - L2 - 100</value>
+    <value>XXXX - LX - XXXX</value>
   </data>
   <data name="lbResult.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomLeft</value>
@@ -9987,7 +9987,7 @@
     <value>tabMain</value>
   </data>
   <data name="&gt;&gt;tabMain.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.11, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.12, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabMain.Parent" xml:space="preserve">
     <value>panel4</value>
