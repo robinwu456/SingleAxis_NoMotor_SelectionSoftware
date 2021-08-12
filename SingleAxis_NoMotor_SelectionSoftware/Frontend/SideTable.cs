@@ -149,13 +149,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void UpdateModeInfo(string model, double lead) {
-            if (model.StartsWith("MK") || model.StartsWith("MG"))
-                formMain.lbSideTableModelInfo.Text = string.Format("{0}-{1}", model.Split('-')[0], model.Split('-')[1]);
-            else {
-                if (model.Contains("-"))
-                    formMain.lbSideTableModelInfo.Text = string.Format("{0}-{1}{2}", model.Split('-')[0], formMain.page2.calc.GetLeadText(model, lead), lead);
-                else
-                    formMain.lbSideTableModelInfo.Text = string.Format("{0}-{1}{2}", model, formMain.page2.calc.GetLeadText(model, lead), lead);
+            try {
+                if (model.StartsWith("MK") || model.StartsWith("MG")) {
+                    int reducer = (int)lead;
+                    formMain.lbSideTableModelInfo.Text = string.Format("{0}-{1}", model.Split('-')[0], reducer.ToString("#00"));
+                } else {
+                    if (model.Contains("-"))
+                        formMain.lbSideTableModelInfo.Text = string.Format("{0}-{1}{2}", model.Split('-')[0], formMain.page2.calc.GetLeadText(model, lead), lead);
+                    else
+                        formMain.lbSideTableModelInfo.Text = string.Format("{0}-{1}{2}", model, formMain.page2.calc.GetLeadText(model, lead), lead);
+                }
+            } catch (Exception ex) {
+                Console.WriteLine(ex);
             }
         }
 

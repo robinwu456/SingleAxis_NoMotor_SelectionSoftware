@@ -17,10 +17,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public void Load() {
             // 結果型號
-            //formMain.lbResult.Text = string.Format("{0} - L{1} - {2}", 
-            //    formMain.page2.recommandList.curSelectModel.model, 
-            //    formMain.page2.recommandList.curSelectModel.lead, 
-            //    formMain.page2.effectiveStroke.effectiveStroke);
             string model = formMain.page2.recommandList.curSelectModel.model;
             double lead = formMain.page2.recommandList.curSelectModel.lead;
             if (model.StartsWith("MK") || model.StartsWith("MG"))
