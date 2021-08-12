@@ -303,7 +303,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 //formMain.sideTable.ClearSelectedModelInfo();
             formMain.page2.recommandList.Refresh();
             formMain.page2.chartInfo.Clear();
-            formMain.sideTable.ClearSelectedModelInfo();
+            formMain.sideTable.ClearSelectedModelInfo();            
 
             // 修正條件時，下一步隱藏
             formMain.cmdConfirmStep2.Visible = false;
