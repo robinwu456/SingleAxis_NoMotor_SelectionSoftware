@@ -92,7 +92,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.lbConstantTime.Text = "等速時間(s)：" + chartInfo.constantTime;
             formMain.lbRunTime.Text = "運行時間(s)：" + chartInfo.runTime;
             formMain.lbAccelSpeed.Text = "加速度(mm/s²)：" + chartInfo.accelSpeed;
-            formMain.lbMaxSpeed.Text = "運行速度(mm/s)：" + chartInfo.maxSpeed;
+            formMain.lbMaxSpeed.Text = "運行速度(mm/s)：" + (int)chartInfo.maxSpeed;
             formMain.lbCycleTime.Text = "往返時間(s)：" + chartInfo.cycleTime;            
         }
 
