@@ -584,6 +584,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             Model.UseEnvironment useEnvironment = (Model.UseEnvironment)Enum.Parse(typeof(Model.UseEnvironment), env);
             return useEnvironment;
         }
+
+        public string GetLeadText(string model, double lead) {
+            return modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString() == model && Convert.ToDouble(row["導程"].ToString()) == lead)["導程顯示"].ToString();
+        }
     }
 }
 

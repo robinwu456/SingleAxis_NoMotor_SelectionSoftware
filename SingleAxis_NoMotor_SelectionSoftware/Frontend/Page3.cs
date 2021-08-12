@@ -17,10 +17,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public void Load() {
             // 結果型號
-            formMain.lbResult.Text = string.Format("{0} - L{1} - {2}", 
-                formMain.page2.recommandList.curSelectModel.model, 
-                formMain.page2.recommandList.curSelectModel.lead, 
-                formMain.page2.effectiveStroke.effectiveStroke);
+            //formMain.lbResult.Text = string.Format("{0} - L{1} - {2}", 
+            //    formMain.page2.recommandList.curSelectModel.model, 
+            //    formMain.page2.recommandList.curSelectModel.lead, 
+            //    formMain.page2.effectiveStroke.effectiveStroke);
+            string model = formMain.page2.recommandList.curSelectModel.model;
+            double lead = formMain.page2.recommandList.curSelectModel.lead;
+            if (model.StartsWith("MK") || model.StartsWith("MG"))
+                formMain.lbResult.Text = string.Format("{0} - {1} - {2}", model.Split('-')[0], formMain.page2.effectiveStroke.effectiveStroke, model.Split('-')[1]);
+            else {
+                if (model.Contains("-"))
+                    formMain.lbResult.Text = string.Format("{0} - {1}{2} - {3}", model.Split('-')[0], formMain.page2.calc.GetLeadText(model, lead), lead, formMain.page2.effectiveStroke.effectiveStroke);
+                else
+                    formMain.lbResult.Text = string.Format("{0} - {1}{2} - {3}", model, formMain.page2.calc.GetLeadText(model, lead), lead, formMain.page2.effectiveStroke.effectiveStroke);
+            }
 
             // 結果圖片
             var img = Properties.Resources.ResourceManager.GetObject(formMain.page2.recommandList.curSelectModel.model, CultureInfo.InvariantCulture);
