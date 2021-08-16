@@ -175,11 +175,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 { "運行時間過短，請增加運行時間", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("計算運行時間: {0}", model.moveTime) },
                     { "Condition", model => model.moveTime <= condition.moveTime } } },
+                //{ "未達希望壽命", new Dictionary<string, Func<Model, object>>(){
+                //    { "Remark",    model => model.serviceLifeTime == (-1, -1, -1) ?
+                //                            string.Format("每分鐘趟數過大") :
+                //                            string.Format("希望壽命: {0}年, 計算壽命: {1}年{2}個月又{3}天", condition.expectServiceLifeTime, model.serviceLifeTime.year, model.serviceLifeTime.month, model.serviceLifeTime.day) },
+                //    { "Condition", model => model.serviceLifeTime.year >= condition.expectServiceLifeTime } } },
                 { "未達希望壽命", new Dictionary<string, Func<Model, object>>(){
-                    { "Remark",    model => model.serviceLifeTime == (-1, -1, -1) ?
-                                            string.Format("每分鐘趟數過大") :
-                                            string.Format("希望壽命: {0}年, 計算壽命: {1}年{2}個月又{3}天", condition.expectServiceLifeTime, model.serviceLifeTime.year, model.serviceLifeTime.month, model.serviceLifeTime.day) },
-                    { "Condition", model => model.serviceLifeTime.year >= condition.expectServiceLifeTime } } },
+                    { "Remark",    model => string.Format("希望壽命: {0}年, 計算壽命: {1}年{2}個月又{3}天", condition.expectServiceLifeTime, model.serviceLifeTime.year, model.serviceLifeTime.month, model.serviceLifeTime.day) },
+                    { "Condition", model => model.serviceLifeTime == (-1, -1, -1) || model.serviceLifeTime.year >= condition.expectServiceLifeTime } } },
+                { "每分鐘趟數過大", new Dictionary<string, Func<Model, object>>(){
+                    { "Remark",    model => string.Format("單趟時間: {0}", model.moveTime * 2) },
+                    { "Condition", model => model.serviceLifeTime != (-1, -1, -1) } } },
                 // 以下為之前會顯示紅色項目
                 { "T_max安全係數過低", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("標準: 大於等於{0}, 計算值: {1}", model.isUseBaltCalc ? Model.tMaxStandard_beltMotor : Model.tMaxStandard, model.tMaxSafeCoefficient) },
