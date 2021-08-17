@@ -43,7 +43,6 @@
             this.cmdZoom = new System.Windows.Forms.PictureBox();
             this.cmdClose = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabMain = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
             this.tabStart = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -375,6 +374,7 @@
             this.cmdResetStep5 = new CustomButton.CustomButton();
             this.label51 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -636,15 +636,6 @@
             this.panel4.Controls.Add(this.tabMain);
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.AutoPopDelay = 50000;
-            this.toolTip1.InitialDelay = 500;
-            this.toolTip1.IsBalloon = true;
-            this.toolTip1.ReshowDelay = 100;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "變更非標準馬達時請注意";
             // 
             // tabMain
             // 
@@ -968,7 +959,7 @@
             // pictureBox9
             // 
             resources.ApplyResources(this.pictureBox9, "pictureBox9");
-            this.pictureBox9.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_GTYSlide;
+            this.pictureBox9.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_singleSlide;
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.TabStop = false;
             // 
@@ -1059,7 +1050,7 @@
             // pictureBox14
             // 
             resources.ApplyResources(this.pictureBox14, "pictureBox14");
-            this.pictureBox14.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.YLModel;
+            this.pictureBox14.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.TabStop = false;
             // 
@@ -3254,6 +3245,15 @@
             this.label56.BackColor = System.Drawing.Color.LightGray;
             this.label56.Name = "label56";
             // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 50000;
+            this.toolTip1.InitialDelay = 500;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ReshowDelay = 100;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "變更非標準馬達時請注意";
+            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -3261,6 +3261,7 @@
             this.Controls.Add(this.panelBase);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMain";
+            this.Opacity = 0D;
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.Resize += new System.EventHandler(this.FormMain_Resize);
             this.panelBase.ResumeLayout(false);

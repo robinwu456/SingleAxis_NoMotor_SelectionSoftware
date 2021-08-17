@@ -43,6 +43,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (control is TextBox) {
                     TextBox txt = control as TextBox;
                     txt.KeyPress += InputCondition_KeyPress;
+                    txt.Validating += InputCondition_Validating;
+                    txt.KeyDown += InputCondition_KeyDown;
                 }
             }
 
@@ -160,7 +162,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //    formMain.labelLoadAlarm.Text = "請輸入有效荷重";
 
             // 有效數值驗證
-            Control lbAlarm = formMain.panelCalc.Controls.All().First(c => c.Tag == txt.Name);
+            Control lbAlarm = formMain.panelCalc.Controls.All().Concat(formMain.panelMoment.Controls.All()).First(c => c.Tag == txt.Name);
             lbAlarm.Visible = !decimal.TryParse(txt.Text, out decimal value);
             //if (!decimal.TryParse(txt.Text, out value))
             //    e.Cancel = true;
@@ -179,7 +181,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //    formMain.labelLoadAlarm.Text = "請輸入有效荷重";
 
             // 有效數值驗證
-            Control lbAlarm = formMain.panelCalc.Controls.All().First(c => c.Tag == txt.Name);
+            Control lbAlarm = formMain.panelCalc.Controls.All().Concat(formMain.panelMoment.Controls.All()).First(c => c.Tag == txt.Name);
             lbAlarm.Visible = !decimal.TryParse(txt.Text, out decimal value);
         }
 
@@ -236,7 +238,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             bool isVerifySuccess = true;
 
             // TextBox數值有效驗證            
-            foreach (Control control in formMain.panelCalc.Controls.All()) {
+            foreach (Control control in formMain.panelCalc.Controls.All().Concat(formMain.panelMoment.Controls.All())) {
                 if (control is TextBox) {
                     TextBox txt = control as TextBox;
                     // show alarm

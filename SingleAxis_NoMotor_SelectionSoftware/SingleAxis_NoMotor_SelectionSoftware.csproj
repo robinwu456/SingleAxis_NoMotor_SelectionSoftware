@@ -7,7 +7,7 @@
     <ProjectGuid>{22BE4B2A-5695-4C07-B3BC-2C9203976B4D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>SingleAxis_NoMotor_SelectionSoftware</RootNamespace>
-    <AssemblyName>SingleAxis_NoMotor_SelectionSoftware</AssemblyName>
+    <AssemblyName>不帶電選型軟體</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

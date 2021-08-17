@@ -24,10 +24,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private string version;
         //private int trailVersionUseDays = 0;    // 試用版使用期限(天數)
-        private DateTime trailVersionDateTime = new DateTime(2021, 12, 31);
+        private DateTime trailVersionDateTime = new DateTime(2021, 8, 27);
 
         public FormMain() {
-            InitializeComponent();            
+            InitializeComponent();
 
             // 標題列
             ToyoBorder toyoBorder = new ToyoBorder(this);
@@ -88,7 +88,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //            page2.calc.modelTypeInfo = FileUtil.ReadCsv(Config.MODEL_TYPE_INFO_FILENAME);
             //        }
             //    }
-            //}
+            //}            
 
             // 取得當前版本
             Assembly assembly = Assembly.GetExecutingAssembly();
@@ -99,9 +99,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 到期日判斷
             //UseDaysLimit();
             VerifyDateTimeLimit();
+            Opacity = 100;
 
+            // 側邊欄隱藏
             panelSideTable.Anchor = AnchorStyles.Right;
             tabSideTableImg.Multiline = true;
+
         }
 
         private void FormMain_Resize(object sender, EventArgs e) {
