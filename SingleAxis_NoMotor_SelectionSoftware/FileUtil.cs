@@ -172,6 +172,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 ( "  Vmax(mm/s)", model.vMax ),
                 ( "  加減速時間(s)", model.accelTime ),
                 ( "  等速時間(s)", model.constantTime ),
+                ( "  停頓時間(s)", model.stopTime ),
                 ( "  加減速度(mm/s^2)", model.accelSpeed ),
                 ( "  總時間(s)", model.moveTime ),
                 ( "行程參數", "" ),

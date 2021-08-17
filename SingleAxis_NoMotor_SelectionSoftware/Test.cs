@@ -309,5 +309,30 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             MessageBox.Show("測試完成");
             Process.Start(new DirectoryInfo("./Test").FullName);
         }
+
+        //private DataTable ParseTestData(string fileName) {
+        //    DataTable dt = new DataTable();
+        //    string content = FileUtil.FileRead(fileName);
+        //    string[] rows = content.Replace("\r\n", "|").Split('|');
+        //    string[] columns = rows[0].Split(',');
+
+        //    // 新增欄位
+        //    foreach (string column in columns)
+        //        dt.Columns.Add();
+
+        //    // 資料匯入
+        //    for (int i = 1; i < rows.Length - 1; i++) {
+        //        // 空的則跳過
+        //        if (rows[i] == string.Empty)
+        //            continue;
+
+        //        DataRow newRow = dt.NewRow();
+        //        foreach (DataColumn column in dt.Columns)
+        //            newRow[column] = rows[i].Split(',')[dt.Columns.IndexOf(column)];
+        //        dt.Rows.Add(newRow);
+        //    }
+
+        //    return dt;
+        //}
     }
 }
