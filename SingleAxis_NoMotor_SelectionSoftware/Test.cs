@@ -22,13 +22,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //"./Test/現有測試數據/皮帶測試數據_減速機構_橫掛.csv",
             //"./Test/現有測試數據/皮帶測試數據_減速機構_垂直.csv",
 
-            "./Test/現有測試數據/皮帶測試數據_減速機2_水平.csv",
-            "./Test/現有測試數據/皮帶測試數據_減速機2_橫掛.csv",
-            "./Test/現有測試數據/皮帶測試數據_減速機2_垂直.csv",
+            //"./Test/現有測試數據/皮帶測試數據_減速機2_水平.csv",
+            //"./Test/現有測試數據/皮帶測試數據_減速機2_橫掛.csv",
+            //"./Test/現有測試數據/皮帶測試數據_減速機2_垂直.csv",
 
-            //"./Test/現有測試數據/皮帶測試數據_減速機4_水平.csv",
-            //"./Test/現有測試數據/皮帶測試數據_減速機4_橫掛.csv",
-            //"./Test/現有測試數據/皮帶測試數據_減速機4_垂直.csv",
+            "./Test/現有測試數據/皮帶測試數據_減速機4_水平.csv",
+            "./Test/現有測試數據/皮帶測試數據_減速機4_橫掛.csv",
+            "./Test/現有測試數據/皮帶測試數據_減速機4_垂直.csv",
 
             //"./Test/現有測試數據/皮帶測試數據_直接驅動_水平.csv",
             //"./Test/現有測試數據/皮帶測試數據_直接驅動_橫掛.csv",
@@ -77,6 +77,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             string resultLog_highDiff = "";
 
             curCalcIndex = 1;
+
+            List<string> dbNullModel = new List<string>();
 
             foreach (string fileName in testDataFileNames) {
                 //DataTable data = FileUtil.ReadCsv(fileName);
@@ -148,6 +150,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     // DB沒有的規格跳過
                     if (!formMain.page2.calc.modelInfo.Rows.Cast<DataRow>().Any(r => r["型號"].ToString() == con.calcModel.model && Convert.ToDouble(r["導程"].ToString()) == con.calcModel.lead)) {
                         Console.WriteLine("跳過{0}-L{1}", con.calcModel.model, con.calcModel.lead);
+                        dbNullModel.Add(string.Format("{0}-L{1}", con.calcModel.model, con.calcModel.lead));
                         curCalcIndex++;
                         continue;
                     }
@@ -323,19 +326,21 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     curCalcIndex++;
                 }
 
+                string strDBNullModel = "型號參數DB沒有的型號：\r\n" + string.Join("\r\n", dbNullModel);
+
                 if (fileName.Contains("螺桿"))
-                    resultLog_螺桿 += output + "\r\n";
-                else if (fileName.Contains("減速機構"))
-                    resultLog_減速機構 += output + "\r\n";
+                    resultLog_螺桿 += output + "\r\n\r\n" + strDBNullModel;
+                else if (fileName.Contains("減速機構")) 
+                    resultLog_減速機構 += output + "\r\n\r\n" + strDBNullModel;
                 else if (fileName.Contains("減速機2"))
-                    resultLog_減速機2 += output + "\r\n";
+                    resultLog_減速機2 += output + "\r\n\r\n\n" + strDBNullModel;
                 else if (fileName.Contains("減速機4"))
-                    resultLog_減速機4 += output + "\r\n";
+                    resultLog_減速機4 += output + "\r\n\r\n\n" + strDBNullModel;
                 else if (fileName.Contains("直接驅動"))
-                    resultLog_直接驅動 += output + "\r\n";
+                    resultLog_直接驅動 += output + "\r\n\r\n\n" + strDBNullModel;
 
                 if (hightDiffOutput != "")
-                    resultLog_highDiff += title + hightDiffOutput + "\r\n";
+                    resultLog_highDiff += title + hightDiffOutput + "\r\n\r\n\n" + strDBNullModel;
             }
 
             FileUtil.FileWrite(string.Format(outputFileName, "螺桿"), resultLog_螺桿);
