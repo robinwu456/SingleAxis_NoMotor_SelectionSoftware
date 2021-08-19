@@ -16,11 +16,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private string[] testDataFileNames = {
             //"./Test/現有測試數據/螺桿測試數據_水平.csv",
             //"./Test/現有測試數據/螺桿測試數據_橫掛.csv",
-            "./Test/現有測試數據/螺桿測試數據_垂直.csv",
+            //"./Test/現有測試數據/螺桿測試數據_垂直.csv",
 
-            //"./Test/現有測試數據/皮帶測試數據_減速機構_水平.csv",
-            //"./Test/現有測試數據/皮帶測試數據_減速機構_橫掛.csv",
-            //"./Test/現有測試數據/皮帶測試數據_減速機構_垂直.csv",
+            "./Test/現有測試數據/皮帶測試數據_減速機構_水平.csv",
+            "./Test/現有測試數據/皮帶測試數據_減速機構_橫掛.csv",
+            "./Test/現有測試數據/皮帶測試數據_減速機構_垂直.csv",
 
             //"./Test/現有測試數據/皮帶測試數據_減速機2_水平.csv",
             //"./Test/現有測試數據/皮帶測試數據_減速機2_橫掛.csv",
@@ -481,6 +481,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             idP4_width = 24;
             idRotateInertia_total = 87;
             idBeltSafeCoefficient = 130;
+
+            idReducerRpmRatio = 29;
         }
     }
 
