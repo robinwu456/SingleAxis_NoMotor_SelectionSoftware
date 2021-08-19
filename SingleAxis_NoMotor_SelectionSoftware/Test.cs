@@ -14,8 +14,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private string outputFileName = "./Test/Result_{0}.csv";
         //private string[] testDataFileNames = Directory.GetFiles("./Test/現有測試數據").Reverse().ToArray();
         private string[] testDataFileNames = {
-            "./Test/現有測試數據/螺桿測試數據_水平.csv",
-            "./Test/現有測試數據/螺桿測試數據_橫掛.csv",
+            //"./Test/現有測試數據/螺桿測試數據_水平.csv",
+            //"./Test/現有測試數據/螺桿測試數據_橫掛.csv",
             "./Test/現有測試數據/螺桿測試數據_垂直.csv",
 
             //"./Test/現有測試數據/皮帶測試數據_減速機構_水平.csv",

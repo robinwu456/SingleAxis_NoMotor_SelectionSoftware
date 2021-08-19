@@ -10,6 +10,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         // 滑軌壽命計算
         protected long GetSlideTrackEstimatedLife(Model model, Condition condition) {
+            //if (model.name == "ETH13" &&
+            //    model.lead == 32 &&
+            //    condition.setupMethod == Model.SetupMethod.垂直 &&
+            //    condition.load == 1 &&
+            //    condition.moment_A == 1050 &&
+            //    condition.moment_B == 0 &&
+            //    condition.moment_C == 0
+            //    )
+            //    Console.WriteLine(1);
+
             if (!condition.modelType.IsRodType())
                 if (!condition.isTesting)
                     // 力舉參數驗證

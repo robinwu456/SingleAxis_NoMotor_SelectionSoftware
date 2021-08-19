@@ -20,14 +20,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 首要篩選條件
             IEnumerable<Model> con = models;
-            // 使用環境
-            con = con.Where(model => model.useEnvironment == condition.useEnvironment);
-            // 機構型態
-            con = con.Where(model => model.modelType == condition.modelType || condition.modelType == Model.ModelType.Null);
-            // 安裝方式
-            con = con.Where(model => model.supportedSetup.Contains(condition.setupMethod));
-            // 重複定位精度(判斷螺桿、皮帶)
-            con = con.Where(model => condition.RepeatabilityCondition(model.repeatability));
+            // 非測試才做基本篩選
+            if (!condition.isTesting) {
+                // 使用環境
+                con = con.Where(model => model.useEnvironment == condition.useEnvironment);
+                // 機構型態
+                con = con.Where(model => model.modelType == condition.modelType || condition.modelType == Model.ModelType.Null);
+                // 安裝方式
+                con = con.Where(model => model.supportedSetup.Contains(condition.setupMethod));
+                // 重複定位精度(判斷螺桿、皮帶)
+                con = con.Where(model => condition.RepeatabilityCondition(model.repeatability));
+            }
             // 單項計算
             if (condition.calcModel.model != null) {
                 //// 單項計算減速比驗證
@@ -228,8 +231,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             foreach (var filter in filterMap) {
                 oldResultModelCount = resultModels.Count;
                 resultModels = resultModels.Where(model => condition.isTesting || (bool)filter.Value["Condition"](model)).ToList();
-                //if (resultModels.Count < oldResultModelCount)
-                //    errorMsg.Add(filter.Key);
+                // 測試log
+                if (resultModels.Count < oldResultModelCount && condition.isTesting)
+                    Console.WriteLine("測試失敗項目：" + filter.Key);
             }
             //nullModelAlarmMsg = string.Join("、", errorMsg);            
 
