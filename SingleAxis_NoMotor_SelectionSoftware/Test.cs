@@ -18,13 +18,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //"./Test/現有測試數據/螺桿測試數據_橫掛.csv",
             //"./Test/現有測試數據/螺桿測試數據_垂直.csv",
 
-            "./Test/現有測試數據/皮帶測試數據_減速機構_水平.csv",
-            "./Test/現有測試數據/皮帶測試數據_減速機構_橫掛.csv",
-            "./Test/現有測試數據/皮帶測試數據_減速機構_垂直.csv",
+            //"./Test/現有測試數據/皮帶測試數據_減速機構_水平.csv",
+            //"./Test/現有測試數據/皮帶測試數據_減速機構_橫掛.csv",
+            //"./Test/現有測試數據/皮帶測試數據_減速機構_垂直.csv",
 
-            //"./Test/現有測試數據/皮帶測試數據_減速機2_水平.csv",
-            //"./Test/現有測試數據/皮帶測試數據_減速機2_橫掛.csv",
-            //"./Test/現有測試數據/皮帶測試數據_減速機2_垂直.csv",
+            "./Test/現有測試數據/皮帶測試數據_減速機2_水平.csv",
+            "./Test/現有測試數據/皮帶測試數據_減速機2_橫掛.csv",
+            "./Test/現有測試數據/皮帶測試數據_減速機2_垂直.csv",
 
             //"./Test/現有測試數據/皮帶測試數據_減速機4_水平.csv",
             //"./Test/現有測試數據/皮帶測試數據_減速機4_橫掛.csv",
@@ -133,11 +133,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     else
                         modelName = row[col.idModel].ToString();
 
-                    double lead;
+                    double lead = -1;
                     if (fileName.Contains("螺桿"))
                         lead = Convert.ToDouble(row[col.idLead].ToString());
-                    else
-                        lead = Convert.ToDouble(formMain.page2.calc.modelInfo.Rows.Cast<DataRow>().First(r => r["型號"].ToString() == modelName)["導程"].ToString());                    
+                    else {
+                        try {
+                            lead = Convert.ToDouble(formMain.page2.calc.modelInfo.Rows.Cast<DataRow>().First(r => r["型號"].ToString() == modelName)["導程"].ToString());
+                        } catch (Exception ex) {
+                            Console.WriteLine("跳過{0}", modelName);
+                        }
+                    }
 
                     con.calcModel = (modelName, lead);
                     // DB沒有的規格跳過
