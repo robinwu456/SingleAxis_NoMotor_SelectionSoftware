@@ -21,7 +21,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //    Console.WriteLine(1);
 
             if (!condition.modelType.IsRodType())
-                if (!condition.isTesting)
+                if (condition.calcMode != Condition.CalcMode.Test)
                     // 力舉參數驗證
                     VerifyMomentParam(condition.moment_A, condition.moment_B, condition.moment_C);
 
@@ -49,77 +49,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.moment_A = 0;
                 model.moment_B = 0;
                 model.moment_C = 0;
-            }            
-
-            if (condition.vMaxCalcMode == Condition.CalcVmax.Max) {
-                if (model.isUseBaltCalc)
-                    model.vMax = GetBeltVmax_ms(model.name, model.lead, condition.stroke, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
-                else
-                    model.vMax = GetVmax_ms(model, model.lead, condition.stroke);
-            } else if (condition.vMaxCalcMode == Condition.CalcVmax.Custom) {
-                model.vMax = condition.vMax / 1000f;
-
-                // 非皮帶機構才判斷
-                if (!model.isUseBaltCalc && !condition.isTesting) {
-                    // RPM驗證
-                    int strokeRpm;
-                    int vMaxRpm = GetRpmByMMS(model.lead, model.vMax * 1000);
-                    strokeRpm = GetRpmByStroke(model.name, model.lead, condition.stroke);
-                    model.rpm = Math.Min(strokeRpm, vMaxRpm);
-                    model.vMax = RPM_TO_MMS(model.rpm, model.lead) / 1000f;
-                }
             }
 
-            // 取最高線速度
-            model.vMax_max = GetVmax_mms(model, model.lead, condition.stroke);
-
-            // 最大行程驗證
-            model.maxStroke = GetMaxStroke(model.name, model.lead);
-            if (condition.isTesting)
-                model.stroke = condition.stroke;
-            else
-                model.stroke = condition.stroke > model.maxStroke ? model.maxStroke : condition.stroke;
-            model.accelSpeed = condition.accelSpeed / 1000f;
-            model.load = condition.load;
-            // 最大荷重驗證            
-            model.maxLoad = GetMaxLoad(model.name, model.lead, condition);
-            if (condition.curCheckedModel.model == "") {
-                if (model.maxLoad != int.MaxValue && model.load > model.maxLoad)
-                    model.load = model.maxLoad;
-            }
-
-            if (model.accelSpeed != 0) {
-                model.accelTime = model.vMax / model.accelSpeed;
-            } else {
-                model.accelTime = condition.accelTime;
-            }
-
-            if (condition.stopTime != 0)
-                model.stopTime = condition.stopTime;
-
-            double recordVmax = model.vMax;
-            if (isCheckStrokeTooShort) {
-                // 行程過短驗證
-                if (strokeTooShortModifyItem == Converter.ModifyItem.Vmax)
-                    model.vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, model.vMax, model.accelTime, model.stroke);
-                else if (strokeTooShortModifyItem == Converter.ModifyItem.AccelSpeed)
-                    model.accelTime = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, model.vMax, model.accelTime, model.stroke);
-            }
-
-            // rpm修正
-            if (model.isUseBaltCalc)
-                model.rpm = GetBeltRPM(model.name, model.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
-            else
-                model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead);
-            model.showRpm = recordVmax == model.vMax ? GetRpmByStroke(model.name, model.lead, model.stroke) : GetRpmByMMS(model.lead, model.vMax * 1000);
-
-            // 小數點位數修正
-            model.accelSpeed = model.vMax / model.accelTime;
-            model.accelSpeed = Convert.ToDouble(model.accelSpeed.ToString("#0.000"));
-
-            model.decelTime = model.accelTime;
-            model.constantTime = ((2f * (float)model.stroke / 1000f / model.vMax) - model.accelTime - model.decelTime) / 2f;
-            model.moveTime = Convert.ToDouble((model.accelTime + model.constantTime + model.decelTime + model.stopTime).ToString("#0.000"));
+            // 移動資訊計算
+            VerifyMoveInfo(model, condition);
 
             CalcMoment calcMoment = new CalcMoment(model, condition.setupMethod);
             model.w = calcMoment.w;
@@ -174,59 +107,60 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         // 螺桿壽命計算
         protected long GetScrewEstimatedLife(Model model, Condition condition) {
-            // 使用者key
-            if (condition.vMaxCalcMode == Condition.CalcVmax.Max)
-                model.vMax = GetVmax_ms(model, model.lead, condition.stroke);
-            else if (condition.vMaxCalcMode == Condition.CalcVmax.Custom)
-                model.vMax = condition.vMax / 1000f;
+            //// 使用者key
+            //if (condition.vMaxCalcMode == Condition.CalcVmax.Max)
+            //    model.vMax = GetVmax_ms(model, model.lead, condition.stroke);
+            //else if (condition.vMaxCalcMode == Condition.CalcVmax.Custom)
+            //    model.vMax = condition.vMax / 1000f;
 
-            // RPM驗證
-            if (!condition.isTesting) {
-                int strokeRpm;
-                int vMaxRpm = GetRpmByMMS(model.lead, model.vMax * 1000);
-                strokeRpm = GetRpmByStroke(model.name, model.lead, condition.stroke);
-                model.rpm = Math.Min(strokeRpm, vMaxRpm);
-                model.vMax = RPM_TO_MMS(model.rpm, model.lead) / 1000f;
-            }
+            //// RPM驗證
+            //if (condition.calcMode != Condition.CalcMode.Test) {
+            //    int strokeRpm;
+            //    int vMaxRpm = GetRpmByMMS(model.lead, model.vMax * 1000);
+            //    strokeRpm = GetRpmByStroke(model.name, model.lead, condition.stroke);
+            //    model.rpm = Math.Min(strokeRpm, vMaxRpm);
+            //    model.vMax = RPM_TO_MMS(model.rpm, model.lead) / 1000f;
+            //}
 
-            // 取最高線速度
-            model.vMax_max = GetVmax_mms(model, model.lead, condition.stroke);
+            //// 取最高線速度
+            //model.vMax_max = GetVmax_mms(model, model.lead, condition.stroke);
 
-            // 最大行程驗證
-            model.maxStroke = GetMaxStroke(model.name, model.lead);
-            //model.stroke = conditions.stroke > model.maxStroke ? model.maxStroke : conditions.stroke;
-            if (condition.isTesting)
-                model.stroke = condition.stroke;
-            else
-                model.stroke = condition.stroke > model.maxStroke ? model.maxStroke : condition.stroke;
-            model.accelSpeed = condition.accelSpeed / 1000f;
-            model.load = condition.load;
-            // 最大荷重驗證
-            if (condition.curCheckedModel.model == "") {
-                double maxLoad = GetMaxLoad(model.name, model.lead, condition);
-                if (maxLoad != int.MaxValue && model.load > maxLoad)
-                    model.load = maxLoad;
-            }
+            //// 最大行程驗證
+            //model.maxStroke = GetMaxStroke(model.name, model.lead);
+            //if (condition.calcMode == Condition.CalcMode.Test)
+            //    model.stroke = condition.stroke;
+            //else
+            //    model.stroke = condition.stroke > model.maxStroke ? model.maxStroke : condition.stroke;
+            //model.accelSpeed = condition.accelSpeed / 1000f;
+            //model.load = condition.load;
+            //// 最大荷重驗證
+            //if (condition.curCheckedModel.model == "") {
+            //    if (condition.calcMode != Condition.CalcMode.CalcMax) {
+            //        double maxLoad = GetMaxLoad(model.name, model.lead, condition);
+            //        if (maxLoad != int.MaxValue && model.load > maxLoad)
+            //            model.load = maxLoad;
+            //    }
+            //}
 
-            if (model.accelSpeed != 0)
-                model.accelTime = model.vMax / model.accelSpeed;
-            else
-                model.accelTime = condition.accelTime;
+            //if (model.accelSpeed != 0)
+            //    model.accelTime = model.vMax / model.accelSpeed;
+            //else
+            //    model.accelTime = condition.accelTime;
 
-            if (isCheckStrokeTooShort) {
-                // 行程過短驗證
-                if (strokeTooShortModifyItem == Converter.ModifyItem.Vmax)
-                    model.vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, model.vMax, model.accelTime, model.stroke);
-                else if (strokeTooShortModifyItem == Converter.ModifyItem.AccelSpeed)
-                    model.accelTime = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, model.vMax, model.accelTime, model.stroke);
-            }
-            // 小數點位數修正
-            model.accelSpeed = model.vMax / model.accelTime;
-            model.accelSpeed = Convert.ToDouble(model.accelSpeed.ToString("#0.000"));
+            //if (isCheckStrokeTooShort) {
+            //    // 行程過短驗證
+            //    if (strokeTooShortModifyItem == Converter.ModifyItem.Vmax)
+            //        model.vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, model.vMax, model.accelTime, model.stroke);
+            //    else if (strokeTooShortModifyItem == Converter.ModifyItem.AccelSpeed)
+            //        model.accelTime = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, model.vMax, model.accelTime, model.stroke);
+            //}
+            //// 小數點位數修正
+            //model.accelSpeed = model.vMax / model.accelTime;
+            //model.accelSpeed = Convert.ToDouble(model.accelSpeed.ToString("#0.000"));
 
-            model.decelTime = model.accelTime;
-            model.constantTime = ((2f * (float)model.stroke / 1000f / model.vMax) - model.accelTime - model.decelTime) / 2f;
-            model.moveTime = Convert.ToDouble((model.accelTime + model.constantTime + model.decelTime + model.stopTime).ToString("#0.000"));
+            //model.decelTime = model.accelTime;
+            //model.constantTime = ((2f * (float)model.stroke / 1000f / model.vMax) - model.accelTime - model.decelTime) / 2f;
+            //model.moveTime = Convert.ToDouble((model.accelTime + model.constantTime + model.decelTime + model.stopTime).ToString("#0.000"));
 
             // 加速區外力
             model.rollingFriction_accel = model.p_a * model.c * 0.003;
@@ -338,6 +272,85 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //model.isMomentVerifySuccess = verifyValueA + verifyValueB + verifyValueC <= 1;
 
             model.isMomentVerifySuccess = true;
+        }
+
+        private void VerifyMoveInfo(Model model, Condition condition) {
+
+            // Vmax驗證
+            if (condition.vMaxCalcMode == Condition.CalcVmax.Max) {
+                if (model.isUseBaltCalc)
+                    model.vMax = GetBeltVmax_ms(model.name, model.lead, condition.stroke, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
+                else
+                    model.vMax = GetVmax_ms(model, model.lead, condition.stroke);
+            } else if (condition.vMaxCalcMode == Condition.CalcVmax.Custom) {
+                model.vMax = condition.vMax / 1000f;
+
+                // 非皮帶機構才判斷
+                if (!model.isUseBaltCalc && condition.calcMode == Condition.CalcMode.Normal) {
+                    // RPM驗證
+                    int strokeRpm;
+                    int vMaxRpm = GetRpmByMMS(model.lead, model.vMax * 1000);
+                    strokeRpm = GetRpmByStroke(model.name, model.lead, condition.stroke);
+                    model.rpm = Math.Min(strokeRpm, vMaxRpm);
+                    model.vMax = RPM_TO_MMS(model.rpm, model.lead) / 1000f;
+                }
+            }
+
+            // 取最高線速度
+            model.vMax_max = GetVmax_mms(model, model.lead, condition.stroke);
+
+            // 最大行程驗證
+            model.maxStroke = GetMaxStroke(model.name, model.lead);
+            if (condition.calcMode == Condition.CalcMode.Test)
+                model.stroke = condition.stroke;
+            else
+                model.stroke = condition.stroke > model.maxStroke ? model.maxStroke : condition.stroke;
+
+            // 荷重驗證
+            model.load = condition.load;            
+            model.maxLoad = GetMaxLoad(model.name, model.lead, condition);
+            if (condition.curCheckedModel.model == "")
+                if (model.maxLoad != int.MaxValue && model.load > model.maxLoad)
+                    model.load = model.maxLoad;
+
+            // 加速度/加速時間
+            if (condition.calcMode != Condition.CalcMode.CalcMax) {
+                model.accelSpeed = condition.accelSpeed / 1000f;
+                model.accelTime = model.accelSpeed != 0 ? model.vMax / model.accelSpeed : condition.accelTime;
+            } else {
+                model.accelSpeed = Math.Pow(model.vMax * 1000, 2) / model.stroke;   // mm/s^2
+                model.accelTime = model.vMax / model.accelSpeed * 1000;             // s
+            }
+
+            // 停等時間
+            if (condition.stopTime != 0)
+                model.stopTime = condition.stopTime;
+
+            double recordVmax = model.vMax;
+
+            // 行程過短驗證
+            if (isCheckStrokeTooShort) {                
+                if (strokeTooShortModifyItem == Converter.ModifyItem.Vmax)
+                    model.vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, model.vMax, model.accelTime, model.stroke);
+                else if (strokeTooShortModifyItem == Converter.ModifyItem.AccelSpeed)
+                    model.accelTime = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, model.vMax, model.accelTime, model.stroke);
+            }
+
+            // rpm修正
+            if (model.isUseBaltCalc)
+                model.rpm = GetBeltRPM(model.name, model.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
+            else
+                model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead);
+            model.showRpm = recordVmax == model.vMax ? GetRpmByStroke(model.name, model.lead, model.stroke) : GetRpmByMMS(model.lead, model.vMax * 1000);
+
+            // 小數點位數修正
+            model.accelSpeed = model.vMax / model.accelTime;
+            model.accelSpeed = Convert.ToDouble(model.accelSpeed.ToString("#0.000"));
+
+            model.decelTime = model.accelTime;
+            model.constantTime = ((2f * (float)model.stroke / 1000f / model.vMax) - model.accelTime - model.decelTime) / 2f;
+            model.moveTime = Convert.ToDouble((model.accelTime + model.constantTime + model.decelTime + model.stopTime).ToString("#0.000"));
+
         }
     }
 }

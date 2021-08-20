@@ -60,7 +60,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.isUseBaltCalc = beltInfo.Rows.Cast<DataRow>().Select(info => info["型號"].ToString()).Contains(model.name);
 
                 // 測試不判斷行程過短
-                isCheckStrokeTooShort = !condition.isTesting;
+                isCheckStrokeTooShort = condition.calcMode != Condition.CalcMode.Test;
 
                 // 皮帶資訊
                 if (model.isUseBaltCalc) {

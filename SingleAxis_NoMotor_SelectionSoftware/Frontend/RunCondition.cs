@@ -165,6 +165,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
                 if (formMain.txtMaxSpeed.Text.Contains("."))
                     formMain.txtMaxSpeed.Text = formMain.txtMaxSpeed.Text.Split('.')[0];
+
                 //if (formMain.page2.calc.IsContainsReducerRatio(formMain.cboModel.Text)) {
                 //    //string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text).Cells["columnReducerRatio"].Value.ToString();
                 //    string dgvReducerRatioValue = formMain.cboReducerRatio.Text;
@@ -220,11 +221,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 curCondition.accelSpeed = Convert.ToDouble(formMain.txtAccelSpeed.Text);
             else
                 curCondition.accelSpeed = 0;
-            // 傳動方式
-            if (formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType())
-                curCondition.RepeatabilityCondition = repeatability => repeatability >= 0.04;
-            else
-                curCondition.RepeatabilityCondition = repeatability => repeatability <= 0.01;
+            //// 傳動方式
+            //if (formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType())
+            //    curCondition.RepeatabilityCondition = repeatability => repeatability >= 0.04;
+            //else
+            //    curCondition.RepeatabilityCondition = repeatability => repeatability <= 0.01;
             // 馬達瓦數
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
                 // 全部計算只能標準或自訂

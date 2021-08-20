@@ -43,6 +43,7 @@
             this.cmdZoom = new System.Windows.Forms.PictureBox();
             this.cmdClose = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabMain = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
             this.tabStart = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -57,6 +58,7 @@
             this.label76 = new System.Windows.Forms.Label();
             this.tabContent = new System.Windows.Forms.TabPage();
             this.explorerBar = new System.Windows.Forms.Panel();
+            this.chkCalcAllMode = new System.Windows.Forms.CheckBox();
             this.panelNextPage = new System.Windows.Forms.Panel();
             this.panelConfirmBtnsStep2 = new System.Windows.Forms.TableLayoutPanel();
             this.cmdConfirmStep2 = new CustomButton.CustomButton();
@@ -207,6 +209,12 @@
             this.cboPower = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.cboMaxCalcMode = new System.Windows.Forms.ComboBox();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.txtMaxCalc = new System.Windows.Forms.TextBox();
+            this.label80 = new System.Windows.Forms.Label();
             this.chkExpectServiceLife = new CustomToggle.CustomToggle();
             this.panelAdvanceMode = new System.Windows.Forms.Panel();
             this.chkAdvanceMode = new CustomToggle.CustomToggle();
@@ -374,7 +382,6 @@
             this.cmdResetStep5 = new CustomButton.CustomButton();
             this.label51 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -475,6 +482,7 @@
             this.panelReducerParam.SuspendLayout();
             this.panelPowerSelection.SuspendLayout();
             this.panel14.SuspendLayout();
+            this.panel24.SuspendLayout();
             this.panelAdvanceMode.SuspendLayout();
             this.panelAdvanceParams.SuspendLayout();
             this.panelExpectServiceLifeTime.SuspendLayout();
@@ -637,6 +645,15 @@
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
             // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 50000;
+            this.toolTip1.InitialDelay = 500;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ReshowDelay = 100;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "變更非標準馬達時請注意";
+            // 
             // tabMain
             // 
             this.tabMain.Controls.Add(this.tabStart);
@@ -730,6 +747,7 @@
             // explorerBar
             // 
             resources.ApplyResources(this.explorerBar, "explorerBar");
+            this.explorerBar.Controls.Add(this.chkCalcAllMode);
             this.explorerBar.Controls.Add(this.panelNextPage);
             this.explorerBar.Controls.Add(this.panelSideTable);
             this.explorerBar.Controls.Add(this.lbPrePage);
@@ -741,6 +759,12 @@
             this.explorerBar.Controls.Add(this.panelModelType);
             this.explorerBar.Controls.Add(this.panelUseEnv);
             this.explorerBar.Name = "explorerBar";
+            // 
+            // chkCalcAllMode
+            // 
+            resources.ApplyResources(this.chkCalcAllMode, "chkCalcAllMode");
+            this.chkCalcAllMode.Name = "chkCalcAllMode";
+            this.chkCalcAllMode.UseVisualStyleBackColor = true;
             // 
             // panelNextPage
             // 
@@ -1968,6 +1992,7 @@
             // 
             this.panel14.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.bg_runCondition;
             resources.ApplyResources(this.panel14, "panel14");
+            this.panel14.Controls.Add(this.panel24);
             this.panel14.Controls.Add(this.chkExpectServiceLife);
             this.panel14.Controls.Add(this.panelAdvanceMode);
             this.panel14.Controls.Add(this.panelExpectServiceLifeTime);
@@ -2002,6 +2027,52 @@
             this.panel14.Controls.Add(this.label50);
             this.panel14.Controls.Add(this.labelStopTimeAlarm);
             this.panel14.Name = "panel14";
+            // 
+            // panel24
+            // 
+            resources.ApplyResources(this.panel24, "panel24");
+            this.panel24.BackColor = System.Drawing.Color.Transparent;
+            this.panel24.Controls.Add(this.cboMaxCalcMode);
+            this.panel24.Controls.Add(this.label70);
+            this.panel24.Controls.Add(this.label77);
+            this.panel24.Controls.Add(this.txtMaxCalc);
+            this.panel24.Controls.Add(this.label80);
+            this.panel24.Name = "panel24";
+            // 
+            // cboMaxCalcMode
+            // 
+            this.cboMaxCalcMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboMaxCalcMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMaxCalcMode.DropDownWidth = 180;
+            resources.ApplyResources(this.cboMaxCalcMode, "cboMaxCalcMode");
+            this.cboMaxCalcMode.ForeColor = System.Drawing.Color.White;
+            this.cboMaxCalcMode.FormattingEnabled = true;
+            this.cboMaxCalcMode.Name = "cboMaxCalcMode";
+            // 
+            // label70
+            // 
+            resources.ApplyResources(this.label70, "label70");
+            this.label70.Name = "label70";
+            // 
+            // label77
+            // 
+            resources.ApplyResources(this.label77, "label77");
+            this.label77.BackColor = System.Drawing.Color.Transparent;
+            this.label77.ForeColor = System.Drawing.Color.Red;
+            this.label77.Name = "label77";
+            this.label77.Tag = "txtMaxCalc";
+            // 
+            // txtMaxCalc
+            // 
+            resources.ApplyResources(this.txtMaxCalc, "txtMaxCalc");
+            this.txtMaxCalc.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMaxCalc.Name = "txtMaxCalc";
+            // 
+            // label80
+            // 
+            resources.ApplyResources(this.label80, "label80");
+            this.label80.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label80.Name = "label80";
             // 
             // chkExpectServiceLife
             // 
@@ -3245,15 +3316,6 @@
             this.label56.BackColor = System.Drawing.Color.LightGray;
             this.label56.Name = "label56";
             // 
-            // toolTip1
-            // 
-            this.toolTip1.AutoPopDelay = 50000;
-            this.toolTip1.InitialDelay = 500;
-            this.toolTip1.IsBalloon = true;
-            this.toolTip1.ReshowDelay = 100;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "變更非標準馬達時請注意";
-            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -3377,6 +3439,8 @@
             this.panelPowerSelection.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
             this.panelAdvanceMode.ResumeLayout(false);
             this.panelAdvanceParams.ResumeLayout(false);
             this.panelAdvanceParams.PerformLayout();
@@ -3805,6 +3869,13 @@
         private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.Panel panel23;
         public System.Windows.Forms.Panel panelMomentB;
+        public System.Windows.Forms.CheckBox chkCalcAllMode;
+        public System.Windows.Forms.Panel panel24;
+        public System.Windows.Forms.ComboBox cboMaxCalcMode;
+        private System.Windows.Forms.Label label70;
+        public System.Windows.Forms.Label label77;
+        public System.Windows.Forms.TextBox txtMaxCalc;
+        private System.Windows.Forms.Label label80;
     }
 }
 

@@ -23,6 +23,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public RecommandList recommandList;
         public EffectiveStroke effectiveStroke;
         public ModelSelection modelSelection;
+        public SearchAllMode searchAllMode;
 
         private FormMain formMain;
         private Thread threadCalc;
@@ -79,6 +80,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             recommandList = new RecommandList(formMain);
             // 有效行程
             effectiveStroke = new EffectiveStroke(formMain);
+            // 全選模式
+            searchAllMode = new SearchAllMode(formMain);
 
             //// 減速比
             //calc.reducerInfo.Rows.Cast<DataRow>().ToList().ForEach(row => {
@@ -333,13 +336,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 return;
 
             // 最後更新使用條件
-            runCondition.UpdateCondition(null, null);
+            if (formMain.chkCalcAllMode.Checked)
+                searchAllMode.UpdateCondition(null, null);
+            else
+                runCondition.UpdateCondition(null, null);
 
             threadCalc = new Thread(() => {
                 Thread.Sleep(100);
 
                 // 開始計算
-                var result = calc.GetRecommandResult(runCondition.curCondition);
+                var calcCon = formMain.chkCalcAllMode.Checked ? searchAllMode.curCondition : runCondition.curCondition;    // 計算條件
+                var result = calc.GetRecommandResult(calcCon);
                 // 規件規格
                 recommandList.curRecommandList = result["List"] as List<Model>;
                 // 回傳訊息

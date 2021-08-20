@@ -21,25 +21,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 首要篩選條件
             IEnumerable<Model> con = models;
             // 非測試才做基本篩選
-            if (!condition.isTesting) {
+            if (condition.calcMode != Condition.CalcMode.Test) {
                 // 使用環境
-                con = con.Where(model => model.useEnvironment == condition.useEnvironment);
-                // 機構型態
-                con = con.Where(model => model.modelType == condition.modelType || condition.modelType == Model.ModelType.Null);
+                con = con.Where(model => model.useEnvironment == condition.useEnvironment || condition.useEnvironment == Model.UseEnvironment.Null);
+
+                if (condition.calcMode == Condition.CalcMode.Normal)
+                    // 機構型態
+                    con = con.Where(model => model.modelType == condition.modelType || condition.modelType == Model.ModelType.Null);
+
                 // 安裝方式
                 con = con.Where(model => model.supportedSetup.Contains(condition.setupMethod));
-                // 重複定位精度(判斷螺桿、皮帶)
-                con = con.Where(model => condition.RepeatabilityCondition(model.repeatability));
             }
             // 單項計算
-            if (condition.calcModel.model != null) {
-                //// 單項計算減速比驗證
-                //if (condition.reducerRatio.Keys.Contains(condition.calcModel.model)) {
-                //    condition.calcModel.lead /= (float)condition.reducerRatio[condition.calcModel.model];
-                //    condition.calcModel.lead = Convert.ToDouble(condition.calcModel.lead.ToString("#0.00"));
-                //}
+            if (condition.calcModel.model != null)
                 con = con.Where(model => model.name.StartsWith(condition.calcModel.model) && model.lead == condition.calcModel.lead);
-            }
 
             models = con.ToList();
 
@@ -230,9 +225,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //List<string> errorMsg = new List<string>();
             foreach (var filter in filterMap) {
                 oldResultModelCount = resultModels.Count;
-                resultModels = resultModels.Where(model => condition.isTesting || (bool)filter.Value["Condition"](model)).ToList();
+                resultModels = resultModels.Where(model => condition.calcMode == Condition.CalcMode.Test || (bool)filter.Value["Condition"](model)).ToList();
                 // 測試log
-                if (resultModels.Count < oldResultModelCount && condition.isTesting)
+                if (resultModels.Count < oldResultModelCount && condition.calcMode == Condition.CalcMode.Test)
                     Console.WriteLine("測試失敗項目：" + filter.Key);
             }
             //nullModelAlarmMsg = string.Join("、", errorMsg);            

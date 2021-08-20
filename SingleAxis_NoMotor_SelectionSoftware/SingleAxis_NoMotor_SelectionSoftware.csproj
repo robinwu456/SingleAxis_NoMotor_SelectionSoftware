@@ -134,6 +134,7 @@
     <Compile Include="Frontend\MotorPower.cs" />
     <Compile Include="Frontend\RecommandList.cs" />
     <Compile Include="Frontend\RunCondition.cs" />
+    <Compile Include="Frontend\SearchAllMode.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="CustomObjects\Model.cs" />
     <Compile Include="Program.cs" />

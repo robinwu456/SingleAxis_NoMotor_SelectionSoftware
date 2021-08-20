@@ -127,7 +127,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 output += title;
                 foreach (DataRow row in data.Rows) {
                     Condition con = new Condition();
-                    con.isTesting = true;
+                    //con.isTesting = true;
+                    con.calcMode = Condition.CalcMode.Test;
 
                     string modelName;
                     if (row[col.idModel].ToString().IsContainsReducerRatioType()) {
@@ -170,7 +171,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     con.accelTime = Convert.ToDouble(row[col.idAccelTime].ToString());
                     con.stopTime = Convert.ToDouble(row[col.idStopTime].ToString());
                     //con.accelSpeed = Convert.ToDouble(row["加減速度"].ToString()) * 1000;
-                    con.RepeatabilityCondition = a => 1 > 0;
+                    //con.RepeatabilityCondition = a => 1 > 0;
                     con.useFrequence = new Condition.UseFrequence() {
                         // 趟/分
                         countPerMinute = 1,
