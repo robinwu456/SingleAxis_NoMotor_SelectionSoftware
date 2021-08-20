@@ -75,7 +75,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 最大行程驗證
             model.maxStroke = GetMaxStroke(model.name, model.lead);
-            model.stroke = condition.stroke > model.maxStroke ? model.maxStroke : condition.stroke;
+            if (condition.isTesting)
+                model.stroke = condition.stroke;
+            else
+                model.stroke = condition.stroke > model.maxStroke ? model.maxStroke : condition.stroke;
             model.accelSpeed = condition.accelSpeed / 1000f;
             model.load = condition.load;
             // 最大荷重驗證            
@@ -170,33 +173,37 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }        
 
         // 螺桿壽命計算
-        protected long GetScrewEstimatedLife(Model model, Condition conditions) {
+        protected long GetScrewEstimatedLife(Model model, Condition condition) {
             // 使用者key
-            if (conditions.vMaxCalcMode == Condition.CalcVmax.Max)
-                model.vMax = GetVmax_ms(model, model.lead, conditions.stroke);
-            else if (conditions.vMaxCalcMode == Condition.CalcVmax.Custom)
-                model.vMax = conditions.vMax / 1000f;
+            if (condition.vMaxCalcMode == Condition.CalcVmax.Max)
+                model.vMax = GetVmax_ms(model, model.lead, condition.stroke);
+            else if (condition.vMaxCalcMode == Condition.CalcVmax.Custom)
+                model.vMax = condition.vMax / 1000f;
 
             // RPM驗證
-            if (!conditions.isTesting) {
+            if (!condition.isTesting) {
                 int strokeRpm;
                 int vMaxRpm = GetRpmByMMS(model.lead, model.vMax * 1000);
-                strokeRpm = GetRpmByStroke(model.name, model.lead, conditions.stroke);
+                strokeRpm = GetRpmByStroke(model.name, model.lead, condition.stroke);
                 model.rpm = Math.Min(strokeRpm, vMaxRpm);
                 model.vMax = RPM_TO_MMS(model.rpm, model.lead) / 1000f;
             }
 
             // 取最高線速度
-            model.vMax_max = GetVmax_mms(model, model.lead, conditions.stroke);
+            model.vMax_max = GetVmax_mms(model, model.lead, condition.stroke);
 
             // 最大行程驗證
             model.maxStroke = GetMaxStroke(model.name, model.lead);
-            model.stroke = conditions.stroke > model.maxStroke ? model.maxStroke : conditions.stroke;
-            model.accelSpeed = conditions.accelSpeed / 1000f;
-            model.load = conditions.load;
+            //model.stroke = conditions.stroke > model.maxStroke ? model.maxStroke : conditions.stroke;
+            if (condition.isTesting)
+                model.stroke = condition.stroke;
+            else
+                model.stroke = condition.stroke > model.maxStroke ? model.maxStroke : condition.stroke;
+            model.accelSpeed = condition.accelSpeed / 1000f;
+            model.load = condition.load;
             // 最大荷重驗證
-            if (conditions.curCheckedModel.model == "") {
-                double maxLoad = GetMaxLoad(model.name, model.lead, conditions);
+            if (condition.curCheckedModel.model == "") {
+                double maxLoad = GetMaxLoad(model.name, model.lead, condition);
                 if (maxLoad != int.MaxValue && model.load > maxLoad)
                     model.load = maxLoad;
             }
@@ -204,7 +211,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (model.accelSpeed != 0)
                 model.accelTime = model.vMax / model.accelSpeed;
             else
-                model.accelTime = conditions.accelTime;
+                model.accelTime = condition.accelTime;
 
             if (isCheckStrokeTooShort) {
                 // 行程過短驗證
@@ -224,26 +231,26 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 加速區外力
             model.rollingFriction_accel = model.p_a * model.c * 0.003;
             model.inertialLoad_accel = (model.load + 3) * model.accelSpeed;
-            if (conditions.setupMethod == Model.SetupMethod.垂直)
+            if (condition.setupMethod == Model.SetupMethod.垂直)
                 model.otherForce_accel = model.load * 9.8;
             model.equivalentLoad_accel = Math.Abs(model.rollingFriction_accel + model.accessoriesFriction_accel + model.inertialLoad_accel + model.otherForce_accel);
 
             // 等速區外力
             model.rollingFriction_constant = model.p_c * model.c * 0.003;
             model.inertialLoad_constant = 0;
-            if (conditions.setupMethod == Model.SetupMethod.垂直)
+            if (condition.setupMethod == Model.SetupMethod.垂直)
                 model.otherForce_constant = model.load * 9.8;
             model.equivalentLoad_constant = Math.Abs(model.rollingFriction_constant + model.accessoriesFriction_constant + model.inertialLoad_constant + model.otherForce_constant);
 
             // 減速區外力
             model.rollingFriction_decel = model.p_d * model.c * 0.003;
             model.inertialLoad_decel = (model.load + 3) * model.accelSpeed * -1;
-            if (conditions.setupMethod == Model.SetupMethod.垂直)
+            if (condition.setupMethod == Model.SetupMethod.垂直)
                 model.otherForce_decel = model.load * 9.8;
             model.equivalentLoad_decel = Math.Abs(model.rollingFriction_decel + model.accessoriesFriction_decel + model.inertialLoad_decel + model.otherForce_decel);
 
             // 停等區外力
-            if (conditions.setupMethod == Model.SetupMethod.垂直)
+            if (condition.setupMethod == Model.SetupMethod.垂直)
                 model.otherForce_stop = model.load * 9.8;
 
             model.fwScrew = 1.2;

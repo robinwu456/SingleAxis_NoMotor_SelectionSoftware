@@ -333,15 +333,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 }                
 
                 if (fileName.Contains("螺桿"))
-                    resultLog_螺桿 += output + "\r\n";
+                    resultLog_螺桿 += output + "\r\n\r\n\r\n";
                 else if (fileName.Contains("減速機構")) 
-                    resultLog_減速機構 += output + "\r\n";
+                    resultLog_減速機構 += output + "\r\n\r\n\r\n";
                 else if (fileName.Contains("減速機2"))
-                    resultLog_減速機2 += output + "\r\n";
+                    resultLog_減速機2 += output + "\r\n\r\n\r\n";
                 else if (fileName.Contains("減速機4"))
-                    resultLog_減速機4 += output + "\r\n";
+                    resultLog_減速機4 += output + "\r\n\r\n\r\n";
                 else if (fileName.Contains("直接驅動"))
-                    resultLog_直接驅動 += output + "\r\n";
+                    resultLog_直接驅動 += output + "\r\n\r\n\r\n";
 
                 if (hightDiffOutput != "")
                     resultLog_highDiff += title + hightDiffOutput;
