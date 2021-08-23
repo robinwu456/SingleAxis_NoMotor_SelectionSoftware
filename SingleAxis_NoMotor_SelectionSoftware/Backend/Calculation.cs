@@ -143,7 +143,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     { "Condition", model => model.maxStroke >= condition.stroke || condition.calcMode == Condition.CalcMode.CalcMax } } },
                 { "超過最大荷重", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("最大荷重: {0}", model.maxLoad) },
-                    { "Condition", model => model.maxLoad == -1 || model.maxLoad != -1 && model.maxLoad >= condition.load } } },
+                    { "Condition", model => model.maxLoad == -1 || model.maxLoad != -1 && model.maxLoad >= condition.load || condition.calcMode == Condition.CalcMode.CalcMax } } },
                 { "運行時間過短，請增加運行時間", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("計算運行時間: {0}", model.moveTime) },
                     { "Condition", model => model.moveTime <= condition.moveTime } } },

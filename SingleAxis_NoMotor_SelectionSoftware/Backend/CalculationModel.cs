@@ -11,7 +11,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         // 滑軌壽命計算
         protected long GetSlideTrackEstimatedLife(Model model, Condition condition) {
             if (model.name == "GTH5" &&
-                model.lead == 5 &&
+                model.lead == 20 &&
                 condition.setupMethod == Model.SetupMethod.水平 &&
                 condition.load == 10 &&
                 condition.moment_A == 100 &&
@@ -286,13 +286,22 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.vMax = condition.vMax / 1000f;
 
                 // 非皮帶機構才判斷
-                if (!model.isUseBaltCalc && condition.calcMode == Condition.CalcMode.Normal || condition.isRpmLimitByStroke) {
-                    // RPM驗證
-                    int strokeRpm;
-                    int vMaxRpm = GetRpmByMMS(model.lead, model.vMax * 1000);
-                    strokeRpm = GetRpmByStroke(model.name, model.lead, condition.stroke);
-                    model.rpm = Math.Min(strokeRpm, vMaxRpm);
-                    model.vMax = RPM_TO_MMS(model.rpm, model.lead) / 1000f;
+                if (!model.isUseBaltCalc) {
+                    if (condition.calcMode == Condition.CalcMode.Normal ||
+                        (condition.calcMode == Condition.CalcMode.CalcMax && condition.isRpmLimitByStroke)) {
+                        if (condition.calcMaxItem == Condition.CalcMaxItem.Vmax) {
+                            // RPM驗證
+                            int strokeRpm;
+                            int vMaxRpm = GetRpmByMMS(model.lead, model.vMax * 1000);
+                            strokeRpm = GetRpmByStroke(model.name, model.lead, condition.stroke);
+                            model.rpm = Math.Min(strokeRpm, vMaxRpm);
+                            model.vMax = RPM_TO_MMS(model.rpm, model.lead) / 1000f;
+                        } else if (condition.calcMaxItem == Condition.CalcMaxItem.AccelSpeed) {
+                            // Stroke驗證
+                            model.rpm = GetRpmByStroke(model.name, model.lead, condition.stroke);
+                            model.vMax = RPM_TO_MMS(model.rpm, model.lead) / 1000f;
+                        }
+                    }
                 }
             }
 
@@ -323,7 +332,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     model.accelTime = model.vMax / model.accelSpeed * 1000;             // s
                 } else if (condition.calcMaxItem == Condition.CalcMaxItem.AccelSpeed) {
                     model.accelSpeed = condition.accelSpeed;
-                    model.vMax = Math.Sqrt(model.accelSpeed * model.stroke) / 1000;     // m/s
+                    if (!condition.isRpmLimitByStroke)
+                        model.vMax = Math.Sqrt(model.accelSpeed * model.stroke) / 1000;     // m/s
                     model.accelTime = model.vMax / model.accelSpeed * 1000;             // s
                 }
             }
@@ -335,7 +345,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             double recordVmax = model.vMax;
 
             // 行程過短驗證
-            if (isCheckStrokeTooShort && condition.calcMode != Condition.CalcMode.CalcMax) {                
+            if (isCheckStrokeTooShort /*&& condition.calcMode != Condition.CalcMode.CalcMax*/) {                
                 if (strokeTooShortModifyItem == Converter.ModifyItem.Vmax)
                     model.vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, model.vMax, model.accelTime, model.stroke);
                 else if (strokeTooShortModifyItem == Converter.ModifyItem.AccelSpeed)
