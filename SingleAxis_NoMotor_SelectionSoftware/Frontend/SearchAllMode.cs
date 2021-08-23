@@ -134,6 +134,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
 
             curCondition.curCheckedModel = formMain.page2.recommandList.curCheckedModel;
+
+            // 是否使用行程對照轉速
+            curCondition.isRpmLimitByStroke = formMain.chkRpmLimitByStroke.Checked;
         }
     }
 }

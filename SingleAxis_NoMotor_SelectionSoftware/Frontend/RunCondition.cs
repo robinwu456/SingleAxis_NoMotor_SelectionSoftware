@@ -286,6 +286,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 curCondition.calcModel = calcModel;
             } else
                 curCondition.calcModel = (null, -1);
+
             //// 減速比
             //curCondition.reducerRatio.Clear();
             //formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().ForEach(row => {
@@ -301,7 +302,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 修正條件時，側邊欄壽命清除
             //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
-                //formMain.sideTable.ClearSelectedModelInfo();
+            //formMain.sideTable.ClearSelectedModelInfo();
 
             //formMain.page2.recommandList.Refresh();
             //formMain.page2.chartInfo.Clear();

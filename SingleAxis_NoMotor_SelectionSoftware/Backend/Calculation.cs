@@ -126,11 +126,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (condition.curCheckedModel.model != null) {
                 // 減速比驗證
                 Func<Model, bool> predicate;
-                //if (condition.reducerRatio.Keys.Contains(condition.curCheckedModel.model))
-                //    // 包含減速比時，不判斷導程
-                //    predicate = model => model.name == condition.curCheckedModel.model;
-                //else
-                //    predicate = model => model.name == condition.curCheckedModel.model && model.lead == condition.curCheckedModel.lead;
                 predicate = model => model.name == condition.curCheckedModel.model && model.lead == condition.curCheckedModel.lead;
                 // Init打勾項目
                 if (resultModels.Any(predicate))
@@ -142,42 +137,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
 
             // 篩選條件
-            //Dictionary<string, Func<Model, bool>> filterMap = new Dictionary<string, Func<Model, bool>>() {
-            //    { "超過最大行程", model => model.maxStroke >= condition.stroke },
-            //    { "超過最大荷重", model => model.maxLoad == -1 || (model.maxLoad != -1 && model.maxLoad >= condition.load) || condition.curCheckedModel.model != null },
-            //    { "線速度過大", model => model.vMax <= model.vMax_max },
-            //    { "行程過短，建議可增加行程，或降低線速度", model => model.constantTime >= 0 },
-            //    { "運行時間過短，請增加運行時間", model => model.moveTime <= condition.moveTime },
-            //    { "未達希望壽命", model => model.serviceLifeTime.year >= condition.expectServiceLifeTime },
-            //    // 以下為之前會顯示紅色項目
-            //    { "T_max安全係數過低", model => model.tMaxSafeCoefficient >= Model.tMaxStandard },
-            //    { "皮帶馬達安全係數過低", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < Model.beltMotorStandard },
-            //    { "皮帶T_max安全係數過低", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_beltMotor },
-            //    { "力矩警示異常", model => model.isMomentVerifySuccess },
-            //};
-
             Dictionary<string, Dictionary<string, Func<Model, object>>> filterMap = new Dictionary<string, Dictionary<string, Func<Model, object>>>() {
                 { "超過最大行程", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("最大行程: {0}", model.maxStroke) },
-                    { "Condition", model => model.maxStroke >= condition.stroke } } },
+                    { "Condition", model => model.maxStroke >= condition.stroke || condition.calcMode == Condition.CalcMode.CalcMax } } },
                 { "超過最大荷重", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("最大荷重: {0}", model.maxLoad) },
-                    //{ "Condition", model => model.maxLoad == -1 || (model.maxLoad != -1 && model.maxLoad >= condition.load) || condition.curCheckedModel.model != null } } },
                     { "Condition", model => model.maxLoad == -1 || model.maxLoad != -1 && model.maxLoad >= condition.load } } },
-                //{ "線速度過大", new Dictionary<string, Func<Model, object>>(){
-                //    { "Remark",    model => string.Format("最大線速度: {0}", model.vMax_max) },
-                //    { "Condition", model => model.vMax <= model.vMax_max } } },
-                //{ "行程過短，建議可增加行程，或降低線速度", new Dictionary<string, Func<Model, object>>(){
-                //    { "Remark",    model => string.Empty },
-                //    { "Condition", model => model.constantTime >= 0 } } },
                 { "運行時間過短，請增加運行時間", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("計算運行時間: {0}", model.moveTime) },
                     { "Condition", model => model.moveTime <= condition.moveTime } } },
-                //{ "未達希望壽命", new Dictionary<string, Func<Model, object>>(){
-                //    { "Remark",    model => model.serviceLifeTime == (-1, -1, -1) ?
-                //                            string.Format("每分鐘趟數過大") :
-                //                            string.Format("希望壽命: {0}年, 計算壽命: {1}年{2}個月又{3}天", condition.expectServiceLifeTime, model.serviceLifeTime.year, model.serviceLifeTime.month, model.serviceLifeTime.day) },
-                //    { "Condition", model => model.serviceLifeTime.year >= condition.expectServiceLifeTime } } },
                 { "未達希望壽命", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("希望壽命: {0}年, 計算壽命: {1}年{2}個月又{3}天", condition.expectServiceLifeTime, model.serviceLifeTime.year, model.serviceLifeTime.month, model.serviceLifeTime.day) },
                     { "Condition", model => model.serviceLifeTime == (-1, -1, -1) || model.serviceLifeTime.year >= condition.expectServiceLifeTime } } },

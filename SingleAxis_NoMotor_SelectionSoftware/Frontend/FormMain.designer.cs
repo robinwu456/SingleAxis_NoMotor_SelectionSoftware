@@ -58,6 +58,7 @@
             this.label76 = new System.Windows.Forms.Label();
             this.tabContent = new System.Windows.Forms.TabPage();
             this.explorerBar = new System.Windows.Forms.Panel();
+            this.chkRpmLimitByStroke = new System.Windows.Forms.CheckBox();
             this.chkCalcAllMode = new System.Windows.Forms.CheckBox();
             this.panelNextPage = new System.Windows.Forms.Panel();
             this.panelConfirmBtnsStep2 = new System.Windows.Forms.TableLayoutPanel();
@@ -747,6 +748,7 @@
             // explorerBar
             // 
             resources.ApplyResources(this.explorerBar, "explorerBar");
+            this.explorerBar.Controls.Add(this.chkRpmLimitByStroke);
             this.explorerBar.Controls.Add(this.chkCalcAllMode);
             this.explorerBar.Controls.Add(this.panelNextPage);
             this.explorerBar.Controls.Add(this.panelSideTable);
@@ -759,6 +761,12 @@
             this.explorerBar.Controls.Add(this.panelModelType);
             this.explorerBar.Controls.Add(this.panelUseEnv);
             this.explorerBar.Name = "explorerBar";
+            // 
+            // chkRpmLimitByStroke
+            // 
+            resources.ApplyResources(this.chkRpmLimitByStroke, "chkRpmLimitByStroke");
+            this.chkRpmLimitByStroke.Name = "chkRpmLimitByStroke";
+            this.chkRpmLimitByStroke.UseVisualStyleBackColor = true;
             // 
             // chkCalcAllMode
             // 
@@ -3876,6 +3884,7 @@
         public System.Windows.Forms.Label label77;
         public System.Windows.Forms.TextBox txtMaxCalc;
         private System.Windows.Forms.Label label80;
+        public System.Windows.Forms.CheckBox chkRpmLimitByStroke;
     }
 }
 

@@ -16,7 +16,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public enum PowerSelection { Standard, SelectedPower, Custom }               // 馬達瓦數帶值
         public enum CalcVmax { Max, Custom }                                         // 線速度計算帶值
         public enum CalcMaxItem { Vmax, AccelSpeed }                                 // 最大值計算固定項目
-        public enum CalcMode { Normal, Test, CalcMax }
+        public enum CalcMode { 
+            /// <summary>
+            /// 一般計算
+            /// </summary>
+            Normal, 
+            /// <summary>
+            /// 測試
+            /// </summary>
+            Test, 
+            /// <summary>
+            /// 最高速計算
+            /// </summary>
+            CalcMax 
+        }
 
         public SetupMethod setupMethod;                                              // 安裝方式            
         public CalcAccordingItem calcCloseToStandardItem = CalcAccordingItem.None;   // 修正壽命的根據項目
@@ -36,5 +49,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         //public bool isTesting = false;
         public CalcMode calcMode = CalcMode.Normal;
         public CalcMaxItem calcMaxItem = CalcMaxItem.Vmax;
+        public bool isRpmLimitByStroke = true;
     }
 }
