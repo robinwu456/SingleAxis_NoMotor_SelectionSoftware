@@ -23,6 +23,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.txtRunTime,
                 formMain.txtTimesPerMinute,
                 formMain.txtMaxSpeed,
+                formMain.txtMaxCalc,
             };
 
             InitEvents();

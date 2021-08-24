@@ -14,7 +14,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             this.formMain = formMain;
 
             // 計算模式
-            formMain.cboMaxCalcMode.DataSource = new string[]{ "運行速度", "加速度" };
+            formMain.cboMaxCalcMode.DataSource = new string[]{ "運行速度", "加速度", "加速時間" };
 
             InitEvents();
         }
@@ -83,12 +83,19 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 計算模式
             curCondition.vMaxCalcMode = Condition.CalcVmax.Custom;
             //curCondition.accelTime = 0.2;
-            if (formMain.cboMaxCalcMode.Text == "運行速度") {
-                curCondition.calcMaxItem = Condition.CalcMaxItem.Vmax;
-                curCondition.vMax = Convert.ToDouble(formMain.txtMaxCalc.Text);
-            } else {
-                curCondition.calcMaxItem = Condition.CalcMaxItem.AccelSpeed;
-                curCondition.accelSpeed = Convert.ToDouble(formMain.txtMaxCalc.Text);
+            switch (formMain.cboMaxCalcMode.Text) {
+                case "運行速度":
+                    curCondition.calcMaxItem = Condition.CalcMaxItem.Vmax;
+                    curCondition.vMax = Convert.ToDouble(formMain.txtMaxCalc.Text);
+                    break;
+                case "加速度":
+                    curCondition.calcMaxItem = Condition.CalcMaxItem.AccelSpeed;
+                    curCondition.accelSpeed = Convert.ToDouble(formMain.txtMaxCalc.Text);
+                    break;
+                case "加速時間":
+                    curCondition.calcMaxItem = Condition.CalcMaxItem.AccelTime;
+                    curCondition.accelTime = Convert.ToDouble(formMain.txtMaxCalc.Text);
+                    break;
             }
 
             // 馬達瓦數

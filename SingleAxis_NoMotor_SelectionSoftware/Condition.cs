@@ -15,7 +15,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public enum CalcAccordingItem { None, Load, Moment, All }                    // 修正壽命的根據項目列舉
         public enum PowerSelection { Standard, SelectedPower, Custom }               // 馬達瓦數帶值
         public enum CalcVmax { Max, Custom }                                         // 線速度計算帶值
-        public enum CalcMaxItem { Vmax, AccelSpeed }                                 // 最大值計算固定項目
+        public enum CalcMaxItem { Vmax, AccelSpeed, AccelTime }                      // 最大值計算固定項目
         public enum CalcMode { 
             /// <summary>
             /// 一般計算

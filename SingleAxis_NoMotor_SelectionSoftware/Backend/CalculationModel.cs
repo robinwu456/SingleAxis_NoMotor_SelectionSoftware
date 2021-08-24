@@ -327,14 +327,21 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.accelSpeed = condition.accelSpeed / 1000f;
                 model.accelTime = model.accelSpeed != 0 ? model.vMax / model.accelSpeed : condition.accelTime;
             } else if (condition.calcMode == Condition.CalcMode.CalcMax) {
-                if (condition.calcMaxItem == Condition.CalcMaxItem.Vmax) {
-                    model.accelSpeed = Math.Pow(model.vMax * 1000, 2) / model.stroke;   // mm/s^2
-                    model.accelTime = model.vMax / model.accelSpeed * 1000;             // s
-                } else if (condition.calcMaxItem == Condition.CalcMaxItem.AccelSpeed) {
-                    model.accelSpeed = condition.accelSpeed;
-                    if (!condition.isRpmLimitByStroke)
-                        model.vMax = Math.Sqrt(model.accelSpeed * model.stroke) / 1000;     // m/s
-                    model.accelTime = model.vMax / model.accelSpeed * 1000;             // s
+                switch (condition.calcMaxItem) {
+                    case Condition.CalcMaxItem.Vmax:
+                        model.accelSpeed = Math.Pow(model.vMax * 1000, 2) / model.stroke;   // mm/s^2
+                        model.accelTime = model.vMax / model.accelSpeed * 1000;             // s
+                        break;
+                    case Condition.CalcMaxItem.AccelSpeed:
+                        model.accelSpeed = condition.accelSpeed;
+                        if (!condition.isRpmLimitByStroke)
+                            model.vMax = Math.Sqrt(model.accelSpeed * model.stroke) / 1000;     // m/s
+                        model.accelTime = model.vMax / model.accelSpeed * 1000;             // s
+                        break;
+                    case Condition.CalcMaxItem.AccelTime:
+                        model.accelTime = condition.accelTime;
+                        model.vMax = model.stroke / model.accelTime / 1000;
+                        break;
                 }
             }
 
