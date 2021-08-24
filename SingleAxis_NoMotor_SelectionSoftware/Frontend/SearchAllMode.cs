@@ -20,10 +20,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void InitEvents() {
+            // 條件修正
             formMain.panelSetup.Controls.All().Concat(formMain.panelCalc.Controls.All())
                 .Where(c => c is TextBox || c is ComboBox)
                 .ToList()
                 .ForEach(c => c.TextChanged += UpdateCondition);
+
+            formMain.chkCalcAllMode.CheckedChanged += ChkCalcAllMode_CheckedChanged;
+        }
+
+        private void ChkCalcAllMode_CheckedChanged(object sender, EventArgs e) {
+            // 行程對照轉速
+            formMain.chkRpmLimitByStroke.Visible = formMain.chkCalcAllMode.Checked;
+            // 運算模式panel
+            formMain.panelCalcAllMode.Visible = formMain.chkCalcAllMode.Checked;
         }
 
         public void UpdateCondition(object sender, EventArgs e) {

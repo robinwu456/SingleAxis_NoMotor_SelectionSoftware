@@ -183,7 +183,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.chkCalcAllMode.Checked = false;
             formMain.chkRpmLimitByStroke.Checked = false;
             formMain.chkCalcAllMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
-            formMain.chkRpmLimitByStroke.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
+            //formMain.chkRpmLimitByStroke.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
         }
 
         private void InitEvents() {

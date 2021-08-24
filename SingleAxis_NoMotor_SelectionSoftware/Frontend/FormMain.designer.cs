@@ -210,7 +210,7 @@
             this.cboPower = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.panel24 = new System.Windows.Forms.Panel();
+            this.panelCalcAllMode = new System.Windows.Forms.Panel();
             this.cboMaxCalcMode = new System.Windows.Forms.ComboBox();
             this.label70 = new System.Windows.Forms.Label();
             this.label77 = new System.Windows.Forms.Label();
@@ -483,7 +483,7 @@
             this.panelReducerParam.SuspendLayout();
             this.panelPowerSelection.SuspendLayout();
             this.panel14.SuspendLayout();
-            this.panel24.SuspendLayout();
+            this.panelCalcAllMode.SuspendLayout();
             this.panelAdvanceMode.SuspendLayout();
             this.panelAdvanceParams.SuspendLayout();
             this.panelExpectServiceLifeTime.SuspendLayout();
@@ -2000,7 +2000,7 @@
             // 
             this.panel14.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.bg_runCondition;
             resources.ApplyResources(this.panel14, "panel14");
-            this.panel14.Controls.Add(this.panel24);
+            this.panel14.Controls.Add(this.panelCalcAllMode);
             this.panel14.Controls.Add(this.chkExpectServiceLife);
             this.panel14.Controls.Add(this.panelAdvanceMode);
             this.panel14.Controls.Add(this.panelExpectServiceLifeTime);
@@ -2036,16 +2036,16 @@
             this.panel14.Controls.Add(this.labelStopTimeAlarm);
             this.panel14.Name = "panel14";
             // 
-            // panel24
+            // panelCalcAllMode
             // 
-            resources.ApplyResources(this.panel24, "panel24");
-            this.panel24.BackColor = System.Drawing.Color.Transparent;
-            this.panel24.Controls.Add(this.cboMaxCalcMode);
-            this.panel24.Controls.Add(this.label70);
-            this.panel24.Controls.Add(this.label77);
-            this.panel24.Controls.Add(this.txtMaxCalc);
-            this.panel24.Controls.Add(this.label80);
-            this.panel24.Name = "panel24";
+            resources.ApplyResources(this.panelCalcAllMode, "panelCalcAllMode");
+            this.panelCalcAllMode.BackColor = System.Drawing.Color.Transparent;
+            this.panelCalcAllMode.Controls.Add(this.cboMaxCalcMode);
+            this.panelCalcAllMode.Controls.Add(this.label70);
+            this.panelCalcAllMode.Controls.Add(this.label77);
+            this.panelCalcAllMode.Controls.Add(this.txtMaxCalc);
+            this.panelCalcAllMode.Controls.Add(this.label80);
+            this.panelCalcAllMode.Name = "panelCalcAllMode";
             // 
             // cboMaxCalcMode
             // 
@@ -3447,8 +3447,8 @@
             this.panelPowerSelection.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
-            this.panel24.ResumeLayout(false);
-            this.panel24.PerformLayout();
+            this.panelCalcAllMode.ResumeLayout(false);
+            this.panelCalcAllMode.PerformLayout();
             this.panelAdvanceMode.ResumeLayout(false);
             this.panelAdvanceParams.ResumeLayout(false);
             this.panelAdvanceParams.PerformLayout();
@@ -3878,7 +3878,7 @@
         private System.Windows.Forms.Panel panel23;
         public System.Windows.Forms.Panel panelMomentB;
         public System.Windows.Forms.CheckBox chkCalcAllMode;
-        public System.Windows.Forms.Panel panel24;
+        public System.Windows.Forms.Panel panelCalcAllMode;
         public System.Windows.Forms.ComboBox cboMaxCalcMode;
         private System.Windows.Forms.Label label70;
         public System.Windows.Forms.Label label77;
