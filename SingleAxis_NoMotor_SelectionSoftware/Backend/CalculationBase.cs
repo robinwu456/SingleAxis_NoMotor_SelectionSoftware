@@ -330,7 +330,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             double accelTime = 0;
             if (conditions.accelSpeed != 0) {
-                conditions.accelTime = conditions.vMax / conditions.accelSpeed;
+                //conditions.accelTime = conditions.vMax / conditions.accelSpeed;
             } else {
                 accelTime = conditions.accelTime;
             }

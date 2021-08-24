@@ -4811,6 +4811,33 @@
   <data name="panelCalcAllMode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
+  <data name="cboMaxCalcUnit.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="cboMaxCalcUnit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt</value>
+  </data>
+  <data name="cboMaxCalcUnit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 4</value>
+  </data>
+  <data name="cboMaxCalcUnit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 27</value>
+  </data>
+  <data name="cboMaxCalcUnit.TabIndex" type="System.Int32, mscorlib">
+    <value>276</value>
+  </data>
+  <data name="&gt;&gt;cboMaxCalcUnit.Name" xml:space="preserve">
+    <value>cboMaxCalcUnit</value>
+  </data>
+  <data name="&gt;&gt;cboMaxCalcUnit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboMaxCalcUnit.Parent" xml:space="preserve">
+    <value>panelCalcAllMode</value>
+  </data>
+  <data name="&gt;&gt;cboMaxCalcUnit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cboMaxCalcMode.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
@@ -4836,39 +4863,6 @@
     <value>panelCalcAllMode</value>
   </data>
   <data name="&gt;&gt;cboMaxCalcMode.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label70.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label70.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 12pt</value>
-  </data>
-  <data name="label70.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label70.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 6</value>
-  </data>
-  <data name="label70.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 20</value>
-  </data>
-  <data name="label70.TabIndex" type="System.Int32, mscorlib">
-    <value>273</value>
-  </data>
-  <data name="label70.Text" xml:space="preserve">
-    <value>[mm/s²]</value>
-  </data>
-  <data name="&gt;&gt;label70.Name" xml:space="preserve">
-    <value>label70</value>
-  </data>
-  <data name="&gt;&gt;label70.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label70.Parent" xml:space="preserve">
-    <value>panelCalcAllMode</value>
-  </data>
-  <data name="&gt;&gt;label70.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="label77.AutoSize" type="System.Boolean, mscorlib">
@@ -13764,6 +13758,9 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

@@ -30,6 +30,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             /// </summary>
             CalcMax 
         }
+        public enum CalcMaxUnit {
+            mms,
+            RPM,
+            mms2,
+            G,
+            s
+        }
 
         public SetupMethod setupMethod;                                              // 安裝方式            
         public CalcAccordingItem calcCloseToStandardItem = CalcAccordingItem.None;   // 修正壽命的根據項目
@@ -49,6 +56,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         //public bool isTesting = false;
         public CalcMode calcMode = CalcMode.Normal;
         public CalcMaxItem calcMaxItem = CalcMaxItem.Vmax;
+        public CalcMaxUnit calcMaxUnit = CalcMaxUnit.mms;
         public bool isRpmLimitByStroke = true;
     }
 }

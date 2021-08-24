@@ -296,7 +296,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                             strokeRpm = GetRpmByStroke(model.name, model.lead, condition.stroke);
                             model.rpm = Math.Min(strokeRpm, vMaxRpm);
                             model.vMax = RPM_TO_MMS(model.rpm, model.lead) / 1000f;
-                        } else if (condition.calcMaxItem == Condition.CalcMaxItem.AccelSpeed) {
+                        } else if (condition.calcMaxItem == Condition.CalcMaxItem.AccelSpeed || condition.calcMaxItem == Condition.CalcMaxItem.AccelTime) {
                             // Stroke驗證
                             model.rpm = GetRpmByStroke(model.name, model.lead, condition.stroke);
                             model.vMax = RPM_TO_MMS(model.rpm, model.lead) / 1000f;
@@ -340,7 +340,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         break;
                     case Condition.CalcMaxItem.AccelTime:
                         model.accelTime = condition.accelTime;
-                        model.vMax = model.stroke / model.accelTime / 1000;
+                        if (!condition.isRpmLimitByStroke)
+                            model.vMax = model.stroke / model.accelTime / 1000;
                         break;
                 }
             }

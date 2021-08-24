@@ -21,7 +21,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void FormWaiting_Load(object sender, EventArgs e) {
             new Thread(() => {
-                Thread.Sleep(100);
+                Thread.Sleep(1000);
 
                 while (GetPercent().percent < 100) {
                     if (GetPercent().isError)

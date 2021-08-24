@@ -16,6 +16,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 計算模式
             formMain.cboMaxCalcMode.DataSource = new string[]{ "運行速度", "加速度", "加速時間" };
 
+            // 計算單位
+            formMain.cboMaxCalcUnit.DataSource = new string[] { "mm/s", "RPM" };
+
             InitEvents();
         }
 
@@ -27,6 +30,21 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 .ForEach(c => c.TextChanged += UpdateCondition);
 
             formMain.chkCalcAllMode.CheckedChanged += ChkCalcAllMode_CheckedChanged;
+            formMain.cboMaxCalcMode.SelectedValueChanged += CboMaxCalcMode_SelectedValueChanged;
+        }
+
+        private void CboMaxCalcMode_SelectedValueChanged(object sender, EventArgs e) {
+            switch (formMain.cboMaxCalcMode.Text) {
+                case "運行速度":
+                    formMain.cboMaxCalcUnit.DataSource = new string[] { "mm/s", "RPM" };
+                    break;
+                case "加速度":
+                    formMain.cboMaxCalcUnit.DataSource = new string[] { "mm/s²", "G" };
+                    break;
+                case "加速時間":
+                    formMain.cboMaxCalcUnit.DataSource = new string[] { "s" };
+                    break;
+            }
         }
 
         private void ChkCalcAllMode_CheckedChanged(object sender, EventArgs e) {
@@ -95,6 +113,23 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 case "加速時間":
                     curCondition.calcMaxItem = Condition.CalcMaxItem.AccelTime;
                     curCondition.accelTime = Convert.ToDouble(formMain.txtMaxCalc.Text);
+                    break;
+            }
+            switch (formMain.cboMaxCalcUnit.Text) {
+                case "mm/s":
+                    curCondition.calcMaxUnit = Condition.CalcMaxUnit.mms;
+                    break;
+                case "RPM":
+                    curCondition.calcMaxUnit = Condition.CalcMaxUnit.RPM;
+                    break;
+                case "mm/s²":
+                    curCondition.calcMaxUnit = Condition.CalcMaxUnit.mms2;
+                    break;
+                case "G":
+                    curCondition.calcMaxUnit = Condition.CalcMaxUnit.G;
+                    break;
+                case "s":
+                    curCondition.calcMaxUnit = Condition.CalcMaxUnit.s;
                     break;
             }
 

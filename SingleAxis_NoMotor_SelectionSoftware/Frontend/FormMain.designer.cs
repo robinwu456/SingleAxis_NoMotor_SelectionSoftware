@@ -212,7 +212,6 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.panelCalcAllMode = new System.Windows.Forms.Panel();
             this.cboMaxCalcMode = new System.Windows.Forms.ComboBox();
-            this.label70 = new System.Windows.Forms.Label();
             this.label77 = new System.Windows.Forms.Label();
             this.txtMaxCalc = new System.Windows.Forms.TextBox();
             this.label80 = new System.Windows.Forms.Label();
@@ -383,6 +382,7 @@
             this.cmdResetStep5 = new CustomButton.CustomButton();
             this.label51 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
+            this.cboMaxCalcUnit = new System.Windows.Forms.ComboBox();
             this.panelBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -2040,8 +2040,8 @@
             // 
             resources.ApplyResources(this.panelCalcAllMode, "panelCalcAllMode");
             this.panelCalcAllMode.BackColor = System.Drawing.Color.Transparent;
+            this.panelCalcAllMode.Controls.Add(this.cboMaxCalcUnit);
             this.panelCalcAllMode.Controls.Add(this.cboMaxCalcMode);
-            this.panelCalcAllMode.Controls.Add(this.label70);
             this.panelCalcAllMode.Controls.Add(this.label77);
             this.panelCalcAllMode.Controls.Add(this.txtMaxCalc);
             this.panelCalcAllMode.Controls.Add(this.label80);
@@ -2056,11 +2056,6 @@
             this.cboMaxCalcMode.ForeColor = System.Drawing.Color.White;
             this.cboMaxCalcMode.FormattingEnabled = true;
             this.cboMaxCalcMode.Name = "cboMaxCalcMode";
-            // 
-            // label70
-            // 
-            resources.ApplyResources(this.label70, "label70");
-            this.label70.Name = "label70";
             // 
             // label77
             // 
@@ -3324,6 +3319,16 @@
             this.label56.BackColor = System.Drawing.Color.LightGray;
             this.label56.Name = "label56";
             // 
+            // cboMaxCalcUnit
+            // 
+            this.cboMaxCalcUnit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboMaxCalcUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMaxCalcUnit.DropDownWidth = 180;
+            resources.ApplyResources(this.cboMaxCalcUnit, "cboMaxCalcUnit");
+            this.cboMaxCalcUnit.ForeColor = System.Drawing.Color.White;
+            this.cboMaxCalcUnit.FormattingEnabled = true;
+            this.cboMaxCalcUnit.Name = "cboMaxCalcUnit";
+            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -3880,11 +3885,11 @@
         public System.Windows.Forms.CheckBox chkCalcAllMode;
         public System.Windows.Forms.Panel panelCalcAllMode;
         public System.Windows.Forms.ComboBox cboMaxCalcMode;
-        private System.Windows.Forms.Label label70;
         public System.Windows.Forms.Label label77;
         public System.Windows.Forms.TextBox txtMaxCalc;
         private System.Windows.Forms.Label label80;
         public System.Windows.Forms.CheckBox chkRpmLimitByStroke;
+        public System.Windows.Forms.ComboBox cboMaxCalcUnit;
     }
 }
 
