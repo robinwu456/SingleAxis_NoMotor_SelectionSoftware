@@ -10,15 +10,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         // 滑軌壽命計算
         protected long GetSlideTrackEstimatedLife(Model model, Condition condition) {
-            if (model.name == "GTH5" &&
-                model.lead == 20 &&
-                condition.setupMethod == Model.SetupMethod.水平 &&
-                condition.load == 10 &&
-                condition.moment_A == 100 &&
-                condition.moment_B == 0 &&
-                condition.moment_C == 0
-                )
-                Console.WriteLine(1);
+            //if (model.name == "GTH5" &&
+            //    model.lead == 20 &&
+            //    condition.setupMethod == Model.SetupMethod.水平 &&
+            //    condition.load == 10 &&
+            //    condition.moment_A == 100 &&
+            //    condition.moment_B == 0 &&
+            //    condition.moment_C == 0
+            //    )
+            //    Console.WriteLine(1);
 
             if (!condition.modelType.IsRodType())
                 if (condition.calcMode != Condition.CalcMode.Test)
@@ -275,6 +275,25 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void VerifyMoveInfo(Model model, Condition condition) {
+            // 全選模式單位驗證
+            if (condition.calcMode == Condition.CalcMode.CalcMax) {
+                switch (condition.calcMaxUnit) {
+                    case Condition.CalcMaxUnit.RPM:
+                        if (model.modelType.IsBeltType()) {
+                            model.vMax = GetBeltVmaxByRpm_ms(model.name, (int)model.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType) * 1000;
+                        } else {
+                            //if (IsContainsReducerRatio(model.name)) {
+                            //    string dgvReducerRatioValue = formMain.cboReducerRatio.Text;
+                            //    model.vMax = RPM_TO_MMS((int)model.vMax, Convert.ToDouble(formMain.cboLead.Text) / Convert.ToDouble(dgvReducerRatioValue));
+                            //} else
+                                model.vMax = RPM_TO_MMS((int)model.vMax, model.lead);
+                        }
+                        break;
+                    case Condition.CalcMaxUnit.G:
+
+                        break;
+                }
+            }
 
             // Vmax驗證
             if (condition.vMaxCalcMode == Condition.CalcVmax.Max) {
@@ -334,6 +353,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         break;
                     case Condition.CalcMaxItem.AccelSpeed:
                         model.accelSpeed = condition.accelSpeed;
+                        if (condition.calcMaxUnit == Condition.CalcMaxUnit.G)
+                            model.accelSpeed = model.accelSpeed * 9806;
                         if (!condition.isRpmLimitByStroke)
                             model.vMax = Math.Sqrt(model.accelSpeed * model.stroke) / 1000;     // m/s
                         model.accelTime = model.vMax / model.accelSpeed * 1000;             // s
