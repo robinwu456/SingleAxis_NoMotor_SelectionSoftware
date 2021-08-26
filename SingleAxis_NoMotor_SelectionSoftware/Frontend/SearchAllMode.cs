@@ -52,6 +52,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.chkRpmLimitByStroke.Visible = formMain.chkCalcAllMode.Checked;
             // 運算模式panel
             formMain.panelCalcAllMode.Visible = formMain.chkCalcAllMode.Checked;
+
+            // 表格顯示
+            formMain.dgvRecommandList.Columns["力矩警示"].Visible = formMain.chkCalcAllMode.Checked;
+            formMain.dgvRecommandList.Columns["皮帶馬達安全係數"].Visible = formMain.chkCalcAllMode.Checked;
+            formMain.dgvRecommandList.Columns["T_max安全係數"].Visible = formMain.chkCalcAllMode.Checked;
+            formMain.dgvRecommandList.Columns["T_Rms安全係數"].Visible = formMain.chkCalcAllMode.Checked;
+            formMain.dgvRecommandList.Columns["皮帶T_max安全係數"].Visible = formMain.chkCalcAllMode.Checked;
         }
 
         public void UpdateCondition(object sender, EventArgs e) {

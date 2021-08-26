@@ -380,7 +380,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <summary>
         /// T_Rms安全係數
         /// </summary>
-        public double tRmsSafeCoefficient;
+        public double tRmsSafeCoefficient = -1;
         /// <summary>
         /// T_Rms扭矩確認
         /// </summary>

@@ -140,10 +140,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             Dictionary<string, Dictionary<string, Func<Model, object>>> filterMap = new Dictionary<string, Dictionary<string, Func<Model, object>>>() {
                 { "超過最大行程", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("最大行程: {0}", model.maxStroke) },
-                    { "Condition", model => model.maxStroke >= condition.stroke || condition.calcMode == Condition.CalcMode.CalcMax } } },
+                    { "Condition", model => model.maxStroke >= condition.stroke /*|| condition.calcMode == Condition.CalcMode.CalcMax*/ } } },
                 { "超過最大荷重", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("最大荷重: {0}", model.maxLoad) },
-                    { "Condition", model => model.maxLoad == -1 || model.maxLoad != -1 && model.maxLoad >= condition.load || condition.calcMode == Condition.CalcMode.CalcMax } } },
+                    { "Condition", model => model.maxLoad == -1 || model.maxLoad != -1 && model.maxLoad >= condition.load /*|| condition.calcMode == Condition.CalcMode.CalcMax*/ } } },
                 { "運行時間過短，請增加運行時間", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("計算運行時間: {0}", model.moveTime) },
                     { "Condition", model => model.moveTime <= condition.moveTime } } },
@@ -194,7 +194,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //List<string> errorMsg = new List<string>();
             foreach (var filter in filterMap) {
                 oldResultModelCount = resultModels.Count;
-                resultModels = resultModels.Where(model => condition.calcMode == Condition.CalcMode.Test || (bool)filter.Value["Condition"](model)).ToList();
+                resultModels = resultModels.Where(model => (bool)filter.Value["Condition"](model) || 
+                                                           condition.calcMode == Condition.CalcMode.Test ||     // 測試不篩選
+                                                           condition.calcMode == Condition.CalcMode.CalcMax)    // 全選模式不篩選
+                                           .ToList();
                 // 測試log
                 if (resultModels.Count < oldResultModelCount && condition.calcMode == Condition.CalcMode.Test)
                     Console.WriteLine("測試失敗項目：" + filter.Key);
