@@ -7,7 +7,8 @@ using System.IO;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Calculation : CalculationModel {
-        private int calcCountPerThread = 10;   // 單執行緒運算的筆數
+        //private int calcCountPerThread = 10;   // 單執行緒運算的筆數
+        private int calcCountPerThread = 20;   // 單執行緒運算的筆數
         //private int calcCountPerThread = 1000;   // 單執行緒運算的筆數
         private List<Thread> threadsPipeline = new List<Thread>();  // 所有運算執行緒
         private Dictionary<string, object> pipeLineResult = new Dictionary<string, object>();   // 即時運算完成的Model
@@ -235,19 +236,55 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return pipeLineResult;
         }
 
-        private Dictionary<string, object> GetEstimatedLife(List<Model> models, Condition con) {
+        private Dictionary<string, object> GetEstimatedLife(List<Model> models, Condition condition) {
             Dictionary<string, object> pipeLineResult = new Dictionary<string, object>() {
                 { "List", new List<Model>() },
                 { "Msg", "" },
                 { "Alarm", false },
             };
 
+            Condition con = new Condition();
+            con.setupMethod = condition.setupMethod;
+            con.powerSelection = condition.powerSelection;
+            con.vMaxCalcMode = condition.vMaxCalcMode;
+            con.selectedPower = condition.selectedPower;
+            con.useFrequence = condition.useFrequence;
+            con.curSelectModel = condition.curSelectModel;
+            con.curCheckedModel = condition.curCheckedModel;
+            con.calcModel = condition.calcModel;
+            con.expectServiceLifeTime = condition.expectServiceLifeTime;
+            con.calcMode = condition.calcMode;
+            con.calcMaxItem = condition.calcMaxItem;
+            con.calcMaxUnit = condition.calcMaxUnit;
+            con.isRpmLimitByStroke = condition.isRpmLimitByStroke;
+            con.isCalcByMaxLoad = condition.isCalcByMaxLoad;
+            con.moment_A = condition.moment_A;
+            con.moment_B = condition.moment_B;
+            con.moment_C = condition.moment_C;
+            con.modelType = condition.modelType;
+            con.stroke = condition.stroke;
+            con.vMax = condition.vMax;
+            con.load = condition.load;
+            con.expectServiceLifeTime = condition.expectServiceLifeTime;
+            con.moveTime = condition.moveTime;
+            con.accelTime = condition.accelTime;
+            con.stopTime = condition.stopTime;
+            con.accelSpeed = condition.accelSpeed;
+            con.ratedTorque = condition.ratedTorque;
+            con.maxTorque = condition.maxTorque;
+            con.rotateInertia = condition.rotateInertia;
+            con.loadInertiaMomentRatio = condition.loadInertiaMomentRatio;
+
             double conLoad = con.load;
 
             foreach (Model model in models) {
+                // 最大荷重計算(自動修正荷重)
                 con.load = conLoad;
+                if (con.calcMode == Condition.CalcMode.CalcMax && con.isCalcByMaxLoad) {
+                    Console.WriteLine("{0}/{1}", models.IndexOf(model) + 1, models.Count);
+                    CalcMaxLoad(model, con);
+                }
 
-            BB:
                 // 滑軌壽命計算            
                 model.slideTrackServiceLifeDistance = GetSlideTrackEstimatedLife(model, con);
                 if (!model.isUseBaltCalc)
@@ -274,13 +311,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     else
                         // 螺桿型滑軌、螺桿壽命取最小值
                         model.serviceLifeDistance = Math.Min(model.slideTrackServiceLifeDistance, model.screwServiceLifeDistance);
-                }
-
-                // 最大荷重計算
-                if (con.calcMode == Condition.CalcMode.CalcMax && con.isCalcByMaxLoad && model.serviceLifeDistance > 10000) {
-                    //Console.WriteLine("life: {0}, load: {1}", model.serviceLifeDistance, con.load);
-                    con.load += 100;
-                    goto BB;
                 }
 
                 // 算壽命時間

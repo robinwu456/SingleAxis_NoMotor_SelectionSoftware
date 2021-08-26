@@ -197,6 +197,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 strokeRpms = strokeRpm.Rows.Cast<DataRow>().Where(row => row["型號"].ToString() == model && Convert.ToDouble(row["導程"].ToString()) == (int)Math.Round(lead, 0));
 
             try {
+                if (!strokeRpms.Any(row => Convert.ToInt32(row["行程"].ToString()) >= stroke))
+                    return Convert.ToInt32(strokeRpms.Last()["轉速"].ToString());
+
                 // 依照行程取RPM
                 int strokeRpm = Convert.ToInt32(strokeRpms.First(row => Convert.ToInt32(row["行程"].ToString()) >= stroke)["轉速"]);
                 return strokeRpm;
@@ -250,6 +253,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //                        (int)Math.Round((lead * (double)conditions.reducerRatio[model]), 0) : lead;
 
             try {
+                if (momentData.Rows.Cast<DataRow>()
+                                             .Where(row => row["型號"].ToString() == model &&
+                                                           Convert.ToDouble(row["導程"].ToString()) == lead &&
+                                                           row["安裝方式"].ToString() == conditions.setupMethod.ToString()).Count() == 0)
+                    return maxLoad;
+
                 data = momentData.Rows.Cast<DataRow>()
                                              .Where(row => row["型號"].ToString() == model &&
                                                            Convert.ToDouble(row["導程"].ToString()) == lead &&

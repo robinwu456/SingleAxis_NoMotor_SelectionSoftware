@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Data;
 using System.IO;
+using System.Diagnostics;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class RecommandList {
@@ -50,6 +51,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void InitEvents() {
             formMain.dgvRecommandList.SelectionChanged += DgvRecommandList_SelectionChanged;
             formMain.dgvRecommandList.CellClick += DgvRecommandList_CellClick;
+            formMain.dgvRecommandList.CellDoubleClick += (sender, e) => Process.Start(new FileInfo(Config.LOG_PARAM_FILENAME).FullName);
         }
 
         private void DgvRecommandList_CellClick(object sender, DataGridViewCellEventArgs e) {
