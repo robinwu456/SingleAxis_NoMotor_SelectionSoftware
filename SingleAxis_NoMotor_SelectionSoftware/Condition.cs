@@ -58,5 +58,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public CalcMaxItem calcMaxItem = CalcMaxItem.Vmax;
         public CalcMaxUnit calcMaxUnit = CalcMaxUnit.mms;
         public bool isRpmLimitByStroke = true;
+        public bool isCalcByMaxLoad = true;
     }
 }

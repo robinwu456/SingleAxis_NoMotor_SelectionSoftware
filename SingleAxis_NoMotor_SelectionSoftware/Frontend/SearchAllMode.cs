@@ -29,7 +29,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 .ToList()
                 .ForEach(c => c.TextChanged += UpdateCondition);
 
+            // 全選模式打勾
             formMain.chkCalcAllMode.CheckedChanged += ChkCalcAllMode_CheckedChanged;
+            // 全選模式計算方式選取
             formMain.cboMaxCalcMode.SelectedValueChanged += CboMaxCalcMode_SelectedValueChanged;
         }
 
@@ -45,11 +47,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     formMain.cboMaxCalcUnit.DataSource = new string[] { "s" };
                     break;
             }
+
+            formMain.panelNoConstantTimeParam.Visible = formMain.cboMaxCalcMode.Text != "最大荷重";
         }
 
         private void ChkCalcAllMode_CheckedChanged(object sender, EventArgs e) {
             // 行程對照轉速
-            formMain.chkRpmLimitByStroke.Visible = formMain.chkCalcAllMode.Checked;
+            formMain.panelCalcMaxOptions.Visible = formMain.chkCalcAllMode.Checked;
             // 運算模式panel
             formMain.panelCalcAllMode.Visible = formMain.chkCalcAllMode.Checked;
 
@@ -196,6 +200,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 是否使用行程對照轉速
             curCondition.isRpmLimitByStroke = formMain.chkRpmLimitByStroke.Checked;
+
+            // 是否計算最大荷重
+            curCondition.isCalcByMaxLoad = formMain.chkIsCalcMaxLoad.Checked;
         }
     }
 }

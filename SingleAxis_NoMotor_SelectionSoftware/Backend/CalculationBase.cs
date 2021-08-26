@@ -201,7 +201,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 int strokeRpm = Convert.ToInt32(strokeRpms.First(row => Convert.ToInt32(row["行程"].ToString()) >= stroke)["轉速"]);
                 return strokeRpm;
             } catch (Exception ex) {
-                Console.WriteLine(ex);
+                //Console.WriteLine(ex);
                 return Convert.ToInt32(strokeRpms.Last()["轉速"].ToString());
             }
 
@@ -259,7 +259,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (!string.IsNullOrEmpty(data))
                     maxLoad = Convert.ToDouble(data);
             } catch (Exception ex) {
-                Console.WriteLine(ex);
+                //Console.WriteLine(ex);
                 //throw new Exception("error model: " + model + ", " + ex);
             }
             return maxLoad;

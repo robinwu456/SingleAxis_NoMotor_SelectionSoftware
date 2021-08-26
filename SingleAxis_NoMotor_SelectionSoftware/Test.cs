@@ -11,6 +11,7 @@ using System.Diagnostics;
 namespace SingleAxis_NoMotor_SelectionSoftware {
     class Test {
         private FormMain formMain;
+        private Thread threadTest;
         private string outputFileName = "./Test/Result_{0}.csv";
         private string[] testDataFileNames = Directory.GetFiles("./Test/現有測試數據").Reverse().ToArray();
         //private string[] testDataFileNames = {
@@ -47,12 +48,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void StartTest(object sender, EventArgs e) {
             // 測試主程序
-            new Thread(Run).Start();
+            threadTest = new Thread(Run);
+            threadTest.Start();
 
             // 測試進度
             new Thread(() => {
                 formMain.Invoke(new Action(() => {
-                    FormWaiting wait = new FormWaiting(GetCalcPercent);
+                    FormWaiting wait = new FormWaiting(GetCalcPercent, threadTest.Abort);
                     wait.ShowDialog();
                 }));
             }).Start();

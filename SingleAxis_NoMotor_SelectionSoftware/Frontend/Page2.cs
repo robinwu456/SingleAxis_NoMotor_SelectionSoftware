@@ -417,8 +417,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void ShowWaiting() {
             new Thread(() => {
                 formMain.Invoke(new Action(() => {
-                    FormWaiting wait = new FormWaiting(calc.GetCalcPercent);
+                    FormWaiting wait = new FormWaiting(calc.GetCalcPercent, calc.InterruptCalc);
                     wait.GetPercent = calc.GetCalcPercent;
+                    wait.InterruptCalc = calc.InterruptCalc;
                     wait.ShowDialog();
                 }));
             }).Start();

@@ -7,11 +7,13 @@ using System.IO;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Calculation : CalculationModel {
-        //private int calcCountPerThread = 10;   // 單執行緒運算的筆數
-        private int calcCountPerThread = 1000;   // 單執行緒運算的筆數
+        private int calcCountPerThread = 10;   // 單執行緒運算的筆數
+        //private int calcCountPerThread = 1000;   // 單執行緒運算的筆數
+        private List<Thread> threadsPipeline = new List<Thread>();  // 所有運算執行緒
         private Dictionary<string, object> pipeLineResult = new Dictionary<string, object>();   // 即時運算完成的Model
         private List<Model> pipeLineAllModels = new List<Model>();  // 所有的Model
-        bool isPipeLineCalcError = false;
+        bool isPipeLineCalcError = false;        
+        public void InterruptCalc() => threadsPipeline.ForEach(thread => thread.Abort());   // 中斷所有執行緒
 
         // 計算推薦規格
         public Dictionary<string, object> GetRecommandResult(Condition condition) {
@@ -58,7 +60,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
 
             return (percent, isError);
-        }
+        }        
 
         // 平行運算
         private Dictionary<string, object> PipelineCalc(List<Model> models, Condition condition) {
@@ -66,7 +68,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             pipeLineResult = new Dictionary<string, object>() { { "List", new List<Model>() }, { "Alarm", false }, { "Msg", "" }, };
             isPipeLineCalcError = false;
             // 平行運算執行緒宣告
-            List<Thread> threadsPipeline = new List<Thread>();
+            threadsPipeline = new List<Thread>();
             List<List<Model>> modelsPerPipeline = new List<List<Model>>();
 
             // 計算量分配            
@@ -77,6 +79,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 modelsPerPipeline.Add(m);
             }
             // 每個執行序事件指派
+            int finishThreadCount = 0;
             foreach (List<Model> m in modelsPerPipeline) {
                 Thread t = new Thread(() => {
                     try {
@@ -86,14 +89,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                             (pipeLineResult["List"] as List<Model>).Add(model);
                     } catch (Exception ex) {
                         Console.WriteLine(ex);
-                        pipeLineResult["Msg"] = ex.Message.Split('|')[1];
-                        pipeLineResult["StatusCode"] = ex.Message.Split('|')[0];
+
+                        if (ex.Message.Contains("|")) {
+                            pipeLineResult["Msg"] = ex.Message.Split('|')[1];
+                            pipeLineResult["StatusCode"] = ex.Message.Split('|')[0];
+                        }
                     }
+                    finishThreadCount++;
+                    Console.WriteLine("執行緒 {0}/{1} 完成", finishThreadCount, threadsPipeline.Count);
                 });
                 t.Name = "t" + modelsPerPipeline.IndexOf(m);
                 threadsPipeline.Add(t);
             }
             // 平行運算開始
+            Console.WriteLine("共{0}比資料, 執行{1}個執行緒", models.Count, threadsPipeline.Count);
             foreach (Thread thread in threadsPipeline)
                 thread.Start();
 
@@ -233,7 +242,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 { "Alarm", false },
             };
 
+            double conLoad = con.load;
+
             foreach (Model model in models) {
+                con.load = conLoad;
+
+            BB:
                 // 滑軌壽命計算            
                 model.slideTrackServiceLifeDistance = GetSlideTrackEstimatedLife(model, con);
                 if (!model.isUseBaltCalc)
@@ -260,6 +274,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     else
                         // 螺桿型滑軌、螺桿壽命取最小值
                         model.serviceLifeDistance = Math.Min(model.slideTrackServiceLifeDistance, model.screwServiceLifeDistance);
+                }
+
+                // 最大荷重計算
+                if (con.calcMode == Condition.CalcMode.CalcMax && con.isCalcByMaxLoad && model.serviceLifeDistance > 10000) {
+                    //Console.WriteLine("life: {0}, load: {1}", model.serviceLifeDistance, con.load);
+                    con.load += 100;
+                    goto BB;
                 }
 
                 // 算壽命時間

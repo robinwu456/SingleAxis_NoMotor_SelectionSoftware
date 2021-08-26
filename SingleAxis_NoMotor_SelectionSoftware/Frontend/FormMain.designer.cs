@@ -58,6 +58,8 @@
             this.label76 = new System.Windows.Forms.Label();
             this.tabContent = new System.Windows.Forms.TabPage();
             this.explorerBar = new System.Windows.Forms.Panel();
+            this.panelCalcMaxOptions = new System.Windows.Forms.Panel();
+            this.chkIsCalcMaxLoad = new System.Windows.Forms.CheckBox();
             this.chkRpmLimitByStroke = new System.Windows.Forms.CheckBox();
             this.chkCalcAllMode = new System.Windows.Forms.CheckBox();
             this.panelNextPage = new System.Windows.Forms.Panel();
@@ -128,6 +130,29 @@
             this.lbPrePage = new System.Windows.Forms.Label();
             this.panelCalcResult = new System.Windows.Forms.Panel();
             this.dgvRecommandList = new System.Windows.Forms.DataGridView();
+            this.鎖定 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.項次 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.重複定位精度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.導程 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.荷重 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.最高轉速 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.運行速度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.加速度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.最大行程 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.運行時間 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.力矩A = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.力矩B = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.力矩C = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.力矩警示 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.馬達瓦數 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.皮帶馬達安全係數 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.T_max安全係數 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.皮帶T_max安全係數 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.T_Rms安全係數 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.運行距離 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.運行壽命 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.是否推薦 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.更詳細資訊 = new System.Windows.Forms.DataGridViewImageColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panelChart = new System.Windows.Forms.Panel();
@@ -188,10 +213,11 @@
             this.label19 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panelCalcAllMode = new System.Windows.Forms.Panel();
+            this.panelNoConstantTimeParam = new System.Windows.Forms.Panel();
             this.cboMaxCalcUnit = new System.Windows.Forms.ComboBox();
-            this.cboMaxCalcMode = new System.Windows.Forms.ComboBox();
             this.label77 = new System.Windows.Forms.Label();
             this.txtMaxCalc = new System.Windows.Forms.TextBox();
+            this.cboMaxCalcMode = new System.Windows.Forms.ComboBox();
             this.label80 = new System.Windows.Forms.Label();
             this.chkExpectServiceLife = new CustomToggle.CustomToggle();
             this.panelAdvanceMode = new System.Windows.Forms.Panel();
@@ -360,29 +386,6 @@
             this.cmdResetStep5 = new CustomButton.CustomButton();
             this.label51 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
-            this.鎖定 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.項次 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.重複定位精度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.導程 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.荷重 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.最高轉速 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.運行速度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.加速度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.最大行程 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.運行時間 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.力矩A = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.力矩B = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.力矩C = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.力矩警示 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.馬達瓦數 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.皮帶馬達安全係數 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.T_max安全係數 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.皮帶T_max安全係數 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.T_Rms安全係數 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.運行距離 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.運行壽命 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.是否推薦 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.更詳細資訊 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -408,6 +411,7 @@
             this.panel18.SuspendLayout();
             this.tabContent.SuspendLayout();
             this.explorerBar.SuspendLayout();
+            this.panelCalcMaxOptions.SuspendLayout();
             this.panelNextPage.SuspendLayout();
             this.panelConfirmBtnsStep2.SuspendLayout();
             this.panelSideTable.SuspendLayout();
@@ -484,6 +488,7 @@
             this.panelPowerSelection.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panelCalcAllMode.SuspendLayout();
+            this.panelNoConstantTimeParam.SuspendLayout();
             this.panelAdvanceMode.SuspendLayout();
             this.panelAdvanceParams.SuspendLayout();
             this.panelExpectServiceLifeTime.SuspendLayout();
@@ -748,7 +753,7 @@
             // explorerBar
             // 
             resources.ApplyResources(this.explorerBar, "explorerBar");
-            this.explorerBar.Controls.Add(this.chkRpmLimitByStroke);
+            this.explorerBar.Controls.Add(this.panelCalcMaxOptions);
             this.explorerBar.Controls.Add(this.chkCalcAllMode);
             this.explorerBar.Controls.Add(this.panelNextPage);
             this.explorerBar.Controls.Add(this.panelSideTable);
@@ -761,6 +766,19 @@
             this.explorerBar.Controls.Add(this.panelModelType);
             this.explorerBar.Controls.Add(this.panelUseEnv);
             this.explorerBar.Name = "explorerBar";
+            // 
+            // panelCalcMaxOptions
+            // 
+            this.panelCalcMaxOptions.Controls.Add(this.chkIsCalcMaxLoad);
+            this.panelCalcMaxOptions.Controls.Add(this.chkRpmLimitByStroke);
+            resources.ApplyResources(this.panelCalcMaxOptions, "panelCalcMaxOptions");
+            this.panelCalcMaxOptions.Name = "panelCalcMaxOptions";
+            // 
+            // chkIsCalcMaxLoad
+            // 
+            resources.ApplyResources(this.chkIsCalcMaxLoad, "chkIsCalcMaxLoad");
+            this.chkIsCalcMaxLoad.Name = "chkIsCalcMaxLoad";
+            this.chkIsCalcMaxLoad.UseVisualStyleBackColor = true;
             // 
             // chkRpmLimitByStroke
             // 
@@ -1347,6 +1365,196 @@
             this.dgvRecommandList.RowTemplate.Height = 24;
             this.dgvRecommandList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
+            // 鎖定
+            // 
+            this.鎖定.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.鎖定.FillWeight = 56.40312F;
+            this.鎖定.Frozen = true;
+            resources.ApplyResources(this.鎖定, "鎖定");
+            this.鎖定.Name = "鎖定";
+            this.鎖定.ReadOnly = true;
+            this.鎖定.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // 項次
+            // 
+            this.項次.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.項次.FillWeight = 68.39409F;
+            this.項次.Frozen = true;
+            resources.ApplyResources(this.項次, "項次");
+            this.項次.Name = "項次";
+            this.項次.ReadOnly = true;
+            this.項次.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 重複定位精度
+            // 
+            this.重複定位精度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.重複定位精度, "重複定位精度");
+            this.重複定位精度.Name = "重複定位精度";
+            this.重複定位精度.ReadOnly = true;
+            this.重複定位精度.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 導程
+            // 
+            this.導程.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.導程, "導程");
+            this.導程.Name = "導程";
+            this.導程.ReadOnly = true;
+            this.導程.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 荷重
+            // 
+            this.荷重.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.荷重, "荷重");
+            this.荷重.Name = "荷重";
+            this.荷重.ReadOnly = true;
+            this.荷重.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 最高轉速
+            // 
+            this.最高轉速.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.最高轉速, "最高轉速");
+            this.最高轉速.Name = "最高轉速";
+            this.最高轉速.ReadOnly = true;
+            this.最高轉速.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 運行速度
+            // 
+            this.運行速度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.運行速度, "運行速度");
+            this.運行速度.Name = "運行速度";
+            this.運行速度.ReadOnly = true;
+            this.運行速度.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 加速度
+            // 
+            this.加速度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.加速度, "加速度");
+            this.加速度.Name = "加速度";
+            this.加速度.ReadOnly = true;
+            this.加速度.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 最大行程
+            // 
+            this.最大行程.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.最大行程, "最大行程");
+            this.最大行程.Name = "最大行程";
+            this.最大行程.ReadOnly = true;
+            this.最大行程.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 運行時間
+            // 
+            this.運行時間.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.運行時間, "運行時間");
+            this.運行時間.Name = "運行時間";
+            this.運行時間.ReadOnly = true;
+            this.運行時間.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 力矩A
+            // 
+            this.力矩A.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.力矩A, "力矩A");
+            this.力矩A.Name = "力矩A";
+            this.力矩A.ReadOnly = true;
+            this.力矩A.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 力矩B
+            // 
+            this.力矩B.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.力矩B, "力矩B");
+            this.力矩B.Name = "力矩B";
+            this.力矩B.ReadOnly = true;
+            this.力矩B.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 力矩C
+            // 
+            this.力矩C.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.力矩C, "力矩C");
+            this.力矩C.Name = "力矩C";
+            this.力矩C.ReadOnly = true;
+            this.力矩C.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 力矩警示
+            // 
+            this.力矩警示.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.力矩警示.FillWeight = 68.39409F;
+            resources.ApplyResources(this.力矩警示, "力矩警示");
+            this.力矩警示.Name = "力矩警示";
+            this.力矩警示.ReadOnly = true;
+            this.力矩警示.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 馬達瓦數
+            // 
+            this.馬達瓦數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.馬達瓦數, "馬達瓦數");
+            this.馬達瓦數.Name = "馬達瓦數";
+            this.馬達瓦數.ReadOnly = true;
+            this.馬達瓦數.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 皮帶馬達安全係數
+            // 
+            this.皮帶馬達安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.皮帶馬達安全係數, "皮帶馬達安全係數");
+            this.皮帶馬達安全係數.Name = "皮帶馬達安全係數";
+            this.皮帶馬達安全係數.ReadOnly = true;
+            this.皮帶馬達安全係數.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // T_max安全係數
+            // 
+            this.T_max安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.T_max安全係數, "T_max安全係數");
+            this.T_max安全係數.Name = "T_max安全係數";
+            this.T_max安全係數.ReadOnly = true;
+            this.T_max安全係數.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 皮帶T_max安全係數
+            // 
+            this.皮帶T_max安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.皮帶T_max安全係數, "皮帶T_max安全係數");
+            this.皮帶T_max安全係數.Name = "皮帶T_max安全係數";
+            this.皮帶T_max安全係數.ReadOnly = true;
+            this.皮帶T_max安全係數.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // T_Rms安全係數
+            // 
+            this.T_Rms安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.T_Rms安全係數, "T_Rms安全係數");
+            this.T_Rms安全係數.Name = "T_Rms安全係數";
+            this.T_Rms安全係數.ReadOnly = true;
+            this.T_Rms安全係數.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 運行距離
+            // 
+            this.運行距離.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.運行距離, "運行距離");
+            this.運行距離.Name = "運行距離";
+            this.運行距離.ReadOnly = true;
+            this.運行距離.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 運行壽命
+            // 
+            this.運行壽命.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.運行壽命, "運行壽命");
+            this.運行壽命.Name = "運行壽命";
+            this.運行壽命.ReadOnly = true;
+            this.運行壽命.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // 是否推薦
+            // 
+            this.是否推薦.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.是否推薦, "是否推薦");
+            this.是否推薦.Name = "是否推薦";
+            this.是否推薦.ReadOnly = true;
+            this.是否推薦.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // 更詳細資訊
+            // 
+            this.更詳細資訊.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.更詳細資訊.FillWeight = 80F;
+            resources.ApplyResources(this.更詳細資訊, "更詳細資訊");
+            this.更詳細資訊.Name = "更詳細資訊";
+            this.更詳細資訊.ReadOnly = true;
+            this.更詳細資訊.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // label12
             // 
             resources.ApplyResources(this.label12, "label12");
@@ -1848,12 +2056,18 @@
             // 
             resources.ApplyResources(this.panelCalcAllMode, "panelCalcAllMode");
             this.panelCalcAllMode.BackColor = System.Drawing.Color.Transparent;
-            this.panelCalcAllMode.Controls.Add(this.cboMaxCalcUnit);
+            this.panelCalcAllMode.Controls.Add(this.panelNoConstantTimeParam);
             this.panelCalcAllMode.Controls.Add(this.cboMaxCalcMode);
-            this.panelCalcAllMode.Controls.Add(this.label77);
-            this.panelCalcAllMode.Controls.Add(this.txtMaxCalc);
             this.panelCalcAllMode.Controls.Add(this.label80);
             this.panelCalcAllMode.Name = "panelCalcAllMode";
+            // 
+            // panelNoConstantTimeParam
+            // 
+            this.panelNoConstantTimeParam.Controls.Add(this.cboMaxCalcUnit);
+            this.panelNoConstantTimeParam.Controls.Add(this.label77);
+            this.panelNoConstantTimeParam.Controls.Add(this.txtMaxCalc);
+            resources.ApplyResources(this.panelNoConstantTimeParam, "panelNoConstantTimeParam");
+            this.panelNoConstantTimeParam.Name = "panelNoConstantTimeParam";
             // 
             // cboMaxCalcUnit
             // 
@@ -1864,16 +2078,6 @@
             this.cboMaxCalcUnit.ForeColor = System.Drawing.Color.White;
             this.cboMaxCalcUnit.FormattingEnabled = true;
             this.cboMaxCalcUnit.Name = "cboMaxCalcUnit";
-            // 
-            // cboMaxCalcMode
-            // 
-            this.cboMaxCalcMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cboMaxCalcMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMaxCalcMode.DropDownWidth = 180;
-            resources.ApplyResources(this.cboMaxCalcMode, "cboMaxCalcMode");
-            this.cboMaxCalcMode.ForeColor = System.Drawing.Color.White;
-            this.cboMaxCalcMode.FormattingEnabled = true;
-            this.cboMaxCalcMode.Name = "cboMaxCalcMode";
             // 
             // label77
             // 
@@ -1888,6 +2092,16 @@
             resources.ApplyResources(this.txtMaxCalc, "txtMaxCalc");
             this.txtMaxCalc.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtMaxCalc.Name = "txtMaxCalc";
+            // 
+            // cboMaxCalcMode
+            // 
+            this.cboMaxCalcMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboMaxCalcMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMaxCalcMode.DropDownWidth = 180;
+            resources.ApplyResources(this.cboMaxCalcMode, "cboMaxCalcMode");
+            this.cboMaxCalcMode.ForeColor = System.Drawing.Color.White;
+            this.cboMaxCalcMode.FormattingEnabled = true;
+            this.cboMaxCalcMode.Name = "cboMaxCalcMode";
             // 
             // label80
             // 
@@ -3137,196 +3351,6 @@
             this.label56.BackColor = System.Drawing.Color.LightGray;
             this.label56.Name = "label56";
             // 
-            // 鎖定
-            // 
-            this.鎖定.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.鎖定.FillWeight = 56.40312F;
-            this.鎖定.Frozen = true;
-            resources.ApplyResources(this.鎖定, "鎖定");
-            this.鎖定.Name = "鎖定";
-            this.鎖定.ReadOnly = true;
-            this.鎖定.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // 項次
-            // 
-            this.項次.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.項次.FillWeight = 68.39409F;
-            this.項次.Frozen = true;
-            resources.ApplyResources(this.項次, "項次");
-            this.項次.Name = "項次";
-            this.項次.ReadOnly = true;
-            this.項次.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 重複定位精度
-            // 
-            this.重複定位精度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.重複定位精度, "重複定位精度");
-            this.重複定位精度.Name = "重複定位精度";
-            this.重複定位精度.ReadOnly = true;
-            this.重複定位精度.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 導程
-            // 
-            this.導程.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.導程, "導程");
-            this.導程.Name = "導程";
-            this.導程.ReadOnly = true;
-            this.導程.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 荷重
-            // 
-            this.荷重.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.荷重, "荷重");
-            this.荷重.Name = "荷重";
-            this.荷重.ReadOnly = true;
-            this.荷重.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 最高轉速
-            // 
-            this.最高轉速.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.最高轉速, "最高轉速");
-            this.最高轉速.Name = "最高轉速";
-            this.最高轉速.ReadOnly = true;
-            this.最高轉速.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 運行速度
-            // 
-            this.運行速度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.運行速度, "運行速度");
-            this.運行速度.Name = "運行速度";
-            this.運行速度.ReadOnly = true;
-            this.運行速度.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 加速度
-            // 
-            this.加速度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.加速度, "加速度");
-            this.加速度.Name = "加速度";
-            this.加速度.ReadOnly = true;
-            this.加速度.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 最大行程
-            // 
-            this.最大行程.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.最大行程, "最大行程");
-            this.最大行程.Name = "最大行程";
-            this.最大行程.ReadOnly = true;
-            this.最大行程.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 運行時間
-            // 
-            this.運行時間.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.運行時間, "運行時間");
-            this.運行時間.Name = "運行時間";
-            this.運行時間.ReadOnly = true;
-            this.運行時間.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 力矩A
-            // 
-            this.力矩A.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.力矩A, "力矩A");
-            this.力矩A.Name = "力矩A";
-            this.力矩A.ReadOnly = true;
-            this.力矩A.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 力矩B
-            // 
-            this.力矩B.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.力矩B, "力矩B");
-            this.力矩B.Name = "力矩B";
-            this.力矩B.ReadOnly = true;
-            this.力矩B.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 力矩C
-            // 
-            this.力矩C.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.力矩C, "力矩C");
-            this.力矩C.Name = "力矩C";
-            this.力矩C.ReadOnly = true;
-            this.力矩C.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 力矩警示
-            // 
-            this.力矩警示.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.力矩警示.FillWeight = 68.39409F;
-            resources.ApplyResources(this.力矩警示, "力矩警示");
-            this.力矩警示.Name = "力矩警示";
-            this.力矩警示.ReadOnly = true;
-            this.力矩警示.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 馬達瓦數
-            // 
-            this.馬達瓦數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.馬達瓦數, "馬達瓦數");
-            this.馬達瓦數.Name = "馬達瓦數";
-            this.馬達瓦數.ReadOnly = true;
-            this.馬達瓦數.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 皮帶馬達安全係數
-            // 
-            this.皮帶馬達安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.皮帶馬達安全係數, "皮帶馬達安全係數");
-            this.皮帶馬達安全係數.Name = "皮帶馬達安全係數";
-            this.皮帶馬達安全係數.ReadOnly = true;
-            this.皮帶馬達安全係數.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // T_max安全係數
-            // 
-            this.T_max安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.T_max安全係數, "T_max安全係數");
-            this.T_max安全係數.Name = "T_max安全係數";
-            this.T_max安全係數.ReadOnly = true;
-            this.T_max安全係數.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 皮帶T_max安全係數
-            // 
-            this.皮帶T_max安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.皮帶T_max安全係數, "皮帶T_max安全係數");
-            this.皮帶T_max安全係數.Name = "皮帶T_max安全係數";
-            this.皮帶T_max安全係數.ReadOnly = true;
-            this.皮帶T_max安全係數.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // T_Rms安全係數
-            // 
-            this.T_Rms安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.T_Rms安全係數, "T_Rms安全係數");
-            this.T_Rms安全係數.Name = "T_Rms安全係數";
-            this.T_Rms安全係數.ReadOnly = true;
-            this.T_Rms安全係數.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 運行距離
-            // 
-            this.運行距離.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.運行距離, "運行距離");
-            this.運行距離.Name = "運行距離";
-            this.運行距離.ReadOnly = true;
-            this.運行距離.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 運行壽命
-            // 
-            this.運行壽命.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.運行壽命, "運行壽命");
-            this.運行壽命.Name = "運行壽命";
-            this.運行壽命.ReadOnly = true;
-            this.運行壽命.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // 是否推薦
-            // 
-            this.是否推薦.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.是否推薦, "是否推薦");
-            this.是否推薦.Name = "是否推薦";
-            this.是否推薦.ReadOnly = true;
-            this.是否推薦.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // 更詳細資訊
-            // 
-            this.更詳細資訊.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.更詳細資訊.FillWeight = 80F;
-            resources.ApplyResources(this.更詳細資訊, "更詳細資訊");
-            this.更詳細資訊.Name = "更詳細資訊";
-            this.更詳細資訊.ReadOnly = true;
-            this.更詳細資訊.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -3365,6 +3389,8 @@
             this.tabContent.PerformLayout();
             this.explorerBar.ResumeLayout(false);
             this.explorerBar.PerformLayout();
+            this.panelCalcMaxOptions.ResumeLayout(false);
+            this.panelCalcMaxOptions.PerformLayout();
             this.panelNextPage.ResumeLayout(false);
             this.panelConfirmBtnsStep2.ResumeLayout(false);
             this.panelSideTable.ResumeLayout(false);
@@ -3452,6 +3478,8 @@
             this.panel14.PerformLayout();
             this.panelCalcAllMode.ResumeLayout(false);
             this.panelCalcAllMode.PerformLayout();
+            this.panelNoConstantTimeParam.ResumeLayout(false);
+            this.panelNoConstantTimeParam.PerformLayout();
             this.panelAdvanceMode.ResumeLayout(false);
             this.panelAdvanceParams.ResumeLayout(false);
             this.panelAdvanceParams.PerformLayout();
@@ -3888,6 +3916,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 運行壽命;
         private System.Windows.Forms.DataGridViewImageColumn 是否推薦;
         private System.Windows.Forms.DataGridViewImageColumn 更詳細資訊;
+        public System.Windows.Forms.Panel panelNoConstantTimeParam;
+        public System.Windows.Forms.CheckBox chkIsCalcMaxLoad;
+        public System.Windows.Forms.Panel panelCalcMaxOptions;
     }
 }
 
