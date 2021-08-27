@@ -216,7 +216,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                             formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "Error";
                         else {
                             if (model.serviceLifeDistance > 10000) {
-                                if (formMain.chkIsCalcMaxLoad.Checked)
+                                if (formMain.chkCalcAllMode.Checked && formMain.chkIsCalcMaxLoad.Checked)
                                     formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = model.serviceLifeDistance + "km";
                                 else
                                     formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "10000km↑";
