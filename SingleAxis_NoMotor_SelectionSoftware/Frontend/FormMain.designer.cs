@@ -58,6 +58,7 @@
             this.label76 = new System.Windows.Forms.Label();
             this.tabContent = new System.Windows.Forms.TabPage();
             this.explorerBar = new System.Windows.Forms.Panel();
+            this.panelCalcAllMode = new System.Windows.Forms.Panel();
             this.panelCalcMaxOptions = new System.Windows.Forms.Panel();
             this.chkIsCalcMaxLoad = new System.Windows.Forms.CheckBox();
             this.chkRpmLimitByStroke = new System.Windows.Forms.CheckBox();
@@ -212,7 +213,7 @@
             this.cboPower = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.panelCalcAllMode = new System.Windows.Forms.Panel();
+            this.panelCalcAllParam = new System.Windows.Forms.Panel();
             this.panelNoConstantTimeParam = new System.Windows.Forms.Panel();
             this.cboMaxCalcUnit = new System.Windows.Forms.ComboBox();
             this.label77 = new System.Windows.Forms.Label();
@@ -411,6 +412,7 @@
             this.panel18.SuspendLayout();
             this.tabContent.SuspendLayout();
             this.explorerBar.SuspendLayout();
+            this.panelCalcAllMode.SuspendLayout();
             this.panelCalcMaxOptions.SuspendLayout();
             this.panelNextPage.SuspendLayout();
             this.panelConfirmBtnsStep2.SuspendLayout();
@@ -487,7 +489,7 @@
             this.panelReducerParam.SuspendLayout();
             this.panelPowerSelection.SuspendLayout();
             this.panel14.SuspendLayout();
-            this.panelCalcAllMode.SuspendLayout();
+            this.panelCalcAllParam.SuspendLayout();
             this.panelNoConstantTimeParam.SuspendLayout();
             this.panelAdvanceMode.SuspendLayout();
             this.panelAdvanceParams.SuspendLayout();
@@ -753,8 +755,7 @@
             // explorerBar
             // 
             resources.ApplyResources(this.explorerBar, "explorerBar");
-            this.explorerBar.Controls.Add(this.panelCalcMaxOptions);
-            this.explorerBar.Controls.Add(this.chkCalcAllMode);
+            this.explorerBar.Controls.Add(this.panelCalcAllMode);
             this.explorerBar.Controls.Add(this.panelNextPage);
             this.explorerBar.Controls.Add(this.panelSideTable);
             this.explorerBar.Controls.Add(this.lbPrePage);
@@ -766,6 +767,13 @@
             this.explorerBar.Controls.Add(this.panelModelType);
             this.explorerBar.Controls.Add(this.panelUseEnv);
             this.explorerBar.Name = "explorerBar";
+            // 
+            // panelCalcAllMode
+            // 
+            this.panelCalcAllMode.Controls.Add(this.panelCalcMaxOptions);
+            this.panelCalcAllMode.Controls.Add(this.chkCalcAllMode);
+            resources.ApplyResources(this.panelCalcAllMode, "panelCalcAllMode");
+            this.panelCalcAllMode.Name = "panelCalcAllMode";
             // 
             // panelCalcMaxOptions
             // 
@@ -2016,7 +2024,7 @@
             // 
             this.panel14.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.bg_runCondition;
             resources.ApplyResources(this.panel14, "panel14");
-            this.panel14.Controls.Add(this.panelCalcAllMode);
+            this.panel14.Controls.Add(this.panelCalcAllParam);
             this.panel14.Controls.Add(this.chkExpectServiceLife);
             this.panel14.Controls.Add(this.panelAdvanceMode);
             this.panel14.Controls.Add(this.panelExpectServiceLifeTime);
@@ -2052,14 +2060,14 @@
             this.panel14.Controls.Add(this.labelStopTimeAlarm);
             this.panel14.Name = "panel14";
             // 
-            // panelCalcAllMode
+            // panelCalcAllParam
             // 
-            resources.ApplyResources(this.panelCalcAllMode, "panelCalcAllMode");
-            this.panelCalcAllMode.BackColor = System.Drawing.Color.Transparent;
-            this.panelCalcAllMode.Controls.Add(this.panelNoConstantTimeParam);
-            this.panelCalcAllMode.Controls.Add(this.cboMaxCalcMode);
-            this.panelCalcAllMode.Controls.Add(this.label80);
-            this.panelCalcAllMode.Name = "panelCalcAllMode";
+            resources.ApplyResources(this.panelCalcAllParam, "panelCalcAllParam");
+            this.panelCalcAllParam.BackColor = System.Drawing.Color.Transparent;
+            this.panelCalcAllParam.Controls.Add(this.panelNoConstantTimeParam);
+            this.panelCalcAllParam.Controls.Add(this.cboMaxCalcMode);
+            this.panelCalcAllParam.Controls.Add(this.label80);
+            this.panelCalcAllParam.Name = "panelCalcAllParam";
             // 
             // panelNoConstantTimeParam
             // 
@@ -3389,6 +3397,8 @@
             this.tabContent.PerformLayout();
             this.explorerBar.ResumeLayout(false);
             this.explorerBar.PerformLayout();
+            this.panelCalcAllMode.ResumeLayout(false);
+            this.panelCalcAllMode.PerformLayout();
             this.panelCalcMaxOptions.ResumeLayout(false);
             this.panelCalcMaxOptions.PerformLayout();
             this.panelNextPage.ResumeLayout(false);
@@ -3476,8 +3486,8 @@
             this.panelPowerSelection.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
-            this.panelCalcAllMode.ResumeLayout(false);
-            this.panelCalcAllMode.PerformLayout();
+            this.panelCalcAllParam.ResumeLayout(false);
+            this.panelCalcAllParam.PerformLayout();
             this.panelNoConstantTimeParam.ResumeLayout(false);
             this.panelNoConstantTimeParam.PerformLayout();
             this.panelAdvanceMode.ResumeLayout(false);
@@ -3886,7 +3896,7 @@
         private System.Windows.Forms.Panel panel23;
         public System.Windows.Forms.Panel panelMomentB;
         public System.Windows.Forms.CheckBox chkCalcAllMode;
-        public System.Windows.Forms.Panel panelCalcAllMode;
+        public System.Windows.Forms.Panel panelCalcAllParam;
         public System.Windows.Forms.ComboBox cboMaxCalcMode;
         public System.Windows.Forms.Label label77;
         public System.Windows.Forms.TextBox txtMaxCalc;
@@ -3919,6 +3929,7 @@
         public System.Windows.Forms.Panel panelNoConstantTimeParam;
         public System.Windows.Forms.CheckBox chkIsCalcMaxLoad;
         public System.Windows.Forms.Panel panelCalcMaxOptions;
+        public System.Windows.Forms.Panel panelCalcAllMode;
     }
 }
 

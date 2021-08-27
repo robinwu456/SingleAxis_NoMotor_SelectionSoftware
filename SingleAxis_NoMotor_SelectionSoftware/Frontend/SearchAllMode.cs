@@ -53,9 +53,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void ChkCalcAllMode_CheckedChanged(object sender, EventArgs e) {
             // 行程對照轉速
-            formMain.panelCalcMaxOptions.Visible = formMain.chkCalcAllMode.Checked;
+            formMain.panelCalcMaxOptions.Enabled = formMain.chkCalcAllMode.Checked;
             // 運算模式panel
-            formMain.panelCalcAllMode.Visible = formMain.chkCalcAllMode.Checked;
+            formMain.panelCalcAllParam.Visible = formMain.chkCalcAllMode.Checked;
 
             // 表格顯示
             formMain.dgvRecommandList.Columns["力矩警示"].Visible = formMain.chkCalcAllMode.Checked;

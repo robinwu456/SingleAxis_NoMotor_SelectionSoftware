@@ -795,17 +795,17 @@
   <data name="&gt;&gt;chkRpmLimitByStroke.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="panelCalcMaxOptions.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="panelCalcMaxOptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>266, 24</value>
+    <value>22, 32</value>
   </data>
   <data name="panelCalcMaxOptions.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 36</value>
   </data>
   <data name="panelCalcMaxOptions.TabIndex" type="System.Int32, mscorlib">
     <value>261</value>
-  </data>
-  <data name="panelCalcMaxOptions.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;panelCalcMaxOptions.Name" xml:space="preserve">
     <value>panelCalcMaxOptions</value>
@@ -814,7 +814,7 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panelCalcMaxOptions.Parent" xml:space="preserve">
-    <value>explorerBar</value>
+    <value>panelCalcAllMode</value>
   </data>
   <data name="&gt;&gt;panelCalcMaxOptions.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -829,7 +829,7 @@
     <value>NoControl</value>
   </data>
   <data name="chkCalcAllMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 32</value>
+    <value>27, 9</value>
   </data>
   <data name="chkCalcAllMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 20</value>
@@ -847,10 +847,31 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chkCalcAllMode.Parent" xml:space="preserve">
-    <value>explorerBar</value>
+    <value>panelCalcAllMode</value>
   </data>
   <data name="&gt;&gt;chkCalcAllMode.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="panelCalcAllMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1136, 23</value>
+  </data>
+  <data name="panelCalcAllMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 71</value>
+  </data>
+  <data name="panelCalcAllMode.TabIndex" type="System.Int32, mscorlib">
+    <value>262</value>
+  </data>
+  <data name="&gt;&gt;panelCalcAllMode.Name" xml:space="preserve">
+    <value>panelCalcAllMode</value>
+  </data>
+  <data name="&gt;&gt;panelCalcAllMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelCalcAllMode.Parent" xml:space="preserve">
+    <value>explorerBar</value>
+  </data>
+  <data name="&gt;&gt;panelCalcAllMode.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="panelConfirmBtnsStep2.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
@@ -934,7 +955,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelNextPage.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="pictureBox5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1072,7 +1093,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,756,Absolute,756,Absolute,756,Absolute,756" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,757,Absolute,757,Absolute,757,Absolute,757" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 321</value>
@@ -2719,7 +2740,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelSideTable.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="lbPrePage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2752,7 +2773,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;lbPrePage.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="dgvRecommandList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -3133,7 +3154,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelCalcResult.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="label58.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3739,7 +3760,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelChart.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="tableLayoutPanel9.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
@@ -4850,7 +4871,7 @@
   <data name="panel14.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="panelCalcAllMode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="panelCalcAllParam.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="cboMaxCalcUnit.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
@@ -4962,7 +4983,7 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panelNoConstantTimeParam.Parent" xml:space="preserve">
-    <value>panelCalcAllMode</value>
+    <value>panelCalcAllParam</value>
   </data>
   <data name="&gt;&gt;panelNoConstantTimeParam.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -4989,7 +5010,7 @@
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cboMaxCalcMode.Parent" xml:space="preserve">
-    <value>panelCalcAllMode</value>
+    <value>panelCalcAllParam</value>
   </data>
   <data name="&gt;&gt;cboMaxCalcMode.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -5022,33 +5043,33 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label80.Parent" xml:space="preserve">
-    <value>panelCalcAllMode</value>
+    <value>panelCalcAllParam</value>
   </data>
   <data name="&gt;&gt;label80.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="panelCalcAllMode.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="panelCalcAllParam.Location" type="System.Drawing.Point, System.Drawing">
     <value>50, 295</value>
   </data>
-  <data name="panelCalcAllMode.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="panelCalcAllParam.Size" type="System.Drawing.Size, System.Drawing">
     <value>511, 123</value>
   </data>
-  <data name="panelCalcAllMode.TabIndex" type="System.Int32, mscorlib">
+  <data name="panelCalcAllParam.TabIndex" type="System.Int32, mscorlib">
     <value>378</value>
   </data>
-  <data name="panelCalcAllMode.Visible" type="System.Boolean, mscorlib">
+  <data name="panelCalcAllParam.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;panelCalcAllMode.Name" xml:space="preserve">
-    <value>panelCalcAllMode</value>
+  <data name="&gt;&gt;panelCalcAllParam.Name" xml:space="preserve">
+    <value>panelCalcAllParam</value>
   </data>
-  <data name="&gt;&gt;panelCalcAllMode.Type" xml:space="preserve">
+  <data name="&gt;&gt;panelCalcAllParam.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelCalcAllMode.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelCalcAllParam.Parent" xml:space="preserve">
     <value>panel14</value>
   </data>
-  <data name="&gt;&gt;panelCalcAllMode.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panelCalcAllParam.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="chkExpectServiceLife.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -6798,7 +6819,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelCalc.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="label64.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 11pt, style=Bold</value>
@@ -7809,7 +7830,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelSetup.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 15pt, style=Bold</value>
@@ -8280,7 +8301,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelModelSelection.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="optECH.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9372,7 +9393,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelModelType.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="panel3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -9657,7 +9678,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelUseEnv.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="explorerBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

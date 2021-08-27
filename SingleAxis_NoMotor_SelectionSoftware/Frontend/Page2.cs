@@ -182,7 +182,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 全選模式
             formMain.chkCalcAllMode.Checked = false;
             formMain.chkRpmLimitByStroke.Checked = false;
-            formMain.chkCalcAllMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
+            formMain.panelCalcAllMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
             //formMain.chkRpmLimitByStroke.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
         }
 
@@ -239,6 +239,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 側邊欄移除
             formMain.panelSideTable.Visible = false;
+            formMain.panelCalcAllMode.Visible = false;
         }
 
         private void UpdateLayout(object sender, EventArgs e) {

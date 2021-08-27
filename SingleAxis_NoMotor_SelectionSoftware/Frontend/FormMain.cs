@@ -104,6 +104,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 側邊欄隱藏
             panelSideTable.Anchor = AnchorStyles.Right;
             tabSideTableImg.Multiline = true;
+            panelCalcAllMode.Anchor = AnchorStyles.Right;
 
         }
 

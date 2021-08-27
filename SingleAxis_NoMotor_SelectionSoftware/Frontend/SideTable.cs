@@ -50,6 +50,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //formMain.panelSideTable.Size = sizeSideTable;
             //formMain.panelSideTable.Location = positionSideTable;
             //formMain.panelSideTableSelections.Size = sizeTableSelection;
+
+            // 全選項目
+            formMain.panelCalcAllMode.Parent.Controls.Remove(formMain.panelCalcAllMode);
+            formMain.splitContainerBase.Panel2.Controls.Add(formMain.panelCalcAllMode);
+            formMain.panelCalcAllMode.BringToFront();
         }
 
         // 選項欄生成
@@ -116,6 +121,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             else
                 middleLocation = formMain.explorerBar.Size.Height / 2;
             formMain.panelSideTable.Location = new Point(formMain.panelSideTable.Location.X, middleLocation - formMain.panelSideTable.Size.Height / 2);
+
+            // 全選模式
+            formMain.panelCalcAllMode.Location = new Point(formMain.panelSideTable.Location.X, formMain.panelSideTable.Location.Y - 77);
         }
 
         public void Update(object sender, EventArgs e) {
