@@ -181,33 +181,42 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         // 最大荷重計算
         protected void CalcMaxLoad(Model model, Condition condition) {
-            long serviceLifeDistance = 9999999;
-            int loadInterval = 10;            
+            void CalcLife(int loadInterval) {
+                long serviceLifeDistance = 9999999;
+                bool isLoadChanged = false;
 
-            while (true) {
-                long slideTrackServiceLifeDistance = GetSlideTrackEstimatedLife(model, condition);
-                long screwServiceLifeDistance = GetScrewEstimatedLife(model, condition);                
+                while (true) {
+                    long slideTrackServiceLifeDistance = GetSlideTrackEstimatedLife(model, condition);
+                    long screwServiceLifeDistance = GetScrewEstimatedLife(model, condition);
 
-                // 結果壽命
-                if (model.modelType.IsBeltType())
-                    // 皮帶型
-                    serviceLifeDistance = slideTrackServiceLifeDistance;
-                else {
-                    if (model.modelType.IsRodType())
-                        // Y系列直接用螺桿壽命
-                        serviceLifeDistance = screwServiceLifeDistance;
-                    else
-                        // 螺桿型滑軌、螺桿壽命取最小值
-                        serviceLifeDistance = Math.Min(slideTrackServiceLifeDistance, screwServiceLifeDistance);
+                    // 結果壽命
+                    if (model.modelType.IsBeltType())
+                        // 皮帶型
+                        serviceLifeDistance = slideTrackServiceLifeDistance;
+                    else {
+                        if (model.modelType.IsRodType())
+                            // Y系列直接用螺桿壽命
+                            serviceLifeDistance = screwServiceLifeDistance;
+                        else
+                            // 螺桿型滑軌、螺桿壽命取最小值
+                            serviceLifeDistance = Math.Min(slideTrackServiceLifeDistance, screwServiceLifeDistance);
+                    }
+
+                    if (serviceLifeDistance <= 10000)
+                        break;
+
+                    isLoadChanged = true;
+                    condition.load += loadInterval;
                 }
 
-                if (serviceLifeDistance <= 10000)
-                    break;
-
-                condition.load += loadInterval;
+                if (isLoadChanged)
+                    condition.load -= loadInterval;
             }
 
-            condition.load -= loadInterval;
+            CalcLife(1000);
+            CalcLife(100);
+            CalcLife(10);
+            CalcLife(1);
 
             //Console.WriteLine("life: {0}, load: {1}", serviceLifeDistance, condition.load);
         }

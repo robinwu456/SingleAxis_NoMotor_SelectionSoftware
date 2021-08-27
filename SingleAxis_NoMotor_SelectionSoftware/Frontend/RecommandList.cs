@@ -215,9 +215,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         if (model.serviceLifeDistance < 0)
                             formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "Error";
                         else {
-                            if (model.serviceLifeDistance > 10000)
-                                formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "10000km↑";
-                            else
+                            if (model.serviceLifeDistance > 10000) {
+                                if (formMain.chkIsCalcMaxLoad.Checked)
+                                    formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = model.serviceLifeDistance + "km";
+                                else
+                                    formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = "10000km↑";
+                            } else
                                 formMain.dgvRecommandList.Rows[index].Cells["運行距離"].Value = model.serviceLifeDistance + "km";
                         }
 
@@ -320,7 +323,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 }));                
             } catch (Exception ex) {
                 Console.WriteLine(ex);
-            }            
+            }
+
+            // 欄寬設定
+            formMain.Invoke(new Action(() => {
+                foreach (DataGridViewColumn col in formMain.dgvRecommandList.Columns)
+                    if (col.Name == "荷重")
+                        col.AutoSizeMode = formMain.chkIsCalcMaxLoad.Checked ? DataGridViewAutoSizeColumnMode.AllCells : DataGridViewAutoSizeColumnMode.None;
+            }));
         }
 
         public void DisplaySelectedModel(string model, double lead) {
