@@ -10,15 +10,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         // 滑軌壽命計算
         protected long GetSlideTrackEstimatedLife(Model model, Condition condition) {
-            //if (model.name == "GTH5S" &&
-            //    model.lead == 2 
-            //    //condition.setupMethod == Model.SetupMethod.水平 &&
-            //    //condition.load == 10 &&
-            //    //condition.moment_A == 100 &&
-            //    //condition.moment_B == 0 &&
-            //    //condition.moment_C == 0
-            //    )
-            //    Console.WriteLine(1);
+            if (model.name == "GTH12" &&
+                model.lead == 32
+                //condition.setupMethod == Model.SetupMethod.水平 &&
+                //condition.load == 10 &&
+                //condition.moment_A == 100 &&
+                //condition.moment_B == 0 &&
+                //condition.moment_C == 0
+                )
+                Console.WriteLine(1);
 
             if (!condition.modelType.IsRodType())
                 if (condition.calcMode != Condition.CalcMode.Test)
@@ -278,7 +278,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 // 單位轉換
                 if (condition.calcMode == Condition.CalcMode.CalcMax && condition.calcMaxUnit == Condition.CalcMaxUnit.RPM) {
                     if (model.modelType.IsBeltType()) {
-                        model.vMax = GetBeltVmaxByRpm_ms(model.name, (int)model.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType) * 1000;
+                        //model.vMax = GetBeltVmaxByRpm_ms(model.name, (int)condition.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType) * 1000;
+                        model.vMax = GetBeltVmaxByRpm_ms(model.name, (int)condition.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
                     } else {
                         model.vMax = RPM_TO_MMS((int)condition.vMax, model.lead) / 1000;
                     }
@@ -343,8 +344,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         break;
                     case Condition.CalcMaxItem.AccelTime:
                         model.accelTime = condition.accelTime;
-                        if (!condition.isRpmLimitByStroke)
+                        int rpmNoConstantTime = MMS_TO_RPM(model.stroke / model.accelTime, model.lead);                        
+                        if (rpmNoConstantTime < model.rpm || !condition.isRpmLimitByStroke)
                             model.vMax = model.stroke / model.accelTime / 1000;
+                        model.rpm = rpmNoConstantTime < model.rpm ? rpmNoConstantTime : model.rpm;
+                        //if (!condition.isRpmLimitByStroke)
+                        //    model.vMax = model.stroke / model.accelTime / 1000;
                         break;
                 }
             }
