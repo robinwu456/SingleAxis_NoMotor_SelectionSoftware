@@ -24,7 +24,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private string version;
         //private int trailVersionUseDays = 0;    // 試用版使用期限(天數)
-        private DateTime trailVersionDateTime = new DateTime(2021, 8, 29);
+        private DateTime trailVersionDateTime = new DateTime(2021, 12, 31);
 
         public FormMain() {
             InitializeComponent();

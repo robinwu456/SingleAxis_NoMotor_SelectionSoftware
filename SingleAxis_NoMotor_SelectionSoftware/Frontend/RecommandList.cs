@@ -349,7 +349,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
             // 使用壽命距離
             string useDistance = "";
-            if (curModel.slideTrackServiceLifeDistance < 0)
+            if (curModel.serviceLifeDistance < 0)
                 useDistance = "Error";
             else {
                 if (curModel.serviceLifeDistance > 10000)
