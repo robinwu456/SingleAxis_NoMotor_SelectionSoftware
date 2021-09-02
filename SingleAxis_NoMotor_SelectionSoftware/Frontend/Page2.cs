@@ -149,7 +149,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.sideTable.ClearModelInfo();
             formMain.sideTable.ClearSelectedModelInfo();
             recommandList.curSelectModel = (null, -1);
-            formMain.cmdConfirmStep2.Visible = false;
+            //formMain.cmdConfirmStep2.Visible = false;
+            formMain.page2.ChangeNextStepBtnVisible(false);
             chartInfo.Clear();
 
             //// 有效行程顯示
@@ -213,10 +214,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //formMain.optHorizontalUse.CheckedChanged += UpdateMomentPic;
             //formMain.optVerticalUse.CheckedChanged += UpdateMomentPic;
             //formMain.optWallHangingUse.CheckedChanged += UpdateMomentPic;
+
+            // 回到運轉條件
+            formMain.cmdChangeRunCondition.Click += CmdChangeRunCondition_Click;
+        }
+
+        private void CmdChangeRunCondition_Click(object sender, EventArgs e) {
+            formMain.explorerBar.ScrollControlIntoView(formMain.lbTitleCalc);
         }
 
         //private void UpdateMomentPic(object sender, EventArgs e) {
-            
+
         //}
 
         private void SteupMethod_CheckedChanged(object sender, EventArgs e) {
@@ -396,7 +404,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     //formMain.page2.effectiveStroke.IsShowEffectiveStroke(false);
 
                     // 搜尋不到項目時，下一步隱藏
-                    formMain.Invoke(new Action(() => formMain.cmdConfirmStep2.Visible = false));
+                    //formMain.Invoke(new Action(() => formMain.cmdConfirmStep2.Visible = false));
+                    formMain.Invoke(new Action(() => formMain.page2.ChangeNextStepBtnVisible(false)));
 
                     return;
                 }
@@ -450,5 +459,30 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.optGCH.Checked = true;
             formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
         }
+
+        public void ChangeNextStepBtnVisible(bool visible) {
+            formMain.panelConfirmBtnsStep2.ColumnStyles.Clear();
+            formMain.cmdConfirmStep2.Visible = visible;
+
+            ColumnStyle[] rows = { };
+            if (visible) {
+                rows = new ColumnStyle[]{
+                    new ColumnStyle(SizeType.Percent, 33.33f),
+                    new ColumnStyle(SizeType.Percent, 16.67f),
+                    new ColumnStyle(SizeType.Percent, 16.67f),
+                    new ColumnStyle(SizeType.Percent, 33.33f),
+                };
+            } else {
+                rows = new ColumnStyle[]{
+                    new ColumnStyle(SizeType.Percent, 41.67f),
+                    new ColumnStyle(SizeType.Percent, 16.67f),
+                    new ColumnStyle(SizeType.Percent, 41.67f),
+                };
+            }
+
+            foreach (ColumnStyle style in rows)
+                formMain.panelConfirmBtnsStep2.ColumnStyles.Add(style);
+        }
     }
 }
+

@@ -62,7 +62,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.sideTable.ClearMsg();
                 formMain.sideTable.ClearSelectedModelInfo();
                 formMain.cboReducerRatio.DataSource = null;
-                formMain.cmdConfirmStep2.Visible = false;
+                //formMain.cmdConfirmStep2.Visible = false;
+                formMain.page2.ChangeNextStepBtnVisible(false);
             } else {
                 // 型號搜尋到時
                 //Model.ModelType curModelType = formMain.page2.calc.GetModelType(formMain.cboModel.Text);
