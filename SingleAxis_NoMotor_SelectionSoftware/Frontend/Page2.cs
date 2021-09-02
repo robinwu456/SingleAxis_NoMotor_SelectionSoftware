@@ -186,7 +186,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 全選模式
             formMain.chkCalcAllMode.Checked = false;
             formMain.chkRpmLimitByStroke.Checked = false;
-            formMain.panelCalcAllMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
+            //formMain.panelCalcAllMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
             //formMain.chkRpmLimitByStroke.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
 
             // RPM顯示
@@ -223,6 +223,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 回到運轉條件
             formMain.cmdChangeRunCondition.Click += CmdChangeRunCondition_Click;
+
+            // 全選模式
+            formMain.pictureBoxToyo.DoubleClick += PictureBoxToyo_DoubleClick;
+        }
+
+        private void PictureBoxToyo_DoubleClick(object sender, EventArgs e) {
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+                formMain.panelCalcAllMode.Visible = true;
+            else
+                MessageBox.Show("條件選型才能開全選模式");
         }
 
         private void CmdChangeRunCondition_Click(object sender, EventArgs e) {
@@ -307,12 +317,19 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {
+            if (formMain.chkCalcAllMode.Checked) {
+                formMain.chkAdvanceMode.Checked = false;
+                return;
+            }
+
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
                 formMain.panelAdvanceParams.Enabled = formMain.chkAdvanceMode.Checked;
                 return;
             }
 
-            if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "" || !decimal.TryParse(formMain.txtStroke.Text, out decimal a)) {
+            if (formMain.cboModel.Text == "" || 
+                formMain.cboLead.Text == "" || 
+                !decimal.TryParse(formMain.txtStroke.Text, out decimal a)) {
                 formMain.chkAdvanceMode.Checked = false;
                 return;
             }

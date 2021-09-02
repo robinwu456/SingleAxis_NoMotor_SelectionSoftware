@@ -3560,7 +3560,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBoxToyo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         public System.Windows.Forms.SplitContainer splitContainerBase;
@@ -3913,6 +3912,7 @@
         private System.Windows.Forms.DataGridViewImageColumn 更詳細資訊;
         public CustomButton.CustomButton cmdChangeRunCondition;
         public System.Windows.Forms.Label lbTitleCalc;
+        public System.Windows.Forms.PictureBox pictureBoxToyo;
     }
 }
 

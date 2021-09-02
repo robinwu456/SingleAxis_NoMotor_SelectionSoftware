@@ -63,6 +63,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.dgvRecommandList.Columns["T_max安全係數"].Visible = formMain.chkCalcAllMode.Checked;
             formMain.dgvRecommandList.Columns["T_Rms安全係數"].Visible = formMain.chkCalcAllMode.Checked;
             formMain.dgvRecommandList.Columns["皮帶T_max安全係數"].Visible = formMain.chkCalcAllMode.Checked;
+
+            // 進階選項關閉
+            formMain.chkAdvanceMode.Checked = false;
+            formMain.panelAdvanceParams.Enabled = false;
         }
 
         public void UpdateCondition(object sender, EventArgs e) {
