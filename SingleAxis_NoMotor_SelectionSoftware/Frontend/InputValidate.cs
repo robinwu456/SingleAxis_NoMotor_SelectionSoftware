@@ -332,13 +332,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     return;
 
                 string model = formMain.cboModel.Text;
-                //int reducerRatio = 1;
-                //if (formMain.page2.calc.IsContainsReducerRatio(model)) {
-                //    //string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
-                //    //reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
-                //    reducerRatio = Convert.ToInt32(formMain.cboReducerRatio.Text);
-                //    lead /= reducerRatio;
-                //}
 
                 try {
                     Model m = formMain.page2.calc.GetAllModels(formMain.page2.runCondition.curCondition).First(_m => _m.name.StartsWith(model) && _m.lead == lead);
@@ -358,7 +351,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                             formMain.txtMaxSpeed.Text = resultRpm.ToString();
 
                         // RPM 顯示
-                        //lbRpm.Text = "RPM: " + calc.GetRpmByMMS(lead, Convert.ToDouble(txtMaxSpeed.Text)).ToString();
                         if (formMain.txtMaxSpeed.Text.Contains("."))
                             formMain.txtMaxSpeed.Text = formMain.txtMaxSpeed.Text.Split('.')[0];
                         double _mms = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), lead);

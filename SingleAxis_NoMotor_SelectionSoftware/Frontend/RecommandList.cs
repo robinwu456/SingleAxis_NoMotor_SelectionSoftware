@@ -148,6 +148,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
             //formMain.cmdConfirmStep2.Visible = true;
 
+            //// RPM 顯示
+            //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection && formMain.chkAdvanceMode.Checked) {
+            //    formMain.lbRpm.Visible = true;
+            //    formMain.lbRpm.Text = "RPM: " + formMain.page2.calc.GetRpmByMMS(Convert.ToDouble(curRow.Cells["導程"].Value), Convert.ToDouble(formMain.txtMaxSpeed.Text)).ToString();
+            //}
+
             // Log所有參數
             if (curSelectModel.model != null) {
                 try {

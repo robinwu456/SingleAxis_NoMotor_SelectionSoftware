@@ -4998,10 +4998,10 @@
     <value>2</value>
   </data>
   <data name="panelCalcAllParam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>50, 295</value>
+    <value>50, 349</value>
   </data>
   <data name="panelCalcAllParam.Size" type="System.Drawing.Size, System.Drawing">
-    <value>511, 123</value>
+    <value>511, 69</value>
   </data>
   <data name="panelCalcAllParam.TabIndex" type="System.Int32, mscorlib">
     <value>378</value>
@@ -5395,9 +5395,6 @@
   </data>
   <data name="panelAdvanceMode.TabIndex" type="System.Int32, mscorlib">
     <value>328</value>
-  </data>
-  <data name="panelAdvanceMode.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;panelAdvanceMode.Name" xml:space="preserve">
     <value>panelAdvanceMode</value>

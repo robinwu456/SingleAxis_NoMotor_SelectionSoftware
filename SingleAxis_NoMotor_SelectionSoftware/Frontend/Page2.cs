@@ -166,7 +166,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.chkAdvanceMode.Checked = false;
             formMain.panelAdvanceParams.Enabled = false;
             //formMain.panelAdvanceParams.Visible = false;
-            formMain.panelAdvanceMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
+            //formMain.panelAdvanceMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
 
             // scrollbars
             runCondition.scrollBarStroke.Value = 0;
@@ -178,13 +178,19 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             runCondition.scrollBarLoad.maxValue = RunCondition.defaultMaxLoad;
 
             // 運行速度單位
-            formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s", "RPM" };
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
+                formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s", "RPM" };
+            else
+                formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s" };
 
             // 全選模式
             formMain.chkCalcAllMode.Checked = false;
             formMain.chkRpmLimitByStroke.Checked = false;
             formMain.panelCalcAllMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
             //formMain.chkRpmLimitByStroke.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
+
+            // RPM顯示
+            formMain.lbRpm.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
         }
 
         private void InitEvents() {
@@ -301,30 +307,24 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
+                formMain.panelAdvanceParams.Enabled = formMain.chkAdvanceMode.Checked;
+                return;
+            }
+
             if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "" || !decimal.TryParse(formMain.txtStroke.Text, out decimal a)) {
                 formMain.chkAdvanceMode.Checked = false;
                 return;
             }
 
             formMain.panelAdvanceParams.Enabled = formMain.chkAdvanceMode.Checked;
-            //formMain.panelAdvanceParams.Visible = formMain.chkAdvanceMode.Checked;
             if (!formMain.chkAdvanceMode.Checked)
-                //formMain.optMaxSpeedType_mms.Checked = true;
                 formMain.cboMaxSpeedUnit.Text = "mm/s";
             
             if (formMain.chkAdvanceMode.Checked) {
-
-
                 // 切進接選項自動換算最大加速度(加速時間=0.2/0.4)
                 string model = formMain.cboModel.Text;
                 double lead = Convert.ToDouble(formMain.cboLead.Text);
-                //int reducerRatio = 1;
-                //if (formMain.page2.calc.IsContainsReducerRatio(model)) {
-                //    //string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
-                //    //reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
-                //    reducerRatio = Convert.ToInt32(formMain.cboReducerRatio.Text);
-                //    lead /= reducerRatio;
-                //}
                 Model m = formMain.page2.calc.GetAllModels(formMain.page2.runCondition.curCondition).First(_m => _m.name.StartsWith(model) && _m.lead == lead);
                 int maxAccelSpeed = formMain.page2.calc.GetMaxAccelSpeed(m, Convert.ToInt32(formMain.txtStroke.Text), m.modelType);
                 formMain.txtAccelSpeed.Text = maxAccelSpeed.ToString();
