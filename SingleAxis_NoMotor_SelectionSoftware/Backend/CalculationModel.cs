@@ -10,15 +10,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         // 滑軌壽命計算
         protected long GetSlideTrackEstimatedLife(Model model, Condition condition) {
-            if (model.name == "GTH12" &&
-                model.lead == 32
-                //condition.setupMethod == Model.SetupMethod.水平 &&
-                //condition.load == 10 &&
-                //condition.moment_A == 100 &&
-                //condition.moment_B == 0 &&
-                //condition.moment_C == 0
-                )
-                Console.WriteLine(1);
+            //if (model.name == "GTH12" &&
+            //    model.lead == 32
+            //    //condition.setupMethod == Model.SetupMethod.水平 &&
+            //    //condition.load == 10 &&
+            //    //condition.moment_A == 100 &&
+            //    //condition.moment_B == 0 &&
+            //    //condition.moment_C == 0
+            //    )
+            //    Console.WriteLine(1);
 
             if (!condition.modelType.IsRodType())
                 if (condition.calcMode != Condition.CalcMode.Test)

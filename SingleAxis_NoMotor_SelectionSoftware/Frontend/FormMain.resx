@@ -1093,7 +1093,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,757,Absolute,757,Absolute,757,Absolute,757" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,758,Absolute,758,Absolute,758,Absolute,758" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 321</value>
@@ -1108,7 +1108,7 @@
     <value>panelSideTableSelections</value>
   </data>
   <data name="&gt;&gt;panelSideTableSelections.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.0.13, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;panelSideTableSelections.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -1165,7 +1165,7 @@
     <value>customPanel4</value>
   </data>
   <data name="&gt;&gt;customPanel4.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.0.13, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel4.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -1255,7 +1255,7 @@
     <value>customPanel3</value>
   </data>
   <data name="&gt;&gt;customPanel3.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.0.13, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel3.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -2653,7 +2653,7 @@
     <value>tabSideTableImg</value>
   </data>
   <data name="&gt;&gt;tabSideTableImg.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, 不帶電選型軟體, Version=0.0.0.13, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, 不帶電選型軟體, Version=0.0.1.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabSideTableImg.Parent" xml:space="preserve">
     <value>customPanel2</value>
@@ -2677,7 +2677,7 @@
     <value>customPanel2</value>
   </data>
   <data name="&gt;&gt;customPanel2.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.0.13, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel2.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -2734,7 +2734,7 @@
     <value>panelSideTable</value>
   </data>
   <data name="&gt;&gt;panelSideTable.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.0.13, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;panelSideTable.Parent" xml:space="preserve">
     <value>explorerBar</value>
@@ -2788,7 +2788,7 @@
     <value>50</value>
   </data>
   <data name="鎖定.Width" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>50</value>
   </data>
   <metadata name="項次.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2800,7 +2800,7 @@
     <value>50</value>
   </data>
   <data name="項次.Width" type="System.Int32, mscorlib">
-    <value>41</value>
+    <value>50</value>
   </data>
   <metadata name="重複定位精度.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2818,7 +2818,7 @@
     <value>True</value>
   </metadata>
   <data name="導程.HeaderText" xml:space="preserve">
-    <value>導程</value>
+    <value>導程(mm)</value>
   </data>
   <data name="導程.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
@@ -3547,7 +3547,7 @@
     <value>customPanel1</value>
   </data>
   <data name="&gt;&gt;customPanel1.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.0.13, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel1.Parent" xml:space="preserve">
     <value>panel16</value>
@@ -8637,7 +8637,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabModelType_standard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>821, 434</value>
+    <value>821, 399</value>
   </data>
   <data name="tabModelType_standard.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -8829,7 +8829,7 @@
     <value>tabModelType</value>
   </data>
   <data name="&gt;&gt;tabModelType.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, 不帶電選型軟體, Version=0.0.0.13, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, 不帶電選型軟體, Version=0.0.1.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabModelType.Parent" xml:space="preserve">
     <value>panelModelType</value>
@@ -10320,7 +10320,7 @@
     <value>tabMain</value>
   </data>
   <data name="&gt;&gt;tabMain.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, 不帶電選型軟體, Version=0.0.0.13, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, 不帶電選型軟體, Version=0.0.1.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabMain.Parent" xml:space="preserve">
     <value>panel4</value>
