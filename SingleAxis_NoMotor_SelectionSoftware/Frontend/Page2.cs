@@ -461,6 +461,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void ChangeNextStepBtnVisible(bool visible) {
+            if (formMain.cmdConfirmStep2.Visible == visible)
+                return;
+
             formMain.panelConfirmBtnsStep2.ColumnStyles.Clear();
             formMain.cmdConfirmStep2.Visible = visible;
 

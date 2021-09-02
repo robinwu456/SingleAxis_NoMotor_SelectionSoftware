@@ -204,7 +204,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         if (formMain.page2.runCondition.curCondition.setupMethod == Model.SetupMethod.垂直)
                             formMain.dgvRecommandList.Rows[index].Cells["力矩B"].Value = "-";
                         formMain.dgvRecommandList.Rows[index].Cells["力矩警示"].Value = model.isMomentVerifySuccess ? "Pass" : "Fail";
-                        formMain.dgvRecommandList.Rows[index].Cells["馬達瓦數"].Value = model.usePower;
+                        formMain.dgvRecommandList.Rows[index].Cells["馬達瓦數"].Value = model.usePower == 0 ? "-" : model.usePower.ToString();
                         formMain.dgvRecommandList.Rows[index].Cells["皮帶馬達安全係數"].Value = model.beltMotorSafeCoefficient == -1 ? "無" : model.beltMotorSafeCoefficient.ToString();
                         formMain.dgvRecommandList.Rows[index].Cells["T_max安全係數"].Value = model.tMaxSafeCoefficient;
                         formMain.dgvRecommandList.Rows[index].Cells["T_Rms安全係數"].Value = model.tRmsSafeCoefficient == -1 ? "無" : model.tRmsSafeCoefficient.ToString();

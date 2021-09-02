@@ -150,7 +150,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (formMain.cboPower.Text == "標準")
                     curCondition.powerSelection = Condition.PowerSelection.Standard;
                 else if (formMain.cboPower.Text == "自訂") {
-                    if (formMain.chkMotorAdvanceMode.Checked) {
+                    if (formMain.cboMotorParamsMotorPowerSelection.Text == "自訂") {
                         curCondition.powerSelection = Condition.PowerSelection.Custom;
                     } else {
                         curCondition.powerSelection = Condition.PowerSelection.SelectedPower;
@@ -162,16 +162,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (formMain.cboPower.Text.Contains("標準-")) {
                     curCondition.powerSelection = Condition.PowerSelection.SelectedPower;
                     curCondition.selectedPower = Convert.ToInt32(new Regex(@"\d+").Match(formMain.cboPower.Text).Value);
-                } else if (formMain.cboPower.Text == "自訂" && !formMain.chkMotorAdvanceMode.Checked) {
+                } else if (formMain.cboPower.Text == "自訂" && formMain.cboMotorParamsMotorPowerSelection.Text != "自訂") {
                     curCondition.powerSelection = Condition.PowerSelection.SelectedPower;
                     curCondition.selectedPower = Convert.ToInt32(formMain.cboMotorParamsMotorPowerSelection.Text);
-                } else if (formMain.cboPower.Text == "自訂" && formMain.chkMotorAdvanceMode.Checked) {
+                } else if (formMain.cboPower.Text == "自訂" && formMain.cboMotorParamsMotorPowerSelection.Text == "自訂") {
                     curCondition.powerSelection = Condition.PowerSelection.Custom;
                 }
             }
             // 馬達參數自訂
             if (curCondition.powerSelection == Condition.PowerSelection.Custom) {
-                if (formMain.chkMotorAdvanceMode.Checked) {
+                if (formMain.cboMotorParamsMotorPowerSelection.Text == "自訂") {
                     curCondition.ratedTorque = Convert.ToDouble(formMain.txtRatedTorque.Text);
                     curCondition.maxTorque = Convert.ToDouble(formMain.txtMaxTorque.Text);
                     curCondition.rotateInertia = Convert.ToDouble(formMain.txtRotateInertia.Text);

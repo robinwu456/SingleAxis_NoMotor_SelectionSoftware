@@ -183,9 +183,6 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label69 = new System.Windows.Forms.Label();
             this.panelxxx = new System.Windows.Forms.Panel();
-            this.panelMotorAdvanceMode = new System.Windows.Forms.Panel();
-            this.chkMotorAdvanceMode = new CustomToggle.CustomToggle();
-            this.label20 = new System.Windows.Forms.Label();
             this.panelMotorParams = new System.Windows.Forms.Panel();
             this.panelReducerParam = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -485,7 +482,6 @@
             this.tableLayoutPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panelxxx.SuspendLayout();
-            this.panelMotorAdvanceMode.SuspendLayout();
             this.panelMotorParams.SuspendLayout();
             this.panelReducerParam.SuspendLayout();
             this.panelPowerSelection.SuspendLayout();
@@ -1814,37 +1810,10 @@
             this.panelxxx.BackColor = System.Drawing.Color.Transparent;
             this.panelxxx.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.bg_motor;
             resources.ApplyResources(this.panelxxx, "panelxxx");
-            this.panelxxx.Controls.Add(this.panelMotorAdvanceMode);
             this.panelxxx.Controls.Add(this.panelMotorParams);
             this.panelxxx.Controls.Add(this.panelPowerSelection);
             this.panelxxx.Controls.Add(this.cboPower);
             this.panelxxx.Name = "panelxxx";
-            // 
-            // panelMotorAdvanceMode
-            // 
-            this.panelMotorAdvanceMode.Controls.Add(this.chkMotorAdvanceMode);
-            this.panelMotorAdvanceMode.Controls.Add(this.label20);
-            resources.ApplyResources(this.panelMotorAdvanceMode, "panelMotorAdvanceMode");
-            this.panelMotorAdvanceMode.Name = "panelMotorAdvanceMode";
-            // 
-            // chkMotorAdvanceMode
-            // 
-            resources.ApplyResources(this.chkMotorAdvanceMode, "chkMotorAdvanceMode");
-            this.chkMotorAdvanceMode.BackColor = System.Drawing.Color.Transparent;
-            this.chkMotorAdvanceMode.BackImg_ToggleOff_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff2_disable;
-            this.chkMotorAdvanceMode.BackImg_ToggleOff_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff2_hover;
-            this.chkMotorAdvanceMode.BackImg_ToggleOff_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOff2;
-            this.chkMotorAdvanceMode.BackImg_ToggleOn_Disabled = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn2_disable;
-            this.chkMotorAdvanceMode.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn2_hover;
-            this.chkMotorAdvanceMode.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn2;
-            this.chkMotorAdvanceMode.Checked = false;
-            this.chkMotorAdvanceMode.Name = "chkMotorAdvanceMode";
-            // 
-            // label20
-            // 
-            resources.ApplyResources(this.label20, "label20");
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label20.Name = "label20";
             // 
             // panelMotorParams
             // 
@@ -3494,8 +3463,6 @@
             this.tableLayoutPanel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panelxxx.ResumeLayout(false);
-            this.panelMotorAdvanceMode.ResumeLayout(false);
-            this.panelMotorAdvanceMode.PerformLayout();
             this.panelMotorParams.ResumeLayout(false);
             this.panelMotorParams.PerformLayout();
             this.panelReducerParam.ResumeLayout(false);
@@ -3786,7 +3753,6 @@
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel13;
         public System.Windows.Forms.Panel panelxxx;
-        public System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         public System.Windows.Forms.ComboBox cboMaxSpeedUnit;
         private System.Windows.Forms.Panel panel16;
@@ -3821,7 +3787,6 @@
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label62;
         public System.Windows.Forms.Panel panelMotorParams;
-        public System.Windows.Forms.Panel panelMotorAdvanceMode;
         public System.Windows.Forms.Panel panelExpectServiceLifeTime;
         public CustomToggle.CustomToggle chkExpectServiceLife;
         private System.Windows.Forms.Panel panel6;
@@ -3854,7 +3819,6 @@
         private System.Windows.Forms.Panel panel21;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
-        public CustomToggle.CustomToggle chkMotorAdvanceMode;
         public CustomToggle.CustomToggle chkAdvanceMode;
         public CustomTabControl tabSideTableImg;
         private System.Windows.Forms.TabPage 型號;
