@@ -119,8 +119,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 驗證使用瓦數
             if (curRow != null && curRow.Cells["馬達瓦數"].Value != null) {
                 if (formMain.cboPower.Text.Contains("標準")) {
-                    int usePower = Convert.ToInt32(curRow.Cells["馬達瓦數"].Value.ToString());
-                    formMain.cboMotorParamsMotorPowerSelection.Text = usePower.ToString();
+                    //int usePower = Convert.ToInt32(curRow.Cells["馬達瓦數"].Value.ToString());
+                    //formMain.cboMotorParamsMotorPowerSelection.Text = usePower.ToString();
+                    if (int.TryParse(curRow.Cells["馬達瓦數"].Value.ToString(), out int usePower))
+                        formMain.cboMotorParamsMotorPowerSelection.Text = usePower.ToString();                    
                 }
             }
 

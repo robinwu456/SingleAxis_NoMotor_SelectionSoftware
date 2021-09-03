@@ -10,15 +10,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         // 滑軌壽命計算
         protected long GetSlideTrackEstimatedLife(Model model, Condition condition) {
-            //if (model.name == "GTH12" &&
-            //    model.lead == 32
-            //    //condition.setupMethod == Model.SetupMethod.水平 &&
-            //    //condition.load == 10 &&
-            //    //condition.moment_A == 100 &&
-            //    //condition.moment_B == 0 &&
-            //    //condition.moment_C == 0
-            //    )
-            //    Console.WriteLine(1);
+            if (model.name == "GTH4" &&
+                model.lead == 12
+                //condition.setupMethod == Model.SetupMethod.水平 &&
+                //condition.load == 10 &&
+                //condition.moment_A == 100 &&
+                //condition.moment_B == 0 &&
+                //condition.moment_C == 0
+                )
+                Console.WriteLine(1);
 
             if (!condition.modelType.IsRodType())
                 if (condition.calcMode != Condition.CalcMode.Test)
@@ -374,9 +374,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.rpm = GetBeltRPM(model.name, model.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
             else
                 model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead);
-            if (condition.calcMode == Condition.CalcMode.Normal || condition.calcMode == Condition.CalcMode.Test)
-                model.showRpm = recordVmax == model.vMax ? GetRpmByStroke(model.name, model.lead, model.stroke) : GetRpmByMMS(model.lead, model.vMax * 1000);
-            else if (condition.calcMode == Condition.CalcMode.CalcMax)
+            if (condition.calcMode == Condition.CalcMode.Normal || condition.calcMode == Condition.CalcMode.Test) {
+                if (condition.vMaxCalcMode == Condition.CalcVmax.Custom)
+                    model.showRpm = model.rpm;
+                else
+                    model.showRpm = recordVmax == model.vMax ? GetRpmByStroke(model.name, model.lead, model.stroke) : GetRpmByMMS(model.lead, model.vMax * 1000);
+            } else if (condition.calcMode == Condition.CalcMode.CalcMax)
                 model.showRpm = model.rpm;
 
             // 小數點位數修正
