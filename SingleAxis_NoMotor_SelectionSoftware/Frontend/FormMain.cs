@@ -175,20 +175,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private int openAdvanceModeNeedCount = 5;   // 需要點擊次數
         private DateTime advanceModeLastClickTime;  // 最後一次觸發進階模式密碼時間
         private void pictureBoxToyo_DoubleClick(object sender, EventArgs e) {
-            // 每次點擊間格超過5秒就重製記數
-            if (DateTime.Now.Second - advanceModeLastClickTime.Second > 5)
-                openAdvanceModeCount = 0;
-            advanceModeLastClickTime = DateTime.Now;
+            //// 每次點擊間格超過5秒就重製記數
+            //if (DateTime.Now.Second - advanceModeLastClickTime.Second > 5)
+            //    openAdvanceModeCount = 0;
+            //advanceModeLastClickTime = DateTime.Now;
 
-            openAdvanceModeCount++;
-            if (openAdvanceModeCount >= openAdvanceModeNeedCount) {
-                // 開啟永久使用
-                RegistryKey retKey = Registry.LocalMachine.OpenSubKey("software", true).OpenSubKey("SingleAxis_NoMotor_SelectionSoftware", true);
-                retKey.SetValue("UserLevel", "1", RegistryValueKind.String);
-                MessageBox.Show("已開啟永久使用", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //openAdvanceModeCount++;
+            //if (openAdvanceModeCount >= openAdvanceModeNeedCount) {
+            //    // 開啟永久使用
+            //    RegistryKey retKey = Registry.LocalMachine.OpenSubKey("software", true).OpenSubKey("SingleAxis_NoMotor_SelectionSoftware", true);
+            //    retKey.SetValue("UserLevel", "1", RegistryValueKind.String);
+            //    MessageBox.Show("已開啟永久使用", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                openAdvanceModeCount = 0;
-            }
+            //    openAdvanceModeCount = 0;
+            //}
         }
 
         private void VerifyDateTimeLimit() {

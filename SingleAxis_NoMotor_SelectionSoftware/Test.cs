@@ -47,6 +47,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void StartTest(object sender, EventArgs e) {
+            if (!Directory.Exists("./Test/所有測試結果數據"))
+                return;
+
             // 測試主程序
             threadTest = new Thread(Run);
             threadTest.Start();
