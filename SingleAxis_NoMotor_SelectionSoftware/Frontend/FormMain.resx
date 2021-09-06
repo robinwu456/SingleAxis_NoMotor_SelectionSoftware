@@ -886,10 +886,10 @@
     <value>Fill</value>
   </data>
   <data name="cmdConfirmStep2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>483, 3</value>
+    <value>632, 3</value>
   </data>
   <data name="cmdConfirmStep2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 32</value>
+    <value>204, 32</value>
   </data>
   <data name="cmdConfirmStep2.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -913,10 +913,10 @@
     <value>Fill</value>
   </data>
   <data name="cmdChangeRunCondition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>323, 3</value>
+    <value>422, 3</value>
   </data>
   <data name="cmdChangeRunCondition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 32</value>
+    <value>204, 32</value>
   </data>
   <data name="cmdChangeRunCondition.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -943,7 +943,7 @@
     <value>1</value>
   </data>
   <data name="panelConfirmBtnsStep2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 38</value>
+    <value>1260, 38</value>
   </data>
   <data name="panelConfirmBtnsStep2.TabIndex" type="System.Int32, mscorlib">
     <value>258</value>
@@ -970,7 +970,7 @@
     <value>100, 2704</value>
   </data>
   <data name="panelNextPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 72</value>
+    <value>1260, 72</value>
   </data>
   <data name="panelNextPage.TabIndex" type="System.Int32, mscorlib">
     <value>257</value>
@@ -1069,7 +1069,7 @@
     <value>2</value>
   </data>
   <data name="panelSideTableIcon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 8</value>
+    <value>14, 8</value>
   </data>
   <data name="panelSideTableIcon.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 307</value>
@@ -1123,7 +1123,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,758,Absolute,758,Absolute,758,Absolute,758" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,761,Absolute,761,Absolute,761,Absolute,761" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 321</value>
@@ -2818,7 +2818,7 @@
     <value>50</value>
   </data>
   <data name="鎖定.Width" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>50</value>
   </data>
   <metadata name="項次.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2830,7 +2830,7 @@
     <value>50</value>
   </data>
   <data name="項次.Width" type="System.Int32, mscorlib">
-    <value>41</value>
+    <value>50</value>
   </data>
   <metadata name="重複定位精度.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -3085,7 +3085,7 @@
     <value>22, 67</value>
   </data>
   <data name="dgvRecommandList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>918, 364</value>
+    <value>1215, 364</value>
   </data>
   <data name="dgvRecommandList.TabIndex" type="System.Int32, mscorlib">
     <value>257</value>
@@ -3112,7 +3112,7 @@
     <value>20, 46</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>920, 2</value>
+    <value>1217, 2</value>
   </data>
   <data name="label12.TabIndex" type="System.Int32, mscorlib">
     <value>256</value>
@@ -3169,7 +3169,7 @@
     <value>100, 2248</value>
   </data>
   <data name="panelCalcResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 456</value>
+    <value>1260, 456</value>
   </data>
   <data name="panelCalcResult.TabIndex" type="System.Int32, mscorlib">
     <value>251</value>
@@ -3649,10 +3649,10 @@
     <value>NoControl</value>
   </data>
   <data name="label68.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 0</value>
+    <value>204, 0</value>
   </data>
   <data name="label68.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 35</value>
+    <value>1053, 35</value>
   </data>
   <data name="label68.TabIndex" type="System.Int32, mscorlib">
     <value>370</value>
@@ -3691,7 +3691,7 @@
     <value>3, 0, 0, 0</value>
   </data>
   <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 35</value>
+    <value>195, 35</value>
   </data>
   <data name="label21.TabIndex" type="System.Int32, mscorlib">
     <value>369</value>
@@ -3724,7 +3724,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 35</value>
+    <value>1260, 35</value>
   </data>
   <data name="tableLayoutPanel8.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3751,7 +3751,7 @@
     <value>0, 0</value>
   </data>
   <data name="panel15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 35</value>
+    <value>1260, 35</value>
   </data>
   <data name="panel15.TabIndex" type="System.Int32, mscorlib">
     <value>377</value>
@@ -3775,7 +3775,7 @@
     <value>100, 1845</value>
   </data>
   <data name="panelChart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 403</value>
+    <value>1260, 403</value>
   </data>
   <data name="panelChart.TabIndex" type="System.Int32, mscorlib">
     <value>250</value>
@@ -3802,10 +3802,10 @@
     <value>Fill</value>
   </data>
   <data name="cmdCalc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>404, 3</value>
+    <value>528, 3</value>
   </data>
   <data name="cmdCalc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 32</value>
+    <value>203, 32</value>
   </data>
   <data name="cmdCalc.TabIndex" type="System.Int32, mscorlib">
     <value>352</value>
@@ -3832,7 +3832,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 38</value>
+    <value>1260, 38</value>
   </data>
   <data name="tableLayoutPanel9.TabIndex" type="System.Int32, mscorlib">
     <value>382</value>
@@ -6624,10 +6624,10 @@
     <value>NoControl</value>
   </data>
   <data name="label67.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 0</value>
+    <value>204, 0</value>
   </data>
   <data name="label67.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 35</value>
+    <value>1053, 35</value>
   </data>
   <data name="label67.TabIndex" type="System.Int32, mscorlib">
     <value>370</value>
@@ -6666,7 +6666,7 @@
     <value>3, 0, 0, 0</value>
   </data>
   <data name="lbTitleCalc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 35</value>
+    <value>195, 35</value>
   </data>
   <data name="lbTitleCalc.TabIndex" type="System.Int32, mscorlib">
     <value>369</value>
@@ -6699,7 +6699,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 35</value>
+    <value>1260, 35</value>
   </data>
   <data name="tableLayoutPanel7.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -6726,7 +6726,7 @@
     <value>0, 0</value>
   </data>
   <data name="panel13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 35</value>
+    <value>1260, 35</value>
   </data>
   <data name="panel13.TabIndex" type="System.Int32, mscorlib">
     <value>376</value>
@@ -6753,7 +6753,7 @@
     <value>0, 0, 0, 20</value>
   </data>
   <data name="panelCalc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 608</value>
+    <value>1260, 608</value>
   </data>
   <data name="panelCalc.TabIndex" type="System.Int32, mscorlib">
     <value>246</value>
@@ -7638,10 +7638,10 @@
     <value>NoControl</value>
   </data>
   <data name="label66.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 0</value>
+    <value>204, 0</value>
   </data>
   <data name="label66.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 35</value>
+    <value>1053, 35</value>
   </data>
   <data name="label66.TabIndex" type="System.Int32, mscorlib">
     <value>355</value>
@@ -7680,7 +7680,7 @@
     <value>3, 0, 0, 0</value>
   </data>
   <data name="lbTitleSetup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 35</value>
+    <value>195, 35</value>
   </data>
   <data name="lbTitleSetup.TabIndex" type="System.Int32, mscorlib">
     <value>354</value>
@@ -7713,7 +7713,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 35</value>
+    <value>1260, 35</value>
   </data>
   <data name="tableLayoutPanel6.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -7740,7 +7740,7 @@
     <value>0, 0</value>
   </data>
   <data name="panel8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 35</value>
+    <value>1260, 35</value>
   </data>
   <data name="panel8.TabIndex" type="System.Int32, mscorlib">
     <value>356</value>
@@ -7764,7 +7764,7 @@
     <value>100, 965</value>
   </data>
   <data name="panelSetup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 272</value>
+    <value>1260, 272</value>
   </data>
   <data name="panelSetup.TabIndex" type="System.Int32, mscorlib">
     <value>248</value>
@@ -8109,10 +8109,10 @@
     <value>NoControl</value>
   </data>
   <data name="label65.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 0</value>
+    <value>204, 0</value>
   </data>
   <data name="label65.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 35</value>
+    <value>1053, 35</value>
   </data>
   <data name="label65.TabIndex" type="System.Int32, mscorlib">
     <value>335</value>
@@ -8151,7 +8151,7 @@
     <value>3, 0, 0, 0</value>
   </data>
   <data name="lbTitleModelSelection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 35</value>
+    <value>195, 35</value>
   </data>
   <data name="lbTitleModelSelection.TabIndex" type="System.Int32, mscorlib">
     <value>334</value>
@@ -8184,7 +8184,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 35</value>
+    <value>1260, 35</value>
   </data>
   <data name="tableLayoutPanel5.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -8211,7 +8211,7 @@
     <value>0, 0</value>
   </data>
   <data name="panel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 35</value>
+    <value>1260, 35</value>
   </data>
   <data name="panel7.TabIndex" type="System.Int32, mscorlib">
     <value>341</value>
@@ -8235,7 +8235,7 @@
     <value>100, 772</value>
   </data>
   <data name="panelModelSelection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 193</value>
+    <value>1260, 193</value>
   </data>
   <data name="panelModelSelection.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -8586,7 +8586,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabModelType_standard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>821, 434</value>
+    <value>821, 399</value>
   </data>
   <data name="tabModelType_standard.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -8808,7 +8808,7 @@
     <value>3, 0, 0, 0</value>
   </data>
   <data name="lbTitleModelType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 35</value>
+    <value>195, 35</value>
   </data>
   <data name="lbTitleModelType.TabIndex" type="System.Int32, mscorlib">
     <value>324</value>
@@ -8844,10 +8844,10 @@
     <value>NoControl</value>
   </data>
   <data name="label61.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 0</value>
+    <value>204, 0</value>
   </data>
   <data name="label61.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 35</value>
+    <value>1053, 35</value>
   </data>
   <data name="label61.TabIndex" type="System.Int32, mscorlib">
     <value>325</value>
@@ -8880,7 +8880,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 35</value>
+    <value>1260, 35</value>
   </data>
   <data name="tableLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -8907,7 +8907,7 @@
     <value>0, 0</value>
   </data>
   <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 35</value>
+    <value>1260, 35</value>
   </data>
   <data name="panel5.TabIndex" type="System.Int32, mscorlib">
     <value>331</value>
@@ -9327,7 +9327,7 @@
     <value>100, 312</value>
   </data>
   <data name="panelModelType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 460</value>
+    <value>1260, 460</value>
   </data>
   <data name="panelModelType.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -9360,10 +9360,10 @@
     <value>NoControl</value>
   </data>
   <data name="label34.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 0</value>
+    <value>204, 0</value>
   </data>
   <data name="label34.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 35</value>
+    <value>1053, 35</value>
   </data>
   <data name="label34.TabIndex" type="System.Int32, mscorlib">
     <value>299</value>
@@ -9402,7 +9402,7 @@
     <value>3, 0, 0, 0</value>
   </data>
   <data name="lbTitleUseEnv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 35</value>
+    <value>195, 35</value>
   </data>
   <data name="lbTitleUseEnv.TabIndex" type="System.Int32, mscorlib">
     <value>298</value>
@@ -9435,7 +9435,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 35</value>
+    <value>1260, 35</value>
   </data>
   <data name="tableLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -9462,7 +9462,7 @@
     <value>0, 0</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 35</value>
+    <value>1260, 35</value>
   </data>
   <data name="panel3.TabIndex" type="System.Int32, mscorlib">
     <value>303</value>
@@ -9612,7 +9612,7 @@
     <value>100, 100</value>
   </data>
   <data name="panelUseEnv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 212</value>
+    <value>1260, 212</value>
   </data>
   <data name="panelUseEnv.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -13792,17 +13792,14 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>不帶電選型系統</value>
-  </data>
-  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
-    <value>toolTip1</value>
-  </data>
-  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;鎖定.Name" xml:space="preserve">
     <value>鎖定</value>
@@ -13941,6 +13938,12 @@
   </data>
   <data name="&gt;&gt;更詳細資訊.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
+    <value>toolTip1</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormMain</value>

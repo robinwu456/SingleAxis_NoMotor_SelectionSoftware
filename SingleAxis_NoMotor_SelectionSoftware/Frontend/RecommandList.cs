@@ -30,6 +30,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             { "最大行程", "超過最大行程" },
             { "運行壽命", "每分鐘趟數過大" },
             { "運行壽命2", "未達希望壽命" },
+            { "運行時間", "運行時間過短" },
         };
 
         public RecommandList(FormMain formMain) {
@@ -44,6 +45,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 { "最大行程", model => model.maxStroke >= Convert.ToInt32(formMain.txtStroke.Text) },
                 { "運行壽命", model => model.serviceLifeTime != (-1, -1, -1) },
                 { "運行壽命2", model => model.serviceLifeTime != (-1, -1, -1) && model.serviceLifeTime.year >= formMain.page2.runCondition.curCondition.expectServiceLifeTime },
+                { "運行時間", model => model.moveTime <= Convert.ToDouble(formMain.txtRunTime.Text) },
             };
             InitEvents();
         }

@@ -2243,6 +2243,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap slideModel_MG {
+            get {
+                object obj = ResourceManager.GetObject("slideModel_MG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap slideModel_singleSlide {
             get {
                 object obj = ResourceManager.GetObject("slideModel_singleSlide", resourceCulture);

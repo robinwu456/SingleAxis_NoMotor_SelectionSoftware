@@ -35,23 +35,13 @@
             this.panelBase = new System.Windows.Forms.Panel();
             this.splitContainerBase = new System.Windows.Forms.SplitContainer();
             this.lbTitle = new System.Windows.Forms.Label();
-            this.pictureBoxToyo = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cmdExplorer = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.cmdNarrow = new System.Windows.Forms.PictureBox();
-            this.cmdZoom = new System.Windows.Forms.PictureBox();
-            this.cmdClose = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabMain = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
             this.tabStart = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cmdShapeSelection = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cmdModelSelection = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.label73 = new System.Windows.Forms.Label();
@@ -69,9 +59,6 @@
             this.cmdChangeRunCondition = new CustomButton.CustomButton();
             this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.panelSideTableIcon = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelSideTableSelections = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.tableSelections = new System.Windows.Forms.TableLayoutPanel();
             this.customPanel4 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
@@ -83,51 +70,28 @@
             this.customPanel2 = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.tabSideTableImg = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
             this.型號 = new System.Windows.Forms.TabPage();
-            this.picModelImg = new System.Windows.Forms.PictureBox();
             this.GTH = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.GTY = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.ETH = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.Y = new System.Windows.Forms.TabPage();
-            this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.YD = new System.Windows.Forms.TabPage();
-            this.pictureBox28 = new System.Windows.Forms.PictureBox();
             this.YL = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.MG = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.M = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.ETB = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.GCH = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox21 = new System.Windows.Forms.PictureBox();
-            this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.ECH = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox23 = new System.Windows.Forms.PictureBox();
-            this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.ECB = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox25 = new System.Windows.Forms.PictureBox();
-            this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbPrePage = new System.Windows.Forms.Label();
             this.panelCalcResult = new System.Windows.Forms.Panel();
@@ -173,15 +137,123 @@
             this.lbAccelSpeed = new System.Windows.Forms.Label();
             this.lbConstantTime = new System.Windows.Forms.Label();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panelCalc = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmdCalc = new CustomButton.CustomButton();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.panelSetup = new System.Windows.Forms.Panel();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.panelMoment = new System.Windows.Forms.Panel();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txtMomentC = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.panelMomentB = new System.Windows.Forms.Panel();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txtMomentB = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtMomentA = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.optHorizontalUse = new System.Windows.Forms.RadioButton();
+            this.optVerticalUse = new System.Windows.Forms.RadioButton();
+            this.optWallHangingUse = new System.Windows.Forms.RadioButton();
+            this.panelModelSelection = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panelModelSelectionReducerRatio = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboReducerRatio = new System.Windows.Forms.ComboBox();
+            this.panelModelSelectionLead = new System.Windows.Forms.Panel();
+            this.label75 = new System.Windows.Forms.Label();
+            this.cboLead = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelModelSelectionModel = new System.Windows.Forms.Panel();
+            this.label74 = new System.Windows.Forms.Label();
+            this.cboModel = new System.Windows.Forms.ComboBox();
+            this.panelModelType = new System.Windows.Forms.Panel();
+            this.optECH = new System.Windows.Forms.RadioButton();
+            this.tabModelType = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
+            this.tabModelType_standard = new System.Windows.Forms.TabPage();
+            this.tabModelType_dustfree = new System.Windows.Forms.TabPage();
+            this.optGTH = new System.Windows.Forms.RadioButton();
+            this.optGTY = new System.Windows.Forms.RadioButton();
+            this.optECB = new System.Windows.Forms.RadioButton();
+            this.optY = new System.Windows.Forms.RadioButton();
+            this.optGCH = new System.Windows.Forms.RadioButton();
+            this.optM = new System.Windows.Forms.RadioButton();
+            this.optMG = new System.Windows.Forms.RadioButton();
+            this.optYD = new System.Windows.Forms.RadioButton();
+            this.optETB = new System.Windows.Forms.RadioButton();
+            this.optYL = new System.Windows.Forms.RadioButton();
+            this.optETH = new System.Windows.Forms.RadioButton();
+            this.panelUseEnv = new System.Windows.Forms.Panel();
+            this.optDustFreeEnv = new System.Windows.Forms.RadioButton();
+            this.optStandardEnv = new System.Windows.Forms.RadioButton();
+            this.tabResult = new System.Windows.Forms.TabPage();
+            this.explorerBar_step5 = new System.Windows.Forms.Panel();
+            this.panelResult = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.label32 = new System.Windows.Forms.Label();
+            this.lbResultBar = new System.Windows.Forms.Label();
+            this.lbResult = new System.Windows.Forms.Label();
+            this.panelConfirmBtnsStep5 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmdConfirmStep5 = new CustomButton.CustomButton();
+            this.cmdResetStep5 = new CustomButton.CustomButton();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBoxToyo = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmdExplorer = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.cmdNarrow = new System.Windows.Forms.PictureBox();
+            this.cmdZoom = new System.Windows.Forms.PictureBox();
+            this.cmdClose = new System.Windows.Forms.PictureBox();
+            this.cmdShapeSelection = new System.Windows.Forms.PictureBox();
+            this.cmdModelSelection = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.picModelImg = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox27 = new System.Windows.Forms.PictureBox();
+            this.pictureBox28 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
+            this.pictureBox22 = new System.Windows.Forms.PictureBox();
+            this.pictureBox23 = new System.Windows.Forms.PictureBox();
+            this.pictureBox24 = new System.Windows.Forms.PictureBox();
+            this.pictureBox25 = new System.Windows.Forms.PictureBox();
+            this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.label68 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.panelCalc = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.cmdCalc = new CustomButton.CustomButton();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label69 = new System.Windows.Forms.Label();
             this.panelxxx = new System.Windows.Forms.Panel();
             this.panelMotorParams = new System.Windows.Forms.Panel();
             this.panelReducerParam = new System.Windows.Forms.Panel();
@@ -209,7 +281,6 @@
             this.cboMotorParamsMotorPowerSelection = new System.Windows.Forms.ComboBox();
             this.label59 = new System.Windows.Forms.Label();
             this.cboPower = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panelCalcAllParam = new System.Windows.Forms.Panel();
             this.panelNoConstantTimeParam = new System.Windows.Forms.Panel();
@@ -272,32 +343,7 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label67 = new System.Windows.Forms.Label();
             this.lbTitleCalc = new System.Windows.Forms.Label();
-            this.panelSetup = new System.Windows.Forms.Panel();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.panelMoment = new System.Windows.Forms.Panel();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.label28 = new System.Windows.Forms.Label();
-            this.txtMomentC = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.panelMomentB = new System.Windows.Forms.Panel();
-            this.label31 = new System.Windows.Forms.Label();
-            this.txtMomentB = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.txtMomentA = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.picMoment = new System.Windows.Forms.PictureBox();
-            this.optHorizontalUse = new System.Windows.Forms.RadioButton();
-            this.optVerticalUse = new System.Windows.Forms.RadioButton();
-            this.optWallHangingUse = new System.Windows.Forms.RadioButton();
             this.picWallHangingUse = new System.Windows.Forms.PictureBox();
             this.picVerticalUse = new System.Windows.Forms.PictureBox();
             this.picHorizontalUse = new System.Windows.Forms.PictureBox();
@@ -305,26 +351,10 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label66 = new System.Windows.Forms.Label();
             this.lbTitleSetup = new System.Windows.Forms.Label();
-            this.panelModelSelection = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panelModelSelectionReducerRatio = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cboReducerRatio = new System.Windows.Forms.ComboBox();
-            this.panelModelSelectionLead = new System.Windows.Forms.Panel();
-            this.label75 = new System.Windows.Forms.Label();
-            this.cboLead = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelModelSelectionModel = new System.Windows.Forms.Panel();
-            this.label74 = new System.Windows.Forms.Label();
-            this.cboModel = new System.Windows.Forms.ComboBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label65 = new System.Windows.Forms.Label();
             this.lbTitleModelSelection = new System.Windows.Forms.Label();
-            this.panelModelType = new System.Windows.Forms.Panel();
-            this.optECH = new System.Windows.Forms.RadioButton();
-            this.tabModelType = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
-            this.tabModelType_standard = new System.Windows.Forms.TabPage();
             this.panel10 = new System.Windows.Forms.Panel();
             this.picMG = new System.Windows.Forms.PictureBox();
             this.picM = new System.Windows.Forms.PictureBox();
@@ -336,7 +366,6 @@
             this.picYL = new System.Windows.Forms.PictureBox();
             this.picGTY = new System.Windows.Forms.PictureBox();
             this.picY = new System.Windows.Forms.PictureBox();
-            this.tabModelType_dustfree = new System.Windows.Forms.TabPage();
             this.panel12 = new System.Windows.Forms.Panel();
             this.picECB = new System.Windows.Forms.PictureBox();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -346,66 +375,28 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lbTitleModelType = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
-            this.optGTH = new System.Windows.Forms.RadioButton();
-            this.optGTY = new System.Windows.Forms.RadioButton();
-            this.optECB = new System.Windows.Forms.RadioButton();
-            this.optY = new System.Windows.Forms.RadioButton();
-            this.optGCH = new System.Windows.Forms.RadioButton();
-            this.optM = new System.Windows.Forms.RadioButton();
-            this.optMG = new System.Windows.Forms.RadioButton();
-            this.optYD = new System.Windows.Forms.RadioButton();
-            this.optETB = new System.Windows.Forms.RadioButton();
-            this.optYL = new System.Windows.Forms.RadioButton();
-            this.optETH = new System.Windows.Forms.RadioButton();
-            this.panelUseEnv = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label34 = new System.Windows.Forms.Label();
             this.lbTitleUseEnv = new System.Windows.Forms.Label();
             this.picDustFree = new System.Windows.Forms.PictureBox();
-            this.optDustFreeEnv = new System.Windows.Forms.RadioButton();
-            this.optStandardEnv = new System.Windows.Forms.RadioButton();
             this.picStandardEnv = new System.Windows.Forms.PictureBox();
-            this.tabResult = new System.Windows.Forms.TabPage();
-            this.explorerBar_step5 = new System.Windows.Forms.Panel();
-            this.panelResult = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.label32 = new System.Windows.Forms.Label();
             this.picBoxResultImg = new System.Windows.Forms.PictureBox();
-            this.lbResultBar = new System.Windows.Forms.Label();
-            this.lbResult = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.label93 = new System.Windows.Forms.Label();
-            this.panelConfirmBtnsStep5 = new System.Windows.Forms.TableLayoutPanel();
-            this.cmdConfirmStep5 = new CustomButton.CustomButton();
-            this.cmdResetStep5 = new CustomButton.CustomButton();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
             this.panelBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
             this.splitContainerBase.Panel2.SuspendLayout();
             this.splitContainerBase.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToyo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdExplorer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdNarrow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdZoom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).BeginInit();
             this.panel4.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabStart.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdShapeSelection)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdModelSelection)).BeginInit();
             this.tableLayoutPanel11.SuspendLayout();
             this.panel18.SuspendLayout();
             this.tabContent.SuspendLayout();
@@ -416,70 +407,103 @@
             this.panelConfirmBtnsStep2.SuspendLayout();
             this.panelSideTable.SuspendLayout();
             this.panelSideTableIcon.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelSideTableSelections.SuspendLayout();
             this.customPanel4.SuspendLayout();
             this.customPanel3.SuspendLayout();
             this.customPanel2.SuspendLayout();
             this.tabSideTableImg.SuspendLayout();
             this.型號.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).BeginInit();
             this.GTH.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.GTY.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.ETH.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.Y.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             this.YD.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
             this.YL.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.MG.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.M.SuspendLayout();
             this.tableLayoutPanel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             this.ETB.SuspendLayout();
             this.tableLayoutPanel18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             this.GCH.SuspendLayout();
             this.tableLayoutPanel19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             this.ECH.SuspendLayout();
             this.tableLayoutPanel20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
             this.ECB.SuspendLayout();
             this.tableLayoutPanel21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             this.panelCalcResult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).BeginInit();
             this.panelChart.SuspendLayout();
             this.panel16.SuspendLayout();
             this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
-            this.panel15.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
             this.panelCalc.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
+            this.panelSetup.SuspendLayout();
+            this.panelMoment.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.panel25.SuspendLayout();
+            this.panelMomentB.SuspendLayout();
+            this.panel23.SuspendLayout();
+            this.panelModelSelection.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panelModelSelectionReducerRatio.SuspendLayout();
+            this.panelModelSelectionLead.SuspendLayout();
+            this.panelModelSelectionModel.SuspendLayout();
+            this.panelModelType.SuspendLayout();
+            this.tabModelType.SuspendLayout();
+            this.tabModelType_standard.SuspendLayout();
+            this.tabModelType_dustfree.SuspendLayout();
+            this.panelUseEnv.SuspendLayout();
+            this.tabResult.SuspendLayout();
+            this.explorerBar_step5.SuspendLayout();
+            this.panelResult.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.tableLayoutPanel22.SuspendLayout();
+            this.panel20.SuspendLayout();
+            this.panelConfirmBtnsStep5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToyo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdExplorer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdNarrow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdZoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdShapeSelection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdModelSelection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
+            this.panel15.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panelxxx.SuspendLayout();
             this.panelMotorParams.SuspendLayout();
@@ -497,28 +521,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbLoad)).BeginInit();
             this.panel13.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            this.panelSetup.SuspendLayout();
-            this.panelMoment.SuspendLayout();
-            this.panel22.SuspendLayout();
-            this.panel25.SuspendLayout();
-            this.panelMomentB.SuspendLayout();
-            this.panel23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMoment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWallHangingUse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVerticalUse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHorizontalUse)).BeginInit();
             this.panel8.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.panelModelSelection.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panelModelSelectionReducerRatio.SuspendLayout();
-            this.panelModelSelectionLead.SuspendLayout();
-            this.panelModelSelectionModel.SuspendLayout();
             this.panel7.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.panelModelType.SuspendLayout();
-            this.tabModelType.SuspendLayout();
-            this.tabModelType_standard.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picM)).BeginInit();
@@ -530,7 +540,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picYL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGTY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picY)).BeginInit();
-            this.tabModelType_dustfree.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picECB)).BeginInit();
             this.panel11.SuspendLayout();
@@ -538,22 +547,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.picECH)).BeginInit();
             this.panel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.panelUseEnv.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDustFree)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStandardEnv)).BeginInit();
-            this.tabResult.SuspendLayout();
-            this.explorerBar_step5.SuspendLayout();
-            this.panelResult.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.panel21.SuspendLayout();
-            this.tableLayoutPanel22.SuspendLayout();
-            this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).BeginInit();
             this.panel19.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
-            this.panelConfirmBtnsStep5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBase
@@ -593,71 +593,12 @@
             this.lbTitle.ForeColor = System.Drawing.Color.Silver;
             this.lbTitle.Name = "lbTitle";
             // 
-            // pictureBoxToyo
-            // 
-            resources.ApplyResources(this.pictureBoxToyo, "pictureBoxToyo");
-            this.pictureBoxToyo.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.component;
-            this.pictureBoxToyo.Name = "pictureBoxToyo";
-            this.pictureBoxToyo.TabStop = false;
-            this.pictureBoxToyo.DoubleClick += new System.EventHandler(this.pictureBoxToyo_DoubleClick);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
-            // cmdExplorer
-            // 
-            resources.ApplyResources(this.cmdExplorer, "cmdExplorer");
-            this.cmdExplorer.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.Top_web2;
-            this.cmdExplorer.Name = "cmdExplorer";
-            this.cmdExplorer.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.pictureBox3, "pictureBox3");
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.TabStop = false;
-            // 
-            // cmdNarrow
-            // 
-            resources.ApplyResources(this.cmdNarrow, "cmdNarrow");
-            this.cmdNarrow.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.Top_Narrow;
-            this.cmdNarrow.Name = "cmdNarrow";
-            this.cmdNarrow.TabStop = false;
-            // 
-            // cmdZoom
-            // 
-            resources.ApplyResources(this.cmdZoom, "cmdZoom");
-            this.cmdZoom.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.Top_Zoom;
-            this.cmdZoom.Name = "cmdZoom";
-            this.cmdZoom.TabStop = false;
-            // 
-            // cmdClose
-            // 
-            resources.ApplyResources(this.cmdClose, "cmdClose");
-            this.cmdClose.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.Top_Close;
-            this.cmdClose.Name = "cmdClose";
-            this.cmdClose.TabStop = false;
-            // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.tabMain);
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.AutoPopDelay = 50000;
-            this.toolTip1.InitialDelay = 500;
-            this.toolTip1.IsBalloon = true;
-            this.toolTip1.ReshowDelay = 100;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "變更非標準馬達時請注意";
             // 
             // tabMain
             // 
@@ -696,27 +637,11 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // cmdShapeSelection
-            // 
-            this.cmdShapeSelection.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.cmdShapeSelection, "cmdShapeSelection");
-            this.cmdShapeSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.selectionType_shape_normal;
-            this.cmdShapeSelection.Name = "cmdShapeSelection";
-            this.cmdShapeSelection.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.cmdModelSelection);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
-            // 
-            // cmdModelSelection
-            // 
-            this.cmdModelSelection.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.cmdModelSelection, "cmdModelSelection");
-            this.cmdModelSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.selectionType_model_normal;
-            this.cmdModelSelection.Name = "cmdModelSelection";
-            this.cmdModelSelection.TabStop = false;
             // 
             // tableLayoutPanel11
             // 
@@ -866,27 +791,6 @@
             resources.ApplyResources(this.panelSideTableIcon, "panelSideTableIcon");
             this.panelSideTableIcon.Name = "panelSideTableIcon";
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources._2D_3D;
-            resources.ApplyResources(this.pictureBox5, "pictureBox5");
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.order;
-            resources.ApplyResources(this.pictureBox4, "pictureBox4");
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.pdf;
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
-            // 
             // panelSideTableSelections
             // 
             resources.ApplyResources(this.panelSideTableSelections, "panelSideTableSelections");
@@ -979,13 +883,6 @@
             this.型號.Name = "型號";
             this.型號.UseVisualStyleBackColor = true;
             // 
-            // picModelImg
-            // 
-            resources.ApplyResources(this.picModelImg, "picModelImg");
-            this.picModelImg.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.MK85;
-            this.picModelImg.Name = "picModelImg";
-            this.picModelImg.TabStop = false;
-            // 
             // GTH
             // 
             this.GTH.Controls.Add(this.tableLayoutPanel12);
@@ -999,20 +896,6 @@
             this.tableLayoutPanel12.Controls.Add(this.pictureBox7, 1, 0);
             this.tableLayoutPanel12.Controls.Add(this.pictureBox8, 0, 0);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            // 
-            // pictureBox7
-            // 
-            resources.ApplyResources(this.pictureBox7, "pictureBox7");
-            this.pictureBox7.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_singleSlide;
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            resources.ApplyResources(this.pictureBox8, "pictureBox8");
-            this.pictureBox8.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.TabStop = false;
             // 
             // GTY
             // 
@@ -1028,20 +911,6 @@
             this.tableLayoutPanel13.Controls.Add(this.pictureBox10, 0, 0);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             // 
-            // pictureBox9
-            // 
-            resources.ApplyResources(this.pictureBox9, "pictureBox9");
-            this.pictureBox9.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_singleSlide;
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            resources.ApplyResources(this.pictureBox10, "pictureBox10");
-            this.pictureBox10.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.TabStop = false;
-            // 
             // ETH
             // 
             this.ETH.Controls.Add(this.tableLayoutPanel14);
@@ -1056,20 +925,6 @@
             this.tableLayoutPanel14.Controls.Add(this.pictureBox12, 0, 0);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             // 
-            // pictureBox11
-            // 
-            resources.ApplyResources(this.pictureBox11, "pictureBox11");
-            this.pictureBox11.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_doubleSlide;
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            resources.ApplyResources(this.pictureBox12, "pictureBox12");
-            this.pictureBox12.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.TabStop = false;
-            // 
             // Y
             // 
             this.Y.Controls.Add(this.pictureBox27);
@@ -1077,26 +932,12 @@
             this.Y.Name = "Y";
             this.Y.UseVisualStyleBackColor = true;
             // 
-            // pictureBox27
-            // 
-            resources.ApplyResources(this.pictureBox27, "pictureBox27");
-            this.pictureBox27.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
-            this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.TabStop = false;
-            // 
             // YD
             // 
             this.YD.Controls.Add(this.pictureBox28);
             resources.ApplyResources(this.YD, "YD");
             this.YD.Name = "YD";
             this.YD.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox28
-            // 
-            resources.ApplyResources(this.pictureBox28, "pictureBox28");
-            this.pictureBox28.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
-            this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.TabStop = false;
             // 
             // YL
             // 
@@ -1112,20 +953,6 @@
             this.tableLayoutPanel15.Controls.Add(this.pictureBox14, 0, 0);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             // 
-            // pictureBox13
-            // 
-            resources.ApplyResources(this.pictureBox13, "pictureBox13");
-            this.pictureBox13.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_slide;
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.TabStop = false;
-            // 
-            // pictureBox14
-            // 
-            resources.ApplyResources(this.pictureBox14, "pictureBox14");
-            this.pictureBox14.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.TabStop = false;
-            // 
             // MG
             // 
             this.MG.Controls.Add(this.tableLayoutPanel16);
@@ -1139,20 +966,6 @@
             this.tableLayoutPanel16.Controls.Add(this.pictureBox15, 1, 0);
             this.tableLayoutPanel16.Controls.Add(this.pictureBox16, 0, 0);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
-            // 
-            // pictureBox15
-            // 
-            resources.ApplyResources(this.pictureBox15, "pictureBox15");
-            this.pictureBox15.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_singleSlide;
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.TabStop = false;
-            // 
-            // pictureBox16
-            // 
-            resources.ApplyResources(this.pictureBox16, "pictureBox16");
-            this.pictureBox16.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.beltModel;
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.TabStop = false;
             // 
             // M
             // 
@@ -1168,20 +981,6 @@
             this.tableLayoutPanel17.Controls.Add(this.pictureBox18, 0, 0);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             // 
-            // pictureBox17
-            // 
-            resources.ApplyResources(this.pictureBox17, "pictureBox17");
-            this.pictureBox17.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_slide;
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.TabStop = false;
-            // 
-            // pictureBox18
-            // 
-            resources.ApplyResources(this.pictureBox18, "pictureBox18");
-            this.pictureBox18.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.beltModel;
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.TabStop = false;
-            // 
             // ETB
             // 
             this.ETB.Controls.Add(this.tableLayoutPanel18);
@@ -1195,20 +994,6 @@
             this.tableLayoutPanel18.Controls.Add(this.pictureBox19, 0, 0);
             this.tableLayoutPanel18.Controls.Add(this.pictureBox20, 0, 0);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
-            // 
-            // pictureBox19
-            // 
-            resources.ApplyResources(this.pictureBox19, "pictureBox19");
-            this.pictureBox19.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_doubleSlide;
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.TabStop = false;
-            // 
-            // pictureBox20
-            // 
-            resources.ApplyResources(this.pictureBox20, "pictureBox20");
-            this.pictureBox20.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.beltModel;
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.TabStop = false;
             // 
             // GCH
             // 
@@ -1224,20 +1009,6 @@
             this.tableLayoutPanel19.Controls.Add(this.pictureBox22, 0, 0);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             // 
-            // pictureBox21
-            // 
-            resources.ApplyResources(this.pictureBox21, "pictureBox21");
-            this.pictureBox21.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_singleSlide;
-            this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.TabStop = false;
-            // 
-            // pictureBox22
-            // 
-            resources.ApplyResources(this.pictureBox22, "pictureBox22");
-            this.pictureBox22.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
-            this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.TabStop = false;
-            // 
             // ECH
             // 
             this.ECH.Controls.Add(this.tableLayoutPanel20);
@@ -1252,20 +1023,6 @@
             this.tableLayoutPanel20.Controls.Add(this.pictureBox24, 0, 0);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             // 
-            // pictureBox23
-            // 
-            resources.ApplyResources(this.pictureBox23, "pictureBox23");
-            this.pictureBox23.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_doubleSlide;
-            this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.TabStop = false;
-            // 
-            // pictureBox24
-            // 
-            resources.ApplyResources(this.pictureBox24, "pictureBox24");
-            this.pictureBox24.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
-            this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.TabStop = false;
-            // 
             // ECB
             // 
             this.ECB.Controls.Add(this.tableLayoutPanel21);
@@ -1279,20 +1036,6 @@
             this.tableLayoutPanel21.Controls.Add(this.pictureBox25, 0, 0);
             this.tableLayoutPanel21.Controls.Add(this.pictureBox26, 0, 0);
             this.tableLayoutPanel21.Name = "tableLayoutPanel21";
-            // 
-            // pictureBox25
-            // 
-            resources.ApplyResources(this.pictureBox25, "pictureBox25");
-            this.pictureBox25.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_doubleSlide;
-            this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.TabStop = false;
-            // 
-            // pictureBox26
-            // 
-            resources.ApplyResources(this.pictureBox26, "pictureBox26");
-            this.pictureBox26.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.beltModel;
-            this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.TabStop = false;
             // 
             // label2
             // 
@@ -1727,35 +1470,6 @@
             series1.Points.Add(dataPoint1);
             this.chart.Series.Add(series1);
             // 
-            // panel15
-            // 
-            this.panel15.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
-            resources.ApplyResources(this.panel15, "panel15");
-            this.panel15.Controls.Add(this.tableLayoutPanel8);
-            this.panel15.Name = "panel15";
-            // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.tableLayoutPanel8, "tableLayoutPanel8");
-            this.tableLayoutPanel8.Controls.Add(this.label68, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.label21, 0, 0);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            // 
-            // label68
-            // 
-            resources.ApplyResources(this.label68, "label68");
-            this.label68.BackColor = System.Drawing.Color.Transparent;
-            this.label68.ForeColor = System.Drawing.Color.Black;
-            this.label68.Name = "label68";
-            // 
-            // label21
-            // 
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.label21, "label21");
-            this.label21.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label21.Name = "label21";
-            // 
             // panelCalc
             // 
             this.panelCalc.Controls.Add(this.tableLayoutPanel9);
@@ -1790,6 +1504,850 @@
             this.cmdCalc.Name = "cmdCalc";
             this.cmdCalc.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
             // 
+            // label69
+            // 
+            resources.ApplyResources(this.label69, "label69");
+            this.label69.BackColor = System.Drawing.Color.White;
+            this.label69.ForeColor = System.Drawing.Color.Black;
+            this.label69.Name = "label69";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.BackColor = System.Drawing.Color.White;
+            this.label19.ForeColor = System.Drawing.Color.Black;
+            this.label19.Name = "label19";
+            // 
+            // panelSetup
+            // 
+            this.panelSetup.Controls.Add(this.label64);
+            this.panelSetup.Controls.Add(this.label63);
+            this.panelSetup.Controls.Add(this.label62);
+            this.panelSetup.Controls.Add(this.panelMoment);
+            this.panelSetup.Controls.Add(this.picMoment);
+            this.panelSetup.Controls.Add(this.optHorizontalUse);
+            this.panelSetup.Controls.Add(this.optVerticalUse);
+            this.panelSetup.Controls.Add(this.optWallHangingUse);
+            this.panelSetup.Controls.Add(this.picWallHangingUse);
+            this.panelSetup.Controls.Add(this.picVerticalUse);
+            this.panelSetup.Controls.Add(this.picHorizontalUse);
+            this.panelSetup.Controls.Add(this.panel8);
+            resources.ApplyResources(this.panelSetup, "panelSetup");
+            this.panelSetup.Name = "panelSetup";
+            // 
+            // label64
+            // 
+            resources.ApplyResources(this.label64, "label64");
+            this.label64.Name = "label64";
+            // 
+            // label63
+            // 
+            resources.ApplyResources(this.label63, "label63");
+            this.label63.Name = "label63";
+            // 
+            // label62
+            // 
+            resources.ApplyResources(this.label62, "label62");
+            this.label62.Name = "label62";
+            // 
+            // panelMoment
+            // 
+            this.panelMoment.Controls.Add(this.panel22);
+            this.panelMoment.Controls.Add(this.label14);
+            resources.ApplyResources(this.panelMoment, "panelMoment");
+            this.panelMoment.Name = "panelMoment";
+            // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.panel25);
+            this.panel22.Controls.Add(this.panelMomentB);
+            this.panel22.Controls.Add(this.panel23);
+            resources.ApplyResources(this.panel22, "panel22");
+            this.panel22.Name = "panel22";
+            // 
+            // panel25
+            // 
+            this.panel25.Controls.Add(this.label28);
+            this.panel25.Controls.Add(this.txtMomentC);
+            this.panel25.Controls.Add(this.label27);
+            this.panel25.Controls.Add(this.label26);
+            resources.ApplyResources(this.panel25, "panel25");
+            this.panel25.Name = "panel25";
+            // 
+            // label28
+            // 
+            resources.ApplyResources(this.label28, "label28");
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label28.Name = "label28";
+            // 
+            // txtMomentC
+            // 
+            resources.ApplyResources(this.txtMomentC, "txtMomentC");
+            this.txtMomentC.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMomentC.Name = "txtMomentC";
+            // 
+            // label27
+            // 
+            resources.ApplyResources(this.label27, "label27");
+            this.label27.ForeColor = System.Drawing.Color.Red;
+            this.label27.Name = "label27";
+            this.label27.Tag = "txtMomentC";
+            // 
+            // label26
+            // 
+            resources.ApplyResources(this.label26, "label26");
+            this.label26.Name = "label26";
+            // 
+            // panelMomentB
+            // 
+            this.panelMomentB.Controls.Add(this.label31);
+            this.panelMomentB.Controls.Add(this.txtMomentB);
+            this.panelMomentB.Controls.Add(this.label30);
+            this.panelMomentB.Controls.Add(this.label29);
+            resources.ApplyResources(this.panelMomentB, "panelMomentB");
+            this.panelMomentB.Name = "panelMomentB";
+            // 
+            // label31
+            // 
+            resources.ApplyResources(this.label31, "label31");
+            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label31.Name = "label31";
+            // 
+            // txtMomentB
+            // 
+            resources.ApplyResources(this.txtMomentB, "txtMomentB");
+            this.txtMomentB.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMomentB.Name = "txtMomentB";
+            // 
+            // label30
+            // 
+            resources.ApplyResources(this.label30, "label30");
+            this.label30.ForeColor = System.Drawing.Color.Red;
+            this.label30.Name = "label30";
+            this.label30.Tag = "txtMomentB";
+            // 
+            // label29
+            // 
+            resources.ApplyResources(this.label29, "label29");
+            this.label29.Name = "label29";
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.label17);
+            this.panel23.Controls.Add(this.label25);
+            this.panel23.Controls.Add(this.label24);
+            this.panel23.Controls.Add(this.txtMomentA);
+            resources.ApplyResources(this.panel23, "panel23");
+            this.panel23.Name = "panel23";
+            // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
+            // 
+            // label25
+            // 
+            resources.ApplyResources(this.label25, "label25");
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label25.Name = "label25";
+            // 
+            // label24
+            // 
+            resources.ApplyResources(this.label24, "label24");
+            this.label24.ForeColor = System.Drawing.Color.Red;
+            this.label24.Name = "label24";
+            this.label24.Tag = "txtMomentA";
+            // 
+            // txtMomentA
+            // 
+            resources.ApplyResources(this.txtMomentA, "txtMomentA");
+            this.txtMomentA.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMomentA.Name = "txtMomentA";
+            // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.DarkGray;
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.Name = "label14";
+            // 
+            // optHorizontalUse
+            // 
+            resources.ApplyResources(this.optHorizontalUse, "optHorizontalUse");
+            this.optHorizontalUse.Checked = true;
+            this.optHorizontalUse.ForeColor = System.Drawing.Color.Black;
+            this.optHorizontalUse.Name = "optHorizontalUse";
+            this.optHorizontalUse.TabStop = true;
+            this.optHorizontalUse.UseVisualStyleBackColor = true;
+            // 
+            // optVerticalUse
+            // 
+            resources.ApplyResources(this.optVerticalUse, "optVerticalUse");
+            this.optVerticalUse.BackColor = System.Drawing.Color.Transparent;
+            this.optVerticalUse.ForeColor = System.Drawing.Color.Black;
+            this.optVerticalUse.Name = "optVerticalUse";
+            this.optVerticalUse.UseVisualStyleBackColor = false;
+            // 
+            // optWallHangingUse
+            // 
+            resources.ApplyResources(this.optWallHangingUse, "optWallHangingUse");
+            this.optWallHangingUse.ForeColor = System.Drawing.Color.Black;
+            this.optWallHangingUse.Name = "optWallHangingUse";
+            this.optWallHangingUse.UseVisualStyleBackColor = true;
+            // 
+            // panelModelSelection
+            // 
+            this.panelModelSelection.Controls.Add(this.panel6);
+            this.panelModelSelection.Controls.Add(this.panel7);
+            resources.ApplyResources(this.panelModelSelection, "panelModelSelection");
+            this.panelModelSelection.Name = "panelModelSelection";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panelModelSelectionReducerRatio);
+            this.panel6.Controls.Add(this.panelModelSelectionLead);
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.panelModelSelectionModel);
+            resources.ApplyResources(this.panel6, "panel6");
+            this.panel6.Name = "panel6";
+            // 
+            // panelModelSelectionReducerRatio
+            // 
+            this.panelModelSelectionReducerRatio.Controls.Add(this.label5);
+            this.panelModelSelectionReducerRatio.Controls.Add(this.cboReducerRatio);
+            resources.ApplyResources(this.panelModelSelectionReducerRatio, "panelModelSelectionReducerRatio");
+            this.panelModelSelectionReducerRatio.Name = "panelModelSelectionReducerRatio";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label5.Name = "label5";
+            // 
+            // cboReducerRatio
+            // 
+            this.cboReducerRatio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboReducerRatio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboReducerRatio.DropDownWidth = 180;
+            resources.ApplyResources(this.cboReducerRatio, "cboReducerRatio");
+            this.cboReducerRatio.ForeColor = System.Drawing.Color.White;
+            this.cboReducerRatio.FormattingEnabled = true;
+            this.cboReducerRatio.Name = "cboReducerRatio";
+            // 
+            // panelModelSelectionLead
+            // 
+            this.panelModelSelectionLead.Controls.Add(this.label75);
+            this.panelModelSelectionLead.Controls.Add(this.cboLead);
+            resources.ApplyResources(this.panelModelSelectionLead, "panelModelSelectionLead");
+            this.panelModelSelectionLead.Name = "panelModelSelectionLead";
+            // 
+            // label75
+            // 
+            resources.ApplyResources(this.label75, "label75");
+            this.label75.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label75.Name = "label75";
+            // 
+            // cboLead
+            // 
+            this.cboLead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboLead.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboLead.DropDownWidth = 180;
+            resources.ApplyResources(this.cboLead, "cboLead");
+            this.cboLead.ForeColor = System.Drawing.Color.White;
+            this.cboLead.FormattingEnabled = true;
+            this.cboLead.Name = "cboLead";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // panelModelSelectionModel
+            // 
+            this.panelModelSelectionModel.Controls.Add(this.label74);
+            this.panelModelSelectionModel.Controls.Add(this.cboModel);
+            resources.ApplyResources(this.panelModelSelectionModel, "panelModelSelectionModel");
+            this.panelModelSelectionModel.Name = "panelModelSelectionModel";
+            // 
+            // label74
+            // 
+            resources.ApplyResources(this.label74, "label74");
+            this.label74.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label74.Name = "label74";
+            // 
+            // cboModel
+            // 
+            this.cboModel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cboModel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboModel.DropDownWidth = 180;
+            resources.ApplyResources(this.cboModel, "cboModel");
+            this.cboModel.ForeColor = System.Drawing.Color.White;
+            this.cboModel.FormattingEnabled = true;
+            this.cboModel.Name = "cboModel";
+            // 
+            // panelModelType
+            // 
+            this.panelModelType.Controls.Add(this.optECH);
+            this.panelModelType.Controls.Add(this.tabModelType);
+            this.panelModelType.Controls.Add(this.panel5);
+            this.panelModelType.Controls.Add(this.optGTH);
+            this.panelModelType.Controls.Add(this.optGTY);
+            this.panelModelType.Controls.Add(this.optECB);
+            this.panelModelType.Controls.Add(this.optY);
+            this.panelModelType.Controls.Add(this.optGCH);
+            this.panelModelType.Controls.Add(this.optM);
+            this.panelModelType.Controls.Add(this.optMG);
+            this.panelModelType.Controls.Add(this.optYD);
+            this.panelModelType.Controls.Add(this.optETB);
+            this.panelModelType.Controls.Add(this.optYL);
+            this.panelModelType.Controls.Add(this.optETH);
+            resources.ApplyResources(this.panelModelType, "panelModelType");
+            this.panelModelType.Name = "panelModelType";
+            // 
+            // optECH
+            // 
+            resources.ApplyResources(this.optECH, "optECH");
+            this.optECH.ForeColor = System.Drawing.Color.Black;
+            this.optECH.Name = "optECH";
+            this.optECH.UseVisualStyleBackColor = true;
+            // 
+            // tabModelType
+            // 
+            this.tabModelType.Controls.Add(this.tabModelType_standard);
+            this.tabModelType.Controls.Add(this.tabModelType_dustfree);
+            resources.ApplyResources(this.tabModelType, "tabModelType");
+            this.tabModelType.IsBorderShow = true;
+            this.tabModelType.Name = "tabModelType";
+            this.tabModelType.SelectedIndex = 0;
+            // 
+            // tabModelType_standard
+            // 
+            this.tabModelType_standard.Controls.Add(this.panel10);
+            this.tabModelType_standard.Controls.Add(this.panel9);
+            resources.ApplyResources(this.tabModelType_standard, "tabModelType_standard");
+            this.tabModelType_standard.Name = "tabModelType_standard";
+            this.tabModelType_standard.UseVisualStyleBackColor = true;
+            // 
+            // tabModelType_dustfree
+            // 
+            this.tabModelType_dustfree.Controls.Add(this.panel12);
+            this.tabModelType_dustfree.Controls.Add(this.panel11);
+            resources.ApplyResources(this.tabModelType_dustfree, "tabModelType_dustfree");
+            this.tabModelType_dustfree.Name = "tabModelType_dustfree";
+            this.tabModelType_dustfree.UseVisualStyleBackColor = true;
+            // 
+            // optGTH
+            // 
+            resources.ApplyResources(this.optGTH, "optGTH");
+            this.optGTH.Checked = true;
+            this.optGTH.ForeColor = System.Drawing.Color.Black;
+            this.optGTH.Name = "optGTH";
+            this.optGTH.TabStop = true;
+            this.optGTH.UseVisualStyleBackColor = true;
+            // 
+            // optGTY
+            // 
+            resources.ApplyResources(this.optGTY, "optGTY");
+            this.optGTY.ForeColor = System.Drawing.Color.Black;
+            this.optGTY.Name = "optGTY";
+            this.optGTY.UseVisualStyleBackColor = true;
+            // 
+            // optECB
+            // 
+            resources.ApplyResources(this.optECB, "optECB");
+            this.optECB.ForeColor = System.Drawing.Color.Black;
+            this.optECB.Name = "optECB";
+            this.optECB.UseVisualStyleBackColor = true;
+            // 
+            // optY
+            // 
+            resources.ApplyResources(this.optY, "optY");
+            this.optY.ForeColor = System.Drawing.Color.Black;
+            this.optY.Name = "optY";
+            this.optY.UseVisualStyleBackColor = true;
+            // 
+            // optGCH
+            // 
+            resources.ApplyResources(this.optGCH, "optGCH");
+            this.optGCH.ForeColor = System.Drawing.Color.Black;
+            this.optGCH.Name = "optGCH";
+            this.optGCH.UseVisualStyleBackColor = true;
+            // 
+            // optM
+            // 
+            resources.ApplyResources(this.optM, "optM");
+            this.optM.ForeColor = System.Drawing.Color.Black;
+            this.optM.Name = "optM";
+            this.optM.UseVisualStyleBackColor = true;
+            // 
+            // optMG
+            // 
+            resources.ApplyResources(this.optMG, "optMG");
+            this.optMG.ForeColor = System.Drawing.Color.Black;
+            this.optMG.Name = "optMG";
+            this.optMG.UseVisualStyleBackColor = true;
+            // 
+            // optYD
+            // 
+            resources.ApplyResources(this.optYD, "optYD");
+            this.optYD.ForeColor = System.Drawing.Color.Black;
+            this.optYD.Name = "optYD";
+            this.optYD.UseVisualStyleBackColor = true;
+            // 
+            // optETB
+            // 
+            resources.ApplyResources(this.optETB, "optETB");
+            this.optETB.ForeColor = System.Drawing.Color.Black;
+            this.optETB.Name = "optETB";
+            this.optETB.UseVisualStyleBackColor = true;
+            // 
+            // optYL
+            // 
+            resources.ApplyResources(this.optYL, "optYL");
+            this.optYL.ForeColor = System.Drawing.Color.Black;
+            this.optYL.Name = "optYL";
+            this.optYL.UseVisualStyleBackColor = true;
+            // 
+            // optETH
+            // 
+            resources.ApplyResources(this.optETH, "optETH");
+            this.optETH.ForeColor = System.Drawing.Color.Black;
+            this.optETH.Name = "optETH";
+            this.optETH.UseVisualStyleBackColor = true;
+            // 
+            // panelUseEnv
+            // 
+            this.panelUseEnv.Controls.Add(this.panel3);
+            this.panelUseEnv.Controls.Add(this.picDustFree);
+            this.panelUseEnv.Controls.Add(this.optDustFreeEnv);
+            this.panelUseEnv.Controls.Add(this.optStandardEnv);
+            this.panelUseEnv.Controls.Add(this.picStandardEnv);
+            resources.ApplyResources(this.panelUseEnv, "panelUseEnv");
+            this.panelUseEnv.Name = "panelUseEnv";
+            // 
+            // optDustFreeEnv
+            // 
+            resources.ApplyResources(this.optDustFreeEnv, "optDustFreeEnv");
+            this.optDustFreeEnv.ForeColor = System.Drawing.Color.Black;
+            this.optDustFreeEnv.Name = "optDustFreeEnv";
+            this.optDustFreeEnv.UseVisualStyleBackColor = true;
+            // 
+            // optStandardEnv
+            // 
+            resources.ApplyResources(this.optStandardEnv, "optStandardEnv");
+            this.optStandardEnv.Checked = true;
+            this.optStandardEnv.ForeColor = System.Drawing.Color.Black;
+            this.optStandardEnv.Name = "optStandardEnv";
+            this.optStandardEnv.TabStop = true;
+            this.optStandardEnv.UseVisualStyleBackColor = true;
+            // 
+            // tabResult
+            // 
+            this.tabResult.BackColor = System.Drawing.Color.White;
+            this.tabResult.Controls.Add(this.explorerBar_step5);
+            resources.ApplyResources(this.tabResult, "tabResult");
+            this.tabResult.Name = "tabResult";
+            // 
+            // explorerBar_step5
+            // 
+            resources.ApplyResources(this.explorerBar_step5, "explorerBar_step5");
+            this.explorerBar_step5.Controls.Add(this.panelResult);
+            this.explorerBar_step5.Name = "explorerBar_step5";
+            // 
+            // panelResult
+            // 
+            this.panelResult.Controls.Add(this.panel17);
+            this.panelResult.Controls.Add(this.panelConfirmBtnsStep5);
+            this.panelResult.Controls.Add(this.label51);
+            this.panelResult.Controls.Add(this.label56);
+            resources.ApplyResources(this.panelResult, "panelResult");
+            this.panelResult.Name = "panelResult";
+            // 
+            // panel17
+            // 
+            resources.ApplyResources(this.panel17, "panel17");
+            this.panel17.Controls.Add(this.panel21);
+            this.panel17.Controls.Add(this.panel19);
+            this.panel17.Name = "panel17";
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.panel21, "panel21");
+            this.panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel21.Controls.Add(this.tableLayoutPanel22);
+            this.panel21.Name = "panel21";
+            // 
+            // tableLayoutPanel22
+            // 
+            resources.ApplyResources(this.tableLayoutPanel22, "tableLayoutPanel22");
+            this.tableLayoutPanel22.Controls.Add(this.panel20, 1, 0);
+            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.label32);
+            this.panel20.Controls.Add(this.picBoxResultImg);
+            this.panel20.Controls.Add(this.lbResultBar);
+            this.panel20.Controls.Add(this.lbResult);
+            resources.ApplyResources(this.panel20, "panel20");
+            this.panel20.Name = "panel20";
+            // 
+            // label32
+            // 
+            resources.ApplyResources(this.label32, "label32");
+            this.label32.ForeColor = System.Drawing.Color.Red;
+            this.label32.Name = "label32";
+            // 
+            // lbResultBar
+            // 
+            this.lbResultBar.BackColor = System.Drawing.Color.DarkGray;
+            resources.ApplyResources(this.lbResultBar, "lbResultBar");
+            this.lbResultBar.Name = "lbResultBar";
+            // 
+            // lbResult
+            // 
+            resources.ApplyResources(this.lbResult, "lbResult");
+            this.lbResult.ForeColor = System.Drawing.Color.Red;
+            this.lbResult.Name = "lbResult";
+            // 
+            // panelConfirmBtnsStep5
+            // 
+            resources.ApplyResources(this.panelConfirmBtnsStep5, "panelConfirmBtnsStep5");
+            this.panelConfirmBtnsStep5.Controls.Add(this.cmdConfirmStep5, 1, 0);
+            this.panelConfirmBtnsStep5.Controls.Add(this.cmdResetStep5, 2, 0);
+            this.panelConfirmBtnsStep5.Name = "panelConfirmBtnsStep5";
+            // 
+            // cmdConfirmStep5
+            // 
+            this.cmdConfirmStep5.BackColor = System.Drawing.Color.Transparent;
+            this.cmdConfirmStep5.BackColor_Hover = System.Drawing.Color.DarkRed;
+            this.cmdConfirmStep5.BackColor_Normal = System.Drawing.Color.Red;
+            this.cmdConfirmStep5.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdConfirmStep5.BackColor2_Hover = System.Drawing.Color.DarkRed;
+            this.cmdConfirmStep5.BackColor2_Normal = System.Drawing.Color.Red;
+            this.cmdConfirmStep5.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdConfirmStep5.ButtonEnabled = true;
+            resources.ApplyResources(this.cmdConfirmStep5, "cmdConfirmStep5");
+            this.cmdConfirmStep5.Curvature = 15;
+            this.cmdConfirmStep5.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdConfirmStep5.Name = "cmdConfirmStep5";
+            this.cmdConfirmStep5.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
+            // 
+            // cmdResetStep5
+            // 
+            this.cmdResetStep5.BackColor = System.Drawing.Color.Transparent;
+            this.cmdResetStep5.BackColor_Hover = System.Drawing.Color.DimGray;
+            this.cmdResetStep5.BackColor_Normal = System.Drawing.Color.Gray;
+            this.cmdResetStep5.BackColor_Press = System.Drawing.Color.Black;
+            this.cmdResetStep5.BackColor2_Hover = System.Drawing.Color.DimGray;
+            this.cmdResetStep5.BackColor2_Normal = System.Drawing.Color.Gray;
+            this.cmdResetStep5.BackColor2_Press = System.Drawing.Color.Black;
+            this.cmdResetStep5.ButtonEnabled = true;
+            resources.ApplyResources(this.cmdResetStep5, "cmdResetStep5");
+            this.cmdResetStep5.Curvature = 15;
+            this.cmdResetStep5.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdResetStep5.Name = "cmdResetStep5";
+            this.cmdResetStep5.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
+            // 
+            // label51
+            // 
+            resources.ApplyResources(this.label51, "label51");
+            this.label51.ForeColor = System.Drawing.Color.Red;
+            this.label51.Name = "label51";
+            // 
+            // label56
+            // 
+            resources.ApplyResources(this.label56, "label56");
+            this.label56.BackColor = System.Drawing.Color.LightGray;
+            this.label56.Name = "label56";
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 50000;
+            this.toolTip1.InitialDelay = 500;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ReshowDelay = 100;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "變更非標準馬達時請注意";
+            // 
+            // pictureBoxToyo
+            // 
+            resources.ApplyResources(this.pictureBoxToyo, "pictureBoxToyo");
+            this.pictureBoxToyo.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.component;
+            this.pictureBoxToyo.Name = "pictureBoxToyo";
+            this.pictureBoxToyo.TabStop = false;
+            this.pictureBoxToyo.DoubleClick += new System.EventHandler(this.pictureBoxToyo_DoubleClick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // cmdExplorer
+            // 
+            resources.ApplyResources(this.cmdExplorer, "cmdExplorer");
+            this.cmdExplorer.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.Top_web2;
+            this.cmdExplorer.Name = "cmdExplorer";
+            this.cmdExplorer.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.pictureBox3, "pictureBox3");
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.TabStop = false;
+            // 
+            // cmdNarrow
+            // 
+            resources.ApplyResources(this.cmdNarrow, "cmdNarrow");
+            this.cmdNarrow.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.Top_Narrow;
+            this.cmdNarrow.Name = "cmdNarrow";
+            this.cmdNarrow.TabStop = false;
+            // 
+            // cmdZoom
+            // 
+            resources.ApplyResources(this.cmdZoom, "cmdZoom");
+            this.cmdZoom.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.Top_Zoom;
+            this.cmdZoom.Name = "cmdZoom";
+            this.cmdZoom.TabStop = false;
+            // 
+            // cmdClose
+            // 
+            resources.ApplyResources(this.cmdClose, "cmdClose");
+            this.cmdClose.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.Top_Close;
+            this.cmdClose.Name = "cmdClose";
+            this.cmdClose.TabStop = false;
+            // 
+            // cmdShapeSelection
+            // 
+            this.cmdShapeSelection.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.cmdShapeSelection, "cmdShapeSelection");
+            this.cmdShapeSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.selectionType_shape_normal;
+            this.cmdShapeSelection.Name = "cmdShapeSelection";
+            this.cmdShapeSelection.TabStop = false;
+            // 
+            // cmdModelSelection
+            // 
+            this.cmdModelSelection.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.cmdModelSelection, "cmdModelSelection");
+            this.cmdModelSelection.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.selectionType_model_normal;
+            this.cmdModelSelection.Name = "cmdModelSelection";
+            this.cmdModelSelection.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources._2D_3D;
+            resources.ApplyResources(this.pictureBox5, "pictureBox5");
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.order;
+            resources.ApplyResources(this.pictureBox4, "pictureBox4");
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.pdf;
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
+            // 
+            // picModelImg
+            // 
+            resources.ApplyResources(this.picModelImg, "picModelImg");
+            this.picModelImg.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.MK85;
+            this.picModelImg.Name = "picModelImg";
+            this.picModelImg.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            resources.ApplyResources(this.pictureBox7, "pictureBox7");
+            this.pictureBox7.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_singleSlide;
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            resources.ApplyResources(this.pictureBox8, "pictureBox8");
+            this.pictureBox8.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            resources.ApplyResources(this.pictureBox9, "pictureBox9");
+            this.pictureBox9.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_singleSlide;
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            resources.ApplyResources(this.pictureBox10, "pictureBox10");
+            this.pictureBox10.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            resources.ApplyResources(this.pictureBox11, "pictureBox11");
+            this.pictureBox11.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_doubleSlide;
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            resources.ApplyResources(this.pictureBox12, "pictureBox12");
+            this.pictureBox12.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox27
+            // 
+            resources.ApplyResources(this.pictureBox27, "pictureBox27");
+            this.pictureBox27.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
+            this.pictureBox27.Name = "pictureBox27";
+            this.pictureBox27.TabStop = false;
+            // 
+            // pictureBox28
+            // 
+            resources.ApplyResources(this.pictureBox28, "pictureBox28");
+            this.pictureBox28.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
+            this.pictureBox28.Name = "pictureBox28";
+            this.pictureBox28.TabStop = false;
+            // 
+            // pictureBox13
+            // 
+            resources.ApplyResources(this.pictureBox13, "pictureBox13");
+            this.pictureBox13.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_slide;
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.TabStop = false;
+            // 
+            // pictureBox14
+            // 
+            resources.ApplyResources(this.pictureBox14, "pictureBox14");
+            this.pictureBox14.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.TabStop = false;
+            // 
+            // pictureBox15
+            // 
+            resources.ApplyResources(this.pictureBox15, "pictureBox15");
+            this.pictureBox15.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_MG;
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.TabStop = false;
+            // 
+            // pictureBox16
+            // 
+            resources.ApplyResources(this.pictureBox16, "pictureBox16");
+            this.pictureBox16.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.beltModel;
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.TabStop = false;
+            // 
+            // pictureBox17
+            // 
+            resources.ApplyResources(this.pictureBox17, "pictureBox17");
+            this.pictureBox17.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_slide;
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.TabStop = false;
+            // 
+            // pictureBox18
+            // 
+            resources.ApplyResources(this.pictureBox18, "pictureBox18");
+            this.pictureBox18.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.beltModel;
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.TabStop = false;
+            // 
+            // pictureBox19
+            // 
+            resources.ApplyResources(this.pictureBox19, "pictureBox19");
+            this.pictureBox19.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_doubleSlide;
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.TabStop = false;
+            // 
+            // pictureBox20
+            // 
+            resources.ApplyResources(this.pictureBox20, "pictureBox20");
+            this.pictureBox20.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.beltModel;
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.TabStop = false;
+            // 
+            // pictureBox21
+            // 
+            resources.ApplyResources(this.pictureBox21, "pictureBox21");
+            this.pictureBox21.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_singleSlide;
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.TabStop = false;
+            // 
+            // pictureBox22
+            // 
+            resources.ApplyResources(this.pictureBox22, "pictureBox22");
+            this.pictureBox22.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
+            this.pictureBox22.Name = "pictureBox22";
+            this.pictureBox22.TabStop = false;
+            // 
+            // pictureBox23
+            // 
+            resources.ApplyResources(this.pictureBox23, "pictureBox23");
+            this.pictureBox23.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_doubleSlide;
+            this.pictureBox23.Name = "pictureBox23";
+            this.pictureBox23.TabStop = false;
+            // 
+            // pictureBox24
+            // 
+            resources.ApplyResources(this.pictureBox24, "pictureBox24");
+            this.pictureBox24.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
+            this.pictureBox24.Name = "pictureBox24";
+            this.pictureBox24.TabStop = false;
+            // 
+            // pictureBox25
+            // 
+            resources.ApplyResources(this.pictureBox25, "pictureBox25");
+            this.pictureBox25.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_doubleSlide;
+            this.pictureBox25.Name = "pictureBox25";
+            this.pictureBox25.TabStop = false;
+            // 
+            // pictureBox26
+            // 
+            resources.ApplyResources(this.pictureBox26, "pictureBox26");
+            this.pictureBox26.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.beltModel;
+            this.pictureBox26.Name = "pictureBox26";
+            this.pictureBox26.TabStop = false;
+            // 
+            // panel15
+            // 
+            this.panel15.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
+            resources.ApplyResources(this.panel15, "panel15");
+            this.panel15.Controls.Add(this.tableLayoutPanel8);
+            this.panel15.Name = "panel15";
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.tableLayoutPanel8, "tableLayoutPanel8");
+            this.tableLayoutPanel8.Controls.Add(this.label68, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.label21, 0, 0);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            // 
+            // label68
+            // 
+            resources.ApplyResources(this.label68, "label68");
+            this.label68.BackColor = System.Drawing.Color.Transparent;
+            this.label68.ForeColor = System.Drawing.Color.Black;
+            this.label68.Name = "label68";
+            // 
+            // label21
+            // 
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.label21, "label21");
+            this.label21.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label21.Name = "label21";
+            // 
             // pictureBox6
             // 
             this.pictureBox6.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toolTipIcon;
@@ -1797,13 +2355,6 @@
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBox6, resources.GetString("pictureBox6.ToolTip"));
-            // 
-            // label69
-            // 
-            resources.ApplyResources(this.label69, "label69");
-            this.label69.BackColor = System.Drawing.Color.White;
-            this.label69.ForeColor = System.Drawing.Color.Black;
-            this.label69.Name = "label69";
             // 
             // panelxxx
             // 
@@ -1999,13 +2550,6 @@
             this.cboPower.ForeColor = System.Drawing.Color.White;
             this.cboPower.FormattingEnabled = true;
             this.cboPower.Name = "cboPower";
-            // 
-            // label19
-            // 
-            resources.ApplyResources(this.label19, "label19");
-            this.label19.BackColor = System.Drawing.Color.White;
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Name = "label19";
             // 
             // panel14
             // 
@@ -2495,188 +3039,12 @@
             this.lbTitleCalc.ForeColor = System.Drawing.Color.Gainsboro;
             this.lbTitleCalc.Name = "lbTitleCalc";
             // 
-            // panelSetup
-            // 
-            this.panelSetup.Controls.Add(this.label64);
-            this.panelSetup.Controls.Add(this.label63);
-            this.panelSetup.Controls.Add(this.label62);
-            this.panelSetup.Controls.Add(this.panelMoment);
-            this.panelSetup.Controls.Add(this.picMoment);
-            this.panelSetup.Controls.Add(this.optHorizontalUse);
-            this.panelSetup.Controls.Add(this.optVerticalUse);
-            this.panelSetup.Controls.Add(this.optWallHangingUse);
-            this.panelSetup.Controls.Add(this.picWallHangingUse);
-            this.panelSetup.Controls.Add(this.picVerticalUse);
-            this.panelSetup.Controls.Add(this.picHorizontalUse);
-            this.panelSetup.Controls.Add(this.panel8);
-            resources.ApplyResources(this.panelSetup, "panelSetup");
-            this.panelSetup.Name = "panelSetup";
-            // 
-            // label64
-            // 
-            resources.ApplyResources(this.label64, "label64");
-            this.label64.Name = "label64";
-            // 
-            // label63
-            // 
-            resources.ApplyResources(this.label63, "label63");
-            this.label63.Name = "label63";
-            // 
-            // label62
-            // 
-            resources.ApplyResources(this.label62, "label62");
-            this.label62.Name = "label62";
-            // 
-            // panelMoment
-            // 
-            this.panelMoment.Controls.Add(this.panel22);
-            this.panelMoment.Controls.Add(this.label14);
-            resources.ApplyResources(this.panelMoment, "panelMoment");
-            this.panelMoment.Name = "panelMoment";
-            // 
-            // panel22
-            // 
-            this.panel22.Controls.Add(this.panel25);
-            this.panel22.Controls.Add(this.panelMomentB);
-            this.panel22.Controls.Add(this.panel23);
-            resources.ApplyResources(this.panel22, "panel22");
-            this.panel22.Name = "panel22";
-            // 
-            // panel25
-            // 
-            this.panel25.Controls.Add(this.label28);
-            this.panel25.Controls.Add(this.txtMomentC);
-            this.panel25.Controls.Add(this.label27);
-            this.panel25.Controls.Add(this.label26);
-            resources.ApplyResources(this.panel25, "panel25");
-            this.panel25.Name = "panel25";
-            // 
-            // label28
-            // 
-            resources.ApplyResources(this.label28, "label28");
-            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label28.Name = "label28";
-            // 
-            // txtMomentC
-            // 
-            resources.ApplyResources(this.txtMomentC, "txtMomentC");
-            this.txtMomentC.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtMomentC.Name = "txtMomentC";
-            // 
-            // label27
-            // 
-            resources.ApplyResources(this.label27, "label27");
-            this.label27.ForeColor = System.Drawing.Color.Red;
-            this.label27.Name = "label27";
-            this.label27.Tag = "txtMomentC";
-            // 
-            // label26
-            // 
-            resources.ApplyResources(this.label26, "label26");
-            this.label26.Name = "label26";
-            // 
-            // panelMomentB
-            // 
-            this.panelMomentB.Controls.Add(this.label31);
-            this.panelMomentB.Controls.Add(this.txtMomentB);
-            this.panelMomentB.Controls.Add(this.label30);
-            this.panelMomentB.Controls.Add(this.label29);
-            resources.ApplyResources(this.panelMomentB, "panelMomentB");
-            this.panelMomentB.Name = "panelMomentB";
-            // 
-            // label31
-            // 
-            resources.ApplyResources(this.label31, "label31");
-            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label31.Name = "label31";
-            // 
-            // txtMomentB
-            // 
-            resources.ApplyResources(this.txtMomentB, "txtMomentB");
-            this.txtMomentB.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtMomentB.Name = "txtMomentB";
-            // 
-            // label30
-            // 
-            resources.ApplyResources(this.label30, "label30");
-            this.label30.ForeColor = System.Drawing.Color.Red;
-            this.label30.Name = "label30";
-            this.label30.Tag = "txtMomentB";
-            // 
-            // label29
-            // 
-            resources.ApplyResources(this.label29, "label29");
-            this.label29.Name = "label29";
-            // 
-            // panel23
-            // 
-            this.panel23.Controls.Add(this.label17);
-            this.panel23.Controls.Add(this.label25);
-            this.panel23.Controls.Add(this.label24);
-            this.panel23.Controls.Add(this.txtMomentA);
-            resources.ApplyResources(this.panel23, "panel23");
-            this.panel23.Name = "panel23";
-            // 
-            // label17
-            // 
-            resources.ApplyResources(this.label17, "label17");
-            this.label17.Name = "label17";
-            // 
-            // label25
-            // 
-            resources.ApplyResources(this.label25, "label25");
-            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label25.Name = "label25";
-            // 
-            // label24
-            // 
-            resources.ApplyResources(this.label24, "label24");
-            this.label24.ForeColor = System.Drawing.Color.Red;
-            this.label24.Name = "label24";
-            this.label24.Tag = "txtMomentA";
-            // 
-            // txtMomentA
-            // 
-            resources.ApplyResources(this.txtMomentA, "txtMomentA");
-            this.txtMomentA.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtMomentA.Name = "txtMomentA";
-            // 
-            // label14
-            // 
-            this.label14.BackColor = System.Drawing.Color.DarkGray;
-            resources.ApplyResources(this.label14, "label14");
-            this.label14.Name = "label14";
-            // 
             // picMoment
             // 
             this.picMoment.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.moment_horizontal;
             resources.ApplyResources(this.picMoment, "picMoment");
             this.picMoment.Name = "picMoment";
             this.picMoment.TabStop = false;
-            // 
-            // optHorizontalUse
-            // 
-            resources.ApplyResources(this.optHorizontalUse, "optHorizontalUse");
-            this.optHorizontalUse.Checked = true;
-            this.optHorizontalUse.ForeColor = System.Drawing.Color.Black;
-            this.optHorizontalUse.Name = "optHorizontalUse";
-            this.optHorizontalUse.TabStop = true;
-            this.optHorizontalUse.UseVisualStyleBackColor = true;
-            // 
-            // optVerticalUse
-            // 
-            resources.ApplyResources(this.optVerticalUse, "optVerticalUse");
-            this.optVerticalUse.BackColor = System.Drawing.Color.Transparent;
-            this.optVerticalUse.ForeColor = System.Drawing.Color.Black;
-            this.optVerticalUse.Name = "optVerticalUse";
-            this.optVerticalUse.UseVisualStyleBackColor = false;
-            // 
-            // optWallHangingUse
-            // 
-            resources.ApplyResources(this.optWallHangingUse, "optWallHangingUse");
-            this.optWallHangingUse.ForeColor = System.Drawing.Color.Black;
-            this.optWallHangingUse.Name = "optWallHangingUse";
-            this.optWallHangingUse.UseVisualStyleBackColor = true;
             // 
             // picWallHangingUse
             // 
@@ -2728,97 +3096,6 @@
             this.lbTitleSetup.ForeColor = System.Drawing.Color.Gainsboro;
             this.lbTitleSetup.Name = "lbTitleSetup";
             // 
-            // panelModelSelection
-            // 
-            this.panelModelSelection.Controls.Add(this.panel6);
-            this.panelModelSelection.Controls.Add(this.panel7);
-            resources.ApplyResources(this.panelModelSelection, "panelModelSelection");
-            this.panelModelSelection.Name = "panelModelSelection";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.panelModelSelectionReducerRatio);
-            this.panel6.Controls.Add(this.panelModelSelectionLead);
-            this.panel6.Controls.Add(this.label1);
-            this.panel6.Controls.Add(this.panelModelSelectionModel);
-            resources.ApplyResources(this.panel6, "panel6");
-            this.panel6.Name = "panel6";
-            // 
-            // panelModelSelectionReducerRatio
-            // 
-            this.panelModelSelectionReducerRatio.Controls.Add(this.label5);
-            this.panelModelSelectionReducerRatio.Controls.Add(this.cboReducerRatio);
-            resources.ApplyResources(this.panelModelSelectionReducerRatio, "panelModelSelectionReducerRatio");
-            this.panelModelSelectionReducerRatio.Name = "panelModelSelectionReducerRatio";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label5.Name = "label5";
-            // 
-            // cboReducerRatio
-            // 
-            this.cboReducerRatio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cboReducerRatio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboReducerRatio.DropDownWidth = 180;
-            resources.ApplyResources(this.cboReducerRatio, "cboReducerRatio");
-            this.cboReducerRatio.ForeColor = System.Drawing.Color.White;
-            this.cboReducerRatio.FormattingEnabled = true;
-            this.cboReducerRatio.Name = "cboReducerRatio";
-            // 
-            // panelModelSelectionLead
-            // 
-            this.panelModelSelectionLead.Controls.Add(this.label75);
-            this.panelModelSelectionLead.Controls.Add(this.cboLead);
-            resources.ApplyResources(this.panelModelSelectionLead, "panelModelSelectionLead");
-            this.panelModelSelectionLead.Name = "panelModelSelectionLead";
-            // 
-            // label75
-            // 
-            resources.ApplyResources(this.label75, "label75");
-            this.label75.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label75.Name = "label75";
-            // 
-            // cboLead
-            // 
-            this.cboLead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cboLead.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboLead.DropDownWidth = 180;
-            resources.ApplyResources(this.cboLead, "cboLead");
-            this.cboLead.ForeColor = System.Drawing.Color.White;
-            this.cboLead.FormattingEnabled = true;
-            this.cboLead.Name = "cboLead";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // panelModelSelectionModel
-            // 
-            this.panelModelSelectionModel.Controls.Add(this.label74);
-            this.panelModelSelectionModel.Controls.Add(this.cboModel);
-            resources.ApplyResources(this.panelModelSelectionModel, "panelModelSelectionModel");
-            this.panelModelSelectionModel.Name = "panelModelSelectionModel";
-            // 
-            // label74
-            // 
-            resources.ApplyResources(this.label74, "label74");
-            this.label74.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label74.Name = "label74";
-            // 
-            // cboModel
-            // 
-            this.cboModel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cboModel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cboModel.DropDownWidth = 180;
-            resources.ApplyResources(this.cboModel, "cboModel");
-            this.cboModel.ForeColor = System.Drawing.Color.White;
-            this.cboModel.FormattingEnabled = true;
-            this.cboModel.Name = "cboModel";
-            // 
             // panel7
             // 
             this.panel7.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
@@ -2847,49 +3124,6 @@
             resources.ApplyResources(this.lbTitleModelSelection, "lbTitleModelSelection");
             this.lbTitleModelSelection.ForeColor = System.Drawing.Color.Gainsboro;
             this.lbTitleModelSelection.Name = "lbTitleModelSelection";
-            // 
-            // panelModelType
-            // 
-            this.panelModelType.Controls.Add(this.optECH);
-            this.panelModelType.Controls.Add(this.tabModelType);
-            this.panelModelType.Controls.Add(this.panel5);
-            this.panelModelType.Controls.Add(this.optGTH);
-            this.panelModelType.Controls.Add(this.optGTY);
-            this.panelModelType.Controls.Add(this.optECB);
-            this.panelModelType.Controls.Add(this.optY);
-            this.panelModelType.Controls.Add(this.optGCH);
-            this.panelModelType.Controls.Add(this.optM);
-            this.panelModelType.Controls.Add(this.optMG);
-            this.panelModelType.Controls.Add(this.optYD);
-            this.panelModelType.Controls.Add(this.optETB);
-            this.panelModelType.Controls.Add(this.optYL);
-            this.panelModelType.Controls.Add(this.optETH);
-            resources.ApplyResources(this.panelModelType, "panelModelType");
-            this.panelModelType.Name = "panelModelType";
-            // 
-            // optECH
-            // 
-            resources.ApplyResources(this.optECH, "optECH");
-            this.optECH.ForeColor = System.Drawing.Color.Black;
-            this.optECH.Name = "optECH";
-            this.optECH.UseVisualStyleBackColor = true;
-            // 
-            // tabModelType
-            // 
-            this.tabModelType.Controls.Add(this.tabModelType_standard);
-            this.tabModelType.Controls.Add(this.tabModelType_dustfree);
-            resources.ApplyResources(this.tabModelType, "tabModelType");
-            this.tabModelType.IsBorderShow = true;
-            this.tabModelType.Name = "tabModelType";
-            this.tabModelType.SelectedIndex = 0;
-            // 
-            // tabModelType_standard
-            // 
-            this.tabModelType_standard.Controls.Add(this.panel10);
-            this.tabModelType_standard.Controls.Add(this.panel9);
-            resources.ApplyResources(this.tabModelType_standard, "tabModelType_standard");
-            this.tabModelType_standard.Name = "tabModelType_standard";
-            this.tabModelType_standard.UseVisualStyleBackColor = true;
             // 
             // panel10
             // 
@@ -2975,14 +3209,6 @@
             this.picY.Name = "picY";
             this.picY.TabStop = false;
             // 
-            // tabModelType_dustfree
-            // 
-            this.tabModelType_dustfree.Controls.Add(this.panel12);
-            this.tabModelType_dustfree.Controls.Add(this.panel11);
-            resources.ApplyResources(this.tabModelType_dustfree, "tabModelType_dustfree");
-            this.tabModelType_dustfree.Name = "tabModelType_dustfree";
-            this.tabModelType_dustfree.UseVisualStyleBackColor = true;
-            // 
             // panel12
             // 
             this.panel12.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.bg_modelType_dustfree_belt;
@@ -3048,95 +3274,6 @@
             this.label61.ForeColor = System.Drawing.Color.Black;
             this.label61.Name = "label61";
             // 
-            // optGTH
-            // 
-            resources.ApplyResources(this.optGTH, "optGTH");
-            this.optGTH.Checked = true;
-            this.optGTH.ForeColor = System.Drawing.Color.Black;
-            this.optGTH.Name = "optGTH";
-            this.optGTH.TabStop = true;
-            this.optGTH.UseVisualStyleBackColor = true;
-            // 
-            // optGTY
-            // 
-            resources.ApplyResources(this.optGTY, "optGTY");
-            this.optGTY.ForeColor = System.Drawing.Color.Black;
-            this.optGTY.Name = "optGTY";
-            this.optGTY.UseVisualStyleBackColor = true;
-            // 
-            // optECB
-            // 
-            resources.ApplyResources(this.optECB, "optECB");
-            this.optECB.ForeColor = System.Drawing.Color.Black;
-            this.optECB.Name = "optECB";
-            this.optECB.UseVisualStyleBackColor = true;
-            // 
-            // optY
-            // 
-            resources.ApplyResources(this.optY, "optY");
-            this.optY.ForeColor = System.Drawing.Color.Black;
-            this.optY.Name = "optY";
-            this.optY.UseVisualStyleBackColor = true;
-            // 
-            // optGCH
-            // 
-            resources.ApplyResources(this.optGCH, "optGCH");
-            this.optGCH.ForeColor = System.Drawing.Color.Black;
-            this.optGCH.Name = "optGCH";
-            this.optGCH.UseVisualStyleBackColor = true;
-            // 
-            // optM
-            // 
-            resources.ApplyResources(this.optM, "optM");
-            this.optM.ForeColor = System.Drawing.Color.Black;
-            this.optM.Name = "optM";
-            this.optM.UseVisualStyleBackColor = true;
-            // 
-            // optMG
-            // 
-            resources.ApplyResources(this.optMG, "optMG");
-            this.optMG.ForeColor = System.Drawing.Color.Black;
-            this.optMG.Name = "optMG";
-            this.optMG.UseVisualStyleBackColor = true;
-            // 
-            // optYD
-            // 
-            resources.ApplyResources(this.optYD, "optYD");
-            this.optYD.ForeColor = System.Drawing.Color.Black;
-            this.optYD.Name = "optYD";
-            this.optYD.UseVisualStyleBackColor = true;
-            // 
-            // optETB
-            // 
-            resources.ApplyResources(this.optETB, "optETB");
-            this.optETB.ForeColor = System.Drawing.Color.Black;
-            this.optETB.Name = "optETB";
-            this.optETB.UseVisualStyleBackColor = true;
-            // 
-            // optYL
-            // 
-            resources.ApplyResources(this.optYL, "optYL");
-            this.optYL.ForeColor = System.Drawing.Color.Black;
-            this.optYL.Name = "optYL";
-            this.optYL.UseVisualStyleBackColor = true;
-            // 
-            // optETH
-            // 
-            resources.ApplyResources(this.optETH, "optETH");
-            this.optETH.ForeColor = System.Drawing.Color.Black;
-            this.optETH.Name = "optETH";
-            this.optETH.UseVisualStyleBackColor = true;
-            // 
-            // panelUseEnv
-            // 
-            this.panelUseEnv.Controls.Add(this.panel3);
-            this.panelUseEnv.Controls.Add(this.picDustFree);
-            this.panelUseEnv.Controls.Add(this.optDustFreeEnv);
-            this.panelUseEnv.Controls.Add(this.optStandardEnv);
-            this.panelUseEnv.Controls.Add(this.picStandardEnv);
-            resources.ApplyResources(this.panelUseEnv, "panelUseEnv");
-            this.panelUseEnv.Name = "panelUseEnv";
-            // 
             // panel3
             // 
             this.panel3.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.title_bg01;
@@ -3173,86 +3310,12 @@
             this.picDustFree.Name = "picDustFree";
             this.picDustFree.TabStop = false;
             // 
-            // optDustFreeEnv
-            // 
-            resources.ApplyResources(this.optDustFreeEnv, "optDustFreeEnv");
-            this.optDustFreeEnv.ForeColor = System.Drawing.Color.Black;
-            this.optDustFreeEnv.Name = "optDustFreeEnv";
-            this.optDustFreeEnv.UseVisualStyleBackColor = true;
-            // 
-            // optStandardEnv
-            // 
-            resources.ApplyResources(this.optStandardEnv, "optStandardEnv");
-            this.optStandardEnv.Checked = true;
-            this.optStandardEnv.ForeColor = System.Drawing.Color.Black;
-            this.optStandardEnv.Name = "optStandardEnv";
-            this.optStandardEnv.TabStop = true;
-            this.optStandardEnv.UseVisualStyleBackColor = true;
-            // 
             // picStandardEnv
             // 
             this.picStandardEnv.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.useEnv_standard_enabled;
             resources.ApplyResources(this.picStandardEnv, "picStandardEnv");
             this.picStandardEnv.Name = "picStandardEnv";
             this.picStandardEnv.TabStop = false;
-            // 
-            // tabResult
-            // 
-            this.tabResult.BackColor = System.Drawing.Color.White;
-            this.tabResult.Controls.Add(this.explorerBar_step5);
-            resources.ApplyResources(this.tabResult, "tabResult");
-            this.tabResult.Name = "tabResult";
-            // 
-            // explorerBar_step5
-            // 
-            resources.ApplyResources(this.explorerBar_step5, "explorerBar_step5");
-            this.explorerBar_step5.Controls.Add(this.panelResult);
-            this.explorerBar_step5.Name = "explorerBar_step5";
-            // 
-            // panelResult
-            // 
-            this.panelResult.Controls.Add(this.panel17);
-            this.panelResult.Controls.Add(this.panelConfirmBtnsStep5);
-            this.panelResult.Controls.Add(this.label51);
-            this.panelResult.Controls.Add(this.label56);
-            resources.ApplyResources(this.panelResult, "panelResult");
-            this.panelResult.Name = "panelResult";
-            // 
-            // panel17
-            // 
-            resources.ApplyResources(this.panel17, "panel17");
-            this.panel17.Controls.Add(this.panel21);
-            this.panel17.Controls.Add(this.panel19);
-            this.panel17.Name = "panel17";
-            // 
-            // panel21
-            // 
-            this.panel21.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.panel21, "panel21");
-            this.panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel21.Controls.Add(this.tableLayoutPanel22);
-            this.panel21.Name = "panel21";
-            // 
-            // tableLayoutPanel22
-            // 
-            resources.ApplyResources(this.tableLayoutPanel22, "tableLayoutPanel22");
-            this.tableLayoutPanel22.Controls.Add(this.panel20, 1, 0);
-            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
-            // 
-            // panel20
-            // 
-            this.panel20.Controls.Add(this.label32);
-            this.panel20.Controls.Add(this.picBoxResultImg);
-            this.panel20.Controls.Add(this.lbResultBar);
-            this.panel20.Controls.Add(this.lbResult);
-            resources.ApplyResources(this.panel20, "panel20");
-            this.panel20.Name = "panel20";
-            // 
-            // label32
-            // 
-            resources.ApplyResources(this.label32, "label32");
-            this.label32.ForeColor = System.Drawing.Color.Red;
-            this.label32.Name = "label32";
             // 
             // picBoxResultImg
             // 
@@ -3261,18 +3324,6 @@
             this.picBoxResultImg.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.GTH4;
             this.picBoxResultImg.Name = "picBoxResultImg";
             this.picBoxResultImg.TabStop = false;
-            // 
-            // lbResultBar
-            // 
-            this.lbResultBar.BackColor = System.Drawing.Color.DarkGray;
-            resources.ApplyResources(this.lbResultBar, "lbResultBar");
-            this.lbResultBar.Name = "lbResultBar";
-            // 
-            // lbResult
-            // 
-            resources.ApplyResources(this.lbResult, "lbResult");
-            this.lbResult.ForeColor = System.Drawing.Color.Red;
-            this.lbResult.Name = "lbResult";
             // 
             // panel19
             // 
@@ -3295,57 +3346,6 @@
             this.label93.ForeColor = System.Drawing.Color.Gainsboro;
             this.label93.Name = "label93";
             // 
-            // panelConfirmBtnsStep5
-            // 
-            resources.ApplyResources(this.panelConfirmBtnsStep5, "panelConfirmBtnsStep5");
-            this.panelConfirmBtnsStep5.Controls.Add(this.cmdConfirmStep5, 1, 0);
-            this.panelConfirmBtnsStep5.Controls.Add(this.cmdResetStep5, 2, 0);
-            this.panelConfirmBtnsStep5.Name = "panelConfirmBtnsStep5";
-            // 
-            // cmdConfirmStep5
-            // 
-            this.cmdConfirmStep5.BackColor = System.Drawing.Color.Transparent;
-            this.cmdConfirmStep5.BackColor_Hover = System.Drawing.Color.DarkRed;
-            this.cmdConfirmStep5.BackColor_Normal = System.Drawing.Color.Red;
-            this.cmdConfirmStep5.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmdConfirmStep5.BackColor2_Hover = System.Drawing.Color.DarkRed;
-            this.cmdConfirmStep5.BackColor2_Normal = System.Drawing.Color.Red;
-            this.cmdConfirmStep5.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmdConfirmStep5.ButtonEnabled = true;
-            resources.ApplyResources(this.cmdConfirmStep5, "cmdConfirmStep5");
-            this.cmdConfirmStep5.Curvature = 15;
-            this.cmdConfirmStep5.GradientMode = CustomButton.LinearGradientMode.Horizontal;
-            this.cmdConfirmStep5.Name = "cmdConfirmStep5";
-            this.cmdConfirmStep5.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
-            // 
-            // cmdResetStep5
-            // 
-            this.cmdResetStep5.BackColor = System.Drawing.Color.Transparent;
-            this.cmdResetStep5.BackColor_Hover = System.Drawing.Color.DimGray;
-            this.cmdResetStep5.BackColor_Normal = System.Drawing.Color.Gray;
-            this.cmdResetStep5.BackColor_Press = System.Drawing.Color.Black;
-            this.cmdResetStep5.BackColor2_Hover = System.Drawing.Color.DimGray;
-            this.cmdResetStep5.BackColor2_Normal = System.Drawing.Color.Gray;
-            this.cmdResetStep5.BackColor2_Press = System.Drawing.Color.Black;
-            this.cmdResetStep5.ButtonEnabled = true;
-            resources.ApplyResources(this.cmdResetStep5, "cmdResetStep5");
-            this.cmdResetStep5.Curvature = 15;
-            this.cmdResetStep5.GradientMode = CustomButton.LinearGradientMode.Horizontal;
-            this.cmdResetStep5.Name = "cmdResetStep5";
-            this.cmdResetStep5.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
-            // 
-            // label51
-            // 
-            resources.ApplyResources(this.label51, "label51");
-            this.label51.ForeColor = System.Drawing.Color.Red;
-            this.label51.Name = "label51";
-            // 
-            // label56
-            // 
-            resources.ApplyResources(this.label56, "label56");
-            this.label56.BackColor = System.Drawing.Color.LightGray;
-            this.label56.Name = "label56";
-            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -3362,22 +3362,13 @@
             this.splitContainerBase.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).EndInit();
             this.splitContainerBase.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToyo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdExplorer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdNarrow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdZoom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).EndInit();
             this.panel4.ResumeLayout(false);
             this.tabMain.ResumeLayout(false);
             this.tabStart.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cmdShapeSelection)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cmdModelSelection)).EndInit();
             this.tableLayoutPanel11.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
             this.tabContent.ResumeLayout(false);
@@ -3393,60 +3384,34 @@
             this.panelSideTable.ResumeLayout(false);
             this.panelSideTableIcon.ResumeLayout(false);
             this.panelSideTableIcon.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelSideTableSelections.ResumeLayout(false);
             this.customPanel4.ResumeLayout(false);
             this.customPanel3.ResumeLayout(false);
             this.customPanel2.ResumeLayout(false);
             this.tabSideTableImg.ResumeLayout(false);
             this.型號.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).EndInit();
             this.GTH.ResumeLayout(false);
             this.tableLayoutPanel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.GTY.ResumeLayout(false);
             this.tableLayoutPanel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ETH.ResumeLayout(false);
             this.tableLayoutPanel14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.Y.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             this.YD.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
             this.YL.ResumeLayout(false);
             this.tableLayoutPanel15.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.MG.ResumeLayout(false);
             this.tableLayoutPanel16.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             this.M.ResumeLayout(false);
             this.tableLayoutPanel17.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             this.ETB.ResumeLayout(false);
             this.tableLayoutPanel18.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             this.GCH.ResumeLayout(false);
             this.tableLayoutPanel19.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             this.ECH.ResumeLayout(false);
             this.tableLayoutPanel20.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
             this.ECB.ResumeLayout(false);
             this.tableLayoutPanel21.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             this.panelCalcResult.ResumeLayout(false);
             this.panelCalcResult.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecommandList)).EndInit();
@@ -3455,12 +3420,79 @@
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
-            this.panel15.ResumeLayout(false);
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
             this.panelCalc.ResumeLayout(false);
             this.panelCalc.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
+            this.panelSetup.ResumeLayout(false);
+            this.panelSetup.PerformLayout();
+            this.panelMoment.ResumeLayout(false);
+            this.panel22.ResumeLayout(false);
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
+            this.panelMomentB.ResumeLayout(false);
+            this.panelMomentB.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
+            this.panelModelSelection.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panelModelSelectionReducerRatio.ResumeLayout(false);
+            this.panelModelSelectionLead.ResumeLayout(false);
+            this.panelModelSelectionModel.ResumeLayout(false);
+            this.panelModelType.ResumeLayout(false);
+            this.panelModelType.PerformLayout();
+            this.tabModelType.ResumeLayout(false);
+            this.tabModelType_standard.ResumeLayout(false);
+            this.tabModelType_dustfree.ResumeLayout(false);
+            this.panelUseEnv.ResumeLayout(false);
+            this.panelUseEnv.PerformLayout();
+            this.tabResult.ResumeLayout(false);
+            this.tabResult.PerformLayout();
+            this.explorerBar_step5.ResumeLayout(false);
+            this.panelResult.ResumeLayout(false);
+            this.panelResult.PerformLayout();
+            this.panel17.ResumeLayout(false);
+            this.panel21.ResumeLayout(false);
+            this.tableLayoutPanel22.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
+            this.panelConfirmBtnsStep5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToyo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdExplorer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdNarrow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdZoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdShapeSelection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdModelSelection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picModelImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
+            this.panel15.ResumeLayout(false);
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panelxxx.ResumeLayout(false);
             this.panelMotorParams.ResumeLayout(false);
@@ -3487,16 +3519,6 @@
             this.panel13.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
-            this.panelSetup.ResumeLayout(false);
-            this.panelSetup.PerformLayout();
-            this.panelMoment.ResumeLayout(false);
-            this.panel22.ResumeLayout(false);
-            this.panel25.ResumeLayout(false);
-            this.panel25.PerformLayout();
-            this.panelMomentB.ResumeLayout(false);
-            this.panelMomentB.PerformLayout();
-            this.panel23.ResumeLayout(false);
-            this.panel23.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMoment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWallHangingUse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVerticalUse)).EndInit();
@@ -3504,18 +3526,9 @@
             this.panel8.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
-            this.panelModelSelection.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panelModelSelectionReducerRatio.ResumeLayout(false);
-            this.panelModelSelectionLead.ResumeLayout(false);
-            this.panelModelSelectionModel.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            this.panelModelType.ResumeLayout(false);
-            this.panelModelType.PerformLayout();
-            this.tabModelType.ResumeLayout(false);
-            this.tabModelType_standard.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picM)).EndInit();
@@ -3527,7 +3540,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picYL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGTY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picY)).EndInit();
-            this.tabModelType_dustfree.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picECB)).EndInit();
             this.panel11.ResumeLayout(false);
@@ -3536,25 +3548,13 @@
             this.panel5.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.panelUseEnv.ResumeLayout(false);
-            this.panelUseEnv.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picDustFree)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStandardEnv)).EndInit();
-            this.tabResult.ResumeLayout(false);
-            this.tabResult.PerformLayout();
-            this.explorerBar_step5.ResumeLayout(false);
-            this.panelResult.ResumeLayout(false);
-            this.panelResult.PerformLayout();
-            this.panel17.ResumeLayout(false);
-            this.panel21.ResumeLayout(false);
-            this.tableLayoutPanel22.ResumeLayout(false);
-            this.panel20.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxResultImg)).EndInit();
             this.panel19.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
-            this.panelConfirmBtnsStep5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

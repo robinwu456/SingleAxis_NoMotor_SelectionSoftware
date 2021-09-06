@@ -105,7 +105,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             panelSideTable.Anchor = AnchorStyles.Right;
             tabSideTableImg.Multiline = true;
             panelCalcAllMode.Anchor = AnchorStyles.Right;
-
         }
 
         private void FormMain_Resize(object sender, EventArgs e) {

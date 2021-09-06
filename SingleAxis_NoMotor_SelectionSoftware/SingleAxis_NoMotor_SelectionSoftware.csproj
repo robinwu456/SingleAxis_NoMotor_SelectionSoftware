@@ -412,6 +412,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_0113_256_256_01_1CC_icon.ico" />
+    <None Include="Resources\NewPic\slideModel_MG.png" />
     <None Include="Resources\ModelPic\Y65L.png" />
     <None Include="Resources\ModelPic\Y65D.png" />
     <None Include="Resources\ModelPic\Y65.png" />
