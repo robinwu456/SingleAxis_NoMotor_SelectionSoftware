@@ -135,7 +135,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void CboLead_SelectedValueChanged(object sender, EventArgs e) {
-            if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "" || formMain.cboReducerRatio.Text == "")
+            if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "")
+                return;
+            if (formMain.cboModel.Text.IsContainsReducerRatioType() && formMain.cboReducerRatio.Text == "")
                 return;
 
             Condition con = new Condition();
