@@ -29,8 +29,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
 
             // 結果圖片
-            var img = Properties.Resources.ResourceManager.GetObject(formMain.page2.recommandList.curSelectModel.model, CultureInfo.InvariantCulture);
-            formMain.picBoxResultImg.Image = img as Image;
+            if (formMain.page2.recommandList.curSelectModel.model.IsContainsReducerRatioType()) {
+                var img = Properties.Resources.ResourceManager.GetObject(formMain.page2.recommandList.curSelectModel.model.Split('-')[0], CultureInfo.InvariantCulture);
+                formMain.picBoxResultImg.Image = img as Image;
+            } else {
+                var img = Properties.Resources.ResourceManager.GetObject(formMain.page2.recommandList.curSelectModel.model, CultureInfo.InvariantCulture);
+                formMain.picBoxResultImg.Image = img as Image;
+            }
         }
 
         private void InitEvents() {

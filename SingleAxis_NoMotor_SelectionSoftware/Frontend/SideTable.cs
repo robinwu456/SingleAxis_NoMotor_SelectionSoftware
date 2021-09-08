@@ -148,8 +148,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public void UpdateModelImg(string model) {
             formMain.tabSideTableImg.SelectTab("型號");
-            var obj = Properties.Resources.ResourceManager.GetObject(model, CultureInfo.InvariantCulture);
-            formMain.picModelImg.Image = obj as Image;
+            if (model.IsContainsReducerRatioType()) {
+                var obj = Properties.Resources.ResourceManager.GetObject(model.Split('-')[0], CultureInfo.InvariantCulture);
+                formMain.picModelImg.Image = obj as Image;
+            } else {
+                var obj = Properties.Resources.ResourceManager.GetObject(model, CultureInfo.InvariantCulture);
+                formMain.picModelImg.Image = obj as Image;
+            }
         }
 
         public void UpdateModelImg(Model.ModelType modelType) {
