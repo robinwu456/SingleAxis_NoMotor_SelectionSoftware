@@ -163,7 +163,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public void UpdateModeInfo(string model, double lead) {
             try {
-                if (model.StartsWith("MK") || model.StartsWith("MG")) {
+                if (model.IsContainsReducerRatioType()) {
                     int reducer = (int)lead;
                     formMain.lbSideTableModelInfo.Text = string.Format("{0}-{1}", model.Split('-')[0], reducer.ToString("#00"));
                 } else {

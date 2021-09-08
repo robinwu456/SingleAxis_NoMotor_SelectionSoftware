@@ -19,7 +19,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 結果型號
             string model = formMain.page2.recommandList.curSelectModel.model;
             double lead = formMain.page2.recommandList.curSelectModel.lead;
-            if (model.StartsWith("MK") || model.StartsWith("MG"))
+            if (formMain.page2.recommandList.curSelectModel.model.IsContainsReducerRatioType())
                 formMain.lbResult.Text = string.Format("{0} - {1} - {2}", model.Split('-')[0], formMain.page2.effectiveStroke.effectiveStroke, model.Split('-')[1]);
             else {
                 if (model.Contains("-"))
@@ -29,13 +29,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
 
             // 結果圖片
-            if (formMain.page2.recommandList.curSelectModel.model.IsContainsReducerRatioType()) {
-                var img = Properties.Resources.ResourceManager.GetObject(formMain.page2.recommandList.curSelectModel.model.Split('-')[0], CultureInfo.InvariantCulture);
-                formMain.picBoxResultImg.Image = img as Image;
-            } else {
-                var img = Properties.Resources.ResourceManager.GetObject(formMain.page2.recommandList.curSelectModel.model, CultureInfo.InvariantCulture);
-                formMain.picBoxResultImg.Image = img as Image;
-            }
+            object img;
+            if (formMain.page2.recommandList.curSelectModel.model.IsContainsReducerRatioType())
+                img = Properties.Resources.ResourceManager.GetObject(formMain.page2.recommandList.curSelectModel.model.Split('-')[0], CultureInfo.InvariantCulture);
+            else
+                img = Properties.Resources.ResourceManager.GetObject(formMain.page2.recommandList.curSelectModel.model, CultureInfo.InvariantCulture);
+            formMain.picBoxResultImg.Image = img as Image;
         }
 
         private void InitEvents() {
@@ -55,6 +54,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.panelSideTable.Visible = false;
             //formMain.page2.recommandList.Refresh();
             //formMain.sideTable.Update(null, null);
+            formMain.panelCalcAllMode.Visible = false;
         }
     }
 }

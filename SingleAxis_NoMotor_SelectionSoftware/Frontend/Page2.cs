@@ -229,6 +229,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void PictureBoxToyo_DoubleClick(object sender, EventArgs e) {
+            if (formMain.tabMain.SelectedTab.Name != "tabContent")
+                return;
+
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
                 formMain.panelCalcAllMode.Visible = true;
             else
@@ -360,6 +363,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.tabMain.SelectTab("tabResult");
             formMain.page3.Load();
             formMain.sideTable.Update(null, null);
+            formMain.panelCalcAllMode.Visible = false;
         }
 
         private void CmdCalc_Click(object sender, EventArgs e) {
