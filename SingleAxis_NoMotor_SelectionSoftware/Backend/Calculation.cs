@@ -243,40 +243,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 { "Alarm", false },
             };
 
-            //Condition con = new Condition();
-            //con.setupMethod = condition.setupMethod;
-            //con.powerSelection = condition.powerSelection;
-            //con.vMaxCalcMode = condition.vMaxCalcMode;
-            //con.selectedPower = condition.selectedPower;
-            //con.useFrequence = condition.useFrequence;
-            //con.curSelectModel = condition.curSelectModel;
-            //con.curCheckedModel = condition.curCheckedModel;
-            //con.calcModel = condition.calcModel;
-            //con.expectServiceLifeTime = condition.expectServiceLifeTime;
-            //con.calcMode = condition.calcMode;
-            //con.calcMaxItem = condition.calcMaxItem;
-            //con.calcMaxUnit = condition.calcMaxUnit;
-            //con.isRpmLimitByStroke = condition.isRpmLimitByStroke;
-            //con.isCalcByMaxLoad = condition.isCalcByMaxLoad;
-            //con.moment_A = condition.moment_A;
-            //con.moment_B = condition.moment_B;
-            //con.moment_C = condition.moment_C;
-            //con.modelType = condition.modelType;
-            //con.stroke = condition.stroke;
-            //con.vMax = condition.vMax;
-            //con.load = condition.load;
-            //con.expectServiceLifeTime = condition.expectServiceLifeTime;
-            //con.moveTime = condition.moveTime;
-            //con.accelTime = condition.accelTime;
-            //con.stopTime = condition.stopTime;
-            //con.accelSpeed = condition.accelSpeed;
-            //con.ratedTorque = condition.ratedTorque;
-            //con.maxTorque = condition.maxTorque;
-            //con.rotateInertia = condition.rotateInertia;
-            //con.loadInertiaMomentRatio = condition.loadInertiaMomentRatio;
-
-            //double conLoad = con.load;
-
             foreach (Model model in models) {
                 Condition con = new Condition();
                 con.setupMethod = condition.setupMethod;
@@ -289,6 +255,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 con.calcModel = condition.calcModel;
                 con.expectServiceLifeTime = condition.expectServiceLifeTime;
                 con.calcMode = condition.calcMode;
+                con.moveSpeedUnit = condition.moveSpeedUnit;
                 con.calcMaxItem = condition.calcMaxItem;
                 con.calcMaxUnit = condition.calcMaxUnit;
                 con.isRpmLimitByStroke = condition.isRpmLimitByStroke;
@@ -299,6 +266,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 con.modelType = condition.modelType;
                 con.stroke = condition.stroke;
                 con.vMax = condition.vMax;
+                con.rpm = condition.rpm;
                 con.load = condition.load;
                 con.expectServiceLifeTime = condition.expectServiceLifeTime;
                 con.moveTime = condition.moveTime;
@@ -311,7 +279,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 con.loadInertiaMomentRatio = condition.loadInertiaMomentRatio;
 
                 // 最大荷重計算(自動修正荷重)
-                //con.load = conLoad;
                 if (con.calcMode == Condition.CalcMode.CalcMax && con.isCalcByMaxLoad) {
                     Console.WriteLine("{0}/{1}", models.IndexOf(model) + 1, models.Count);
                     CalcMaxLoad(model, con);

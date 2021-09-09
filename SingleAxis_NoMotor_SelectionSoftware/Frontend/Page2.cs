@@ -178,10 +178,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             runCondition.scrollBarLoad.maxValue = RunCondition.defaultMaxLoad;
 
             // 運行速度單位
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
-                formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s", "RPM" };
-            else
-                formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s" };
+            //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
+            //    formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s", "RPM" };
+            //else
+            //    formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s" };
+            formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s", "RPM" };
 
             // 全選模式
             formMain.chkCalcAllMode.Checked = false;

@@ -160,30 +160,25 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             else if (formMain.optVerticalUse.Checked)
                 curCondition.setupMethod = Model.SetupMethod.垂直;
             // 最高速度
-            if (formMain.cboMaxSpeedUnit.Text == "mm/s")
+            if (formMain.cboMaxSpeedUnit.Text == "mm/s") {
+                curCondition.moveSpeedUnit = Condition.MoveSpeedUnit.Vmax;
                 curCondition.vMax = Convert.ToDouble(formMain.txtMaxSpeed.Text);
-            else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
+            } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
+                curCondition.moveSpeedUnit = Condition.MoveSpeedUnit.RPM;
                 if (formMain.txtMaxSpeed.Text.Contains("."))
                     formMain.txtMaxSpeed.Text = formMain.txtMaxSpeed.Text.Split('.')[0];
 
-                //if (formMain.page2.calc.IsContainsReducerRatio(formMain.cboModel.Text)) {
-                //    //string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text).Cells["columnReducerRatio"].Value.ToString();
-                //    string dgvReducerRatioValue = formMain.cboReducerRatio.Text;
-                //    curCondition.vMax = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text) / Convert.ToDouble(dgvReducerRatioValue));
-                //} else
-                //    curCondition.vMax = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text));
-
-                if (curCondition.modelType.IsBeltType()) {
-                    Model m = formMain.page2.calc.GetAllModels(curCondition).First(_m => _m.name.StartsWith(formMain.cboModel.Text) && _m.lead == Convert.ToDouble(formMain.cboLead.Text));
-                    curCondition.vMax = formMain.page2.calc.GetBeltVmaxByRpm_ms(m.name, Convert.ToInt32(formMain.txtMaxSpeed.Text), m.mainWheel_P1, m.subWheel_P2, m.subWheel_P3, m.beltCalcType) * 1000;
-                } else {
-                    if (formMain.page2.calc.IsContainsReducerRatio(formMain.cboModel.Text)) {
-                        //string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text).Cells["columnReducerRatio"].Value.ToString();
-                        string dgvReducerRatioValue = formMain.cboReducerRatio.Text;
-                        curCondition.vMax = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text) / Convert.ToDouble(dgvReducerRatioValue));
-                    } else
-                        curCondition.vMax = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text));
-                }
+                //if (curCondition.modelType.IsBeltType()) {
+                //    Model m = formMain.page2.calc.GetAllModels(curCondition).First(_m => _m.name.StartsWith(formMain.cboModel.Text) && _m.lead == Convert.ToDouble(formMain.cboLead.Text));
+                //    curCondition.vMax = formMain.page2.calc.GetBeltVmaxByRpm_ms(m.name, Convert.ToInt32(formMain.txtMaxSpeed.Text), m.mainWheel_P1, m.subWheel_P2, m.subWheel_P3, m.beltCalcType) * 1000;
+                //} else {
+                //    if (formMain.page2.calc.IsContainsReducerRatio(formMain.cboModel.Text)) {
+                //        string dgvReducerRatioValue = formMain.cboReducerRatio.Text;
+                //        curCondition.vMax = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text) / Convert.ToDouble(dgvReducerRatioValue));
+                //    } else
+                //        curCondition.vMax = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text));
+                //}
+                curCondition.rpm = Convert.ToInt32(formMain.txtMaxSpeed.Text);
             }
             curCondition.vMaxCalcMode = !formMain.chkAdvanceMode.Checked ? Condition.CalcVmax.Max : Condition.CalcVmax.Custom;
             // 力矩參數
