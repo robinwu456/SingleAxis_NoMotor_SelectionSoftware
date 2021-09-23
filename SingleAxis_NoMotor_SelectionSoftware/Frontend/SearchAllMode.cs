@@ -149,7 +149,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
 
             // 馬達瓦數
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection) {
                 // 全部計算只能標準或自訂
                 if (formMain.cboPower.Text == "標準")
                     curCondition.powerSelection = Condition.PowerSelection.Standard;

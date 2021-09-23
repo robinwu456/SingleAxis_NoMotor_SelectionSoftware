@@ -111,13 +111,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 更新型號選擇
             formMain.sideTable.UpdateItem();
             Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.標準 : Model.UseEnvironment.無塵;
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
                 formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
             else
                 formMain.sideTable.ClearMsg();
 
             // 偵測傳動方式有無
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
                 DetectModelTypeData();
 
             // 匯入型號選擇
@@ -125,7 +125,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 modelSelection.InitModelSelectionCbo();
 
             // 馬達選項更新
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection) {
                 motorPower.UpdateMotorCalcMode();
                 motorPower.Load();
             }
@@ -144,7 +144,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.optGTH.Checked = true;
             recommandList.Refresh();
             formMain.sideTable.ClearModelImg();
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
                 ModelType_CheckedChanged(null, null);
             formMain.sideTable.ClearModelInfo();
             formMain.sideTable.ClearSelectedModelInfo();
@@ -192,6 +192,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // RPM顯示
             formMain.lbRpm.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
+
+            // 最大值顯示
+            formMain.lbMaxValue_MaxSpeed.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
+            formMain.lbMaxValue_AccelSpeed.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
+
+            // RPM轉換監測
+            inputValidate.threadShowRPMCounting = new Thread(inputValidate.ShowConvertRPM);
+            inputValidate.threadShowRPMCounting.Start();
         }
 
         private void InitEvents() {
@@ -233,7 +241,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (formMain.tabMain.SelectedTab.Name != "tabContent")
                 return;
 
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
                 formMain.panelCalcAllMode.Visible = true;
             else
                 MessageBox.Show("條件選型才能開全選模式");
@@ -272,10 +280,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void UpdateLayout(object sender, EventArgs e) {
             // 部分panel隱藏處理
-            formMain.panelUseEnv.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;          // 使用環境
-            formMain.panelModelType.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;       // 傳動方式
+            formMain.panelUseEnv.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection;          // 使用環境
+            formMain.panelModelType.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection;       // 傳動方式
             formMain.panelModelSelection.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;  // 型號選擇
-            formMain.panelCalcResult.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;      // 推薦規格
+            formMain.panelCalcResult.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection;      // 推薦規格
             formMain.panelMoment.Visible = !curSelectModelType.IsRodType();                                                       // 力矩長度
 
             // 項目索引修正
@@ -297,7 +305,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 更新顯示傳動方式敘述
             Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.標準 : Model.UseEnvironment.無塵;
             formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
                 formMain.sideTable.UpdateModelImg(curSelectModelType);
             // 驗證安裝方式選項
             Model.SetupMethod[] modelTypeSupportSetupMethod = calc.GetSupportMethod(curSelectModelType);
@@ -316,7 +324,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.panelReducerParam.Visible = curSelectModelType.IsContainsReducerRatioType();
 
             
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
                 formMain.sideTable.ClearModelInfo();
         }
 
@@ -326,7 +334,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 return;
             }
 
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection) {
                 formMain.panelAdvanceParams.Enabled = formMain.chkAdvanceMode.Checked;
                 return;
             }
@@ -406,7 +414,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         chartInfo.Clear();
                         recommandList.curSelectModel = (null, -1);
                         // 側邊欄
-                        if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
+                        if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection) {
                             formMain.sideTable.ClearModelImg();
                             formMain.sideTable.ClearModelInfo();
                         }

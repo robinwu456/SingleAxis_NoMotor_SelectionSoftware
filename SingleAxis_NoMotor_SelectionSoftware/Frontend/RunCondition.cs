@@ -211,7 +211,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             else
                 curCondition.accelTime = 0.2;
             // 加速度
-            formMain.page2.inputValidate.TxtAccelSpeed_Validating(null, null);
+            //formMain.page2.inputValidate.TxtAccelSpeed_Validating(null, null);
             if (formMain.chkAdvanceMode.Checked)
                 curCondition.accelSpeed = Convert.ToDouble(formMain.txtAccelSpeed.Text);
             else
@@ -222,7 +222,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //else
             //    curCondition.RepeatabilityCondition = repeatability => repeatability <= 0.01;
             // 馬達瓦數
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection) {
                 // 全部計算只能標準或自訂
                 if (formMain.cboPower.Text == "標準")
                     curCondition.powerSelection = Condition.PowerSelection.Standard;

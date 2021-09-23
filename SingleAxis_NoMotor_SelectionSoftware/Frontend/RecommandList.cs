@@ -267,7 +267,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             try {
                 formMain.Invoke(new Action(() => {
-                    if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
+                    if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection) {
                         // 欄位寬度更新
                         foreach (DataGridViewColumn col in formMain.dgvRecommandList.Columns)
                             if (col.Name == "項次" || col.Name == "導程")

@@ -198,6 +198,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
         }
 
+        private void FormMain_FormClosed(object sender, FormClosedEventArgs e) {
+            if (page2.inputValidate.threadShowRPMCounting != null)
+                page2.inputValidate.threadShowRPMCounting.Abort();
+        }
+
         //protected override void WndProc(ref Message m) {
         //    base.WndProc(ref m);
         //    // 0x115 and 0x20a both tell the control to scroll. If either one comes 

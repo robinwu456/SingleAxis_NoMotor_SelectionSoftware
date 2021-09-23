@@ -211,17 +211,12 @@
             this.cboPower = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.panelCalcAllParam = new System.Windows.Forms.Panel();
-            this.panelNoConstantTimeParam = new System.Windows.Forms.Panel();
-            this.cboMaxCalcUnit = new System.Windows.Forms.ComboBox();
-            this.label77 = new System.Windows.Forms.Label();
-            this.txtMaxCalc = new System.Windows.Forms.TextBox();
-            this.cboMaxCalcMode = new System.Windows.Forms.ComboBox();
-            this.label80 = new System.Windows.Forms.Label();
             this.chkExpectServiceLife = new CustomToggle.CustomToggle();
             this.panelAdvanceMode = new System.Windows.Forms.Panel();
             this.chkAdvanceMode = new CustomToggle.CustomToggle();
             this.panelAdvanceParams = new System.Windows.Forms.Panel();
+            this.lbMaxValue_AccelSpeed = new System.Windows.Forms.Label();
+            this.lbMaxValue_MaxSpeed = new System.Windows.Forms.Label();
             this.cboMaxSpeedUnit = new System.Windows.Forms.ComboBox();
             this.lbMaxSpeedAlarm = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
@@ -272,6 +267,13 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label67 = new System.Windows.Forms.Label();
             this.lbTitleCalc = new System.Windows.Forms.Label();
+            this.panelCalcAllParam = new System.Windows.Forms.Panel();
+            this.panelNoConstantTimeParam = new System.Windows.Forms.Panel();
+            this.cboMaxCalcUnit = new System.Windows.Forms.ComboBox();
+            this.label77 = new System.Windows.Forms.Label();
+            this.txtMaxCalc = new System.Windows.Forms.TextBox();
+            this.cboMaxCalcMode = new System.Windows.Forms.ComboBox();
+            this.label80 = new System.Windows.Forms.Label();
             this.panelSetup = new System.Windows.Forms.Panel();
             this.label64 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
@@ -486,8 +488,6 @@
             this.panelReducerParam.SuspendLayout();
             this.panelPowerSelection.SuspendLayout();
             this.panel14.SuspendLayout();
-            this.panelCalcAllParam.SuspendLayout();
-            this.panelNoConstantTimeParam.SuspendLayout();
             this.panelAdvanceMode.SuspendLayout();
             this.panelAdvanceParams.SuspendLayout();
             this.panelExpectServiceLifeTime.SuspendLayout();
@@ -497,6 +497,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbLoad)).BeginInit();
             this.panel13.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.panelCalcAllParam.SuspendLayout();
+            this.panelNoConstantTimeParam.SuspendLayout();
             this.panelSetup.SuspendLayout();
             this.panelMoment.SuspendLayout();
             this.panel22.SuspendLayout();
@@ -1765,6 +1767,7 @@
             this.panelCalc.Controls.Add(this.label19);
             this.panelCalc.Controls.Add(this.panel14);
             this.panelCalc.Controls.Add(this.panel13);
+            this.panelCalc.Controls.Add(this.panelCalcAllParam);
             resources.ApplyResources(this.panelCalc, "panelCalc");
             this.panelCalc.Name = "panelCalc";
             // 
@@ -2011,7 +2014,6 @@
             // 
             this.panel14.BackgroundImage = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.bg_runCondition;
             resources.ApplyResources(this.panel14, "panel14");
-            this.panel14.Controls.Add(this.panelCalcAllParam);
             this.panel14.Controls.Add(this.chkExpectServiceLife);
             this.panel14.Controls.Add(this.panelAdvanceMode);
             this.panel14.Controls.Add(this.panelExpectServiceLifeTime);
@@ -2046,63 +2048,6 @@
             this.panel14.Controls.Add(this.label50);
             this.panel14.Controls.Add(this.labelStopTimeAlarm);
             this.panel14.Name = "panel14";
-            // 
-            // panelCalcAllParam
-            // 
-            resources.ApplyResources(this.panelCalcAllParam, "panelCalcAllParam");
-            this.panelCalcAllParam.BackColor = System.Drawing.Color.Transparent;
-            this.panelCalcAllParam.Controls.Add(this.panelNoConstantTimeParam);
-            this.panelCalcAllParam.Controls.Add(this.cboMaxCalcMode);
-            this.panelCalcAllParam.Controls.Add(this.label80);
-            this.panelCalcAllParam.Name = "panelCalcAllParam";
-            // 
-            // panelNoConstantTimeParam
-            // 
-            this.panelNoConstantTimeParam.Controls.Add(this.cboMaxCalcUnit);
-            this.panelNoConstantTimeParam.Controls.Add(this.label77);
-            this.panelNoConstantTimeParam.Controls.Add(this.txtMaxCalc);
-            resources.ApplyResources(this.panelNoConstantTimeParam, "panelNoConstantTimeParam");
-            this.panelNoConstantTimeParam.Name = "panelNoConstantTimeParam";
-            // 
-            // cboMaxCalcUnit
-            // 
-            this.cboMaxCalcUnit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cboMaxCalcUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMaxCalcUnit.DropDownWidth = 180;
-            resources.ApplyResources(this.cboMaxCalcUnit, "cboMaxCalcUnit");
-            this.cboMaxCalcUnit.ForeColor = System.Drawing.Color.White;
-            this.cboMaxCalcUnit.FormattingEnabled = true;
-            this.cboMaxCalcUnit.Name = "cboMaxCalcUnit";
-            // 
-            // label77
-            // 
-            resources.ApplyResources(this.label77, "label77");
-            this.label77.BackColor = System.Drawing.Color.Transparent;
-            this.label77.ForeColor = System.Drawing.Color.Red;
-            this.label77.Name = "label77";
-            this.label77.Tag = "txtMaxCalc";
-            // 
-            // txtMaxCalc
-            // 
-            resources.ApplyResources(this.txtMaxCalc, "txtMaxCalc");
-            this.txtMaxCalc.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtMaxCalc.Name = "txtMaxCalc";
-            // 
-            // cboMaxCalcMode
-            // 
-            this.cboMaxCalcMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cboMaxCalcMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMaxCalcMode.DropDownWidth = 180;
-            resources.ApplyResources(this.cboMaxCalcMode, "cboMaxCalcMode");
-            this.cboMaxCalcMode.ForeColor = System.Drawing.Color.White;
-            this.cboMaxCalcMode.FormattingEnabled = true;
-            this.cboMaxCalcMode.Name = "cboMaxCalcMode";
-            // 
-            // label80
-            // 
-            resources.ApplyResources(this.label80, "label80");
-            this.label80.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label80.Name = "label80";
             // 
             // chkExpectServiceLife
             // 
@@ -2142,6 +2087,8 @@
             // 
             resources.ApplyResources(this.panelAdvanceParams, "panelAdvanceParams");
             this.panelAdvanceParams.BackColor = System.Drawing.Color.Transparent;
+            this.panelAdvanceParams.Controls.Add(this.lbMaxValue_AccelSpeed);
+            this.panelAdvanceParams.Controls.Add(this.lbMaxValue_MaxSpeed);
             this.panelAdvanceParams.Controls.Add(this.cboMaxSpeedUnit);
             this.panelAdvanceParams.Controls.Add(this.lbMaxSpeedAlarm);
             this.panelAdvanceParams.Controls.Add(this.label78);
@@ -2152,6 +2099,20 @@
             this.panelAdvanceParams.Controls.Add(this.txtMaxSpeed);
             this.panelAdvanceParams.Controls.Add(this.lbRpm);
             this.panelAdvanceParams.Name = "panelAdvanceParams";
+            // 
+            // lbMaxValue_AccelSpeed
+            // 
+            resources.ApplyResources(this.lbMaxValue_AccelSpeed, "lbMaxValue_AccelSpeed");
+            this.lbMaxValue_AccelSpeed.BackColor = System.Drawing.Color.Transparent;
+            this.lbMaxValue_AccelSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbMaxValue_AccelSpeed.Name = "lbMaxValue_AccelSpeed";
+            // 
+            // lbMaxValue_MaxSpeed
+            // 
+            resources.ApplyResources(this.lbMaxValue_MaxSpeed, "lbMaxValue_MaxSpeed");
+            this.lbMaxValue_MaxSpeed.BackColor = System.Drawing.Color.Transparent;
+            this.lbMaxValue_MaxSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbMaxValue_MaxSpeed.Name = "lbMaxValue_MaxSpeed";
             // 
             // cboMaxSpeedUnit
             // 
@@ -2494,6 +2455,63 @@
             resources.ApplyResources(this.lbTitleCalc, "lbTitleCalc");
             this.lbTitleCalc.ForeColor = System.Drawing.Color.Gainsboro;
             this.lbTitleCalc.Name = "lbTitleCalc";
+            // 
+            // panelCalcAllParam
+            // 
+            resources.ApplyResources(this.panelCalcAllParam, "panelCalcAllParam");
+            this.panelCalcAllParam.BackColor = System.Drawing.Color.Transparent;
+            this.panelCalcAllParam.Controls.Add(this.panelNoConstantTimeParam);
+            this.panelCalcAllParam.Controls.Add(this.cboMaxCalcMode);
+            this.panelCalcAllParam.Controls.Add(this.label80);
+            this.panelCalcAllParam.Name = "panelCalcAllParam";
+            // 
+            // panelNoConstantTimeParam
+            // 
+            this.panelNoConstantTimeParam.Controls.Add(this.cboMaxCalcUnit);
+            this.panelNoConstantTimeParam.Controls.Add(this.label77);
+            this.panelNoConstantTimeParam.Controls.Add(this.txtMaxCalc);
+            resources.ApplyResources(this.panelNoConstantTimeParam, "panelNoConstantTimeParam");
+            this.panelNoConstantTimeParam.Name = "panelNoConstantTimeParam";
+            // 
+            // cboMaxCalcUnit
+            // 
+            this.cboMaxCalcUnit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboMaxCalcUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMaxCalcUnit.DropDownWidth = 180;
+            resources.ApplyResources(this.cboMaxCalcUnit, "cboMaxCalcUnit");
+            this.cboMaxCalcUnit.ForeColor = System.Drawing.Color.White;
+            this.cboMaxCalcUnit.FormattingEnabled = true;
+            this.cboMaxCalcUnit.Name = "cboMaxCalcUnit";
+            // 
+            // label77
+            // 
+            resources.ApplyResources(this.label77, "label77");
+            this.label77.BackColor = System.Drawing.Color.Transparent;
+            this.label77.ForeColor = System.Drawing.Color.Red;
+            this.label77.Name = "label77";
+            this.label77.Tag = "txtMaxCalc";
+            // 
+            // txtMaxCalc
+            // 
+            resources.ApplyResources(this.txtMaxCalc, "txtMaxCalc");
+            this.txtMaxCalc.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMaxCalc.Name = "txtMaxCalc";
+            // 
+            // cboMaxCalcMode
+            // 
+            this.cboMaxCalcMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboMaxCalcMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMaxCalcMode.DropDownWidth = 180;
+            resources.ApplyResources(this.cboMaxCalcMode, "cboMaxCalcMode");
+            this.cboMaxCalcMode.ForeColor = System.Drawing.Color.White;
+            this.cboMaxCalcMode.FormattingEnabled = true;
+            this.cboMaxCalcMode.Name = "cboMaxCalcMode";
+            // 
+            // label80
+            // 
+            resources.ApplyResources(this.label80, "label80");
+            this.label80.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label80.Name = "label80";
             // 
             // panelSetup
             // 
@@ -3354,6 +3372,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMain";
             this.Opacity = 0D;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.Resize += new System.EventHandler(this.FormMain_Resize);
             this.panelBase.ResumeLayout(false);
@@ -3471,10 +3490,6 @@
             this.panelPowerSelection.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
-            this.panelCalcAllParam.ResumeLayout(false);
-            this.panelCalcAllParam.PerformLayout();
-            this.panelNoConstantTimeParam.ResumeLayout(false);
-            this.panelNoConstantTimeParam.PerformLayout();
             this.panelAdvanceMode.ResumeLayout(false);
             this.panelAdvanceParams.ResumeLayout(false);
             this.panelAdvanceParams.PerformLayout();
@@ -3487,6 +3502,10 @@
             this.panel13.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            this.panelCalcAllParam.ResumeLayout(false);
+            this.panelCalcAllParam.PerformLayout();
+            this.panelNoConstantTimeParam.ResumeLayout(false);
+            this.panelNoConstantTimeParam.PerformLayout();
             this.panelSetup.ResumeLayout(false);
             this.panelSetup.PerformLayout();
             this.panelMoment.ResumeLayout(false);
@@ -3913,6 +3932,8 @@
         public CustomButton.CustomButton cmdChangeRunCondition;
         public System.Windows.Forms.Label lbTitleCalc;
         public System.Windows.Forms.PictureBox pictureBoxToyo;
+        public System.Windows.Forms.Label lbMaxValue_AccelSpeed;
+        public System.Windows.Forms.Label lbMaxValue_MaxSpeed;
     }
 }
 

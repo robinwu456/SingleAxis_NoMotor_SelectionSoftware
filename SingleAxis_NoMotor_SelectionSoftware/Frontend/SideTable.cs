@@ -64,7 +64,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // Get items
             List<string> selectionTableItems = new List<string>();
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
                 selectionTableItems = selectionTableItems_calcAll;
             else
                 selectionTableItems = selectionTableItems_calcSelectModel;
@@ -134,7 +134,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             UpdateSelectedConditionValue("安裝方式", formMain.panelSetup.Controls.Cast<Control>().ToList()
                                                            .First(control => control.GetType().Equals(typeof(RadioButton)) && ((RadioButton)control).Checked)
                                                            .Text);
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection ||
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection ||
                 (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection && formMain.cboModel.Text != ""))
                 UpdateSelectedConditionValue("機構型態", formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.ToString());
 
@@ -199,7 +199,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             Label lbValue = formMain.panelSideTableSelections.Controls.Find("labelDataResult_" + key + "_value", true)[0] as Label;
             // 字串斷行處理
             List<string> selectionTableItems = new List<string>();
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
                 selectionTableItems = selectionTableItems_calcAll;
             else
                 selectionTableItems = selectionTableItems_calcSelectModel;
