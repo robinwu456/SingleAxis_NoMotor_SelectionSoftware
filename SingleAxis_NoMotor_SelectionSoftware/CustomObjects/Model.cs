@@ -42,7 +42,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <summary>
         /// 使用環境
         /// </summary>
-        public enum UseEnvironment { 
+        public enum UseEnvironment {             
             /// <summary>
             /// 標準
             /// </summary>
@@ -50,7 +50,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             /// <summary>
             /// 無塵
             /// </summary>
-            無塵 
+            無塵,
+            /// <summary>
+            /// 不限制
+            /// </summary>
+            Null,
         }
 
         /// <summary>
@@ -376,7 +380,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <summary>
         /// T_Rms安全係數
         /// </summary>
-        public double tRmsSafeCoefficient;
+        public double tRmsSafeCoefficient = -1;
         /// <summary>
         /// T_Rms扭矩確認
         /// </summary>

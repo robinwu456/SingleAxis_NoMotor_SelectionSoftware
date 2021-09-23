@@ -23,6 +23,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public RecommandList recommandList;
         public EffectiveStroke effectiveStroke;
         public ModelSelection modelSelection;
+        public SearchAllMode searchAllMode;
 
         private FormMain formMain;
         private Thread threadCalc;
@@ -79,6 +80,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             recommandList = new RecommandList(formMain);
             // 有效行程
             effectiveStroke = new EffectiveStroke(formMain);
+            // 全選模式
+            searchAllMode = new SearchAllMode(formMain);
 
             //// 減速比
             //calc.reducerInfo.Rows.Cast<DataRow>().ToList().ForEach(row => {
@@ -146,7 +149,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.sideTable.ClearModelInfo();
             formMain.sideTable.ClearSelectedModelInfo();
             recommandList.curSelectModel = (null, -1);
-            formMain.cmdConfirmStep2.Visible = false;
+            //formMain.cmdConfirmStep2.Visible = false;
+            formMain.page2.ChangeNextStepBtnVisible(false);
             chartInfo.Clear();
 
             //// 有效行程顯示
@@ -162,7 +166,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.chkAdvanceMode.Checked = false;
             formMain.panelAdvanceParams.Enabled = false;
             //formMain.panelAdvanceParams.Visible = false;
-            formMain.panelAdvanceMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
+            //formMain.panelAdvanceMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
 
             // scrollbars
             runCondition.scrollBarStroke.Value = 0;
@@ -174,7 +178,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             runCondition.scrollBarLoad.maxValue = RunCondition.defaultMaxLoad;
 
             // 運行速度單位
-            formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s", "RPM" };            
+            //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
+            //    formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s", "RPM" };
+            //else
+            //    formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s" };
+            formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s", "RPM" };
+
+            // 全選模式
+            formMain.chkCalcAllMode.Checked = false;
+            formMain.chkRpmLimitByStroke.Checked = false;
+            //formMain.panelCalcAllMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
+            //formMain.chkRpmLimitByStroke.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
+
+            // RPM顯示
+            formMain.lbRpm.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
         }
 
         private void InitEvents() {
@@ -204,10 +221,30 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //formMain.optHorizontalUse.CheckedChanged += UpdateMomentPic;
             //formMain.optVerticalUse.CheckedChanged += UpdateMomentPic;
             //formMain.optWallHangingUse.CheckedChanged += UpdateMomentPic;
+
+            // 回到運轉條件
+            formMain.cmdChangeRunCondition.Click += CmdChangeRunCondition_Click;
+
+            // 全選模式
+            formMain.pictureBoxToyo.DoubleClick += PictureBoxToyo_DoubleClick;
+        }
+
+        private void PictureBoxToyo_DoubleClick(object sender, EventArgs e) {
+            if (formMain.tabMain.SelectedTab.Name != "tabContent")
+                return;
+
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+                formMain.panelCalcAllMode.Visible = true;
+            else
+                MessageBox.Show("條件選型才能開全選模式");
+        }
+
+        private void CmdChangeRunCondition_Click(object sender, EventArgs e) {
+            formMain.explorerBar.ScrollControlIntoView(formMain.lbTitleCalc);
         }
 
         //private void UpdateMomentPic(object sender, EventArgs e) {
-            
+
         //}
 
         private void SteupMethod_CheckedChanged(object sender, EventArgs e) {
@@ -230,6 +267,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 側邊欄移除
             formMain.panelSideTable.Visible = false;
+            formMain.panelCalcAllMode.Visible = false;
         }
 
         private void UpdateLayout(object sender, EventArgs e) {
@@ -283,30 +321,31 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {
-            if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "" || !decimal.TryParse(formMain.txtStroke.Text, out decimal a)) {
+            if (formMain.chkCalcAllMode.Checked) {
+                formMain.chkAdvanceMode.Checked = false;
+                return;
+            }
+
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
+                formMain.panelAdvanceParams.Enabled = formMain.chkAdvanceMode.Checked;
+                return;
+            }
+
+            if (formMain.cboModel.Text == "" || 
+                formMain.cboLead.Text == "" || 
+                !decimal.TryParse(formMain.txtStroke.Text, out decimal a)) {
                 formMain.chkAdvanceMode.Checked = false;
                 return;
             }
 
             formMain.panelAdvanceParams.Enabled = formMain.chkAdvanceMode.Checked;
-            //formMain.panelAdvanceParams.Visible = formMain.chkAdvanceMode.Checked;
             if (!formMain.chkAdvanceMode.Checked)
-                //formMain.optMaxSpeedType_mms.Checked = true;
                 formMain.cboMaxSpeedUnit.Text = "mm/s";
             
             if (formMain.chkAdvanceMode.Checked) {
-
-
                 // 切進接選項自動換算最大加速度(加速時間=0.2/0.4)
                 string model = formMain.cboModel.Text;
                 double lead = Convert.ToDouble(formMain.cboLead.Text);
-                //int reducerRatio = 1;
-                //if (formMain.page2.calc.IsContainsReducerRatio(model)) {
-                //    //string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
-                //    //reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
-                //    reducerRatio = Convert.ToInt32(formMain.cboReducerRatio.Text);
-                //    lead /= reducerRatio;
-                //}
                 Model m = formMain.page2.calc.GetAllModels(formMain.page2.runCondition.curCondition).First(_m => _m.name.StartsWith(model) && _m.lead == lead);
                 int maxAccelSpeed = formMain.page2.calc.GetMaxAccelSpeed(m, Convert.ToInt32(formMain.txtStroke.Text), m.modelType);
                 formMain.txtAccelSpeed.Text = maxAccelSpeed.ToString();
@@ -325,6 +364,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.tabMain.SelectTab("tabResult");
             formMain.page3.Load();
             formMain.sideTable.Update(null, null);
+            formMain.panelCalcAllMode.Visible = false;
         }
 
         private void CmdCalc_Click(object sender, EventArgs e) {
@@ -333,13 +373,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 return;
 
             // 最後更新使用條件
-            runCondition.UpdateCondition(null, null);
+            if (formMain.chkCalcAllMode.Checked)
+                searchAllMode.UpdateCondition(null, null);
+            else
+                runCondition.UpdateCondition(null, null);
 
             threadCalc = new Thread(() => {
                 Thread.Sleep(100);
 
                 // 開始計算
-                var result = calc.GetRecommandResult(runCondition.curCondition);
+                var calcCon = formMain.chkCalcAllMode.Checked ? searchAllMode.curCondition : runCondition.curCondition;    // 計算條件
+                var result = calc.GetRecommandResult(calcCon);
                 // 規件規格
                 recommandList.curRecommandList = result["List"] as List<Model>;
                 // 回傳訊息
@@ -382,7 +426,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     //formMain.page2.effectiveStroke.IsShowEffectiveStroke(false);
 
                     // 搜尋不到項目時，下一步隱藏
-                    formMain.Invoke(new Action(() => formMain.cmdConfirmStep2.Visible = false));
+                    //formMain.Invoke(new Action(() => formMain.cmdConfirmStep2.Visible = false));
+                    formMain.Invoke(new Action(() => formMain.page2.ChangeNextStepBtnVisible(false)));
 
                     return;
                 }
@@ -404,8 +449,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void ShowWaiting() {
             new Thread(() => {
                 formMain.Invoke(new Action(() => {
-                    FormWaiting wait = new FormWaiting(calc.GetCalcPercent);
+                    FormWaiting wait = new FormWaiting(calc.GetCalcPercent, calc.InterruptCalc);
                     wait.GetPercent = calc.GetCalcPercent;
+                    wait.InterruptCalc = calc.InterruptCalc;
                     wait.ShowDialog();
                 }));
             }).Start();
@@ -435,5 +481,33 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.optGCH.Checked = true;
             formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
         }
+
+        public void ChangeNextStepBtnVisible(bool visible) {
+            if (formMain.cmdConfirmStep2.Visible == visible)
+                return;
+
+            formMain.panelConfirmBtnsStep2.ColumnStyles.Clear();
+            formMain.cmdConfirmStep2.Visible = visible;
+
+            ColumnStyle[] rows = { };
+            if (visible) {
+                rows = new ColumnStyle[]{
+                    new ColumnStyle(SizeType.Percent, 33.33f),
+                    new ColumnStyle(SizeType.Percent, 16.67f),
+                    new ColumnStyle(SizeType.Percent, 16.67f),
+                    new ColumnStyle(SizeType.Percent, 33.33f),
+                };
+            } else {
+                rows = new ColumnStyle[]{
+                    new ColumnStyle(SizeType.Percent, 41.67f),
+                    new ColumnStyle(SizeType.Percent, 16.67f),
+                    new ColumnStyle(SizeType.Percent, 41.67f),
+                };
+            }
+
+            foreach (ColumnStyle style in rows)
+                formMain.panelConfirmBtnsStep2.ColumnStyles.Add(style);
+        }
     }
 }
+

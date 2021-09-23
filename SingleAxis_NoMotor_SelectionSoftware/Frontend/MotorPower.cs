@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class MotorPower {
@@ -16,30 +18,52 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             InitEvents();
         }
 
+        [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.Winapi)]
+        internal static extern IntPtr GetFocus();
+        private Control GetFocusedControl() {
+            Control focusedControl = null;
+            // To get hold of the focused control:
+            IntPtr focusedHandle = GetFocus();
+            if (focusedHandle != IntPtr.Zero)
+                // Note that if the focused Control is not a .Net control, then this will return null.
+                focusedControl = Control.FromHandle(focusedHandle);
+            return focusedControl;
+        }
+
         private void InitEvents() {
             formMain.cboPower.SelectedValueChanged += UpdateMotorOptionsEnabled;
-            formMain.chkMotorAdvanceMode.CheckedChanged += UpdateMotorOptionsEnabled;
+            //formMain.chkMotorAdvanceMode.CheckedChanged += UpdateMotorOptionsEnabled;
             formMain.cboMotorParamsMotorPowerSelection.SelectedValueChanged += CboMotorParamsMotorPowerSelection_SelectedValueChanged;
+            formMain.panelMotorParams.Controls.All().Where(control => control is TextBox).ToList().ForEach(control => control.TextChanged += MotorParam_TextChanged);
+        }
+
+        private void MotorParam_TextChanged(object sender, EventArgs e) {
+            if (formMain.panelMotorParams.Controls.All().Any(control => control == GetFocusedControl()))
+                formMain.cboMotorParamsMotorPowerSelection.Text = "自訂";
         }
 
         private void CboMotorParamsMotorPowerSelection_SelectedValueChanged(object sender, EventArgs e) {
-            var motorParams = formMain.page2.calc.GetMotorParams(Convert.ToInt32(formMain.cboMotorParamsMotorPowerSelection.Text));
+            if (int.TryParse(formMain.cboMotorParamsMotorPowerSelection.Text, out int power)) {
+                var motorParams = formMain.page2.calc.GetMotorParams(power);
 
-            formMain.txtRatedTorque.Text = motorParams.ratedTorque.ToString();
-            formMain.txtMaxTorque.Text = motorParams.maxTorque.ToString();
-            formMain.txtRotateInertia.Text = motorParams.rotateInertia.ToString("0." + new string('#', 339));
-            formMain.txtLoadInertiaMomentRatio.Text = motorParams.loadInertiaMomentRatio.ToString();
+                formMain.txtRatedTorque.Text = motorParams.ratedTorque.ToString();
+                formMain.txtMaxTorque.Text = motorParams.maxTorque.ToString();
+                formMain.txtRotateInertia.Text = motorParams.rotateInertia.ToString("0." + new string('#', 339));
+                formMain.txtLoadInertiaMomentRatio.Text = motorParams.loadInertiaMomentRatio.ToString();
+            }
         }
 
         private void UpdateMotorOptionsEnabled(object sender, EventArgs e) {
-            formMain.panelMotorAdvanceMode.Enabled = formMain.cboPower.Text.Contains("自訂");
-            formMain.panelPowerSelection.Enabled = formMain.cboPower.Text == "自訂" && !formMain.chkMotorAdvanceMode.Checked;
-            formMain.panelMotorParams.Enabled = formMain.cboPower.Text == "自訂" && formMain.chkMotorAdvanceMode.Checked;
+            //formMain.panelMotorAdvanceMode.Enabled = formMain.cboPower.Text.Contains("自訂");
+            formMain.panelPowerSelection.Enabled = formMain.cboPower.Text == "自訂" /*&& !formMain.chkMotorAdvanceMode.Checked*/;
+            formMain.panelMotorParams.Enabled = formMain.cboPower.Text == "自訂" /*&& formMain.chkMotorAdvanceMode.Checked*/;
         }
 
         public void Load() {
             // 馬達參數功率選擇
-            formMain.cboMotorParamsMotorPowerSelection.DataSource = formMain.page2.calc.motorInfo.Rows.Cast<DataRow>().Select(row => row["馬達瓦數"]).ToArray();
+            var powers = formMain.page2.calc.motorInfo.Rows.Cast<DataRow>().Select(row => row["馬達瓦數"]).ToList();
+            powers.Add("自訂");
+            formMain.cboMotorParamsMotorPowerSelection.DataSource = powers.ToArray();
         }
 
         public void UpdateMotorCalcMode() {

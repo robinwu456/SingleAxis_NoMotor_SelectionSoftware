@@ -24,7 +24,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private string version;
         //private int trailVersionUseDays = 0;    // 試用版使用期限(天數)
-        private DateTime trailVersionDateTime = new DateTime(2021, 8, 29);
+        private DateTime trailVersionDateTime = new DateTime(2021, 12, 31);
 
         public FormMain() {
             InitializeComponent();
@@ -104,7 +104,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 側邊欄隱藏
             panelSideTable.Anchor = AnchorStyles.Right;
             tabSideTableImg.Multiline = true;
-
+            panelCalcAllMode.Anchor = AnchorStyles.Right;
         }
 
         private void FormMain_Resize(object sender, EventArgs e) {
@@ -175,20 +175,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private int openAdvanceModeNeedCount = 5;   // 需要點擊次數
         private DateTime advanceModeLastClickTime;  // 最後一次觸發進階模式密碼時間
         private void pictureBoxToyo_DoubleClick(object sender, EventArgs e) {
-            // 每次點擊間格超過5秒就重製記數
-            if (DateTime.Now.Second - advanceModeLastClickTime.Second > 5)
-                openAdvanceModeCount = 0;
-            advanceModeLastClickTime = DateTime.Now;
+            //// 每次點擊間格超過5秒就重製記數
+            //if (DateTime.Now.Second - advanceModeLastClickTime.Second > 5)
+            //    openAdvanceModeCount = 0;
+            //advanceModeLastClickTime = DateTime.Now;
 
-            openAdvanceModeCount++;
-            if (openAdvanceModeCount >= openAdvanceModeNeedCount) {
-                // 開啟永久使用
-                RegistryKey retKey = Registry.LocalMachine.OpenSubKey("software", true).OpenSubKey("SingleAxis_NoMotor_SelectionSoftware", true);
-                retKey.SetValue("UserLevel", "1", RegistryValueKind.String);
-                MessageBox.Show("已開啟永久使用", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //openAdvanceModeCount++;
+            //if (openAdvanceModeCount >= openAdvanceModeNeedCount) {
+            //    // 開啟永久使用
+            //    RegistryKey retKey = Registry.LocalMachine.OpenSubKey("software", true).OpenSubKey("SingleAxis_NoMotor_SelectionSoftware", true);
+            //    retKey.SetValue("UserLevel", "1", RegistryValueKind.String);
+            //    MessageBox.Show("已開啟永久使用", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                openAdvanceModeCount = 0;
-            }
+            //    openAdvanceModeCount = 0;
+            //}
         }
 
         private void VerifyDateTimeLimit() {

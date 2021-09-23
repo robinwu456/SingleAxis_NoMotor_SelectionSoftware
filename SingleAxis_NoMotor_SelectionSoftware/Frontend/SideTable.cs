@@ -50,6 +50,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //formMain.panelSideTable.Size = sizeSideTable;
             //formMain.panelSideTable.Location = positionSideTable;
             //formMain.panelSideTableSelections.Size = sizeTableSelection;
+
+            // 全選項目
+            formMain.panelCalcAllMode.Parent.Controls.Remove(formMain.panelCalcAllMode);
+            formMain.splitContainerBase.Panel2.Controls.Add(formMain.panelCalcAllMode);
+            formMain.panelCalcAllMode.BringToFront();
         }
 
         // 選項欄生成
@@ -116,6 +121,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             else
                 middleLocation = formMain.explorerBar.Size.Height / 2;
             formMain.panelSideTable.Location = new Point(formMain.panelSideTable.Location.X, middleLocation - formMain.panelSideTable.Size.Height / 2);
+
+            // 全選模式
+            formMain.panelCalcAllMode.Location = new Point(formMain.panelSideTable.Location.X, formMain.panelSideTable.Location.Y - 77);
         }
 
         public void Update(object sender, EventArgs e) {
@@ -140,8 +148,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public void UpdateModelImg(string model) {
             formMain.tabSideTableImg.SelectTab("型號");
-            var obj = Properties.Resources.ResourceManager.GetObject(model, CultureInfo.InvariantCulture);
-            formMain.picModelImg.Image = obj as Image;
+            if (model.IsContainsReducerRatioType()) {
+                var obj = Properties.Resources.ResourceManager.GetObject(model.Split('-')[0], CultureInfo.InvariantCulture);
+                formMain.picModelImg.Image = obj as Image;
+            } else {
+                var obj = Properties.Resources.ResourceManager.GetObject(model, CultureInfo.InvariantCulture);
+                formMain.picModelImg.Image = obj as Image;
+            }
         }
 
         public void UpdateModelImg(Model.ModelType modelType) {
@@ -150,7 +163,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public void UpdateModeInfo(string model, double lead) {
             try {
-                if (model.StartsWith("MK") || model.StartsWith("MG")) {
+                if (model.IsContainsReducerRatioType()) {
                     int reducer = (int)lead;
                     formMain.lbSideTableModelInfo.Text = string.Format("{0}-{1}", model.Split('-')[0], reducer.ToString("#00"));
                 } else {

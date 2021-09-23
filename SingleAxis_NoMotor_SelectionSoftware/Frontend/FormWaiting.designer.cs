@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormWaiting));
             this.lbLoadingPercent = new System.Windows.Forms.Label();
             this.progressBarLoading = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
@@ -50,10 +51,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(221, 78);
-            this.ControlBox = false;
             this.Controls.Add(this.progressBarLoading);
             this.Controls.Add(this.lbLoadingPercent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormWaiting";
             this.Padding = new System.Windows.Forms.Padding(20, 0, 20, 20);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

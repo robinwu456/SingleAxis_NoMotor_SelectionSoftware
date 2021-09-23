@@ -8,10 +8,13 @@ using System.IO;
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Calculation : CalculationModel {
         //private int calcCountPerThread = 10;   // 單執行緒運算的筆數
-        private int calcCountPerThread = 1000;   // 單執行緒運算的筆數
+        private int calcCountPerThread = 20;   // 單執行緒運算的筆數
+        //private int calcCountPerThread = 1000;   // 單執行緒運算的筆數
+        private List<Thread> threadsPipeline = new List<Thread>();  // 所有運算執行緒
         private Dictionary<string, object> pipeLineResult = new Dictionary<string, object>();   // 即時運算完成的Model
         private List<Model> pipeLineAllModels = new List<Model>();  // 所有的Model
-        bool isPipeLineCalcError = false;
+        bool isPipeLineCalcError = false;        
+        public void InterruptCalc() => threadsPipeline.ForEach(thread => thread.Abort());   // 中斷所有執行緒
 
         // 計算推薦規格
         public Dictionary<string, object> GetRecommandResult(Condition condition) {
@@ -21,25 +24,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 首要篩選條件
             IEnumerable<Model> con = models;
             // 非測試才做基本篩選
-            if (!condition.isTesting) {
+            if (condition.calcMode != Condition.CalcMode.Test) {
                 // 使用環境
-                con = con.Where(model => model.useEnvironment == condition.useEnvironment);
-                // 機構型態
-                con = con.Where(model => model.modelType == condition.modelType || condition.modelType == Model.ModelType.Null);
+                con = con.Where(model => model.useEnvironment == condition.useEnvironment || condition.useEnvironment == Model.UseEnvironment.Null);
+
+                if (condition.calcMode == Condition.CalcMode.Normal)
+                    // 機構型態
+                    con = con.Where(model => model.modelType == condition.modelType || condition.modelType == Model.ModelType.Null);
+
                 // 安裝方式
                 con = con.Where(model => model.supportedSetup.Contains(condition.setupMethod));
-                // 重複定位精度(判斷螺桿、皮帶)
-                con = con.Where(model => condition.RepeatabilityCondition(model.repeatability));
             }
             // 單項計算
-            if (condition.calcModel.model != null) {
-                //// 單項計算減速比驗證
-                //if (condition.reducerRatio.Keys.Contains(condition.calcModel.model)) {
-                //    condition.calcModel.lead /= (float)condition.reducerRatio[condition.calcModel.model];
-                //    condition.calcModel.lead = Convert.ToDouble(condition.calcModel.lead.ToString("#0.00"));
-                //}
+            if (condition.calcModel.model != null)
                 con = con.Where(model => model.name.StartsWith(condition.calcModel.model) && model.lead == condition.calcModel.lead);
-            }
 
             models = con.ToList();
 
@@ -63,7 +61,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
 
             return (percent, isError);
-        }
+        }        
 
         // 平行運算
         private Dictionary<string, object> PipelineCalc(List<Model> models, Condition condition) {
@@ -71,7 +69,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             pipeLineResult = new Dictionary<string, object>() { { "List", new List<Model>() }, { "Alarm", false }, { "Msg", "" }, };
             isPipeLineCalcError = false;
             // 平行運算執行緒宣告
-            List<Thread> threadsPipeline = new List<Thread>();
+            threadsPipeline = new List<Thread>();
             List<List<Model>> modelsPerPipeline = new List<List<Model>>();
 
             // 計算量分配            
@@ -82,6 +80,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 modelsPerPipeline.Add(m);
             }
             // 每個執行序事件指派
+            int finishThreadCount = 0;
             foreach (List<Model> m in modelsPerPipeline) {
                 Thread t = new Thread(() => {
                     try {
@@ -91,14 +90,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                             (pipeLineResult["List"] as List<Model>).Add(model);
                     } catch (Exception ex) {
                         Console.WriteLine(ex);
-                        pipeLineResult["Msg"] = ex.Message.Split('|')[1];
-                        pipeLineResult["StatusCode"] = ex.Message.Split('|')[0];
+
+                        if (ex.Message.Contains("|")) {
+                            pipeLineResult["Msg"] = ex.Message.Split('|')[1];
+                            pipeLineResult["StatusCode"] = ex.Message.Split('|')[0];
+                        }
                     }
+                    finishThreadCount++;
+                    Console.WriteLine("執行緒 {0}/{1} 完成", finishThreadCount, threadsPipeline.Count);
                 });
                 t.Name = "t" + modelsPerPipeline.IndexOf(m);
                 threadsPipeline.Add(t);
             }
             // 平行運算開始
+            Console.WriteLine("共{0}比資料, 執行{1}個執行緒", models.Count, threadsPipeline.Count);
             foreach (Thread thread in threadsPipeline)
                 thread.Start();
 
@@ -131,11 +136,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (condition.curCheckedModel.model != null) {
                 // 減速比驗證
                 Func<Model, bool> predicate;
-                //if (condition.reducerRatio.Keys.Contains(condition.curCheckedModel.model))
-                //    // 包含減速比時，不判斷導程
-                //    predicate = model => model.name == condition.curCheckedModel.model;
-                //else
-                //    predicate = model => model.name == condition.curCheckedModel.model && model.lead == condition.curCheckedModel.lead;
                 predicate = model => model.name == condition.curCheckedModel.model && model.lead == condition.curCheckedModel.lead;
                 // Init打勾項目
                 if (resultModels.Any(predicate))
@@ -147,42 +147,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
 
             // 篩選條件
-            //Dictionary<string, Func<Model, bool>> filterMap = new Dictionary<string, Func<Model, bool>>() {
-            //    { "超過最大行程", model => model.maxStroke >= condition.stroke },
-            //    { "超過最大荷重", model => model.maxLoad == -1 || (model.maxLoad != -1 && model.maxLoad >= condition.load) || condition.curCheckedModel.model != null },
-            //    { "線速度過大", model => model.vMax <= model.vMax_max },
-            //    { "行程過短，建議可增加行程，或降低線速度", model => model.constantTime >= 0 },
-            //    { "運行時間過短，請增加運行時間", model => model.moveTime <= condition.moveTime },
-            //    { "未達希望壽命", model => model.serviceLifeTime.year >= condition.expectServiceLifeTime },
-            //    // 以下為之前會顯示紅色項目
-            //    { "T_max安全係數過低", model => model.tMaxSafeCoefficient >= Model.tMaxStandard },
-            //    { "皮帶馬達安全係數過低", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < Model.beltMotorStandard },
-            //    { "皮帶T_max安全係數過低", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_beltMotor },
-            //    { "力矩警示異常", model => model.isMomentVerifySuccess },
-            //};
-
             Dictionary<string, Dictionary<string, Func<Model, object>>> filterMap = new Dictionary<string, Dictionary<string, Func<Model, object>>>() {
                 { "超過最大行程", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("最大行程: {0}", model.maxStroke) },
-                    { "Condition", model => model.maxStroke >= condition.stroke } } },
+                    { "Condition", model => model.maxStroke >= condition.stroke /*|| condition.calcMode == Condition.CalcMode.CalcMax*/ } } },
                 { "超過最大荷重", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("最大荷重: {0}", model.maxLoad) },
-                    //{ "Condition", model => model.maxLoad == -1 || (model.maxLoad != -1 && model.maxLoad >= condition.load) || condition.curCheckedModel.model != null } } },
-                    { "Condition", model => model.maxLoad == -1 || model.maxLoad != -1 && model.maxLoad >= condition.load } } },
-                //{ "線速度過大", new Dictionary<string, Func<Model, object>>(){
-                //    { "Remark",    model => string.Format("最大線速度: {0}", model.vMax_max) },
-                //    { "Condition", model => model.vMax <= model.vMax_max } } },
-                //{ "行程過短，建議可增加行程，或降低線速度", new Dictionary<string, Func<Model, object>>(){
-                //    { "Remark",    model => string.Empty },
-                //    { "Condition", model => model.constantTime >= 0 } } },
+                    { "Condition", model => model.maxLoad == -1 || model.maxLoad != -1 && model.maxLoad >= condition.load /*|| condition.calcMode == Condition.CalcMode.CalcMax*/ } } },
                 { "運行時間過短，請增加運行時間", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("計算運行時間: {0}", model.moveTime) },
                     { "Condition", model => model.moveTime <= condition.moveTime } } },
-                //{ "未達希望壽命", new Dictionary<string, Func<Model, object>>(){
-                //    { "Remark",    model => model.serviceLifeTime == (-1, -1, -1) ?
-                //                            string.Format("每分鐘趟數過大") :
-                //                            string.Format("希望壽命: {0}年, 計算壽命: {1}年{2}個月又{3}天", condition.expectServiceLifeTime, model.serviceLifeTime.year, model.serviceLifeTime.month, model.serviceLifeTime.day) },
-                //    { "Condition", model => model.serviceLifeTime.year >= condition.expectServiceLifeTime } } },
                 { "未達希望壽命", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("希望壽命: {0}年, 計算壽命: {1}年{2}個月又{3}天", condition.expectServiceLifeTime, model.serviceLifeTime.year, model.serviceLifeTime.month, model.serviceLifeTime.day) },
                     { "Condition", model => model.serviceLifeTime == (-1, -1, -1) || model.serviceLifeTime.year >= condition.expectServiceLifeTime } } },
@@ -230,9 +204,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //List<string> errorMsg = new List<string>();
             foreach (var filter in filterMap) {
                 oldResultModelCount = resultModels.Count;
-                resultModels = resultModels.Where(model => condition.isTesting || (bool)filter.Value["Condition"](model)).ToList();
+                resultModels = resultModels.Where(model => (bool)filter.Value["Condition"](model) || 
+                                                           condition.calcMode == Condition.CalcMode.Test ||     // 測試不篩選
+                                                           condition.calcMode == Condition.CalcMode.CalcMax)    // 全選模式不篩選
+                                           .ToList();
                 // 測試log
-                if (resultModels.Count < oldResultModelCount && condition.isTesting)
+                if (resultModels.Count < oldResultModelCount && condition.calcMode == Condition.CalcMode.Test)
                     Console.WriteLine("測試失敗項目：" + filter.Key);
             }
             //nullModelAlarmMsg = string.Join("、", errorMsg);            
@@ -259,7 +236,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return pipeLineResult;
         }
 
-        private Dictionary<string, object> GetEstimatedLife(List<Model> models, Condition con) {
+        private Dictionary<string, object> GetEstimatedLife(List<Model> models, Condition condition) {
             Dictionary<string, object> pipeLineResult = new Dictionary<string, object>() {
                 { "List", new List<Model>() },
                 { "Msg", "" },
@@ -267,6 +244,46 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             };
 
             foreach (Model model in models) {
+                Condition con = new Condition();
+                con.setupMethod = condition.setupMethod;
+                con.powerSelection = condition.powerSelection;
+                con.vMaxCalcMode = condition.vMaxCalcMode;
+                con.selectedPower = condition.selectedPower;
+                con.useFrequence = condition.useFrequence;
+                con.curSelectModel = condition.curSelectModel;
+                con.curCheckedModel = condition.curCheckedModel;
+                con.calcModel = condition.calcModel;
+                con.expectServiceLifeTime = condition.expectServiceLifeTime;
+                con.calcMode = condition.calcMode;
+                con.moveSpeedUnit = condition.moveSpeedUnit;
+                con.calcMaxItem = condition.calcMaxItem;
+                con.calcMaxUnit = condition.calcMaxUnit;
+                con.isRpmLimitByStroke = condition.isRpmLimitByStroke;
+                con.isCalcByMaxLoad = condition.isCalcByMaxLoad;
+                con.moment_A = condition.moment_A;
+                con.moment_B = condition.moment_B;
+                con.moment_C = condition.moment_C;
+                con.modelType = condition.modelType;
+                con.stroke = condition.stroke;
+                con.vMax = condition.vMax;
+                con.rpm = condition.rpm;
+                con.load = condition.load;
+                con.expectServiceLifeTime = condition.expectServiceLifeTime;
+                con.moveTime = condition.moveTime;
+                con.accelTime = condition.accelTime;
+                con.stopTime = condition.stopTime;
+                con.accelSpeed = condition.accelSpeed;
+                con.ratedTorque = condition.ratedTorque;
+                con.maxTorque = condition.maxTorque;
+                con.rotateInertia = condition.rotateInertia;
+                con.loadInertiaMomentRatio = condition.loadInertiaMomentRatio;
+
+                // 最大荷重計算(自動修正荷重)
+                if (con.calcMode == Condition.CalcMode.CalcMax && con.isCalcByMaxLoad) {
+                    Console.WriteLine("{0}/{1}", models.IndexOf(model) + 1, models.Count);
+                    CalcMaxLoad(model, con);
+                }
+
                 // 滑軌壽命計算            
                 model.slideTrackServiceLifeDistance = GetSlideTrackEstimatedLife(model, con);
                 if (!model.isUseBaltCalc)

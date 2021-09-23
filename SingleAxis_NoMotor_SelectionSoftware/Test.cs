@@ -11,6 +11,7 @@ using System.Diagnostics;
 namespace SingleAxis_NoMotor_SelectionSoftware {
     class Test {
         private FormMain formMain;
+        private Thread threadTest;
         private string outputFileName = "./Test/Result_{0}.csv";
         private string[] testDataFileNames = Directory.GetFiles("./Test/現有測試數據").Reverse().ToArray();
         //private string[] testDataFileNames = {
@@ -46,13 +47,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void StartTest(object sender, EventArgs e) {
+            if (!Directory.Exists("./Test/所有測試結果數據"))
+                return;
+
             // 測試主程序
-            new Thread(Run).Start();
+            threadTest = new Thread(Run);
+            threadTest.Start();
 
             // 測試進度
             new Thread(() => {
                 formMain.Invoke(new Action(() => {
-                    FormWaiting wait = new FormWaiting(GetCalcPercent);
+                    FormWaiting wait = new FormWaiting(GetCalcPercent, threadTest.Abort);
                     wait.ShowDialog();
                 }));
             }).Start();
@@ -127,7 +132,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 output += title;
                 foreach (DataRow row in data.Rows) {
                     Condition con = new Condition();
-                    con.isTesting = true;
+                    //con.isTesting = true;
+                    con.calcMode = Condition.CalcMode.Test;
 
                     string modelName;
                     if (row[col.idModel].ToString().IsContainsReducerRatioType()) {
@@ -170,7 +176,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     con.accelTime = Convert.ToDouble(row[col.idAccelTime].ToString());
                     con.stopTime = Convert.ToDouble(row[col.idStopTime].ToString());
                     //con.accelSpeed = Convert.ToDouble(row["加減速度"].ToString()) * 1000;
-                    con.RepeatabilityCondition = a => 1 > 0;
+                    //con.RepeatabilityCondition = a => 1 > 0;
                     con.useFrequence = new Condition.UseFrequence() {
                         // 趟/分
                         countPerMinute = 1,

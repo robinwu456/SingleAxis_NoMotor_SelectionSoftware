@@ -42,6 +42,9 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Binarymission.WinForms.Controls.BinaryExplorerBar">
       <HintPath>..\..\CustomControls\UIControlSuite\ExplorerBar\Binarymission.WinForms.Controls.BinaryExplorerBar.dll</HintPath>
@@ -134,6 +137,7 @@
     <Compile Include="Frontend\MotorPower.cs" />
     <Compile Include="Frontend\RecommandList.cs" />
     <Compile Include="Frontend\RunCondition.cs" />
+    <Compile Include="Frontend\SearchAllMode.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="CustomObjects\Model.cs" />
     <Compile Include="Program.cs" />
@@ -408,6 +412,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_0113_256_256_01_1CC_icon.ico" />
+    <None Include="Resources\NewPic\slideModel_YL.png" />
+    <None Include="Resources\ModelPic\MG65.png" />
+    <None Include="Resources\NewPic\slideModel_MG.png" />
     <None Include="Resources\ModelPic\Y65L.png" />
     <None Include="Resources\ModelPic\Y65D.png" />
     <None Include="Resources\ModelPic\Y65.png" />

@@ -67,7 +67,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.txtMaxSpeed.TextChanged += UpdateCondition;
             formMain.txtAccelSpeed.TextChanged += UpdateCondition;
             formMain.cboPower.SelectedIndexChanged += UpdateCondition;
-            formMain.chkMotorAdvanceMode.CheckedChanged += UpdateCondition;
+            //formMain.chkMotorAdvanceMode.CheckedChanged += UpdateCondition;
             //formMain.optMotorParamsModifyAdvance.CheckedChanged += UpdateCondition;
             formMain.cboMotorParamsMotorPowerSelection.SelectedIndexChanged += UpdateCondition;
             formMain.txtRatedTorque.TextChanged += UpdateCondition;
@@ -160,29 +160,25 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             else if (formMain.optVerticalUse.Checked)
                 curCondition.setupMethod = Model.SetupMethod.垂直;
             // 最高速度
-            if (formMain.cboMaxSpeedUnit.Text == "mm/s")
+            if (formMain.cboMaxSpeedUnit.Text == "mm/s") {
+                curCondition.moveSpeedUnit = Condition.MoveSpeedUnit.Vmax;
                 curCondition.vMax = Convert.ToDouble(formMain.txtMaxSpeed.Text);
-            else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
+            } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
+                curCondition.moveSpeedUnit = Condition.MoveSpeedUnit.RPM;
                 if (formMain.txtMaxSpeed.Text.Contains("."))
                     formMain.txtMaxSpeed.Text = formMain.txtMaxSpeed.Text.Split('.')[0];
-                //if (formMain.page2.calc.IsContainsReducerRatio(formMain.cboModel.Text)) {
-                //    //string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text).Cells["columnReducerRatio"].Value.ToString();
-                //    string dgvReducerRatioValue = formMain.cboReducerRatio.Text;
-                //    curCondition.vMax = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text) / Convert.ToDouble(dgvReducerRatioValue));
-                //} else
-                //    curCondition.vMax = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text));
 
-                if (curCondition.modelType.IsBeltType()) {
-                    Model m = formMain.page2.calc.GetAllModels(curCondition).First(_m => _m.name.StartsWith(formMain.cboModel.Text) && _m.lead == Convert.ToDouble(formMain.cboLead.Text));
-                    curCondition.vMax = formMain.page2.calc.GetBeltVmaxByRpm_ms(m.name, Convert.ToInt32(formMain.txtMaxSpeed.Text), m.mainWheel_P1, m.subWheel_P2, m.subWheel_P3, m.beltCalcType) * 1000;
-                } else {
-                    if (formMain.page2.calc.IsContainsReducerRatio(formMain.cboModel.Text)) {
-                        //string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text).Cells["columnReducerRatio"].Value.ToString();
-                        string dgvReducerRatioValue = formMain.cboReducerRatio.Text;
-                        curCondition.vMax = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text) / Convert.ToDouble(dgvReducerRatioValue));
-                    } else
-                        curCondition.vMax = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text));
-                }
+                //if (curCondition.modelType.IsBeltType()) {
+                //    Model m = formMain.page2.calc.GetAllModels(curCondition).First(_m => _m.name.StartsWith(formMain.cboModel.Text) && _m.lead == Convert.ToDouble(formMain.cboLead.Text));
+                //    curCondition.vMax = formMain.page2.calc.GetBeltVmaxByRpm_ms(m.name, Convert.ToInt32(formMain.txtMaxSpeed.Text), m.mainWheel_P1, m.subWheel_P2, m.subWheel_P3, m.beltCalcType) * 1000;
+                //} else {
+                //    if (formMain.page2.calc.IsContainsReducerRatio(formMain.cboModel.Text)) {
+                //        string dgvReducerRatioValue = formMain.cboReducerRatio.Text;
+                //        curCondition.vMax = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text) / Convert.ToDouble(dgvReducerRatioValue));
+                //    } else
+                //        curCondition.vMax = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), Convert.ToDouble(formMain.cboLead.Text));
+                //}
+                curCondition.rpm = Convert.ToInt32(formMain.txtMaxSpeed.Text);
             }
             curCondition.vMaxCalcMode = !formMain.chkAdvanceMode.Checked ? Condition.CalcVmax.Max : Condition.CalcVmax.Custom;
             // 力矩參數
@@ -220,18 +216,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 curCondition.accelSpeed = Convert.ToDouble(formMain.txtAccelSpeed.Text);
             else
                 curCondition.accelSpeed = 0;
-            // 傳動方式
-            if (formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType())
-                curCondition.RepeatabilityCondition = repeatability => repeatability >= 0.04;
-            else
-                curCondition.RepeatabilityCondition = repeatability => repeatability <= 0.01;
+            //// 傳動方式
+            //if (formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType())
+            //    curCondition.RepeatabilityCondition = repeatability => repeatability >= 0.04;
+            //else
+            //    curCondition.RepeatabilityCondition = repeatability => repeatability <= 0.01;
             // 馬達瓦數
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
                 // 全部計算只能標準或自訂
                 if (formMain.cboPower.Text == "標準")
                     curCondition.powerSelection = Condition.PowerSelection.Standard;
                 else if (formMain.cboPower.Text == "自訂") {
-                    if (formMain.chkMotorAdvanceMode.Checked) {
+                    if (formMain.cboMotorParamsMotorPowerSelection.Text == "自訂") {
                         curCondition.powerSelection = Condition.PowerSelection.Custom;
                     } else {
                         curCondition.powerSelection = Condition.PowerSelection.SelectedPower;
@@ -243,16 +239,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (formMain.cboPower.Text.Contains("標準-")) {
                     curCondition.powerSelection = Condition.PowerSelection.SelectedPower;
                     curCondition.selectedPower = Convert.ToInt32(new Regex(@"\d+").Match(formMain.cboPower.Text).Value);
-                } else if (formMain.cboPower.Text == "自訂" && !formMain.chkMotorAdvanceMode.Checked) {
+                } else if (formMain.cboPower.Text == "自訂" && formMain.cboMotorParamsMotorPowerSelection.Text != "自訂") {
                     curCondition.powerSelection = Condition.PowerSelection.SelectedPower;
                     curCondition.selectedPower = Convert.ToInt32(formMain.cboMotorParamsMotorPowerSelection.Text);
-                } else if (formMain.cboPower.Text == "自訂" && formMain.chkMotorAdvanceMode.Checked) {
+                } else if (formMain.cboPower.Text == "自訂" && formMain.cboMotorParamsMotorPowerSelection.Text == "自訂") {
                     curCondition.powerSelection = Condition.PowerSelection.Custom;
                 }
             }
             // 馬達參數自訂
             if (curCondition.powerSelection == Condition.PowerSelection.Custom) {
-                if (formMain.chkMotorAdvanceMode.Checked) {
+                if (formMain.cboMotorParamsMotorPowerSelection.Text == "自訂") {
                     curCondition.ratedTorque = Convert.ToDouble(formMain.txtRatedTorque.Text);
                     curCondition.maxTorque = Convert.ToDouble(formMain.txtMaxTorque.Text);
                     curCondition.rotateInertia = Convert.ToDouble(formMain.txtRotateInertia.Text);
@@ -285,6 +281,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 curCondition.calcModel = calcModel;
             } else
                 curCondition.calcModel = (null, -1);
+
             //// 減速比
             //curCondition.reducerRatio.Clear();
             //formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().ForEach(row => {
@@ -300,14 +297,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 修正條件時，側邊欄壽命清除
             //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
-                //formMain.sideTable.ClearSelectedModelInfo();
+            //formMain.sideTable.ClearSelectedModelInfo();
 
             //formMain.page2.recommandList.Refresh();
             //formMain.page2.chartInfo.Clear();
-            formMain.sideTable.ClearSelectedModelInfo();            
+            formMain.sideTable.ClearSelectedModelInfo();
 
             // 修正條件時，下一步隱藏
-            formMain.cmdConfirmStep2.Visible = false;
+            //formMain.cmdConfirmStep2.Visible = false;
+            formMain.page2.ChangeNextStepBtnVisible(false);
         }
     }
 }

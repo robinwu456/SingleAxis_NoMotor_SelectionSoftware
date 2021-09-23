@@ -62,7 +62,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.sideTable.ClearMsg();
                 formMain.sideTable.ClearSelectedModelInfo();
                 formMain.cboReducerRatio.DataSource = null;
-                formMain.cmdConfirmStep2.Visible = false;
+                //formMain.cmdConfirmStep2.Visible = false;
+                formMain.page2.ChangeNextStepBtnVisible(false);
             } else {
                 // 型號搜尋到時
                 //Model.ModelType curModelType = formMain.page2.calc.GetModelType(formMain.cboModel.Text);
@@ -134,7 +135,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void CboLead_SelectedValueChanged(object sender, EventArgs e) {
-            if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "" || formMain.cboReducerRatio.Text == "")
+            if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "")
+                return;
+            if (formMain.cboModel.Text.IsContainsReducerRatioType() && formMain.cboReducerRatio.Text == "")
                 return;
 
             Condition con = new Condition();
