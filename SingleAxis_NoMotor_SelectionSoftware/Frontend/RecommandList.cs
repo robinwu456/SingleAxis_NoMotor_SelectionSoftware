@@ -16,10 +16,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public (string model, double lead) curCheckedModel;
 
         private FormMain formMain;
-        //private const decimal serviceLifeDistanceAlarmStandard = 3000;  // 運行距離標準(km)
-        //private const decimal serviceLifeTimeAlarmStandard = 3;         // 運行壽命標準(年)
+        private Color colorSelectionBg = Color.FromArgb(208, 252, 248);
         // 顏色區分
-        private Dictionary<string, Func<Model, bool>> redFontConditions = new Dictionary<string, Func<Model, bool>>();
+        private Dictionary<string, Func<Model, bool>> redFontConditions = new Dictionary<string, Func<Model, bool>>();        
         // 錯誤訊息
         private Dictionary<string, string> alarmMsg = new Dictionary<string, string>() {
             { "T_max安全係數", "扭矩安全係數過低" },
@@ -33,6 +32,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             { "運行時間", "運行時間過短" },
             { "運行速度", "運行速度過高自動調整" },
             { "加速度", "加速時間過短自動調整" },
+        };
+        private string[] yellowBgConditions = new string[] {    // 黃底欄位(提示但可以下一步)
+            "運行速度",
+            "加速度",
         };
 
         public RecommandList(FormMain formMain) {
@@ -135,32 +138,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 驗證選擇項目異常
             VerifySelectedModelAlarm();
 
-            //// 顯示機構類行敘述
-            //formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType), SideTable.MsgStatus.Normal);
-
-            //// 有效行程選項更新
-            //if (curSelectModel.model != null)
-            //    formMain.page2.effectiveStroke.CmdEffectiveStroke_Click(null, null);
-
             // 全部選型驗證選擇型號是否有項目Fail，有則不顯示下一步
             if (curSelectModel.model != null) {
-                //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
                 try {
-                    bool isAllConditionSuccess = redFontConditions.All(con => con.Value(curRecommandList.First(model => model.name == curSelectModel.model && model.lead == curSelectModel.lead)));
-                    //formMain.cmdConfirmStep2.Visible = isAllConditionSuccess;
+                    bool isAllConditionSuccess = redFontConditions.All(con => con.Value(curRecommandList.First(model => model.name == curSelectModel.model && model.lead == curSelectModel.lead)) || yellowBgConditions.Contains(con.Key));
                     formMain.page2.ChangeNextStepBtnVisible(isAllConditionSuccess);
                 } catch (Exception ex) {
                     Console.WriteLine(ex);
                 }
-                //}
             }
-            //formMain.cmdConfirmStep2.Visible = true;
-
-            //// RPM 顯示
-            //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection && formMain.chkAdvanceMode.Checked) {
-            //    formMain.lbRpm.Visible = true;
-            //    formMain.lbRpm.Text = "RPM: " + formMain.page2.calc.GetRpmByMMS(Convert.ToDouble(curRow.Cells["導程"].Value), Convert.ToDouble(formMain.txtMaxSpeed.Text)).ToString();
-            //}
 
             // Log所有參數
             if (curSelectModel.model != null) {
@@ -257,10 +243,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
                         // 顏色區分
                         foreach (var con in redFontConditions) {
-                            //int colIndex = formMain.dgvRecommandList.Columns.Cast<DataGridViewColumn>().First(col => con.Key.Contains(col.Name)).Index;
                             int colIndex = formMain.dgvRecommandList.Columns.Cast<DataGridViewColumn>().First(col => con.Key.StartsWith(col.Name)).Index;
-                            formMain.dgvRecommandList.Rows[index].Cells[colIndex].Style.ForeColor = con.Value(model) ? Color.Black : Color.Red;
-                            formMain.dgvRecommandList.Rows[index].Cells[colIndex].Style.SelectionForeColor = con.Value(model) ? Color.Black : Color.Red;
+                            if (yellowBgConditions.Contains(con.Key)) {
+                                formMain.dgvRecommandList.Rows[index].Cells[colIndex].Style.BackColor = con.Value(model) ? Color.White : Color.Yellow;
+                                formMain.dgvRecommandList.Rows[index].Cells[colIndex].Style.SelectionBackColor = con.Value(model) ? colorSelectionBg : Color.Yellow;
+                            } else {
+                                formMain.dgvRecommandList.Rows[index].Cells[colIndex].Style.ForeColor = con.Value(model) ? Color.Black : Color.Red;
+                                formMain.dgvRecommandList.Rows[index].Cells[colIndex].Style.SelectionForeColor = con.Value(model) ? Color.Black : Color.Red;
+                            }
                         }
                     } catch (Exception ex) {
                         Console.WriteLine(ex);
@@ -381,24 +371,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public void VerifySelectedModelAlarm() {
-            //var curRow = formMain.dgvRecommandList.CurrentRow;
-            //foreach (DataGridViewCell cell in curRow.Cells) {
-            //    if (cell.Style.ForeColor == Color.Red) {
-            //        formMain.sideTable.UpdateMsg(alarmMsg[formMain.dgvRecommandList.Columns[cell.ColumnIndex].Name], SideTable.MsgStatus.Alarm);
-            //        return;
-            //    }
-            //}
-            //formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType), SideTable.MsgStatus.Normal);
-
-            //var curRow = formMain.dgvRecommandList.CurrentRow;
-            //var errorColumnNames = curRow.Cells.Cast<DataGridViewCell>().Where(cell => cell.Style.ForeColor == Color.Red)
-            //                                                            .Select(cell => formMain.dgvRecommandList.Columns[cell.ColumnIndex].Name);
-            //var errorMsgs = alarmMsg.Where(pair => errorColumnNames.Contains(pair.Key)).Select(pair => pair.Value);
-            //if (errorColumnNames.Count() == 0)
-            //    formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType), SideTable.MsgStatus.Normal);
-            //else
-            //    formMain.sideTable.UpdateMsg(string.Join("、", errorMsgs), SideTable.MsgStatus.Alarm);
-
             var curRow = formMain.dgvRecommandList.CurrentRow;
             if (curRow.Cells["項次"].Value == null)
                 return;
