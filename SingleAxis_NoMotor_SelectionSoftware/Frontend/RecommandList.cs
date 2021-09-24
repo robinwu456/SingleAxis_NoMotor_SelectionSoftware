@@ -31,6 +31,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             { "運行壽命", "每分鐘趟數過大" },
             { "運行壽命2", "未達希望壽命" },
             { "運行時間", "運行時間過短" },
+            { "運行速度", "運行速度過高自動調整" },
+            { "加速度", "加速時間過短自動調整" },
         };
 
         public RecommandList(FormMain formMain) {
@@ -46,6 +48,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 { "運行壽命", model => model.serviceLifeTime != (-1, -1, -1) },
                 { "運行壽命2", model => model.serviceLifeTime != (-1, -1, -1) && model.serviceLifeTime.year >= formMain.page2.runCondition.curCondition.expectServiceLifeTime },
                 { "運行時間", model => model.moveTime <= Convert.ToDouble(formMain.txtRunTime.Text) },
+                { "運行速度", model => !formMain.chkAdvanceMode.Checked || model.vMax >= Convert.ToDouble(formMain.txtMaxSpeed.Text) },
+                { "加速度", model => !formMain.chkAdvanceMode.Checked || model.accelSpeed == Convert.ToDouble(formMain.txtAccelSpeed.Text) },
             };
             InitEvents();
         }
@@ -286,6 +290,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         }
                         // 驗證加速度
                         formMain.txtAccelSpeed.Text = curModel.accelSpeed.ToString();
+                        formMain.lbMaxValue_AccelSpeed.Text = string.Format("( 最大值：{0} {1} )", curModel.maxAccelSpeed.ToString("#0"), "mm/s²");
 
                         //// 細項顯示
                         //DisplaySelectedModel();

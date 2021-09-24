@@ -89,18 +89,25 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public void ShowConvertRPM() {
             while (true) {
-                formMain.Invoke(new Action(() => {
-                    if (!formMain.cboMaxSpeedUnit.DroppedDown) {
-                        if (double.TryParse(formMain.cboLead.Text, out double lead) && decimal.TryParse(formMain.txtMaxSpeed.Text, out decimal maxSpeed)) {
-                            if (formMain.cboMaxSpeedUnit.Text == "mm/s")
-                                //RPM 顯示
-                                formMain.lbRpm.Text = "RPM: " + formMain.page2.calc.GetRpmByMMS(lead, Convert.ToDouble(formMain.txtMaxSpeed.Text)).ToString();
-                            else
-                                // Vmax 顯示
-                                formMain.lbRpm.Text = "Vmax: " + formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), lead).ToString("#0.00");
+                try {
+                    formMain.Invoke(new Action(() => {
+                        if (!formMain.cboMaxSpeedUnit.DroppedDown) {
+                            if (double.TryParse(formMain.cboLead.Text, out double lead) && decimal.TryParse(formMain.txtMaxSpeed.Text, out decimal maxSpeed)) {
+                                if (formMain.cboMaxSpeedUnit.Text == "mm/s")
+                                    //RPM 顯示
+                                    //formMain.lbRpm.Text = "RPM: " + formMain.page2.calc.GetRpmByMMS(lead, Convert.ToDouble(formMain.txtMaxSpeed.Text)).ToString();
+                                    formMain.lbRpm.Text = string.Format("轉速：{0}RPM", formMain.page2.calc.GetRpmByMMS(lead, Convert.ToDouble(formMain.txtMaxSpeed.Text)));
+                                else
+                                    // Vmax 顯示
+                                    //formMain.lbRpm.Text = "Vmax: " + formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), lead).ToString("#0");
+                                    formMain.lbRpm.Text = string.Format("運行速度：{0}mm/s", formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), lead).ToString("#0"));
+                            }
                         }
-                    }
-                }));
+                    }));
+                } catch (Exception ex) {
+                    Console.WriteLine(ex);
+                    break;
+                }
 
                 Thread.Sleep(100);
             }
@@ -120,9 +127,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             var maxRPM = formMain.page2.calc.GetRpmByStroke(modelName, lead, (int)stroke);
             var maxVmax = formMain.page2.calc.RPM_TO_MMS(maxRPM, lead);
             if (formMain.cboMaxSpeedUnit.Text == "mm/s")
-                formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0}{1} )", maxVmax.ToString("#0.00"), formMain.cboMaxSpeedUnit.Text);
+                formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0} {1} )", maxVmax.ToString("#0"), formMain.cboMaxSpeedUnit.Text);
             else
-                formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0}{1} )", maxRPM, formMain.cboMaxSpeedUnit.Text);
+                formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0} {1} )", maxRPM, formMain.cboMaxSpeedUnit.Text);
         }
 
         private void InputCondition_KeyPress(object sender, KeyPressEventArgs e) {

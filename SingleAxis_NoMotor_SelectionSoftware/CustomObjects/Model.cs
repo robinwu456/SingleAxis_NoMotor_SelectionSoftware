@@ -249,9 +249,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// </summary>
         public double accelSpeed;
         /// <summary>
+        /// 最大加速度
+        /// </summary>
+        public double maxAccelSpeed;
+        /// <summary>
         /// 加速時間
         /// </summary>
-        public double accelTime;
+        public double accelTime;        
         /// <summary>
         /// 減速時間
         /// </summary>

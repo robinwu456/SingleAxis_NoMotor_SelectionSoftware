@@ -367,6 +367,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             } else if (condition.calcMode == Condition.CalcMode.CalcMax)
                 model.showRpm = model.rpm;
 
+            // 加速時間0.2、0.4驗證
+            if (model.isUseBaltCalc && model.accelTime < 0.4)
+                model.accelTime = 0.4;
+            else if (!model.isUseBaltCalc && model.accelTime < 0.2)
+                model.accelTime = 0.2;
+
+            if (model.isUseBaltCalc)
+                model.maxAccelSpeed = model.vMax / 0.4 * 1000;
+            else if (!model.isUseBaltCalc)
+                model.maxAccelSpeed = model.vMax / 0.2 * 1000;
+
             // 小數點位數修正
             model.accelSpeed = model.vMax / model.accelTime;
             model.accelSpeed = Convert.ToDouble(model.accelSpeed.ToString("#0.000"));
