@@ -51,8 +51,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 { "運行壽命", model => model.serviceLifeTime != (-1, -1, -1) },
                 { "運行壽命2", model => model.serviceLifeTime != (-1, -1, -1) && model.serviceLifeTime.year >= formMain.page2.runCondition.curCondition.expectServiceLifeTime },
                 { "運行時間", model => model.moveTime <= Convert.ToDouble(formMain.txtRunTime.Text) },
-                { "運行速度", model => !formMain.chkAdvanceMode.Checked || model.vMax >= Convert.ToDouble(formMain.txtMaxSpeed.Text) },
-                { "加速度", model => !formMain.chkAdvanceMode.Checked || model.accelSpeed == Convert.ToDouble(formMain.txtAccelSpeed.Text) },
+
+                // 黃底特例
+                { "運行速度", model => formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection || !formMain.chkAdvanceMode.Checked || model.vMax >= Convert.ToDouble(formMain.txtMaxSpeed.Text) },
+                { "加速度", model => formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection || !formMain.chkAdvanceMode.Checked || model.accelSpeed == Convert.ToDouble(formMain.txtAccelSpeed.Text) },
             };
             InitEvents();
         }
@@ -60,6 +62,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void InitEvents() {
             formMain.dgvRecommandList.SelectionChanged += DgvRecommandList_SelectionChanged;
             formMain.dgvRecommandList.CellClick += DgvRecommandList_CellClick;
+            // 表格列點兩下開啟Log
             formMain.dgvRecommandList.CellDoubleClick += (sender, e) => Process.Start(new FileInfo(Config.LOG_PARAM_FILENAME).FullName);
         }
 
