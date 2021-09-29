@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Threading;
 
@@ -10,7 +10,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private FormMain formMain;    
         private System.Threading.Timer vMaxGetRPMCounter;
         private TextBox[] allowDecimalPoint;
+
         public Thread threadShowRPMCounting;
+        public Thread threadCalcVmaxRange;
+        public Thread threadCalcAccelSpeedRange;
 
         public InputValidate(FormMain formMain) {
             this.formMain = formMain;
@@ -61,6 +64,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 運行速度驗證
             formMain.txtMaxSpeed.KeyDown += TxtMaxSpeed_KeyDown;
             formMain.txtMaxSpeed.LostFocus += TxtMaxSpeed_LostFocus;
+            formMain.txtAccelSpeed.KeyDown += TxtAccelSpeed_KeyDown;
+            formMain.txtAccelSpeed.LostFocus += TxtAccelSpeed_LostFocus;
             //formMain.txtMaxSpeed.TextChanged += TxtMaxSpeed_TextChanged;
             //formMain.optMaxSpeedType_mms.CheckedChanged += OptMaxSpeedType_mms_CheckedChanged;
             formMain.cboMaxSpeedUnit.SelectedValueChanged += OptMaxSpeedType_mms_CheckedChanged;
@@ -75,16 +80,47 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.txtDayPerYear.KeyDown += UseFrequence_KeyDown;
 
             // 最大值驗證
-            formMain.cboModel.SelectedValueChanged += UpdateMaxValue;
-            formMain.cboLead.SelectedValueChanged += UpdateMaxValue;
-            formMain.cboReducerRatio.SelectedValueChanged += UpdateMaxValue;
-            formMain.txtStroke.TextChanged += UpdateMaxValue;
-            formMain.txtMaxSpeed.TextChanged += UpdateMaxValue;
-            formMain.cboMaxSpeedUnit.SelectedValueChanged += UpdateMaxValue;            
+            //formMain.cboModel.SelectedValueChanged += UpdateMaxValue;
+            //formMain.cboLead.SelectedValueChanged += UpdateMaxValue;
+            //formMain.cboReducerRatio.SelectedValueChanged += UpdateMaxValue;
+            //formMain.txtStroke.TextChanged += UpdateMaxValue;
+            //formMain.txtMaxSpeed.TextChanged += UpdateMaxValue;
+            //formMain.cboMaxSpeedUnit.SelectedValueChanged += UpdateMaxValue;            
+        }        
+
+        private void TxtAccelSpeed_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode != Keys.Enter)
+                return;
+
+            TxtMaxSpeed_LostFocus(null, null);
+        }
+
+        private void TxtAccelSpeed_LostFocus(object sender, EventArgs e) {
+            // 加速度
+            if (formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值"))
+                formMain.txtAccelSpeed.Text = new Regex(@"\d+").Match(formMain.lbMaxValue_AccelSpeed.Text).Groups[0].Value;
+            else if (formMain.lbMaxValue_AccelSpeed.Text.Contains("範圍")) {
+                string min = new Regex(@"(\d+) ~ (\d+)").Match(formMain.lbMaxValue_AccelSpeed.Text).Groups[1].Value;
+                string max = new Regex(@"(\d+) ~ (\d+)").Match(formMain.lbMaxValue_AccelSpeed.Text).Groups[2].Value;
+                if (Convert.ToDecimal(formMain.txtAccelSpeed.Text) > Convert.ToDecimal(max))
+                    formMain.txtAccelSpeed.Text = max;
+                if (Convert.ToDecimal(formMain.txtAccelSpeed.Text) < Convert.ToDecimal(min))
+                    formMain.txtAccelSpeed.Text = min;
+            }
+        }
+
+        private void TxtMaxSpeed_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode != Keys.Enter)
+                return;
+
+            TxtMaxSpeed_LostFocus(null, null);
         }
 
         private void TxtMaxSpeed_LostFocus(object sender, EventArgs e) {
-            TxtMaxSpeed_KeyDown(sender, new KeyEventArgs(Keys.Enter));
+            // 最高速度
+            string max = new Regex(@"\d+").Match(formMain.lbMaxValue_MaxSpeed.Text).Groups[0].Value;
+            if (Convert.ToDecimal(formMain.txtMaxSpeed.Text) > Convert.ToDecimal(max))
+                formMain.txtMaxSpeed.Text = max;
         }
 
         public void ShowConvertRPM() {
@@ -95,11 +131,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                             if (double.TryParse(formMain.cboLead.Text, out double lead) && decimal.TryParse(formMain.txtMaxSpeed.Text, out decimal maxSpeed)) {
                                 if (formMain.cboMaxSpeedUnit.Text == "mm/s")
                                     //RPM 顯示
-                                    //formMain.lbRpm.Text = "RPM: " + formMain.page2.calc.GetRpmByMMS(lead, Convert.ToDouble(formMain.txtMaxSpeed.Text)).ToString();
                                     formMain.lbRpm.Text = string.Format("轉速：{0}RPM", formMain.page2.calc.GetRpmByMMS(lead, Convert.ToDouble(formMain.txtMaxSpeed.Text)));
                                 else
                                     // Vmax 顯示
-                                    //formMain.lbRpm.Text = "Vmax: " + formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), lead).ToString("#0");
                                     formMain.lbRpm.Text = string.Format("運行速度：{0}mm/s", formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), lead).ToString("#0"));
                             }
                         }
@@ -113,23 +147,83 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
         }
 
-        private void UpdateMaxValue(object sender, EventArgs e) {
-            // 條件選型不顯示最大值
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
-                return;
-            if (!decimal.TryParse(formMain.txtStroke.Text, out decimal stroke))
-                return;
-            if (!double.TryParse(formMain.cboLead.Text, out double lead))
-                return;
+        public void CalcVmaxRange() {
+            while (true) {
+                try {
+                    formMain.Invoke(new Action(() => {
+                        try {
+                            double accelTime = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType() ? 0.4 : 0.2;
 
-            var modelName = formMain.cboModel.Text;
-            var model = formMain.page2.calc.GetAllModels(formMain.page2.runCondition.curCondition).First(_m => _m.name.StartsWith(modelName) && _m.lead == lead);
-            var maxRPM = formMain.page2.calc.GetRpmByStroke(modelName, lead, (int)stroke);
-            var maxVmax = formMain.page2.calc.RPM_TO_MMS(maxRPM, lead);
-            if (formMain.cboMaxSpeedUnit.Text == "mm/s")
-                formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0} {1} )", maxVmax.ToString("#0"), formMain.cboMaxSpeedUnit.Text);
-            else
-                formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0} {1} )", maxRPM, formMain.cboMaxSpeedUnit.Text);
+                            if (int.TryParse(formMain.txtStroke.Text, out int stroke) &&
+                                double.TryParse(formMain.cboLead.Text, out double lead)) {
+                                if (formMain.cboMaxSpeedUnit.Text == "mm/s") {
+                                    int strokeTooShortMaxVmax = (int)Math.Round((double)stroke / accelTime, 0);
+                                    int strokeRpmMaxVmax = (int)Math.Round(formMain.page2.calc.RPM_TO_MMS(formMain.page2.calc.GetRpmByStroke(formMain.cboModel.Text, lead, stroke), lead), 0);
+                                    formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0} {1} )", Math.Min(strokeTooShortMaxVmax, strokeRpmMaxVmax), "mm/s");
+                                } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
+                                    int maxVmax = (int)Math.Round((double)stroke / accelTime, 0);
+                                    int maxRPM = formMain.page2.calc.MMS_TO_RPM(maxVmax, lead);
+                                    formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0} {1} )", maxRPM, "RPM");
+                                }
+                            }
+                        } catch (Exception ex) {
+                            Console.WriteLine(ex);
+                        }
+                    }));
+                } catch (Exception ex) {
+                    Console.WriteLine(ex);
+                    break;
+                }
+
+                Thread.Sleep(100);
+            }
+        }
+
+        public void CalcAccelSpeedRange() {
+            while (true) {
+                try {
+                    formMain.Invoke(new Action(() => {
+                        double accelTime = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType() ? 0.4 : 0.2;
+
+                        if (int.TryParse(formMain.txtStroke.Text, out int stroke) &&
+                            double.TryParse(formMain.txtMaxSpeed.Text, out double maxSpeed) &&
+                            double.TryParse(formMain.cboLead.Text, out double lead)) {
+                            if (formMain.cboMaxSpeedUnit.Text == "mm/s") {
+                                double vMax = maxSpeed;
+                                int min = Convert.ToInt32((Math.Pow(vMax, 2) / stroke).ToString("#0"));                // 等速時間為0
+                                int max = Convert.ToInt32((vMax / accelTime).ToString("#0"));                                // 加速時間0.2
+                                // 加速度顯示
+                                if (min >= max)
+                                    formMain.lbMaxValue_AccelSpeed.Text = string.Format("( 限制值：{0} mm/s²)", max);
+                                else
+                                    formMain.lbMaxValue_AccelSpeed.Text = string.Format("( 範圍：{0} ~ {1} mm/s²)", min, max);
+
+                                formMain.txtAccelSpeed.Enabled = !formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值");
+                                if (formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值"))
+                                    formMain.txtAccelSpeed.Text = max.ToString();
+                            } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
+                                double vMax = (maxSpeed * lead) / 60;
+                                int min = Convert.ToInt32((Math.Pow(vMax, 2) / stroke).ToString("#0"));                // 等速時間為0
+                                int max = Convert.ToInt32((vMax / accelTime).ToString("#0"));                                // 加速時間0.2
+                                // 加速度顯示
+                                if (min >= max)
+                                    formMain.lbMaxValue_AccelSpeed.Text = string.Format("( 限制值：{0} mm/s²)", max);
+                                else
+                                    formMain.lbMaxValue_AccelSpeed.Text = string.Format("( 範圍：{0} ~ {1} mm/s²)", min, max);
+
+                                formMain.txtAccelSpeed.Enabled = !formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值");
+                                if (formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值"))
+                                    formMain.txtAccelSpeed.Text = max.ToString();
+                            }                            
+                        }
+                    }));
+                } catch (Exception ex) {
+                    Console.WriteLine(ex);
+                    break;
+                }
+
+                Thread.Sleep(100);
+            }
         }
 
         private void InputCondition_KeyPress(object sender, KeyPressEventArgs e) {
@@ -190,25 +284,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
         }
 
-        //public void TxtAccelSpeed_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
-        //    int curAccelSpeed = Convert.ToInt32(formMain.txtAccelSpeed.Text);
-        //    if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
-        //        string model = formMain.cboModel.Text;
-        //        double lead = Convert.ToDouble(formMain.cboLead.Text);
-        //        //int reducerRatio = 1;
-        //        //if (formMain.page2.calc.IsContainsReducerRatio(model)) {
-        //        //    //string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
-        //        //    //reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
-        //        //    reducerRatio = Convert.ToInt32(formMain.cboReducerRatio.Text);
-        //        //    lead /= reducerRatio;
-        //        //}
-        //        Model m = formMain.page2.calc.GetAllModels(formMain.page2.runCondition.curCondition).First(_m => _m.name.StartsWith(model) && _m.lead == lead);
-        //        int maxAccelSpeed = formMain.page2.calc.GetMaxAccelSpeed(m, Convert.ToInt32(formMain.txtStroke.Text), m.modelType);
-        //        if (curAccelSpeed > maxAccelSpeed)
-        //            formMain.txtAccelSpeed.Text = maxAccelSpeed.ToString();
-        //    }
-        //}
-
         public void InputCondition_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
             TextBox txt = sender as TextBox;
             // Alarm顯示修正
@@ -264,36 +339,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //ValidatingLoad();
         }
 
-        //public bool ValidatingLoad(bool isShowAlarm = true) {
-        //    if (!decimal.TryParse(formMain.txtLoad.Text, out decimal keyLoad))
-        //        return true;
-        //    if (!double.TryParse(formMain.cboLead.Text, out double lead))
-        //        return true;
-
-        //    Condition con = new Condition();
-        //    if (formMain.optHorizontalUse.Checked)
-        //        con.setupMethod = Model.SetupMethod.Horizontal;
-        //    else if (formMain.optWallHangingUse.Checked)
-        //        con.setupMethod = Model.SetupMethod.WallHang;
-        //    else if (formMain.optVerticalUse.Checked)
-        //        con.setupMethod = Model.SetupMethod.Vertical;
-
-        //    string model = formMain.cboModel.Text;
-
-        //    double maxLoad = formMain.page2.calc.GetMaxLoad(model, lead, con);
-        //    formMain.labelLoadAlarm.Text = "最大: " + maxLoad.ToString() + "kg";
-        //    if (maxLoad == -1)
-        //        return true;
-
-        //    if (isShowAlarm)
-        //        formMain.labelLoadAlarm.Visible = (double)keyLoad > maxLoad;
-        //    if ((double)keyLoad > maxLoad) {
-        //        formMain.txtLoad.Text = ((int)maxLoad).ToString();
-        //        return false;
-        //    }
-        //    return true;
-        //}
-
         public bool VerifyAllInputValidate(bool isShowAlarm = false) {
             bool isVerifySuccess = true;
 
@@ -338,75 +383,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             //ValidatingStroke();
         }
-        //public bool ValidatingStroke(bool isShowAlarm = true) {
-        //    if (!decimal.TryParse(formMain.txtStroke.Text, out decimal keyStroke))
-        //        return true;
-        //    if (!double.TryParse(formMain.cboLead.Text, out double lead))
-        //        return true;
-
-        //    string model = formMain.cboModel.Text;
-        //    int reducerRatio = 1;
-        //    //if (calc.IsContainsReducerRatio(model)) {
-        //    //    string dgvReducerRatioValue = dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
-        //    //    reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
-        //    //}
-
-        //    int maxStroke = formMain.page2.calc.GetMaxStroke(model, lead, reducerRatio);
-        //    formMain.labelStrokeAlarm.Text = "最大: " + maxStroke.ToString() + "mm";
-        //    if (isShowAlarm)
-        //        formMain.labelStrokeAlarm.Visible = (double)keyStroke > maxStroke;
-        //    if (keyStroke > maxStroke) {
-        //        formMain.txtStroke.Text = maxStroke.ToString();
-        //        return false;
-        //    }
-
-        //    return true;
-        //}
-
-        private void TxtMaxSpeed_KeyDown(object sender, KeyEventArgs e) {
-            // 一般計算
-            if (e.KeyCode != Keys.Enter)
-                return;
-
-            if (!decimal.TryParse(formMain.txtStroke.Text, out decimal stroke))
-                return;
-            if (!double.TryParse(formMain.cboLead.Text, out double lead))
-                return;
-            if (!decimal.TryParse(formMain.txtMaxSpeed.Text, out decimal vMax))
-                return;
-
-            string model = formMain.cboModel.Text;
-
-            try {
-                Model m = formMain.page2.calc.GetAllModels(formMain.page2.runCondition.curCondition).First(_m => _m.name.StartsWith(model) && _m.lead == lead);
-                if (formMain.cboMaxSpeedUnit.Text == "mm/s") {
-                    double resultVmax = formMain.page2.calc.GetVmax_mms(m, lead, (int)stroke);
-                    // vMax key過大修正
-                    if (Convert.ToDouble(formMain.txtMaxSpeed.Text) > resultVmax)
-                        formMain.txtMaxSpeed.Text = resultVmax.ToString();
-
-                    //// RPM 顯示                
-                    //formMain.lbRpm.Text = "RPM: " + formMain.page2.calc.GetRpmByMMS(lead, Convert.ToDouble(formMain.txtMaxSpeed.Text)).ToString();
-                    //formMain.txtMaxSpeed.Text = resultVmax.ToString();
-                } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
-                    double resultVmax = formMain.page2.calc.GetVmax_mms(m, lead, (int)stroke);
-                    int resultRpm = formMain.page2.calc.MMS_TO_RPM(resultVmax, lead);
-                    // vMax key過大修正
-                    if (Convert.ToDouble(formMain.txtMaxSpeed.Text) > resultRpm)
-                        formMain.txtMaxSpeed.Text = resultRpm.ToString();
-
-                    //// RPM 顯示
-                    //if (formMain.txtMaxSpeed.Text.Contains("."))
-                    //    formMain.txtMaxSpeed.Text = formMain.txtMaxSpeed.Text.Split('.')[0];
-                    //double _mms = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), lead);
-                    //formMain.lbRpm.Text = "RPM: " + formMain.page2.calc.GetRpmByMMS(lead, _mms).ToString();
-                    //formMain.lbRpm.Text = "Vmax: " + _mms.ToString("#0.00");
-                    //formMain.txtMaxSpeed.Text = resultRpm.ToString();
-                }
-            } catch (Exception ex) {
-                Console.WriteLine(ex);
-            }
-        }
 
         private void OptMaxSpeedType_mms_CheckedChanged(object sender, EventArgs e) {
             //ValidatingVmax();
@@ -416,53 +392,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
                 if (formMain.cboMaxSpeedUnit.Text == "mm/s")
-                    formMain.txtMaxSpeed.Text = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), lead).ToString();
+                    formMain.txtMaxSpeed.Text = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), lead).ToString("#0");
                 else
                     formMain.txtMaxSpeed.Text = formMain.page2.calc.MMS_TO_RPM(Convert.ToDouble(formMain.txtMaxSpeed.Text), lead).ToString();
             }
         }
-
-        //private void ValidatingVmax(object state = null) {
-            //formMain.Invoke(new Action(() => {
-            //    if (!decimal.TryParse(formMain.txtStroke.Text, out decimal stroke))
-            //        return;
-            //    if (!double.TryParse(formMain.cboLead.Text, out double lead))
-            //        return;
-            //    if (!decimal.TryParse(formMain.txtMaxSpeed.Text, out decimal vMax))
-            //        return;
-
-            //    string model = formMain.cboModel.Text;
-
-            //    try {
-            //        Model m = formMain.page2.calc.GetAllModels(formMain.page2.runCondition.curCondition).First(_m => _m.name.StartsWith(model) && _m.lead == lead);
-            //        if (formMain.cboMaxSpeedUnit.Text == "mm/s") {
-            //            double resultVmax = formMain.page2.calc.GetVmax_mms(m, lead, (int)stroke);
-            //            // vMax key過大修正
-            //            if (Convert.ToDouble(formMain.txtMaxSpeed.Text) > resultVmax)
-            //                formMain.txtMaxSpeed.Text = resultVmax.ToString();
-
-            //            // RPM 顯示                
-            //            formMain.lbRpm.Text = "RPM: " + formMain.page2.calc.GetRpmByMMS(lead, Convert.ToDouble(formMain.txtMaxSpeed.Text)).ToString();
-            //            //formMain.txtMaxSpeed.Text = resultVmax.ToString();
-            //        } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
-            //            double resultVmax = formMain.page2.calc.GetVmax_mms(m, lead, (int)stroke);
-            //            int resultRpm = formMain.page2.calc.MMS_TO_RPM(resultVmax, lead);
-            //            // vMax key過大修正
-            //            if (Convert.ToDouble(formMain.txtMaxSpeed.Text) > resultRpm)
-            //                formMain.txtMaxSpeed.Text = resultRpm.ToString();
-
-            //            // RPM 顯示
-            //            if (formMain.txtMaxSpeed.Text.Contains("."))
-            //                formMain.txtMaxSpeed.Text = formMain.txtMaxSpeed.Text.Split('.')[0];
-            //            double _mms = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), lead);
-            //            //formMain.lbRpm.Text = "RPM: " + formMain.page2.calc.GetRpmByMMS(lead, _mms).ToString();
-            //            formMain.lbRpm.Text = "Vmax: " + _mms.ToString("#0.00");
-            //            //formMain.txtMaxSpeed.Text = resultRpm.ToString();
-            //        }
-            //    } catch (Exception ex) {
-            //        Console.WriteLine(ex);
-            //    }
-            //}));
-        //}
     }
 }

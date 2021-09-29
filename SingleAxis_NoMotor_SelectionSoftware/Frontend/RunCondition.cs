@@ -110,6 +110,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             SendMessage(formMain.txtRatedTorque.Handle, EM_SETCUEBANNER, 0, "額定轉矩");
             SendMessage(formMain.txtRotateInertia.Handle, EM_SETCUEBANNER, 0, "轉動慣量");
             SendMessage(formMain.txtMaxTorque.Handle, EM_SETCUEBANNER, 0, "最大轉矩");
+            SendMessage(formMain.txtLoadInertiaMomentRatio.Handle, EM_SETCUEBANNER, 0, "負載慣量與力矩比");
+            SendMessage(formMain.txtReducerRotateInertia.Handle, EM_SETCUEBANNER, 0, "減速機轉動慣量");
             SendMessage(formMain.txtStroke.Handle, EM_SETCUEBANNER, 0, "移動行程");
             SendMessage(formMain.txtLoad.Handle, EM_SETCUEBANNER, 0, "荷重");
             SendMessage(formMain.txtRunTime.Handle, EM_SETCUEBANNER, 0, "運行時間");
@@ -211,7 +213,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             else
                 curCondition.accelTime = 0.2;
             // 加速度
-            //formMain.page2.inputValidate.TxtAccelSpeed_Validating(null, null);
+            //formMain.page2.inputValidate.TxtAccelSpeed_Validating(null, null);            
             if (formMain.chkAdvanceMode.Checked)
                 curCondition.accelSpeed = Convert.ToDouble(formMain.txtAccelSpeed.Text);
             else

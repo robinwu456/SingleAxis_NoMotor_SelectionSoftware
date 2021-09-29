@@ -163,7 +163,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <summary>
         /// 最高線速度
         /// </summary>
-        public double vMax_max;
+        public double maxVmax;
         /// <summary>
         /// 導程
         /// </summary>

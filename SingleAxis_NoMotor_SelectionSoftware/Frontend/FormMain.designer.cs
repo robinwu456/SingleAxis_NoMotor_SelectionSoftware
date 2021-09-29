@@ -601,7 +601,6 @@
             this.pictureBoxToyo.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.component;
             this.pictureBoxToyo.Name = "pictureBoxToyo";
             this.pictureBoxToyo.TabStop = false;
-            this.pictureBoxToyo.DoubleClick += new System.EventHandler(this.pictureBoxToyo_DoubleClick);
             // 
             // pictureBox1
             // 
@@ -3373,7 +3372,6 @@
             this.Name = "FormMain";
             this.Opacity = 0D;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.Resize += new System.EventHandler(this.FormMain_Resize);
             this.panelBase.ResumeLayout(false);

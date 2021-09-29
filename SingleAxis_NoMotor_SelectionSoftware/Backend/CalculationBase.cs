@@ -486,30 +486,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             return points;
         }
-        //public (
-        //    double accelTime,
-        //    double constantTime,
-        //    double runTime,
-        //    double accelSpeed,
-        //    double maxSpeed,
-        //    double cycleTime
-        //) GetChartInfo(Condition conditions) {
-        //    double accelTime = conditions.vMax / conditions.accelSpeed;
-        //    double decelTime = accelTime;
-        //    double constantTime = ((2f * (float)conditions.stroke / conditions.vMax) - accelTime - decelTime) / 2f;
 
-        //    double runTime = accelTime + constantTime + decelTime;
-        //    double cycleTime = runTime * 2;
-
-        //    accelTime = Convert.ToDouble(accelTime.ToString("0.000"));
-        //    decelTime = Convert.ToDouble(decelTime.ToString("0.000"));
-        //    constantTime = Convert.ToDouble(constantTime.ToString("0.000"));
-        //    runTime = Convert.ToDouble(runTime.ToString("0.000"));
-        //    conditions.vMax = Convert.ToDouble(conditions.vMax.ToString("0.000"));
-        //    cycleTime = Convert.ToDouble(cycleTime.ToString("0.000"));
-
-        //    return (accelTime, constantTime, runTime, conditions.accelSpeed, conditions.vMax, cycleTime);
-        //}
         public (
             double accelTime,
             double constantTime,
@@ -599,6 +576,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public string GetLeadText(string model, double lead) {
             return modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString() == model && Convert.ToDouble(row["導程"].ToString()) == lead)["導程顯示"].ToString();
+        }
+
+        public bool IsStrokeTooShort_CheckByAccelTime(int stroke, double vMax, double accelTime) {
+            return ((2f * (float)stroke / (vMax * 1000)) - accelTime - accelTime) / 2f < 0;
+        }
+
+        public bool IsStrokeTooShort_CheckByAccelSpeed(int stroke, double vMax, double accelSpeed) {
+            return ((2f * (float)stroke / (vMax * 1000)) - (vMax / accelSpeed) - (vMax / accelSpeed)) / 2f < 0;
         }
     }
 }

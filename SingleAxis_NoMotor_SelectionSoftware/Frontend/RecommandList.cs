@@ -283,7 +283,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         }
                         // 驗證加速度
                         formMain.txtAccelSpeed.Text = curModel.accelSpeed.ToString();
-                        formMain.lbMaxValue_AccelSpeed.Text = string.Format("( 最大值：{0} {1} )", curModel.maxAccelSpeed.ToString("#0"), "mm/s²");
+                        //formMain.txtAccelSpeed.Enabled = !formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值");
+                        //formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0} {1} )", curModel.maxVmax.ToString("#0"), "mm/s");
 
                         //// 細項顯示
                         //DisplaySelectedModel();

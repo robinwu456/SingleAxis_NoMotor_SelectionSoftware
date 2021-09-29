@@ -163,7 +163,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 { "每分鐘趟數過大", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("單趟時間: {0}", model.moveTime * 2) },
                     { "Condition", model => model.serviceLifeTime != (-1, -1, -1) } } },
-                // 以下為之前會顯示紅色項目
                 { "T_max安全係數過低", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("標準: 大於等於{0}, 計算值: {1}", model.isUseBaltCalc ? Model.tMaxStandard_beltMotor : Model.tMaxStandard, model.tMaxSafeCoefficient) },
                     { "Condition", model => model.tMaxSafeCoefficient >= (model.isUseBaltCalc ? Model.tMaxStandard_beltMotor : Model.tMaxStandard) } } },
@@ -176,6 +175,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 { "力矩警示異常", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => "" },
                     { "Condition", model => model.isMomentVerifySuccess } } },
+                //{ "行程過短無法計算", new Dictionary<string, Func<Model, object>>(){
+                //    { "Remark",    model => "" },
+                //    { "Condition", model => model.constantTime >= 0 } } },
             };
 
             // log篩選

@@ -83,16 +83,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 全選模式
             searchAllMode = new SearchAllMode(formMain);
 
-            //// 減速比
-            //calc.reducerInfo.Rows.Cast<DataRow>().ToList().ForEach(row => {
-            //    DataGridViewRow dgvRow = (DataGridViewRow)formMain.dgvReducerInfo.RowTemplate.Clone();
-            //    formMain.dgvReducerInfo.Rows.Add(dgvRow);
-            //    dgvRow = formMain.dgvReducerInfo.Rows[calc.reducerInfo.Rows.Cast<DataRow>().ToList().IndexOf(row)];
-            //    dgvRow.Cells["columnModel"].Value = row["Model"].ToString();
-            //    (dgvRow.Cells["columnReducerRatio"] as DataGridViewComboBoxCell).DataSource = row["ReducerRatio"].ToString().Split('、');
-            //    dgvRow.Cells["columnReducerRatio"].Value = row["ReducerRatio"].ToString().Split('、')[0];
-            //});
-
             // scrollbars
             runCondition.scrollBarStroke.Initialize();
             runCondition.scrollBarLoad.Initialize();
@@ -149,9 +139,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.sideTable.ClearModelInfo();
             formMain.sideTable.ClearSelectedModelInfo();
             recommandList.curSelectModel = (null, -1);
-            //formMain.cmdConfirmStep2.Visible = false;
             formMain.page2.ChangeNextStepBtnVisible(false);
             chartInfo.Clear();
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
+                formMain.txtMaxSpeed.Text = "100";
+                formMain.txtAccelSpeed.Text = "500";
+                formMain.lbMaxValue_MaxSpeed.Text = "( 最大值：0 mm/s )";
+                formMain.lbMaxValue_AccelSpeed.Text = "( 最大值：0 mm/s² )";
+            }
 
             //// 有效行程顯示
             //effectiveStroke.IsShowEffectiveStroke(false);
@@ -200,6 +195,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // RPM轉換監測
             inputValidate.threadShowRPMCounting = new Thread(inputValidate.ShowConvertRPM);
             inputValidate.threadShowRPMCounting.Start();
+
+            inputValidate.threadCalcVmaxRange = new Thread(inputValidate.CalcVmaxRange);
+            inputValidate.threadCalcVmaxRange.Start();
+            inputValidate.threadCalcAccelSpeedRange = new Thread(inputValidate.CalcAccelSpeedRange);
+            inputValidate.threadCalcAccelSpeedRange.Start();
         }
 
         private void InitEvents() {
@@ -224,6 +224,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 上一頁
             formMain.lbPrePage.Click += PrePage_Click;
+            formMain.lbPrePage.MouseEnter += (sender, e) => formMain.lbPrePage.Font = new Font(formMain.lbPrePage.Font, FontStyle.Underline);
+            formMain.lbPrePage.MouseLeave += (sender, e) => formMain.lbPrePage.Font = new Font(formMain.lbPrePage.Font, FontStyle.Regular);
 
             //// 安裝方式力矩圖片顯示
             //formMain.optHorizontalUse.CheckedChanged += UpdateMomentPic;
@@ -250,10 +252,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void CmdChangeRunCondition_Click(object sender, EventArgs e) {
             formMain.explorerBar.ScrollControlIntoView(formMain.lbTitleCalc);
         }
-
-        //private void UpdateMomentPic(object sender, EventArgs e) {
-
-        //}
 
         private void SteupMethod_CheckedChanged(object sender, EventArgs e) {
             formMain.sideTable.Update(null, null);
@@ -350,17 +348,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (!formMain.chkAdvanceMode.Checked)
                 formMain.cboMaxSpeedUnit.Text = "mm/s";
             
-            if (formMain.chkAdvanceMode.Checked) {
-                // 切進接選項自動換算最大加速度(加速時間=0.2/0.4)
-                string model = formMain.cboModel.Text;
-                double lead = Convert.ToDouble(formMain.cboLead.Text);
-                Model m = formMain.page2.calc.GetAllModels(formMain.page2.runCondition.curCondition).First(_m => _m.name.StartsWith(model) && _m.lead == lead);
-                int maxAccelSpeed = formMain.page2.calc.GetMaxAccelSpeed(m, Convert.ToInt32(formMain.txtStroke.Text), m.modelType);
-                formMain.txtAccelSpeed.Text = maxAccelSpeed.ToString();
+            //if (formMain.chkAdvanceMode.Checked) {
+            //    // 切進接選項自動換算最大加速度(加速時間=0.2/0.4)
+            //    string model = formMain.cboModel.Text;
+            //    double lead = Convert.ToDouble(formMain.cboLead.Text);
+            //    Model m = formMain.page2.calc.GetAllModels(formMain.page2.runCondition.curCondition).First(_m => _m.name.StartsWith(model) && _m.lead == lead);
+            //    int maxAccelSpeed = formMain.page2.calc.GetMaxAccelSpeed(m, Convert.ToInt32(formMain.txtStroke.Text), m.modelType);
+            //    formMain.txtAccelSpeed.Text = maxAccelSpeed.ToString();
 
-                // 切進接選項Vmax自動帶100mm/s
-                formMain.txtMaxSpeed.Text = "100";
-            }
+            //    // 切進接選項Vmax自動帶100mm/s
+            //    formMain.txtMaxSpeed.Text = "100";
+            //}
 
         }
 
@@ -381,6 +379,23 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 return;
 
             // 最後更新使用條件
+            //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
+            //    // 最高速度
+            //    string max = new Regex(@"\d+").Match(formMain.lbMaxValue_MaxSpeed.Text).Groups[0].Value;
+            //    if (Convert.ToDecimal(formMain.txtMaxSpeed.Text) > Convert.ToDecimal(max))
+            //        formMain.txtMaxSpeed.Text = max;
+            //    // 加速度
+            //    if (formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值"))
+            //        formMain.txtAccelSpeed.Text = new Regex(@"\d+").Match(formMain.lbMaxValue_AccelSpeed.Text).Groups[0].Value;
+            //    else if (formMain.lbMaxValue_AccelSpeed.Text.Contains("範圍")) {
+            //        string min = new Regex(@"(\d+) ~ (\d+)").Match(formMain.lbMaxValue_AccelSpeed.Text).Groups[1].Value;
+            //        max = new Regex(@"(\d+) ~ (\d+)").Match(formMain.lbMaxValue_AccelSpeed.Text).Groups[2].Value;
+            //        if (Convert.ToDecimal(formMain.txtAccelSpeed.Text) > Convert.ToDecimal(max))
+            //            formMain.txtAccelSpeed.Text = max;
+            //        if (Convert.ToDecimal(formMain.txtAccelSpeed.Text) < Convert.ToDecimal(min))
+            //            formMain.txtAccelSpeed.Text = min;
+            //    }
+            //}
             if (formMain.chkCalcAllMode.Checked)
                 searchAllMode.UpdateCondition(null, null);
             else
