@@ -140,13 +140,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.sideTable.ClearSelectedModelInfo();
             recommandList.curSelectModel = (null, -1);
             formMain.page2.ChangeNextStepBtnVisible(false);
-            chartInfo.Clear();
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
-                formMain.txtMaxSpeed.Text = "100";
-                formMain.txtAccelSpeed.Text = "500";
-                formMain.lbMaxValue_MaxSpeed.Text = "( 最大值：0 mm/s )";
-                formMain.lbMaxValue_AccelSpeed.Text = "( 最大值：0 mm/s² )";
-            }
+            chartInfo.Clear(); 
+            formMain.txtMaxSpeed.Text = "";
+            formMain.txtAccelSpeed.Text = "";
+            formMain.lbMaxValue_MaxSpeed.Text = "( 最大值：0 mm/s )";
+            formMain.lbMaxValue_AccelSpeed.Text = "( 最大值：0 mm/s² )";
 
             //// 有效行程顯示
             //effectiveStroke.IsShowEffectiveStroke(false);
@@ -185,12 +183,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //formMain.panelCalcAllMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
             //formMain.chkRpmLimitByStroke.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
 
-            // RPM顯示
-            formMain.lbRpm.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
+            //// RPM顯示
+            //formMain.lbRpm.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
 
-            // 最大值顯示
-            formMain.lbMaxValue_MaxSpeed.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
-            formMain.lbMaxValue_AccelSpeed.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
+            //// 最大值顯示
+            //formMain.lbMaxValue_MaxSpeed.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
+            //formMain.lbMaxValue_AccelSpeed.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
 
             // RPM轉換監測
             inputValidate.threadShowRPMCounting = new Thread(inputValidate.ShowConvertRPM);
@@ -332,34 +330,62 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 return;
             }
 
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection) {
-                formMain.panelAdvanceParams.Enabled = formMain.chkAdvanceMode.Checked;
-                return;
-            }
+            //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection) {
+            //    formMain.panelAdvanceParams.Enabled = formMain.chkAdvanceMode.Checked;
+            //    return;
+            //}
 
-            if (formMain.cboModel.Text == "" || 
-                formMain.cboLead.Text == "" || 
-                !decimal.TryParse(formMain.txtStroke.Text, out decimal a)) {
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection &&
+                (formMain.cboModel.Text == "" || formMain.cboLead.Text == "" || !decimal.TryParse(formMain.txtStroke.Text, out decimal a))) {
                 formMain.chkAdvanceMode.Checked = false;
                 return;
             }
 
             formMain.panelAdvanceParams.Enabled = formMain.chkAdvanceMode.Checked;
-            if (!formMain.chkAdvanceMode.Checked)
+
+            // 開啟進階選項
+            if (formMain.chkAdvanceMode.Checked) {
+                if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
+                    // 線速度
+                    string max = new Regex(@"\d+").Match(formMain.lbMaxValue_MaxSpeed.Text).Groups[0].Value;
+                    formMain.txtMaxSpeed.Text = max;
+
+                    // 加速度
+                    double accelTime = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType() ? 0.4 : 0.2;
+                    if (double.TryParse(formMain.txtMaxSpeed.Text, out double maxSpeed)) {
+                        max = Convert.ToInt32((maxSpeed / accelTime).ToString("#0")).ToString();                                // 加速時間0.2
+                        formMain.txtAccelSpeed.Text = max.ToString();
+                    }
+                } else if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection) {
+                    try {
+                        var curRow = formMain.dgvRecommandList.CurrentRow;
+                        if (curRow.Cells["項次"].Value == null)
+                            return;
+                        var selectModel = formMain.page2.recommandList.curRecommandList.Where(model => model.name == curRow.Cells["項次"].Value.ToString() && model.lead == Convert.ToDouble(curRow.Cells["導程"].Value.ToString()));
+                        if (selectModel.Count() == 0)
+                            return;
+                        Model curModel = selectModel.First();
+                        formMain.txtMaxSpeed.Text = curModel.vMax.ToString();
+                        formMain.txtAccelSpeed.Text = curModel.accelSpeed.ToString();
+                    } catch (Exception ex) {
+                        Console.WriteLine("開進階選項回填錯誤");
+                    }
+                }
+            }
+
+            // 關閉進階選項
+            if (!formMain.chkAdvanceMode.Checked) {
+                // 單位復原
                 formMain.cboMaxSpeedUnit.Text = "mm/s";
-            
-            //if (formMain.chkAdvanceMode.Checked) {
-            //    // 切進接選項自動換算最大加速度(加速時間=0.2/0.4)
-            //    string model = formMain.cboModel.Text;
-            //    double lead = Convert.ToDouble(formMain.cboLead.Text);
-            //    Model m = formMain.page2.calc.GetAllModels(formMain.page2.runCondition.curCondition).First(_m => _m.name.StartsWith(model) && _m.lead == lead);
-            //    int maxAccelSpeed = formMain.page2.calc.GetMaxAccelSpeed(m, Convert.ToInt32(formMain.txtStroke.Text), m.modelType);
-            //    formMain.txtAccelSpeed.Text = maxAccelSpeed.ToString();
 
-            //    // 切進接選項Vmax自動帶100mm/s
-            //    formMain.txtMaxSpeed.Text = "100";
-            //}
+                // 清空進階選項
+                formMain.txtMaxSpeed.Text = "";
+                formMain.txtAccelSpeed.Text = "";
 
+                // 進階選項值驗證Alarm隱藏
+                formMain.lbMaxSpeedAlarm.Visible = false;
+                formMain.lbAccelSpeedAlarm.Visible = false;
+            }            
         }
 
         private void CmdConfirmStep2_Click(object sender, EventArgs e) {
@@ -379,23 +405,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 return;
 
             // 最後更新使用條件
-            //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
-            //    // 最高速度
-            //    string max = new Regex(@"\d+").Match(formMain.lbMaxValue_MaxSpeed.Text).Groups[0].Value;
-            //    if (Convert.ToDecimal(formMain.txtMaxSpeed.Text) > Convert.ToDecimal(max))
-            //        formMain.txtMaxSpeed.Text = max;
-            //    // 加速度
-            //    if (formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值"))
-            //        formMain.txtAccelSpeed.Text = new Regex(@"\d+").Match(formMain.lbMaxValue_AccelSpeed.Text).Groups[0].Value;
-            //    else if (formMain.lbMaxValue_AccelSpeed.Text.Contains("範圍")) {
-            //        string min = new Regex(@"(\d+) ~ (\d+)").Match(formMain.lbMaxValue_AccelSpeed.Text).Groups[1].Value;
-            //        max = new Regex(@"(\d+) ~ (\d+)").Match(formMain.lbMaxValue_AccelSpeed.Text).Groups[2].Value;
-            //        if (Convert.ToDecimal(formMain.txtAccelSpeed.Text) > Convert.ToDecimal(max))
-            //            formMain.txtAccelSpeed.Text = max;
-            //        if (Convert.ToDecimal(formMain.txtAccelSpeed.Text) < Convert.ToDecimal(min))
-            //            formMain.txtAccelSpeed.Text = min;
-            //    }
-            //}
             if (formMain.chkCalcAllMode.Checked)
                 searchAllMode.UpdateCondition(null, null);
             else

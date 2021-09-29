@@ -92,10 +92,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (e.KeyCode != Keys.Enter)
                 return;
 
-            TxtMaxSpeed_LostFocus(null, null);
+            TxtAccelSpeed_LostFocus(null, null);
         }
 
         private void TxtAccelSpeed_LostFocus(object sender, EventArgs e) {
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
+                return;
+
             // 加速度
             if (formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值"))
                 formMain.txtAccelSpeed.Text = new Regex(@"\d+").Match(formMain.lbMaxValue_AccelSpeed.Text).Groups[0].Value;
@@ -117,6 +120,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void TxtMaxSpeed_LostFocus(object sender, EventArgs e) {
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
+                return;
+
             // 最高速度
             string max = new Regex(@"\d+").Match(formMain.lbMaxValue_MaxSpeed.Text).Groups[0].Value;
             if (Convert.ToDecimal(formMain.txtMaxSpeed.Text) > Convert.ToDecimal(max))
@@ -127,6 +133,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             while (true) {
                 try {
                     formMain.Invoke(new Action(() => {
+                        formMain.lbRpm.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection && formMain.chkAdvanceMode.Checked;
+
                         if (!formMain.cboMaxSpeedUnit.DroppedDown) {
                             if (double.TryParse(formMain.cboLead.Text, out double lead) && decimal.TryParse(formMain.txtMaxSpeed.Text, out decimal maxSpeed)) {
                                 if (formMain.cboMaxSpeedUnit.Text == "mm/s")
@@ -151,6 +159,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             while (true) {
                 try {
                     formMain.Invoke(new Action(() => {
+                        formMain.lbMaxValue_MaxSpeed.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection && formMain.chkAdvanceMode.Checked;
+
                         try {
                             double accelTime = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType() ? 0.4 : 0.2;
 
@@ -183,6 +193,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             while (true) {
                 try {
                     formMain.Invoke(new Action(() => {
+                        formMain.lbMaxValue_AccelSpeed.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection && formMain.chkAdvanceMode.Checked;
                         double accelTime = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType() ? 0.4 : 0.2;
 
                         if (int.TryParse(formMain.txtStroke.Text, out int stroke) &&
@@ -346,6 +357,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             foreach (Control control in formMain.panelCalc.Controls.All().Concat(formMain.panelMoment.Controls.All())) {
                 if (control is TextBox) {
                     TextBox txt = control as TextBox;
+
+                    // 進階選項關閉時空值不驗證
+                    if (txt == formMain.txtMaxSpeed && !formMain.chkAdvanceMode.Checked)
+                        continue;
+                    if (txt == formMain.txtAccelSpeed && !formMain.chkAdvanceMode.Checked)
+                        continue;
+
                     // show alarm
                     if (isShowAlarm)
                         InputCondition_Validating(control, null);

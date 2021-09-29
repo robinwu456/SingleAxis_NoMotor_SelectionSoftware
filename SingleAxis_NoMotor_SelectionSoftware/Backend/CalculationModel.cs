@@ -425,7 +425,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     model.vMax = Math.Min(model.vMax, GetVmax_ms(model, model.lead, condition.stroke));
             }
             double maxVmax = model.isUseBaltCalc ? (double)model.stroke / 1000f / 0.4 : (double)model.stroke / 1000f / 0.2;
-            model.vMax = model.vMax > maxVmax ? maxVmax : model.vMax;
+            double strokeVax = GetVmax_mms(model, model.lead, model.stroke) / 1000;
+            //model.vMax = model.vMax > maxVmax ? maxVmax : model.vMax;
+            model.vMax = Math.Min(Math.Min(model.vMax, maxVmax), strokeVax);
 
 
             if (condition.vMaxCalcMode == Condition.CalcVmax.Max) {

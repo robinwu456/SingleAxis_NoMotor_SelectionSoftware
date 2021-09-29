@@ -53,7 +53,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 { "運行時間", model => model.moveTime <= Convert.ToDouble(formMain.txtRunTime.Text) },
 
                 // 黃底特例
-                { "運行速度", model => formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection || !formMain.chkAdvanceMode.Checked || model.vMax >= Convert.ToDouble(formMain.txtMaxSpeed.Text) },
+                { "運行速度", model => formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection || !formMain.chkAdvanceMode.Checked || (
+                    (formMain.cboMaxSpeedUnit.Text == "mm/s" && model.vMax == Convert.ToDouble(formMain.txtMaxSpeed.Text)) ||
+                    (formMain.cboMaxSpeedUnit.Text == "RPM" && model.rpm == Convert.ToDouble(formMain.txtMaxSpeed.Text))
+                ) },
                 { "加速度", model => formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection || !formMain.chkAdvanceMode.Checked || model.accelSpeed == Convert.ToDouble(formMain.txtAccelSpeed.Text) },
             };
             InitEvents();
@@ -188,7 +191,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         formMain.dgvRecommandList.Rows[index].Cells["重複定位精度"].Value = "±" + model.repeatability;
                         formMain.dgvRecommandList.Rows[index].Cells["導程"].Value = model.lead;
                         formMain.dgvRecommandList.Rows[index].Cells["荷重"].Value = model.load;
-                        formMain.dgvRecommandList.Rows[index].Cells["最高轉速"].Value = model.showRpm;
+                        //formMain.dgvRecommandList.Rows[index].Cells["最高轉速"].Value = model.showRpm;
+                        formMain.dgvRecommandList.Rows[index].Cells["最高轉速"].Value = model.rpm;
                         //formMain.dgvRecommandList.Rows[index].Cells["運行速度"].Value = Convert.ToDouble(model.vMax.ToString("#0.000"));
                         formMain.dgvRecommandList.Rows[index].Cells["運行速度"].Value = (int)model.vMax;
                         formMain.dgvRecommandList.Rows[index].Cells["加速度"].Value = model.accelSpeed;
@@ -273,21 +277,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         //// 畫圖
                         //formMain.page2.chartInfo.PaintGraph();
                     } else {
-                        // 驗證Vmax
-                        Model curModel = curRecommandList.First();
-                        if (formMain.cboMaxSpeedUnit.Text == "mm/s") {
-                            formMain.txtMaxSpeed.Text = Convert.ToDouble(curModel.vMax.ToString("#0.000")).ToString();
-                        } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
-                            int curRpm = formMain.page2.calc.MMS_TO_RPM(curModel.vMax, curModel.lead);
-                            formMain.txtMaxSpeed.Text = curRpm.ToString();
+                        // 回填進階選項
+                        if (formMain.chkAdvanceMode.Checked) {
+                            Model curModel = curRecommandList.First();
+                            if (formMain.cboMaxSpeedUnit.Text == "mm/s") {
+                                formMain.txtMaxSpeed.Text = Convert.ToDouble(curModel.vMax.ToString("#0.000")).ToString();
+                            } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
+                                int curRpm = formMain.page2.calc.MMS_TO_RPM(curModel.vMax, curModel.lead);
+                                formMain.txtMaxSpeed.Text = curRpm.ToString();
+                            }
+                            formMain.txtAccelSpeed.Text = curModel.accelSpeed.ToString();
                         }
-                        // 驗證加速度
-                        formMain.txtAccelSpeed.Text = curModel.accelSpeed.ToString();
-                        //formMain.txtAccelSpeed.Enabled = !formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值");
-                        //formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0} {1} )", curModel.maxVmax.ToString("#0"), "mm/s");
-
-                        //// 細項顯示
-                        //DisplaySelectedModel();
                     }
                     //// 細項顯示
                     //DisplaySelectedModel();
@@ -382,7 +382,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (selectModel.Count() == 0)
                 return;
             Model curModel = selectModel.First();
-            var errorMsgs = redFontConditions.Where(con => !con.Value(curModel)).Select(con => alarmMsg[con.Key]);
+            var errorMsgs = redFontConditions.Where(con => !yellowBgConditions.Contains(con.Key) && !con.Value(curModel)).Select(con => alarmMsg[con.Key]);
+            var yellowMsgs = formMain.dgvRecommandList.CurrentRow.Cells.Cast<DataGridViewCell>().Where(cell => cell.Style.BackColor == Color.Yellow).Select(cell => alarmMsg[formMain.dgvRecommandList.Columns[cell.ColumnIndex].Name]);
+            errorMsgs = errorMsgs.Concat(yellowMsgs);
             Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.標準 : Model.UseEnvironment.無塵;
             if (errorMsgs.Count() == 0)
                 formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType), SideTable.MsgStatus.Normal);

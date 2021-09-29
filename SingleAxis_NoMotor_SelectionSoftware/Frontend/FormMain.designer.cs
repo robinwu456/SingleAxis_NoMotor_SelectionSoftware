@@ -221,7 +221,7 @@
             this.lbMaxSpeedAlarm = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
+            this.lbAccelSpeedAlarm = new System.Windows.Forms.Label();
             this.txtAccelSpeed = new System.Windows.Forms.TextBox();
             this.label79 = new System.Windows.Forms.Label();
             this.txtMaxSpeed = new System.Windows.Forms.TextBox();
@@ -2092,7 +2092,7 @@
             this.panelAdvanceParams.Controls.Add(this.lbMaxSpeedAlarm);
             this.panelAdvanceParams.Controls.Add(this.label78);
             this.panelAdvanceParams.Controls.Add(this.label81);
-            this.panelAdvanceParams.Controls.Add(this.label82);
+            this.panelAdvanceParams.Controls.Add(this.lbAccelSpeedAlarm);
             this.panelAdvanceParams.Controls.Add(this.txtAccelSpeed);
             this.panelAdvanceParams.Controls.Add(this.label79);
             this.panelAdvanceParams.Controls.Add(this.txtMaxSpeed);
@@ -2142,13 +2142,13 @@
             resources.ApplyResources(this.label81, "label81");
             this.label81.Name = "label81";
             // 
-            // label82
+            // lbAccelSpeedAlarm
             // 
-            resources.ApplyResources(this.label82, "label82");
-            this.label82.BackColor = System.Drawing.Color.Transparent;
-            this.label82.ForeColor = System.Drawing.Color.Red;
-            this.label82.Name = "label82";
-            this.label82.Tag = "txtAccelSpeed";
+            resources.ApplyResources(this.lbAccelSpeedAlarm, "lbAccelSpeedAlarm");
+            this.lbAccelSpeedAlarm.BackColor = System.Drawing.Color.Transparent;
+            this.lbAccelSpeedAlarm.ForeColor = System.Drawing.Color.Red;
+            this.lbAccelSpeedAlarm.Name = "lbAccelSpeedAlarm";
+            this.lbAccelSpeedAlarm.Tag = "txtAccelSpeed";
             // 
             // txtAccelSpeed
             // 
@@ -3623,7 +3623,7 @@
         public System.Windows.Forms.Label lbMaxSpeedAlarm;
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.Label label81;
-        public System.Windows.Forms.Label label82;
+        public System.Windows.Forms.Label lbAccelSpeedAlarm;
         public System.Windows.Forms.TextBox txtAccelSpeed;
         private System.Windows.Forms.Label label79;
         public System.Windows.Forms.TextBox txtMaxSpeed;
