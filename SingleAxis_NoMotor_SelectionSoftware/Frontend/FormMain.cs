@@ -100,6 +100,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e) {
             if (page2.inputValidate.threadShowRPMCounting != null)
                 page2.inputValidate.threadShowRPMCounting.Abort();
+            if (page2.inputValidate.threadCalcVmaxRange != null)
+                page2.inputValidate.threadCalcVmaxRange.Abort();
+            if (page2.inputValidate.threadCalcAccelSpeedRange != null)
+                page2.inputValidate.threadCalcAccelSpeedRange.Abort();
         }
     }
 }

@@ -475,6 +475,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     //formMain.Invoke(new Action(() => formMain.cmdConfirmStep2.Visible = false));
                     formMain.Invoke(new Action(() => formMain.page2.ChangeNextStepBtnVisible(false)));
 
+                    // 
+                    formMain.Invoke(new Action(() => {
+                        formMain.txtMaxSpeed.Text = "";
+                        formMain.txtAccelSpeed.Text = "";
+                    }));
+
                     return;
                 }
                 // 清空訊息

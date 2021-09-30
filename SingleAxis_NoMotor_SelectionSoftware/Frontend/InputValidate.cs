@@ -133,10 +133,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             while (true) {
                 try {
                     formMain.Invoke(new Action(() => {
-                        formMain.lbRpm.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection && formMain.chkAdvanceMode.Checked;
+                        formMain.lbRpm.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection && 
+                                                 formMain.chkAdvanceMode.Checked &&
+                                                 double.TryParse(formMain.cboLead.Text, out double lead) && 
+                                                 decimal.TryParse(formMain.txtMaxSpeed.Text, out decimal maxSpeed);
 
                         if (!formMain.cboMaxSpeedUnit.DroppedDown) {
-                            if (double.TryParse(formMain.cboLead.Text, out double lead) && decimal.TryParse(formMain.txtMaxSpeed.Text, out decimal maxSpeed)) {
+                            if (double.TryParse(formMain.cboLead.Text, out lead) && decimal.TryParse(formMain.txtMaxSpeed.Text, out maxSpeed)) {
                                 if (formMain.cboMaxSpeedUnit.Text == "mm/s")
                                     //RPM 顯示
                                     formMain.lbRpm.Text = string.Format("轉速：{0}RPM", formMain.page2.calc.GetRpmByMMS(lead, Convert.ToDouble(formMain.txtMaxSpeed.Text)));
@@ -159,7 +162,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             while (true) {
                 try {
                     formMain.Invoke(new Action(() => {
-                        formMain.lbMaxValue_MaxSpeed.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection && formMain.chkAdvanceMode.Checked;
+                        formMain.lbMaxValue_MaxSpeed.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection &&
+                                                               formMain.chkAdvanceMode.Checked &&
+                                                               formMain.lbSideTableMsg.ForeColor != System.Drawing.Color.Red;
 
                         try {
                             double accelTime = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType() ? 0.4 : 0.2;
@@ -193,7 +198,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             while (true) {
                 try {
                     formMain.Invoke(new Action(() => {
-                        formMain.lbMaxValue_AccelSpeed.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection && formMain.chkAdvanceMode.Checked;
+                        formMain.lbMaxValue_AccelSpeed.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection && 
+                                                                 formMain.chkAdvanceMode.Checked &&
+                                                                 formMain.lbSideTableMsg.ForeColor != System.Drawing.Color.Red;
+
                         double accelTime = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType() ? 0.4 : 0.2;
 
                         if (int.TryParse(formMain.txtStroke.Text, out int stroke) &&
