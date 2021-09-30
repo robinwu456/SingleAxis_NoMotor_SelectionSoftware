@@ -475,7 +475,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     //formMain.Invoke(new Action(() => formMain.cmdConfirmStep2.Visible = false));
                     formMain.Invoke(new Action(() => formMain.page2.ChangeNextStepBtnVisible(false)));
 
-                    // 
+                    // 搜尋不到項目時，進階選項空值
                     formMain.Invoke(new Action(() => {
                         formMain.txtMaxSpeed.Text = "";
                         formMain.txtAccelSpeed.Text = "";

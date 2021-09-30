@@ -36,8 +36,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 con = con.Where(model => model.supportedSetup.Contains(condition.setupMethod));
             }
             // 單項計算
-            if (condition.calcModel.model != null)
-                con = con.Where(model => model.name.StartsWith(condition.calcModel.model) && model.lead == condition.calcModel.lead);
+            if (condition.calcModel.model != null) {
+                Func<Model, bool> VerifyModelName = model => {
+                    if (model.isUseBaltCalc)
+                        return model.name.StartsWith(condition.calcModel.model);
+                    else
+                        return model.name.Equals(condition.calcModel.model);
+                };
+                con = con.Where(model => VerifyModelName(model) && model.lead == condition.calcModel.lead);
+            }
 
             models = con.ToList();
 
