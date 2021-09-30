@@ -255,10 +255,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                 formMain.dgvRecommandList.Rows[index].Cells[colIndex].Style.BackColor = con.Value(model) ? Color.White : Color.Yellow;
                                 formMain.dgvRecommandList.Rows[index].Cells[colIndex].Style.SelectionBackColor = con.Value(model) ? colorSelectionBg : Color.Yellow;
                             } else {
+                                // 該項紅字
                                 formMain.dgvRecommandList.Rows[index].Cells[colIndex].Style.ForeColor = con.Value(model) ? Color.Black : Color.Red;
-                                formMain.dgvRecommandList.Rows[index].Cells[colIndex].Style.SelectionForeColor = con.Value(model) ? Color.Black : Color.Red;
-                            }
+                                formMain.dgvRecommandList.Rows[index].Cells[colIndex].Style.SelectionForeColor = con.Value(model) ? Color.Black : Color.Red;                                
+                            }                            
                         }
+                        // 項次紅字
+                        bool hasErrorItem = redFontConditions.Any(con => !yellowBgConditions.Contains(con.Key) &&!con.Value(model));
+                        formMain.dgvRecommandList.Rows[index].Cells["項次"].Style.ForeColor = hasErrorItem ? Color.Red : Color.Black;
+                        formMain.dgvRecommandList.Rows[index].Cells["項次"].Style.SelectionForeColor = hasErrorItem ? Color.Red : Color.Black;
                     } catch (Exception ex) {
                         Console.WriteLine(ex);
                         break;
