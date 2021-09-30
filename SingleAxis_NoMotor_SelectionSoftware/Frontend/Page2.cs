@@ -345,6 +345,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection &&
                 (formMain.cboModel.Text == "" || formMain.cboLead.Text == "" || !decimal.TryParse(formMain.txtStroke.Text, out decimal a))) {
                 formMain.chkAdvanceMode.Checked = false;
+                formMain.panelAdvanceParams.Enabled = formMain.chkAdvanceMode.Checked;
+
+                // 單位復原
+                formMain.cboMaxSpeedUnit.Text = "mm/s";
+
+                // 清空進階選項
+                formMain.txtMaxSpeed.Text = "";
+                formMain.txtAccelSpeed.Text = "";
+
+                // 進階選項值驗證Alarm隱藏
+                formMain.lbMaxSpeedAlarm.Visible = false;
+                formMain.lbAccelSpeedAlarm.Visible = false;
                 return;
             }
 

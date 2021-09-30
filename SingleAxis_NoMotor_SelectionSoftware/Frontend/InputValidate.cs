@@ -96,7 +96,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void TxtAccelSpeed_LostFocus(object sender, EventArgs e) {
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection || 
+                !decimal.TryParse(formMain.txtStroke.Text, out decimal value) ||
+                !decimal.TryParse(formMain.txtMaxSpeed.Text, out value) ||
+                !decimal.TryParse(formMain.txtAccelSpeed.Text, out value) ||
+                formMain.lbSideTableMsg.ForeColor == System.Drawing.Color.Red
+               )
                 return;
 
             // 加速度
@@ -120,7 +125,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void TxtMaxSpeed_LostFocus(object sender, EventArgs e) {
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection ||
+                !decimal.TryParse(formMain.txtStroke.Text, out decimal value) ||
+                !decimal.TryParse(formMain.txtMaxSpeed.Text, out value) ||
+                !decimal.TryParse(formMain.txtAccelSpeed.Text, out value) ||
+                formMain.lbSideTableMsg.ForeColor == System.Drawing.Color.Red
+               )
                 return;
 
             // 最高速度
@@ -164,26 +174,31 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     formMain.Invoke(new Action(() => {
                         formMain.lbMaxValue_MaxSpeed.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection &&
                                                                formMain.chkAdvanceMode.Checked &&
+                                                               formMain.lbSideTableMsg.ForeColor != System.Drawing.Color.Red &&
+                                                               decimal.TryParse(formMain.txtStroke.Text, out decimal value) &&
+                                                               decimal.TryParse(formMain.txtMaxSpeed.Text, out value) &&
+                                                               decimal.TryParse(formMain.txtAccelSpeed.Text, out value) &&
                                                                formMain.lbSideTableMsg.ForeColor != System.Drawing.Color.Red;
+                        //if (formMain.lbMaxValue_MaxSpeed.Visible) {
+                            try {
+                                double accelTime = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType() ? 0.4 : 0.2;
 
-                        try {
-                            double accelTime = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType() ? 0.4 : 0.2;
-
-                            if (int.TryParse(formMain.txtStroke.Text, out int stroke) &&
-                                double.TryParse(formMain.cboLead.Text, out double lead)) {
-                                if (formMain.cboMaxSpeedUnit.Text == "mm/s") {
-                                    int strokeTooShortMaxVmax = (int)Math.Round((double)stroke / accelTime, 0);
-                                    int strokeRpmMaxVmax = (int)Math.Round(formMain.page2.calc.RPM_TO_MMS(formMain.page2.calc.GetRpmByStroke(formMain.cboModel.Text, lead, stroke), lead), 0);
-                                    formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0} {1} )", Math.Min(strokeTooShortMaxVmax, strokeRpmMaxVmax), "mm/s");
-                                } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
-                                    int maxVmax = (int)Math.Round((double)stroke / accelTime, 0);
-                                    int maxRPM = formMain.page2.calc.MMS_TO_RPM(maxVmax, lead);
-                                    formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0} {1} )", maxRPM, "RPM");
+                                if (int.TryParse(formMain.txtStroke.Text, out int stroke) &&
+                                    double.TryParse(formMain.cboLead.Text, out double lead)) {
+                                    if (formMain.cboMaxSpeedUnit.Text == "mm/s") {
+                                        int strokeTooShortMaxVmax = (int)Math.Round((double)stroke / accelTime, 0);
+                                        int strokeRpmMaxVmax = (int)Math.Round(formMain.page2.calc.RPM_TO_MMS(formMain.page2.calc.GetRpmByStroke(formMain.cboModel.Text, lead, stroke), lead), 0);
+                                        formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0} {1} )", Math.Min(strokeTooShortMaxVmax, strokeRpmMaxVmax), "mm/s");
+                                    } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
+                                        int maxVmax = (int)Math.Round((double)stroke / accelTime, 0);
+                                        int maxRPM = formMain.page2.calc.MMS_TO_RPM(maxVmax, lead);
+                                        formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0} {1} )", maxRPM, "RPM");
+                                    }
                                 }
+                            } catch (Exception ex) {
+                                Console.WriteLine(ex);
                             }
-                        } catch (Exception ex) {
-                            Console.WriteLine(ex);
-                        }
+                        //}
                     }));
                 } catch (Exception ex) {
                     Console.WriteLine(ex);
@@ -198,10 +213,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             while (true) {
                 try {
                     formMain.Invoke(new Action(() => {
-                        formMain.lbMaxValue_AccelSpeed.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection && 
+                        formMain.lbMaxValue_AccelSpeed.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection &&
                                                                  formMain.chkAdvanceMode.Checked &&
+                                                                 formMain.lbSideTableMsg.ForeColor != System.Drawing.Color.Red &&
+                                                                 decimal.TryParse(formMain.txtStroke.Text, out decimal value) &&
+                                                                 decimal.TryParse(formMain.txtMaxSpeed.Text, out value) &&
+                                                                 decimal.TryParse(formMain.txtAccelSpeed.Text, out value) &&
                                                                  formMain.lbSideTableMsg.ForeColor != System.Drawing.Color.Red;
-
+                        //if (formMain.lbMaxValue_AccelSpeed.Visible) {
                         double accelTime = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType() ? 0.4 : 0.2;
 
                         if (int.TryParse(formMain.txtStroke.Text, out int stroke) &&
@@ -211,30 +230,33 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                 double vMax = maxSpeed;
                                 int min = Convert.ToInt32((Math.Pow(vMax, 2) / stroke).ToString("#0"));                // 等速時間為0
                                 int max = Convert.ToInt32((vMax / accelTime).ToString("#0"));                                // 加速時間0.2
-                                // 加速度顯示
+                                                                                                                             // 加速度顯示
                                 if (min >= max)
                                     formMain.lbMaxValue_AccelSpeed.Text = string.Format("( 限制值：{0} mm/s²)", max);
                                 else
                                     formMain.lbMaxValue_AccelSpeed.Text = string.Format("( 範圍：{0} ~ {1} mm/s²)", min, max);
-
-                                formMain.txtAccelSpeed.Enabled = !formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值");
-                                if (formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值"))
-                                    formMain.txtAccelSpeed.Text = max.ToString();
+                                if (formMain.lbMaxValue_AccelSpeed.Visible) {
+                                    formMain.txtAccelSpeed.Enabled = !formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值");
+                                    if (formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值"))
+                                        formMain.txtAccelSpeed.Text = max.ToString();
+                                }
                             } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
                                 double vMax = (maxSpeed * lead) / 60;
                                 int min = Convert.ToInt32((Math.Pow(vMax, 2) / stroke).ToString("#0"));                // 等速時間為0
                                 int max = Convert.ToInt32((vMax / accelTime).ToString("#0"));                                // 加速時間0.2
-                                // 加速度顯示
+                                                                                                                             // 加速度顯示
                                 if (min >= max)
                                     formMain.lbMaxValue_AccelSpeed.Text = string.Format("( 限制值：{0} mm/s²)", max);
                                 else
                                     formMain.lbMaxValue_AccelSpeed.Text = string.Format("( 範圍：{0} ~ {1} mm/s²)", min, max);
-
-                                formMain.txtAccelSpeed.Enabled = !formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值");
-                                if (formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值"))
-                                    formMain.txtAccelSpeed.Text = max.ToString();
-                            }                            
+                                if (formMain.lbMaxValue_AccelSpeed.Visible) {
+                                    formMain.txtAccelSpeed.Enabled = !formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值");
+                                    if (formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值"))
+                                        formMain.txtAccelSpeed.Text = max.ToString();
+                                }
+                            }
                         }
+                        //}
                     }));
                 } catch (Exception ex) {
                     Console.WriteLine(ex);
