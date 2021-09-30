@@ -426,7 +426,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
             double maxVmax = model.isUseBaltCalc ? (double)model.stroke / 1000f / 0.4 : (double)model.stroke / 1000f / 0.2;
             double strokeVax = GetVmax_mms(model, model.lead, model.stroke) / 1000;
-            //model.vMax = model.vMax > maxVmax ? maxVmax : model.vMax;
             model.vMax = Math.Min(Math.Min(model.vMax, maxVmax), strokeVax);
 
 
@@ -452,11 +451,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             }
 
             model.vMax = Math.Round(model.vMax, 3);
-            //// Vmax最大值
-            //model.maxVmax = Math.Min(
-            //    Math.Sqrt(model.accelSpeed * 1000 * model.stroke),  // 等速時間為0
-            //    GetVmax_mms(model, model.lead, model.stroke)        // 行程對照轉速
-            //);
 
             // 移動時間 (m/s)
             model.decelTime = model.accelTime;

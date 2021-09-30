@@ -131,11 +131,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (formMain.page2 == null)
                 return;
 
-            //// 型號選型驗證型號CBO
-            //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
-            //    if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "")
-            //        return;
-
             // 全數值驗證
             if (!formMain.page2.inputValidate.VerifyAllInputValidate())
                 return;
@@ -152,7 +147,6 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             else if (formMain.optDustFreeEnv.Checked)
                 curCondition.useEnvironment = Model.UseEnvironment.無塵;
             // 機構型態
-            //curCondition.modelType = (Model.ModelType)Enum.Parse(typeof(Model.ModelType), formMain.cboModelType.Text);
             curCondition.modelType = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value;
             // 安裝方式
             if (formMain.optHorizontalUse.Checked)
@@ -204,44 +198,37 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             else
                 curCondition.accelTime = 0.2;
             // 加速度
-            //formMain.page2.inputValidate.TxtAccelSpeed_Validating(null, null);            
             if (formMain.chkAdvanceMode.Checked)
                 curCondition.accelSpeed = Convert.ToDouble(formMain.txtAccelSpeed.Text);
             else
                 curCondition.accelSpeed = 0;
-            //// 傳動方式
-            //if (formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType())
-            //    curCondition.RepeatabilityCondition = repeatability => repeatability >= 0.04;
-            //else
-            //    curCondition.RepeatabilityCondition = repeatability => repeatability <= 0.01;
             // 馬達瓦數
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection) {
                 // 全部計算只能標準或自訂
                 if (formMain.cboPower.Text == "標準")
                     curCondition.powerSelection = Condition.PowerSelection.Standard;
                 else if (formMain.cboPower.Text == "自訂") {
-                    if (formMain.cboMotorParamsMotorPowerSelection.Text == "自訂") {
+                    if (formMain.chkMotorAdvanceMode.Checked)
                         curCondition.powerSelection = Condition.PowerSelection.Custom;
-                    } else {
+                    else
                         curCondition.powerSelection = Condition.PowerSelection.SelectedPower;
                         curCondition.selectedPower = Convert.ToInt32(formMain.cboMotorParamsMotorPowerSelection.Text);
-                    }
                 }
             } else if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
                 // 單項計算可選擇該型號適用瓦數
                 if (formMain.cboPower.Text.Contains("標準-")) {
                     curCondition.powerSelection = Condition.PowerSelection.SelectedPower;
                     curCondition.selectedPower = Convert.ToInt32(new Regex(@"\d+").Match(formMain.cboPower.Text).Value);
-                } else if (formMain.cboPower.Text == "自訂" && formMain.cboMotorParamsMotorPowerSelection.Text != "自訂") {
+                } else if (formMain.cboPower.Text == "自訂" && !formMain.chkMotorAdvanceMode.Checked) {
                     curCondition.powerSelection = Condition.PowerSelection.SelectedPower;
                     curCondition.selectedPower = Convert.ToInt32(formMain.cboMotorParamsMotorPowerSelection.Text);
-                } else if (formMain.cboPower.Text == "自訂" && formMain.cboMotorParamsMotorPowerSelection.Text == "自訂") {
+                } else if (formMain.cboPower.Text == "自訂" && formMain.chkMotorAdvanceMode.Checked) {
                     curCondition.powerSelection = Condition.PowerSelection.Custom;
                 }
             }
             // 馬達參數自訂
             if (curCondition.powerSelection == Condition.PowerSelection.Custom) {
-                if (formMain.cboMotorParamsMotorPowerSelection.Text == "自訂") {
+                if (formMain.chkMotorAdvanceMode.Checked) {
                     curCondition.ratedTorque = Convert.ToDouble(formMain.txtRatedTorque.Text);
                     curCondition.maxTorque = Convert.ToDouble(formMain.txtMaxTorque.Text);
                     curCondition.rotateInertia = Convert.ToDouble(formMain.txtRotateInertia.Text);

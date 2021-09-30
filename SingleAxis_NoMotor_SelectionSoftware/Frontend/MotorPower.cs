@@ -32,7 +32,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void InitEvents() {
             formMain.cboPower.SelectedValueChanged += UpdateMotorOptionsEnabled;
-            //formMain.chkMotorAdvanceMode.CheckedChanged += UpdateMotorOptionsEnabled;
+            formMain.chkMotorAdvanceMode.CheckedChanged += UpdateMotorOptionsEnabled;
             formMain.cboMotorParamsMotorPowerSelection.SelectedValueChanged += CboMotorParamsMotorPowerSelection_SelectedValueChanged;
             formMain.panelMotorParams.Controls.All().Where(control => control is TextBox).ToList().ForEach(control => control.TextChanged += MotorParam_TextChanged);
         }
@@ -54,15 +54,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void UpdateMotorOptionsEnabled(object sender, EventArgs e) {
-            //formMain.panelMotorAdvanceMode.Enabled = formMain.cboPower.Text.Contains("自訂");
-            formMain.panelPowerSelection.Enabled = formMain.cboPower.Text == "自訂" /*&& !formMain.chkMotorAdvanceMode.Checked*/;
-            formMain.panelMotorParams.Enabled = formMain.cboPower.Text == "自訂" /*&& formMain.chkMotorAdvanceMode.Checked*/;
+            formMain.panelMotorAdvanceMode.Enabled = formMain.cboPower.Text.Contains("自訂");
+            formMain.panelPowerSelection.Enabled = formMain.cboPower.Text == "自訂" && !formMain.chkMotorAdvanceMode.Checked;
+            formMain.panelMotorParams.Enabled = formMain.cboPower.Text == "自訂" && formMain.chkMotorAdvanceMode.Checked;
         }
 
         public void Load() {
             // 馬達參數功率選擇
             var powers = formMain.page2.calc.motorInfo.Rows.Cast<DataRow>().Select(row => row["馬達瓦數"]).ToList();
-            powers.Add("自訂");
+            //powers.Add("自訂");
             formMain.cboMotorParamsMotorPowerSelection.DataSource = powers.ToArray();
         }
 

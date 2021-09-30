@@ -233,8 +233,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 回到運轉條件
             formMain.cmdChangeRunCondition.Click += CmdChangeRunCondition_Click;
 
-            // 全選模式
-            formMain.pictureBoxToyo.DoubleClick += PictureBoxToyo_DoubleClick;
+            //// 全選模式
+            //formMain.pictureBoxToyo.DoubleClick += PictureBoxToyo_DoubleClick;
         }
 
         private void PictureBoxToyo_DoubleClick(object sender, EventArgs e) {
@@ -272,6 +272,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 側邊欄移除
             formMain.panelSideTable.Visible = false;
             formMain.panelCalcAllMode.Visible = false;
+
+            if (inputValidate.threadShowRPMCounting != null)
+                inputValidate.threadShowRPMCounting.Abort();
+            if (inputValidate.threadCalcVmaxRange != null)
+                inputValidate.threadCalcVmaxRange.Abort();
+            if (inputValidate.threadCalcAccelSpeedRange != null)
+                inputValidate.threadCalcAccelSpeedRange.Abort();
         }
 
         private void UpdateLayout(object sender, EventArgs e) {
@@ -397,6 +404,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.page3.Load();
             formMain.sideTable.Update(null, null);
             formMain.panelCalcAllMode.Visible = false;
+
+            if (inputValidate.threadShowRPMCounting != null)
+                inputValidate.threadShowRPMCounting.Abort();
+            if (inputValidate.threadCalcVmaxRange != null)
+                inputValidate.threadCalcVmaxRange.Abort();
+            if (inputValidate.threadCalcAccelSpeedRange != null)
+                inputValidate.threadCalcAccelSpeedRange.Abort();
         }
 
         private void CmdCalc_Click(object sender, EventArgs e) {
