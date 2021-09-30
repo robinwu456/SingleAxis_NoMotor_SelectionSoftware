@@ -226,34 +226,39 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         if (int.TryParse(formMain.txtStroke.Text, out int stroke) &&
                             double.TryParse(formMain.txtMaxSpeed.Text, out double maxSpeed) &&
                             double.TryParse(formMain.cboLead.Text, out double lead)) {
-                            if (formMain.cboMaxSpeedUnit.Text == "mm/s") {
-                                double vMax = maxSpeed;
-                                int min = Convert.ToInt32((Math.Pow(vMax, 2) / stroke).ToString("#0"));                // 等速時間為0
-                                int max = Convert.ToInt32((vMax / accelTime).ToString("#0"));                                // 加速時間0.2
-                                                                                                                             // 加速度顯示
-                                if (min >= max)
-                                    formMain.lbMaxValue_AccelSpeed.Text = string.Format("( 限制值：{0} mm/s²)", max);
-                                else
-                                    formMain.lbMaxValue_AccelSpeed.Text = string.Format("( 範圍：{0} ~ {1} mm/s²)", min, max);
-                                if (formMain.lbMaxValue_AccelSpeed.Visible) {
-                                    formMain.txtAccelSpeed.Enabled = !formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值");
-                                    if (formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值"))
-                                        formMain.txtAccelSpeed.Text = max.ToString();
+                            try {
+                                if (formMain.cboMaxSpeedUnit.Text == "mm/s") {
+                                    double vMax = maxSpeed;
+                                    int min = Convert.ToInt32((Math.Pow(vMax, 2) / stroke).ToString("#0"));                // 等速時間為0
+                                    int max = Convert.ToInt32((vMax / accelTime).ToString("#0"));                                // 加速時間0.2
+                                                                                                                                 // 加速度顯示
+                                    if (min >= max)
+                                        formMain.lbMaxValue_AccelSpeed.Text = string.Format("( 限制值：{0} mm/s²)", max);
+                                    else
+                                        formMain.lbMaxValue_AccelSpeed.Text = string.Format("( 範圍：{0} ~ {1} mm/s²)", min, max);
+                                    //formMain.txtAccelSpeed.Enabled = !formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值") || formMain.lbSideTableMsg.ForeColor == System.Drawing.Color.Red;
+                                    if (formMain.lbMaxValue_AccelSpeed.Visible) {
+                                        if (formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值"))
+                                            formMain.txtAccelSpeed.Text = max.ToString();
+                                    }
+                                } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
+                                    double vMax = (maxSpeed * lead) / 60;
+                                    int min = Convert.ToInt32((Math.Pow(vMax, 2) / stroke).ToString("#0"));                // 等速時間為0
+                                    int max = Convert.ToInt32((vMax / accelTime).ToString("#0"));                                // 加速時間0.2
+                                                                                                                                 // 加速度顯示
+                                    if (min >= max)
+                                        formMain.lbMaxValue_AccelSpeed.Text = string.Format("( 限制值：{0} mm/s²)", max);
+                                    else
+                                        formMain.lbMaxValue_AccelSpeed.Text = string.Format("( 範圍：{0} ~ {1} mm/s²)", min, max);
+                                    //formMain.txtAccelSpeed.Enabled = !formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值") || formMain.lbSideTableMsg.ForeColor == System.Drawing.Color.Red;
+                                    if (formMain.lbMaxValue_AccelSpeed.Visible) {
+                                        //formMain.txtAccelSpeed.Enabled = !formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值");
+                                        if (formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值"))
+                                            formMain.txtAccelSpeed.Text = max.ToString();
+                                    }
                                 }
-                            } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
-                                double vMax = (maxSpeed * lead) / 60;
-                                int min = Convert.ToInt32((Math.Pow(vMax, 2) / stroke).ToString("#0"));                // 等速時間為0
-                                int max = Convert.ToInt32((vMax / accelTime).ToString("#0"));                                // 加速時間0.2
-                                                                                                                             // 加速度顯示
-                                if (min >= max)
-                                    formMain.lbMaxValue_AccelSpeed.Text = string.Format("( 限制值：{0} mm/s²)", max);
-                                else
-                                    formMain.lbMaxValue_AccelSpeed.Text = string.Format("( 範圍：{0} ~ {1} mm/s²)", min, max);
-                                if (formMain.lbMaxValue_AccelSpeed.Visible) {
-                                    formMain.txtAccelSpeed.Enabled = !formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值");
-                                    if (formMain.lbMaxValue_AccelSpeed.Text.Contains("限制值"))
-                                        formMain.txtAccelSpeed.Text = max.ToString();
-                                }
+                            } catch (Exception ex) {
+                                Console.WriteLine(ex);
                             }
                         }
                         //}
