@@ -384,7 +384,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         if (selectModel.Count() == 0)
                             return;
                         Model curModel = selectModel.First();
-                        formMain.txtMaxSpeed.Text = curModel.vMax.ToString();
+                        formMain.txtMaxSpeed.Text = curModel.vMax.ToString("#0");
                         formMain.txtAccelSpeed.Text = curModel.accelSpeed.ToString();
                     } catch (Exception ex) {
                         Console.WriteLine("開進階選項回填錯誤");

@@ -179,26 +179,25 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                                                decimal.TryParse(formMain.txtMaxSpeed.Text, out value) &&
                                                                decimal.TryParse(formMain.txtAccelSpeed.Text, out value) &&
                                                                formMain.lbSideTableMsg.ForeColor != System.Drawing.Color.Red;
-                        //if (formMain.lbMaxValue_MaxSpeed.Visible) {
-                            try {
-                                double accelTime = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType() ? 0.4 : 0.2;
+                        try {
+                            double accelTime = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType() ? 0.4 : 0.2;
 
-                                if (int.TryParse(formMain.txtStroke.Text, out int stroke) &&
-                                    double.TryParse(formMain.cboLead.Text, out double lead)) {
-                                    if (formMain.cboMaxSpeedUnit.Text == "mm/s") {
-                                        int strokeTooShortMaxVmax = (int)Math.Round((double)stroke / accelTime, 0);
-                                        int strokeRpmMaxVmax = (int)Math.Round(formMain.page2.calc.RPM_TO_MMS(formMain.page2.calc.GetRpmByStroke(formMain.cboModel.Text, lead, stroke), lead), 0);
-                                        formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0} {1} )", Math.Min(strokeTooShortMaxVmax, strokeRpmMaxVmax), "mm/s");
-                                    } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
-                                        int maxVmax = (int)Math.Round((double)stroke / accelTime, 0);
-                                        int maxRPM = formMain.page2.calc.MMS_TO_RPM(maxVmax, lead);
-                                        formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0} {1} )", maxRPM, "RPM");
-                                    }
+                            if (int.TryParse(formMain.txtStroke.Text, out int stroke) &&
+                                double.TryParse(formMain.cboLead.Text, out double lead)) {
+                                if (formMain.cboMaxSpeedUnit.Text == "mm/s") {
+                                    int strokeTooShortMaxVmax = (int)Math.Round((double)stroke / accelTime, 0);
+                                    int strokeRpmMaxVmax = (int)Math.Round(formMain.page2.calc.RPM_TO_MMS(formMain.page2.calc.GetRpmByStroke(formMain.cboModel.Text, lead, stroke), lead), 0);
+                                    formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0} {1} )", Math.Min(strokeTooShortMaxVmax, strokeRpmMaxVmax), "mm/s");
+                                } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
+                                    int maxVmax = (int)Math.Round((double)stroke / accelTime, 0);
+                                    int maxRPM = formMain.page2.calc.MMS_TO_RPM(maxVmax, lead);
+                                    int strokeRPM = formMain.page2.calc.GetRpmByStroke(formMain.cboModel.Text, lead, stroke);
+                                    formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0} {1} )", Math.Min(maxRPM, strokeRPM), "RPM");
                                 }
-                            } catch (Exception ex) {
-                                Console.WriteLine(ex);
                             }
-                        //}
+                        } catch (Exception ex) {
+                            Console.WriteLine(ex);
+                        }
                     }));
                 } catch (Exception ex) {
                     Console.WriteLine(ex);
@@ -444,10 +443,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 return;
 
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
-                if (formMain.cboMaxSpeedUnit.Text == "mm/s")
-                    formMain.txtMaxSpeed.Text = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), lead).ToString("#0");
-                else
-                    formMain.txtMaxSpeed.Text = formMain.page2.calc.MMS_TO_RPM(Convert.ToDouble(formMain.txtMaxSpeed.Text), lead).ToString();
+                try {
+                    if (formMain.cboMaxSpeedUnit.Text == "mm/s")
+                        formMain.txtMaxSpeed.Text = formMain.page2.calc.RPM_TO_MMS(Convert.ToInt32(formMain.txtMaxSpeed.Text), lead).ToString("#0");
+                    else
+                        formMain.txtMaxSpeed.Text = formMain.page2.calc.MMS_TO_RPM(Convert.ToDouble(formMain.txtMaxSpeed.Text), lead).ToString();
+                } catch (Exception ex) {
+                    Console.WriteLine(ex);
+                }
             }
         }
     }
