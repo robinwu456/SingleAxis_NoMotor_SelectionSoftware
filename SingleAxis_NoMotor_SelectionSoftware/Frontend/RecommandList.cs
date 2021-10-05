@@ -260,6 +260,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                             if (yellowBgConditions.Contains(con.Key)) {
                                 formMain.dgvRecommandList.Rows[index].Cells[colIndex].Style.BackColor = con.Value(model) ? Color.White : Color.Yellow;
                                 formMain.dgvRecommandList.Rows[index].Cells[colIndex].Style.SelectionBackColor = con.Value(model) ? colorSelectionBg : Color.Yellow;
+                                formMain.dgvRecommandList.Rows[index].Cells[colIndex].ToolTipText = con.Value(model) ? "" : alarmMsg[con.Key];
                             } else {
                                 // 該項紅字
                                 formMain.dgvRecommandList.Rows[index].Cells[colIndex].Style.ForeColor = con.Value(model) ? Color.Black : Color.Red;
@@ -387,6 +388,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.page2.chartInfo.PaintGraph();
         }
 
+        // 右側訊息紅字
         public void VerifySelectedModelAlarm() {
             var curRow = formMain.dgvRecommandList.CurrentRow;
             if (curRow.Cells["項次"].Value == null)
@@ -395,9 +397,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (selectModel.Count() == 0)
                 return;
             Model curModel = selectModel.First();
+            //var errorMsgs = redFontConditions.Where(con => !yellowBgConditions.Contains(con.Key) && !con.Value(curModel)).Select(con => alarmMsg[con.Key]);
+            //var yellowMsgs = formMain.dgvRecommandList.CurrentRow.Cells.Cast<DataGridViewCell>().Where(cell => cell.Style.BackColor == Color.Yellow).Select(cell => alarmMsg[formMain.dgvRecommandList.Columns[cell.ColumnIndex].Name]);
+            //errorMsgs = errorMsgs.Concat(yellowMsgs);
             var errorMsgs = redFontConditions.Where(con => !yellowBgConditions.Contains(con.Key) && !con.Value(curModel)).Select(con => alarmMsg[con.Key]);
-            var yellowMsgs = formMain.dgvRecommandList.CurrentRow.Cells.Cast<DataGridViewCell>().Where(cell => cell.Style.BackColor == Color.Yellow).Select(cell => alarmMsg[formMain.dgvRecommandList.Columns[cell.ColumnIndex].Name]);
-            errorMsgs = errorMsgs.Concat(yellowMsgs);
             Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.標準 : Model.UseEnvironment.無塵;
             if (errorMsgs.Count() == 0)
                 formMain.sideTable.UpdateMsg(formMain.page2.calc.GetModelTypeComment(formMain.page2.curSelectModelType), SideTable.MsgStatus.Normal);
