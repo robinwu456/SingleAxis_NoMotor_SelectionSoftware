@@ -186,7 +186,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                 double.TryParse(formMain.cboLead.Text, out double lead)) {
                                 if (formMain.cboMaxSpeedUnit.Text == "mm/s") {
                                     int strokeTooShortMaxVmax = (int)Math.Round((double)stroke / accelTime, 0);
-                                    int strokeRpmMaxVmax = (int)Math.Round(formMain.page2.calc.RPM_TO_MMS(formMain.page2.calc.GetRpmByStroke(formMain.cboModel.Text, lead, stroke), lead), 0);
+                                    int strokeRpmMaxVmax = Convert.ToInt32(formMain.page2.calc.RPM_TO_MMS(formMain.page2.calc.GetRpmByStroke(formMain.cboModel.Text, lead, stroke), lead));
                                     formMain.lbMaxValue_MaxSpeed.Text = string.Format("( 最大值：{0} {1} )", Math.Min(strokeTooShortMaxVmax, strokeRpmMaxVmax), "mm/s");
                                 } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
                                     int maxVmax = (int)Math.Round((double)stroke / accelTime, 0);

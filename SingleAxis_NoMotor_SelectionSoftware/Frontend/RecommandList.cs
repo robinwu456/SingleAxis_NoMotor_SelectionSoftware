@@ -194,7 +194,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         //formMain.dgvRecommandList.Rows[index].Cells["最高轉速"].Value = model.showRpm;
                         formMain.dgvRecommandList.Rows[index].Cells["最高轉速"].Value = model.rpm;
                         //formMain.dgvRecommandList.Rows[index].Cells["運行速度"].Value = Convert.ToDouble(model.vMax.ToString("#0.000"));
-                        formMain.dgvRecommandList.Rows[index].Cells["運行速度"].Value = (int)model.vMax;
+                        formMain.dgvRecommandList.Rows[index].Cells["運行速度"].Value = Convert.ToInt32(model.vMax.ToString("#0"));
                         formMain.dgvRecommandList.Rows[index].Cells["加速度"].Value = model.accelSpeed;
                         formMain.dgvRecommandList.Rows[index].Cells["最大行程"].Value = model.maxStroke;
                         formMain.dgvRecommandList.Rows[index].Cells["運行時間"].Value = model.moveTime;
@@ -286,9 +286,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         if (formMain.chkAdvanceMode.Checked) {
                             Model curModel = curRecommandList.First();
                             if (formMain.cboMaxSpeedUnit.Text == "mm/s") {
-                                formMain.txtMaxSpeed.Text = Convert.ToDouble(curModel.vMax.ToString("#0.000")).ToString();
+                                //formMain.txtMaxSpeed.Text = Convert.ToDouble(curModel.vMax.ToString("#0.000")).ToString();
+                                formMain.txtMaxSpeed.Text = Convert.ToDouble((int)curModel.vMax).ToString();
                             } else if (formMain.cboMaxSpeedUnit.Text == "RPM") {
-                                int curRpm = formMain.page2.calc.MMS_TO_RPM(curModel.vMax, curModel.lead);
+                                //int curRpm = formMain.page2.calc.MMS_TO_RPM(curModel.vMax, curModel.lead);
+                                int curRpm = curModel.rpm;
                                 formMain.txtMaxSpeed.Text = curRpm.ToString();
                             }
                             formMain.txtAccelSpeed.Text = curModel.accelSpeed.ToString();

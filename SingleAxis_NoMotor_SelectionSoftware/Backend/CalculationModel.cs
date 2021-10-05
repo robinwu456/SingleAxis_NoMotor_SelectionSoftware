@@ -50,6 +50,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.rpm = GetBeltRPM(model.name, model.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
             else
                 model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead);
+            int maxRpm = GetRpmByStroke(model.name, model.lead, model.stroke);
+            model.rpm = Math.Min(model.rpm, maxRpm);
 
             CalcMoment calcMoment = new CalcMoment(model, condition.setupMethod);
             model.w = calcMoment.w;
@@ -271,9 +273,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // Vmax驗證
             if (condition.vMaxCalcMode == Condition.CalcVmax.Max) {
                 if (model.isUseBaltCalc)
-                    model.vMax = GetBeltVmax_ms(model.name, model.lead, condition.stroke, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
+                    model.vMax = Math.Round(GetBeltVmax_ms(model.name, model.lead, condition.stroke, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType), 3);
                 else
-                    model.vMax = GetVmax_ms(model, model.lead, condition.stroke);
+                    model.vMax = Math.Round(GetVmax_ms(model, model.lead, condition.stroke), 3);
             } else if (condition.vMaxCalcMode == Condition.CalcVmax.Custom) {
                 // 單位轉換
                 if (condition.moveSpeedUnit == Condition.MoveSpeedUnit.Vmax)
@@ -286,18 +288,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 }
 
                 if (!model.isUseBaltCalc)
-                    model.vMax = Math.Min(model.vMax, GetVmax_ms(model, model.lead, condition.stroke));
+                    model.vMax = Math.Min(model.vMax, Math.Round(GetVmax_ms(model, model.lead, condition.stroke), 3));
             }
             double maxVmax = model.isUseBaltCalc ? (double)model.stroke / 1000f / 0.4 : (double)model.stroke / 1000f / 0.2;
-            double strokeVax = GetVmax_mms(model, model.lead, model.stroke) / 1000;
+            double strokeVax = Math.Round(GetVmax_mms(model, model.lead, model.stroke) / 1000, 3);
             model.vMax = Math.Min(Math.Min(model.vMax, maxVmax), strokeVax);
 
             if (condition.vMaxCalcMode == Condition.CalcVmax.Max) {
                 // 加速時間
                 model.accelTime = condition.accelTime;
                 // 驗正行程過短 (m/s)
-                if (IsStrokeTooShort_CheckByAccelTime(model.stroke, model.vMax, model.accelTime))
+                if (IsStrokeTooShort_CheckByAccelTime(model.stroke, model.vMax, model.accelTime)) {
                     model.vMax = (model.stroke / model.accelTime) / 1000;   // m/s
+                    model.vMax = Math.Round(model.vMax, 3);
+                }
                 // 加速度
                 model.accelSpeed = model.vMax / condition.accelTime;        // m/s^2
             } else {
