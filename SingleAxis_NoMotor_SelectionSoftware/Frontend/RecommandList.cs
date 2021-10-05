@@ -32,10 +32,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             { "運行時間", "運行時間過短" },
             { "運行速度", "運行速度過高自動調整" },
             { "加速度", "加速時間過短自動調整" },
+            { "最高轉速", "轉速過高自動調整" },
         };
         private string[] yellowBgConditions = new string[] {    // 黃底欄位(提示但可以下一步)
             "運行速度",
             "加速度",
+            "最高轉速",
         };
 
         public RecommandList(FormMain formMain) {
@@ -58,6 +60,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     (formMain.cboMaxSpeedUnit.Text == "RPM" && model.rpm == Convert.ToDouble(formMain.txtMaxSpeed.Text))
                 ) },
                 { "加速度", model => formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection || !formMain.chkAdvanceMode.Checked || model.accelSpeed == Convert.ToDouble(formMain.txtAccelSpeed.Text) },
+                { "最高轉速", model => formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection || !formMain.chkAdvanceMode.Checked || (
+                    (formMain.cboMaxSpeedUnit.Text == "mm/s" && model.vMax == Convert.ToDouble(formMain.txtMaxSpeed.Text)) ||
+                    (formMain.cboMaxSpeedUnit.Text == "RPM" && model.rpm == Convert.ToDouble(formMain.txtMaxSpeed.Text))
+                ) },
             };
             InitEvents();
         }
