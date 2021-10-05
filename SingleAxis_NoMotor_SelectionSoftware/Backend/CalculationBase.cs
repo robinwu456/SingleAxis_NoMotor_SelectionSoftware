@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Text.RegularExpressions;
 using System.Data;
 using StrokeTooShortConverterLibraries;
 using System.Drawing;
@@ -242,6 +242,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             else
                 strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => row["型號"].ToString() == model && Convert.ToDouble(row["導程"].ToString()) == (int)Math.Round(lead, 0))
                                                         .Select(row => Convert.ToInt32(row["行程"].ToString()));
+            return strokes.Max();
+        }
+
+        public int GetSeriesMaxStroke(string series) {
+            IEnumerable<int> strokes;
+            //strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => Regex.Replace(row["型號"].ToString(), @"\d+", "").Equals(series))
+            //                                        .Select(row => Convert.ToInt32(row["行程"].ToString()));
+
+            strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => GetModelType(row["型號"].ToString()).ToString().Equals(series))
+                                                    .Select(row => Convert.ToInt32(row["行程"].ToString()));
+
             return strokes.Max();
         }
 
@@ -563,9 +574,19 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         public Model.ModelType GetModelType(string model) {
-            string type = modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString().StartsWith(model))["型號類別"].ToString();
+            var types = modelInfo.Rows.Cast<DataRow>().Where(row => row["型號"].ToString().StartsWith(model));
+            if (types.Count() == 0)
+                return Model.ModelType.Null;
+            string type = types.First()["型號類別"].ToString();
             Model.ModelType modelType = (Model.ModelType)Enum.Parse(typeof(Model.ModelType), type);
             return modelType;
+
+            //if (modelInfo.Rows.Cast<DataRow>().Any(row => row["型號"].ToString().StartsWith(model))) {
+            //    string type = modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString().StartsWith(model))["型號類別"].ToString();
+            //    Model.ModelType modelType = (Model.ModelType)Enum.Parse(typeof(Model.ModelType), type);
+            //    return modelType;
+            //} else
+            //    return Model.ModelType.Null;
         }
 
         public Model.UseEnvironment GetModelUseEnv(string model) {

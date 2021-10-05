@@ -198,6 +198,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             inputValidate.threadCalcVmaxRange.Start();
             inputValidate.threadCalcAccelSpeedRange = new Thread(inputValidate.CalcAccelSpeedRange);
             inputValidate.threadCalcAccelSpeedRange.Start();
+
+            // 更新預設系列最大行程
+            int maxStroke = formMain.page2.calc.GetSeriesMaxStroke(curSelectModelType.ToString());
+            formMain.page2.runCondition.scrollBarStroke.maxValue = maxStroke;
         }
 
         private void InitEvents() {
@@ -326,9 +330,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //formMain.panelReducerRatio.Visible = curSelectModelType.IsContainsReducerRatioType() && formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
             formMain.panelReducerParam.Visible = curSelectModelType.IsContainsReducerRatioType();
 
-            
+            // 修正時清除側邊欄資訊
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
                 formMain.sideTable.ClearModelInfo();
+
+            // 更新行程
+            int maxStroke = formMain.page2.calc.GetSeriesMaxStroke(curSelectModelType.ToString());
+            formMain.page2.runCondition.scrollBarStroke.maxValue = maxStroke;
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {
