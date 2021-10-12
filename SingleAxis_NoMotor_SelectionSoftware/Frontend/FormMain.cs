@@ -23,8 +23,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public Page3 page3;
 
         private string version;
-        private DateTime softwareDeadline = new DateTime(2022, 12, 31);      // 軟體到期日
-        //private DateTime softwareDeadline = new DateTime(2021, 10, 10);      // 軟體到期日
+        private DateTime softwareDeadline = DateTime.MaxValue;              // 軟體無到期日
+        //private DateTime softwareDeadline = new DateTime(2021, 10, 17);     // 軟體到期日
 
         public FormMain() {
             InitializeComponent();
@@ -75,7 +75,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             Assembly assembly = Assembly.GetExecutingAssembly();
             FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
             version = fvi.FileVersion;
-            lbTitle.Text += " v" + version;
+            if (softwareDeadline == DateTime.MaxValue)
+                lbTitle.Text += string.Format(" v{0}", version);
+            else
+                lbTitle.Text += string.Format(" v{0} ( 軟體到期日：{1} )", version, softwareDeadline.ToString("MM/dd"));
 
             // 到期日判斷
             VerifyDateTimeLimit();
@@ -92,6 +95,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void VerifyDateTimeLimit() {
+            if (softwareDeadline == DateTime.MaxValue)
+                return;
+
             if (DateTime.Now > softwareDeadline.AddDays(1)) {
                 MessageBox.Show("已過使用期限", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();

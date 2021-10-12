@@ -43,7 +43,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void InitEvents() {
-            formMain.lbTitle.DoubleClick += StartTest;
+            //formMain.lbTitle.DoubleClick += StartTest;
         }
 
         private void StartTest(object sender, EventArgs e) {

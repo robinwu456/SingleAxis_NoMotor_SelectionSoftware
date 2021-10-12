@@ -36,9 +36,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.cmdZoom.MouseClick += ControlMouseClick;
             formMain.cmdClose.MouseClick += ControlMouseClick;
 
-            formMain.splitContainerBase.Panel1.MouseDown += ControlBar_MouseDown;
-            formMain.splitContainerBase.Panel1.MouseUp += ControlBar_MouseUp;
-            formMain.splitContainerBase.Panel1.MouseMove += ControlBar_MouseMove;
+            //formMain.splitContainerBase.Panel1.MouseDown += ControlBar_MouseDown;
+            //formMain.splitContainerBase.Panel1.MouseUp += ControlBar_MouseUp;
+            //formMain.splitContainerBase.Panel1.MouseMove += ControlBar_MouseMove;
+            foreach (Control control in formMain.splitContainerBase.Panel1.Controls) {
+                control.MouseDown += ControlBar_MouseDown;
+                control.MouseUp += ControlBar_MouseUp;
+                control.MouseMove += ControlBar_MouseMove;
+            }
         }
 
         private void ControlMouseEnter(object sender, EventArgs e) {
