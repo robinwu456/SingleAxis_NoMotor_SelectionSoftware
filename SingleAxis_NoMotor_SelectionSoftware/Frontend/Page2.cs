@@ -268,6 +268,21 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 垂直不顯示力矩B
             formMain.panelMomentB.Visible = !formMain.optVerticalUse.Checked;
+
+            // 更新荷重
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
+                Condition con = new Condition();
+                if (formMain.optHorizontalUse.Checked)
+                    con.setupMethod = Model.SetupMethod.水平;
+                else if (formMain.optWallHangingUse.Checked)
+                    con.setupMethod = Model.SetupMethod.橫掛;
+                else if (formMain.optVerticalUse.Checked)
+                    con.setupMethod = Model.SetupMethod.垂直;
+                double maxLoad = formMain.page2.calc.GetMaxLoad(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text), con);
+                if (maxLoad == int.MaxValue)
+                    maxLoad = RunCondition.defaultMaxLoad;
+                formMain.page2.runCondition.scrollBarLoad.maxValue = (int)maxLoad;
+            }
         }
 
         private void PrePage_Click(object sender, EventArgs e) {
