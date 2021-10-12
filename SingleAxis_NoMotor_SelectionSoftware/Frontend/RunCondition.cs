@@ -79,7 +79,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //formMain.dgvReducerInfo.CellValueChanged += UpdateCondition;
             //formMain.optExpectServiceLife.CheckedChanged += UpdateCondition;
 
-            // Custom scrollBar init
+            // stroke slider
             scrollBarStroke = new CustomScrollBar(formMain, formMain.scrollBarPanelStroke, formMain.scrollBarThumbStroke, null, null);
             scrollBarStroke.Name = "scrollBarStroke";                
             scrollBarStroke.bindingTextBox = formMain.txtStroke;
@@ -93,6 +93,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     formMain.page2.inputValidate.InputCondition_Validating(formMain.txtStroke, null);
             });
 
+            // load slider
             scrollBarLoad = new CustomScrollBar(formMain, formMain.scrollBarPanelLoad, formMain.scrollBarThumbLoad, null, null);
             scrollBarLoad.Name = "scrollBarStroke";                   
             scrollBarLoad.bindingTextBox = formMain.txtLoad;

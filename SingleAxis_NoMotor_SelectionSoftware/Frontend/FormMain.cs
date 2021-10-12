@@ -23,7 +23,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public Page3 page3;
 
         private string version;
-        private DateTime softwareDeadline = new DateTime(2021, 10, 10);      // 軟體到期日
+        private DateTime softwareDeadline = new DateTime(2022, 12, 31);      // 軟體到期日
+        //private DateTime softwareDeadline = new DateTime(2021, 10, 10);      // 軟體到期日
 
         public FormMain() {
             InitializeComponent();
