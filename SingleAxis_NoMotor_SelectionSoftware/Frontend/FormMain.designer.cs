@@ -278,8 +278,15 @@
             this.cboMaxCalcMode = new System.Windows.Forms.ComboBox();
             this.label80 = new System.Windows.Forms.Label();
             this.panelSetup = new System.Windows.Forms.Panel();
+            this.panelSetupSelection = new System.Windows.Forms.Panel();
+            this.panelSetupWallHang = new System.Windows.Forms.Panel();
             this.label64 = new System.Windows.Forms.Label();
+            this.picWallHangingUse = new System.Windows.Forms.PictureBox();
+            this.panelSetupVertical = new System.Windows.Forms.Panel();
+            this.picVerticalUse = new System.Windows.Forms.PictureBox();
             this.label63 = new System.Windows.Forms.Label();
+            this.panelSetupHorizontal = new System.Windows.Forms.Panel();
+            this.picHorizontalUse = new System.Windows.Forms.PictureBox();
             this.label62 = new System.Windows.Forms.Label();
             this.panelMoment = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
@@ -303,9 +310,6 @@
             this.optHorizontalUse = new System.Windows.Forms.RadioButton();
             this.optVerticalUse = new System.Windows.Forms.RadioButton();
             this.optWallHangingUse = new System.Windows.Forms.RadioButton();
-            this.picWallHangingUse = new System.Windows.Forms.PictureBox();
-            this.picVerticalUse = new System.Windows.Forms.PictureBox();
-            this.picHorizontalUse = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label66 = new System.Windows.Forms.Label();
@@ -504,15 +508,19 @@
             this.panelCalcAllParam.SuspendLayout();
             this.panelNoConstantTimeParam.SuspendLayout();
             this.panelSetup.SuspendLayout();
+            this.panelSetupSelection.SuspendLayout();
+            this.panelSetupWallHang.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picWallHangingUse)).BeginInit();
+            this.panelSetupVertical.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picVerticalUse)).BeginInit();
+            this.panelSetupHorizontal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picHorizontalUse)).BeginInit();
             this.panelMoment.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel25.SuspendLayout();
             this.panelMomentB.SuspendLayout();
             this.panel23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMoment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWallHangingUse)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picVerticalUse)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHorizontalUse)).BeginInit();
             this.panel8.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.panelModelSelection.SuspendLayout();
@@ -2549,30 +2557,75 @@
             // 
             // panelSetup
             // 
-            this.panelSetup.Controls.Add(this.label64);
-            this.panelSetup.Controls.Add(this.label63);
-            this.panelSetup.Controls.Add(this.label62);
+            this.panelSetup.Controls.Add(this.panelSetupSelection);
             this.panelSetup.Controls.Add(this.panelMoment);
             this.panelSetup.Controls.Add(this.picMoment);
             this.panelSetup.Controls.Add(this.optHorizontalUse);
             this.panelSetup.Controls.Add(this.optVerticalUse);
             this.panelSetup.Controls.Add(this.optWallHangingUse);
-            this.panelSetup.Controls.Add(this.picWallHangingUse);
-            this.panelSetup.Controls.Add(this.picVerticalUse);
-            this.panelSetup.Controls.Add(this.picHorizontalUse);
             this.panelSetup.Controls.Add(this.panel8);
             resources.ApplyResources(this.panelSetup, "panelSetup");
             this.panelSetup.Name = "panelSetup";
+            // 
+            // panelSetupSelection
+            // 
+            this.panelSetupSelection.Controls.Add(this.panelSetupWallHang);
+            this.panelSetupSelection.Controls.Add(this.panelSetupVertical);
+            this.panelSetupSelection.Controls.Add(this.panelSetupHorizontal);
+            resources.ApplyResources(this.panelSetupSelection, "panelSetupSelection");
+            this.panelSetupSelection.Name = "panelSetupSelection";
+            // 
+            // panelSetupWallHang
+            // 
+            this.panelSetupWallHang.Controls.Add(this.label64);
+            this.panelSetupWallHang.Controls.Add(this.picWallHangingUse);
+            resources.ApplyResources(this.panelSetupWallHang, "panelSetupWallHang");
+            this.panelSetupWallHang.Name = "panelSetupWallHang";
             // 
             // label64
             // 
             resources.ApplyResources(this.label64, "label64");
             this.label64.Name = "label64";
             // 
+            // picWallHangingUse
+            // 
+            this.picWallHangingUse.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.setup_wallHang_normal;
+            resources.ApplyResources(this.picWallHangingUse, "picWallHangingUse");
+            this.picWallHangingUse.Name = "picWallHangingUse";
+            this.picWallHangingUse.TabStop = false;
+            // 
+            // panelSetupVertical
+            // 
+            this.panelSetupVertical.Controls.Add(this.picVerticalUse);
+            this.panelSetupVertical.Controls.Add(this.label63);
+            resources.ApplyResources(this.panelSetupVertical, "panelSetupVertical");
+            this.panelSetupVertical.Name = "panelSetupVertical";
+            // 
+            // picVerticalUse
+            // 
+            this.picVerticalUse.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.setup_vertical_normal;
+            resources.ApplyResources(this.picVerticalUse, "picVerticalUse");
+            this.picVerticalUse.Name = "picVerticalUse";
+            this.picVerticalUse.TabStop = false;
+            // 
             // label63
             // 
             resources.ApplyResources(this.label63, "label63");
             this.label63.Name = "label63";
+            // 
+            // panelSetupHorizontal
+            // 
+            this.panelSetupHorizontal.Controls.Add(this.picHorizontalUse);
+            this.panelSetupHorizontal.Controls.Add(this.label62);
+            resources.ApplyResources(this.panelSetupHorizontal, "panelSetupHorizontal");
+            this.panelSetupHorizontal.Name = "panelSetupHorizontal";
+            // 
+            // picHorizontalUse
+            // 
+            this.picHorizontalUse.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.setup_horizontal_enabled;
+            resources.ApplyResources(this.picHorizontalUse, "picHorizontalUse");
+            this.picHorizontalUse.Name = "picHorizontalUse";
+            this.picHorizontalUse.TabStop = false;
             // 
             // label62
             // 
@@ -2729,27 +2782,6 @@
             this.optWallHangingUse.ForeColor = System.Drawing.Color.Black;
             this.optWallHangingUse.Name = "optWallHangingUse";
             this.optWallHangingUse.UseVisualStyleBackColor = true;
-            // 
-            // picWallHangingUse
-            // 
-            this.picWallHangingUse.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.setup_wallHang_normal;
-            resources.ApplyResources(this.picWallHangingUse, "picWallHangingUse");
-            this.picWallHangingUse.Name = "picWallHangingUse";
-            this.picWallHangingUse.TabStop = false;
-            // 
-            // picVerticalUse
-            // 
-            this.picVerticalUse.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.setup_vertical_normal;
-            resources.ApplyResources(this.picVerticalUse, "picVerticalUse");
-            this.picVerticalUse.Name = "picVerticalUse";
-            this.picVerticalUse.TabStop = false;
-            // 
-            // picHorizontalUse
-            // 
-            this.picHorizontalUse.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.setup_horizontal_enabled;
-            resources.ApplyResources(this.picHorizontalUse, "picHorizontalUse");
-            this.picHorizontalUse.Name = "picHorizontalUse";
-            this.picHorizontalUse.TabStop = false;
             // 
             // panel8
             // 
@@ -3544,6 +3576,13 @@
             this.panelNoConstantTimeParam.PerformLayout();
             this.panelSetup.ResumeLayout(false);
             this.panelSetup.PerformLayout();
+            this.panelSetupSelection.ResumeLayout(false);
+            this.panelSetupWallHang.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picWallHangingUse)).EndInit();
+            this.panelSetupVertical.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picVerticalUse)).EndInit();
+            this.panelSetupHorizontal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picHorizontalUse)).EndInit();
             this.panelMoment.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             this.panel25.ResumeLayout(false);
@@ -3553,9 +3592,6 @@
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMoment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWallHangingUse)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picVerticalUse)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHorizontalUse)).EndInit();
             this.panel8.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
@@ -3973,6 +4009,10 @@
         private System.Windows.Forms.Label label20;
         public CustomToggle.CustomToggle chkMotorAdvanceMode;
         public System.Windows.Forms.Panel panelMotorAdvanceMode;
+        public System.Windows.Forms.Panel panelSetupSelection;
+        public System.Windows.Forms.Panel panelSetupWallHang;
+        public System.Windows.Forms.Panel panelSetupVertical;
+        public System.Windows.Forms.Panel panelSetupHorizontal;
     }
 }
 

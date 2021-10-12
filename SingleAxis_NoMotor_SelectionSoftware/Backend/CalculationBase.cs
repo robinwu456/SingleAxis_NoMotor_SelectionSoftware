@@ -260,19 +260,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 取最大荷重
             double maxLoad = int.MaxValue;
             string data = "";
-            //lead = conditions.reducerRatio.Keys.Contains(model) ?
-            //                        (int)Math.Round((lead * (double)conditions.reducerRatio[model]), 0) : lead;
 
             try {
-                if (momentData.Rows.Cast<DataRow>()
-                                             .Where(row => row["型號"].ToString() == model &&
-                                                           Convert.ToDouble(row["導程"].ToString()) == lead &&
-                                                           row["安裝方式"].ToString() == conditions.setupMethod.ToString()).Count() == 0)
+                Func<DataRow, bool> VerifyModel;
+                if (model.IsContainsReducerRatioType())
+                    VerifyModel = (row) => row["型號"].ToString().StartsWith(model);
+                else
+                    VerifyModel = (row) => row["型號"].ToString() == model;
+
+                if (momentData.Rows.Cast<DataRow>().Where(row => VerifyModel(row) && Convert.ToDouble(row["導程"].ToString()) == lead &&
+                                                    row["安裝方式"].ToString() == conditions.setupMethod.ToString()).Count() == 0)
                     return maxLoad;
 
                 data = momentData.Rows.Cast<DataRow>()
-                                             .Where(row => row["型號"].ToString() == model &&
-                                                           Convert.ToDouble(row["導程"].ToString()) == lead &&
+                                             .Where(row => VerifyModel(row) && Convert.ToDouble(row["導程"].ToString()) == lead && 
                                                            row["安裝方式"].ToString() == conditions.setupMethod.ToString())
                                              .Select(row => row["最大荷重"].ToString())
                                              .First();
@@ -557,7 +558,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return comment;
         }
 
-        public Model.SetupMethod[] GetSupportMethod(Model.ModelType modelType) {
+        public Model.SetupMethod[] GetSupportSetup(Model.ModelType modelType) {
             var setups = modelInfo.Rows.Cast<DataRow>().Where(row => row["型號類別"].ToString() == modelType.ToString())
                                                        .Select(row => row["安裝方式"].ToString().Split('&'))
                                                        .Distinct();
@@ -568,6 +569,22 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     if (!supportSetups.Contains(_s))
                         supportSetups.Add(_s);
                 });
+            });
+
+            return supportSetups.ToArray();
+        }
+
+        public Model.SetupMethod[] GetSupportSetup(string modelName) {
+            string[] setups;
+            if (modelName.IsContainsReducerRatioType())
+                setups = modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString().StartsWith(modelName))["安裝方式"].ToString().Split('&');
+            else
+                setups = modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString() == modelName)["安裝方式"].ToString().Split('&');
+            List<Model.SetupMethod> supportSetups = new List<Model.SetupMethod>();
+            setups.ToList().ForEach(s => {
+                Model.SetupMethod _s = (Model.SetupMethod)Enum.Parse(typeof(Model.SetupMethod), s);
+                if (!supportSetups.Contains(_s))
+                    supportSetups.Add(_s);
             });
 
             return supportSetups.ToArray();

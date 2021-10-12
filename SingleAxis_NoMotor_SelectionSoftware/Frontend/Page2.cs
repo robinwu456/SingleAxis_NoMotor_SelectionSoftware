@@ -13,6 +13,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public int maxHeight = 1333;
         public Dictionary<RadioButton, Model.ModelType> modelTypeOptMap = new Dictionary<RadioButton, Model.ModelType>();
         public Dictionary<RadioButton, Model.SetupMethod> setupMethodOptMap = new Dictionary<RadioButton, Model.SetupMethod>();
+        public Dictionary<RadioButton, Panel> setupMethodPicOptMap = new Dictionary<RadioButton, Panel>();
         public Model.ModelType curSelectModelType = Model.ModelType.ETH;
         public Calculation calc = new Calculation();
         // Step2各項目
@@ -62,6 +63,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 { formMain.optHorizontalUse, Model.SetupMethod.水平 },
                 { formMain.optWallHangingUse, Model.SetupMethod.橫掛 },
                 { formMain.optVerticalUse, Model.SetupMethod.垂直 },
+            };
+            setupMethodPicOptMap = new Dictionary<RadioButton, Panel>() {
+                { formMain.optHorizontalUse, formMain.panelSetupHorizontal },
+                { formMain.optWallHangingUse, formMain.panelSetupWallHang },
+                { formMain.optVerticalUse, formMain.panelSetupVertical },
             };
 
             InitEvents();            
@@ -329,11 +335,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
                 formMain.sideTable.UpdateModelImg(curSelectModelType);
+
             // 驗證安裝方式選項
-            Model.SetupMethod[] modelTypeSupportSetupMethod = calc.GetSupportMethod(curSelectModelType);
-            setupMethodOptMap.ToList().ForEach(pair => pair.Key.Enabled = modelTypeSupportSetupMethod.Contains(pair.Value));
-            if (setupMethodOptMap.ToList().Any(pair => pair.Key.Checked && !pair.Key.Enabled))
-                setupMethodOptMap.ToList().First(pair => pair.Key.Enabled).Key.Checked = true;
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection) {
+                Model.SetupMethod[] modelTypeSupportSetupMethod = calc.GetSupportSetup(curSelectModelType);
+                setupMethodOptMap.ToList().ForEach(pair => pair.Key.Enabled = modelTypeSupportSetupMethod.Contains(pair.Value));
+                if (setupMethodOptMap.ToList().Any(pair => pair.Key.Checked && !pair.Key.Enabled))
+                    setupMethodOptMap.ToList().First(pair => pair.Key.Enabled).Key.Checked = true;
+                setupMethodPicOptMap.ToList().ForEach(pair => pair.Value.Visible = pair.Key.Enabled);
+            }
 
             //// 依照機構型態修正預設行程
             //formMain.page2.runCondition.scrollBarStroke.Value = formMain.page2.curSelectModelType.IsBeltType() ? 1000 : 70;
