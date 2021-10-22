@@ -412,7 +412,7 @@
     <value>0, 0</value>
   </data>
   <data name="cmdShapeSelection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 205</value>
+    <value>294, 204</value>
   </data>
   <data name="cmdShapeSelection.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -439,7 +439,7 @@
     <value>395, 3</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 205</value>
+    <value>294, 204</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -466,7 +466,7 @@
     <value>0, 0</value>
   </data>
   <data name="cmdModelSelection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 205</value>
+    <value>294, 204</value>
   </data>
   <data name="cmdModelSelection.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -493,7 +493,7 @@
     <value>695, 3</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 205</value>
+    <value>294, 204</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -514,13 +514,13 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 220</value>
+    <value>3, 219</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1384, 211</value>
+    <value>1384, 210</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -559,7 +559,7 @@
     <value>0, 0, 0, 8</value>
   </data>
   <data name="label73.Size" type="System.Drawing.Size, System.Drawing">
-    <value>962, 39</value>
+    <value>962, 38</value>
   </data>
   <data name="label73.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -589,7 +589,7 @@
     <value>NoControl</value>
   </data>
   <data name="label76.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 40</value>
+    <value>0, 39</value>
   </data>
   <data name="label76.Size" type="System.Drawing.Size, System.Drawing">
     <value>962, 5</value>
@@ -619,7 +619,7 @@
     <value>0, 1, 0, 0</value>
   </data>
   <data name="panel18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>962, 45</value>
+    <value>962, 44</value>
   </data>
   <data name="panel18.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -649,7 +649,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1384, 211</value>
+    <value>1384, 210</value>
   </data>
   <data name="tableLayoutPanel11.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -679,7 +679,7 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1390, 652</value>
+    <value>1390, 649</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -703,7 +703,7 @@
     <value>4, 22</value>
   </data>
   <data name="tabStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1390, 652</value>
+    <value>1390, 649</value>
   </data>
   <data name="tabStart.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1123,7 +1123,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,774,Absolute,774,Absolute,774,Absolute,774" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,775,Absolute,775,Absolute,775,Absolute,775" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 321</value>
@@ -1138,7 +1138,7 @@
     <value>panelSideTableSelections</value>
   </data>
   <data name="&gt;&gt;panelSideTableSelections.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.29, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.30, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;panelSideTableSelections.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -1195,7 +1195,7 @@
     <value>customPanel4</value>
   </data>
   <data name="&gt;&gt;customPanel4.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.29, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.30, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel4.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -1285,7 +1285,7 @@
     <value>customPanel3</value>
   </data>
   <data name="&gt;&gt;customPanel3.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.29, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.30, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel3.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -2683,7 +2683,7 @@
     <value>tabSideTableImg</value>
   </data>
   <data name="&gt;&gt;tabSideTableImg.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, 不帶電選型軟體, Version=0.0.1.29, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, 不帶電選型軟體, Version=0.0.1.30, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabSideTableImg.Parent" xml:space="preserve">
     <value>customPanel2</value>
@@ -2707,7 +2707,7 @@
     <value>customPanel2</value>
   </data>
   <data name="&gt;&gt;customPanel2.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.29, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.30, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel2.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -2764,7 +2764,7 @@
     <value>panelSideTable</value>
   </data>
   <data name="&gt;&gt;panelSideTable.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.29, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.30, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;panelSideTable.Parent" xml:space="preserve">
     <value>explorerBar</value>
@@ -2818,7 +2818,7 @@
     <value>50</value>
   </data>
   <data name="鎖定.Width" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>50</value>
   </data>
   <metadata name="項次.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2830,7 +2830,7 @@
     <value>50</value>
   </data>
   <data name="項次.Width" type="System.Int32, mscorlib">
-    <value>41</value>
+    <value>50</value>
   </data>
   <metadata name="重複定位精度.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2967,9 +2967,6 @@
   <data name="力矩警示.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="力矩警示.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
   <metadata name="馬達瓦數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -3078,14 +3075,11 @@
   <data name="更詳細資訊.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="更詳細資訊.Width" type="System.Int32, mscorlib">
-    <value>106</value>
-  </data>
   <data name="dgvRecommandList.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 67</value>
   </data>
   <data name="dgvRecommandList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>612, 364</value>
+    <value>921, 364</value>
   </data>
   <data name="dgvRecommandList.TabIndex" type="System.Int32, mscorlib">
     <value>257</value>
@@ -3112,7 +3106,7 @@
     <value>20, 46</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>614, 2</value>
+    <value>921, 2</value>
   </data>
   <data name="label12.TabIndex" type="System.Int32, mscorlib">
     <value>256</value>
@@ -3577,7 +3571,7 @@
     <value>customPanel1</value>
   </data>
   <data name="&gt;&gt;customPanel1.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.29, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.30, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel1.Parent" xml:space="preserve">
     <value>panel16</value>
@@ -8832,7 +8826,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabModelType_standard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>821, 434</value>
+    <value>821, 399</value>
   </data>
   <data name="tabModelType_standard.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -9024,7 +9018,7 @@
     <value>tabModelType</value>
   </data>
   <data name="&gt;&gt;tabModelType.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, 不帶電選型軟體, Version=0.0.1.29, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, 不帶電選型軟體, Version=0.0.1.30, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabModelType.Parent" xml:space="preserve">
     <value>panelModelType</value>
@@ -10251,7 +10245,7 @@
     <value>1</value>
   </data>
   <data name="panel17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 42</value>
+    <value>108, 40</value>
   </data>
   <data name="panel17.Size" type="System.Drawing.Size, System.Drawing">
     <value>880, 497</value>
@@ -10332,7 +10326,7 @@
     <value>1</value>
   </data>
   <data name="panelConfirmBtnsStep5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>109, 566</value>
+    <value>109, 564</value>
   </data>
   <data name="panelConfirmBtnsStep5.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -10371,7 +10365,7 @@
     <value>NoControl</value>
   </data>
   <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2965, 478</value>
+    <value>-2965, 476</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 16</value>
@@ -10401,7 +10395,7 @@
     <value>NoControl</value>
   </data>
   <data name="label56.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2964, 175</value>
+    <value>-2964, 173</value>
   </data>
   <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 2</value>
@@ -10428,7 +10422,7 @@
     <value>0, 0</value>
   </data>
   <data name="panelResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1080, 642</value>
+    <value>1080, 639</value>
   </data>
   <data name="panelResult.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -10455,7 +10449,7 @@
     <value>0, 0, 300, 0</value>
   </data>
   <data name="explorerBar_step5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1380, 642</value>
+    <value>1380, 639</value>
   </data>
   <data name="explorerBar_step5.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -10479,7 +10473,7 @@
     <value>10, 10, 0, 0</value>
   </data>
   <data name="tabResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1390, 652</value>
+    <value>1390, 649</value>
   </data>
   <data name="tabResult.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -10515,7 +10509,7 @@
     <value>tabMain</value>
   </data>
   <data name="&gt;&gt;tabMain.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, 不帶電選型軟體, Version=0.0.1.29, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, 不帶電選型軟體, Version=0.0.1.30, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabMain.Parent" xml:space="preserve">
     <value>panel4</value>
@@ -14044,12 +14038,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>不帶電選型系統</value>
   </data>
-  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
-    <value>toolTip1</value>
-  </data>
-  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;鎖定.Name" xml:space="preserve">
     <value>鎖定</value>
   </data>
@@ -14187,6 +14175,12 @@
   </data>
   <data name="&gt;&gt;更詳細資訊.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
+    <value>toolTip1</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormMain</value>
