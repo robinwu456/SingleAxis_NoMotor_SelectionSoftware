@@ -436,7 +436,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 return vMax_belt;
             } else {
                 // 依照行程取RPM
-                double vMax_belt = Math.PI * subWheel_P3.diameter * (rpm / 60) / 1000;
+                double vMax_belt = Math.PI * subWheel_P3.diameter * ((float)rpm / 60f) / 1000f;
                 return vMax_belt;
             }
         }

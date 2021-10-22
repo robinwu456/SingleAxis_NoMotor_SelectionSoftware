@@ -47,7 +47,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // rpm
             if (model.isUseBaltCalc)
-                model.rpm = GetBeltRPM(model.name, model.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
+                //model.rpm = GetBeltRPM(model.name, model.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
+                model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead);
             else
                 model.rpm = MMS_TO_RPM(model.vMax * 1000, model.lead);
             int maxRpm = GetRpmByStroke(model.name, model.lead, model.stroke);
@@ -282,7 +283,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     model.vMax = condition.vMax / 1000f;
                 else if (condition.moveSpeedUnit == Condition.MoveSpeedUnit.RPM) {
                     if (model.modelType.IsBeltType())
-                        model.vMax = GetBeltVmaxByRpm_ms(model.name, (int)condition.vMax, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
+                        //model.vMax = GetBeltVmaxByRpm_ms(model.name, (int)condition.rpm, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
+                        model.vMax = RPM_TO_MMS(condition.rpm, model.lead) / 1000;
                     else
                         model.vMax = RPM_TO_MMS(condition.rpm, model.lead) / 1000;
                 }
