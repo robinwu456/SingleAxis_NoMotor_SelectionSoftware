@@ -174,7 +174,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 // 依照行程取RPM
                 int rpm = GetRpmByStroke(model.name, lead, stroke);
                 if (model.isUseBaltCalc)
-                    return GetBeltVmax_ms(model.name, lead, stroke, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType) * 1000;
+                    //return GetBeltVmax_ms(model.name, lead, stroke, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType) * 1000;
+                    return Math.Round(RPM_TO_MMS(rpm, lead), 2);    // 四捨五入取小數第一位
                 else
                     // 轉速換算Vmax
                     return Math.Round(RPM_TO_MMS(rpm, lead), 2);    // 四捨五入取小數第一位
@@ -192,7 +193,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 取同型號集合
             IEnumerable<DataRow> strokeRpms;
             if (IsContainsReducerRatio(model))
-                strokeRpms = strokeRpm.Rows.Cast<DataRow>().Where(row => model.StartsWith(row["型號"].ToString()));
+                //strokeRpms = strokeRpm.Rows.Cast<DataRow>().Where(row => model.StartsWith(row["型號"].ToString()));
+                strokeRpms = strokeRpm.Rows.Cast<DataRow>().Where(row => row["型號"].ToString().StartsWith(model) && Convert.ToDouble(row["導程"].ToString()) == lead);
             else
                 strokeRpms = strokeRpm.Rows.Cast<DataRow>().Where(row => row["型號"].ToString() == model && Convert.ToDouble(row["導程"].ToString()) == (int)Math.Round(lead, 0));
 
@@ -237,7 +239,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public int GetMaxStroke(string model, double lead) {
             IEnumerable<int> strokes;
             if (IsContainsReducerRatio(model))
-                strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => model.StartsWith(row["型號"].ToString()))
+                //strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => model.StartsWith(row["型號"].ToString()))
+                strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => row["型號"].ToString().StartsWith(model) && Convert.ToDouble(row["導程"].ToString()) == lead)
                                                         .Select(row => Convert.ToInt32(row["行程"].ToString()));
             else
                 strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => row["型號"].ToString() == model && Convert.ToDouble(row["導程"].ToString()) == (int)Math.Round(lead, 0))
