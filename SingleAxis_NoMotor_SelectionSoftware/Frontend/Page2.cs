@@ -13,6 +13,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public int maxHeight = 1333;
         public Dictionary<RadioButton, Model.ModelType> modelTypeOptMap = new Dictionary<RadioButton, Model.ModelType>();
         public Dictionary<RadioButton, Model.SetupMethod> setupMethodOptMap = new Dictionary<RadioButton, Model.SetupMethod>();
+        public Dictionary<RadioButton, Panel> setupMethodPicOptMap = new Dictionary<RadioButton, Panel>();
         public Model.ModelType curSelectModelType = Model.ModelType.ETH;
         public Calculation calc = new Calculation();
         // Step2各項目
@@ -23,6 +24,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public RecommandList recommandList;
         public EffectiveStroke effectiveStroke;
         public ModelSelection modelSelection;
+        public SearchAllMode searchAllMode;
 
         private FormMain formMain;
         private Thread threadCalc;
@@ -62,6 +64,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 { formMain.optWallHangingUse, Model.SetupMethod.橫掛 },
                 { formMain.optVerticalUse, Model.SetupMethod.垂直 },
             };
+            setupMethodPicOptMap = new Dictionary<RadioButton, Panel>() {
+                { formMain.optHorizontalUse, formMain.panelSetupHorizontal },
+                { formMain.optWallHangingUse, formMain.panelSetupWallHang },
+                { formMain.optVerticalUse, formMain.panelSetupVertical },
+            };
 
             InitEvents();            
 
@@ -79,16 +86,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             recommandList = new RecommandList(formMain);
             // 有效行程
             effectiveStroke = new EffectiveStroke(formMain);
-
-            //// 減速比
-            //calc.reducerInfo.Rows.Cast<DataRow>().ToList().ForEach(row => {
-            //    DataGridViewRow dgvRow = (DataGridViewRow)formMain.dgvReducerInfo.RowTemplate.Clone();
-            //    formMain.dgvReducerInfo.Rows.Add(dgvRow);
-            //    dgvRow = formMain.dgvReducerInfo.Rows[calc.reducerInfo.Rows.Cast<DataRow>().ToList().IndexOf(row)];
-            //    dgvRow.Cells["columnModel"].Value = row["Model"].ToString();
-            //    (dgvRow.Cells["columnReducerRatio"] as DataGridViewComboBoxCell).DataSource = row["ReducerRatio"].ToString().Split('、');
-            //    dgvRow.Cells["columnReducerRatio"].Value = row["ReducerRatio"].ToString().Split('、')[0];
-            //});
+            // 全選模式
+            searchAllMode = new SearchAllMode(formMain);
 
             // scrollbars
             runCondition.scrollBarStroke.Initialize();
@@ -108,13 +107,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 更新型號選擇
             formMain.sideTable.UpdateItem();
             Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.標準 : Model.UseEnvironment.無塵;
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
                 formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
             else
                 formMain.sideTable.ClearMsg();
 
             // 偵測傳動方式有無
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
                 DetectModelTypeData();
 
             // 匯入型號選擇
@@ -122,7 +121,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 modelSelection.InitModelSelectionCbo();
 
             // 馬達選項更新
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection) {
                 motorPower.UpdateMotorCalcMode();
                 motorPower.Load();
             }
@@ -141,13 +140,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.optGTH.Checked = true;
             recommandList.Refresh();
             formMain.sideTable.ClearModelImg();
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
                 ModelType_CheckedChanged(null, null);
             formMain.sideTable.ClearModelInfo();
             formMain.sideTable.ClearSelectedModelInfo();
             recommandList.curSelectModel = (null, -1);
-            formMain.cmdConfirmStep2.Visible = false;
-            chartInfo.Clear();
+            formMain.page2.ChangeNextStepBtnVisible(false);
+            chartInfo.Clear(); 
+            formMain.txtMaxSpeed.Text = "";
+            formMain.txtAccelSpeed.Text = "";
+            formMain.lbMaxValue_MaxSpeed.Text = "( 最大值：0 mm/s )";
+            formMain.lbMaxValue_AccelSpeed.Text = "( 最大值：0 mm/s² )";
 
             //// 有效行程顯示
             //effectiveStroke.IsShowEffectiveStroke(false);
@@ -162,7 +165,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.chkAdvanceMode.Checked = false;
             formMain.panelAdvanceParams.Enabled = false;
             //formMain.panelAdvanceParams.Visible = false;
-            formMain.panelAdvanceMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
+            //formMain.panelAdvanceMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
 
             // scrollbars
             runCondition.scrollBarStroke.Value = 0;
@@ -174,7 +177,37 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             runCondition.scrollBarLoad.maxValue = RunCondition.defaultMaxLoad;
 
             // 運行速度單位
-            formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s", "RPM" };            
+            //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
+            //    formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s", "RPM" };
+            //else
+            //    formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s" };
+            formMain.cboMaxSpeedUnit.DataSource = new string[] { "mm/s", "RPM" };
+
+            // 全選模式
+            formMain.chkCalcAllMode.Checked = false;
+            formMain.chkRpmLimitByStroke.Checked = false;
+            //formMain.panelCalcAllMode.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
+            //formMain.chkRpmLimitByStroke.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
+
+            //// RPM顯示
+            //formMain.lbRpm.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
+
+            //// 最大值顯示
+            //formMain.lbMaxValue_MaxSpeed.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
+            //formMain.lbMaxValue_AccelSpeed.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;
+
+            // RPM轉換監測
+            inputValidate.threadShowRPMCounting = new Thread(inputValidate.ShowConvertRPM);
+            inputValidate.threadShowRPMCounting.Start();
+
+            inputValidate.threadCalcVmaxRange = new Thread(inputValidate.CalcVmaxRange);
+            inputValidate.threadCalcVmaxRange.Start();
+            inputValidate.threadCalcAccelSpeedRange = new Thread(inputValidate.CalcAccelSpeedRange);
+            inputValidate.threadCalcAccelSpeedRange.Start();
+
+            // 更新預設系列最大行程
+            int maxStroke = formMain.page2.calc.GetSeriesMaxStroke(curSelectModelType.ToString());
+            formMain.page2.runCondition.scrollBarStroke.maxValue = maxStroke;
         }
 
         private void InitEvents() {
@@ -199,16 +232,34 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 上一頁
             formMain.lbPrePage.Click += PrePage_Click;
+            formMain.lbPrePage.MouseEnter += (sender, e) => formMain.lbPrePage.Font = new Font(formMain.lbPrePage.Font, FontStyle.Underline);
+            formMain.lbPrePage.MouseLeave += (sender, e) => formMain.lbPrePage.Font = new Font(formMain.lbPrePage.Font, FontStyle.Regular);
 
             //// 安裝方式力矩圖片顯示
             //formMain.optHorizontalUse.CheckedChanged += UpdateMomentPic;
             //formMain.optVerticalUse.CheckedChanged += UpdateMomentPic;
             //formMain.optWallHangingUse.CheckedChanged += UpdateMomentPic;
+
+            // 回到運轉條件
+            formMain.cmdChangeRunCondition.Click += CmdChangeRunCondition_Click;
+
+            //// 全選模式
+            //formMain.pictureBoxToyo.DoubleClick += PictureBoxToyo_DoubleClick;
         }
 
-        //private void UpdateMomentPic(object sender, EventArgs e) {
-            
-        //}
+        private void PictureBoxToyo_DoubleClick(object sender, EventArgs e) {
+            if (formMain.tabMain.SelectedTab.Name != "tabContent")
+                return;
+
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
+                formMain.panelCalcAllMode.Visible = true;
+            else
+                MessageBox.Show("條件選型才能開全選模式");
+        }
+
+        private void CmdChangeRunCondition_Click(object sender, EventArgs e) {
+            formMain.explorerBar.ScrollControlIntoView(formMain.lbTitleCalc);
+        }
 
         private void SteupMethod_CheckedChanged(object sender, EventArgs e) {
             formMain.sideTable.Update(null, null);
@@ -223,6 +274,21 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 垂直不顯示力矩B
             formMain.panelMomentB.Visible = !formMain.optVerticalUse.Checked;
+
+            // 更新荷重
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
+                Condition con = new Condition();
+                if (formMain.optHorizontalUse.Checked)
+                    con.setupMethod = Model.SetupMethod.水平;
+                else if (formMain.optWallHangingUse.Checked)
+                    con.setupMethod = Model.SetupMethod.橫掛;
+                else if (formMain.optVerticalUse.Checked)
+                    con.setupMethod = Model.SetupMethod.垂直;
+                double maxLoad = formMain.page2.calc.GetMaxLoad(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text), con);
+                if (maxLoad == int.MaxValue)
+                    maxLoad = RunCondition.defaultMaxLoad;
+                formMain.page2.runCondition.scrollBarLoad.maxValue = (int)maxLoad;
+            }
         }
 
         private void PrePage_Click(object sender, EventArgs e) {
@@ -230,14 +296,22 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 側邊欄移除
             formMain.panelSideTable.Visible = false;
+            formMain.panelCalcAllMode.Visible = false;
+
+            if (inputValidate.threadShowRPMCounting != null)
+                inputValidate.threadShowRPMCounting.Abort();
+            if (inputValidate.threadCalcVmaxRange != null)
+                inputValidate.threadCalcVmaxRange.Abort();
+            if (inputValidate.threadCalcAccelSpeedRange != null)
+                inputValidate.threadCalcAccelSpeedRange.Abort();
         }
 
         private void UpdateLayout(object sender, EventArgs e) {
             // 部分panel隱藏處理
-            formMain.panelUseEnv.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;          // 使用環境
-            formMain.panelModelType.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;       // 傳動方式
+            formMain.panelUseEnv.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection;          // 使用環境
+            formMain.panelModelType.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection;       // 傳動方式
             formMain.panelModelSelection.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection;  // 型號選擇
-            formMain.panelCalcResult.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;      // 推薦規格
+            formMain.panelCalcResult.Visible = formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection;      // 推薦規格
             formMain.panelMoment.Visible = !curSelectModelType.IsRodType();                                                       // 力矩長度
 
             // 項目索引修正
@@ -259,13 +333,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 更新顯示傳動方式敘述
             Model.UseEnvironment curEnv = formMain.optStandardEnv.Checked ? Model.UseEnvironment.標準 : Model.UseEnvironment.無塵;
             formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
                 formMain.sideTable.UpdateModelImg(curSelectModelType);
+
             // 驗證安裝方式選項
-            Model.SetupMethod[] modelTypeSupportSetupMethod = calc.GetSupportMethod(curSelectModelType);
-            setupMethodOptMap.ToList().ForEach(pair => pair.Key.Enabled = modelTypeSupportSetupMethod.Contains(pair.Value));
-            if (setupMethodOptMap.ToList().Any(pair => pair.Key.Checked && !pair.Key.Enabled))
-                setupMethodOptMap.ToList().First(pair => pair.Key.Enabled).Key.Checked = true;
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection) {
+                Model.SetupMethod[] modelTypeSupportSetupMethod = calc.GetSupportSetup(curSelectModelType);
+                setupMethodOptMap.ToList().ForEach(pair => pair.Key.Enabled = modelTypeSupportSetupMethod.Contains(pair.Value));
+                if (setupMethodOptMap.ToList().Any(pair => pair.Key.Checked && !pair.Key.Enabled))
+                    setupMethodOptMap.ToList().First(pair => pair.Key.Enabled).Key.Checked = true;
+                setupMethodPicOptMap.ToList().ForEach(pair => pair.Value.Visible = pair.Key.Enabled);
+            }
 
             //// 依照機構型態修正預設行程
             //formMain.page2.runCondition.scrollBarStroke.Value = formMain.page2.curSelectModelType.IsBeltType() ? 1000 : 70;
@@ -277,44 +355,89 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //formMain.panelReducerRatio.Visible = curSelectModelType.IsContainsReducerRatioType() && formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection;
             formMain.panelReducerParam.Visible = curSelectModelType.IsContainsReducerRatioType();
 
-            
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection)
+            // 修正時清除側邊欄資訊
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
                 formMain.sideTable.ClearModelInfo();
+
+            // 更新行程
+            int maxStroke = formMain.page2.calc.GetSeriesMaxStroke(curSelectModelType.ToString());
+            formMain.page2.runCondition.scrollBarStroke.maxValue = maxStroke;
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {
-            if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "" || !decimal.TryParse(formMain.txtStroke.Text, out decimal a)) {
+            if (formMain.chkCalcAllMode.Checked) {
                 formMain.chkAdvanceMode.Checked = false;
                 return;
             }
 
-            formMain.panelAdvanceParams.Enabled = formMain.chkAdvanceMode.Checked;
-            //formMain.panelAdvanceParams.Visible = formMain.chkAdvanceMode.Checked;
-            if (!formMain.chkAdvanceMode.Checked)
-                //formMain.optMaxSpeedType_mms.Checked = true;
+            //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection) {
+            //    formMain.panelAdvanceParams.Enabled = formMain.chkAdvanceMode.Checked;
+            //    return;
+            //}
+
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection &&
+                (formMain.cboModel.Text == "" || formMain.cboLead.Text == "" || !decimal.TryParse(formMain.txtStroke.Text, out decimal a))) {
+                formMain.chkAdvanceMode.Checked = false;
+                formMain.panelAdvanceParams.Enabled = formMain.chkAdvanceMode.Checked;
+
+                // 單位復原
                 formMain.cboMaxSpeedUnit.Text = "mm/s";
-            
-            if (formMain.chkAdvanceMode.Checked) {
 
+                // 清空進階選項
+                formMain.txtMaxSpeed.Text = "";
+                formMain.txtAccelSpeed.Text = "";
 
-                // 切進接選項自動換算最大加速度(加速時間=0.2/0.4)
-                string model = formMain.cboModel.Text;
-                double lead = Convert.ToDouble(formMain.cboLead.Text);
-                //int reducerRatio = 1;
-                //if (formMain.page2.calc.IsContainsReducerRatio(model)) {
-                //    //string dgvReducerRatioValue = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().ToList().First(row => row.Cells["columnModel"].Value.ToString() == model).Cells["columnReducerRatio"].Value.ToString();
-                //    //reducerRatio = Convert.ToInt32(dgvReducerRatioValue);
-                //    reducerRatio = Convert.ToInt32(formMain.cboReducerRatio.Text);
-                //    lead /= reducerRatio;
-                //}
-                Model m = formMain.page2.calc.GetAllModels(formMain.page2.runCondition.curCondition).First(_m => _m.name.StartsWith(model) && _m.lead == lead);
-                int maxAccelSpeed = formMain.page2.calc.GetMaxAccelSpeed(m, Convert.ToInt32(formMain.txtStroke.Text), m.modelType);
-                formMain.txtAccelSpeed.Text = maxAccelSpeed.ToString();
-
-                // 切進接選項Vmax自動帶100mm/s
-                formMain.txtMaxSpeed.Text = "100";
+                // 進階選項值驗證Alarm隱藏
+                formMain.lbMaxSpeedAlarm.Visible = false;
+                formMain.lbAccelSpeedAlarm.Visible = false;
+                return;
             }
 
+            formMain.panelAdvanceParams.Enabled = formMain.chkAdvanceMode.Checked;
+
+            // 開啟進階選項
+            if (formMain.chkAdvanceMode.Checked) {
+                if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
+                    // 線速度
+                    string max = new Regex(@"\d+").Match(formMain.lbMaxValue_MaxSpeed.Text).Groups[0].Value;
+                    formMain.txtMaxSpeed.Text = max;
+
+                    // 加速度
+                    double accelTime = formMain.page2.modelTypeOptMap.First(pair => pair.Key.Checked).Value.IsBeltType() ? 0.4 : 0.2;
+                    if (double.TryParse(formMain.txtMaxSpeed.Text, out double maxSpeed)) {
+                        max = Convert.ToInt32((maxSpeed / accelTime).ToString("#0")).ToString();                                // 加速時間0.2
+                        formMain.txtAccelSpeed.Text = max.ToString();
+                    }
+                } else if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection) {
+                    try {
+                        var curRow = formMain.dgvRecommandList.CurrentRow;
+                        if (curRow.Cells["項次"].Value == null)
+                            return;
+                        var selectModel = formMain.page2.recommandList.curRecommandList.Where(model => model.name == curRow.Cells["項次"].Value.ToString() && model.lead == Convert.ToDouble(curRow.Cells["導程"].Value.ToString()));
+                        if (selectModel.Count() == 0)
+                            return;
+                        Model curModel = selectModel.First();
+                        formMain.txtMaxSpeed.Text = curModel.vMax.ToString("#0");
+                        formMain.txtAccelSpeed.Text = curModel.accelSpeed.ToString();
+                    } catch (Exception ex) {
+                        Console.WriteLine("開進階選項回填錯誤");
+                    }
+                }
+            }
+
+            // 關閉進階選項
+            if (!formMain.chkAdvanceMode.Checked) {
+                // 單位復原
+                formMain.cboMaxSpeedUnit.Text = "mm/s";
+
+                // 清空進階選項
+                formMain.txtMaxSpeed.Text = "";
+                formMain.txtAccelSpeed.Text = "";
+
+                // 進階選項值驗證Alarm隱藏
+                formMain.lbMaxSpeedAlarm.Visible = false;
+                formMain.lbAccelSpeedAlarm.Visible = false;
+            }            
         }
 
         private void CmdConfirmStep2_Click(object sender, EventArgs e) {
@@ -325,6 +448,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.tabMain.SelectTab("tabResult");
             formMain.page3.Load();
             formMain.sideTable.Update(null, null);
+            formMain.panelCalcAllMode.Visible = false;
+
+            if (inputValidate.threadShowRPMCounting != null)
+                inputValidate.threadShowRPMCounting.Abort();
+            if (inputValidate.threadCalcVmaxRange != null)
+                inputValidate.threadCalcVmaxRange.Abort();
+            if (inputValidate.threadCalcAccelSpeedRange != null)
+                inputValidate.threadCalcAccelSpeedRange.Abort();
         }
 
         private void CmdCalc_Click(object sender, EventArgs e) {
@@ -333,13 +464,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 return;
 
             // 最後更新使用條件
-            runCondition.UpdateCondition(null, null);
+            if (formMain.chkCalcAllMode.Checked)
+                searchAllMode.UpdateCondition(null, null);
+            else
+                runCondition.UpdateCondition(null, null);
 
             threadCalc = new Thread(() => {
                 Thread.Sleep(100);
 
                 // 開始計算
-                var result = calc.GetRecommandResult(runCondition.curCondition);
+                var calcCon = formMain.chkCalcAllMode.Checked ? searchAllMode.curCondition : runCondition.curCondition;    // 計算條件
+                var result = calc.GetRecommandResult(calcCon);
                 // 規件規格
                 recommandList.curRecommandList = result["List"] as List<Model>;
                 // 回傳訊息
@@ -362,7 +497,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         chartInfo.Clear();
                         recommandList.curSelectModel = (null, -1);
                         // 側邊欄
-                        if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ShapeSelection) {
+                        if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection) {
                             formMain.sideTable.ClearModelImg();
                             formMain.sideTable.ClearModelInfo();
                         }
@@ -382,7 +517,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     //formMain.page2.effectiveStroke.IsShowEffectiveStroke(false);
 
                     // 搜尋不到項目時，下一步隱藏
-                    formMain.Invoke(new Action(() => formMain.cmdConfirmStep2.Visible = false));
+                    //formMain.Invoke(new Action(() => formMain.cmdConfirmStep2.Visible = false));
+                    formMain.Invoke(new Action(() => formMain.page2.ChangeNextStepBtnVisible(false)));
+
+                    // 搜尋不到項目時，進階選項空值
+                    formMain.Invoke(new Action(() => {
+                        formMain.txtMaxSpeed.Text = "";
+                        formMain.txtAccelSpeed.Text = "";
+                    }));
 
                     return;
                 }
@@ -404,8 +546,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private void ShowWaiting() {
             new Thread(() => {
                 formMain.Invoke(new Action(() => {
-                    FormWaiting wait = new FormWaiting(calc.GetCalcPercent);
+                    FormWaiting wait = new FormWaiting(calc.GetCalcPercent, calc.InterruptCalc);
                     wait.GetPercent = calc.GetCalcPercent;
+                    wait.InterruptCalc = calc.InterruptCalc;
                     wait.ShowDialog();
                 }));
             }).Start();
@@ -435,5 +578,33 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.optGCH.Checked = true;
             formMain.sideTable.UpdateMsg(calc.GetModelTypeComment(curSelectModelType), SideTable.MsgStatus.Normal);
         }
+
+        public void ChangeNextStepBtnVisible(bool visible) {
+            if (formMain.cmdConfirmStep2.Visible == visible)
+                return;
+
+            formMain.panelConfirmBtnsStep2.ColumnStyles.Clear();
+            formMain.cmdConfirmStep2.Visible = visible;
+
+            ColumnStyle[] rows = { };
+            if (visible) {
+                rows = new ColumnStyle[]{
+                    new ColumnStyle(SizeType.Percent, 33.33f),
+                    new ColumnStyle(SizeType.Percent, 16.67f),
+                    new ColumnStyle(SizeType.Percent, 16.67f),
+                    new ColumnStyle(SizeType.Percent, 33.33f),
+                };
+            } else {
+                rows = new ColumnStyle[]{
+                    new ColumnStyle(SizeType.Percent, 41.67f),
+                    new ColumnStyle(SizeType.Percent, 16.67f),
+                    new ColumnStyle(SizeType.Percent, 41.67f),
+                };
+            }
+
+            foreach (ColumnStyle style in rows)
+                formMain.panelConfirmBtnsStep2.ColumnStyles.Add(style);
+        }
     }
 }
+

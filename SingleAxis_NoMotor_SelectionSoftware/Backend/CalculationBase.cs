@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Text.RegularExpressions;
 using System.Data;
 using StrokeTooShortConverterLibraries;
 using System.Drawing;
@@ -60,7 +60,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 model.isUseBaltCalc = beltInfo.Rows.Cast<DataRow>().Select(info => info["型號"].ToString()).Contains(model.name);
 
                 // 測試不判斷行程過短
-                isCheckStrokeTooShort = !condition.isTesting;
+                isCheckStrokeTooShort = condition.calcMode != Condition.CalcMode.Test;
 
                 // 皮帶資訊
                 if (model.isUseBaltCalc) {
@@ -174,7 +174,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 // 依照行程取RPM
                 int rpm = GetRpmByStroke(model.name, lead, stroke);
                 if (model.isUseBaltCalc)
-                    return GetBeltVmax_ms(model.name, lead, stroke, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType) * 1000;
+                    //return GetBeltVmax_ms(model.name, lead, stroke, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType) * 1000;
+                    return Math.Round(RPM_TO_MMS(rpm, lead), 2);    // 四捨五入取小數第一位
                 else
                     // 轉速換算Vmax
                     return Math.Round(RPM_TO_MMS(rpm, lead), 2);    // 四捨五入取小數第一位
@@ -192,16 +193,20 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 取同型號集合
             IEnumerable<DataRow> strokeRpms;
             if (IsContainsReducerRatio(model))
-                strokeRpms = strokeRpm.Rows.Cast<DataRow>().Where(row => model.StartsWith(row["型號"].ToString()));
+                //strokeRpms = strokeRpm.Rows.Cast<DataRow>().Where(row => model.StartsWith(row["型號"].ToString()));
+                strokeRpms = strokeRpm.Rows.Cast<DataRow>().Where(row => row["型號"].ToString().StartsWith(model) && Convert.ToDouble(row["導程"].ToString()) == lead);
             else
                 strokeRpms = strokeRpm.Rows.Cast<DataRow>().Where(row => row["型號"].ToString() == model && Convert.ToDouble(row["導程"].ToString()) == (int)Math.Round(lead, 0));
 
             try {
+                if (!strokeRpms.Any(row => Convert.ToInt32(row["行程"].ToString()) >= stroke))
+                    return Convert.ToInt32(strokeRpms.Last()["轉速"].ToString());
+
                 // 依照行程取RPM
                 int strokeRpm = Convert.ToInt32(strokeRpms.First(row => Convert.ToInt32(row["行程"].ToString()) >= stroke)["轉速"]);
                 return strokeRpm;
             } catch (Exception ex) {
-                Console.WriteLine(ex);
+                //Console.WriteLine(ex);
                 return Convert.ToInt32(strokeRpms.Last()["轉速"].ToString());
             }
 
@@ -234,7 +239,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public int GetMaxStroke(string model, double lead) {
             IEnumerable<int> strokes;
             if (IsContainsReducerRatio(model))
-                strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => model.StartsWith(row["型號"].ToString()))
+                //strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => model.StartsWith(row["型號"].ToString()))
+                strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => row["型號"].ToString().StartsWith(model) && Convert.ToDouble(row["導程"].ToString()) == lead)
                                                         .Select(row => Convert.ToInt32(row["行程"].ToString()));
             else
                 strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => row["型號"].ToString() == model && Convert.ToDouble(row["導程"].ToString()) == (int)Math.Round(lead, 0))
@@ -242,24 +248,42 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return strokes.Max();
         }
 
+        public int GetSeriesMaxStroke(string series) {
+            IEnumerable<int> strokes;
+            //strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => Regex.Replace(row["型號"].ToString(), @"\d+", "").Equals(series))
+            //                                        .Select(row => Convert.ToInt32(row["行程"].ToString()));
+
+            strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => GetModelType(row["型號"].ToString()).ToString().Equals(series))
+                                                    .Select(row => Convert.ToInt32(row["行程"].ToString()));
+
+            return strokes.Max();
+        }
+
         public double GetMaxLoad(string model, double lead, Condition conditions) {
             // 取最大荷重
             double maxLoad = int.MaxValue;
             string data = "";
-            //lead = conditions.reducerRatio.Keys.Contains(model) ?
-            //                        (int)Math.Round((lead * (double)conditions.reducerRatio[model]), 0) : lead;
 
             try {
+                Func<DataRow, bool> VerifyModel;
+                if (model.IsContainsReducerRatioType())
+                    VerifyModel = (row) => row["型號"].ToString().StartsWith(model);
+                else
+                    VerifyModel = (row) => row["型號"].ToString() == model;
+
+                if (momentData.Rows.Cast<DataRow>().Where(row => VerifyModel(row) && Convert.ToDouble(row["導程"].ToString()) == lead &&
+                                                    row["安裝方式"].ToString() == conditions.setupMethod.ToString()).Count() == 0)
+                    return maxLoad;
+
                 data = momentData.Rows.Cast<DataRow>()
-                                             .Where(row => row["型號"].ToString() == model &&
-                                                           Convert.ToDouble(row["導程"].ToString()) == lead &&
+                                             .Where(row => VerifyModel(row) && Convert.ToDouble(row["導程"].ToString()) == lead && 
                                                            row["安裝方式"].ToString() == conditions.setupMethod.ToString())
                                              .Select(row => row["最大荷重"].ToString())
                                              .First();
                 if (!string.IsNullOrEmpty(data))
                     maxLoad = Convert.ToDouble(data);
             } catch (Exception ex) {
-                Console.WriteLine(ex);
+                //Console.WriteLine(ex);
                 //throw new Exception("error model: " + model + ", " + ex);
             }
             return maxLoad;
@@ -290,67 +314,70 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         // 1分鐘最多可以跑多少趟
         public double GetMaxCountPerMinute(Model model, Condition conditions) {
-            double _vMax = 0;
-            if (conditions.vMaxCalcMode == Condition.CalcVmax.Max) {
-                if (model.isUseBaltCalc) {
-                    //_vMax = GetBeltVmax_ms(model.name, model.lead, 1, conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2) * 1000;
-                    //if (conditions.reducerRatio.Keys.Contains(model.name))
-                    //    _vMax = GetBeltVmax_ms(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
-                    //else
-                    //    _vMax = GetBeltVmax_ms(model.name, model.lead, 1, conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
-                    _vMax = GetBeltVmax_ms(model.name, model.lead, conditions.stroke, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
-                } else {
-                    //if (conditions.reducerRatio.Keys.Contains(model.name))
-                    //    _vMax = GetVmax_ms(model, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
-                    //else
-                    //    _vMax = GetVmax_ms(model, model.lead, 1, conditions.stroke);
-                    _vMax = GetVmax_ms(model, model.lead, conditions.stroke);
-                }
-            } else if (conditions.vMaxCalcMode == Condition.CalcVmax.Custom) {
-                _vMax = conditions.vMax / 1000f;
+            //double _vMax = 0;
+            //if (conditions.vMaxCalcMode == Condition.CalcVmax.Max) {
+            //    if (model.isUseBaltCalc) {
+            //        //_vMax = GetBeltVmax_ms(model.name, model.lead, 1, conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2) * 1000;
+            //        //if (conditions.reducerRatio.Keys.Contains(model.name))
+            //        //    _vMax = GetBeltVmax_ms(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
+            //        //else
+            //        //    _vMax = GetBeltVmax_ms(model.name, model.lead, 1, conditions.stroke, model.mainWheel, model.subWheel1, model.subWheel2, model.beltCalcType);
+            //        _vMax = GetBeltVmax_ms(model.name, model.lead, conditions.stroke, model.mainWheel_P1, model.subWheel_P2, model.subWheel_P3, model.beltCalcType);
+            //    } else {
+            //        //if (conditions.reducerRatio.Keys.Contains(model.name))
+            //        //    _vMax = GetVmax_ms(model, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
+            //        //else
+            //        //    _vMax = GetVmax_ms(model, model.lead, 1, conditions.stroke);
+            //        _vMax = GetVmax_ms(model, model.lead, conditions.stroke);
+            //    }
+            //} else if (conditions.vMaxCalcMode == Condition.CalcVmax.Custom) {
+            //    _vMax = conditions.vMax / 1000f;
 
-                // 非皮帶機構才判斷
-                if (!model.isUseBaltCalc) {
-                    // RPM驗證
-                    int strokeRpm;
-                    int vMaxRpm = GetRpmByMMS(model.lead, model.vMax * 1000);
-                    //if (conditions.reducerRatio.Keys.Contains(model.name))
-                    //    strokeRpm = GetRpmByStroke(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
-                    //else
-                    //    strokeRpm = GetRpmByStroke(model.name, model.lead, 1, conditions.stroke);
-                    strokeRpm = GetRpmByStroke(model.name, model.lead, conditions.stroke);
-                    int _rpm = Math.Min(strokeRpm, vMaxRpm);
-                    _vMax = RPM_TO_MMS(_rpm, model.lead) / 1000f;
-                }
-            }
+            //    // 非皮帶機構才判斷
+            //    if (!model.isUseBaltCalc) {
+            //        // RPM驗證
+            //        int strokeRpm;
+            //        int vMaxRpm = GetRpmByMMS(model.lead, model.vMax * 1000);
+            //        //if (conditions.reducerRatio.Keys.Contains(model.name))
+            //        //    strokeRpm = GetRpmByStroke(model.name, model.lead, conditions.reducerRatio[model.name], conditions.stroke);
+            //        //else
+            //        //    strokeRpm = GetRpmByStroke(model.name, model.lead, 1, conditions.stroke);
+            //        strokeRpm = GetRpmByStroke(model.name, model.lead, conditions.stroke);
+            //        int _rpm = Math.Min(strokeRpm, vMaxRpm);
+            //        _vMax = RPM_TO_MMS(_rpm, model.lead) / 1000f;
+            //    }
+            //}
 
-            double _accelSpeed = (float)conditions.accelSpeed / 1000f;
+            //double _accelSpeed = (float)conditions.accelSpeed / 1000f;
 
-            //double accelTime = _vMax / _accelSpeed;            
+            ////double accelTime = _vMax / _accelSpeed;            
 
-            double accelTime = 0;
-            if (conditions.accelSpeed != 0) {
-                conditions.accelTime = conditions.vMax / conditions.accelSpeed;
-            } else {
-                accelTime = conditions.accelTime;
-            }
+            //double accelTime = 0;
+            //if (conditions.accelSpeed != 0) {
+            //    //conditions.accelTime = conditions.vMax / conditions.accelSpeed;
+            //} else {
+            //    accelTime = conditions.accelTime;
+            //}
 
-            if (isCheckStrokeTooShort) {
-                // 行程過短驗證
-                if (strokeTooShortModifyItem == Converter.ModifyItem.Vmax)
-                    //_vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, (int)_vMax, accelTime, model.stroke);
-                    _vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, _vMax, accelTime, model.stroke);
-                else if (strokeTooShortModifyItem == Converter.ModifyItem.AccelSpeed) {
-                    accelTime = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, _vMax, accelTime, model.stroke);
-                }
-            }
+            //if (isCheckStrokeTooShort) {
+            //    // 行程過短驗證
+            //    if (strokeTooShortModifyItem == Converter.ModifyItem.Vmax)
+            //        //_vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, (int)_vMax, accelTime, model.stroke);
+            //        _vMax = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, _vMax, accelTime, model.stroke);
+            //    else if (strokeTooShortModifyItem == Converter.ModifyItem.AccelSpeed) {
+            //        accelTime = Converter.CheckStrokeTooShort_CalcByAccelTime(strokeTooShortModifyItem, _vMax, accelTime, model.stroke);
+            //    }
+            //}
 
-            double decelTime = accelTime;
-            double constantTime = ((2f * (float)conditions.stroke / 1000f / _vMax) - accelTime - decelTime) / 2f;
-            //double constantTime = ((2f * (float)conditions.stroke / _vMax) - accelTime - decelTime) / 2f;
-            // 單趟來回需要的秒數
-            //double totalTime = (accelTime + constantTime + decelTime + conditions.stopTime) * 2f;
-            double totalTime = (accelTime + constantTime + decelTime) * 2f;
+            //double decelTime = accelTime;
+            ////double constantTime = ((2f * (float)conditions.stroke / 1000f / _vMax) - accelTime - decelTime) / 2f;
+            //double constantTime = ((2f * (float)model.stroke / 1000f / _vMax) - accelTime - decelTime) / 2f;
+            ////double constantTime = ((2f * (float)conditions.stroke / _vMax) - accelTime - decelTime) / 2f;
+            //// 單趟來回需要的秒數
+            ////double totalTime = (accelTime + constantTime + decelTime + conditions.stopTime) * 2f;
+            //double totalTime = (accelTime + constantTime + decelTime) * 2f;
+
+            double totalTime = (model.accelTime + model.constantTime + model.decelTime) * 2f;
 
             double maxCountPerMinute = 60f / totalTime;
 
@@ -391,7 +418,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             } else {
                 // 依照行程取RPM
                 int rpm = GetRpmByStroke(model, lead, stroke);
-                double vMax_belt = Math.PI * subWheel_P3.diameter * (rpm / 60) / 1000;
+                double vMax_belt = Math.PI * subWheel_P3.diameter * ((float)rpm / 60f) / 1000f;
                 return vMax_belt;
             }
         }
@@ -412,7 +439,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 return vMax_belt;
             } else {
                 // 依照行程取RPM
-                double vMax_belt = Math.PI * subWheel_P3.diameter * (rpm / 60) / 1000;
+                double vMax_belt = Math.PI * subWheel_P3.diameter * ((float)rpm / 60f) / 1000f;
                 return vMax_belt;
             }
         }
@@ -474,30 +501,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             return points;
         }
-        //public (
-        //    double accelTime,
-        //    double constantTime,
-        //    double runTime,
-        //    double accelSpeed,
-        //    double maxSpeed,
-        //    double cycleTime
-        //) GetChartInfo(Condition conditions) {
-        //    double accelTime = conditions.vMax / conditions.accelSpeed;
-        //    double decelTime = accelTime;
-        //    double constantTime = ((2f * (float)conditions.stroke / conditions.vMax) - accelTime - decelTime) / 2f;
 
-        //    double runTime = accelTime + constantTime + decelTime;
-        //    double cycleTime = runTime * 2;
-
-        //    accelTime = Convert.ToDouble(accelTime.ToString("0.000"));
-        //    decelTime = Convert.ToDouble(decelTime.ToString("0.000"));
-        //    constantTime = Convert.ToDouble(constantTime.ToString("0.000"));
-        //    runTime = Convert.ToDouble(runTime.ToString("0.000"));
-        //    conditions.vMax = Convert.ToDouble(conditions.vMax.ToString("0.000"));
-        //    cycleTime = Convert.ToDouble(cycleTime.ToString("0.000"));
-
-        //    return (accelTime, constantTime, runTime, conditions.accelSpeed, conditions.vMax, cycleTime);
-        //}
         public (
             double accelTime,
             double constantTime,
@@ -557,7 +561,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return comment;
         }
 
-        public Model.SetupMethod[] GetSupportMethod(Model.ModelType modelType) {
+        public Model.SetupMethod[] GetSupportSetup(Model.ModelType modelType) {
             var setups = modelInfo.Rows.Cast<DataRow>().Where(row => row["型號類別"].ToString() == modelType.ToString())
                                                        .Select(row => row["安裝方式"].ToString().Split('&'))
                                                        .Distinct();
@@ -573,10 +577,36 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return supportSetups.ToArray();
         }
 
+        public Model.SetupMethod[] GetSupportSetup(string modelName) {
+            string[] setups;
+            if (modelName.IsContainsReducerRatioType())
+                setups = modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString().StartsWith(modelName))["安裝方式"].ToString().Split('&');
+            else
+                setups = modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString() == modelName)["安裝方式"].ToString().Split('&');
+            List<Model.SetupMethod> supportSetups = new List<Model.SetupMethod>();
+            setups.ToList().ForEach(s => {
+                Model.SetupMethod _s = (Model.SetupMethod)Enum.Parse(typeof(Model.SetupMethod), s);
+                if (!supportSetups.Contains(_s))
+                    supportSetups.Add(_s);
+            });
+
+            return supportSetups.ToArray();
+        }
+
         public Model.ModelType GetModelType(string model) {
-            string type = modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString().StartsWith(model))["型號類別"].ToString();
+            var types = modelInfo.Rows.Cast<DataRow>().Where(row => row["型號"].ToString().StartsWith(model));
+            if (types.Count() == 0)
+                return Model.ModelType.Null;
+            string type = types.First()["型號類別"].ToString();
             Model.ModelType modelType = (Model.ModelType)Enum.Parse(typeof(Model.ModelType), type);
             return modelType;
+
+            //if (modelInfo.Rows.Cast<DataRow>().Any(row => row["型號"].ToString().StartsWith(model))) {
+            //    string type = modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString().StartsWith(model))["型號類別"].ToString();
+            //    Model.ModelType modelType = (Model.ModelType)Enum.Parse(typeof(Model.ModelType), type);
+            //    return modelType;
+            //} else
+            //    return Model.ModelType.Null;
         }
 
         public Model.UseEnvironment GetModelUseEnv(string model) {
@@ -587,6 +617,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         public string GetLeadText(string model, double lead) {
             return modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString() == model && Convert.ToDouble(row["導程"].ToString()) == lead)["導程顯示"].ToString();
+        }
+
+        public bool IsStrokeTooShort_CheckByAccelTime(int stroke, double vMax, double accelTime) {
+            return ((2f * (float)stroke / (vMax * 1000)) - accelTime - accelTime) / 2f < 0;
+        }
+
+        public bool IsStrokeTooShort_CheckByAccelSpeed(int stroke, double vMax, double accelSpeed) {
+            return ((2f * (float)stroke / (vMax * 1000)) - (vMax / accelSpeed) - (vMax / accelSpeed)) / 2f < 0;
         }
     }
 }

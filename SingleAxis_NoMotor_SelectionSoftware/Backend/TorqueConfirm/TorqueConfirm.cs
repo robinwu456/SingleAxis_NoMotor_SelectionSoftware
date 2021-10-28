@@ -66,7 +66,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //model.accelTime = model.vMax / model.accelSpeed;            
             model.decelTime = model.accelTime;
             model.constantTime = ((2f * (float)model.stroke / 1000f / model.vMax) - model.accelTime - model.decelTime) / 2f;
-            model.moveTime = Convert.ToDouble((model.accelTime + model.constantTime + model.decelTime).ToString("#0.000"));
+            model.moveTime = Convert.ToDouble((model.accelTime + model.constantTime + model.decelTime + model.stopTime).ToString("#0.000"));
 
             // 加速區外力
             model.rollingFriction_accel = model.p_a * model.c * 0.003;

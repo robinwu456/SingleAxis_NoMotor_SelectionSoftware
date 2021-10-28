@@ -14,9 +14,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             /// </summary>
             ModelSelection, 
             /// <summary>
-            /// 形狀選型
+            /// 條件選型
             /// </summary>
-            ShapeSelection 
+            ConditionSelection 
         }
         public ModelSelectionMode modelSelectionMode = ModelSelectionMode.ModelSelection;
 
@@ -40,7 +40,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (btn == formMain.cmdModelSelection)
                 modelSelectionMode = ModelSelectionMode.ModelSelection;
             else if (btn == formMain.cmdShapeSelection)
-                modelSelectionMode = ModelSelectionMode.ShapeSelection;
+                modelSelectionMode = ModelSelectionMode.ConditionSelection;
 
             formMain.tabMain.SelectTab("tabContent");
             formMain.page2.Load();

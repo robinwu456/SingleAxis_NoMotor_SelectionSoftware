@@ -43,7 +43,6 @@
             this.cmdZoom = new System.Windows.Forms.PictureBox();
             this.cmdClose = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabMain = new SingleAxis_NoMotor_SelectionSoftware.CustomTabControl();
             this.tabStart = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -58,9 +57,15 @@
             this.label76 = new System.Windows.Forms.Label();
             this.tabContent = new System.Windows.Forms.TabPage();
             this.explorerBar = new System.Windows.Forms.Panel();
+            this.panelCalcAllMode = new System.Windows.Forms.Panel();
+            this.panelCalcMaxOptions = new System.Windows.Forms.Panel();
+            this.chkIsCalcMaxLoad = new System.Windows.Forms.CheckBox();
+            this.chkRpmLimitByStroke = new System.Windows.Forms.CheckBox();
+            this.chkCalcAllMode = new System.Windows.Forms.CheckBox();
             this.panelNextPage = new System.Windows.Forms.Panel();
             this.panelConfirmBtnsStep2 = new System.Windows.Forms.TableLayoutPanel();
             this.cmdConfirmStep2 = new CustomButton.CustomButton();
+            this.cmdChangeRunCondition = new CustomButton.CustomButton();
             this.panelSideTable = new SingleAxis_NoMotor_SelectionSoftware.CustomPanel();
             this.panelSideTableIcon = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -178,8 +183,8 @@
             this.label69 = new System.Windows.Forms.Label();
             this.panelxxx = new System.Windows.Forms.Panel();
             this.panelMotorAdvanceMode = new System.Windows.Forms.Panel();
-            this.chkMotorAdvanceMode = new CustomToggle.CustomToggle();
             this.label20 = new System.Windows.Forms.Label();
+            this.chkMotorAdvanceMode = new CustomToggle.CustomToggle();
             this.panelMotorParams = new System.Windows.Forms.Panel();
             this.panelReducerParam = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -212,11 +217,13 @@
             this.panelAdvanceMode = new System.Windows.Forms.Panel();
             this.chkAdvanceMode = new CustomToggle.CustomToggle();
             this.panelAdvanceParams = new System.Windows.Forms.Panel();
+            this.lbMaxValue_AccelSpeed = new System.Windows.Forms.Label();
+            this.lbMaxValue_MaxSpeed = new System.Windows.Forms.Label();
             this.cboMaxSpeedUnit = new System.Windows.Forms.ComboBox();
             this.lbMaxSpeedAlarm = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
+            this.lbAccelSpeedAlarm = new System.Windows.Forms.Label();
             this.txtAccelSpeed = new System.Windows.Forms.TextBox();
             this.label79 = new System.Windows.Forms.Label();
             this.txtMaxSpeed = new System.Windows.Forms.TextBox();
@@ -262,9 +269,23 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label67 = new System.Windows.Forms.Label();
             this.lbTitleCalc = new System.Windows.Forms.Label();
+            this.panelCalcAllParam = new System.Windows.Forms.Panel();
+            this.panelNoConstantTimeParam = new System.Windows.Forms.Panel();
+            this.cboMaxCalcUnit = new System.Windows.Forms.ComboBox();
+            this.label77 = new System.Windows.Forms.Label();
+            this.txtMaxCalc = new System.Windows.Forms.TextBox();
+            this.cboMaxCalcMode = new System.Windows.Forms.ComboBox();
+            this.label80 = new System.Windows.Forms.Label();
             this.panelSetup = new System.Windows.Forms.Panel();
+            this.panelSetupSelection = new System.Windows.Forms.Panel();
+            this.panelSetupWallHang = new System.Windows.Forms.Panel();
             this.label64 = new System.Windows.Forms.Label();
+            this.picWallHangingUse = new System.Windows.Forms.PictureBox();
+            this.panelSetupVertical = new System.Windows.Forms.Panel();
+            this.picVerticalUse = new System.Windows.Forms.PictureBox();
             this.label63 = new System.Windows.Forms.Label();
+            this.panelSetupHorizontal = new System.Windows.Forms.Panel();
+            this.picHorizontalUse = new System.Windows.Forms.PictureBox();
             this.label62 = new System.Windows.Forms.Label();
             this.panelMoment = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
@@ -288,9 +309,6 @@
             this.optHorizontalUse = new System.Windows.Forms.RadioButton();
             this.optVerticalUse = new System.Windows.Forms.RadioButton();
             this.optWallHangingUse = new System.Windows.Forms.RadioButton();
-            this.picWallHangingUse = new System.Windows.Forms.PictureBox();
-            this.picVerticalUse = new System.Windows.Forms.PictureBox();
-            this.picHorizontalUse = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label66 = new System.Windows.Forms.Label();
@@ -375,6 +393,7 @@
             this.cmdResetStep5 = new CustomButton.CustomButton();
             this.label51 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBase)).BeginInit();
             this.splitContainerBase.Panel1.SuspendLayout();
@@ -400,6 +419,8 @@
             this.panel18.SuspendLayout();
             this.tabContent.SuspendLayout();
             this.explorerBar.SuspendLayout();
+            this.panelCalcAllMode.SuspendLayout();
+            this.panelCalcMaxOptions.SuspendLayout();
             this.panelNextPage.SuspendLayout();
             this.panelConfirmBtnsStep2.SuspendLayout();
             this.panelSideTable.SuspendLayout();
@@ -484,16 +505,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.scrollBarThumbLoad)).BeginInit();
             this.panel13.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.panelCalcAllParam.SuspendLayout();
+            this.panelNoConstantTimeParam.SuspendLayout();
             this.panelSetup.SuspendLayout();
+            this.panelSetupSelection.SuspendLayout();
+            this.panelSetupWallHang.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picWallHangingUse)).BeginInit();
+            this.panelSetupVertical.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picVerticalUse)).BeginInit();
+            this.panelSetupHorizontal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picHorizontalUse)).BeginInit();
             this.panelMoment.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel25.SuspendLayout();
             this.panelMomentB.SuspendLayout();
             this.panel23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMoment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWallHangingUse)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picVerticalUse)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHorizontalUse)).BeginInit();
             this.panel8.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.panelModelSelection.SuspendLayout();
@@ -586,7 +613,6 @@
             this.pictureBoxToyo.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.component;
             this.pictureBoxToyo.Name = "pictureBoxToyo";
             this.pictureBoxToyo.TabStop = false;
-            this.pictureBoxToyo.DoubleClick += new System.EventHandler(this.pictureBoxToyo_DoubleClick);
             // 
             // pictureBox1
             // 
@@ -636,15 +662,6 @@
             this.panel4.Controls.Add(this.tabMain);
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.AutoPopDelay = 50000;
-            this.toolTip1.InitialDelay = 500;
-            this.toolTip1.IsBalloon = true;
-            this.toolTip1.ReshowDelay = 100;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "變更非標準馬達時請注意";
             // 
             // tabMain
             // 
@@ -739,6 +756,7 @@
             // explorerBar
             // 
             resources.ApplyResources(this.explorerBar, "explorerBar");
+            this.explorerBar.Controls.Add(this.panelCalcAllMode);
             this.explorerBar.Controls.Add(this.panelNextPage);
             this.explorerBar.Controls.Add(this.panelSideTable);
             this.explorerBar.Controls.Add(this.lbPrePage);
@@ -751,6 +769,38 @@
             this.explorerBar.Controls.Add(this.panelUseEnv);
             this.explorerBar.Name = "explorerBar";
             // 
+            // panelCalcAllMode
+            // 
+            this.panelCalcAllMode.Controls.Add(this.panelCalcMaxOptions);
+            this.panelCalcAllMode.Controls.Add(this.chkCalcAllMode);
+            resources.ApplyResources(this.panelCalcAllMode, "panelCalcAllMode");
+            this.panelCalcAllMode.Name = "panelCalcAllMode";
+            // 
+            // panelCalcMaxOptions
+            // 
+            this.panelCalcMaxOptions.Controls.Add(this.chkIsCalcMaxLoad);
+            this.panelCalcMaxOptions.Controls.Add(this.chkRpmLimitByStroke);
+            resources.ApplyResources(this.panelCalcMaxOptions, "panelCalcMaxOptions");
+            this.panelCalcMaxOptions.Name = "panelCalcMaxOptions";
+            // 
+            // chkIsCalcMaxLoad
+            // 
+            resources.ApplyResources(this.chkIsCalcMaxLoad, "chkIsCalcMaxLoad");
+            this.chkIsCalcMaxLoad.Name = "chkIsCalcMaxLoad";
+            this.chkIsCalcMaxLoad.UseVisualStyleBackColor = true;
+            // 
+            // chkRpmLimitByStroke
+            // 
+            resources.ApplyResources(this.chkRpmLimitByStroke, "chkRpmLimitByStroke");
+            this.chkRpmLimitByStroke.Name = "chkRpmLimitByStroke";
+            this.chkRpmLimitByStroke.UseVisualStyleBackColor = true;
+            // 
+            // chkCalcAllMode
+            // 
+            resources.ApplyResources(this.chkCalcAllMode, "chkCalcAllMode");
+            this.chkCalcAllMode.Name = "chkCalcAllMode";
+            this.chkCalcAllMode.UseVisualStyleBackColor = true;
+            // 
             // panelNextPage
             // 
             this.panelNextPage.Controls.Add(this.panelConfirmBtnsStep2);
@@ -760,7 +810,8 @@
             // panelConfirmBtnsStep2
             // 
             resources.ApplyResources(this.panelConfirmBtnsStep2, "panelConfirmBtnsStep2");
-            this.panelConfirmBtnsStep2.Controls.Add(this.cmdConfirmStep2, 1, 0);
+            this.panelConfirmBtnsStep2.Controls.Add(this.cmdConfirmStep2, 2, 0);
+            this.panelConfirmBtnsStep2.Controls.Add(this.cmdChangeRunCondition, 1, 0);
             this.panelConfirmBtnsStep2.Name = "panelConfirmBtnsStep2";
             // 
             // cmdConfirmStep2
@@ -778,6 +829,22 @@
             this.cmdConfirmStep2.GradientMode = CustomButton.LinearGradientMode.Horizontal;
             this.cmdConfirmStep2.Name = "cmdConfirmStep2";
             this.cmdConfirmStep2.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
+            // 
+            // cmdChangeRunCondition
+            // 
+            this.cmdChangeRunCondition.BackColor = System.Drawing.Color.Transparent;
+            this.cmdChangeRunCondition.BackColor_Hover = System.Drawing.Color.DarkRed;
+            this.cmdChangeRunCondition.BackColor_Normal = System.Drawing.Color.Red;
+            this.cmdChangeRunCondition.BackColor_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdChangeRunCondition.BackColor2_Hover = System.Drawing.Color.DarkRed;
+            this.cmdChangeRunCondition.BackColor2_Normal = System.Drawing.Color.Red;
+            this.cmdChangeRunCondition.BackColor2_Press = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmdChangeRunCondition.ButtonEnabled = true;
+            resources.ApplyResources(this.cmdChangeRunCondition, "cmdChangeRunCondition");
+            this.cmdChangeRunCondition.Curvature = 15;
+            this.cmdChangeRunCondition.GradientMode = CustomButton.LinearGradientMode.Horizontal;
+            this.cmdChangeRunCondition.Name = "cmdChangeRunCondition";
+            this.cmdChangeRunCondition.TextFont = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Bold);
             // 
             // panelSideTable
             // 
@@ -968,7 +1035,7 @@
             // pictureBox9
             // 
             resources.ApplyResources(this.pictureBox9, "pictureBox9");
-            this.pictureBox9.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_GTYSlide;
+            this.pictureBox9.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_singleSlide;
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.TabStop = false;
             // 
@@ -1052,14 +1119,14 @@
             // pictureBox13
             // 
             resources.ApplyResources(this.pictureBox13, "pictureBox13");
-            this.pictureBox13.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_slide;
+            this.pictureBox13.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_YL;
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.TabStop = false;
             // 
             // pictureBox14
             // 
             resources.ApplyResources(this.pictureBox14, "pictureBox14");
-            this.pictureBox14.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.YLModel;
+            this.pictureBox14.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.screwModel;
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.TabStop = false;
             // 
@@ -1080,7 +1147,7 @@
             // pictureBox15
             // 
             resources.ApplyResources(this.pictureBox15, "pictureBox15");
-            this.pictureBox15.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_singleSlide;
+            this.pictureBox15.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.slideModel_MG;
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.TabStop = false;
             // 
@@ -1451,7 +1518,7 @@
             // 
             // 皮帶馬達安全係數
             // 
-            this.皮帶馬達安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.皮帶馬達安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.皮帶馬達安全係數, "皮帶馬達安全係數");
             this.皮帶馬達安全係數.Name = "皮帶馬達安全係數";
             this.皮帶馬達安全係數.ReadOnly = true;
@@ -1459,8 +1526,7 @@
             // 
             // T_max安全係數
             // 
-            this.T_max安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.T_max安全係數.FillWeight = 158.5393F;
+            this.T_max安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.T_max安全係數, "T_max安全係數");
             this.T_max安全係數.Name = "T_max安全係數";
             this.T_max安全係數.ReadOnly = true;
@@ -1468,7 +1534,7 @@
             // 
             // 皮帶T_max安全係數
             // 
-            this.皮帶T_max安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.皮帶T_max安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.皮帶T_max安全係數, "皮帶T_max安全係數");
             this.皮帶T_max安全係數.Name = "皮帶T_max安全係數";
             this.皮帶T_max安全係數.ReadOnly = true;
@@ -1476,8 +1542,7 @@
             // 
             // T_Rms安全係數
             // 
-            this.T_Rms安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.T_Rms安全係數.FillWeight = 167.8455F;
+            this.T_Rms安全係數.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.T_Rms安全係數, "T_Rms安全係數");
             this.T_Rms安全係數.Name = "T_Rms安全係數";
             this.T_Rms安全係數.ReadOnly = true;
@@ -1704,6 +1769,7 @@
             this.panelCalc.Controls.Add(this.label19);
             this.panelCalc.Controls.Add(this.panel14);
             this.panelCalc.Controls.Add(this.panel13);
+            this.panelCalc.Controls.Add(this.panelCalcAllParam);
             resources.ApplyResources(this.panelCalc, "panelCalc");
             this.panelCalc.Name = "panelCalc";
             // 
@@ -1757,10 +1823,17 @@
             // 
             // panelMotorAdvanceMode
             // 
-            this.panelMotorAdvanceMode.Controls.Add(this.chkMotorAdvanceMode);
             this.panelMotorAdvanceMode.Controls.Add(this.label20);
+            this.panelMotorAdvanceMode.Controls.Add(this.chkMotorAdvanceMode);
             resources.ApplyResources(this.panelMotorAdvanceMode, "panelMotorAdvanceMode");
             this.panelMotorAdvanceMode.Name = "panelMotorAdvanceMode";
+            // 
+            // label20
+            // 
+            resources.ApplyResources(this.label20, "label20");
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label20.Name = "label20";
             // 
             // chkMotorAdvanceMode
             // 
@@ -1773,13 +1846,8 @@
             this.chkMotorAdvanceMode.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn2_hover;
             this.chkMotorAdvanceMode.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn2;
             this.chkMotorAdvanceMode.Checked = false;
+            this.chkMotorAdvanceMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkMotorAdvanceMode.Name = "chkMotorAdvanceMode";
-            // 
-            // label20
-            // 
-            resources.ApplyResources(this.label20, "label20");
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
-            this.label20.Name = "label20";
             // 
             // panelMotorParams
             // 
@@ -2023,6 +2091,7 @@
             this.chkExpectServiceLife.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn2_hover;
             this.chkExpectServiceLife.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn2;
             this.chkExpectServiceLife.Checked = false;
+            this.chkExpectServiceLife.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkExpectServiceLife.Name = "chkExpectServiceLife";
             // 
             // panelAdvanceMode
@@ -2044,22 +2113,39 @@
             this.chkAdvanceMode.BackImg_ToggleOn_Hover = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn2_hover;
             this.chkAdvanceMode.BackImg_ToggleOn_Normal = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.toggleOn2;
             this.chkAdvanceMode.Checked = false;
+            this.chkAdvanceMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkAdvanceMode.Name = "chkAdvanceMode";
             // 
             // panelAdvanceParams
             // 
             resources.ApplyResources(this.panelAdvanceParams, "panelAdvanceParams");
             this.panelAdvanceParams.BackColor = System.Drawing.Color.Transparent;
+            this.panelAdvanceParams.Controls.Add(this.lbMaxValue_AccelSpeed);
+            this.panelAdvanceParams.Controls.Add(this.lbMaxValue_MaxSpeed);
             this.panelAdvanceParams.Controls.Add(this.cboMaxSpeedUnit);
             this.panelAdvanceParams.Controls.Add(this.lbMaxSpeedAlarm);
             this.panelAdvanceParams.Controls.Add(this.label78);
             this.panelAdvanceParams.Controls.Add(this.label81);
-            this.panelAdvanceParams.Controls.Add(this.label82);
+            this.panelAdvanceParams.Controls.Add(this.lbAccelSpeedAlarm);
             this.panelAdvanceParams.Controls.Add(this.txtAccelSpeed);
             this.panelAdvanceParams.Controls.Add(this.label79);
             this.panelAdvanceParams.Controls.Add(this.txtMaxSpeed);
             this.panelAdvanceParams.Controls.Add(this.lbRpm);
             this.panelAdvanceParams.Name = "panelAdvanceParams";
+            // 
+            // lbMaxValue_AccelSpeed
+            // 
+            resources.ApplyResources(this.lbMaxValue_AccelSpeed, "lbMaxValue_AccelSpeed");
+            this.lbMaxValue_AccelSpeed.BackColor = System.Drawing.Color.Transparent;
+            this.lbMaxValue_AccelSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbMaxValue_AccelSpeed.Name = "lbMaxValue_AccelSpeed";
+            // 
+            // lbMaxValue_MaxSpeed
+            // 
+            resources.ApplyResources(this.lbMaxValue_MaxSpeed, "lbMaxValue_MaxSpeed");
+            this.lbMaxValue_MaxSpeed.BackColor = System.Drawing.Color.Transparent;
+            this.lbMaxValue_MaxSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbMaxValue_MaxSpeed.Name = "lbMaxValue_MaxSpeed";
             // 
             // cboMaxSpeedUnit
             // 
@@ -2090,13 +2176,13 @@
             resources.ApplyResources(this.label81, "label81");
             this.label81.Name = "label81";
             // 
-            // label82
+            // lbAccelSpeedAlarm
             // 
-            resources.ApplyResources(this.label82, "label82");
-            this.label82.BackColor = System.Drawing.Color.Transparent;
-            this.label82.ForeColor = System.Drawing.Color.Red;
-            this.label82.Name = "label82";
-            this.label82.Tag = "txtAccelSpeed";
+            resources.ApplyResources(this.lbAccelSpeedAlarm, "lbAccelSpeedAlarm");
+            this.lbAccelSpeedAlarm.BackColor = System.Drawing.Color.Transparent;
+            this.lbAccelSpeedAlarm.ForeColor = System.Drawing.Color.Red;
+            this.lbAccelSpeedAlarm.Name = "lbAccelSpeedAlarm";
+            this.lbAccelSpeedAlarm.Tag = "txtAccelSpeed";
             // 
             // txtAccelSpeed
             // 
@@ -2403,32 +2489,134 @@
             this.lbTitleCalc.ForeColor = System.Drawing.Color.Gainsboro;
             this.lbTitleCalc.Name = "lbTitleCalc";
             // 
+            // panelCalcAllParam
+            // 
+            resources.ApplyResources(this.panelCalcAllParam, "panelCalcAllParam");
+            this.panelCalcAllParam.BackColor = System.Drawing.Color.Transparent;
+            this.panelCalcAllParam.Controls.Add(this.panelNoConstantTimeParam);
+            this.panelCalcAllParam.Controls.Add(this.cboMaxCalcMode);
+            this.panelCalcAllParam.Controls.Add(this.label80);
+            this.panelCalcAllParam.Name = "panelCalcAllParam";
+            // 
+            // panelNoConstantTimeParam
+            // 
+            this.panelNoConstantTimeParam.Controls.Add(this.cboMaxCalcUnit);
+            this.panelNoConstantTimeParam.Controls.Add(this.label77);
+            this.panelNoConstantTimeParam.Controls.Add(this.txtMaxCalc);
+            resources.ApplyResources(this.panelNoConstantTimeParam, "panelNoConstantTimeParam");
+            this.panelNoConstantTimeParam.Name = "panelNoConstantTimeParam";
+            // 
+            // cboMaxCalcUnit
+            // 
+            this.cboMaxCalcUnit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboMaxCalcUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMaxCalcUnit.DropDownWidth = 180;
+            resources.ApplyResources(this.cboMaxCalcUnit, "cboMaxCalcUnit");
+            this.cboMaxCalcUnit.ForeColor = System.Drawing.Color.White;
+            this.cboMaxCalcUnit.FormattingEnabled = true;
+            this.cboMaxCalcUnit.Name = "cboMaxCalcUnit";
+            // 
+            // label77
+            // 
+            resources.ApplyResources(this.label77, "label77");
+            this.label77.BackColor = System.Drawing.Color.Transparent;
+            this.label77.ForeColor = System.Drawing.Color.Red;
+            this.label77.Name = "label77";
+            this.label77.Tag = "txtMaxCalc";
+            // 
+            // txtMaxCalc
+            // 
+            resources.ApplyResources(this.txtMaxCalc, "txtMaxCalc");
+            this.txtMaxCalc.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMaxCalc.Name = "txtMaxCalc";
+            // 
+            // cboMaxCalcMode
+            // 
+            this.cboMaxCalcMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboMaxCalcMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMaxCalcMode.DropDownWidth = 180;
+            resources.ApplyResources(this.cboMaxCalcMode, "cboMaxCalcMode");
+            this.cboMaxCalcMode.ForeColor = System.Drawing.Color.White;
+            this.cboMaxCalcMode.FormattingEnabled = true;
+            this.cboMaxCalcMode.Name = "cboMaxCalcMode";
+            // 
+            // label80
+            // 
+            resources.ApplyResources(this.label80, "label80");
+            this.label80.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.label80.Name = "label80";
+            // 
             // panelSetup
             // 
-            this.panelSetup.Controls.Add(this.label64);
-            this.panelSetup.Controls.Add(this.label63);
-            this.panelSetup.Controls.Add(this.label62);
+            this.panelSetup.Controls.Add(this.panelSetupSelection);
             this.panelSetup.Controls.Add(this.panelMoment);
             this.panelSetup.Controls.Add(this.picMoment);
             this.panelSetup.Controls.Add(this.optHorizontalUse);
             this.panelSetup.Controls.Add(this.optVerticalUse);
             this.panelSetup.Controls.Add(this.optWallHangingUse);
-            this.panelSetup.Controls.Add(this.picWallHangingUse);
-            this.panelSetup.Controls.Add(this.picVerticalUse);
-            this.panelSetup.Controls.Add(this.picHorizontalUse);
             this.panelSetup.Controls.Add(this.panel8);
             resources.ApplyResources(this.panelSetup, "panelSetup");
             this.panelSetup.Name = "panelSetup";
+            // 
+            // panelSetupSelection
+            // 
+            this.panelSetupSelection.Controls.Add(this.panelSetupWallHang);
+            this.panelSetupSelection.Controls.Add(this.panelSetupVertical);
+            this.panelSetupSelection.Controls.Add(this.panelSetupHorizontal);
+            resources.ApplyResources(this.panelSetupSelection, "panelSetupSelection");
+            this.panelSetupSelection.Name = "panelSetupSelection";
+            // 
+            // panelSetupWallHang
+            // 
+            this.panelSetupWallHang.Controls.Add(this.label64);
+            this.panelSetupWallHang.Controls.Add(this.picWallHangingUse);
+            resources.ApplyResources(this.panelSetupWallHang, "panelSetupWallHang");
+            this.panelSetupWallHang.Name = "panelSetupWallHang";
             // 
             // label64
             // 
             resources.ApplyResources(this.label64, "label64");
             this.label64.Name = "label64";
             // 
+            // picWallHangingUse
+            // 
+            this.picWallHangingUse.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.setup_wallHang_normal;
+            resources.ApplyResources(this.picWallHangingUse, "picWallHangingUse");
+            this.picWallHangingUse.Name = "picWallHangingUse";
+            this.picWallHangingUse.TabStop = false;
+            // 
+            // panelSetupVertical
+            // 
+            this.panelSetupVertical.Controls.Add(this.picVerticalUse);
+            this.panelSetupVertical.Controls.Add(this.label63);
+            resources.ApplyResources(this.panelSetupVertical, "panelSetupVertical");
+            this.panelSetupVertical.Name = "panelSetupVertical";
+            // 
+            // picVerticalUse
+            // 
+            this.picVerticalUse.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.setup_vertical_normal;
+            resources.ApplyResources(this.picVerticalUse, "picVerticalUse");
+            this.picVerticalUse.Name = "picVerticalUse";
+            this.picVerticalUse.TabStop = false;
+            // 
             // label63
             // 
             resources.ApplyResources(this.label63, "label63");
             this.label63.Name = "label63";
+            // 
+            // panelSetupHorizontal
+            // 
+            this.panelSetupHorizontal.Controls.Add(this.picHorizontalUse);
+            this.panelSetupHorizontal.Controls.Add(this.label62);
+            resources.ApplyResources(this.panelSetupHorizontal, "panelSetupHorizontal");
+            this.panelSetupHorizontal.Name = "panelSetupHorizontal";
+            // 
+            // picHorizontalUse
+            // 
+            this.picHorizontalUse.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.setup_horizontal_enabled;
+            resources.ApplyResources(this.picHorizontalUse, "picHorizontalUse");
+            this.picHorizontalUse.Name = "picHorizontalUse";
+            this.picHorizontalUse.TabStop = false;
             // 
             // label62
             // 
@@ -2585,27 +2773,6 @@
             this.optWallHangingUse.ForeColor = System.Drawing.Color.Black;
             this.optWallHangingUse.Name = "optWallHangingUse";
             this.optWallHangingUse.UseVisualStyleBackColor = true;
-            // 
-            // picWallHangingUse
-            // 
-            this.picWallHangingUse.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.setup_wallHang_normal;
-            resources.ApplyResources(this.picWallHangingUse, "picWallHangingUse");
-            this.picWallHangingUse.Name = "picWallHangingUse";
-            this.picWallHangingUse.TabStop = false;
-            // 
-            // picVerticalUse
-            // 
-            this.picVerticalUse.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.setup_vertical_normal;
-            resources.ApplyResources(this.picVerticalUse, "picVerticalUse");
-            this.picVerticalUse.Name = "picVerticalUse";
-            this.picVerticalUse.TabStop = false;
-            // 
-            // picHorizontalUse
-            // 
-            this.picHorizontalUse.Image = global::SingleAxis_NoMotor_SelectionSoftware.Properties.Resources.setup_horizontal_enabled;
-            resources.ApplyResources(this.picHorizontalUse, "picHorizontalUse");
-            this.picHorizontalUse.Name = "picHorizontalUse";
-            this.picHorizontalUse.TabStop = false;
             // 
             // panel8
             // 
@@ -3254,6 +3421,15 @@
             this.label56.BackColor = System.Drawing.Color.LightGray;
             this.label56.Name = "label56";
             // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 50000;
+            this.toolTip1.InitialDelay = 500;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ReshowDelay = 100;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "變更非標準馬達時請注意";
+            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -3261,6 +3437,8 @@
             this.Controls.Add(this.panelBase);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMain";
+            this.Opacity = 0D;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.Resize += new System.EventHandler(this.FormMain_Resize);
             this.panelBase.ResumeLayout(false);
@@ -3291,6 +3469,10 @@
             this.tabContent.PerformLayout();
             this.explorerBar.ResumeLayout(false);
             this.explorerBar.PerformLayout();
+            this.panelCalcAllMode.ResumeLayout(false);
+            this.panelCalcAllMode.PerformLayout();
+            this.panelCalcMaxOptions.ResumeLayout(false);
+            this.panelCalcMaxOptions.PerformLayout();
             this.panelNextPage.ResumeLayout(false);
             this.panelConfirmBtnsStep2.ResumeLayout(false);
             this.panelSideTable.ResumeLayout(false);
@@ -3388,8 +3570,19 @@
             this.panel13.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            this.panelCalcAllParam.ResumeLayout(false);
+            this.panelCalcAllParam.PerformLayout();
+            this.panelNoConstantTimeParam.ResumeLayout(false);
+            this.panelNoConstantTimeParam.PerformLayout();
             this.panelSetup.ResumeLayout(false);
             this.panelSetup.PerformLayout();
+            this.panelSetupSelection.ResumeLayout(false);
+            this.panelSetupWallHang.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picWallHangingUse)).EndInit();
+            this.panelSetupVertical.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picVerticalUse)).EndInit();
+            this.panelSetupHorizontal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picHorizontalUse)).EndInit();
             this.panelMoment.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             this.panel25.ResumeLayout(false);
@@ -3399,9 +3592,6 @@
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMoment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWallHangingUse)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picVerticalUse)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHorizontalUse)).EndInit();
             this.panel8.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
@@ -3461,7 +3651,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBoxToyo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         public System.Windows.Forms.SplitContainer splitContainerBase;
@@ -3507,7 +3696,7 @@
         public System.Windows.Forms.Label lbMaxSpeedAlarm;
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.Label label81;
-        public System.Windows.Forms.Label label82;
+        public System.Windows.Forms.Label lbAccelSpeedAlarm;
         public System.Windows.Forms.TextBox txtAccelSpeed;
         private System.Windows.Forms.Label label79;
         public System.Windows.Forms.TextBox txtMaxSpeed;
@@ -3606,7 +3795,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         public System.Windows.Forms.Panel panelNextPage;
-        private System.Windows.Forms.Label lbTitleCalc;
         private System.Windows.Forms.Panel panelBase;
         public System.Windows.Forms.Panel scrollBarPanelStroke;
         public System.Windows.Forms.PictureBox scrollBarThumbStroke;
@@ -3630,29 +3818,6 @@
         public System.Windows.Forms.Label label75;
         public System.Windows.Forms.Panel panelModelSelectionLead;
         public System.Windows.Forms.Panel panelModelSelectionModel;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn 鎖定;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 項次;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 重複定位精度;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 導程;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 荷重;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 最高轉速;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 運行速度;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 加速度;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 最大行程;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 運行時間;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 力矩A;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 力矩B;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 力矩C;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 力矩警示;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 馬達瓦數;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 皮帶馬達安全係數;
-        private System.Windows.Forms.DataGridViewTextBoxColumn T_max安全係數;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 皮帶T_max安全係數;
-        private System.Windows.Forms.DataGridViewTextBoxColumn T_Rms安全係數;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 運行距離;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 運行壽命;
-        private System.Windows.Forms.DataGridViewImageColumn 是否推薦;
-        private System.Windows.Forms.DataGridViewImageColumn 更詳細資訊;
         private System.Windows.Forms.Label label16;
         public System.Windows.Forms.Label label18;
         public System.Windows.Forms.TextBox txtLoadInertiaMomentRatio;
@@ -3678,7 +3843,6 @@
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel13;
         public System.Windows.Forms.Panel panelxxx;
-        public System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         public System.Windows.Forms.ComboBox cboMaxSpeedUnit;
         private System.Windows.Forms.Panel panel16;
@@ -3713,7 +3877,6 @@
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label62;
         public System.Windows.Forms.Panel panelMotorParams;
-        public System.Windows.Forms.Panel panelMotorAdvanceMode;
         public System.Windows.Forms.Panel panelExpectServiceLifeTime;
         public CustomToggle.CustomToggle chkExpectServiceLife;
         private System.Windows.Forms.Panel panel6;
@@ -3746,7 +3909,6 @@
         private System.Windows.Forms.Panel panel21;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
-        public CustomToggle.CustomToggle chkMotorAdvanceMode;
         public CustomToggle.CustomToggle chkAdvanceMode;
         public CustomTabControl tabSideTableImg;
         private System.Windows.Forms.TabPage 型號;
@@ -3804,6 +3966,53 @@
         private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.Panel panel23;
         public System.Windows.Forms.Panel panelMomentB;
+        public System.Windows.Forms.CheckBox chkCalcAllMode;
+        public System.Windows.Forms.Panel panelCalcAllParam;
+        public System.Windows.Forms.ComboBox cboMaxCalcMode;
+        public System.Windows.Forms.Label label77;
+        public System.Windows.Forms.TextBox txtMaxCalc;
+        private System.Windows.Forms.Label label80;
+        public System.Windows.Forms.CheckBox chkRpmLimitByStroke;
+        public System.Windows.Forms.ComboBox cboMaxCalcUnit;
+        public System.Windows.Forms.Panel panelNoConstantTimeParam;
+        public System.Windows.Forms.CheckBox chkIsCalcMaxLoad;
+        public System.Windows.Forms.Panel panelCalcMaxOptions;
+        public System.Windows.Forms.Panel panelCalcAllMode;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn 鎖定;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 項次;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 重複定位精度;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 導程;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 荷重;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 最高轉速;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 運行速度;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 加速度;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 最大行程;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 運行時間;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 力矩A;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 力矩B;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 力矩C;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 力矩警示;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 馬達瓦數;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 皮帶馬達安全係數;
+        private System.Windows.Forms.DataGridViewTextBoxColumn T_max安全係數;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 皮帶T_max安全係數;
+        private System.Windows.Forms.DataGridViewTextBoxColumn T_Rms安全係數;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 運行距離;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 運行壽命;
+        private System.Windows.Forms.DataGridViewImageColumn 是否推薦;
+        private System.Windows.Forms.DataGridViewImageColumn 更詳細資訊;
+        public CustomButton.CustomButton cmdChangeRunCondition;
+        public System.Windows.Forms.Label lbTitleCalc;
+        public System.Windows.Forms.PictureBox pictureBoxToyo;
+        public System.Windows.Forms.Label lbMaxValue_AccelSpeed;
+        public System.Windows.Forms.Label lbMaxValue_MaxSpeed;
+        private System.Windows.Forms.Label label20;
+        public CustomToggle.CustomToggle chkMotorAdvanceMode;
+        public System.Windows.Forms.Panel panelMotorAdvanceMode;
+        public System.Windows.Forms.Panel panelSetupSelection;
+        public System.Windows.Forms.Panel panelSetupWallHang;
+        public System.Windows.Forms.Panel panelSetupVertical;
+        public System.Windows.Forms.Panel panelSetupHorizontal;
     }
 }
 

@@ -24,19 +24,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.cboModel.LostFocus += CboModel_LostFocus;
             formMain.cboReducerRatio.SelectedValueChanged += CboReducerRatio_SelectedValueChanged;
             formMain.cboLead.SelectedValueChanged += CboLead_SelectedValueChanged;
-        }
-
-        private void CboReducerRatio_SelectedValueChanged(object sender, EventArgs e) {
-            //if (!formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().Any(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text))
-            //    return;
-
-            //DataGridViewRow curRow = formMain.dgvReducerInfo.Rows.Cast<DataGridViewRow>().First(row => row.Cells["columnModel"].Value.ToString() == formMain.cboModel.Text);
-            ////DataGridViewComboBoxCell cboReducerRatio = curRow.Cells["columnReducerRatio"].Value as DataGridViewComboBoxCell;
-            //curRow.Cells["columnReducerRatio"].Value = formMain.cboReducerRatio.Text;
-
-            formMain.sideTable.UpdateModeInfo(formMain.cboModel.Text, Convert.ToInt32(formMain.cboReducerRatio.Text));
-            formMain.cboLead.SelectedIndex = formMain.cboReducerRatio.SelectedIndex;
-        }
+        }        
 
         public void InitModelSelectionCbo() {
             var allDiffModel = formMain.page2.calc.modelInfo.Rows.Cast<DataRow>()
@@ -62,7 +50,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.sideTable.ClearMsg();
                 formMain.sideTable.ClearSelectedModelInfo();
                 formMain.cboReducerRatio.DataSource = null;
-                formMain.cmdConfirmStep2.Visible = false;
+                //formMain.cmdConfirmStep2.Visible = false;
+                formMain.page2.ChangeNextStepBtnVisible(false);
             } else {
                 // 型號搜尋到時
                 //Model.ModelType curModelType = formMain.page2.calc.GetModelType(formMain.cboModel.Text);
@@ -134,7 +123,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void CboLead_SelectedValueChanged(object sender, EventArgs e) {
-            if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "" || formMain.cboReducerRatio.Text == "")
+            if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "")
+                return;
+            if (formMain.cboModel.Text.IsContainsReducerRatioType() && formMain.cboReducerRatio.Text == "")
                 return;
 
             Condition con = new Condition();
@@ -158,6 +149,33 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.sideTable.UpdateModeInfo(formMain.cboModel.Text, Convert.ToInt32(formMain.cboReducerRatio.Text));
             else
                 formMain.sideTable.UpdateModeInfo(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
+
+            // 安裝方式
+            Model.SetupMethod[] modelTypeSupportSetupMethod = formMain.page2.calc.GetSupportSetup(formMain.cboModel.Text);
+            formMain.page2.setupMethodOptMap.ToList().ForEach(pair => pair.Key.Enabled = modelTypeSupportSetupMethod.Contains(pair.Value));
+            if (formMain.page2.setupMethodOptMap.ToList().Any(pair => pair.Key.Checked && !pair.Key.Enabled))
+                formMain.page2.setupMethodOptMap.ToList().First(pair => pair.Key.Enabled).Key.Checked = true;
+            formMain.page2.setupMethodPicOptMap.ToList().ForEach(pair => pair.Value.Visible = pair.Key.Enabled);
+        }
+
+        private void CboReducerRatio_SelectedValueChanged(object sender, EventArgs e) {
+            formMain.sideTable.UpdateModeInfo(formMain.cboModel.Text, Convert.ToInt32(formMain.cboReducerRatio.Text));
+            formMain.cboLead.SelectedIndex = formMain.cboReducerRatio.SelectedIndex;
+
+            // 更新荷重
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
+                Condition con = new Condition();
+                if (formMain.optHorizontalUse.Checked)
+                    con.setupMethod = Model.SetupMethod.水平;
+                else if (formMain.optWallHangingUse.Checked)
+                    con.setupMethod = Model.SetupMethod.橫掛;
+                else if (formMain.optVerticalUse.Checked)
+                    con.setupMethod = Model.SetupMethod.垂直;
+                double maxLoad = formMain.page2.calc.GetMaxLoad(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text), con);
+                if (maxLoad == int.MaxValue)
+                    maxLoad = RunCondition.defaultMaxLoad;
+                formMain.page2.runCondition.scrollBarLoad.maxValue = (int)maxLoad;
+            }
         }
     }
 }

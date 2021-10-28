@@ -133,7 +133,7 @@
     <value>Horizontal</value>
   </data>
   <data name="lbTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
+    <value>Fill</value>
   </data>
   <data name="lbTitle.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 11pt, style=Bold</value>
@@ -148,7 +148,7 @@
     <value>5, 0, 0, 0</value>
   </data>
   <data name="lbTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 35</value>
+    <value>1178, 33</value>
   </data>
   <data name="lbTitle.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -181,7 +181,7 @@
     <value>12, 0</value>
   </data>
   <data name="pictureBoxToyo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 35</value>
+    <value>67, 33</value>
   </data>
   <data name="pictureBoxToyo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -211,7 +211,7 @@
     <value>0, 0</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 35</value>
+    <value>12, 33</value>
   </data>
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -238,7 +238,7 @@
     <value>1257, 0</value>
   </data>
   <data name="cmdExplorer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>19, 35</value>
+    <value>19, 33</value>
   </data>
   <data name="cmdExplorer.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -268,7 +268,7 @@
     <value>1276, 0</value>
   </data>
   <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>7, 35</value>
+    <value>7, 33</value>
   </data>
   <data name="pictureBox3.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -298,7 +298,7 @@
     <value>0, 0, 2, 0</value>
   </data>
   <data name="cmdNarrow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 35</value>
+    <value>34, 33</value>
   </data>
   <data name="cmdNarrow.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>AutoSize</value>
@@ -331,7 +331,7 @@
     <value>0, 0, 2, 0</value>
   </data>
   <data name="cmdZoom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 35</value>
+    <value>34, 33</value>
   </data>
   <data name="cmdZoom.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>AutoSize</value>
@@ -364,7 +364,7 @@
     <value>0, 0, 3, 0</value>
   </data>
   <data name="cmdClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 35</value>
+    <value>49, 33</value>
   </data>
   <data name="cmdClose.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>AutoSize</value>
@@ -412,7 +412,7 @@
     <value>0, 0</value>
   </data>
   <data name="cmdShapeSelection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 203</value>
+    <value>294, 204</value>
   </data>
   <data name="cmdShapeSelection.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -439,7 +439,7 @@
     <value>395, 3</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 203</value>
+    <value>294, 204</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -466,7 +466,7 @@
     <value>0, 0</value>
   </data>
   <data name="cmdModelSelection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 203</value>
+    <value>294, 204</value>
   </data>
   <data name="cmdModelSelection.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -493,7 +493,7 @@
     <value>695, 3</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 203</value>
+    <value>294, 204</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -514,13 +514,13 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 218</value>
+    <value>3, 219</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1384, 209</value>
+    <value>1384, 210</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -559,7 +559,7 @@
     <value>0, 0, 0, 8</value>
   </data>
   <data name="label73.Size" type="System.Drawing.Size, System.Drawing">
-    <value>962, 37</value>
+    <value>962, 38</value>
   </data>
   <data name="label73.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -589,7 +589,7 @@
     <value>NoControl</value>
   </data>
   <data name="label76.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 38</value>
+    <value>0, 39</value>
   </data>
   <data name="label76.Size" type="System.Drawing.Size, System.Drawing">
     <value>962, 5</value>
@@ -619,7 +619,7 @@
     <value>0, 1, 0, 0</value>
   </data>
   <data name="panel18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>962, 43</value>
+    <value>962, 44</value>
   </data>
   <data name="panel18.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -649,7 +649,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1384, 209</value>
+    <value>1384, 210</value>
   </data>
   <data name="tableLayoutPanel11.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -679,7 +679,7 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1390, 647</value>
+    <value>1390, 649</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -703,7 +703,7 @@
     <value>4, 22</value>
   </data>
   <data name="tabStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1390, 647</value>
+    <value>1390, 649</value>
   </data>
   <data name="tabStart.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -729,8 +729,155 @@
   <data name="explorerBar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="chkIsCalcMaxLoad.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkIsCalcMaxLoad.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 9pt</value>
+  </data>
+  <data name="chkIsCalcMaxLoad.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkIsCalcMaxLoad.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 8</value>
+  </data>
+  <data name="chkIsCalcMaxLoad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="chkIsCalcMaxLoad.TabIndex" type="System.Int32, mscorlib">
+    <value>260</value>
+  </data>
+  <data name="chkIsCalcMaxLoad.Text" xml:space="preserve">
+    <value>最大荷重</value>
+  </data>
+  <data name="&gt;&gt;chkIsCalcMaxLoad.Name" xml:space="preserve">
+    <value>chkIsCalcMaxLoad</value>
+  </data>
+  <data name="&gt;&gt;chkIsCalcMaxLoad.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkIsCalcMaxLoad.Parent" xml:space="preserve">
+    <value>panelCalcMaxOptions</value>
+  </data>
+  <data name="&gt;&gt;chkIsCalcMaxLoad.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkRpmLimitByStroke.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkRpmLimitByStroke.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 9pt</value>
+  </data>
+  <data name="chkRpmLimitByStroke.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkRpmLimitByStroke.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 8</value>
+  </data>
+  <data name="chkRpmLimitByStroke.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 20</value>
+  </data>
+  <data name="chkRpmLimitByStroke.TabIndex" type="System.Int32, mscorlib">
+    <value>259</value>
+  </data>
+  <data name="chkRpmLimitByStroke.Text" xml:space="preserve">
+    <value>行程對照轉速</value>
+  </data>
+  <data name="&gt;&gt;chkRpmLimitByStroke.Name" xml:space="preserve">
+    <value>chkRpmLimitByStroke</value>
+  </data>
+  <data name="&gt;&gt;chkRpmLimitByStroke.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkRpmLimitByStroke.Parent" xml:space="preserve">
+    <value>panelCalcMaxOptions</value>
+  </data>
+  <data name="&gt;&gt;chkRpmLimitByStroke.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelCalcMaxOptions.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="panelCalcMaxOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 32</value>
+  </data>
+  <data name="panelCalcMaxOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 36</value>
+  </data>
+  <data name="panelCalcMaxOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>261</value>
+  </data>
+  <data name="&gt;&gt;panelCalcMaxOptions.Name" xml:space="preserve">
+    <value>panelCalcMaxOptions</value>
+  </data>
+  <data name="&gt;&gt;panelCalcMaxOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelCalcMaxOptions.Parent" xml:space="preserve">
+    <value>panelCalcAllMode</value>
+  </data>
+  <data name="&gt;&gt;panelCalcMaxOptions.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkCalcAllMode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkCalcAllMode.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 9pt</value>
+  </data>
+  <data name="chkCalcAllMode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkCalcAllMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 9</value>
+  </data>
+  <data name="chkCalcAllMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="chkCalcAllMode.TabIndex" type="System.Int32, mscorlib">
+    <value>258</value>
+  </data>
+  <data name="chkCalcAllMode.Text" xml:space="preserve">
+    <value>全選模式</value>
+  </data>
+  <data name="&gt;&gt;chkCalcAllMode.Name" xml:space="preserve">
+    <value>chkCalcAllMode</value>
+  </data>
+  <data name="&gt;&gt;chkCalcAllMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkCalcAllMode.Parent" xml:space="preserve">
+    <value>panelCalcAllMode</value>
+  </data>
+  <data name="&gt;&gt;chkCalcAllMode.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelCalcAllMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1136, 23</value>
+  </data>
+  <data name="panelCalcAllMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 71</value>
+  </data>
+  <data name="panelCalcAllMode.TabIndex" type="System.Int32, mscorlib">
+    <value>262</value>
+  </data>
+  <data name="panelCalcAllMode.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;panelCalcAllMode.Name" xml:space="preserve">
+    <value>panelCalcAllMode</value>
+  </data>
+  <data name="&gt;&gt;panelCalcAllMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelCalcAllMode.Parent" xml:space="preserve">
+    <value>explorerBar</value>
+  </data>
+  <data name="&gt;&gt;panelCalcAllMode.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="panelConfirmBtnsStep2.ColumnCount" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cmdConfirmStep2.ButtonText" xml:space="preserve">
     <value>下一步</value>
@@ -739,7 +886,7 @@
     <value>Fill</value>
   </data>
   <data name="cmdConfirmStep2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>404, 3</value>
+    <value>483, 3</value>
   </data>
   <data name="cmdConfirmStep2.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 32</value>
@@ -758,6 +905,33 @@
   </data>
   <data name="&gt;&gt;cmdConfirmStep2.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="cmdChangeRunCondition.ButtonText" xml:space="preserve">
+    <value>調整運轉條件</value>
+  </data>
+  <data name="cmdChangeRunCondition.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="cmdChangeRunCondition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>323, 3</value>
+  </data>
+  <data name="cmdChangeRunCondition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 32</value>
+  </data>
+  <data name="cmdChangeRunCondition.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;cmdChangeRunCondition.Name" xml:space="preserve">
+    <value>cmdChangeRunCondition</value>
+  </data>
+  <data name="&gt;&gt;cmdChangeRunCondition.Type" xml:space="preserve">
+    <value>CustomButton.CustomButton, CustomButton, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmdChangeRunCondition.Parent" xml:space="preserve">
+    <value>panelConfirmBtnsStep2</value>
+  </data>
+  <data name="&gt;&gt;cmdChangeRunCondition.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="panelConfirmBtnsStep2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -787,7 +961,7 @@
     <value>0</value>
   </data>
   <data name="panelConfirmBtnsStep2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cmdConfirmStep2" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,41.66722,Percent,16.66556,Percent,41.66722,Absolute,20" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cmdConfirmStep2" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="cmdChangeRunCondition" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33.33,Percent,16.67,Percent,16.67,Percent,33.33" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelNextPage.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -811,7 +985,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelNextPage.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="pictureBox5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -895,7 +1069,7 @@
     <value>2</value>
   </data>
   <data name="panelSideTableIcon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 8</value>
+    <value>14, 8</value>
   </data>
   <data name="panelSideTableIcon.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 307</value>
@@ -949,7 +1123,7 @@
     <value>0</value>
   </data>
   <data name="tableSelections.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,748,Absolute,748,Absolute,748,Absolute,748" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,775,Absolute,775,Absolute,775,Absolute,775" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSideTableSelections.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 321</value>
@@ -964,7 +1138,7 @@
     <value>panelSideTableSelections</value>
   </data>
   <data name="&gt;&gt;panelSideTableSelections.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.12, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.30, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;panelSideTableSelections.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -1021,7 +1195,7 @@
     <value>customPanel4</value>
   </data>
   <data name="&gt;&gt;customPanel4.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.12, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.30, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel4.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -1111,7 +1285,7 @@
     <value>customPanel3</value>
   </data>
   <data name="&gt;&gt;customPanel3.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.12, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.30, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel3.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -2509,7 +2683,7 @@
     <value>tabSideTableImg</value>
   </data>
   <data name="&gt;&gt;tabSideTableImg.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.12, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, 不帶電選型軟體, Version=0.0.1.30, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabSideTableImg.Parent" xml:space="preserve">
     <value>customPanel2</value>
@@ -2533,7 +2707,7 @@
     <value>customPanel2</value>
   </data>
   <data name="&gt;&gt;customPanel2.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.12, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.30, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel2.Parent" xml:space="preserve">
     <value>panelSideTable</value>
@@ -2590,13 +2764,13 @@
     <value>panelSideTable</value>
   </data>
   <data name="&gt;&gt;panelSideTable.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.12, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.30, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;panelSideTable.Parent" xml:space="preserve">
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelSideTable.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lbPrePage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2629,7 +2803,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;lbPrePage.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="dgvRecommandList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2644,7 +2818,7 @@
     <value>50</value>
   </data>
   <data name="鎖定.Width" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>50</value>
   </data>
   <metadata name="項次.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2656,7 +2830,7 @@
     <value>50</value>
   </data>
   <data name="項次.Width" type="System.Int32, mscorlib">
-    <value>41</value>
+    <value>50</value>
   </data>
   <metadata name="重複定位精度.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2674,7 +2848,7 @@
     <value>True</value>
   </metadata>
   <data name="導程.HeaderText" xml:space="preserve">
-    <value>導程</value>
+    <value>導程(mm)</value>
   </data>
   <data name="導程.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
@@ -2793,9 +2967,6 @@
   <data name="力矩警示.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="力矩警示.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
   <metadata name="馬達瓦數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2812,13 +2983,10 @@
     <value>皮帶馬達安全係數</value>
   </data>
   <data name="皮帶馬達安全係數.MinimumWidth" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>100</value>
   </data>
   <data name="皮帶馬達安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="皮帶馬達安全係數.Width" type="System.Int32, mscorlib">
-    <value>50</value>
   </data>
   <metadata name="T_max安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2827,13 +2995,10 @@
     <value>T_max安全係數</value>
   </data>
   <data name="T_max安全係數.MinimumWidth" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>100</value>
   </data>
   <data name="T_max安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="T_max安全係數.Width" type="System.Int32, mscorlib">
-    <value>50</value>
   </data>
   <metadata name="皮帶T_max安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2842,13 +3007,10 @@
     <value>皮帶T_max安全係數</value>
   </data>
   <data name="皮帶T_max安全係數.MinimumWidth" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>100</value>
   </data>
   <data name="皮帶T_max安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="皮帶T_max安全係數.Width" type="System.Int32, mscorlib">
-    <value>50</value>
   </data>
   <metadata name="T_Rms安全係數.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2857,13 +3019,10 @@
     <value>T_Rms安全係數</value>
   </data>
   <data name="T_Rms安全係數.MinimumWidth" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>100</value>
   </data>
   <data name="T_Rms安全係數.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="T_Rms安全係數.Width" type="System.Int32, mscorlib">
-    <value>50</value>
   </data>
   <metadata name="運行距離.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2916,14 +3075,11 @@
   <data name="更詳細資訊.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="更詳細資訊.Width" type="System.Int32, mscorlib">
-    <value>106</value>
-  </data>
   <data name="dgvRecommandList.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 67</value>
   </data>
   <data name="dgvRecommandList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>918, 364</value>
+    <value>921, 364</value>
   </data>
   <data name="dgvRecommandList.TabIndex" type="System.Int32, mscorlib">
     <value>257</value>
@@ -2950,7 +3106,7 @@
     <value>20, 46</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>920, 2</value>
+    <value>921, 2</value>
   </data>
   <data name="label12.TabIndex" type="System.Int32, mscorlib">
     <value>256</value>
@@ -3022,7 +3178,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelCalcResult.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label58.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3415,7 +3571,7 @@
     <value>customPanel1</value>
   </data>
   <data name="&gt;&gt;customPanel1.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.12, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomPanel, 不帶電選型軟體, Version=0.0.1.30, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;customPanel1.Parent" xml:space="preserve">
     <value>panel16</value>
@@ -3628,7 +3784,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelChart.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="tableLayoutPanel9.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3767,47 +3923,23 @@
   <data name="panelxxx.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="chkMotorAdvanceMode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="chkMotorAdvanceMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 2</value>
-  </data>
-  <data name="chkMotorAdvanceMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 22</value>
-  </data>
-  <data name="chkMotorAdvanceMode.TabIndex" type="System.Int32, mscorlib">
-    <value>378</value>
-  </data>
-  <data name="&gt;&gt;chkMotorAdvanceMode.Name" xml:space="preserve">
-    <value>chkMotorAdvanceMode</value>
-  </data>
-  <data name="&gt;&gt;chkMotorAdvanceMode.Type" xml:space="preserve">
-    <value>CustomToggle.CustomToggle, CustomToggle, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;chkMotorAdvanceMode.Parent" xml:space="preserve">
-    <value>panelMotorAdvanceMode</value>
-  </data>
-  <data name="&gt;&gt;chkMotorAdvanceMode.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label20.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label20.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微軟正黑體, 12pt, style=Bold</value>
+    <value>微軟正黑體, 11pt, style=Bold</value>
   </data>
   <data name="label20.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 3</value>
+    <value>32, 6</value>
   </data>
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 21</value>
+    <value>39, 19</value>
   </data>
   <data name="label20.TabIndex" type="System.Int32, mscorlib">
-    <value>322</value>
+    <value>380</value>
   </data>
   <data name="label20.Text" xml:space="preserve">
     <value>進階</value>
@@ -3822,16 +3954,40 @@
     <value>panelMotorAdvanceMode</value>
   </data>
   <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkMotorAdvanceMode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="chkMotorAdvanceMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 5</value>
+  </data>
+  <data name="chkMotorAdvanceMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 22</value>
+  </data>
+  <data name="chkMotorAdvanceMode.TabIndex" type="System.Int32, mscorlib">
+    <value>379</value>
+  </data>
+  <data name="&gt;&gt;chkMotorAdvanceMode.Name" xml:space="preserve">
+    <value>chkMotorAdvanceMode</value>
+  </data>
+  <data name="&gt;&gt;chkMotorAdvanceMode.Type" xml:space="preserve">
+    <value>CustomToggle.CustomToggle, CustomToggle, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;chkMotorAdvanceMode.Parent" xml:space="preserve">
+    <value>panelMotorAdvanceMode</value>
+  </data>
+  <data name="&gt;&gt;chkMotorAdvanceMode.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="panelMotorAdvanceMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 116</value>
+    <value>8, 111</value>
   </data>
   <data name="panelMotorAdvanceMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 29</value>
+    <value>78, 30</value>
   </data>
   <data name="panelMotorAdvanceMode.TabIndex" type="System.Int32, mscorlib">
-    <value>326</value>
+    <value>381</value>
   </data>
   <data name="&gt;&gt;panelMotorAdvanceMode.Name" xml:space="preserve">
     <value>panelMotorAdvanceMode</value>
@@ -4508,6 +4664,9 @@
   <data name="&gt;&gt;label37.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
+  <data name="panelMotorParams.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="panelMotorParams.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 147</value>
   </data>
@@ -4790,6 +4949,78 @@
   <data name="panelAdvanceParams.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
+  <data name="lbMaxValue_AccelSpeed.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbMaxValue_AccelSpeed.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="lbMaxValue_AccelSpeed.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbMaxValue_AccelSpeed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>265, 58</value>
+  </data>
+  <data name="lbMaxValue_AccelSpeed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 19</value>
+  </data>
+  <data name="lbMaxValue_AccelSpeed.TabIndex" type="System.Int32, mscorlib">
+    <value>309</value>
+  </data>
+  <data name="lbMaxValue_AccelSpeed.Text" xml:space="preserve">
+    <value>( 範圍：-9999 ~ 9999 mm/s²)</value>
+  </data>
+  <data name="lbMaxValue_AccelSpeed.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lbMaxValue_AccelSpeed.Name" xml:space="preserve">
+    <value>lbMaxValue_AccelSpeed</value>
+  </data>
+  <data name="&gt;&gt;lbMaxValue_AccelSpeed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbMaxValue_AccelSpeed.Parent" xml:space="preserve">
+    <value>panelAdvanceParams</value>
+  </data>
+  <data name="&gt;&gt;lbMaxValue_AccelSpeed.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbMaxValue_MaxSpeed.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbMaxValue_MaxSpeed.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="lbMaxValue_MaxSpeed.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbMaxValue_MaxSpeed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>265, 7</value>
+  </data>
+  <data name="lbMaxValue_MaxSpeed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 19</value>
+  </data>
+  <data name="lbMaxValue_MaxSpeed.TabIndex" type="System.Int32, mscorlib">
+    <value>308</value>
+  </data>
+  <data name="lbMaxValue_MaxSpeed.Text" xml:space="preserve">
+    <value>( 最大值：9999 mm/s )</value>
+  </data>
+  <data name="lbMaxValue_MaxSpeed.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lbMaxValue_MaxSpeed.Name" xml:space="preserve">
+    <value>lbMaxValue_MaxSpeed</value>
+  </data>
+  <data name="&gt;&gt;lbMaxValue_MaxSpeed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbMaxValue_MaxSpeed.Parent" xml:space="preserve">
+    <value>panelAdvanceParams</value>
+  </data>
+  <data name="&gt;&gt;lbMaxValue_MaxSpeed.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="cboMaxSpeedUnit.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
@@ -4815,7 +5046,7 @@
     <value>panelAdvanceParams</value>
   </data>
   <data name="&gt;&gt;cboMaxSpeedUnit.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="lbMaxSpeedAlarm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4851,7 +5082,7 @@
     <value>panelAdvanceParams</value>
   </data>
   <data name="&gt;&gt;lbMaxSpeedAlarm.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="label78.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4863,7 +5094,7 @@
     <value>NoControl</value>
   </data>
   <data name="label78.Location" type="System.Drawing.Point, System.Drawing">
-    <value>271, 7</value>
+    <value>10, 58</value>
   </data>
   <data name="label78.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 19</value>
@@ -4884,7 +5115,7 @@
     <value>panelAdvanceParams</value>
   </data>
   <data name="&gt;&gt;label78.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="label81.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4896,7 +5127,7 @@
     <value>NoControl</value>
   </data>
   <data name="label81.Location" type="System.Drawing.Point, System.Drawing">
-    <value>433, 6</value>
+    <value>172, 57</value>
   </data>
   <data name="label81.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 20</value>
@@ -4917,58 +5148,58 @@
     <value>panelAdvanceParams</value>
   </data>
   <data name="&gt;&gt;label81.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
-  <data name="label82.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lbAccelSpeedAlarm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label82.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lbAccelSpeedAlarm.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 9pt</value>
   </data>
-  <data name="label82.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lbAccelSpeedAlarm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label82.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, 35</value>
+  <data name="lbAccelSpeedAlarm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 86</value>
   </data>
-  <data name="label82.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lbAccelSpeedAlarm.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 16</value>
   </data>
-  <data name="label82.TabIndex" type="System.Int32, mscorlib">
+  <data name="lbAccelSpeedAlarm.TabIndex" type="System.Int32, mscorlib">
     <value>272</value>
   </data>
-  <data name="label82.Text" xml:space="preserve">
+  <data name="lbAccelSpeedAlarm.Text" xml:space="preserve">
     <value>請輸入有效加速度</value>
   </data>
-  <data name="label82.Visible" type="System.Boolean, mscorlib">
+  <data name="lbAccelSpeedAlarm.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;label82.Name" xml:space="preserve">
-    <value>label82</value>
+  <data name="&gt;&gt;lbAccelSpeedAlarm.Name" xml:space="preserve">
+    <value>lbAccelSpeedAlarm</value>
   </data>
-  <data name="&gt;&gt;label82.Type" xml:space="preserve">
+  <data name="&gt;&gt;lbAccelSpeedAlarm.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label82.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lbAccelSpeedAlarm.Parent" xml:space="preserve">
     <value>panelAdvanceParams</value>
   </data>
-  <data name="&gt;&gt;label82.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;lbAccelSpeedAlarm.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="txtAccelSpeed.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 12pt</value>
   </data>
   <data name="txtAccelSpeed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>347, 3</value>
+    <value>86, 54</value>
+  </data>
+  <data name="txtAccelSpeed.MaxLength" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="txtAccelSpeed.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 29</value>
   </data>
   <data name="txtAccelSpeed.TabIndex" type="System.Int32, mscorlib">
     <value>242</value>
-  </data>
-  <data name="txtAccelSpeed.Text" xml:space="preserve">
-    <value>500</value>
   </data>
   <data name="txtAccelSpeed.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -4983,7 +5214,7 @@
     <value>panelAdvanceParams</value>
   </data>
   <data name="&gt;&gt;txtAccelSpeed.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="label79.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5016,7 +5247,7 @@
     <value>panelAdvanceParams</value>
   </data>
   <data name="&gt;&gt;label79.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="txtMaxSpeed.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 12pt</value>
@@ -5024,14 +5255,14 @@
   <data name="txtMaxSpeed.Location" type="System.Drawing.Point, System.Drawing">
     <value>87, 3</value>
   </data>
+  <data name="txtMaxSpeed.MaxLength" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
   <data name="txtMaxSpeed.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 29</value>
   </data>
   <data name="txtMaxSpeed.TabIndex" type="System.Int32, mscorlib">
     <value>239</value>
-  </data>
-  <data name="txtMaxSpeed.Text" xml:space="preserve">
-    <value>100</value>
   </data>
   <data name="txtMaxSpeed.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -5046,7 +5277,7 @@
     <value>panelAdvanceParams</value>
   </data>
   <data name="&gt;&gt;txtMaxSpeed.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="lbRpm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5079,7 +5310,7 @@
     <value>panelAdvanceParams</value>
   </data>
   <data name="&gt;&gt;lbRpm.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="panelAdvanceParams.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -5088,7 +5319,7 @@
     <value>37, 2</value>
   </data>
   <data name="panelAdvanceParams.Size" type="System.Drawing.Size, System.Drawing">
-    <value>511, 61</value>
+    <value>511, 110</value>
   </data>
   <data name="panelAdvanceParams.TabIndex" type="System.Int32, mscorlib">
     <value>326</value>
@@ -5109,13 +5340,10 @@
     <value>13, 293</value>
   </data>
   <data name="panelAdvanceMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 65</value>
+    <value>550, 115</value>
   </data>
   <data name="panelAdvanceMode.TabIndex" type="System.Int32, mscorlib">
     <value>328</value>
-  </data>
-  <data name="panelAdvanceMode.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;panelAdvanceMode.Name" xml:space="preserve">
     <value>panelAdvanceMode</value>
@@ -6461,6 +6689,207 @@
   <data name="&gt;&gt;panel13.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="panelCalcAllParam.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="cboMaxCalcUnit.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="cboMaxCalcUnit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt</value>
+  </data>
+  <data name="cboMaxCalcUnit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>89, 2</value>
+  </data>
+  <data name="cboMaxCalcUnit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 27</value>
+  </data>
+  <data name="cboMaxCalcUnit.TabIndex" type="System.Int32, mscorlib">
+    <value>276</value>
+  </data>
+  <data name="&gt;&gt;cboMaxCalcUnit.Name" xml:space="preserve">
+    <value>cboMaxCalcUnit</value>
+  </data>
+  <data name="&gt;&gt;cboMaxCalcUnit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboMaxCalcUnit.Parent" xml:space="preserve">
+    <value>panelNoConstantTimeParam</value>
+  </data>
+  <data name="&gt;&gt;cboMaxCalcUnit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label77.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label77.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 9pt</value>
+  </data>
+  <data name="label77.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label77.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 33</value>
+  </data>
+  <data name="label77.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 16</value>
+  </data>
+  <data name="label77.TabIndex" type="System.Int32, mscorlib">
+    <value>272</value>
+  </data>
+  <data name="label77.Text" xml:space="preserve">
+    <value>請輸入有效數值</value>
+  </data>
+  <data name="label77.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;label77.Name" xml:space="preserve">
+    <value>label77</value>
+  </data>
+  <data name="&gt;&gt;label77.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label77.Parent" xml:space="preserve">
+    <value>panelNoConstantTimeParam</value>
+  </data>
+  <data name="&gt;&gt;label77.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtMaxCalc.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 12pt</value>
+  </data>
+  <data name="txtMaxCalc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 1</value>
+  </data>
+  <data name="txtMaxCalc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 29</value>
+  </data>
+  <data name="txtMaxCalc.TabIndex" type="System.Int32, mscorlib">
+    <value>242</value>
+  </data>
+  <data name="txtMaxCalc.Text" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="txtMaxCalc.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txtMaxCalc.Name" xml:space="preserve">
+    <value>txtMaxCalc</value>
+  </data>
+  <data name="&gt;&gt;txtMaxCalc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtMaxCalc.Parent" xml:space="preserve">
+    <value>panelNoConstantTimeParam</value>
+  </data>
+  <data name="&gt;&gt;txtMaxCalc.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panelNoConstantTimeParam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>195, 3</value>
+  </data>
+  <data name="panelNoConstantTimeParam.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 55</value>
+  </data>
+  <data name="panelNoConstantTimeParam.TabIndex" type="System.Int32, mscorlib">
+    <value>277</value>
+  </data>
+  <data name="&gt;&gt;panelNoConstantTimeParam.Name" xml:space="preserve">
+    <value>panelNoConstantTimeParam</value>
+  </data>
+  <data name="&gt;&gt;panelNoConstantTimeParam.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelNoConstantTimeParam.Parent" xml:space="preserve">
+    <value>panelCalcAllParam</value>
+  </data>
+  <data name="&gt;&gt;panelNoConstantTimeParam.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cboMaxCalcMode.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="cboMaxCalcMode.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt</value>
+  </data>
+  <data name="cboMaxCalcMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 4</value>
+  </data>
+  <data name="cboMaxCalcMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 27</value>
+  </data>
+  <data name="cboMaxCalcMode.TabIndex" type="System.Int32, mscorlib">
+    <value>275</value>
+  </data>
+  <data name="&gt;&gt;cboMaxCalcMode.Name" xml:space="preserve">
+    <value>cboMaxCalcMode</value>
+  </data>
+  <data name="&gt;&gt;cboMaxCalcMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboMaxCalcMode.Parent" xml:space="preserve">
+    <value>panelCalcAllParam</value>
+  </data>
+  <data name="&gt;&gt;cboMaxCalcMode.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label80.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label80.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 11pt, style=Bold</value>
+  </data>
+  <data name="label80.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label80.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-4, 7</value>
+  </data>
+  <data name="label80.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 19</value>
+  </data>
+  <data name="label80.TabIndex" type="System.Int32, mscorlib">
+    <value>264</value>
+  </data>
+  <data name="label80.Text" xml:space="preserve">
+    <value>計算模式：</value>
+  </data>
+  <data name="&gt;&gt;label80.Name" xml:space="preserve">
+    <value>label80</value>
+  </data>
+  <data name="&gt;&gt;label80.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label80.Parent" xml:space="preserve">
+    <value>panelCalcAllParam</value>
+  </data>
+  <data name="&gt;&gt;label80.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panelCalcAllParam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 516</value>
+  </data>
+  <data name="panelCalcAllParam.Size" type="System.Drawing.Size, System.Drawing">
+    <value>377, 62</value>
+  </data>
+  <data name="panelCalcAllParam.TabIndex" type="System.Int32, mscorlib">
+    <value>378</value>
+  </data>
+  <data name="panelCalcAllParam.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;panelCalcAllParam.Name" xml:space="preserve">
+    <value>panelCalcAllParam</value>
+  </data>
+  <data name="&gt;&gt;panelCalcAllParam.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelCalcAllParam.Parent" xml:space="preserve">
+    <value>panelCalc</value>
+  </data>
+  <data name="&gt;&gt;panelCalcAllParam.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="panelCalc.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -6486,7 +6915,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelCalc.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="label64.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 11pt, style=Bold</value>
@@ -6495,7 +6924,7 @@
     <value>NoControl</value>
   </data>
   <data name="label64.Location" type="System.Drawing.Point, System.Drawing">
-    <value>279, 187</value>
+    <value>0, 123</value>
   </data>
   <data name="label64.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 23</value>
@@ -6516,9 +6945,87 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label64.Parent" xml:space="preserve">
-    <value>panelSetup</value>
+    <value>panelSetupWallHang</value>
   </data>
   <data name="&gt;&gt;label64.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="picWallHangingUse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="picWallHangingUse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="picWallHangingUse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 120</value>
+  </data>
+  <data name="picWallHangingUse.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="picWallHangingUse.TabIndex" type="System.Int32, mscorlib">
+    <value>359</value>
+  </data>
+  <data name="&gt;&gt;picWallHangingUse.Name" xml:space="preserve">
+    <value>picWallHangingUse</value>
+  </data>
+  <data name="&gt;&gt;picWallHangingUse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picWallHangingUse.Parent" xml:space="preserve">
+    <value>panelSetupWallHang</value>
+  </data>
+  <data name="&gt;&gt;picWallHangingUse.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelSetupWallHang.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelSetupWallHang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>286, 0</value>
+  </data>
+  <data name="panelSetupWallHang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 157</value>
+  </data>
+  <data name="panelSetupWallHang.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panelSetupWallHang.Name" xml:space="preserve">
+    <value>panelSetupWallHang</value>
+  </data>
+  <data name="&gt;&gt;panelSetupWallHang.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelSetupWallHang.Parent" xml:space="preserve">
+    <value>panelSetupSelection</value>
+  </data>
+  <data name="&gt;&gt;panelSetupWallHang.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="picVerticalUse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="picVerticalUse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="picVerticalUse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 120</value>
+  </data>
+  <data name="picVerticalUse.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="picVerticalUse.TabIndex" type="System.Int32, mscorlib">
+    <value>358</value>
+  </data>
+  <data name="&gt;&gt;picVerticalUse.Name" xml:space="preserve">
+    <value>picVerticalUse</value>
+  </data>
+  <data name="&gt;&gt;picVerticalUse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picVerticalUse.Parent" xml:space="preserve">
+    <value>panelSetupVertical</value>
+  </data>
+  <data name="&gt;&gt;picVerticalUse.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label63.Font" type="System.Drawing.Font, System.Drawing">
@@ -6528,7 +7035,7 @@
     <value>NoControl</value>
   </data>
   <data name="label63.Location" type="System.Drawing.Point, System.Drawing">
-    <value>140, 187</value>
+    <value>0, 123</value>
   </data>
   <data name="label63.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 23</value>
@@ -6549,10 +7056,61 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label63.Parent" xml:space="preserve">
-    <value>panelSetup</value>
+    <value>panelSetupVertical</value>
   </data>
   <data name="&gt;&gt;label63.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="panelSetupVertical.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="panelSetupVertical.Location" type="System.Drawing.Point, System.Drawing">
+    <value>143, 0</value>
+  </data>
+  <data name="panelSetupVertical.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 157</value>
+  </data>
+  <data name="panelSetupVertical.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panelSetupVertical.Name" xml:space="preserve">
+    <value>panelSetupVertical</value>
+  </data>
+  <data name="&gt;&gt;panelSetupVertical.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelSetupVertical.Parent" xml:space="preserve">
+    <value>panelSetupSelection</value>
+  </data>
+  <data name="&gt;&gt;panelSetupVertical.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="picHorizontalUse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="picHorizontalUse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="picHorizontalUse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 120</value>
+  </data>
+  <data name="picHorizontalUse.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="picHorizontalUse.TabIndex" type="System.Int32, mscorlib">
+    <value>357</value>
+  </data>
+  <data name="&gt;&gt;picHorizontalUse.Name" xml:space="preserve">
+    <value>picHorizontalUse</value>
+  </data>
+  <data name="&gt;&gt;picHorizontalUse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picHorizontalUse.Parent" xml:space="preserve">
+    <value>panelSetupHorizontal</value>
+  </data>
+  <data name="&gt;&gt;picHorizontalUse.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="label62.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 11pt, style=Bold</value>
@@ -6561,7 +7119,7 @@
     <value>NoControl</value>
   </data>
   <data name="label62.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 187</value>
+    <value>0, 123</value>
   </data>
   <data name="label62.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 23</value>
@@ -6582,10 +7140,55 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label62.Parent" xml:space="preserve">
-    <value>panelSetup</value>
+    <value>panelSetupHorizontal</value>
   </data>
   <data name="&gt;&gt;label62.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelSetupHorizontal.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="panelSetupHorizontal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panelSetupHorizontal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 157</value>
+  </data>
+  <data name="panelSetupHorizontal.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panelSetupHorizontal.Name" xml:space="preserve">
+    <value>panelSetupHorizontal</value>
+  </data>
+  <data name="&gt;&gt;panelSetupHorizontal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelSetupHorizontal.Parent" xml:space="preserve">
+    <value>panelSetupSelection</value>
+  </data>
+  <data name="&gt;&gt;panelSetupHorizontal.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="panelSetupSelection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 64</value>
+  </data>
+  <data name="panelSetupSelection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>433, 157</value>
+  </data>
+  <data name="panelSetupSelection.TabIndex" type="System.Int32, mscorlib">
+    <value>373</value>
+  </data>
+  <data name="&gt;&gt;panelSetupSelection.Name" xml:space="preserve">
+    <value>panelSetupSelection</value>
+  </data>
+  <data name="&gt;&gt;panelSetupSelection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelSetupSelection.Parent" xml:space="preserve">
+    <value>panelSetup</value>
+  </data>
+  <data name="&gt;&gt;panelSetupSelection.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="label28.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7119,7 +7722,7 @@
     <value>panelSetup</value>
   </data>
   <data name="&gt;&gt;panelMoment.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="picMoment.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -7146,7 +7749,7 @@
     <value>panelSetup</value>
   </data>
   <data name="&gt;&gt;picMoment.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="optHorizontalUse.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7182,7 +7785,7 @@
     <value>panelSetup</value>
   </data>
   <data name="&gt;&gt;optHorizontalUse.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="optVerticalUse.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7218,7 +7821,7 @@
     <value>panelSetup</value>
   </data>
   <data name="&gt;&gt;optVerticalUse.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="optWallHangingUse.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7254,88 +7857,7 @@
     <value>panelSetup</value>
   </data>
   <data name="&gt;&gt;optWallHangingUse.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="picWallHangingUse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="picWallHangingUse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>279, 64</value>
-  </data>
-  <data name="picWallHangingUse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 120</value>
-  </data>
-  <data name="picWallHangingUse.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="picWallHangingUse.TabIndex" type="System.Int32, mscorlib">
-    <value>359</value>
-  </data>
-  <data name="&gt;&gt;picWallHangingUse.Name" xml:space="preserve">
-    <value>picWallHangingUse</value>
-  </data>
-  <data name="&gt;&gt;picWallHangingUse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;picWallHangingUse.Parent" xml:space="preserve">
-    <value>panelSetup</value>
-  </data>
-  <data name="&gt;&gt;picWallHangingUse.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="picVerticalUse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="picVerticalUse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>140, 64</value>
-  </data>
-  <data name="picVerticalUse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 120</value>
-  </data>
-  <data name="picVerticalUse.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="picVerticalUse.TabIndex" type="System.Int32, mscorlib">
-    <value>358</value>
-  </data>
-  <data name="&gt;&gt;picVerticalUse.Name" xml:space="preserve">
-    <value>picVerticalUse</value>
-  </data>
-  <data name="&gt;&gt;picVerticalUse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;picVerticalUse.Parent" xml:space="preserve">
-    <value>panelSetup</value>
-  </data>
-  <data name="&gt;&gt;picVerticalUse.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="picHorizontalUse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="picHorizontalUse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 64</value>
-  </data>
-  <data name="picHorizontalUse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 120</value>
-  </data>
-  <data name="picHorizontalUse.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="picHorizontalUse.TabIndex" type="System.Int32, mscorlib">
-    <value>357</value>
-  </data>
-  <data name="&gt;&gt;picHorizontalUse.Name" xml:space="preserve">
-    <value>picHorizontalUse</value>
-  </data>
-  <data name="&gt;&gt;picHorizontalUse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;picHorizontalUse.Parent" xml:space="preserve">
-    <value>panelSetup</value>
-  </data>
-  <data name="&gt;&gt;picHorizontalUse.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>5</value>
   </data>
   <data name="panel8.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -7473,7 +7995,7 @@
     <value>panelSetup</value>
   </data>
   <data name="&gt;&gt;panel8.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>6</value>
   </data>
   <data name="panelSetup.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -7497,7 +8019,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelSetup.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 15pt, style=Bold</value>
@@ -7968,7 +8490,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelModelSelection.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="optECH.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8304,7 +8826,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabModelType_standard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>821, 434</value>
+    <value>821, 399</value>
   </data>
   <data name="tabModelType_standard.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -8496,7 +9018,7 @@
     <value>tabModelType</value>
   </data>
   <data name="&gt;&gt;tabModelType.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.12, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, 不帶電選型軟體, Version=0.0.1.30, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabModelType.Parent" xml:space="preserve">
     <value>panelModelType</value>
@@ -9060,7 +9582,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelModelType.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="panel3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -9345,7 +9867,7 @@
     <value>explorerBar</value>
   </data>
   <data name="&gt;&gt;panelUseEnv.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="explorerBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -9357,7 +9879,7 @@
     <value>100, 100, 300, 0</value>
   </data>
   <data name="explorerBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1380, 627</value>
+    <value>1380, 629</value>
   </data>
   <data name="explorerBar.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -9381,7 +9903,7 @@
     <value>10, 10, 0, 10</value>
   </data>
   <data name="tabContent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1390, 647</value>
+    <value>1390, 649</value>
   </data>
   <data name="tabContent.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -9723,7 +10245,7 @@
     <value>1</value>
   </data>
   <data name="panel17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 39</value>
+    <value>108, 40</value>
   </data>
   <data name="panel17.Size" type="System.Drawing.Size, System.Drawing">
     <value>880, 497</value>
@@ -9804,7 +10326,7 @@
     <value>1</value>
   </data>
   <data name="panelConfirmBtnsStep5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>109, 563</value>
+    <value>109, 564</value>
   </data>
   <data name="panelConfirmBtnsStep5.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -9843,7 +10365,7 @@
     <value>NoControl</value>
   </data>
   <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2965, 475</value>
+    <value>-2965, 476</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 16</value>
@@ -9873,7 +10395,7 @@
     <value>NoControl</value>
   </data>
   <data name="label56.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2964, 172</value>
+    <value>-2964, 173</value>
   </data>
   <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 2</value>
@@ -9900,7 +10422,7 @@
     <value>0, 0</value>
   </data>
   <data name="panelResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1080, 637</value>
+    <value>1080, 639</value>
   </data>
   <data name="panelResult.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -9927,7 +10449,7 @@
     <value>0, 0, 300, 0</value>
   </data>
   <data name="explorerBar_step5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1380, 637</value>
+    <value>1380, 639</value>
   </data>
   <data name="explorerBar_step5.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -9951,7 +10473,7 @@
     <value>10, 10, 0, 0</value>
   </data>
   <data name="tabResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1390, 647</value>
+    <value>1390, 649</value>
   </data>
   <data name="tabResult.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -9978,7 +10500,7 @@
     <value>0, 0</value>
   </data>
   <data name="tabMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1398, 673</value>
+    <value>1398, 675</value>
   </data>
   <data name="tabMain.TabIndex" type="System.Int32, mscorlib">
     <value>263</value>
@@ -9987,7 +10509,7 @@
     <value>tabMain</value>
   </data>
   <data name="&gt;&gt;tabMain.Type" xml:space="preserve">
-    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, SingleAxis_NoMotor_SelectionSoftware, Version=0.0.0.12, Culture=neutral, PublicKeyToken=null</value>
+    <value>SingleAxis_NoMotor_SelectionSoftware.CustomTabControl, 不帶電選型軟體, Version=0.0.1.30, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabMain.Parent" xml:space="preserve">
     <value>panel4</value>
@@ -10002,7 +10524,7 @@
     <value>0, 0</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1400, 675</value>
+    <value>1400, 677</value>
   </data>
   <data name="panel4.TabIndex" type="System.Int32, mscorlib">
     <value>264</value>
@@ -10035,7 +10557,7 @@
     <value>1400, 711</value>
   </data>
   <data name="splitContainerBase.SplitterDistance" type="System.Int32, mscorlib">
-    <value>35</value>
+    <value>33</value>
   </data>
   <data name="splitContainerBase.SplitterWidth" type="System.Int32, mscorlib">
     <value>1</value>
@@ -13510,20 +14032,11 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>不帶電選型系統</value>
-  </data>
-  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
-    <value>toolTip1</value>
-  </data>
-  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;鎖定.Name" xml:space="preserve">
     <value>鎖定</value>
@@ -13662,6 +14175,12 @@
   </data>
   <data name="&gt;&gt;更詳細資訊.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
+    <value>toolTip1</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormMain</value>

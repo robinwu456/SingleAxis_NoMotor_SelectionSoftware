@@ -1833,6 +1833,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap MG65 {
+            get {
+                object obj = ResourceManager.GetObject("MG65", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap MH65 {
             get {
                 object obj = ResourceManager.GetObject("MH65", resourceCulture);
@@ -2243,6 +2253,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap slideModel_MG {
+            get {
+                object obj = ResourceManager.GetObject("slideModel_MG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap slideModel_singleSlide {
             get {
                 object obj = ResourceManager.GetObject("slideModel_singleSlide", resourceCulture);
@@ -2256,6 +2276,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware.Properties {
         internal static System.Drawing.Bitmap slideModel_slide {
             get {
                 object obj = ResourceManager.GetObject("slideModel_slide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap slideModel_YL {
+            get {
+                object obj = ResourceManager.GetObject("slideModel_YL", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
