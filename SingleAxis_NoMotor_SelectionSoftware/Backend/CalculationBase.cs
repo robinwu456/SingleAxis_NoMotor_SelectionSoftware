@@ -577,12 +577,12 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return supportSetups.ToArray();
         }
 
-        public Model.SetupMethod[] GetSupportSetup(string modelName) {
+        public Model.SetupMethod[] GetSupportSetup(string modelName, double lead) {
             string[] setups;
             if (modelName.IsContainsReducerRatioType())
                 setups = modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString().StartsWith(modelName))["安裝方式"].ToString().Split('&');
             else
-                setups = modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString() == modelName)["安裝方式"].ToString().Split('&');
+                setups = modelInfo.Rows.Cast<DataRow>().First(row => row["型號"].ToString() == modelName && Convert.ToDouble(row["導程"].ToString()) == lead)["安裝方式"].ToString().Split('&');
             List<Model.SetupMethod> supportSetups = new List<Model.SetupMethod>();
             setups.ToList().ForEach(s => {
                 Model.SetupMethod _s = (Model.SetupMethod)Enum.Parse(typeof(Model.SetupMethod), s);

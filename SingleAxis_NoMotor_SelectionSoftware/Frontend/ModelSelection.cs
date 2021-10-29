@@ -151,7 +151,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 formMain.sideTable.UpdateModeInfo(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
 
             // 安裝方式
-            Model.SetupMethod[] modelTypeSupportSetupMethod = formMain.page2.calc.GetSupportSetup(formMain.cboModel.Text);
+            Model.SetupMethod[] modelTypeSupportSetupMethod = formMain.page2.calc.GetSupportSetup(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
             formMain.page2.setupMethodOptMap.ToList().ForEach(pair => pair.Key.Enabled = modelTypeSupportSetupMethod.Contains(pair.Value));
             if (formMain.page2.setupMethodOptMap.ToList().Any(pair => pair.Key.Checked && !pair.Key.Enabled))
                 formMain.page2.setupMethodOptMap.ToList().First(pair => pair.Key.Enabled).Key.Checked = true;
