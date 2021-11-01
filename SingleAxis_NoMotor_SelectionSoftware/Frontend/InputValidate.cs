@@ -366,8 +366,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void TxtLoad_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
-                return;
+            if (decimal.TryParse(formMain.txtLoad.Text, out decimal load))
+                formMain.txtLoad.Text = load.ToString("#0.0");
+
+            //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
+            //    return;
 
             //// 最大荷重驗證
             //ValidatingLoad();
@@ -377,8 +380,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (e.KeyCode != Keys.Enter)
                 return;
 
-            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
-                return;
+            if (decimal.TryParse(formMain.txtLoad.Text, out decimal load))
+                formMain.txtLoad.Text = load.ToString("#0.0");
+
+            //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection)
+            //    return;
 
             //// 最大荷重驗證
             //ValidatingLoad();

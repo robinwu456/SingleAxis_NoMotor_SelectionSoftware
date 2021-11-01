@@ -277,6 +277,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 更新荷重
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
+                // 空值不判斷
+                if (string.IsNullOrEmpty(formMain.cboModel.Text))
+                    return;
+
                 Condition con = new Condition();
                 if (formMain.optHorizontalUse.Checked)
                     con.setupMethod = Model.SetupMethod.水平;
@@ -461,6 +465,21 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void CmdCalc_Click(object sender, EventArgs e) {
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
+                List<string> verifyModelSelectionCboAlarm = new List<string>();
+                if (string.IsNullOrEmpty(formMain.cboModel.Text))
+                    verifyModelSelectionCboAlarm.Add("請輸入型號");
+                if (formMain.panelModelSelectionLead.Visible == true && string.IsNullOrEmpty(formMain.cboLead.Text))
+                    verifyModelSelectionCboAlarm.Add("請輸入導程");
+                if (formMain.panelModelSelectionReducerRatio.Visible == true && string.IsNullOrEmpty(formMain.cboLead.Text))
+                    verifyModelSelectionCboAlarm.Add("請輸入減速比");
+                if (verifyModelSelectionCboAlarm.Count != 0)
+                    formMain.sideTable.UpdateMsg(string.Join("、", verifyModelSelectionCboAlarm), SideTable.MsgStatus.Alarm);
+                else
+                    formMain.sideTable.ClearMsg();
+            }
+            
+
             // 全數值驗證
             if (!formMain.page2.inputValidate.VerifyAllInputValidate(true))
                 return;
