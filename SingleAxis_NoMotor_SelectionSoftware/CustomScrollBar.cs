@@ -8,9 +8,9 @@ using System.Drawing;
 
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class CustomScrollBar {
-        public int minValue { 
-            get { return _minValue; } 
-            set { 
+        public decimal minValue {
+            get { return _minValue; }
+            set {
                 _minValue = value;
                 if (lbMinValue != null)
                     lbMinValue.Text = value.ToString();
@@ -24,7 +24,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 );
             }
         }
-        public int maxValue {
+        public decimal maxValue {
             get { return _maxValue; }
             set {
                 _maxValue = value;
@@ -41,8 +41,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 );
             }
         }
-        private int _minValue = 0;
-        private int _maxValue = 100;        
+        private decimal _minValue = 0;
+        private decimal _maxValue = 100;
 
         // 委派事件
         public delegate void EventHandler(object sender, EventArgs e);
@@ -53,8 +53,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public MouseEventHandler MouseUp;
         // 內件參數
         public string Name = "";
-        public int Value = defaultValue;        
-        public int smallChange = 10;
+        public decimal Value = defaultValue;
+        public decimal smallChange = 10;
         public Image imgScrollBarLine;
         public Image imgThumbNormal;
         public Image imgThumbHover;
@@ -64,12 +64,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private Image picThumbNormal;
         public Label lbMinValue;
         public Label lbMaxValue;
+        public int decimalPlace = 0;
 
         private Form formMain;
         private Panel scrollBar;
         private PictureBox thumb;
         private PictureBox arrowLeft;
-        private PictureBox arrowRight;        
+        private PictureBox arrowRight;
         private int px, py;
         private bool isDragging = false;
         private Thread threadMoving;
@@ -83,11 +84,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private enum FocusOn { ScrollBar, Input }
         private FocusOn curFocusOn = FocusOn.ScrollBar;
         //private string placeHolder = null;
-        private const int defaultValue = 0;
+        private const decimal defaultValue = 0;
         //private bool showPlaceHolder = true;
 
         private bool isDefaultTextBoxIsNull = true;     // 預設值為空
-        private bool isValueChanged = false;        
+        private bool isValueChanged = false;
 
         public CustomScrollBar(Form formMain, Panel scrollBar, PictureBox thumb, PictureBox arrowLeft, PictureBox arrowRight) {
             this.formMain = formMain;
@@ -146,7 +147,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 bindingTextBox.KeyDown += BindingTextBox_KeyDown;
                 //bindingTextBox.TextChanged += BindingTextBox_TextChanged;
             }
-        }        
+        }
 
         private void Thumb_MouseEnter(object sender, EventArgs e) {
             thumb.Image = picThumbHover;
@@ -177,15 +178,15 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 );
             }
 
-            int a = 0;
-            if (Int32.TryParse(bindingTextBox.Text, out a)) {
+            decimal a = 0;
+            if (decimal.TryParse(bindingTextBox.Text, out a)) {
                 if (a > maxValue)
                     a = maxValue;
                 if (a < minValue)
                     a = minValue;
                 bindingTextBox.Text = a.ToString();
                 Value = a;
-            }            
+            }
         }
 
         private void BindingTextBox_Enter(object sender, EventArgs e) {
@@ -196,8 +197,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void BindingTextBox_KeyDown(object sender, KeyEventArgs e) {
             if (e.KeyCode == Keys.Enter) {
-                int a = 0;
-                if (Int32.TryParse(bindingTextBox.Text, out a)) {
+                decimal a = 0;
+                if (decimal.TryParse(bindingTextBox.Text, out a)) {
                     if (a > maxValue)
                         a = maxValue;
                     if (a < minValue)
@@ -268,16 +269,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                 thumb.Location = new Point(targetX, thumb.Location.Y);
                         }
 
-
-                        //double curPercent = (float)(thumb.Location.X) / ((float)scrollBar.Size.Width - maxPosOffset);
-                        //Value = (int)(curPercent * maxValue);
-
-                        //Value = (int)((float)(thumb.Location.X - minPosOffset) / (float)(scrollBar.Size.Width - maxPosOffset) * maxValue);                        
-                        Value = (int)(((float)(thumb.Location.X - minPosOffset) / (float)(scrollBar.Size.Width - maxPosOffset - minPosOffset)) * (maxValue - minValue)) + minValue;                        
+                        if (decimalPlace > 0)
+                            Value = Convert.ToDecimal(((((decimal)(thumb.Location.X - minPosOffset) / (decimal)(scrollBar.Size.Width - maxPosOffset - minPosOffset)) * (maxValue - minValue)) + minValue).ToString("#0.0".PadRight(3 + decimalPlace, '0')));
+                        else
+                            Value = Convert.ToDecimal(((((decimal)(thumb.Location.X - minPosOffset) / (decimal)(scrollBar.Size.Width - maxPosOffset - minPosOffset)) * (maxValue - minValue)) + minValue).ToString("#0"));
 
                         // 滾動事件
                         if (Scroll != null) {
-                            ScrollEventArgs e = new ScrollEventArgs(curScrollType, Value);
+                            ScrollEventArgs e = new ScrollEventArgs(curScrollType, (int)Value);
                             Scroll(this, e);
                         }
                     }));
@@ -298,8 +297,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
         private void CheckValueChanged() {
             try {
-                int newValue = Value;
-                int oldValue = Value;
+                decimal newValue = Value;
+                decimal oldValue = Value;
 
                 while (true) {
                     // 偵測主Form是否已關閉
@@ -315,7 +314,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                             // 初始化位置
                             thumb.Location = new Point(
                                 //(int)(((float)Value / (float)maxValue) * (scrollBar.Size.Width - maxPosOffset) + minPosOffset),
-                                (int)((((float)Value - (float)minValue) / ((float)maxValue - (float)minValue)) * (scrollBar.Size.Width - maxPosOffset-minPosOffset) + minPosOffset),
+                                (int)((((float)Value - (float)minValue) / ((float)maxValue - (float)minValue)) * (scrollBar.Size.Width - maxPosOffset - minPosOffset) + minPosOffset),
                                 thumb.Location.Y
                             );
 
@@ -323,7 +322,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                 ValueChanged(this, null);
                         }));
                     }
-                    
+
                     oldValue = newValue;
 
                     Thread.Sleep(100);

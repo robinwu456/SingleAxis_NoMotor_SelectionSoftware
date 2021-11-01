@@ -102,6 +102,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             scrollBarLoad.lbMaxValue = formMain.lbScrollbarMaxLoad;
             scrollBarLoad.minValue = defaultMinLoad;
             scrollBarLoad.maxValue = defaultMaxLoad;
+            scrollBarLoad.decimalPlace = 1;
             scrollBarLoad.ValueChanged += new CustomScrollBar.EventHandler((sender, e) => {
                 if (formMain.txtLoad.Text != "")
                     formMain.page2.inputValidate.InputCondition_Validating(formMain.txtLoad, null);

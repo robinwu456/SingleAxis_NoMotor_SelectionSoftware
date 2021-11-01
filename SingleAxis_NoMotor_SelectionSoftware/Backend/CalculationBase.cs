@@ -259,6 +259,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return strokes.Max();
         }
 
+        public int GetSeriesMinStroke(Model.ModelType modelType) {
+            //return modelType.IsSeriesDM() ? 30 : 50;
+            IEnumerable<int> strokes;
+            strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => Regex.Replace(row["型號"].ToString(), @"\d", "").StartsWith(modelType.ToString()))
+                                                    .Select(row => Convert.ToInt32(row["行程"].ToString()));
+            return strokes.Min();
+        }
+
         public double GetMaxLoad(string model, double lead, Condition conditions) {
             // 取最大荷重
             double maxLoad = int.MaxValue;

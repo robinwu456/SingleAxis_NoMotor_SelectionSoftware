@@ -287,7 +287,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 double maxLoad = formMain.page2.calc.GetMaxLoad(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text), con);
                 if (maxLoad == int.MaxValue)
                     maxLoad = RunCondition.defaultMaxLoad;
-                formMain.page2.runCondition.scrollBarLoad.maxValue = (int)maxLoad;
+                formMain.page2.runCondition.scrollBarLoad.maxValue = (decimal)maxLoad;
             }
         }
 
@@ -362,6 +362,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 更新行程
             int maxStroke = formMain.page2.calc.GetSeriesMaxStroke(curSelectModelType.ToString());
             formMain.page2.runCondition.scrollBarStroke.maxValue = maxStroke;
+            int minStroke = formMain.page2.calc.GetSeriesMinStroke(curSelectModelType);
+            formMain.page2.runCondition.scrollBarStroke.minValue = minStroke;
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {
