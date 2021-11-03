@@ -174,7 +174,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.txtLoad.Text = "";
             formMain.txtRunTime.Text = "";
             runCondition.scrollBarStroke.maxValue = RunCondition.defaultMaxStroke;
-            runCondition.scrollBarLoad.maxValue = RunCondition.defaultMaxLoad;
+            //runCondition.scrollBarLoad.maxValue = RunCondition.defaultMaxLoad;
 
             // 運行速度單位
             //if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection)
@@ -292,6 +292,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 if (maxLoad == int.MaxValue)
                     maxLoad = RunCondition.defaultMaxLoad;
                 formMain.page2.runCondition.scrollBarLoad.maxValue = (decimal)maxLoad;
+            } else {
+                // 更新荷重
+                Model.SetupMethod setupMethod = Model.SetupMethod.水平;
+                if (formMain.optHorizontalUse.Checked)
+                    setupMethod = Model.SetupMethod.水平;
+                else if (formMain.optWallHangingUse.Checked)
+                    setupMethod = Model.SetupMethod.橫掛;
+                else if (formMain.optVerticalUse.Checked)
+                    setupMethod = Model.SetupMethod.垂直;
+                double maxLoad = formMain.page2.calc.GetSeriesMaxLoad(curSelectModelType, setupMethod);
+                formMain.page2.runCondition.scrollBarLoad.maxValue = (decimal)maxLoad;
             }
         }
 
@@ -368,6 +379,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.page2.runCondition.scrollBarStroke.maxValue = maxStroke;
             int minStroke = formMain.page2.calc.GetSeriesMinStroke(curSelectModelType);
             formMain.page2.runCondition.scrollBarStroke.minValue = minStroke;
+
+            // 更新荷重
+            Model.SetupMethod setupMethod = Model.SetupMethod.水平;
+            if (formMain.optHorizontalUse.Checked)
+                setupMethod = Model.SetupMethod.水平;
+            else if (formMain.optWallHangingUse.Checked)
+                setupMethod = Model.SetupMethod.橫掛;
+            else if (formMain.optVerticalUse.Checked)
+                setupMethod = Model.SetupMethod.垂直;
+            double maxLoad = formMain.page2.calc.GetSeriesMaxLoad(curSelectModelType, setupMethod);
+            formMain.page2.runCondition.scrollBarLoad.maxValue = (decimal)maxLoad;
         }
 
         private void ChkAdvanceMode_CheckedChanged(object sender, EventArgs e) {

@@ -39,6 +39,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void CboModel_LostFocus(object sender, EventArgs e) {
+            if (formMain.cboModel.Text == "" || formMain.cboLead.Text == "")
+                return;
+
             var leads = formMain.page2.calc.modelInfo.Rows.Cast<DataRow>()
                                                .Where(row => row["型號"].ToString().StartsWith(formMain.cboModel.Text))
                                                .Select(row => row["導程"].ToString());

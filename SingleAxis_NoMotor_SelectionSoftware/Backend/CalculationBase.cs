@@ -259,6 +259,23 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return strokes.Max();
         }
 
+        public double GetSeriesMaxLoad(Model.ModelType modelType, Model.SetupMethod setupMethod) {
+            // 荷重表搜尋荷重
+            double maxLoad = RunCondition.defaultMaxLoad;
+            try {
+                var data = momentData.Rows.Cast<DataRow>()
+                                             .Where(row => Regex.Replace(row["型號"].ToString(), @"\d", "").StartsWith(modelType.ToString()) &&
+                                                           row["安裝方式"].ToString() == setupMethod.ToString())
+                                             .Select(row => Convert.ToDouble(row["最大荷重"].ToString()));
+                if (data.Count() != 0)
+                    maxLoad = data.Max();
+            } catch (Exception ex) {
+                Console.WriteLine(ex);
+            }
+
+            return maxLoad;
+        }
+
         public int GetSeriesMinStroke(Model.ModelType modelType) {
             //return modelType.IsSeriesDM() ? 30 : 50;
             IEnumerable<int> strokes;
