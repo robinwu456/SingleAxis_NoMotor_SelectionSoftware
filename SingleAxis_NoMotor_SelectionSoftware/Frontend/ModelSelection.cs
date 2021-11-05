@@ -123,6 +123,24 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 歐規皮帶導程隱藏
             formMain.panelModelSelectionLead.Visible = !formMain.cboModel.Text.IsContainsReducerRatioType();
             //formMain.page2.ReplaceItem();
+
+            // 更新荷重
+            Condition con = new Condition();
+            if (formMain.optHorizontalUse.Checked)
+                con.setupMethod = Model.SetupMethod.水平;
+            else if (formMain.optWallHangingUse.Checked)
+                con.setupMethod = Model.SetupMethod.橫掛;
+            else if (formMain.optVerticalUse.Checked)
+                con.setupMethod = Model.SetupMethod.垂直;
+            double maxLoad = formMain.page2.calc.GetMaxLoad(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text), con);
+            if (maxLoad == int.MaxValue)
+                maxLoad = RunCondition.defaultMaxLoad;
+            formMain.page2.runCondition.scrollBarLoad.maxValue = (int)maxLoad;
+            // 更新行程
+            int maxStroke = formMain.page2.calc.GetMaxStroke(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
+            formMain.page2.runCondition.scrollBarStroke.maxValue = maxStroke;
+            int minStroke = formMain.page2.calc.GetMinStroke(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
+            formMain.page2.runCondition.scrollBarStroke.minValue = minStroke;
         }
 
         private void CboLead_SelectedValueChanged(object sender, EventArgs e) {
