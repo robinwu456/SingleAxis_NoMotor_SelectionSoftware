@@ -14,7 +14,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         // 資料庫
         public DataTable modelInfo = FileUtil.ReadCsv(Config.MODEL_INFO_FILENAME);
         public DataTable strokeRpm = FileUtil.ReadCsv(Config.STROKE_RPM_FILENAME);
-        public DataTable momentData = FileUtil.ReadCsv(Config.MOMENT_FILENAME);
+        public DataTable loadData = FileUtil.ReadCsv(Config.MOMENT_FILENAME);
         public DataTable motorInfo = FileUtil.ReadCsv(Config.MOTOR_INFO_FILENAME);
         public DataTable beltInfo = FileUtil.ReadCsv(Config.BELT_INFO_FILENAME);
         public DataTable modelTypeInfo = FileUtil.ReadCsv(Config.MODEL_TYPE_INFO_FILENAME);
@@ -150,7 +150,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             //newLead = Convert.ToDouble(newLead.ToString("#0.00"));
 
             try {
-                var rows = momentData.Rows.Cast<DataRow>().Where(row => row["型號"].ToString() == model &&
+                var rows = loadData.Rows.Cast<DataRow>().Where(row => row["型號"].ToString() == model &&
                                                                         Convert.ToDouble(row["導程"].ToString()) == lead &&
                                                                         row["安裝方式"].ToString() == setupMethod.ToString()
                                                                             );
@@ -248,6 +248,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             return strokes.Max();
         }
 
+        public int GetMinStroke(string model, double lead) {
+            IEnumerable<int> strokes;
+            if (!CustomExtensions.IsContainsReducerRatioType(model))
+                strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => row["型號"].ToString() == model && Convert.ToDouble(row["導程"].ToString()) == lead)
+                                                        .Select(row => Convert.ToInt32(row["行程"].ToString()));
+            else
+                strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => row["型號"].ToString().StartsWith(model) && Convert.ToDouble(row["導程"].ToString()) == lead)
+                                                        .Select(row => Convert.ToInt32(row["行程"].ToString()));
+
+            return strokes.Min();
+        }
+
         public int GetSeriesMaxStroke(string series) {
             IEnumerable<int> strokes;
             //strokes = strokeRpm.Rows.Cast<DataRow>().Where(row => Regex.Replace(row["型號"].ToString(), @"\d+", "").Equals(series))
@@ -263,7 +275,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 荷重表搜尋荷重
             double maxLoad = RunCondition.defaultMaxLoad;
             try {
-                var data = momentData.Rows.Cast<DataRow>()
+                var data = loadData.Rows.Cast<DataRow>()
                                              .Where(row => Regex.Replace(row["型號"].ToString(), @"\d", "").StartsWith(modelType.ToString()) &&
                                                            row["安裝方式"].ToString() == setupMethod.ToString())
                                              .Select(row => Convert.ToDouble(row["最大荷重"].ToString()));
@@ -296,11 +308,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 else
                     VerifyModel = (row) => row["型號"].ToString() == model;
 
-                if (momentData.Rows.Cast<DataRow>().Where(row => VerifyModel(row) && Convert.ToDouble(row["導程"].ToString()) == lead &&
+                if (loadData.Rows.Cast<DataRow>().Where(row => VerifyModel(row) && Convert.ToDouble(row["導程"].ToString()) == lead &&
                                                     row["安裝方式"].ToString() == conditions.setupMethod.ToString()).Count() == 0)
                     return maxLoad;
 
-                data = momentData.Rows.Cast<DataRow>()
+                data = loadData.Rows.Cast<DataRow>()
                                              .Where(row => VerifyModel(row) && Convert.ToDouble(row["導程"].ToString()) == lead && 
                                                            row["安裝方式"].ToString() == conditions.setupMethod.ToString())
                                              .Select(row => row["最大荷重"].ToString())

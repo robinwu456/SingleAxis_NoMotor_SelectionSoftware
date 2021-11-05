@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Text.RegularExpressions;
 using System.Data;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
@@ -43,6 +43,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void CboMotorParamsMotorPowerSelection_SelectedValueChanged(object sender, EventArgs e) {
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection && !formMain.cboPower.Text.Contains("自訂"))
+                return;
+
             if (int.TryParse(formMain.cboMotorParamsMotorPowerSelection.Text, out int power)) {
                 var motorParams = formMain.page2.calc.GetMotorParams(power);
 
@@ -57,6 +60,18 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             formMain.panelMotorAdvanceMode.Enabled = formMain.cboPower.Text.Contains("自訂");
             formMain.panelPowerSelection.Enabled = formMain.cboPower.Text == "自訂" && !formMain.chkMotorAdvanceMode.Checked;
             formMain.panelMotorParams.Enabled = formMain.cboPower.Text == "自訂" && formMain.chkMotorAdvanceMode.Checked;
+
+            if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ModelSelection) {
+                if (formMain.cboPower.Text.Contains("標準")) {
+                    int power = Convert.ToInt32(new Regex(@"\d+").Match(formMain.cboPower.Text).Groups[0].Value);
+                    var motorParams = formMain.page2.calc.GetMotorParams(power);
+
+                    formMain.txtRatedTorque.Text = motorParams.ratedTorque.ToString();
+                    formMain.txtMaxTorque.Text = motorParams.maxTorque.ToString();
+                    formMain.txtRotateInertia.Text = motorParams.rotateInertia.ToString("0." + new string('#', 339));
+                    formMain.txtLoadInertiaMomentRatio.Text = motorParams.loadInertiaMomentRatio.ToString();
+                }
+            }
         }
 
         public void Load() {

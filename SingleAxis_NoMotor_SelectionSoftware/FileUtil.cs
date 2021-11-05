@@ -304,6 +304,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             var motorTorqueInfoBelt = new List<(string key, object value)>();
             var beltTorqueInfo = new List<(string key, object value)>();
             var momentBelt = new List<(string key, object value)>();
+            var reducerInfo = new List<(string key, object value)>();
             if (model.subWheel_P3 != null) {
                 beltInfo = new List<(string key, object value)>() {
                     ( "主動輪資訊(P1)", "" ),
@@ -408,6 +409,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     ( "    ∑Mp", model.mp_d ),                    
                     ( "    P_d", model.p_d ),
                 };
+
+                reducerInfo = new List<(string key, object value)>() {                    
+                    ( "減速機資訊", "" ),
+                    ( "  減速機轉動慣量(kg‧mm^2)", model.reducerRotateInertia ),
+                };
             }
             if (model.subWheel_P3 == null) {
                 ///
@@ -433,6 +439,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 /// 皮帶型
                 ///
 
+                // 減速機轉動慣量
+                if (CustomExtensions.IsContainsReducerRatioType(model.name))
+                    result.InsertRange(result.IndexOf(result.First(r => r.key == "Velocity")), reducerInfo);
                 // 力矩計算
                 result.InsertRange(result.IndexOf(result.First(r => r.key == "平均負載Pm")), momentBelt);
                 // 皮帶輪資訊

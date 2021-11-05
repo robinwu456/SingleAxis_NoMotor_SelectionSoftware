@@ -147,6 +147,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 更新行程
             int maxStroke = formMain.page2.calc.GetMaxStroke(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
             formMain.page2.runCondition.scrollBarStroke.maxValue = maxStroke;
+            int minStroke = formMain.page2.calc.GetMinStroke(formMain.cboModel.Text, Convert.ToDouble(formMain.cboLead.Text));
+            formMain.page2.runCondition.scrollBarStroke.minValue = minStroke;
 
             if (formMain.cboModel.Text.IsContainsReducerRatioType())
                 formMain.sideTable.UpdateModeInfo(formMain.cboModel.Text, Convert.ToInt32(formMain.cboReducerRatio.Text));
