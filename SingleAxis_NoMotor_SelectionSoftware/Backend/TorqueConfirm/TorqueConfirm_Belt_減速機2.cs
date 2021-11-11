@@ -31,8 +31,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 馬達是否適用
             model.beltMotorSafeCoefficient = Math.Round(model.rotateInertia_total / Math.Pow(model.reducerRpmRatio, 2) / model.rotateInertia_motor, 2);
-            Model.beltMotorStandard = model.loadInertiaMomentRatio * 2;
-            model.isMotorOK = model.beltMotorSafeCoefficient < Model.beltMotorStandard;
+            model.beltMotorStandard = model.loadInertiaMomentRatio * 2;
+            model.isMotorOK = model.beltMotorSafeCoefficient < model.beltMotorStandard;
         }
     }
 }

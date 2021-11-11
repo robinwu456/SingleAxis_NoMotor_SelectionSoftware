@@ -371,11 +371,11 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <summary>
         /// T_max安全係數標準(大於等於)
         /// </summary>
-        public const float tMaxStandard = 1.3f;
+        public float tMaxStandard;
         /// <summary>
         /// 皮帶馬達T_max安全係數標準(大於等於)
         /// </summary>
-        public const float tMaxStandard_beltMotor = 2.1f;
+        public float tMaxStandard_beltMotor;
 
         /// <summary>
         /// T_Rms
@@ -404,7 +404,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <summary>
         /// 皮帶扭矩安全係數標準
         /// </summary>
-        public const double tMaxStandard_belt = 1.1;
+        public double tMaxStandard_belt;
         /// <summary>
         /// 皮帶T_Max扭矩確認
         /// </summary>
@@ -416,7 +416,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <summary>
         /// 皮帶馬達安全係數標準
         /// </summary>
-        public static double beltMotorStandard = -1;
+        public double beltMotorStandard = -1;
         /// <summary>
         /// 馬達是否適用
         /// </summary>

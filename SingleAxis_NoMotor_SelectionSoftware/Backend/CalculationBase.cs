@@ -62,6 +62,17 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 // 測試不判斷行程過短
                 isCheckStrokeTooShort = condition.calcMode != Condition.CalcMode.Test;
 
+                // tMax安全係數
+                try {
+                    if (model.isUseBaltCalc) {
+                        model.tMaxStandard_beltMotor = (float)Convert.ToDouble(row["T_max安全係數標準"].ToString());
+                        model.tMaxStandard_belt = (float)Convert.ToDouble(row["皮帶T_max安全係數標準"].ToString());
+                    } else
+                        model.tMaxStandard = (float)Convert.ToDouble(row["T_max安全係數標準"].ToString());
+                } catch (Exception ex) {
+                    Console.WriteLine("[{0}]安全係數標準撈取錯誤: {1}", model.name, ex.ToString());
+                }
+
                 // 皮帶資訊
                 if (model.isUseBaltCalc) {
                     if (condition.subWheel_P3 != null) {

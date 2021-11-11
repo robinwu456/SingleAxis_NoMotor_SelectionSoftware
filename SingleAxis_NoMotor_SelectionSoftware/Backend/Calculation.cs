@@ -171,14 +171,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     { "Remark",    model => string.Format("單趟時間: {0}", model.moveTime * 2) },
                     { "Condition", model => model.serviceLifeTime != (-1, -1, -1) } } },
                 { "T_max安全係數過低", new Dictionary<string, Func<Model, object>>(){
-                    { "Remark",    model => string.Format("標準: 大於等於{0}, 計算值: {1}", model.isUseBaltCalc ? Model.tMaxStandard_beltMotor : Model.tMaxStandard, model.tMaxSafeCoefficient) },
-                    { "Condition", model => model.tMaxSafeCoefficient >= (model.isUseBaltCalc ? Model.tMaxStandard_beltMotor : Model.tMaxStandard) } } },
+                    { "Remark",    model => string.Format("標準: 大於等於{0}, 計算值: {1}", model.isUseBaltCalc ? model.tMaxStandard_beltMotor : model.tMaxStandard, model.tMaxSafeCoefficient) },
+                    { "Condition", model => model.tMaxSafeCoefficient >= (model.isUseBaltCalc ? model.tMaxStandard_beltMotor : model.tMaxStandard) } } },
                 { "皮帶馬達安全係數過低", new Dictionary<string, Func<Model, object>>(){
-                    { "Remark",    model => string.Format("標準: 小於{0}, 計算值: {1}", Model.beltMotorStandard, model.beltMotorSafeCoefficient) },
-                    { "Condition", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < Model.beltMotorStandard } } },
+                    { "Remark",    model => string.Format("標準: 小於{0}, 計算值: {1}", model.beltMotorStandard, model.beltMotorSafeCoefficient) },
+                    { "Condition", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < model.beltMotorStandard } } },
                 { "皮帶T_max安全係數過低", new Dictionary<string, Func<Model, object>>(){
-                    { "Remark",    model => string.Format("標準: 大於等於{0}, 計算值: {1}", Model.tMaxStandard_belt, model.beltSafeCoefficient) },
-                    { "Condition", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_belt } } },
+                    { "Remark",    model => string.Format("標準: 大於等於{0}, 計算值: {1}", model.tMaxStandard_belt, model.beltSafeCoefficient) },
+                    { "Condition", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= model.tMaxStandard_belt } } },
                 { "力矩警示異常", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => "" },
                     { "Condition", model => model.isMomentVerifySuccess } } },

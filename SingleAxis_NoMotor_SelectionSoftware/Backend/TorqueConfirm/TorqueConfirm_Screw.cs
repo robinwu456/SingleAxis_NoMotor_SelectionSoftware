@@ -54,7 +54,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // T_max最大扭矩確認
             model.tMax = Math.Max(model.torqueTotal_accel, Math.Max(model.torqueTotal_constant, Math.Max(model.torqueTotal_decel, model.torqueTotal_stop)));
             model.tMaxSafeCoefficient = Math.Round(model.maxTorque / model.tMax, 2);
-            model.is_tMax_OK = model.tMaxSafeCoefficient >= Model.tMaxStandard;
+            model.is_tMax_OK = model.tMaxSafeCoefficient >= model.tMaxStandard;
 
             // T_Rms扭矩確認
             model.tRms = Math.Pow((Math.Pow(model.torqueTotal_accel, 2) * model.accelTime +

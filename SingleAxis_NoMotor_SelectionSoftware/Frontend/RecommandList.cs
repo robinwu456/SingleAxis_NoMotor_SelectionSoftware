@@ -44,9 +44,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             this.formMain = formMain;
 
             redFontConditions = new Dictionary<string, Func<Model, bool>>() {
-                { "T_max安全係數", model => model.tMaxSafeCoefficient >= (model.isUseBaltCalc ? Model.tMaxStandard_beltMotor : Model.tMaxStandard) },
-                { "皮帶馬達安全係數", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < Model.beltMotorStandard },
-                { "皮帶T_max安全係數", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= Model.tMaxStandard_belt },
+                { "T_max安全係數", model => model.tMaxSafeCoefficient >= (model.isUseBaltCalc ? model.tMaxStandard_beltMotor : model.tMaxStandard) },
+                { "皮帶馬達安全係數", model => model.beltMotorSafeCoefficient == -1 || model.beltMotorSafeCoefficient < model.beltMotorStandard },
+                { "皮帶T_max安全係數", model => model.beltSafeCoefficient == -1 || model.beltSafeCoefficient >= model.tMaxStandard_belt },
                 { "力矩警示", model => model.isMomentVerifySuccess },
                 { "荷重", model => model.maxLoad == -1 || (model.maxLoad != -1 && model.maxLoad >= model.load) },
                 { "最大行程", model => model.maxStroke >= Convert.ToInt32(formMain.txtStroke.Text) },

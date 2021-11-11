@@ -30,7 +30,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             model.beltEndurance = model.belt_tMax * 1000 / (model.subWheel_P4.diameter / 2);
             // 皮帶安全係數
             model.beltSafeCoefficient = Math.Round(model.beltAllowableTension / model.beltEndurance, 2);
-            model.is_belt_tMax_OK = model.beltSafeCoefficient > Model.tMaxStandard_belt;
+            model.is_belt_tMax_OK = model.beltSafeCoefficient > model.tMaxStandard_belt;
         }        
 
         public override void MotorTorqueConfirm() {
@@ -76,7 +76,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // T_max最大扭矩確認
             model.tMax = Math.Max(model.torqueTotal_accel, Math.Max(model.torqueTotal_constant, Math.Max(model.torqueTotal_decel, model.torqueTotal_stop)));
             model.tMaxSafeCoefficient = Math.Round(model.maxTorque / model.tMax, 2);
-            model.is_tMax_OK = model.tMaxSafeCoefficient >= Model.tMaxStandard_beltMotor;
+            model.is_tMax_OK = model.tMaxSafeCoefficient >= model.tMaxStandard_beltMotor;
         }
 
         /// <summary>
