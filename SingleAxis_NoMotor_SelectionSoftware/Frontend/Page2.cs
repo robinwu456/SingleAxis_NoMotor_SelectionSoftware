@@ -243,8 +243,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             // 回到運轉條件
             formMain.cmdChangeRunCondition.Click += CmdChangeRunCondition_Click;
 
-            //// 全選模式
-            //formMain.pictureBoxToyo.DoubleClick += PictureBoxToyo_DoubleClick;
+            // 全選模式
+            formMain.pictureBoxToyo.DoubleClick += PictureBoxToyo_DoubleClick;
         }
 
         private void PictureBoxToyo_DoubleClick(object sender, EventArgs e) {
