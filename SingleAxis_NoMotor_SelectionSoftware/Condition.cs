@@ -49,6 +49,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public const int defaultExpectServiceLifeTime = 3;                           // 希望壽命預設要求
         public int expectServiceLifeTime = defaultExpectServiceLifeTime;             // 希望壽命(年)(-1無希望壽命)
         public MoveSpeedUnit moveSpeedUnit = MoveSpeedUnit.Vmax;
+        /// <summary>
+        /// 計算模式(一般or全選)
+        /// </summary>
         public CalcMode calcMode = CalcMode.Normal;
         public CalcMaxItem calcMaxItem = CalcMaxItem.Vmax;
         public CalcMaxUnit calcMaxUnit = CalcMaxUnit.mms;

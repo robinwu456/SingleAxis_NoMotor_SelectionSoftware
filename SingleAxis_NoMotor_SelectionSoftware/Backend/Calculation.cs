@@ -8,8 +8,8 @@ using System.IO;
 namespace SingleAxis_NoMotor_SelectionSoftware {
     public class Calculation : CalculationModel {
         //private int calcCountPerThread = 10;   // 單執行緒運算的筆數
-        private int calcCountPerThread = 20;   // 單執行緒運算的筆數
-        //private int calcCountPerThread = 1000;   // 單執行緒運算的筆數
+        //private int calcCountPerThread = 20;   // 單執行緒運算的筆數
+        private int calcCountPerThread = 1000;   // 單執行緒運算的筆數
         private List<Thread> threadsPipeline = new List<Thread>();  // 所有運算執行緒
         private Dictionary<string, object> pipeLineResult = new Dictionary<string, object>();   // 即時運算完成的Model
         private List<Model> pipeLineAllModels = new List<Model>();  // 所有的Model

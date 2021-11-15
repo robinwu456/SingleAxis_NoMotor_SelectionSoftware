@@ -79,6 +79,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             if (sender != null && ((Control)sender).Enabled == false)
                 return;
 
+            curCondition = new Condition();
+
             // 計算模式
             curCondition.calcMode = Condition.CalcMode.CalcMax;
 
@@ -136,6 +138,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     break;
                 case "RPM":
                     curCondition.calcMaxUnit = Condition.CalcMaxUnit.RPM;
+                    curCondition.rpm = Convert.ToInt32(formMain.txtMaxCalc.Text);
                     break;
                 case "mm/s²":
                     curCondition.calcMaxUnit = Condition.CalcMaxUnit.mms2;
@@ -147,6 +150,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     curCondition.calcMaxUnit = Condition.CalcMaxUnit.s;
                     break;
             }
+            //// 最高速單位換算
+            //if (curCondition.calcMaxItem == Condition.CalcMaxItem.Vmax)
+            //    curCondition.moveSpeedUnit = curCondition.calcMaxUnit == Condition.CalcMaxUnit.RPM ? Condition.MoveSpeedUnit.RPM : Condition.MoveSpeedUnit.Vmax;
 
             // 馬達瓦數
             if (formMain.page1.modelSelectionMode == Page1.ModelSelectionMode.ConditionSelection) {
