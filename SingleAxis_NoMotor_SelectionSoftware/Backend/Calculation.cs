@@ -286,6 +286,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 con.maxTorque = condition.maxTorque;
                 con.rotateInertia = condition.rotateInertia;
                 con.loadInertiaMomentRatio = condition.loadInertiaMomentRatio;
+                con.reducerRotateInertia = condition.reducerRotateInertia;
 
                 // 最大荷重計算(自動修正荷重)
                 if (con.calcMode == Condition.CalcMode.CalcMax && con.isCalcByMaxLoad) {

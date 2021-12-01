@@ -36,6 +36,16 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 // 機構型態
                 model.modelType = (Model.ModelType)Enum.Parse(typeof(Model.ModelType), row["型號類別"].ToString());
 
+                //if (model.name == "MG65-03" &&
+                //    //model.lead == 12
+                //    condition.setupMethod == Model.SetupMethod.水平 &&
+                //    condition.load == 4 &&
+                //    condition.moment_A == 0 &&
+                //    condition.moment_B == 0 &&
+                //    condition.moment_C == 25
+                //    )
+                //    Console.WriteLine(1);
+
                 // 力舉參數
                 if (condition.c != 0) {
                     model.c = condition.c;
@@ -66,7 +76,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 try {
                     if (model.isUseBaltCalc) {
                         model.tMaxStandard_beltMotor = (float)Convert.ToDouble(row["T_max安全係數標準"].ToString());
-                        model.tMaxStandard_belt = (float)Convert.ToDouble(row["皮帶T_max安全係數標準"].ToString());
+                        //model.tMaxStandard_belt = (float)Convert.ToDouble(row["皮帶T_max安全係數標準"].ToString());
+
+                        if (double.TryParse(row["皮帶T_max安全係數標準"].ToString(), out double tMaxStandard_belt))
+                            model.tMaxStandard_belt = tMaxStandard_belt;
                     } else
                         model.tMaxStandard = (float)Convert.ToDouble(row["T_max安全係數標準"].ToString());
                 } catch (Exception ex) {

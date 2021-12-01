@@ -92,7 +92,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                 else
                     throw new Exception("減速機轉動慣量撈值錯誤");
             } else {
-                model.reducerRotateInertia = condition.reducerRotateInertia;
+                model.reducerRotateInertia = condition.reducerRotateInertia * 100;
             }
         }
     }

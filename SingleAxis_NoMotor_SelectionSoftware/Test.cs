@@ -13,28 +13,31 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private FormMain formMain;
         private Thread threadTest;
         private string outputFileName = "./Test/Result_{0}.csv";
-        private string[] testDataFileNames = Directory.GetFiles("./Test/現有測試數據").Reverse().ToArray();
-        //private string[] testDataFileNames = {
-        //    //"./Test/現有測試數據/螺桿測試數據_水平.csv",
-        //    //"./Test/現有測試數據/螺桿測試數據_橫掛.csv",
-        //    //"./Test/現有測試數據/螺桿測試數據_垂直.csv",
+        private string[] standardExcelFilePath = Directory.GetFiles("E:/Robin/Document/不帶電/計算式匯整提供GARY驗證_210811", "*.xls", SearchOption.AllDirectories);
 
-        //    //"./Test/現有測試數據/皮帶測試數據_減速機構_水平.csv",
-        //    //"./Test/現有測試數據/皮帶測試數據_減速機構_橫掛.csv",
-        //    //"./Test/現有測試數據/皮帶測試數據_減速機構_垂直.csv",
+        //private string[] testDataFileNames = Directory.GetFiles("./Test/現有測試數據").Reverse().ToArray();
+        private string[] testDataFileNames = {
+            //"./Test/現有測試數據/螺桿測試數據_水平.csv",
+            //"./Test/現有測試數據/螺桿測試數據_橫掛.csv",
+            //"./Test/現有測試數據/螺桿測試數據_垂直.csv",
 
-        //    //"./Test/現有測試數據/皮帶測試數據_減速機2_水平.csv",
-        //    //"./Test/現有測試數據/皮帶測試數據_減速機2_橫掛.csv",
-        //    //"./Test/現有測試數據/皮帶測試數據_減速機2_垂直.csv",
+            //"./Test/現有測試數據/皮帶測試數據_減速機構_水平.csv",
+            //"./Test/現有測試數據/皮帶測試數據_減速機構_橫掛.csv",
+            //"./Test/現有測試數據/皮帶測試數據_減速機構_垂直.csv",
 
-        //    //"./Test/現有測試數據/皮帶測試數據_減速機4_水平.csv",
-        //    //"./Test/現有測試數據/皮帶測試數據_減速機4_橫掛.csv",
-        //    //"./Test/現有測試數據/皮帶測試數據_減速機4_垂直.csv",
+            "./Test/現有測試數據/皮帶測試數據_減速機2_水平.csv",
+            //"./Test/現有測試數據/皮帶測試數據_減速機2_橫掛.csv",
+            //"./Test/現有測試數據/皮帶測試數據_減速機2_垂直.csv",
 
-        //    //"./Test/現有測試數據/皮帶測試數據_直接驅動_水平.csv",
-        //    //"./Test/現有測試數據/皮帶測試數據_直接驅動_橫掛.csv",
-        //    //"./Test/現有測試數據/皮帶測試數據_直接驅動_垂直.csv",
-        //};
+            //"./Test/現有測試數據/皮帶測試數據_減速機4_水平.csv",
+            //"./Test/現有測試數據/皮帶測試數據_減速機4_橫掛.csv",
+            //"./Test/現有測試數據/皮帶測試數據_減速機4_垂直.csv",
+
+            //"./Test/現有測試數據/皮帶測試數據_直接驅動_水平.csv",
+            //"./Test/現有測試數據/皮帶測試數據_直接驅動_橫掛.csv",
+            //"./Test/現有測試數據/皮帶測試數據_直接驅動_垂直.csv",
+        };
+
         private int curCalcIndex = 1;
 
         public Test(FormMain formMain) {
@@ -43,7 +46,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         private void InitEvents() {
-            //formMain.lbTitle.DoubleClick += StartTest;
+#if DEBUG
+            formMain.lbTitle.DoubleClick += StartTest;
+#endif
         }
 
         private void StartTest(object sender, EventArgs e) {
@@ -169,13 +174,14 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                     con.setupMethod = setupMethod;
                     con.modelType = Model.ModelType.Null;
                     con.vMaxCalcMode = Condition.CalcVmax.Custom;
+                    con.moveSpeedUnit = Condition.MoveSpeedUnit.Vmax;
                     con.vMax = Convert.ToDouble(row[col.idVmax].ToString()) * 1000;
                     con.stroke = Convert.ToInt32(row[col.idStoke].ToString());
                     con.load = Convert.ToDouble(row[col.idLoad].ToString());
                     con.moveTime = 999999999;
                     con.accelTime = Convert.ToDouble(row[col.idAccelTime].ToString());
                     con.stopTime = Convert.ToDouble(row[col.idStopTime].ToString());
-                    //con.accelSpeed = Convert.ToDouble(row["加減速度"].ToString()) * 1000;
+                    con.accelSpeed = Convert.ToDouble(row[col.idAccelSpeed].ToString()) * 1000;
                     //con.RepeatabilityCondition = a => 1 > 0;
                     con.useFrequence = new Condition.UseFrequence() {
                         // 趟/分
@@ -216,7 +222,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                             con.beltCalcType = Model.BeltCalcType.直接驅動;
 
                         if (con.beltCalcType == Model.BeltCalcType.減速機2 || con.beltCalcType == Model.BeltCalcType.減速機4) {
-                            con.reducerRotateInertia = Convert.ToDouble(row[col.idReducerRotateInertia].ToString());
+                            con.reducerRotateInertia = Convert.ToDouble(row[col.idReducerRotateInertia].ToString()) / 100;
                             con.reducerRpmRatio = Convert.ToDouble(row[col.idReducerRpmRatio].ToString());
                         }
                         con.beltWidth = Convert.ToDouble(row[col.idBeltWidth].ToString());
@@ -278,7 +284,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         double diffPercent_tMax = 100 - (Math.Min(Convert.ToDouble(Convert.ToDouble(row[col.idTmax].ToString()).ToString("#0.00")), model.tMaxSafeCoefficient) * 100 / Math.Max(Convert.ToDouble(Convert.ToDouble(row[col.idTmax].ToString()).ToString("#0.00")), model.tMaxSafeCoefficient));
                         double diffPercent_tRms = 100 - (Math.Min(Convert.ToDouble(Convert.ToDouble(row[col.idTrms].ToString()).ToString("#0.00")), model.tRmsSafeCoefficient) * 100 / Math.Max(Convert.ToDouble(Convert.ToDouble(row[col.idTrms].ToString()).ToString("#0.00")), model.tRmsSafeCoefficient));
                         double diffPercent_screwDistance = 100 - (Math.Min(Convert.ToDouble(row[col.idScrewDistance].ToString()), model.screwServiceLifeDistance) * 100 / Math.Max(Convert.ToDouble(row[col.idScrewDistance].ToString()), model.screwServiceLifeDistance));
-                        log = string.Format("{0},{1},{2},{3},{4},{5},{6},,{7},{8},{9},,{10},{11},{12},,{13},{14},{15},,{16},{17},{18},,{19}\r\n",
+                        log = string.Format("{0},{1},{2},{3},{4},{5},{6},,{7},{8},{9},,{10},{11},{12},,{13},{14},{15},,{16},{17},{18},,{19},{20}\r\n",
                                                     model.name,
                                                     model.lead,
                                                     model.stroke,
@@ -298,7 +304,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                                     row[col.idScrewDistance].ToString(),
                                                     model.screwServiceLifeDistance,
                                                     diffPercent_screwDistance.ToString("#00.00") + "%",
-                                                    string.Format("=hyperlink(\"{0}\"，\"開啟Log\")", new FileInfo(logFileName + ".log").FullName)
+                                                    string.Format("=hyperlink(\"{0}\"，\"開啟Log\")", new FileInfo(logFileName + ".log").FullName),
+                                                    string.Format("=hyperlink(\"{0}\"，\"開啟公式Excel\")", standardExcelFilePath.First(file => file.Contains(model.name)))
                         );
                         if (diffPercent_slideDistance > 1 || diffPercent_tMax > 1 || diffPercent_tRms > 1 || diffPercent_screwDistance > 1)
                             highDiffLog += log;
@@ -307,7 +314,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                         double diffPercent_rotateInertia_total = 100 - (Math.Min(Convert.ToDouble(row[col.idRotateInertia_total].ToString()), model.rotateInertia_total) * 100 / Math.Max(Convert.ToDouble(row[col.idRotateInertia_total].ToString()), model.rotateInertia_total));
                         double diffPercent_tMax = 100 - (Math.Min(Convert.ToDouble(Convert.ToDouble(row[col.idTmax].ToString()).ToString("#0.00")), model.tMaxSafeCoefficient) * 100 / Math.Max(Convert.ToDouble(Convert.ToDouble(row[col.idTmax].ToString()).ToString("#0.00")), model.tMaxSafeCoefficient));
                         double diffPercent_beltSafeCoefficient = 100 - (Math.Min(Convert.ToDouble(Convert.ToDouble(row[col.idBeltSafeCoefficient].ToString()).ToString("#0.00")), model.beltSafeCoefficient) * 100 / Math.Max(Convert.ToDouble(Convert.ToDouble(row[col.idBeltSafeCoefficient].ToString()).ToString("#0.00")), model.beltSafeCoefficient));
-                        log = string.Format("{0},{1},{2},{3},{4},{5},{6},,{7},{8},{9},,{10},{11},{12},,{13},{14},{15},,{16},{17},{18},,{19}\r\n",
+                        log = string.Format("{0},{1},{2},{3},{4},{5},{6},,{7},{8},{9},,{10},{11},{12},,{13},{14},{15},,{16},{17},{18},,{19},{20}\r\n",
                                                     model.name,
                                                     model.lead,
                                                     model.stroke,
@@ -327,7 +334,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                                     Convert.ToDouble(row[col.idBeltSafeCoefficient].ToString()).ToString("#0.00"),
                                                     model.beltSafeCoefficient,
                                                     diffPercent_beltSafeCoefficient.ToString("#00.00") + "%",
-                                                    string.Format("=hyperlink(\"{0}\"，\"開啟Log\")", new FileInfo(logFileName + ".log").FullName)
+                                                    string.Format("=hyperlink(\"{0}\"，\"開啟Log\")", new FileInfo(logFileName + ".log").FullName),
+                                                    string.Format("=hyperlink(\"{0}\"，\"開啟公式Excel\")", standardExcelFilePath.First(file => file.Contains(model.name.Contains("-") ? model.name.Split('-')[0] : model.name)))
                         );
                         if (diffPercent_slideDistance > 1 || diffPercent_rotateInertia_total > 1 || diffPercent_tMax > 1 || diffPercent_beltSafeCoefficient > 1)
                             highDiffLog += log;
@@ -403,6 +411,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         public int idLoad;
         public int idAccelTime;
         public int idStopTime;
+        public int idAccelSpeed;
         public int idDyn;
         public int idMR_C;
         public int idMP_C;
@@ -448,6 +457,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             idLoad = 24;
             idAccelTime = 15;
             idStopTime = 17;
+            idAccelSpeed = 18;
             idDyn = 1;
             idMR_C = 2;
             idMP_C = 3;
@@ -473,8 +483,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             idVmax = 35;
             idStoke = 44;
             idLoad = 45;
-            idAccelTime = 36;
+            idAccelTime = 36;            
             idStopTime = 38;
+            idAccelSpeed = 39;
             idDyn = 1;
             idMR_C = 3;
             idMP_C = 4;
@@ -514,8 +525,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             idVmax = 28;
             idStoke = 37;
             idLoad = 38;
-            idAccelTime = 29;
+            idAccelTime = 29;            
             idStopTime = 31;
+            idAccelSpeed = 32;
             idDyn = 1;
             idMR_C = 3;
             idMP_C = 4;
@@ -552,8 +564,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             idVmax = 36;
             idStoke = 45;
             idLoad = 46;
-            idAccelTime = 37;
+            idAccelTime = 37;            
             idStopTime = 39;
+            idAccelSpeed = 40;
             idDyn = 1;
             idMR_C = 3;
             idMP_C = 4;
@@ -594,8 +607,9 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             idVmax = 24;
             idStoke = 33;
             idLoad = 34;
-            idAccelTime = 25;
+            idAccelTime = 25;            
             idStopTime = 27;
+            idAccelSpeed = 28;
             idDyn = 1;
             idMR_C = 3;
             idMP_C = 4;
