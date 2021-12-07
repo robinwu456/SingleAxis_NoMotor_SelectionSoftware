@@ -15,28 +15,28 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         private string outputFileName = "./Test/Result_{0}.csv";
         private string[] standardExcelFilePath = Directory.GetFiles("E:/Robin/Document/不帶電/計算式匯整提供GARY驗證_210811", "*.xls", SearchOption.AllDirectories);
 
-        //private string[] testDataFileNames = Directory.GetFiles("./Test/現有測試數據").Reverse().ToArray();
-        private string[] testDataFileNames = {
-            //"./Test/現有測試數據/螺桿測試數據_水平.csv",
-            //"./Test/現有測試數據/螺桿測試數據_橫掛.csv",
-            //"./Test/現有測試數據/螺桿測試數據_垂直.csv",
+        private string[] testDataFileNames = Directory.GetFiles("./Test/現有測試數據").Reverse().ToArray();
+        //private string[] testDataFileNames = {
+        //    //"./Test/現有測試數據/螺桿測試數據_水平.csv",
+        //    //"./Test/現有測試數據/螺桿測試數據_橫掛.csv",
+        //    //"./Test/現有測試數據/螺桿測試數據_垂直.csv",
 
-            //"./Test/現有測試數據/皮帶測試數據_減速機構_水平.csv",
-            //"./Test/現有測試數據/皮帶測試數據_減速機構_橫掛.csv",
-            //"./Test/現有測試數據/皮帶測試數據_減速機構_垂直.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_減速機構_水平.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_減速機構_橫掛.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_減速機構_垂直.csv",
 
-            "./Test/現有測試數據/皮帶測試數據_減速機2_水平.csv",
-            //"./Test/現有測試數據/皮帶測試數據_減速機2_橫掛.csv",
-            //"./Test/現有測試數據/皮帶測試數據_減速機2_垂直.csv",
+        //    "./Test/現有測試數據/皮帶測試數據_減速機2_水平.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_減速機2_橫掛.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_減速機2_垂直.csv",
 
-            //"./Test/現有測試數據/皮帶測試數據_減速機4_水平.csv",
-            //"./Test/現有測試數據/皮帶測試數據_減速機4_橫掛.csv",
-            //"./Test/現有測試數據/皮帶測試數據_減速機4_垂直.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_減速機4_水平.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_減速機4_橫掛.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_減速機4_垂直.csv",
 
-            //"./Test/現有測試數據/皮帶測試數據_直接驅動_水平.csv",
-            //"./Test/現有測試數據/皮帶測試數據_直接驅動_橫掛.csv",
-            //"./Test/現有測試數據/皮帶測試數據_直接驅動_垂直.csv",
-        };
+        //    //"./Test/現有測試數據/皮帶測試數據_直接驅動_水平.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_直接驅動_橫掛.csv",
+        //    //"./Test/現有測試數據/皮帶測試數據_直接驅動_垂直.csv",
+        //};
 
         private int curCalcIndex = 1;
 
