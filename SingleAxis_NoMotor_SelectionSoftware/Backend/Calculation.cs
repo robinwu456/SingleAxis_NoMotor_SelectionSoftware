@@ -157,10 +157,13 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
             Dictionary<string, Dictionary<string, Func<Model, object>>> filterMap = new Dictionary<string, Dictionary<string, Func<Model, object>>>() {
                 { "超過最大行程", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("最大行程: {0}", model.maxStroke) },
-                    { "Condition", model => model.maxStroke >= condition.stroke /*|| condition.calcMode == Condition.CalcMode.CalcMax*/ } } },
+                    { "Condition", model => model.maxStroke >= condition.stroke } } },
+                { "低於最小行程", new Dictionary<string, Func<Model, object>>(){
+                    { "Remark",    model => string.Format("最小行程: {0}", model.minStroke) },
+                    { "Condition", model => model.minStroke <= condition.stroke } } },
                 { "超過最大荷重", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("最大荷重: {0}", model.maxLoad) },
-                    { "Condition", model => model.maxLoad == -1 || model.maxLoad != -1 && model.maxLoad >= condition.load /*|| condition.calcMode == Condition.CalcMode.CalcMax*/ } } },
+                    { "Condition", model => model.maxLoad == -1 || model.maxLoad != -1 && model.maxLoad >= condition.load } } },
                 { "運行時間過短，請增加運行時間", new Dictionary<string, Func<Model, object>>(){
                     { "Remark",    model => string.Format("計算運行時間: {0}", model.moveTime) },
                     { "Condition", model => model.moveTime <= condition.moveTime } } },

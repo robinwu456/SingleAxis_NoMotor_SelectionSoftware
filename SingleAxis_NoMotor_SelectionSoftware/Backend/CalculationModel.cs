@@ -272,6 +272,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 最大行程驗證
             model.maxStroke = GetMaxStroke(model.name, model.lead);
+            model.minStroke = GetMinStroke(model.name, model.lead);
             if (condition.calcMode == Condition.CalcMode.Test)
                 model.stroke = condition.stroke;
             else
@@ -396,6 +397,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
 
             // 最大行程驗證
             model.maxStroke = GetMaxStroke(model.name, model.lead);
+            model.minStroke = GetMinStroke(model.name, model.lead);
             if (condition.calcMode == Condition.CalcMode.Test)
                 model.stroke = condition.stroke;
             else

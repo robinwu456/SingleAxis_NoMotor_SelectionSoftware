@@ -293,6 +293,10 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// 最大行程
         /// </summary>
         public int maxStroke;
+        /// <summary>
+        /// 最短行程
+        /// </summary>
+        public int minStroke;
 
         /// <summary>
         /// C(N) Dyn 10000km
