@@ -82,7 +82,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         /// <summary>
         /// 總預估壽命時間
         /// </summary>
-        public (int year, int month, int day) serviceLifeTime;
+        public (long year, int month, int day) serviceLifeTime;
 
         /// <summary>
         /// 重複定位精度

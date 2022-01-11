@@ -173,8 +173,8 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
         }
 
         // 計算壽命時間
-        protected (int year, int month, int day) GetServiceLifeTime(Model model, Condition conditions) {
-            int year = 0;
+        protected (long year, int month, int day) GetServiceLifeTime(Model model, Condition conditions) {
+            long year = 0;
             int month = 0;
             int day = 0;
 
@@ -193,7 +193,7 @@ namespace SingleAxis_NoMotor_SelectionSoftware {
                                      (float)conditions.useFrequence.hourPerDay * 60f *
                                      (float)conditions.useFrequence.dayPerYear) / (1000f * 1000f);
 
-            year = (int)(model.serviceLifeDistance / useDistancePerYear);
+            year = (long)(model.serviceLifeDistance / useDistancePerYear);
             int fullDay = (int)((int)(model.serviceLifeDistance - year * useDistancePerYear) / ((float)conditions.useFrequence.hourPerDay * 60f * (float)verifyCountPerMinute * distancePerCount / 1000f / 1000f));
             month = fullDay / 30;
             day = fullDay - month * 30;
